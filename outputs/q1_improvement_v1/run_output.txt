@@ -1,0 +1,8 @@
+                       experiment  feature_count aggregation  n_files  macro_f1  balanced_accuracy  accuracy  recall_B  recall_IR  recall_OR  recall_N
+              M1_baseline_B2_mean             18        mean       56  0.702029           0.687500  0.696429  0.583333   0.666667   0.750000      0.75
+           H1_scale_free_features             11        mean       56  0.682692           0.690476  0.642857  0.500000   0.583333   0.678571      1.00
+H2_median_probability_aggregation             18      median       56  0.702029           0.687500  0.696429  0.583333   0.666667   0.750000      0.75
+baseline_shift= {'feature_count': 18, 'Dmu': 22.416276793472356, 'Dsigma': 656.9786285401685}
+H1_shift= {'feature_count': 11, 'Dmu': 1.0832543450139036, 'Dsigma': 0.7579305784879434}
+H1_keep= True H2_keep= False H3_keep= False
+retained_classifier= H1_scale_free_features

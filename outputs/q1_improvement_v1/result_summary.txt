@@ -1,0 +1,46 @@
+=== Q1 failure-driven improvement ===
+                       experiment  feature_count aggregation  n_files  macro_f1  balanced_accuracy  accuracy  recall_B  recall_IR  recall_OR  recall_N
+              M1_baseline_B2_mean             18        mean       56  0.702029           0.687500  0.696429  0.583333   0.666667   0.750000      0.75
+           H1_scale_free_features             11        mean       56  0.682692           0.690476  0.642857  0.500000   0.583333   0.678571      1.00
+H2_median_probability_aggregation             18      median       56  0.702029           0.687500  0.696429  0.583333   0.666667   0.750000      0.75
+
+=== Domain shift ===
+            experiment  feature_count       Dmu     Dsigma
+   M1_baseline_B2_mean             18 22.416277 656.978629
+H1_scale_free_features             11  1.083254   0.757931
+
+=== H3 adaptive B mechanism ===
+                             record_id    rpm     bsf_hz  selected_carrier_lo_hz  selected_carrier_hi_hz  carrier_kurtosis  adaptive_bsf_ratio           harmonic_ratios  supported_ratio_gt_1
+source_domain/cwru_48khz_de/B007_0.mat 1796.0 141.089072                    2000                    4000          3.137394            0.752003 0.421194|0.752003|1.44537                 False
+source_domain/cwru_48khz_de/B007_1.mat 1772.0 139.203695                     500                    2000          3.053264            0.913596 0.850996|1.23817|0.913596                 False
+source_domain/cwru_48khz_de/B007_2.mat 1747.0 137.239760                    2000                    4000          3.164580            0.833032   1.086|0.833032|0.566464                 False
+
+=== Decisions ===
+{
+  "protocol": "Q1-IMPROVE-v1.0",
+  "baseline_protocol": "Q1-EVAL-v1.0",
+  "started_utc": "2026-09-15T17:34:07.140508+00:00",
+  "finished_utc": "2026-09-15T17:34:07.475735+00:00",
+  "git_sha": "1c6351e3fc44aa92cb8983a901b45ad52b2fb6b7",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "baseline_reproduced_macro_f1": 0.7020285514625138,
+  "H1": {
+    "macro_f1": 0.6826923076923077,
+    "Dmu": 1.0832543450139036,
+    "Dmu_reduction_fraction": 0.9516755456316748,
+    "kept": true
+  },
+  "H2": {
+    "macro_f1": 0.7020285514625138,
+    "baseline_min_fold_f1": 0.475,
+    "H2_min_fold_f1": 0.475,
+    "kept": false
+  },
+  "H3": {
+    "B_support_count_of_3": 0,
+    "kept_for_mechanism_only": false
+  },
+  "retained_classifier": "H1_scale_free_features",
+  "note": "No target labels were used. No random seed search was performed. Uncombined single-factor experiments only."
+}
