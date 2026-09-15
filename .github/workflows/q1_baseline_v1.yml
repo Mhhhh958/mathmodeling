@@ -29,10 +29,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy pandas scipy scikit-learn
+          pip install numpy==1.26.4 pandas==2.2.3 scipy==1.14.1 scikit-learn==1.5.2
 
       - name: Run Q1 baseline
         run: |
+          set -o pipefail
           mkdir -p outputs/q1_baseline_v1
           python scripts/q1_baseline_v1.py 2>&1 | tee outputs/q1_baseline_v1/run.log
 
