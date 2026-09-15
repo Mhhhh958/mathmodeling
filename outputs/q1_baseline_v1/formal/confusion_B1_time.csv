@@ -1,0 +1,5 @@
+﻿,pred_B,pred_IR,pred_OR,pred_N
+true_B,6,3,0,3
+true_IR,2,7,3,0
+true_OR,5,7,14,2
+true_N,0,0,0,4

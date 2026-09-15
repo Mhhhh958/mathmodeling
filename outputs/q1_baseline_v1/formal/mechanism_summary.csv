@@ -1,0 +1,4 @@
+﻿label,n_checked,n_ratio_gt_1,class_mechanism_support
+OR,3,3,True
+IR,3,3,True
+B,3,0,False

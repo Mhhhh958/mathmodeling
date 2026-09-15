@@ -1,0 +1,5 @@
+﻿record_id,label,signal_var,fs,window_length,window_start,all_features_finite,rms,kurtosis
+source_domain/cwru_48khz_de/B007_0.mat,B,X122_DE_time,48000,48000,0,True,0.14710492669108596,3.0962127074649337
+source_domain/cwru_48khz_de/IR007_0.mat,IR,X109_DE_time,48000,48000,0,True,0.5805873751719882,5.983528972798167
+source_domain/cwru_48khz_de/OR007@12_0.mat,OR,X161_DE_time,48000,48000,0,True,0.22117714591722754,5.778923355928844
+source_domain/cwru_48khz_normal/N_0.mat,N,X097_DE_time,48000,48000,0,True,0.07253491456775636,2.792964672482515

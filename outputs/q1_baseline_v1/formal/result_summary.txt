@@ -1,0 +1,58 @@
+=== Q1-M1 48kHz-DE baseline result ===
+protocol: Q1-EVAL-v1.0
+source_files: 56
+source_class_counts: {'OR': 28, 'B': 12, 'IR': 12, 'N': 4}
+source_windows: 213
+target_files: 16
+target_windows: 64
+
+=== Evaluation summary ===
+    model  n_files  macro_f1  balanced_accuracy  accuracy  recall_B  recall_IR  recall_OR  recall_N
+ B0_dummy       56  0.166667           0.250000  0.500000  0.000000   0.000000       1.00      0.00
+  B1_time       56  0.550091           0.645833  0.553571  0.500000   0.583333       0.50      1.00
+B2_shared       56  0.702029           0.687500  0.696429  0.583333   0.666667       0.75      0.75
+
+=== Mechanism summary ===
+label  n_checked  n_ratio_gt_1  class_mechanism_support
+   OR          3             3                     True
+   IR          3             3                     True
+    B          3             0                    False
+
+=== Target compatibility ===
+{
+  "source_all_shared_features_finite": true,
+  "target_all_shared_features_finite": true,
+  "target_files": 16,
+  "target_windows": 64,
+  "domain_mean_shift_Dmu": 22.416276793472356,
+  "domain_cov_shift_Dsigma": 656.9786285401685
+}
+
+=== Independent recalculation ===
+{
+  "sample": "data/raw/source_domain/cwru_48khz_de/B007_0.mat",
+  "signal_var": "X122_DE_time",
+  "rpm": 1796.0,
+  "window_points": 48000,
+  "rms_formula_sqrt_mean_square": 0.14710492669108596,
+  "rms_formula_norm_over_sqrt_n": 0.1471049266910862,
+  "rms_abs_difference": 2.498001805406602e-16,
+  "bpfo_direct_hz": 107.30428106701365,
+  "bpfo_via_order_hz": 107.30428106701366,
+  "bpfo_abs_difference_hz": 1.4210854715202004e-14,
+  "recalc_pass": true
+}
+
+=== Acceptance criteria ===
+{
+  "no_file_leakage": true,
+  "all_four_classes_present": true,
+  "source_shared_features_finite": true,
+  "target_shared_features_finite_for_A_to_P": true,
+  "B2_macroF1_gt_dummy": true,
+  "B2_not_both_worse_than_B1": true,
+  "B2_all_class_recalls_nonzero": true,
+  "mechanism_not_failed_for_two_or_more_fault_classes": true,
+  "independent_recalc_pass": true
+}
+OVERALL_PASS: True

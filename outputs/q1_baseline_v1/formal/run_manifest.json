@@ -1,0 +1,70 @@
+{
+  "protocol": "Q1-EVAL-v1.0",
+  "experiment": "Q1-M1 48kHz-DE baseline",
+  "started_utc": "2026-09-15T17:25:50.796138+00:00",
+  "finished_utc": "2026-09-15T17:25:53.887296+00:00",
+  "git_sha_at_start": "a75dd25601595d1c24b97e60b3f91a5685787cd9",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "parameters": {
+    "source_fs_hz": 48000,
+    "target_fs_hz": 32000,
+    "window_seconds": 1.0,
+    "max_windows_per_file": 4,
+    "common_fmax_hz": 6000.0,
+    "n_splits": 4,
+    "seed": 20260916,
+    "B1_features": [
+      "rms",
+      "std",
+      "kurtosis",
+      "crest_factor",
+      "impulse_factor",
+      "shape_factor"
+    ],
+    "B2_features": [
+      "std",
+      "rms",
+      "peak_abs",
+      "ptp",
+      "skewness",
+      "kurtosis",
+      "crest_factor",
+      "impulse_factor",
+      "shape_factor",
+      "clearance_factor",
+      "dominant_freq_0_6k",
+      "spectral_centroid_0_6k",
+      "f95_0_6k",
+      "spectral_entropy_0_6k",
+      "energy_0_500",
+      "energy_500_1500",
+      "energy_1500_3000",
+      "energy_3000_6000"
+    ]
+  },
+  "data": {
+    "source_files": 56,
+    "source_class_counts": {
+      "OR": 28,
+      "B": 12,
+      "IR": 12,
+      "N": 4
+    },
+    "source_windows": 213,
+    "target_files": 16,
+    "target_windows": 64
+  },
+  "criteria": {
+    "no_file_leakage": true,
+    "all_four_classes_present": true,
+    "source_shared_features_finite": true,
+    "target_shared_features_finite_for_A_to_P": true,
+    "B2_macroF1_gt_dummy": true,
+    "B2_not_both_worse_than_B1": true,
+    "B2_all_class_recalls_nonzero": true,
+    "mechanism_not_failed_for_two_or_more_fault_classes": true,
+    "independent_recalc_pass": true
+  },
+  "overall_pass": true
+}

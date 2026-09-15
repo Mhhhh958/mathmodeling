@@ -1,0 +1,3 @@
+No protocol failure detected in Q1-M1 baseline run.
+Limitation: target A-P labels are unknown; no target-domain Accuracy/F1 is computed or claimed.
+Limitation: target bearing geometry and per-file exact RPM are unavailable; source bearing characteristic frequencies are not imposed as target truth.

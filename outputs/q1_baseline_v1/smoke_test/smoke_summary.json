@@ -1,0 +1,10 @@
+{
+  "source_representatives": 4,
+  "source_all_finite": true,
+  "target_sample": "A.mat",
+  "target_signal_var": "A",
+  "target_fs": 32000,
+  "target_window_length": 32000,
+  "target_all_features_finite": true,
+  "status": "PASS"
+}

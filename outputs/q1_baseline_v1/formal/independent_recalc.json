@@ -1,0 +1,13 @@
+{
+  "sample": "data/raw/source_domain/cwru_48khz_de/B007_0.mat",
+  "signal_var": "X122_DE_time",
+  "rpm": 1796.0,
+  "window_points": 48000,
+  "rms_formula_sqrt_mean_square": 0.14710492669108596,
+  "rms_formula_norm_over_sqrt_n": 0.1471049266910862,
+  "rms_abs_difference": 2.498001805406602e-16,
+  "bpfo_direct_hz": 107.30428106701365,
+  "bpfo_via_order_hz": 107.30428106701366,
+  "bpfo_abs_difference_hz": 1.4210854715202004e-14,
+  "recalc_pass": true
+}

@@ -1,0 +1,8 @@
+{
+  "source_all_shared_features_finite": true,
+  "target_all_shared_features_finite": true,
+  "target_files": 16,
+  "target_windows": 64,
+  "domain_mean_shift_Dmu": 22.416276793472356,
+  "domain_cov_shift_Dsigma": 656.9786285401685
+}
