@@ -1,0 +1,18 @@
+mat_files: 177
+readable: 177
+errors: 0
+source_files: 161
+target_files: 16
+source_label_counts: {'OR': 77, 'B': 40, 'IR': 40, 'N': 4}
+files_with_nonfinite: 0
+files_with_constant_signal: 0
+files_with_possible_clipping: 0
+exact_duplicate_file_rows: 0
+exact_duplicate_signal_rows: 0
+rpm_source_counts: {'MAT': 151, 'unknown': 16, 'filename': 10}
+target_unknown_labels: 16
+target_lengths_unique: [256000]
+source_duration_min_s: 1.3289166666666667
+source_duration_max_s: 10.097333333333333
+target_duration_min_s: 8.0
+target_duration_max_s: 8.0

@@ -1,0 +1,3 @@
+﻿file,sheet,rows,cols,missing_cells,columns
+data/metadata/auxiliary_tables/add_feature.xlsx,Sheet1,411,79,320,传感器位置|RPM|Level_0|Level_1|Level_2|Level_3|Level_4|Level_5|Level_6|Var_Name|故障类型|Nd|d|D|BPFO|BPFI|BSF|T_BPFO|T_BPFI|T_BSF|N_BPFO|N_BPFI|N_BSF|ID|特征1|特征2|特征3|特征4|特征5|特征6|特征7|特征8|特征9|特征10|特征11|特征12|特征13|特征14|特征15|特征16|特征17|特征18|特征19|特征20|特征21|特征22|特征23|特征24|特征25|特征26
+data/metadata/cycle_statistics.xlsx,Sheet1,411,24,320,传感器位置|RPM|Level_0|Level_1|Level_2|Level_3|Level_4|Level_5|Level_6|Var_Name|故障类型|Nd|d|D|BPFO|BPFI|BSF|T_BPFO|T_BPFI|T_BSF|N_BPFO|N_BPFI|N_BSF|ID
