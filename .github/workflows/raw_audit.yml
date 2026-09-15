@@ -1,0 +1,38 @@
+name: Raw Data Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/raw_audit_enhanced.py'
+      - '.github/workflows/raw_audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install audit dependencies
+        run: pip install numpy pandas scipy openpyxl
+      - name: Run enhanced raw audit
+        run: python scripts/raw_audit_enhanced.py
+      - name: Commit audit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/raw_audit
+          if git diff --cached --quiet; then
+            echo "No audit output changes"
+          else
+            git commit -m "Add enhanced raw audit results"
+            git push
+          fi
