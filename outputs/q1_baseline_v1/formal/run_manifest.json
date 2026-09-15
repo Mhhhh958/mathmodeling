@@ -1,9 +1,9 @@
 {
   "protocol": "Q1-EVAL-v1.0",
   "experiment": "Q1-M1 48kHz-DE baseline",
-  "started_utc": "2026-09-15T17:25:50.796138+00:00",
-  "finished_utc": "2026-09-15T17:25:53.887296+00:00",
-  "git_sha_at_start": "a75dd25601595d1c24b97e60b3f91a5685787cd9",
+  "started_utc": "2026-09-15T17:27:30.367715+00:00",
+  "finished_utc": "2026-09-15T17:27:33.330564+00:00",
+  "git_sha_at_start": "e9c7e1f33d89cc346c77e1014de3f3e8c34a106f",
   "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
   "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
   "parameters": {

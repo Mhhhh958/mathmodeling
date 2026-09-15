@@ -1,0 +1,33 @@
+Q1 baseline v1 starting
+ROOT=/home/runner/work/mathmodeling/mathmodeling
+git_sha=e9c7e1f33d89cc346c77e1014de3f3e8c34a106f
+48k-DE source files: 56
+class counts: {'OR': 28, 'B': 12, 'IR': 12, 'N': 4}
+smoke={"source_representatives": 4, "source_all_finite": true, "target_sample": "A.mat", "target_signal_var": "A", "target_fs": 32000, "target_window_length": 32000, "target_all_features_finite": true, "status": "PASS"}
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+  warnings.warn(
+    model  n_files  macro_f1  balanced_accuracy  accuracy  recall_B  recall_IR  recall_OR  recall_N
+ B0_dummy       56  0.166667           0.250000  0.500000  0.000000   0.000000       1.00      0.00
+  B1_time       56  0.550091           0.645833  0.553571  0.500000   0.583333       0.50      1.00
+B2_shared       56  0.702029           0.687500  0.696429  0.583333   0.666667       0.75      0.75
+label  n_checked  n_ratio_gt_1  class_mechanism_support
+   OR          3             3                     True
+   IR          3             3                     True
+    B          3             0                    False
+criteria={"no_file_leakage": true, "all_four_classes_present": true, "source_shared_features_finite": true, "target_shared_features_finite_for_A_to_P": true, "B2_macroF1_gt_dummy": true, "B2_not_both_worse_than_B1": true, "B2_all_class_recalls_nonzero": true, "mechanism_not_failed_for_two_or_more_fault_classes": true, "independent_recalc_pass": true}
+OVERALL_PASS=True
+OUTPUT=/home/runner/work/mathmodeling/mathmodeling/outputs/q1_baseline_v1/formal
