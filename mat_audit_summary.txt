@@ -1,0 +1,234 @@
+=== E题 MAT 数据完整性审计 ===
+
+MAT文件总数: 177
+成功读取: 177
+读取失败: 0
+
+=== 各目录文件数 ===
+source_domain\cwru_12khz_de: 60
+source_domain\cwru_12khz_fe: 45
+source_domain\cwru_48khz_de: 52
+source_domain\cwru_48khz_normal: 4
+target_domain\train_bearing_a_to_p: 16
+
+=== 变量结构模式 ===
+1 个文件: ('X118RPM', 'X118_BA_time', 'X118_DE_time', 'X118_FE_time')
+1 个文件: ('X119RPM', 'X119_BA_time', 'X119_DE_time', 'X119_FE_time')
+1 个文件: ('X120RPM', 'X120_BA_time', 'X120_DE_time', 'X120_FE_time')
+1 个文件: ('X121RPM', 'X121_BA_time', 'X121_DE_time', 'X121_FE_time')
+1 个文件: ('X185RPM', 'X185_BA_time', 'X185_DE_time', 'X185_FE_time')
+1 个文件: ('X186RPM', 'X186_BA_time', 'X186_DE_time', 'X186_FE_time')
+1 个文件: ('X187RPM', 'X187_BA_time', 'X187_DE_time', 'X187_FE_time')
+1 个文件: ('X188RPM', 'X188_BA_time', 'X188_DE_time', 'X188_FE_time')
+1 个文件: ('X222RPM', 'X222_BA_time', 'X222_DE_time', 'X222_FE_time')
+1 个文件: ('X223RPM', 'X223_BA_time', 'X223_DE_time', 'X223_FE_time')
+1 个文件: ('X224RPM', 'X224_BA_time', 'X224_DE_time', 'X224_FE_time')
+1 个文件: ('X225RPM', 'X225_BA_time', 'X225_DE_time', 'X225_FE_time')
+1 个文件: ('X048_DE_time',)
+1 个文件: ('X049_DE_time',)
+1 个文件: ('X050_DE_time',)
+1 个文件: ('X051_DE_time',)
+1 个文件: ('X105RPM', 'X105_BA_time', 'X105_DE_time', 'X105_FE_time')
+1 个文件: ('X106RPM', 'X106_BA_time', 'X106_DE_time', 'X106_FE_time')
+1 个文件: ('X107RPM', 'X107_BA_time', 'X107_DE_time', 'X107_FE_time')
+1 个文件: ('X108RPM', 'X108_BA_time', 'X108_DE_time', 'X108_FE_time')
+1 个文件: ('X169RPM', 'X169_BA_time', 'X169_DE_time', 'X169_FE_time')
+1 个文件: ('X170RPM', 'X170_BA_time', 'X170_DE_time', 'X170_FE_time')
+1 个文件: ('X171RPM', 'X171_BA_time', 'X171_DE_time', 'X171_FE_time')
+1 个文件: ('X172RPM', 'X172_BA_time', 'X172_DE_time', 'X172_FE_time')
+1 个文件: ('X209RPM', 'X209_BA_time', 'X209_DE_time', 'X209_FE_time')
+1 个文件: ('X210RPM', 'X210_BA_time', 'X210_DE_time', 'X210_FE_time')
+1 个文件: ('X211RPM', 'X211_BA_time', 'X211_DE_time', 'X211_FE_time')
+1 个文件: ('X212RPM', 'X212_BA_time', 'X212_DE_time', 'X212_FE_time')
+1 个文件: ('X056_DE_time',)
+1 个文件: ('X057_DE_time',)
+1 个文件: ('X058_DE_time',)
+1 个文件: ('X059_DE_time',)
+1 个文件: ('X156RPM', 'X156_BA_time', 'X156_DE_time', 'X156_FE_time')
+1 个文件: ('X158RPM', 'X158_BA_time', 'X158_DE_time', 'X158_FE_time')
+1 个文件: ('X159RPM', 'X159_BA_time', 'X159_DE_time', 'X159_FE_time')
+1 个文件: ('X160RPM', 'X160_BA_time', 'X160_DE_time', 'X160_FE_time')
+1 个文件: ('X144RPM', 'X144_BA_time', 'X144_DE_time', 'X144_FE_time')
+1 个文件: ('X145RPM', 'X145_BA_time', 'X145_DE_time', 'X145_FE_time')
+1 个文件: ('X146RPM', 'X146_BA_time', 'X146_DE_time', 'X146_FE_time')
+1 个文件: ('X147RPM', 'X147_BA_time', 'X147_DE_time', 'X147_FE_time')
+1 个文件: ('X130RPM', 'X130_BA_time', 'X130_DE_time', 'X130_FE_time')
+1 个文件: ('X131RPM', 'X131_BA_time', 'X131_DE_time', 'X131_FE_time')
+1 个文件: ('X132RPM', 'X132_BA_time', 'X132_DE_time', 'X132_FE_time')
+1 个文件: ('X133RPM', 'X133_BA_time', 'X133_DE_time', 'X133_FE_time')
+1 个文件: ('X197RPM', 'X197_BA_time', 'X197_DE_time', 'X197_FE_time')
+1 个文件: ('X198RPM', 'X198_BA_time', 'X198_DE_time', 'X198_FE_time')
+1 个文件: ('X199RPM', 'X199_BA_time', 'X199_DE_time', 'X199_FE_time')
+1 个文件: ('X200RPM', 'X200_BA_time', 'X200_DE_time', 'X200_FE_time')
+1 个文件: ('X258RPM', 'X258_BA_time', 'X258_DE_time', 'X258_FE_time')
+1 个文件: ('X259RPM', 'X259_BA_time', 'X259_DE_time', 'X259_FE_time')
+1 个文件: ('X260RPM', 'X260_BA_time', 'X260_DE_time', 'X260_FE_time')
+1 个文件: ('X261RPM', 'X261_BA_time', 'X261_DE_time', 'X261_FE_time')
+1 个文件: ('X246RPM', 'X246_BA_time', 'X246_DE_time', 'X246_FE_time')
+1 个文件: ('X247RPM', 'X247_BA_time', 'X247_DE_time', 'X247_FE_time')
+1 个文件: ('X248RPM', 'X248_BA_time', 'X248_DE_time', 'X248_FE_time')
+1 个文件: ('X249RPM', 'X249_BA_time', 'X249_DE_time', 'X249_FE_time')
+1 个文件: ('X234RPM', 'X234_BA_time', 'X234_DE_time', 'X234_FE_time')
+1 个文件: ('X235RPM', 'X235_BA_time', 'X235_DE_time', 'X235_FE_time')
+1 个文件: ('X236RPM', 'X236_BA_time', 'X236_DE_time', 'X236_FE_time')
+1 个文件: ('X237RPM', 'X237_BA_time', 'X237_DE_time', 'X237_FE_time')
+1 个文件: ('X282RPM', 'X282_BA_time', 'X282_DE_time', 'X282_FE_time')
+1 个文件: ('X283RPM', 'X283_BA_time', 'X283_DE_time', 'X283_FE_time')
+1 个文件: ('X284RPM', 'X284_BA_time', 'X284_DE_time', 'X284_FE_time')
+1 个文件: ('X285RPM', 'X285_BA_time', 'X285_DE_time', 'X285_FE_time')
+1 个文件: ('X286RPM', 'X286_BA_time', 'X286_DE_time', 'X286_FE_time')
+1 个文件: ('X287RPM', 'X287_BA_time', 'X287_DE_time', 'X287_FE_time')
+1 个文件: ('X288RPM', 'X288_BA_time', 'X288_DE_time', 'X288_FE_time')
+1 个文件: ('X289RPM', 'X289_BA_time', 'X289_DE_time', 'X289_FE_time')
+1 个文件: ('X290RPM', 'X290_BA_time', 'X290_DE_time', 'X290_FE_time')
+1 个文件: ('X291RPM', 'X291_BA_time', 'X291_DE_time', 'X291_FE_time')
+1 个文件: ('X292RPM', 'X292_BA_time', 'X292_DE_time', 'X292_FE_time')
+1 个文件: ('X293RPM', 'X293_BA_time', 'X293_DE_time', 'X293_FE_time')
+1 个文件: ('X278RPM', 'X278_BA_time', 'X278_DE_time', 'X278_FE_time')
+1 个文件: ('X279RPM', 'X279_BA_time', 'X279_DE_time', 'X279_FE_time')
+1 个文件: ('X280RPM', 'X280_BA_time', 'X280_DE_time', 'X280_FE_time')
+1 个文件: ('X281RPM', 'X281_BA_time', 'X281_DE_time', 'X281_FE_time')
+1 个文件: ('X274RPM', 'X274_BA_time', 'X274_DE_time', 'X274_FE_time')
+1 个文件: ('X275RPM', 'X275_BA_time', 'X275_DE_time', 'X275_FE_time')
+1 个文件: ('X276RPM', 'X276_BA_time', 'X276_DE_time', 'X276_FE_time')
+1 个文件: ('X277RPM', 'X277_BA_time', 'X277_DE_time', 'X277_FE_time')
+1 个文件: ('X270RPM', 'X270_BA_time', 'X270_DE_time', 'X270_FE_time')
+1 个文件: ('X271RPM', 'X271_BA_time', 'X271_DE_time', 'X271_FE_time')
+1 个文件: ('X272RPM', 'X272_BA_time', 'X272_DE_time', 'X272_FE_time')
+1 个文件: ('X273RPM', 'X273_BA_time', 'X273_DE_time', 'X273_FE_time')
+1 个文件: ('X302RPM', 'X302_BA_time', 'X302_DE_time', 'X302_FE_time')
+1 个文件: ('X305RPM', 'X305_BA_time', 'X305_DE_time', 'X305_FE_time')
+1 个文件: ('X306RPM', 'X306_BA_time', 'X306_DE_time', 'X306_FE_time')
+1 个文件: ('X307RPM', 'X307_BA_time', 'X307_DE_time', 'X307_FE_time')
+1 个文件: ('X298RPM', 'X298_BA_time', 'X298_DE_time', 'X298_FE_time')
+1 个文件: ('X299RPM', 'X299_BA_time', 'X299_DE_time', 'X299_FE_time')
+1 个文件: ('X300RPM', 'X300_BA_time', 'X300_DE_time', 'X300_FE_time')
+1 个文件: ('X301RPM', 'X301_BA_time', 'X301_DE_time', 'X301_FE_time')
+1 个文件: ('X294RPM', 'X294_BA_time', 'X294_DE_time', 'X294_FE_time')
+1 个文件: ('X295RPM', 'X295_BA_time', 'X295_DE_time', 'X295_FE_time')
+1 个文件: ('X296RPM', 'X296_BA_time', 'X296_DE_time', 'X296_FE_time')
+1 个文件: ('X297RPM', 'X297_BA_time', 'X297_DE_time', 'X297_FE_time')
+1 个文件: ('X310RPM', 'X310_BA_time', 'X310_DE_time', 'X310_FE_time')
+1 个文件: ('X309RPM', 'X309_BA_time', 'X309_DE_time', 'X309_FE_time')
+1 个文件: ('X311RPM', 'X311_BA_time', 'X311_DE_time', 'X311_FE_time')
+1 个文件: ('X312RPM', 'X312_BA_time', 'X312_DE_time', 'X312_FE_time')
+1 个文件: ('X313RPM', 'X313_BA_time', 'X313_DE_time', 'X313_FE_time')
+1 个文件: ('X316RPM', 'X316_BA_time', 'X316_DE_time', 'X316_FE_time')
+1 个文件: ('X317RPM', 'X317_BA_time', 'X317_DE_time', 'X317_FE_time')
+1 个文件: ('X318RPM', 'X318_BA_time', 'X318_DE_time', 'X318_FE_time')
+1 个文件: ('X315RPM', 'X315_BA_time', 'X315_DE_time', 'X315_FE_time')
+1 个文件: ('X122RPM', 'X122_DE_time', 'X122_FE_time')
+1 个文件: ('X123RPM', 'X123_DE_time', 'X123_FE_time')
+1 个文件: ('X124RPM', 'X124_DE_time', 'X124_FE_time')
+1 个文件: ('X125RPM', 'X125_DE_time', 'X125_FE_time')
+1 个文件: ('X189RPM', 'X189_DE_time', 'X189_FE_time')
+1 个文件: ('X190RPM', 'X190_DE_time', 'X190_FE_time')
+1 个文件: ('X191RPM', 'X191_DE_time', 'X191_FE_time')
+1 个文件: ('X192RPM', 'X192_DE_time', 'X192_FE_time')
+1 个文件: ('X226RPM', 'X226_DE_time', 'X226_FE_time')
+1 个文件: ('X227RPM', 'X227_DE_time', 'X227_FE_time')
+1 个文件: ('X228RPM', 'X228_DE_time', 'X228_FE_time')
+1 个文件: ('X229RPM', 'X229_DE_time', 'X229_FE_time')
+1 个文件: ('X109RPM', 'X109_DE_time', 'X109_FE_time')
+1 个文件: ('X110RPM', 'X110_DE_time', 'X110_FE_time')
+1 个文件: ('X111RPM', 'X111_DE_time', 'X111_FE_time')
+1 个文件: ('X112RPM', 'X112_DE_time', 'X112_FE_time')
+1 个文件: ('X173RPM', 'X173_DE_time', 'X173_FE_time')
+1 个文件: ('X175RPM', 'X175_DE_time', 'X175_FE_time')
+1 个文件: ('X176RPM', 'X176_DE_time', 'X176_FE_time')
+1 个文件: ('X177RPM', 'X177_DE_time', 'X177_FE_time')
+1 个文件: ('X213RPM', 'X213_DE_time', 'X213_FE_time')
+1 个文件: ('X214RPM', 'X214_DE_time', 'X214_FE_time')
+1 个文件: ('X215RPM', 'X215_DE_time', 'X215_FE_time')
+1 个文件: ('X217RPM', 'X217_DE_time', 'X217_FE_time')
+1 个文件: ('X161RPM', 'X161_DE_time', 'X161_FE_time')
+1 个文件: ('X162RPM', 'X162_DE_time', 'X162_FE_time')
+1 个文件: ('X163RPM', 'X163_DE_time', 'X163_FE_time')
+1 个文件: ('X164RPM', 'X164_DE_time', 'X164_FE_time')
+1 个文件: ('X148RPM', 'X148_DE_time', 'X148_FE_time')
+1 个文件: ('X149RPM', 'X149_DE_time', 'X149_FE_time')
+1 个文件: ('X150RPM', 'X150_DE_time', 'X150_FE_time')
+1 个文件: ('X151RPM', 'X151_DE_time', 'X151_FE_time')
+1 个文件: ('X135RPM', 'X135_DE_time', 'X135_FE_time')
+1 个文件: ('X136RPM', 'X136_DE_time', 'X136_FE_time')
+1 个文件: ('X137RPM', 'X137_DE_time', 'X137_FE_time')
+1 个文件: ('X138RPM', 'X138_DE_time', 'X138_FE_time')
+1 个文件: ('X201RPM', 'X201_DE_time', 'X201_FE_time')
+1 个文件: ('X202RPM', 'X202_DE_time', 'X202_FE_time')
+1 个文件: ('X203RPM', 'X203_DE_time', 'X203_FE_time')
+1 个文件: ('X204RPM', 'X204_DE_time', 'X204_FE_time')
+1 个文件: ('X262RPM', 'X262_DE_time', 'X262_FE_time')
+1 个文件: ('X263RPM', 'X263_DE_time', 'X263_FE_time')
+1 个文件: ('X264RPM', 'X264_DE_time', 'X264_FE_time')
+1 个文件: ('X265RPM', 'X265_DE_time', 'X265_FE_time')
+1 个文件: ('X250RPM', 'X250_DE_time', 'X250_FE_time')
+1 个文件: ('X251RPM', 'X251_DE_time', 'X251_FE_time')
+1 个文件: ('X252RPM', 'X252_DE_time', 'X252_FE_time')
+1 个文件: ('X253RPM', 'X253_DE_time', 'X253_FE_time')
+1 个文件: ('X238RPM', 'X238_DE_time', 'X238_FE_time')
+1 个文件: ('X239RPM', 'X239_DE_time', 'X239_FE_time')
+1 个文件: ('X240RPM', 'X240_DE_time', 'X240_FE_time')
+1 个文件: ('X241RPM', 'X241_DE_time', 'X241_FE_time')
+1 个文件: ('X097RPM', 'X097_DE_time', 'X097_FE_time')
+1 个文件: ('X098_DE_time', 'X098_FE_time')
+1 个文件: ('X099_DE_time', 'X099_FE_time')
+1 个文件: ('X100RPM', 'X100_DE_time', 'X100_FE_time')
+1 个文件: ('A',)
+1 个文件: ('B',)
+1 个文件: ('C',)
+1 个文件: ('D',)
+1 个文件: ('E',)
+1 个文件: ('F',)
+1 个文件: ('G',)
+1 个文件: ('H',)
+1 个文件: ('I',)
+1 个文件: ('J',)
+1 个文件: ('K',)
+1 个文件: ('L',)
+1 个文件: ('M',)
+1 个文件: ('N',)
+1 个文件: ('O',)
+1 个文件: ('P',)
+
+=== 目标域 A-P 信号长度 ===
+A: [256000]
+B: [256000]
+C: [256000]
+D: [256000]
+E: [256000]
+F: [256000]
+G: [256000]
+H: [256000]
+I: [256000]
+J: [256000]
+K: [256000]
+L: [256000]
+M: [256000]
+N: [256000]
+O: [256000]
+P: [256000]
+
+=== 源域 RPM 示例（前20个） ===
+source_domain\cwru_12khz_de\B007_0.mat: 1796.000
+source_domain\cwru_12khz_de\B007_1.mat: 1772.000
+source_domain\cwru_12khz_de\B007_2.mat: 1748.000
+source_domain\cwru_12khz_de\B007_3.mat: 1722.000
+source_domain\cwru_12khz_de\B014_0.mat: 1796.000
+source_domain\cwru_12khz_de\B014_1.mat: 1772.000
+source_domain\cwru_12khz_de\B014_2.mat: 1749.000
+source_domain\cwru_12khz_de\B014_3.mat: 1724.000
+source_domain\cwru_12khz_de\B021_0.mat: 1796.000
+source_domain\cwru_12khz_de\B021_1.mat: 1774.000
+source_domain\cwru_12khz_de\B021_2.mat: 1754.000
+source_domain\cwru_12khz_de\B021_3.mat: 1729.000
+source_domain\cwru_12khz_de\IR007_0.mat: 1797.000
+source_domain\cwru_12khz_de\IR007_1.mat: 1772.000
+source_domain\cwru_12khz_de\IR007_2.mat: 1748.000
+source_domain\cwru_12khz_de\IR007_3.mat: 1721.000
+source_domain\cwru_12khz_de\IR014_0.mat: 1796.000
+source_domain\cwru_12khz_de\IR014_1.mat: 1774.000
+source_domain\cwru_12khz_de\IR014_2.mat: 1752.000
+source_domain\cwru_12khz_de\IR014_3.mat: 1728.000
+
+=== 读取失败文件 ===
+无

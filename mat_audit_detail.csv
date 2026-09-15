@@ -1,0 +1,178 @@
+﻿file,vars,vector_lengths,rpm,status
+source_domain\cwru_12khz_de\B007_0.mat,"X118_DE_time:(96000, 1):double | X118_FE_time:(96000, 1):double | X118_BA_time:(96000, 1):double | X118RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\B007_1.mat,"X119_DE_time:(96000, 1):double | X119_FE_time:(96000, 1):double | X119_BA_time:(96000, 1):double | X119RPM:(1, 1):double",96000;96000;96000;1,1772.000,OK
+source_domain\cwru_12khz_de\B007_2.mat,"X120_DE_time:(96000, 1):double | X120_FE_time:(96000, 1):double | X120_BA_time:(96000, 1):double | X120RPM:(1, 1):double",96000;96000;96000;1,1748.000,OK
+source_domain\cwru_12khz_de\B007_3.mat,"X121_DE_time:(96000, 1):double | X121_FE_time:(96000, 1):double | X121_BA_time:(96000, 1):double | X121RPM:(1, 1):double",96000;96000;96000;1,1722.000,OK
+source_domain\cwru_12khz_de\B014_0.mat,"X185_DE_time:(96000, 1):double | X185_FE_time:(96000, 1):double | X185_BA_time:(96000, 1):double | X185RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\B014_1.mat,"X186_DE_time:(96000, 1):double | X186_FE_time:(96000, 1):double | X186_BA_time:(96000, 1):double | X186RPM:(1, 1):double",96000;96000;96000;1,1772.000,OK
+source_domain\cwru_12khz_de\B014_2.mat,"X187_DE_time:(96000, 1):double | X187_FE_time:(96000, 1):double | X187_BA_time:(96000, 1):double | X187RPM:(1, 1):double",96000;96000;96000;1,1749.000,OK
+source_domain\cwru_12khz_de\B014_3.mat,"X188_DE_time:(96000, 1):double | X188_FE_time:(96000, 1):double | X188_BA_time:(96000, 1):double | X188RPM:(1, 1):double",96000;96000;96000;1,1724.000,OK
+source_domain\cwru_12khz_de\B021_0.mat,"X222_DE_time:(96000, 1):double | X222_FE_time:(96000, 1):double | X222_BA_time:(96000, 1):double | X222RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\B021_1.mat,"X223_DE_time:(96000, 1):double | X223_FE_time:(96000, 1):double | X223_BA_time:(96000, 1):double | X223RPM:(1, 1):double",96000;96000;96000;1,1774.000,OK
+source_domain\cwru_12khz_de\B021_2.mat,"X224_DE_time:(96000, 1):double | X224_FE_time:(96000, 1):double | X224_BA_time:(96000, 1):double | X224RPM:(1, 1):double",96000;96000;96000;1,1754.000,OK
+source_domain\cwru_12khz_de\B021_3.mat,"X225_DE_time:(96000, 1):double | X225_FE_time:(96000, 1):double | X225_BA_time:(96000, 1):double | X225RPM:(1, 1):double",96000;96000;96000;1,1729.000,OK
+source_domain\cwru_12khz_de\B028_0_(1797rpm).mat,"X048_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\B028_1_(1772rpm).mat,"X049_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\B028_2_(1750rpm).mat,"X050_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\B028_3_(1730rpm).mat,"X051_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\IR007_0.mat,"X105_DE_time:(96000, 1):double | X105_FE_time:(96000, 1):double | X105_BA_time:(96000, 1):double | X105RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_de\IR007_1.mat,"X106_DE_time:(96000, 1):double | X106_FE_time:(96000, 1):double | X106_BA_time:(96000, 1):double | X106RPM:(1, 1):double",96000;96000;96000;1,1772.000,OK
+source_domain\cwru_12khz_de\IR007_2.mat,"X107_DE_time:(96000, 1):double | X107_FE_time:(96000, 1):double | X107_BA_time:(96000, 1):double | X107RPM:(1, 1):double",96000;96000;96000;1,1748.000,OK
+source_domain\cwru_12khz_de\IR007_3.mat,"X108_DE_time:(96000, 1):double | X108_FE_time:(96000, 1):double | X108_BA_time:(96000, 1):double | X108RPM:(1, 1):double",96000;96000;96000;1,1721.000,OK
+source_domain\cwru_12khz_de\IR014_0.mat,"X169_DE_time:(96000, 1):double | X169_FE_time:(96000, 1):double | X169_BA_time:(96000, 1):double | X169RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\IR014_1.mat,"X170_DE_time:(96000, 1):double | X170_FE_time:(96000, 1):double | X170_BA_time:(96000, 1):double | X170RPM:(1, 1):double",96000;96000;96000;1,1774.000,OK
+source_domain\cwru_12khz_de\IR014_2.mat,"X171_DE_time:(96000, 1):double | X171_FE_time:(96000, 1):double | X171_BA_time:(96000, 1):double | X171RPM:(1, 1):double",96000;96000;96000;1,1752.000,OK
+source_domain\cwru_12khz_de\IR014_3.mat,"X172_DE_time:(96000, 1):double | X172_FE_time:(96000, 1):double | X172_BA_time:(96000, 1):double | X172RPM:(1, 1):double",96000;96000;96000;1,1728.000,OK
+source_domain\cwru_12khz_de\IR021_0.mat,"X209_DE_time:(96000, 1):double | X209_FE_time:(96000, 1):double | X209_BA_time:(96000, 1):double | X209RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_de\IR021_1.mat,"X210_DE_time:(96000, 1):double | X210_FE_time:(96000, 1):double | X210_BA_time:(96000, 1):double | X210RPM:(1, 1):double",96000;96000;96000;1,1774.000,OK
+source_domain\cwru_12khz_de\IR021_2.mat,"X211_DE_time:(96000, 1):double | X211_FE_time:(96000, 1):double | X211_BA_time:(96000, 1):double | X211RPM:(1, 1):double",96000;96000;96000;1,1752.000,OK
+source_domain\cwru_12khz_de\IR021_3.mat,"X212_DE_time:(96000, 1):double | X212_FE_time:(96000, 1):double | X212_BA_time:(96000, 1):double | X212RPM:(1, 1):double",96000;96000;96000;1,1728.000,OK
+source_domain\cwru_12khz_de\IR028_0_(1797rpm).mat,"X056_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\IR028_1_(1772rpm).mat,"X057_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\IR028_2_(1750rpm).mat,"X058_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\IR028_3_(1730rpm).mat,"X059_DE_time:(96000, 1):double",96000,,OK
+source_domain\cwru_12khz_de\OR007@12_0.mat,"X156_DE_time:(96000, 1):double | X156_FE_time:(96000, 1):double | X156_BA_time:(96000, 1):double | X156RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_de\OR007@12_1.mat,"X158_DE_time:(96000, 1):double | X158_FE_time:(96000, 1):double | X158_BA_time:(96000, 1):double | X158RPM:(1, 1):double",96000;96000;96000;1,1773.000,OK
+source_domain\cwru_12khz_de\OR007@12_2.mat,"X159_DE_time:(96000, 1):double | X159_FE_time:(96000, 1):double | X159_BA_time:(96000, 1):double | X159RPM:(1, 1):double",96000;96000;96000;1,1750.000,OK
+source_domain\cwru_12khz_de\OR007@12_3.mat,"X160_DE_time:(96000, 1):double | X160_FE_time:(96000, 1):double | X160_BA_time:(96000, 1):double | X160RPM:(1, 1):double",96000;96000;96000;1,1724.000,OK
+source_domain\cwru_12khz_de\OR007@3_0.mat,"X144_DE_time:(96000, 1):double | X144_FE_time:(96000, 1):double | X144_BA_time:(96000, 1):double | X144RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_de\OR007@3_1.mat,"X145_DE_time:(96000, 1):double | X145_FE_time:(96000, 1):double | X145_BA_time:(96000, 1):double | X145RPM:(1, 1):double",96000;96000;96000;1,1774.000,OK
+source_domain\cwru_12khz_de\OR007@3_2.mat,"X146_DE_time:(96000, 1):double | X146_FE_time:(96000, 1):double | X146_BA_time:(96000, 1):double | X146RPM:(1, 1):double",96000;96000;96000;1,1751.000,OK
+source_domain\cwru_12khz_de\OR007@3_3.mat,"X147_DE_time:(96000, 1):double | X147_FE_time:(96000, 1):double | X147_BA_time:(96000, 1):double | X147RPM:(1, 1):double",96000;96000;96000;1,1725.000,OK
+source_domain\cwru_12khz_de\OR007@6_0.mat,"X130_DE_time:(96000, 1):double | X130_FE_time:(96000, 1):double | X130_BA_time:(96000, 1):double | X130RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\OR007@6_1.mat,"X131_DE_time:(96000, 1):double | X131_FE_time:(96000, 1):double | X131_BA_time:(96000, 1):double | X131RPM:(1, 1):double",96000;96000;96000;1,1773.000,OK
+source_domain\cwru_12khz_de\OR007@6_2.mat,"X132_DE_time:(96000, 1):double | X132_FE_time:(96000, 1):double | X132_BA_time:(96000, 1):double | X132RPM:(1, 1):double",96000;96000;96000;1,1750.000,OK
+source_domain\cwru_12khz_de\OR007@6_3.mat,"X133_DE_time:(96000, 1):double | X133_FE_time:(96000, 1):double | X133_BA_time:(96000, 1):double | X133RPM:(1, 1):double",96000;96000;96000;1,1725.000,OK
+source_domain\cwru_12khz_de\OR014@6_0.mat,"X197_DE_time:(96000, 1):double | X197_FE_time:(96000, 1):double | X197_BA_time:(96000, 1):double | X197RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\OR014@6_1.mat,"X198_DE_time:(96000, 1):double | X198_FE_time:(96000, 1):double | X198_BA_time:(96000, 1):double | X198RPM:(1, 1):double",96000;96000;96000;1,1772.000,OK
+source_domain\cwru_12khz_de\OR014@6_2.mat,"X199_DE_time:(96000, 1):double | X199_FE_time:(96000, 1):double | X199_BA_time:(96000, 1):double | X199RPM:(1, 1):double",96000;96000;96000;1,1749.000,OK
+source_domain\cwru_12khz_de\OR014@6_3.mat,"X200_DE_time:(96000, 1):double | X200_FE_time:(96000, 1):double | X200_BA_time:(96000, 1):double | X200RPM:(1, 1):double",96000;96000;96000;1,1723.000,OK
+source_domain\cwru_12khz_de\OR021@12_0.mat,"X258_DE_time:(96000, 1):double | X258_FE_time:(96000, 1):double | X258_BA_time:(96000, 1):double | X258RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\OR021@12_1.mat,"X259_DE_time:(96000, 1):double | X259_FE_time:(96000, 1):double | X259_BA_time:(96000, 1):double | X259RPM:(1, 1):double",96000;96000;96000;1,1771.000,OK
+source_domain\cwru_12khz_de\OR021@12_2.mat,"X260_DE_time:(96000, 1):double | X260_FE_time:(96000, 1):double | X260_BA_time:(96000, 1):double | X260RPM:(1, 1):double",96000;96000;96000;1,1746.000,OK
+source_domain\cwru_12khz_de\OR021@12_3.mat,"X261_DE_time:(96000, 1):double | X261_FE_time:(96000, 1):double | X261_BA_time:(96000, 1):double | X261RPM:(1, 1):double",96000;96000;96000;1,1718.000,OK
+source_domain\cwru_12khz_de\OR021@3_0.mat,"X246_DE_time:(96000, 1):double | X246_FE_time:(96000, 1):double | X246_BA_time:(96000, 1):double | X246RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\OR021@3_1.mat,"X247_DE_time:(96000, 1):double | X247_FE_time:(96000, 1):double | X247_BA_time:(96000, 1):double | X247RPM:(1, 1):double",96000;96000;96000;1,1771.000,OK
+source_domain\cwru_12khz_de\OR021@3_2.mat,"X248_DE_time:(96000, 1):double | X248_FE_time:(96000, 1):double | X248_BA_time:(96000, 1):double | X248RPM:(1, 1):double",96000;96000;96000;1,1747.000,OK
+source_domain\cwru_12khz_de\OR021@3_3.mat,"X249_DE_time:(96000, 1):double | X249_FE_time:(96000, 1):double | X249_BA_time:(96000, 1):double | X249RPM:(1, 1):double",96000;96000;96000;1,1719.000,OK
+source_domain\cwru_12khz_de\OR021@6_0.mat,"X234_DE_time:(96000, 1):double | X234_FE_time:(96000, 1):double | X234_BA_time:(96000, 1):double | X234RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_de\OR021@6_1.mat,"X235_DE_time:(96000, 1):double | X235_FE_time:(96000, 1):double | X235_BA_time:(96000, 1):double | X235RPM:(1, 1):double",96000;96000;96000;1,1771.000,OK
+source_domain\cwru_12khz_de\OR021@6_2.mat,"X236_DE_time:(96000, 1):double | X236_FE_time:(96000, 1):double | X236_BA_time:(96000, 1):double | X236RPM:(1, 1):double",96000;96000;96000;1,1748.000,OK
+source_domain\cwru_12khz_de\OR021@6_3.mat,"X237_DE_time:(96000, 1):double | X237_FE_time:(96000, 1):double | X237_BA_time:(96000, 1):double | X237RPM:(1, 1):double",96000;96000;96000;1,1721.000,OK
+source_domain\cwru_12khz_fe\B007_0.mat,"X282_DE_time:(96000, 1):double | X282_FE_time:(96000, 1):double | X282_BA_time:(96000, 1):double | X282RPM:(1, 1):double",96000;96000;96000;1,1798.000,OK
+source_domain\cwru_12khz_fe\B007_1.mat,"X283_DE_time:(96000, 1):double | X283_FE_time:(96000, 1):double | X283_BA_time:(96000, 1):double | X283RPM:(1, 1):double",96000;96000;96000;1,1777.000,OK
+source_domain\cwru_12khz_fe\B007_2.mat,"X284_DE_time:(96000, 1):double | X284_FE_time:(96000, 1):double | X284_BA_time:(96000, 1):double | X284RPM:(1, 1):double",96000;96000;96000;1,1755.000,OK
+source_domain\cwru_12khz_fe\B007_3.mat,"X285_DE_time:(96000, 1):double | X285_FE_time:(96000, 1):double | X285_BA_time:(96000, 1):double | X285RPM:(1, 1):double",96000;96000;96000;1,1732.000,OK
+source_domain\cwru_12khz_fe\B014_0.mat,"X286_DE_time:(96000, 1):double | X286_FE_time:(96000, 1):double | X286_BA_time:(96000, 1):double | X286RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_fe\B014_1.mat,"X287_DE_time:(96000, 1):double | X287_FE_time:(96000, 1):double | X287_BA_time:(96000, 1):double | X287RPM:(1, 1):double",96000;96000;96000;1,1775.000,OK
+source_domain\cwru_12khz_fe\B014_2.mat,"X288_DE_time:(96000, 1):double | X288_FE_time:(96000, 1):double | X288_BA_time:(96000, 1):double | X288RPM:(1, 1):double",96000;96000;96000;1,1755.000,OK
+source_domain\cwru_12khz_fe\B014_3.mat,"X289_DE_time:(96000, 1):double | X289_FE_time:(96000, 1):double | X289_BA_time:(96000, 1):double | X289RPM:(1, 1):double",96000;96000;96000;1,1732.000,OK
+source_domain\cwru_12khz_fe\B021_0.mat,"X290_DE_time:(96000, 1):double | X290_FE_time:(96000, 1):double | X290_BA_time:(96000, 1):double | X290RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_fe\B021_1.mat,"X291_DE_time:(96000, 1):double | X291_FE_time:(96000, 1):double | X291_BA_time:(96000, 1):double | X291RPM:(1, 1):double",96000;96000;96000;1,1775.000,OK
+source_domain\cwru_12khz_fe\B021_2.mat,"X292_DE_time:(96000, 1):double | X292_FE_time:(96000, 1):double | X292_BA_time:(96000, 1):double | X292RPM:(1, 1):double",96000;96000;96000;1,1756.000,OK
+source_domain\cwru_12khz_fe\B021_3.mat,"X293_DE_time:(96000, 1):double | X293_FE_time:(96000, 1):double | X293_BA_time:(96000, 1):double | X293RPM:(1, 1):double",96000;96000;96000;1,1734.000,OK
+source_domain\cwru_12khz_fe\IR007_0.mat,"X278_DE_time:(96000, 1):double | X278_FE_time:(96000, 1):double | X278_BA_time:(96000, 1):double | X278RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_fe\IR007_1.mat,"X279_DE_time:(96000, 1):double | X279_FE_time:(96000, 1):double | X279_BA_time:(96000, 1):double | X279RPM:(1, 1):double",96000;96000;96000;1,1772.000,OK
+source_domain\cwru_12khz_fe\IR007_2.mat,"X280_DE_time:(96000, 1):double | X280_FE_time:(96000, 1):double | X280_BA_time:(96000, 1):double | X280RPM:(1, 1):double",96000;96000;96000;1,1755.000,OK
+source_domain\cwru_12khz_fe\IR007_3.mat,"X281_DE_time:(96000, 1):double | X281_FE_time:(96000, 1):double | X281_BA_time:(96000, 1):double | X281RPM:(1, 1):double",96000;96000;96000;1,1732.000,OK
+source_domain\cwru_12khz_fe\IR014_0.mat,"X274_DE_time:(96000, 1):double | X274_FE_time:(96000, 1):double | X274_BA_time:(96000, 1):double | X274RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_fe\IR014_1.mat,"X275_DE_time:(96000, 1):double | X275_FE_time:(96000, 1):double | X275_BA_time:(96000, 1):double | X275RPM:(1, 1):double",96000;96000;96000;1,1775.000,OK
+source_domain\cwru_12khz_fe\IR014_2.mat,"X276_DE_time:(96000, 1):double | X276_FE_time:(96000, 1):double | X276_BA_time:(96000, 1):double | X276RPM:(1, 1):double",96000;96000;96000;1,1755.000,OK
+source_domain\cwru_12khz_fe\IR014_3.mat,"X277_DE_time:(96000, 1):double | X277_FE_time:(96000, 1):double | X277_BA_time:(96000, 1):double | X277RPM:(1, 1):double",96000;96000;96000;1,1733.000,OK
+source_domain\cwru_12khz_fe\IR021_0.mat,"X270_DE_time:(96000, 1):double | X270_FE_time:(96000, 1):double | X270_BA_time:(96000, 1):double | X270RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_fe\IR021_1.mat,"X271_DE_time:(96000, 1):double | X271_FE_time:(96000, 1):double | X271_BA_time:(96000, 1):double | X271RPM:(1, 1):double",96000;96000;96000;1,1776.000,OK
+source_domain\cwru_12khz_fe\IR021_2.mat,"X272_DE_time:(96000, 1):double | X272_FE_time:(96000, 1):double | X272_BA_time:(96000, 1):double | X272RPM:(1, 1):double",96000;96000;96000;1,1758.000,OK
+source_domain\cwru_12khz_fe\IR021_3.mat,"X273_DE_time:(96000, 1):double | X273_FE_time:(96000, 1):double | X273_BA_time:(96000, 1):double | X273RPM:(1, 1):double",96000;96000;96000;1,1737.000,OK
+source_domain\cwru_12khz_fe\OR007@12_0.mat,"X302_DE_time:(96000, 1):double | X302_FE_time:(96000, 1):double | X302_BA_time:(96000, 1):double | X302RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_fe\OR007@12_1.mat,"X305_DE_time:(96000, 1):double | X305_FE_time:(96000, 1):double | X305_BA_time:(96000, 1):double | X305RPM:(1, 1):double",96000;96000;96000;1,1775.000,OK
+source_domain\cwru_12khz_fe\OR007@12_2.mat,"X306_DE_time:(96000, 1):double | X306_FE_time:(96000, 1):double | X306_BA_time:(96000, 1):double | X306RPM:(1, 1):double",96000;96000;96000;1,1755.000,OK
+source_domain\cwru_12khz_fe\OR007@12_3.mat,"X307_DE_time:(96000, 1):double | X307_FE_time:(96000, 1):double | X307_BA_time:(96000, 1):double | X307RPM:(1, 1):double",96000;96000;96000;1,1733.000,OK
+source_domain\cwru_12khz_fe\OR007@3_0.mat,"X298_DE_time:(96000, 1):double | X298_FE_time:(96000, 1):double | X298_BA_time:(96000, 1):double | X298RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_fe\OR007@3_1.mat,"X299_DE_time:(96000, 1):double | X299_FE_time:(96000, 1):double | X299_BA_time:(96000, 1):double | X299RPM:(1, 1):double",96000;96000;96000;1,1776.000,OK
+source_domain\cwru_12khz_fe\OR007@3_2.mat,"X300_DE_time:(96000, 1):double | X300_FE_time:(96000, 1):double | X300_BA_time:(96000, 1):double | X300RPM:(1, 1):double",96000;96000;96000;1,1755.000,OK
+source_domain\cwru_12khz_fe\OR007@3_3.mat,"X301_DE_time:(96000, 1):double | X301_FE_time:(96000, 1):double | X301_BA_time:(96000, 1):double | X301RPM:(1, 1):double",96000;96000;96000;1,1733.000,OK
+source_domain\cwru_12khz_fe\OR007@6_0.mat,"X294_DE_time:(96000, 1):double | X294_FE_time:(96000, 1):double | X294_BA_time:(96000, 1):double | X294RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_fe\OR007@6_1.mat,"X295_DE_time:(96000, 1):double | X295_FE_time:(96000, 1):double | X295_BA_time:(96000, 1):double | X295RPM:(1, 1):double",96000;96000;96000;1,1776.000,OK
+source_domain\cwru_12khz_fe\OR007@6_2.mat,"X296_DE_time:(96000, 1):double | X296_FE_time:(96000, 1):double | X296_BA_time:(96000, 1):double | X296RPM:(1, 1):double",96000;96000;96000;1,1756.000,OK
+source_domain\cwru_12khz_fe\OR007@6_3.mat,"X297_DE_time:(96000, 1):double | X297_FE_time:(96000, 1):double | X297_BA_time:(96000, 1):double | X297RPM:(1, 1):double",96000;96000;96000;1,1733.000,OK
+source_domain\cwru_12khz_fe\OR014@3_0.mat,"X310_DE_time:(96000, 1):double | X310_FE_time:(96000, 1):double | X310_BA_time:(96000, 1):double | X310RPM:(1, 1):double",96000;96000;96000;1,1796.000,OK
+source_domain\cwru_12khz_fe\OR014@3_1.mat,"X309_DE_time:(121168, 1):double | X309_FE_time:(121168, 1):double | X309_BA_time:(121168, 1):double | X309RPM:(1, 1):double",121168;121168;121168;1,1774.000,OK
+source_domain\cwru_12khz_fe\OR014@3_2.mat,"X311_DE_time:(96000, 1):double | X311_FE_time:(96000, 1):double | X311_BA_time:(96000, 1):double | X311RPM:(1, 1):double",96000;96000;96000;1,1752.000,OK
+source_domain\cwru_12khz_fe\OR014@3_3.mat,"X312_DE_time:(96000, 1):double | X312_FE_time:(96000, 1):double | X312_BA_time:(96000, 1):double | X312RPM:(1, 1):double",96000;96000;96000;1,1728.000,OK
+source_domain\cwru_12khz_fe\OR014@6_0.mat,"X313_DE_time:(96000, 1):double | X313_FE_time:(96000, 1):double | X313_BA_time:(96000, 1):double | X313RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_12khz_fe\OR021@3_1.mat,"X316_DE_time:(96000, 1):double | X316_FE_time:(96000, 1):double | X316_BA_time:(96000, 1):double | X316RPM:(1, 1):double",96000;96000;96000;1,1773.000,OK
+source_domain\cwru_12khz_fe\OR021@3_2.mat,"X317_DE_time:(96000, 1):double | X317_FE_time:(96000, 1):double | X317_BA_time:(96000, 1):double | X317RPM:(1, 1):double",96000;96000;96000;1,1751.000,OK
+source_domain\cwru_12khz_fe\OR021@3_3.mat,"X318_DE_time:(96000, 1):double | X318_FE_time:(96000, 1):double | X318_BA_time:(96000, 1):double | X318RPM:(1, 1):double",96000;96000;96000;1,1728.000,OK
+source_domain\cwru_12khz_fe\OR021@6_0.mat,"X315_DE_time:(96000, 1):double | X315_FE_time:(96000, 1):double | X315_BA_time:(96000, 1):double | X315RPM:(1, 1):double",96000;96000;96000;1,1797.000,OK
+source_domain\cwru_48khz_de\B007_0.mat,"X122_DE_time:(192000, 1):double | X122_FE_time:(192000, 1):double | X122RPM:(1, 1):double",192000;192000;1,1796.000,OK
+source_domain\cwru_48khz_de\B007_1.mat,"X123_DE_time:(192000, 1):double | X123_FE_time:(192000, 1):double | X123RPM:(1, 1):double",192000;192000;1,1772.000,OK
+source_domain\cwru_48khz_de\B007_2.mat,"X124_DE_time:(192000, 1):double | X124_FE_time:(192000, 1):double | X124RPM:(1, 1):double",192000;192000;1,1747.000,OK
+source_domain\cwru_48khz_de\B007_3.mat,"X125_DE_time:(192000, 1):double | X125_FE_time:(192000, 1):double | X125RPM:(1, 1):double",192000;192000;1,1721.000,OK
+source_domain\cwru_48khz_de\B014_0.mat,"X189_DE_time:(192000, 1):double | X189_FE_time:(192000, 1):double | X189RPM:(1, 1):double",192000;192000;1,1797.000,OK
+source_domain\cwru_48khz_de\B014_1.mat,"X190_DE_time:(192000, 1):double | X190_FE_time:(192000, 1):double | X190RPM:(1, 1):double",192000;192000;1,1772.000,OK
+source_domain\cwru_48khz_de\B014_2.mat,"X191_DE_time:(192000, 1):double | X191_FE_time:(192000, 1):double | X191RPM:(1, 1):double",192000;192000;1,1748.000,OK
+source_domain\cwru_48khz_de\B014_3.mat,"X192_DE_time:(192000, 1):double | X192_FE_time:(192000, 1):double | X192RPM:(1, 1):double",192000;192000;1,1725.000,OK
+source_domain\cwru_48khz_de\B021_0.mat,"X226_DE_time:(192000, 1):double | X226_FE_time:(192000, 1):double | X226RPM:(1, 1):double",192000;192000;1,1797.000,OK
+source_domain\cwru_48khz_de\B021_1.mat,"X227_DE_time:(192000, 1):double | X227_FE_time:(192000, 1):double | X227RPM:(1, 1):double",192000;192000;1,1774.000,OK
+source_domain\cwru_48khz_de\B021_2.mat,"X228_DE_time:(192000, 1):double | X228_FE_time:(192000, 1):double | X228RPM:(1, 1):double",192000;192000;1,1754.000,OK
+source_domain\cwru_48khz_de\B021_3.mat,"X229_DE_time:(192000, 1):double | X229_FE_time:(192000, 1):double | X229RPM:(1, 1):double",192000;192000;1,1729.000,OK
+source_domain\cwru_48khz_de\IR007_0.mat,"X109_DE_time:(192000, 1):double | X109_FE_time:(192000, 1):double | X109RPM:(1, 1):double",192000;192000;1,1796.000,OK
+source_domain\cwru_48khz_de\IR007_1.mat,"X110_DE_time:(192000, 1):double | X110_FE_time:(192000, 1):double | X110RPM:(1, 1):double",192000;192000;1,1772.000,OK
+source_domain\cwru_48khz_de\IR007_2.mat,"X111_DE_time:(192000, 1):double | X111_FE_time:(192000, 1):double | X111RPM:(1, 1):double",192000;192000;1,1748.000,OK
+source_domain\cwru_48khz_de\IR007_3.mat,"X112_DE_time:(192000, 1):double | X112_FE_time:(192000, 1):double | X112RPM:(1, 1):double",192000;192000;1,1721.000,OK
+source_domain\cwru_48khz_de\IR014_0.mat,"X173_DE_time:(63788, 1):double | X173_FE_time:(63788, 1):double | X173RPM:(1, 1):double",63788;63788;1,1796.000,OK
+source_domain\cwru_48khz_de\IR014_1.mat,"X175_DE_time:(192000, 1):double | X175_FE_time:(192000, 1):double | X175RPM:(1, 1):double",192000;192000;1,1772.000,OK
+source_domain\cwru_48khz_de\IR014_2.mat,"X176_DE_time:(192000, 1):double | X176_FE_time:(192000, 1):double | X176RPM:(1, 1):double",192000;192000;1,1751.000,OK
+source_domain\cwru_48khz_de\IR014_3.mat,"X177_DE_time:(192000, 1):double | X177_FE_time:(192000, 1):double | X177RPM:(1, 1):double",192000;192000;1,1726.000,OK
+source_domain\cwru_48khz_de\IR021_0.mat,"X213_DE_time:(192000, 1):double | X213_FE_time:(192000, 1):double | X213RPM:(1, 1):double",192000;192000;1,1796.000,OK
+source_domain\cwru_48khz_de\IR021_1.mat,"X214_DE_time:(192000, 1):double | X214_FE_time:(192000, 1):double | X214RPM:(1, 1):double",192000;192000;1,1774.000,OK
+source_domain\cwru_48khz_de\IR021_2.mat,"X215_DE_time:(192000, 1):double | X215_FE_time:(192000, 1):double | X215RPM:(1, 1):double",192000;192000;1,1752.000,OK
+source_domain\cwru_48khz_de\IR021_3.mat,"X217_DE_time:(192000, 1):double | X217_FE_time:(192000, 1):double | X217RPM:(1, 1):double",192000;192000;1,1727.000,OK
+source_domain\cwru_48khz_de\OR007@12_0.mat,"X161_DE_time:(129969, 1):double | X161_FE_time:(129969, 1):double | X161RPM:(1, 1):double",129969;129969;1,1796.000,OK
+source_domain\cwru_48khz_de\OR007@12_1.mat,"X162_DE_time:(192000, 1):double | X162_FE_time:(192000, 1):double | X162RPM:(1, 1):double",192000;192000;1,1772.000,OK
+source_domain\cwru_48khz_de\OR007@12_2.mat,"X163_DE_time:(192000, 1):double | X163_FE_time:(192000, 1):double | X163RPM:(1, 1):double",192000;192000;1,1749.000,OK
+source_domain\cwru_48khz_de\OR007@12_3.mat,"X164_DE_time:(192000, 1):double | X164_FE_time:(192000, 1):double | X164RPM:(1, 1):double",192000;192000;1,1723.000,OK
+source_domain\cwru_48khz_de\OR007@3_0.mat,"X148_DE_time:(124602, 1):double | X148_FE_time:(124602, 1):double | X148RPM:(1, 1):double",124602;124602;1,1797.000,OK
+source_domain\cwru_48khz_de\OR007@3_1.mat,"X149_DE_time:(192000, 1):double | X149_FE_time:(192000, 1):double | X149RPM:(1, 1):double",192000;192000;1,1773.000,OK
+source_domain\cwru_48khz_de\OR007@3_2.mat,"X150_DE_time:(192000, 1):double | X150_FE_time:(192000, 1):double | X150RPM:(1, 1):double",192000;192000;1,1750.000,OK
+source_domain\cwru_48khz_de\OR007@3_3.mat,"X151_DE_time:(192000, 1):double | X151_FE_time:(192000, 1):double | X151RPM:(1, 1):double",192000;192000;1,1724.000,OK
+source_domain\cwru_48khz_de\OR007@6_0.mat,"X135_DE_time:(192000, 1):double | X135_FE_time:(192000, 1):double | X135RPM:(1, 1):double",192000;192000;1,1796.000,OK
+source_domain\cwru_48khz_de\OR007@6_1.mat,"X136_DE_time:(192000, 1):double | X136_FE_time:(192000, 1):double | X136RPM:(1, 1):double",192000;192000;1,1774.000,OK
+source_domain\cwru_48khz_de\OR007@6_2.mat,"X137_DE_time:(192000, 1):double | X137_FE_time:(192000, 1):double | X137RPM:(1, 1):double",192000;192000;1,1750.000,OK
+source_domain\cwru_48khz_de\OR007@6_3.mat,"X138_DE_time:(192000, 1):double | X138_FE_time:(192000, 1):double | X138RPM:(1, 1):double",192000;192000;1,1725.000,OK
+source_domain\cwru_48khz_de\OR014@6_0.mat,"X201_DE_time:(192000, 1):double | X201_FE_time:(192000, 1):double | X201RPM:(1, 1):double",192000;192000;1,1796.000,OK
+source_domain\cwru_48khz_de\OR014@6_1.mat,"X202_DE_time:(192000, 1):double | X202_FE_time:(192000, 1):double | X202RPM:(1, 1):double",192000;192000;1,1772.000,OK
+source_domain\cwru_48khz_de\OR014@6_2.mat,"X203_DE_time:(192000, 1):double | X203_FE_time:(192000, 1):double | X203RPM:(1, 1):double",192000;192000;1,1749.000,OK
+source_domain\cwru_48khz_de\OR014@6_3.mat,"X204_DE_time:(192000, 1):double | X204_FE_time:(192000, 1):double | X204RPM:(1, 1):double",192000;192000;1,1723.000,OK
+source_domain\cwru_48khz_de\OR021@12_0.mat,"X262_DE_time:(130549, 1):double | X262_FE_time:(130549, 1):double | X262RPM:(1, 1):double",130549;130549;1,1796.000,OK
+source_domain\cwru_48khz_de\OR021@12_1.mat,"X263_DE_time:(192000, 1):double | X263_FE_time:(192000, 1):double | X263RPM:(1, 1):double",192000;192000;1,1771.000,OK
+source_domain\cwru_48khz_de\OR021@12_2.mat,"X264_DE_time:(192000, 1):double | X264_FE_time:(192000, 1):double | X264RPM:(1, 1):double",192000;192000;1,1746.000,OK
+source_domain\cwru_48khz_de\OR021@12_3.mat,"X265_DE_time:(192000, 1):double | X265_FE_time:(192000, 1):double | X265RPM:(1, 1):double",192000;192000;1,1718.000,OK
+source_domain\cwru_48khz_de\OR021@3_0.mat,"X250_DE_time:(128663, 1):double | X250_FE_time:(128663, 1):double | X250RPM:(1, 1):double",128663;128663;1,1796.000,OK
+source_domain\cwru_48khz_de\OR021@3_1.mat,"X251_DE_time:(192000, 1):double | X251_FE_time:(192000, 1):double | X251RPM:(1, 1):double",192000;192000;1,1770.000,OK
+source_domain\cwru_48khz_de\OR021@3_2.mat,"X252_DE_time:(192000, 1):double | X252_FE_time:(192000, 1):double | X252RPM:(1, 1):double",192000;192000;1,1746.000,OK
+source_domain\cwru_48khz_de\OR021@3_3.mat,"X253_DE_time:(192000, 1):double | X253_FE_time:(192000, 1):double | X253RPM:(1, 1):double",192000;192000;1,1719.000,OK
+source_domain\cwru_48khz_de\OR021@6_0.mat,"X238_DE_time:(192000, 1):double | X238_FE_time:(192000, 1):double | X238RPM:(1, 1):double",192000;192000;1,1796.000,OK
+source_domain\cwru_48khz_de\OR021@6_1.mat,"X239_DE_time:(192000, 1):double | X239_FE_time:(192000, 1):double | X239RPM:(1, 1):double",192000;192000;1,1771.000,OK
+source_domain\cwru_48khz_de\OR021@6_2.mat,"X240_DE_time:(192000, 1):double | X240_FE_time:(192000, 1):double | X240RPM:(1, 1):double",192000;192000;1,1747.000,OK
+source_domain\cwru_48khz_de\OR021@6_3.mat,"X241_DE_time:(192000, 1):double | X241_FE_time:(192000, 1):double | X241RPM:(1, 1):double",192000;192000;1,1719.000,OK
+source_domain\cwru_48khz_normal\N_0.mat,"X097_DE_time:(243938, 1):double | X097_FE_time:(243938, 1):double | X097RPM:(1, 1):double",243938;243938;1,1796.000,OK
+source_domain\cwru_48khz_normal\N_1_(1772rpm).mat,"X098_DE_time:(384000, 1):double | X098_FE_time:(384000, 1):double",384000;384000,,OK
+source_domain\cwru_48khz_normal\N_2_(1750rpm).mat,"X099_DE_time:(384000, 1):double | X099_FE_time:(384000, 1):double",384000;384000,,OK
+source_domain\cwru_48khz_normal\N_3.mat,"X100_DE_time:(384000, 1):double | X100_FE_time:(384000, 1):double | X100RPM:(1, 1):double",384000;384000;1,1725.000,OK
+target_domain\train_bearing_a_to_p\A.mat,"A:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\B.mat,"B:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\C.mat,"C:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\D.mat,"D:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\E.mat,"E:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\F.mat,"F:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\G.mat,"G:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\H.mat,"H:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\I.mat,"I:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\J.mat,"J:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\K.mat,"K:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\L.mat,"L:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\M.mat,"M:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\N.mat,"N:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\O.mat,"O:(256000, 1):double",256000,,OK
+target_domain\train_bearing_a_to_p\P.mat,"P:(256000, 1):double",256000,,OK

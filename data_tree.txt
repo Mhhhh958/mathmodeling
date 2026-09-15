@@ -1,0 +1,248 @@
+卷 系统 的文件夹 PATH 列表
+卷序列号为 0000002F 92A5:58D7
+C:\USERS\ADMINISTRATOR\DESKTOP\提示词\BEARING-SIGNAL-ANALYTICS-AND-INTELLIGENT-FAULT-DIAGNOSIS-MAIN\DATA
+├─interim
+│  ├─source_features
+│  │      特征提取_001.csv
+│  │      特征提取_002.csv
+│  │      特征提取_003.csv
+│  │      特征提取_004.csv
+│  │      
+│  ├─source_windows
+│  │      001.csv
+│  │      002.csv
+│  │      003.csv
+│  │      004.csv
+│  │      005.csv
+│  │      006.csv
+│  │      007.csv
+│  │      008.csv
+│  │      009.csv
+│  │      010.csv
+│  │      011.csv
+│  │      012.csv
+│  │      013.csv
+│  │      014.csv
+│  │      015.csv
+│  │      016.csv
+│  │      
+│  ├─target_features
+│  │      目标域特征提取_A.csv
+│  │      目标域特征提取_B.csv
+│  │      目标域特征提取_C.csv
+│  │      目标域特征提取_D.csv
+│  │      目标域特征提取_E.csv
+│  │      目标域特征提取_F.csv
+│  │      目标域特征提取_G.csv
+│  │      目标域特征提取_H.csv
+│  │      目标域特征提取_I.csv
+│  │      目标域特征提取_J.csv
+│  │      目标域特征提取_K.csv
+│  │      目标域特征提取_L.csv
+│  │      目标域特征提取_M.csv
+│  │      目标域特征提取_N.csv
+│  │      目标域特征提取_O.csv
+│  │      目标域特征提取_P.csv
+│  │      
+│  └─target_windows
+│          A.csv
+│          B.csv
+│          C.csv
+│          
+├─metadata
+│  │  cycle_statistics.xlsx
+│  │  feature_mapping.csv
+│  │  
+│  └─auxiliary_tables
+│          add_feature.xlsx
+│          
+└─raw
+    ├─source_domain
+    │  ├─cwru_12khz_de
+    │  │      B007_0.mat
+    │  │      B007_1.mat
+    │  │      B007_2.mat
+    │  │      B007_3.mat
+    │  │      B014_0.mat
+    │  │      B014_1.mat
+    │  │      B014_2.mat
+    │  │      B014_3.mat
+    │  │      B021_0.mat
+    │  │      B021_1.mat
+    │  │      B021_2.mat
+    │  │      B021_3.mat
+    │  │      B028_0_(1797rpm).mat
+    │  │      B028_1_(1772rpm).mat
+    │  │      B028_2_(1750rpm).mat
+    │  │      B028_3_(1730rpm).mat
+    │  │      IR007_0.mat
+    │  │      IR007_1.mat
+    │  │      IR007_2.mat
+    │  │      IR007_3.mat
+    │  │      IR014_0.mat
+    │  │      IR014_1.mat
+    │  │      IR014_2.mat
+    │  │      IR014_3.mat
+    │  │      IR021_0.mat
+    │  │      IR021_1.mat
+    │  │      IR021_2.mat
+    │  │      IR021_3.mat
+    │  │      IR028_0_(1797rpm).mat
+    │  │      IR028_1_(1772rpm).mat
+    │  │      IR028_2_(1750rpm).mat
+    │  │      IR028_3_(1730rpm).mat
+    │  │      OR007@12_0.mat
+    │  │      OR007@12_1.mat
+    │  │      OR007@12_2.mat
+    │  │      OR007@12_3.mat
+    │  │      OR007@3_0.mat
+    │  │      OR007@3_1.mat
+    │  │      OR007@3_2.mat
+    │  │      OR007@3_3.mat
+    │  │      OR007@6_0.mat
+    │  │      OR007@6_1.mat
+    │  │      OR007@6_2.mat
+    │  │      OR007@6_3.mat
+    │  │      OR014@6_0.mat
+    │  │      OR014@6_1.mat
+    │  │      OR014@6_2.mat
+    │  │      OR014@6_3.mat
+    │  │      OR021@12_0.mat
+    │  │      OR021@12_1.mat
+    │  │      OR021@12_2.mat
+    │  │      OR021@12_3.mat
+    │  │      OR021@3_0.mat
+    │  │      OR021@3_1.mat
+    │  │      OR021@3_2.mat
+    │  │      OR021@3_3.mat
+    │  │      OR021@6_0.mat
+    │  │      OR021@6_1.mat
+    │  │      OR021@6_2.mat
+    │  │      OR021@6_3.mat
+    │  │      
+    │  ├─cwru_12khz_fe
+    │  │      B007_0.mat
+    │  │      B007_1.mat
+    │  │      B007_2.mat
+    │  │      B007_3.mat
+    │  │      B014_0.mat
+    │  │      B014_1.mat
+    │  │      B014_2.mat
+    │  │      B014_3.mat
+    │  │      B021_0.mat
+    │  │      B021_1.mat
+    │  │      B021_2.mat
+    │  │      B021_3.mat
+    │  │      IR007_0.mat
+    │  │      IR007_1.mat
+    │  │      IR007_2.mat
+    │  │      IR007_3.mat
+    │  │      IR014_0.mat
+    │  │      IR014_1.mat
+    │  │      IR014_2.mat
+    │  │      IR014_3.mat
+    │  │      IR021_0.mat
+    │  │      IR021_1.mat
+    │  │      IR021_2.mat
+    │  │      IR021_3.mat
+    │  │      OR007@12_0.mat
+    │  │      OR007@12_1.mat
+    │  │      OR007@12_2.mat
+    │  │      OR007@12_3.mat
+    │  │      OR007@3_0.mat
+    │  │      OR007@3_1.mat
+    │  │      OR007@3_2.mat
+    │  │      OR007@3_3.mat
+    │  │      OR007@6_0.mat
+    │  │      OR007@6_1.mat
+    │  │      OR007@6_2.mat
+    │  │      OR007@6_3.mat
+    │  │      OR014@3_0.mat
+    │  │      OR014@3_1.mat
+    │  │      OR014@3_2.mat
+    │  │      OR014@3_3.mat
+    │  │      OR014@6_0.mat
+    │  │      OR021@3_1.mat
+    │  │      OR021@3_2.mat
+    │  │      OR021@3_3.mat
+    │  │      OR021@6_0.mat
+    │  │      
+    │  ├─cwru_48khz_de
+    │  │      B007_0.mat
+    │  │      B007_1.mat
+    │  │      B007_2.mat
+    │  │      B007_3.mat
+    │  │      B014_0.mat
+    │  │      B014_1.mat
+    │  │      B014_2.mat
+    │  │      B014_3.mat
+    │  │      B021_0.mat
+    │  │      B021_1.mat
+    │  │      B021_2.mat
+    │  │      B021_3.mat
+    │  │      IR007_0.mat
+    │  │      IR007_1.mat
+    │  │      IR007_2.mat
+    │  │      IR007_3.mat
+    │  │      IR014_0.mat
+    │  │      IR014_1.mat
+    │  │      IR014_2.mat
+    │  │      IR014_3.mat
+    │  │      IR021_0.mat
+    │  │      IR021_1.mat
+    │  │      IR021_2.mat
+    │  │      IR021_3.mat
+    │  │      OR007@12_0.mat
+    │  │      OR007@12_1.mat
+    │  │      OR007@12_2.mat
+    │  │      OR007@12_3.mat
+    │  │      OR007@3_0.mat
+    │  │      OR007@3_1.mat
+    │  │      OR007@3_2.mat
+    │  │      OR007@3_3.mat
+    │  │      OR007@6_0.mat
+    │  │      OR007@6_1.mat
+    │  │      OR007@6_2.mat
+    │  │      OR007@6_3.mat
+    │  │      OR014@6_0.mat
+    │  │      OR014@6_1.mat
+    │  │      OR014@6_2.mat
+    │  │      OR014@6_3.mat
+    │  │      OR021@12_0.mat
+    │  │      OR021@12_1.mat
+    │  │      OR021@12_2.mat
+    │  │      OR021@12_3.mat
+    │  │      OR021@3_0.mat
+    │  │      OR021@3_1.mat
+    │  │      OR021@3_2.mat
+    │  │      OR021@3_3.mat
+    │  │      OR021@6_0.mat
+    │  │      OR021@6_1.mat
+    │  │      OR021@6_2.mat
+    │  │      OR021@6_3.mat
+    │  │      
+    │  └─cwru_48khz_normal
+    │          N_0.mat
+    │          N_1_(1772rpm).mat
+    │          N_2_(1750rpm).mat
+    │          N_3.mat
+    │          
+    └─target_domain
+        └─train_bearing_a_to_p
+                A.mat
+                B.mat
+                C.mat
+                D.mat
+                E.mat
+                F.mat
+                G.mat
+                H.mat
+                I.mat
+                J.mat
+                K.mat
+                L.mat
+                M.mat
+                N.mat
+                O.mat
+                P.mat
+                
