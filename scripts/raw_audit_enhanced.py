@@ -171,16 +171,6 @@ signal_dups = sigdf[sigdf.duplicated('signal_sha256', keep=False)].sort_values('
 signal_dups.to_csv(OUT / 'exact_signal_duplicates.csv', index=False, encoding='utf-8-sig')
 
 label_counts = df[df['domain'] == 'source']['label'].value_counts(dropna=False).to_dict()
-subgroup_counts = {}
-for p in files:
-    rel = p.relative_to(RAW)
-    parts = rel.parts
-    if len(parts) >= 3:
-        key = '/'.join(parts[:2]) if parts[0] == 'source_domain' else '/'.join(parts[:2])
-    else:
-        key = str(rel.parent)
-    subgroup_counts[key] = subgroup_counts.get(key, 0) + 1
-
 summary = {
     'mat_files': int(len(df)),
     'readable': int((df.status == 'OK').sum()),
@@ -202,7 +192,6 @@ summary = {
     'target_duration_max_s': float(df[df.domain == 'target']['duration_max_s'].max()),
 }
 
-# Auxiliary metadata structure audit only; these are derived/reference tables, not raw truth.
 meta_rows = []
 for xlsx in sorted(Path('data/metadata').rglob('*.xlsx')):
     try:
@@ -231,3 +220,5 @@ if len(meta_df):
 else:
     print('No xlsx metadata tables found')
 print('OUTPUT_DIR:', OUT.resolve())
+
+# Trigger marker: workflow added after initial script commit.
