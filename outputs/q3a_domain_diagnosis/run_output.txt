@@ -1,0 +1,13 @@
+Q3A / STEP08 domain diagnosis and no-transfer baseline
+status=PASS
+target_truth_known=False
+source_files=56 target_files=16
+mmd2_file_level=0.784640
+domain_classifier_auc=1.000000
+source_oof_confidence_median=0.865087
+target_no_transfer_confidence_median=0.540111
+target_prediction_counts={"OR": 16}
+sim_no_transfer_mean_macro_f1=0.939595
+sim_moment_align_mean_macro_f1=0.839641
+target_accuracy_reported=False
+complex_real_target_transfer_trained=False

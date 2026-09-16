@@ -1,0 +1,41 @@
+{
+  "target_files": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "target_windows": 240,
+  "truth_status": "unknown",
+  "used_now_for": [
+    "frozen-source-model no-transfer prediction",
+    "global/file-level feature distribution diagnostics",
+    "domain-separation PCA/MMD/domain-classifier diagnostics",
+    "source-class-centroid distance diagnostics",
+    "classifier confidence/entropy/consistency diagnostics"
+  ],
+  "allowed_later_for_unsupervised_adaptation": [
+    "target marginal moments/covariance (e.g. moment alignment or CORAL)",
+    "domain-classifier probabilities for source instance reweighting",
+    "unlabeled target model probabilities for stability diagnostics only"
+  ],
+  "forbidden": [
+    "target accuracy/F1/recall calculation",
+    "supervised model selection on A-P",
+    "treating no-transfer predictions as truth",
+    "injecting historical target predictions as labels",
+    "using SKF6205 source geometry as target bearing geometry"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "source": {
+    "independent_files": 56,
+    "windows": 400,
+    "sampling_hz": [
+      48000
+    ],
+    "rpm_min": 1718.0,
+    "rpm_max": 1797.0,
+    "channel_values": [
+      "DE_time"
+    ],
+    "sensor_position_values": [
+      "drive_end"
+    ],
+    "duration_min_s_raw_audit": 1.3289166666666667,
+    "duration_max_s_raw_audit": 8.0,
+    "amplitude_file_medians": {
+      "td_rms": 0.31023674145797164,
+      "td_peak_abs": 2.02782293260989,
+      "td_ptp": 3.955332791208791,
+      "env_rms": 0.2840676604192657
+    }
+  },
+  "target": {
+    "independent_files": 16,
+    "windows": 240,
+    "sampling_hz": [
+      32000
+    ],
+    "rpm_value_recorded": [
+      600.0
+    ],
+    "rpm_source": [
+      "problem_approximate_not_used_for_mechanism_features"
+    ],
+    "channel_values": [
+      "anonymous_single_channel"
+    ],
+    "sensor_position_values": [
+      "unknown"
+    ],
+    "duration_min_s_raw_audit": 8.0,
+    "duration_max_s_raw_audit": 8.0,
+    "amplitude_file_medians": {
+      "td_rms": 8.863891819896175,
+      "td_peak_abs": 40.25389861962276,
+      "td_ptp": 78.30534663765624,
+      "env_rms": 6.25047232817178
+    }
+  },
+  "interpretation_boundaries": {
+    "common_fault_mechanism": "Both domains concern local rolling-bearing states OR/IR/B/N; impacts, modulation, and envelope/statistical structure are transferable concepts.",
+    "not_assumed_common": "Bearing geometry, exact sensor mounting/transfer path, exact target RPM per file, absolute amplitude scale, and source SKF6205 characteristic frequencies are not assumed equal in target.",
+    "source_geometry_specific_features_on_target": "prohibited"
+  }
+}

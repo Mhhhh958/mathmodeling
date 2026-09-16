@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "source_files": 56,
+  "target_files": 16,
+  "target_truth_known": false,
+  "no_transfer_target_prediction_count": 16,
+  "no_transfer_target_prediction_distribution": {
+    "OR": 16
+  },
+  "top_feature_shifts": [
+    {
+      "feature": "td_ptp",
+      "abs_standardized_mean_shift": 55.452268369049605,
+      "wasserstein_over_source_sd": 55.452268369049605,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "td_peak_abs",
+      "abs_standardized_mean_shift": 55.34175400680398,
+      "wasserstein_over_source_sd": 55.34175400680399,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "td_std",
+      "abs_standardized_mean_shift": 39.13820167922658,
+      "wasserstein_over_source_sd": 39.13820167922658,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "td_rms",
+      "abs_standardized_mean_shift": 39.13820167922658,
+      "wasserstein_over_source_sd": 39.13820167922658,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "env_rms",
+      "abs_standardized_mean_shift": 36.249153061375964,
+      "wasserstein_over_source_sd": 36.249153061375964,
+      "ks_statistic": 0.9642857142857143
+    },
+    {
+      "feature": "td_zero_cross_rate",
+      "abs_standardized_mean_shift": 11.562421928363987,
+      "wasserstein_over_source_sd": 11.562421928363989,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "fd_f95_hz_0_6k",
+      "abs_standardized_mean_shift": 5.213683602936371,
+      "wasserstein_over_source_sd": 5.213683602936371,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "fd_entropy_0_6k",
+      "abs_standardized_mean_shift": 3.194616521273944,
+      "wasserstein_over_source_sd": 3.1946165212739417,
+      "ks_statistic": 0.9375
+    }
+  ],
+  "mmd2_biased_file_level": 0.7846395572331664,
+  "domain_classifier_auc_mean_file_level": 1.0,
+  "source_oof_confidence_median": 0.865087437752879,
+  "target_no_transfer_confidence_median": 0.5401111111111112,
+  "simulated_target_no_transfer_mean_macro_f1": 0.9395947802197802,
+  "simulated_target_moment_alignment_mean_macro_f1": 0.8396405677655677,
+  "target_accuracy_reported": false,
+  "complex_transfer_trained_on_real_target": false
+}

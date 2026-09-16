@@ -1,0 +1,7 @@
+{
+  "mmd2_biased": 0.7846395572331664,
+  "rbf_gamma": 0.005589587825013167,
+  "median_pairwise_sq_distance": 89.45203396975378,
+  "comparison_unit": "independent-file mean feature vector",
+  "note": "Descriptive evidence only; MMD is not a target-accuracy estimate."
+}

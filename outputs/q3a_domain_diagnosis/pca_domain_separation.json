@@ -1,0 +1,9 @@
+{
+  "pca_explained_variance_ratio": [
+    0.979179893969681,
+    0.013371515597678458
+  ],
+  "domain_classifier_file_level_auc_mean": 1.0,
+  "domain_classifier_file_level_auc_std": 0.0,
+  "domain_classifier_note": "Domain labels only; no fault labels from target are used."
+}

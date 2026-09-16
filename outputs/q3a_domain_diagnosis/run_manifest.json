@@ -1,0 +1,16 @@
+{
+  "step": "Q3A_STEP08",
+  "generated_utc": "2026-09-16T05:37:51.404071+00:00",
+  "git_sha_at_run_start": "d3b46dedc752517eabcbcddb82e9a2f292b6cd55",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "sklearn": "1.9.1",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "random_seed": 20260916,
+  "source_feature_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "target_feature_sha256": "22f96cf0bc5f7b7cc75b08f52ce88c41962720b87f9563e955e7bfe3db56b46e",
+  "q3_interface_sha256": "4616c8cf861d51ec0451e7bf36ecd6c1c4bcafd6fcaa85914f4959a235886e3e",
+  "step07_model_sha256": "6a7fb81c0a8dda9e6c33c2dca45612abba471ff665153391c24902407304ec98",
+  "feature_count": 28,
+  "real_target_adaptation_trained": false,
+  "simulated_target_adaptation": "A1 feature-wise moment alignment using unlabeled held-out-load target moments"
+}

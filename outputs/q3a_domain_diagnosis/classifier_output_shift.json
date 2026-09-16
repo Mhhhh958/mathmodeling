@@ -1,0 +1,13 @@
+{
+  "source_oof_file_count": 56,
+  "target_file_count": 16,
+  "source_oof_confidence_median": 0.865087437752879,
+  "target_no_transfer_confidence_median": 0.5401111111111112,
+  "source_oof_entropy_median": 0.33659511294614564,
+  "target_no_transfer_entropy_median": 0.8428788749056105,
+  "target_prediction_counts": {
+    "OR": 16
+  },
+  "target_mean_window_consistency": 1.0,
+  "warning": "Target predictions are model outputs only; target truth is unavailable and no target accuracy is computed."
+}

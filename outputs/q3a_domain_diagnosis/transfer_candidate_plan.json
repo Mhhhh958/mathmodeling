@@ -1,0 +1,36 @@
+{
+  "promotion_rule": {
+    "primary_metric": "mean file-level Macro-F1 across four simulated held-out loads",
+    "minimum_mean_macro_f1_gain_for_promotion": 0.02,
+    "maximum_allowed_single_load_macro_f1_drop": 0.05,
+    "class_recall_rule": "A candidate must not introduce a zero class recall on a simulated load where no-transfer recall for that class was nonzero.",
+    "selection_data": "simulated source-held-out target only; never A-P truth",
+    "stop_rule": "At most two additional candidate families after A1. Stop if neither satisfies the predeclared rule; retain no-transfer source model for target reporting."
+  },
+  "candidates": [
+    {
+      "candidate": "A1_unlabeled_moment_alignment",
+      "role": "simple transfer baseline",
+      "problem_targeted": "large marginal location/scale shift, especially absolute amplitude and spectral/envelope statistics",
+      "target_input_used": "all unlabeled target windows only for file-balanced feature means and standard deviations",
+      "extra_assumption": "dominant shift is approximately feature-wise affine and not strongly class-conditional",
+      "status_in_step08": "actually evaluated on simulated held-out loads; not promoted to A-P as a final method in STEP08"
+    },
+    {
+      "candidate": "A2_CORAL",
+      "role": "candidate 1",
+      "problem_targeted": "cross-feature covariance shift not handled by independent moment matching",
+      "target_input_used": "unlabeled target covariance only",
+      "extra_assumption": "a global second-order linear alignment preserves class structure sufficiently",
+      "status_in_step08": "design only; defer real target adaptation"
+    },
+    {
+      "candidate": "A3_domain_classifier_instance_weighting",
+      "role": "candidate 2",
+      "problem_targeted": "only a subset of source files/windows may resemble the target distribution",
+      "target_input_used": "unlabeled target domain membership to fit a domain classifier; target fault labels not used",
+      "extra_assumption": "covariate-shift style reweighting is meaningful and source support overlaps target support",
+      "status_in_step08": "design only; defer real target adaptation"
+    }
+  ]
+}
