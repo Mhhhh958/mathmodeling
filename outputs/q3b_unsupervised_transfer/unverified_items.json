@@ -1,0 +1,7 @@
+{
+  "target_truth": "unknown",
+  "target_accuracy_f1": "not computable and not reported",
+  "real_target_negative_transfer": "cannot be proven or disproven without truth",
+  "simulated_target_scope": "load shift only; it does not reproduce all real shifts in sampling rate, RPM, sensor path, or bearing geometry",
+  "pseudo_labels": "not used"
+}

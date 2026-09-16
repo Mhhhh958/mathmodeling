@@ -1,0 +1,22 @@
+{
+  "selected_method": "A0_no_transfer",
+  "selected_setting": "frozen_rf",
+  "selection_reason": "Neither A2 nor A3 satisfied the frozen promotion rule; retain the STEP08 no-transfer model.",
+  "selection_used_A_P_truth": false,
+  "selection_used_A_P_prediction_appearance": false,
+  "pseudo_labels_used": false,
+  "promotion_rule": {
+    "min_mean_macro_f1_gain": 0.02,
+    "max_single_load_macro_f1_drop": 0.05,
+    "no_new_zero_recall": true,
+    "selection_source": "four simulated held-out source loads only; never A-P truth or appearance"
+  },
+  "real_target_prediction_counts": {
+    "OR": 16,
+    "IR": 0,
+    "B": 0,
+    "N": 0
+  },
+  "real_target_collapse_flag": true,
+  "target_seed_label_agreement": 1.0
+}

@@ -1,0 +1,7 @@
+{
+  "mmd2_before": 0.7546991325054018,
+  "mmd2_after_final_method": 0.7546991325054018,
+  "decreased": false,
+  "note": "No adaptation promoted; domain discrepancy is intentionally unchanged.",
+  "warning": "Lower distribution discrepancy is not treated as proof of higher diagnosis accuracy."
+}

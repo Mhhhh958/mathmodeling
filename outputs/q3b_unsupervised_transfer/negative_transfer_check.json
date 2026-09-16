@@ -1,0 +1,10 @@
+{
+  "selected_method": "A0_no_transfer",
+  "selected_setting": "frozen_rf",
+  "simulated_mean_macro_delta": 0.0,
+  "simulated_worst_load_macro_delta": 0.0,
+  "frozen_rule_satisfied": true,
+  "real_target_accuracy_verifiable": false,
+  "real_target_negative_transfer_verifiable": false,
+  "note": "Real A-P negative transfer cannot be measured without target truth; only simulated-target evidence is used for selection."
+}

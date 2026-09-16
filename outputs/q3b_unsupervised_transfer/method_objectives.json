@@ -1,0 +1,20 @@
+{
+  "A2_CORAL": {
+    "retained_source_parts": "Frozen 28-feature definition, source-fitted imputer/scaler, STEP07 RF classifier and file aggregation.",
+    "targets": "global covariance/location mismatch after source standardization",
+    "objective": "non-iterative linear target-to-source covariance alignment; no label loss and no pseudo-labels",
+    "optimization": "closed-form eigendecomposition of regularized covariance matrices",
+    "weights": "regularization chosen only by simulated held-out loads"
+  },
+  "A3_instance_weighting": {
+    "retained_source_parts": "Frozen 28-feature definition, RF architecture/hyperparameters and file aggregation; classifier is refit on source labels only.",
+    "targets": "covariate shift where only a subset of source support resembles target",
+    "objective": "source supervised RF loss with source sample weight multiplied by clipped domain-density-ratio estimate",
+    "optimization": "domain LogisticRegression on unlabeled domain identity, then weighted RF fitting",
+    "weights": "posterior odds p(target|x)/p(source|x) under equal domain priors, clipped; clip chosen only on simulated held-out loads"
+  },
+  "pseudo_label_policy": {
+    "used": false,
+    "reason": "STEP08 target predictions collapsed to OR and target truth is unknown; self-training would risk reinforcing source-model bias."
+  }
+}

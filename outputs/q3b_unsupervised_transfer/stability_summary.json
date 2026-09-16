@@ -1,0 +1,23 @@
+{
+  "simulated": {
+    "method": "A0_no_transfer",
+    "setting": "frozen_rf",
+    "seeds": [
+      20260916,
+      20260917,
+      20260918
+    ],
+    "macro_f1_mean_over_12_seed_load_cases": 0.9441735347985348,
+    "macro_f1_std_over_12_seed_load_cases": 0.052009309829439715,
+    "minimum_macro_f1_over_12_seed_load_cases": 0.8682692307692308
+  },
+  "target": {
+    "seeds": [
+      20260916,
+      20260917,
+      20260918
+    ],
+    "file_label_agreement_rate_all_three": 1.0,
+    "files_with_seed_disagreement": []
+  }
+}

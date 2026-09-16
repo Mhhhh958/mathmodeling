@@ -1,0 +1,6 @@
+{
+  "min_mean_macro_f1_gain": 0.02,
+  "max_single_load_macro_f1_drop": 0.05,
+  "no_new_zero_recall": true,
+  "selection_source": "four simulated held-out source loads only; never A-P truth or appearance"
+}

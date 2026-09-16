@@ -1,0 +1,18 @@
+{
+  "A0_counts": {
+    "OR": 16,
+    "IR": 0,
+    "B": 0,
+    "N": 0
+  },
+  "final_counts": {
+    "OR": 16,
+    "IR": 0,
+    "B": 0,
+    "N": 0
+  },
+  "final_max_class_share": 1.0,
+  "collapse_flag_ge_0_875": true,
+  "used_for_selection": false,
+  "interpretation": "A-P labels are unknown; class counts diagnose output collapse only and are not a correctness metric."
+}
