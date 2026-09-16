@@ -1,0 +1,9 @@
+{
+  "scope": "Known source representatives only for exact BPFO/BPFI validation; target geometry is unknown, so target exact characteristic-frequency validation is prohibited.",
+  "source_OR_step03_supported": true,
+  "source_IR_step03_supported": true,
+  "source_OR_top5_mechanism_related_count": 4,
+  "source_IR_top5_mechanism_related_count": 4,
+  "source_B_step03_note": "B007_0 was deliberately retained as a difficult/contradictory case: STEP03 BSF envelope support was false, so it is not used to manufacture a positive consistency claim.",
+  "pass": true
+}

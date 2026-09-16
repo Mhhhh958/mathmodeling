@@ -1,0 +1,6 @@
+﻿case_id,case_type,model_output,contradiction,interpretation
+source_B,source_known_label,B,"Known B source file is correctly class-labelled, but STEP03 exact BSF-envelope support was not robust.",Feature/model explanation must not be turned into a claim that every B sample shows a clean BSF peak.
+A,target_prediction,OR,"Frozen model predicts OR, while mechanism-feature nearest source prototype is IR.","Target truth is unknown; disagreement is an uncertainty signal, not evidence that either label is the true class."
+B,target_prediction,OR,"Frozen model predicts OR, while mechanism-feature nearest source prototype is B.","Target truth is unknown; disagreement is an uncertainty signal, not evidence that either label is the true class."
+G,target_prediction,OR,"Frozen model predicts OR, while mechanism-feature nearest source prototype is N.","Target truth is unknown; disagreement is an uncertainty signal, not evidence that either label is the true class."
+O,target_prediction,OR,"Frozen model predicts OR, while mechanism-feature nearest source prototype is N.","Target truth is unknown; disagreement is an uncertainty signal, not evidence that either label is the true class."

@@ -1,0 +1,43 @@
+{
+  "chosen_explanation_scope": [
+    "pre-hoc: physically motivated time/spectrum/envelope feature design inherited from Problem 1",
+    "post-hoc: final RandomForest global split importance and sample-dependent decision-path importance"
+  ],
+  "why_no_forced_transfer_process_explanation": "STEP09 selected A0_no_transfer; A2 CORAL and A3 instance weighting were rejected. There is no promoted target transform or adapted shared representation to explain as if it were used.",
+  "faithfulness": {
+    "definition": "Features are ranked by local RF decision-path impurity usage; validation independently replaces the top-5 raw features by the file-balanced source median and compares output change with bottom-5 and 30 random 5-feature controls.",
+    "target_median_top5_abs_score_change": 0.2384444444444446,
+    "target_median_low5_abs_score_change": 0.011888888888888838,
+    "target_median_random5_abs_score_change": 0.06750555555555553,
+    "target_fraction_top_exceeds_both_controls": 1.0,
+    "pass": true
+  },
+  "stability": {
+    "input_perturbation": "independent Gaussian noise, sd=0.500% of source independent-file feature SD",
+    "median_explanation_spearman": 0.9999999999999998,
+    "median_random_control_spearman": 0.0013683634373289546,
+    "prediction_label_stability_rate": 1.0,
+    "n_case_repetitions": 100,
+    "pass": true
+  },
+  "mechanism_consistency": {
+    "scope": "Known source representatives only for exact BPFO/BPFI validation; target geometry is unknown, so target exact characteristic-frequency validation is prohibited.",
+    "source_OR_step03_supported": true,
+    "source_IR_step03_supported": true,
+    "source_OR_top5_mechanism_related_count": 4,
+    "source_IR_top5_mechanism_related_count": 4,
+    "source_B_step03_note": "B007_0 was deliberately retained as a difficult/contradictory case: STEP03 BSF envelope support was false, so it is not used to manufacture a positive consistency claim.",
+    "pass": true
+  },
+  "valid_validation_type_count": 3,
+  "target_truth": "unknown",
+  "causal_claim": "prohibited; importance and ablation measure model dependence/sensitivity, not physical causation",
+  "limitations": [
+    "The final target model is the frozen source RandomForest with no promoted domain adaptation; all A-P remain out-of-support/low-trust STEP10 predictions.",
+    "RandomForest impurity/path importance can favor features used repeatedly by tree splits and can distribute importance across correlated features.",
+    "Median-feature ablation creates synthetic feature combinations and tests model dependence, not a physically realizable intervention.",
+    "Source known-label representatives were used to train the final all-source model; their final-model explanations are illustrative, not held-out performance estimates. OOF predictions are reported separately.",
+    "Target bearing geometry and exact per-file speed are unavailable; source SKF6205 BPFO/BPFI/BSF frequencies are not imposed on target explanations.",
+    "A-P explanations cannot establish target ground truth or target accuracy."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "step": "Q4_STEP11",
+  "generated_utc": "2026-09-16T06:37:15.909257+00:00",
+  "git_sha_at_run_start": "56667c572812032388f8377a79521ff75bf9dd66",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "sklearn": "1.9.1",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "source_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "target_sha256": "22f96cf0bc5f7b7cc75b08f52ce88c41962720b87f9563e955e7bfe3db56b46e",
+  "step09_bundle_sha256": "0e20cdf1e2db2e11b63a20aaa1093c1bf625c401a3ee67cdc9c3589a798c9a50",
+  "step10_target_table_sha256": "7e7f3f77c0c69576cfb320ba2622028ea0dd40fc1d9e5a858393484b4ca5968b",
+  "feature_count": 28,
+  "random_seed": 20260916,
+  "path_importance_definition": "normalized impurity decrease of decision nodes traversed by each sample, averaged over 300 RF trees and file windows",
+  "faithfulness_ablation_reference": "median of 56 source independent-file mean feature vectors",
+  "stability_noise_fraction_source_file_sd": 0.005,
+  "target_labels_used": false,
+  "target_accuracy_computed": false,
+  "elapsed_seconds": 31.38484351599999
+}

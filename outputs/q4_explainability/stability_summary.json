@@ -1,0 +1,8 @@
+{
+  "input_perturbation": "independent Gaussian noise, sd=0.500% of source independent-file feature SD",
+  "median_explanation_spearman": 0.9999999999999998,
+  "median_random_control_spearman": 0.0013683634373289546,
+  "prediction_label_stability_rate": 1.0,
+  "n_case_repetitions": 100,
+  "pass": true
+}

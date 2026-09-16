@@ -1,0 +1,13 @@
+Q4 / STEP11 explainability
+status=PASS
+final_model=A0_no_transfer RandomForest from STEP09
+validation_types={"faithfulness": true, "mechanism_consistency": true, "stability": true}
+valid_validation_type_count=3
+faithfulness_target_median_top5_change=0.238444
+faithfulness_target_median_low5_change=0.011889
+faithfulness_target_median_random5_change=0.067506
+stability_median_spearman=1.000000
+stability_label_rate=1.000000
+target_truth_known=False
+target_accuracy_reported=False
+causal_claim=False

@@ -1,0 +1,8 @@
+{
+  "definition": "Features are ranked by local RF decision-path impurity usage; validation independently replaces the top-5 raw features by the file-balanced source median and compares output change with bottom-5 and 30 random 5-feature controls.",
+  "target_median_top5_abs_score_change": 0.2384444444444446,
+  "target_median_low5_abs_score_change": 0.011888888888888838,
+  "target_median_random5_abs_score_change": 0.06750555555555553,
+  "target_fraction_top_exceeds_both_controls": 1.0,
+  "pass": true
+}

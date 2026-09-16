@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": {
+    "explains_actual_step09_final_model": true,
+    "frozen_28_feature_interface": true,
+    "all_16_target_files_explained": true,
+    "source_known_label_cases_included": true,
+    "faithfulness_with_controls_saved": true,
+    "stability_with_random_control_saved": true,
+    "mechanism_consistency_checked": true,
+    "at_least_two_validation_types_pass": true,
+    "contradiction_cases_saved": true,
+    "explanation_figures_saved": true,
+    "target_truth_unknown": true,
+    "target_accuracy_not_computed": true
+  },
+  "validation_types": {
+    "faithfulness": true,
+    "stability": true,
+    "mechanism_consistency": true
+  },
+  "valid_validation_type_count": 3
+}
