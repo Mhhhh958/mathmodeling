@@ -1,0 +1,37 @@
+{
+  "step": "Q2B_STEP06",
+  "generated_utc": "2026-09-16T05:18:14.527892+00:00",
+  "git_sha_at_run_start": "8ad2d1b125e84460b28f1a855ab3c96b2cd0a76c",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "random_seed": 20260916,
+  "input_source_csv": "outputs/q1c_feature_extraction/q2_source_raw.csv",
+  "input_source_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "input_interface_json": "outputs/q1c_feature_extraction/q2_interface.json",
+  "input_interface_sha256": "098180153cb460aeef19c0e7b1c22cf74e7eb3ec6fc3f1b93f1397ceab1415ec",
+  "feature_count": 28,
+  "labels": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "outer_test_loads": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "C_grid": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "model": "L2 LogisticRegression",
+  "imputer": "median fit on training only",
+  "scaler": "StandardScaler fit on training only",
+  "feature_selection": "none",
+  "class_imbalance": "file-normalized x class-file-balanced sample weight",
+  "aggregation": "mean window class probabilities per file",
+  "validation_status": "PASS"
+}

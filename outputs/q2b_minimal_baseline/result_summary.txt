@@ -1,0 +1,12 @@
+Q2B / STEP06 minimal viable baseline
+status=PASS
+smoke=PASS
+selected_Cs=[10.0, 10.0, 1.0, 10.0]
+file_pooled_macro_f1=0.868185
+file_pooled_balanced_accuracy=0.860119
+file_pooled_accuracy=0.875000
+class_recalls=OR:0.857143,IR:0.833333,B:1.000000,N:0.750000
+window_aux_macro_f1=0.868572
+misclassified_files=7
+manual_recalc_pass=True
+performance_failure_flags={'any_file_group_leakage': False, 'pooled_macro_f1_not_above_b0': False, 'any_pooled_class_recall_zero': False}

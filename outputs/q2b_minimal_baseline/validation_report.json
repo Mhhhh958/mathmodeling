@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "checks": {
+    "smoke_test_pass": true,
+    "source_56_files_400_windows": true,
+    "outer_groups_disjoint": true,
+    "all_outer_tests_have_four_classes": true,
+    "training_boundary_pipeline": true,
+    "no_feature_name_leakage": true,
+    "oof_files_exactly_56_once": true,
+    "oof_windows_exactly_400_once": true,
+    "independent_recalc_pass": true,
+    "model_files_saved": true
+  },
+  "performance_failure_flags_from_step05": {
+    "any_file_group_leakage": false,
+    "pooled_macro_f1_not_above_b0": false,
+    "any_pooled_class_recall_zero": false
+  },
+  "selected_C_by_outer_fold": [
+    {
+      "outer_test_load": 0,
+      "selected_C": 10.0
+    },
+    {
+      "outer_test_load": 1,
+      "selected_C": 10.0
+    },
+    {
+      "outer_test_load": 2,
+      "selected_C": 1.0
+    },
+    {
+      "outer_test_load": 3,
+      "selected_C": 10.0
+    }
+  ],
+  "pooled_file_macro_f1": 0.8681849551414769,
+  "b0_pooled_macro_f1": 0.16666666666666666,
+  "note": "PASS means computational/protocol validation passed. Step05 performance failure flags are reported separately and are not hidden."
+}

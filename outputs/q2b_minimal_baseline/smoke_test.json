@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "representative_groups": [
+    "data/raw/source_domain/cwru_48khz_de/OR007@12_0.mat",
+    "data/raw/source_domain/cwru_48khz_de/IR007_0.mat",
+    "data/raw/source_domain/cwru_48khz_de/B007_0.mat",
+    "data/raw/source_domain/cwru_48khz_normal/N_0.mat"
+  ],
+  "rows": 27,
+  "feature_count": 28,
+  "labels": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "probability_shape": [
+    27,
+    4
+  ],
+  "probability_row_sum_max_abs_error": 2.220446049250313e-16
+}
