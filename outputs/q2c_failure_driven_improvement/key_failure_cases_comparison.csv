@@ -1,0 +1,8 @@
+﻿independent_object_id,class_label,load_hp,baseline_pred,final_pred,baseline_correct,final_correct,transition
+data/raw/source_domain/cwru_48khz_de/IR014_0.mat,IR,0.0,OR,B,False,False,persistent_error
+data/raw/source_domain/cwru_48khz_de/OR014@6_0.mat,OR,0.0,B,B,False,False,persistent_error
+data/raw/source_domain/cwru_48khz_normal/N_0.mat,N,0.0,IR,N,False,True,corrected
+data/raw/source_domain/cwru_48khz_de/OR014@6_1.mat,OR,1.0,B,B,False,False,persistent_error
+data/raw/source_domain/cwru_48khz_de/OR014@6_2.mat,OR,2.0,B,OR,False,True,corrected
+data/raw/source_domain/cwru_48khz_de/IR007_3.mat,IR,3.0,OR,IR,False,True,corrected
+data/raw/source_domain/cwru_48khz_de/OR014@6_3.mat,OR,3.0,B,B,False,False,persistent_error

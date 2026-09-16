@@ -1,0 +1,23 @@
+{
+  "manual_macro_f1": 0.9392652056720966,
+  "stored_macro_f1": 0.9392652056720966,
+  "macro_f1_abs_diff": 0.0,
+  "sample_independent_object_id": "data/raw/source_domain/cwru_48khz_de/B007_0.mat",
+  "sample_window_count": 7,
+  "recalc_mean_probabilities": {
+    "OR": 0.3385714285714285,
+    "IR": 0.03095238095238095,
+    "B": 0.6304761904761904,
+    "N": 0.0
+  },
+  "stored_file_probabilities": {
+    "OR": 0.3385714285714286,
+    "IR": 0.030952380952380953,
+    "B": 0.6304761904761904,
+    "N": 0.0
+  },
+  "recalc_pred_label": "B",
+  "stored_pred_label": "B",
+  "max_probability_abs_diff": 5.551115123125783e-17,
+  "pass": true
+}

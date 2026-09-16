@@ -1,0 +1,5 @@
+﻿config,mean_macro_f1,mean_balanced_accuracy,mean_min_class_recall,mean_features_used
+"{""max_depth"": 10, ""max_features"": ""sqrt"", ""min_samples_leaf"": 1, ""n_estimators"": 300}",0.9395947802197802,0.9523809523809523,0.8452380952380952,28.0
+"{""max_depth"": 10, ""max_features"": ""sqrt"", ""min_samples_leaf"": 3, ""n_estimators"": 300}",0.9395947802197802,0.9523809523809523,0.8452380952380952,28.0
+"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 1, ""n_estimators"": 300}",0.9395947802197802,0.9523809523809523,0.8452380952380952,28.0
+"{""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 3, ""n_estimators"": 300}",0.9395947802197802,0.9523809523809523,0.8452380952380952,28.0

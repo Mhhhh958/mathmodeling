@@ -1,0 +1,15 @@
+Q2C / STEP07 failure-driven improvement and freeze
+status=PASS
+selected_experiment=E3_random_forest
+selection_reason=Selected strictly from predeclared inner-validation criteria; outer-test metrics were not read by selection code.
+baseline_macro_f1=0.868185
+final_macro_f1=0.939265
+baseline_balanced_accuracy=0.860119
+final_balanced_accuracy=0.952381
+baseline_misclassified_files=7
+final_misclassified_files=4
+final_feature_count=28
+final_global_config={"max_depth": 10, "max_features": "sqrt", "min_samples_leaf": 1, "n_estimators": 300}
+inference_ms_per_file_median=20.214628
+manual_recalc_pass=True
+outer_test_used_for_selection=False

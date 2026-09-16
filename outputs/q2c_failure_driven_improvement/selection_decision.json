@@ -1,0 +1,18 @@
+{
+  "selected_experiment_id": "E3_random_forest",
+  "selection_reason": "Selected strictly from predeclared inner-validation criteria; outer-test metrics were not read by selection code.",
+  "selection_data_source": "inner_validation_only",
+  "outer_test_metrics_used_for_selection": false,
+  "promotion_rule": {
+    "min_inner_macro_f1_gain": 0.01,
+    "max_mean_min_recall_drop": 0.05,
+    "min_outer_contexts_nonworse": 3,
+    "context_nonworse_tolerance": 0.005,
+    "tie_order": [
+      "inner_macro_f1",
+      "inner_balanced_accuracy",
+      "inner_min_class_recall",
+      "lower_complexity_rank"
+    ]
+  }
+}

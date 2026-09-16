@@ -1,0 +1,29 @@
+{
+  "step": "Q2C_STEP07",
+  "generated_utc": "2026-09-16T05:30:50.246230+00:00",
+  "git_sha_at_run_start": "ccee43f50bf1539542708c94a04e039c39c22216",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "sklearn": "1.9.1",
+  "random_seed": 20260916,
+  "input_source_csv": "outputs/q1c_feature_extraction/q2_source_raw.csv",
+  "input_source_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "input_interface_json": "outputs/q1c_feature_extraction/q2_interface.json",
+  "input_interface_sha256": "098180153cb460aeef19c0e7b1c22cf74e7eb3ec6fc3f1b93f1397ceab1415ec",
+  "feature_count_base": 28,
+  "experiments": [
+    "E0_baseline_logreg_fullbalance",
+    "E1_logreg_sqrt_class_balance",
+    "E2_logreg_corr95",
+    "E3_random_forest"
+  ],
+  "selection_uses_outer_test_metrics": false,
+  "selected_experiment_id": "E3_random_forest",
+  "global_config": {
+    "max_depth": 10,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1,
+    "n_estimators": 300
+  },
+  "final_feature_count": 28,
+  "elapsed_seconds_total": 49.857735698999996
+}

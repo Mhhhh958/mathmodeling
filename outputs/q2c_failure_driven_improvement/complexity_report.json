@@ -1,0 +1,21 @@
+{
+  "classifier": "RandomForestClassifier",
+  "trainable_parameter_count": null,
+  "n_trees": 300,
+  "total_tree_nodes": 10622,
+  "total_tree_leaves": 5461,
+  "input_feature_count": 28,
+  "serialized_model_bytes": 1152148,
+  "inference_ms_per_file_median": 20.214627500003246,
+  "inference_ms_per_file_mean": 20.319324630357016,
+  "inference_ms_per_file_p95": 20.698979899995607,
+  "timing_repeats_per_file": 10,
+  "timing_batch": "one independent file at a time; all its precomputed feature windows",
+  "timing_includes": "pipeline imputation/scaling, classifier predict_proba, mean probability aggregation",
+  "timing_excludes": "raw MAT loading, signal windowing, feature extraction, CSV I/O",
+  "cpu_model": "AMD EPYC 7763 64-Core Processor",
+  "logical_cpu_count": 4,
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "full_source_fit_seconds": 0.4830672559999982,
+  "sklearn_version": "1.9.1"
+}
