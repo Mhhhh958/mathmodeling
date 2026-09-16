@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "checks": {
+    "frozen_source_model_loaded": true,
+    "source_56_target_16_inventory": true,
+    "target_truth_unknown": true,
+    "A2_and_A3_simulated_run": true,
+    "selection_simulated_only": true,
+    "pseudo_labels_not_used": true,
+    "selected_method_obeys_frozen_rule": true,
+    "real_target_final_output_saved": true,
+    "model_bundle_saved": true,
+    "domain_discrepancy_checked": true,
+    "stability_checked": true,
+    "negative_transfer_checked_on_simulated_target": true,
+    "no_unexplained_collapse": true,
+    "target_accuracy_not_computed": true
+  },
+  "selected_method": "A0_no_transfer",
+  "selected_setting": "frozen_rf",
+  "selection_reason": "Neither A2 nor A3 satisfied the frozen promotion rule; retain the STEP08 no-transfer model.",
+  "method_summary": [
+    {
+      "method": "A0_no_transfer",
+      "setting": "frozen_rf",
+      "mean_macro_f1": 0.9395947802197802,
+      "mean_balanced_accuracy": 0.9523809523809524,
+      "gain_vs_A0": 0.0,
+      "worst_single_load_macro_delta": 0.0,
+      "no_new_zero_recall": true,
+      "eligible": true
+    },
+    {
+      "method": "A2_CORAL",
+      "setting": "reg=0.1",
+      "mean_macro_f1": 0.8472413003663004,
+      "mean_balanced_accuracy": 0.8809523809523809,
+      "gain_vs_A0": -0.09235347985347975,
+      "worst_single_load_macro_delta": -0.32179487179487176,
+      "no_new_zero_recall": false,
+      "eligible": false
+    },
+    {
+      "method": "A3_instance_weighting",
+      "setting": "clip=10",
+      "mean_macro_f1": 0.9395947802197802,
+      "mean_balanced_accuracy": 0.9523809523809524,
+      "gain_vs_A0": 0.0,
+      "worst_single_load_macro_delta": 0.0,
+      "no_new_zero_recall": true,
+      "eligible": false
+    }
+  ],
+  "domain_discrepancy": {
+    "mmd2_before": 0.7546991325054015,
+    "mmd2_after_final_method": 0.7546991325054015,
+    "decreased": false,
+    "note": "No adaptation promoted; domain discrepancy is intentionally unchanged.",
+    "warning": "Lower distribution discrepancy is not treated as proof of higher diagnosis accuracy."
+  },
+  "collapse": {
+    "A0_counts": {
+      "OR": 16,
+      "IR": 0,
+      "B": 0,
+      "N": 0
+    },
+    "final_counts": {
+      "OR": 16,
+      "IR": 0,
+      "B": 0,
+      "N": 0
+    },
+    "final_max_class_share": 1.0,
+    "collapse_flag_ge_0_875": true,
+    "used_for_selection": false,
+    "interpretation": "A-P labels are unknown; class counts diagnose output collapse only and are not a correctness metric."
+  },
+  "stability": {
+    "simulated": {
+      "method": "A0_no_transfer",
+      "setting": "frozen_rf",
+      "seeds": [
+        20260916,
+        20260917,
+        20260918
+      ],
+      "macro_f1_mean_over_12_seed_load_cases": 0.9441735347985348,
+      "macro_f1_std_over_12_seed_load_cases": 0.052009309829439715,
+      "minimum_macro_f1_over_12_seed_load_cases": 0.8682692307692308
+    },
+    "target": {
+      "seeds": [
+        20260916,
+        20260917,
+        20260918
+      ],
+      "file_label_agreement_rate_all_three": 1.0,
+      "files_with_seed_disagreement": []
+    }
+  },
+  "negative_transfer": {
+    "selected_method": "A0_no_transfer",
+    "selected_setting": "frozen_rf",
+    "simulated_mean_macro_delta": 0.0,
+    "simulated_worst_load_macro_delta": 0.0,
+    "frozen_rule_satisfied": true,
+    "real_target_accuracy_verifiable": false,
+    "real_target_negative_transfer_verifiable": false,
+    "note": "Real A-P negative transfer cannot be measured without target truth; only simulated-target evidence is used for selection."
+  },
+  "target_accuracy_reported": false
+}
