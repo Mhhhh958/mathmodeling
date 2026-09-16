@@ -1,0 +1,8 @@
+﻿major_conclusion,required_evidence,evidence,status
+"Q1 selected M1 is a coherent 56-file, four-class source set and produces a target-compatible 28-feature interface.","inventory, group IDs, feature interface, no source-only geometry features in Q2/Q3",Q1C interface + STEP12 P0 audit,supported
+Q2 final RF improves on the frozen linear baseline under the same file-grouped load-held-out protocol.,inner-only selection plus confirmatory 56-file OOF metrics,Macro-F1 0.8682 -> 0.9393; outer test not used for selection,supported; do not call statistically significant
+The final source classifier uses information from multiple feature modules rather than one unverified module.,single-group ablations under unchanged split/model,feature_group_ablation.csv,supported with measured ablation deltas
+"Source generalization must be stated across held-out operating loads, not random windows.",load-held-out file-level folds,STEP07 pooled Macro-F1=0.9393; STEP12 reproduces fixed protocol,supported
+No tested unsupervised adaptation earned promotion over A0.,"simulated-target metrics, negative-transfer rule, no A-P truth tuning",A2 gain=-0.0924; A3 gain=0.0000,supported
+"A-P labels are model predictions only, not verified truth; all-OR collapse is a warning.","unknown truth ledger, no target accuracy, collapse flag","target truth={'unknown'}; counts={'OR': 16, 'IR': 0, 'B': 0, 'N': 0}",supported as limitation
+Q4 explanations describe the frozen final model and have empirical faithfulness/stability checks.,same model/interface; >=2 explanation validations,STEP11 valid validation types=3,supported; not causal

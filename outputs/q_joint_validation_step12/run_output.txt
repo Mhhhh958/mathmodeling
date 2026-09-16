@@ -1,0 +1,11 @@
+STEP12 joint validation / robustness / failure boundaries
+status=PASS
+P0_failures=[]
+STEP07 official Macro-F1=0.939265; fresh 1s50 reproduction=0.939265; abs_diff=0.000e+00
+feature_ablation_macro_range=0.899167..0.952093
+window_sensitivity_macro_range=0.939265..0.952093
+normal_LONO=4/4
+target_gain_stress_max_changed_files=0/16
+step09_method=A0_no_transfer
+blocking_reruns=[]
+Target truth remains unknown; no target accuracy was computed.

@@ -1,0 +1,23 @@
+{
+  "step": "STEP12_joint_validation",
+  "generated_utc": "2026-09-16T06:51:37.604803+00:00",
+  "git_sha_at_run_start": "5eddd22abc65f076044be08820fb194935eb2a7e",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "sklearn": "1.9.1",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "seed": 20260916,
+  "source_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "target_sha256": "22f96cf0bc5f7b7cc75b08f52ce88c41962720b87f9563e955e7bfe3db56b46e",
+  "q2_interface_sha256": "098180153cb460aeef19c0e7b1c22cf74e7eb3ec6fc3f1b93f1397ceab1415ec",
+  "q3_interface_sha256": "4616c8cf861d51ec0451e7bf36ecd6c1c4bcafd6fcaa85914f4959a235886e3e",
+  "final_source_model_sha256": "6a7fb81c0a8dda9e6c33c2dca45612abba471ff665153391c24902407304ec98",
+  "step09_validation_sha256": "fec1424673ef65d9b38e7445718daac6a5152e41267812816fe079477590d4e7",
+  "step10_validation_sha256": "e7671646d318efdc913a7a430d160b39c69836d1586ec8106bd4cf74139d85db",
+  "step11_validation_sha256": "b410a3f2f7a8e4e96aa5c47e4b9b98c89303a5e61ea7f54079cdfc025bb4bf25",
+  "feature_count": 28,
+  "bootstrap_repetitions": 2000,
+  "learned_reselection_performed": false,
+  "target_labels_used": false,
+  "target_accuracy_computed": false,
+  "elapsed_seconds": 44.478684884
+}

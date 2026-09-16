@@ -1,0 +1,11 @@
+{
+  "resampling_unit": "independent source files, stratified within OR/IR/B/N; windows are never resampled independently",
+  "repetitions": 2000,
+  "macro_f1_median": 0.9392652056720966,
+  "macro_f1_p05": 0.8907407407407408,
+  "macro_f1_p95": 0.9854545454545455,
+  "recall_N_median": 1.0,
+  "recall_N_p05": 1.0,
+  "recall_N_p95": 1.0,
+  "warning": "Descriptive resampling sensitivity only; N has only four independent files, so this is not a high-precision population confidence interval."
+}

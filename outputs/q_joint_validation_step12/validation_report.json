@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "checks": {
+    "no_P0_leakage_or_chain_failure": true,
+    "q1_q2_q3_feature_interface_same_28": true,
+    "normal_independent_file_count_is_4": true,
+    "target_truth_unknown_and_accuracy_absent": true,
+    "fixed_1s_window_reproduces_step07_metric": true,
+    "feature_ablation_completed": true,
+    "window_sensitivity_completed_with_56_files_each": true,
+    "aggregation_sensitivity_completed": true,
+    "independent_file_bootstrap_completed": true,
+    "normal_leave_one_file_out_completed": true,
+    "migration_negative_transfer_evidence_present": true,
+    "explainability_chain_valid": true,
+    "all_major_claims_have_evidence": true,
+    "no_blocking_rerun_open": true
+  },
+  "p0_failures": [],
+  "official_step07_pooled_macro_f1": 0.9392652056720966,
+  "fresh_1s50_pooled_macro_f1": 0.9392652056720966,
+  "fresh_reproduction_abs_diff": 0.0,
+  "feature_ablation": [
+    {
+      "setting": "all_28",
+      "feature_count": 28,
+      "pooled_macro_f1": 0.9392652056720966,
+      "delta_macro_f1_vs_all28": 0.0
+    },
+    {
+      "setting": "drop_time_domain",
+      "feature_count": 17,
+      "pooled_macro_f1": 0.9520933977455717,
+      "delta_macro_f1_vs_all28": 0.012828192073475075
+    },
+    {
+      "setting": "drop_frequency_domain",
+      "feature_count": 20,
+      "pooled_macro_f1": 0.8991666666666667,
+      "delta_macro_f1_vs_all28": -0.04009853900542992
+    },
+    {
+      "setting": "drop_envelope_domain",
+      "feature_count": 19,
+      "pooled_macro_f1": 0.9358585858585858,
+      "delta_macro_f1_vs_all28": -0.0034066198135107584
+    }
+  ],
+  "window_sensitivity": [
+    {
+      "setting": "0.75s_50pct_overlap",
+      "n_windows": 520,
+      "pooled_macro_f1": 0.9520933977455717,
+      "min_outer_macro_f1": 0.8682692307692308,
+      "all_56_files_retained": true
+    },
+    {
+      "setting": "1.00s_50pct_overlap",
+      "n_windows": 400,
+      "pooled_macro_f1": 0.9392652056720966,
+      "min_outer_macro_f1": 0.8682692307692308,
+      "all_56_files_retained": true
+    },
+    {
+      "setting": "1.25s_50pct_overlap",
+      "n_windows": 288,
+      "pooled_macro_f1": 0.9392652056720966,
+      "min_outer_macro_f1": 0.8682692307692308,
+      "all_56_files_retained": true
+    },
+    {
+      "setting": "1.00s_no_overlap",
+      "n_windows": 226,
+      "pooled_macro_f1": 0.9392652056720966,
+      "min_outer_macro_f1": 0.8682692307692308,
+      "all_56_files_retained": true
+    }
+  ],
+  "aggregation_sensitivity": [
+    {
+      "domain": "source_oof",
+      "mean_prob_macro_f1": 0.9392652056720966,
+      "majority_vote_macro_f1": 0.9392652056720966,
+      "file_label_disagreement_count": 0,
+      "n_files": 56
+    },
+    {
+      "domain": "target_unknown_truth",
+      "mean_prob_macro_f1": NaN,
+      "majority_vote_macro_f1": NaN,
+      "file_label_disagreement_count": 0,
+      "n_files": 16
+    }
+  ],
+  "normal_lono_correct": "4/4",
+  "file_bootstrap": {
+    "resampling_unit": "independent source files, stratified within OR/IR/B/N; windows are never resampled independently",
+    "repetitions": 2000,
+    "macro_f1_median": 0.9392652056720966,
+    "macro_f1_p05": 0.8907407407407408,
+    "macro_f1_p95": 0.9854545454545455,
+    "recall_N_median": 1.0,
+    "recall_N_p05": 1.0,
+    "recall_N_p95": 1.0,
+    "warning": "Descriptive resampling sensitivity only; N has only four independent files, so this is not a high-precision population confidence interval."
+  },
+  "target_gain_max_label_changes": 0,
+  "step09_selected_method": "A0_no_transfer",
+  "blocking_reruns": []
+}

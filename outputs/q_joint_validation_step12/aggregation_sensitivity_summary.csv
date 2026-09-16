@@ -1,0 +1,3 @@
+﻿domain,mean_prob_macro_f1,majority_vote_macro_f1,file_label_disagreement_count,n_files
+source_oof,0.9392652056720966,0.9392652056720966,0,56
+target_unknown_truth,,,0,16

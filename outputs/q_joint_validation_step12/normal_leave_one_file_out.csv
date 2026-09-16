@@ -1,0 +1,5 @@
+﻿held_normal_file,load_hp,train_independent_normals,n_test_windows,pred_label,p_N,correct
+data/raw/source_domain/cwru_48khz_normal/N_0.mat,0.0,3,9,N,0.7955555555555556,True
+data/raw/source_domain/cwru_48khz_normal/N_1_(1772rpm).mat,1.0,3,15,N,0.9915555555555554,True
+data/raw/source_domain/cwru_48khz_normal/N_2_(1750rpm).mat,2.0,3,15,N,1.0,True
+data/raw/source_domain/cwru_48khz_normal/N_3.mat,3.0,3,15,N,0.9608888888888887,True

@@ -1,0 +1,12 @@
+﻿issue,severity,finding,repair_or_control
+Potential window leakage,P0,closed,all splits and OOF checks use independent_object_id; 400 OOF windows belong to exactly 56 file groups
+N class may be overstated by 54 windows,P0,closed,"report N=4 independent files; LONO and file bootstrap use files, not windows, as resampling unit"
+Historical/implicit target labels,P0,closed,target truth_status remains unknown; target accuracy never computed; no pseudo-label selection
+48k source vs 32k target point-count confusion,P0,closed,windows defined in seconds; fs retained; frequency features use physical Hz in common 0–6k band
+Source SKF6205 geometry could leak into target,P0,closed,geometry-specific mechanism features excluded from Q2/Q3 interface
+Outer test tuning,P0,closed,STEP07 selection_inner_only=true and outer_test_used_for_selection=false
+Pseudo-label self-certification,P0,closed,STEP09 pseudo_labels_not_used=true; selection uses simulated source target only
+Aggregation rule drift,P0,closed,mean window class probability then argmax is frozen Q2→Q3→Q3C; majority vote tested only as sensitivity
+STEP11 first CI attempt failed on matplotlib API,P2 execution,closed,changed boxplot keyword labels→tick_labels and reran successfully; accepted evidence commit is later successful run
+A-P all-OR output collapse,P1 scientific limitation,open but explained; not a leakage defect,kept as low-trust warning; rejected unvalidated adaptation rather than manually rebalance labels
+B007_0 lacks robust BSF envelope support,P1 mechanism inconsistency,open but bounded,kept as contradiction case; do not claim every B sample has clean BSF peak

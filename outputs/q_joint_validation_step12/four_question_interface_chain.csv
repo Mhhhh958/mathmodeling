@@ -1,0 +1,6 @@
+﻿stage,artifact,version,feature_count,group_field,aggregation,source_truth,target_truth
+Q1C_STEP04,q2_source_raw.csv + q2_target_raw.csv,Q1C-STEP04-v1,28,independent_object_id,not applicable; raw windows,known OR/IR/B/N,unknown
+Q2C_STEP07,final_source_model.joblib + q3_interface.json,Q2C-STEP07-v1,28,independent_object_id,arithmetic mean of window class probabilities; argmax for file label,used only inside frozen grouped protocol,not used
+Q3B_STEP09,final_transfer_bundle.joblib,A0_no_transfer/frozen_rf,28,independent_object_id,arithmetic mean of window class probabilities; argmax,simulated target truth revealed only after adaptation evaluation,unknown; never used
+Q3C_STEP10,final_A_P_label_table.csv,STEP09 frozen A0,28,independent_object_id,"arithmetic mean of 15 window class scores per A-P file, then argmax",not applicable,unknown; accuracy not computed
+Q4_STEP11,q4_explainability outputs,explains STEP09 A0 RF,28,independent_object_id,same file-level model output; explanations averaged across file windows,known representatives for mechanism cross-check,unknown; explanations not truth

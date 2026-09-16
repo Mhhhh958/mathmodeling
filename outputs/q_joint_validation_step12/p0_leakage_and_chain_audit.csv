@@ -1,0 +1,16 @@
+﻿check,severity,pass,evidence
+Q1C/Q2C/Q3 shared feature list identical,P0,True,"q2=28, q3=28"
+source inventory 56 independent files,P0,True,56
+target inventory A-P 16 independent files,P0,True,16
+normal class has exactly four independent files,P0,True,"N files=4, loads=[0.0, 1.0, 2.0, 3.0]"
+target truth remains unknown,P0,True,['unknown']
+source windows map to one class/load per independent object,P0,True,class/load uniqueness by independent_object_id
+OOF source files exactly 56 once,P0,True,rows=56 unique=56
+OOF windows exactly 400 once,P0,True,rows=400 unique=400
+source/target sampling-rate metadata separated,P0,True,"source=[48000], target=[32000]"
+target approximate RPM excluded from model features,P0,True,rpm fields forbidden by Q2 interface
+source-only geometry mechanism features excluded from Q2/Q3,P0,True,SKF6205-specific mechanism columns are not model inputs
+outer tests not used for Q2 model selection,P0,True,Selected strictly from predeclared inner-validation criteria; outer-test metrics were not read by selection code.
+no target pseudo-label self-certification,P0,True,Neither A2 nor A3 satisfied the frozen promotion rule; retain the STEP08 no-transfer model.
+file aggregation consistent downstream,P0,True,"Q3 interface=arithmetic mean of window class probabilities; argmax for file label; STEP10=arithmetic mean of 15 window class scores per A-P file, then argmax"
+Q4 explains actual final Q3 model,P0,True,STEP11 validation report

@@ -1,0 +1,6 @@
+﻿gain_factor,gain_db,OR_count,IR_count,B_count,N_count,labels_serialized,changed_files_vs_nominal,scenario_basis
+0.5,-6.020599913279624,16,0,0,0,A:OR;B:OR;C:OR;D:OR;E:OR;F:OR;G:OR;H:OR;I:OR;J:OR;K:OR;L:OR;M:OR;N:OR;O:OR;P:OR,0,sensor-chain multiplicative gain stress: ±3 dB and ±6 dB; not asserted as measured target calibration error
+0.7071067811865475,-3.0102999566398125,16,0,0,0,A:OR;B:OR;C:OR;D:OR;E:OR;F:OR;G:OR;H:OR;I:OR;J:OR;K:OR;L:OR;M:OR;N:OR;O:OR;P:OR,0,sensor-chain multiplicative gain stress: ±3 dB and ±6 dB; not asserted as measured target calibration error
+1.0,0.0,16,0,0,0,A:OR;B:OR;C:OR;D:OR;E:OR;F:OR;G:OR;H:OR;I:OR;J:OR;K:OR;L:OR;M:OR;N:OR;O:OR;P:OR,0,sensor-chain multiplicative gain stress: ±3 dB and ±6 dB; not asserted as measured target calibration error
+1.4142135623730951,3.010299956639812,16,0,0,0,A:OR;B:OR;C:OR;D:OR;E:OR;F:OR;G:OR;H:OR;I:OR;J:OR;K:OR;L:OR;M:OR;N:OR;O:OR;P:OR,0,sensor-chain multiplicative gain stress: ±3 dB and ±6 dB; not asserted as measured target calibration error
+2.0,6.020599913279624,16,0,0,0,A:OR;B:OR;C:OR;D:OR;E:OR;F:OR;G:OR;H:OR;I:OR;J:OR;K:OR;L:OR;M:OR;N:OR;O:OR;P:OR,0,sensor-chain multiplicative gain stress: ±3 dB and ±6 dB; not asserted as measured target calibration error

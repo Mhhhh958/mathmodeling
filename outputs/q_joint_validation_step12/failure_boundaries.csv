@@ -1,0 +1,9 @@
+﻿condition,observed,boundary
+CORAL global covariance alignment,simulated-target mean Macro-F1 below A0 and new zero-recall condition,do not claim distribution alignment improves diagnosis; CORAL not promoted
+domain-classifier instance weighting,no mean Macro-F1 gain over A0,extra adaptation complexity unsupported; retain A0
+target A-P inference,16/16 predicted OR and all marked very-low-trust in STEP10,cannot infer target class prevalence or accuracy
+normal-class evidence,only 4 independent files regardless of window count,N metrics remain coarse; report counts and LONO rather than precise population claims
+window parameter dependence,tested pooled Macro-F1 minimum=0.9393,"1 s/50% is frozen main setting; neighboring physical windows are sensitivity checks, not new model-selection opportunities"
+feature module removal,worst ablated pooled Macro-F1=0.8992,do not call any module indispensable unless its removal causes a material reproducible drop; report actual delta
+target sensor gain,up to 0/16 target file labels change in ±3/±6 dB stress,"if gain-sensitive predictions change, A-P labels are not gain-robust; this stress is not a target-accuracy test"
+mechanism explanation,source B difficult case lacks robust BSF support; many target prototypes disagree with OR,feature importance/nearest prototype cannot be written as physical causation or target truth
