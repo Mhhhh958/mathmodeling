@@ -1,0 +1,65 @@
+{
+  "frozen_step09_method": "A0_no_transfer",
+  "frozen_step09_setting": "frozen_rf",
+  "aggregation_rule": "arithmetic mean of 15 window class scores per A-P file, then argmax",
+  "label_mapping": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "target_predictions": {
+    "A": "OR",
+    "B": "OR",
+    "C": "OR",
+    "D": "OR",
+    "E": "OR",
+    "F": "OR",
+    "G": "OR",
+    "H": "OR",
+    "I": "OR",
+    "J": "OR",
+    "K": "OR",
+    "L": "OR",
+    "M": "OR",
+    "N": "OR",
+    "O": "OR",
+    "P": "OR"
+  },
+  "target_prediction_counts": {
+    "OR": 16,
+    "IR": 0,
+    "B": 0,
+    "N": 0
+  },
+  "global_collapse_warning": true,
+  "all_files_seed_vote_agreement": true,
+  "mean_window_consistency": 1.0,
+  "low_trust_file_count": 16,
+  "very_low_trust_files": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "source_fitted_pca_explained_variance_ratio": [
+    0.4047278013979996,
+    0.22422760438278241
+  ],
+  "migration_display_note": "STEP09 promoted no adaptation; before/final panels are intentionally identical. This is method-selection evidence, not target-correctness evidence.",
+  "mechanism_evidence_note": "Prototype similarities use impact/spectral/envelope features and source true classes only; explanatory, not target truth.",
+  "score_note": "RF class scores are uncalibrated and not real correctness probabilities.",
+  "target_accuracy_reported": false
+}

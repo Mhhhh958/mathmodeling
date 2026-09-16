@@ -1,0 +1,20 @@
+{
+  "step": "Q3C_STEP10",
+  "generated_utc": "2026-09-16T06:12:08.880256+00:00",
+  "git_sha_at_run_start": "c5aa7a840ae20c8ae851f88534a4fe0bc8ee4f97",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "sklearn": "1.9.1",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "source_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "target_sha256": "22f96cf0bc5f7b7cc75b08f52ce88c41962720b87f9563e955e7bfe3db56b46e",
+  "q3_interface_sha256": "4616c8cf861d51ec0451e7bf36ecd6c1c4bcafd6fcaa85914f4959a235886e3e",
+  "step09_final_bundle_sha256": "0e20cdf1e2db2e11b63a20aaa1093c1bf625c401a3ee67cdc9c3589a798c9a50",
+  "step09_decision_sha256": "d520521d362fa42c660a6e5448b75efd7c34fc10feff8e82d65a0e801be4f270",
+  "feature_count": 28,
+  "mechanism_feature_count": 12,
+  "aggregation_rule": "mean window class scores by independent_object_id; argmax",
+  "manual_label_adjustment": false,
+  "target_labels_used": false,
+  "target_accuracy_computed": false,
+  "elapsed_seconds": 0.9278522879999969
+}

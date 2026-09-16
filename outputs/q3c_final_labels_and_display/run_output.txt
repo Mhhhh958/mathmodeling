@@ -1,0 +1,11 @@
+Q3C / STEP10 final A-P labels and transfer display
+status=PASS
+frozen_method=A0_no_transfer
+aggregation=mean of 15 window scores then argmax
+prediction_counts={"OR": 16, "IR": 0, "B": 0, "N": 0}
+all_seed_votes_agree=True
+low_trust_file_count=16
+very_low_trust_files=A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P
+global_collapse_warning=True
+target_accuracy_reported=False
+manual_label_adjustment=False

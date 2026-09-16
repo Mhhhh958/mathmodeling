@@ -1,0 +1,8 @@
+{
+  "reference_population": "correct source OOF independent files only",
+  "n_reference_files": 52,
+  "confidence_q10": 0.6269375839846428,
+  "margin_q10": 0.30970238095238095,
+  "entropy_q90": 0.6323901338140835,
+  "use": "Descriptive source-derived uncertainty thresholds only; not calibrated target correctness probabilities."
+}
