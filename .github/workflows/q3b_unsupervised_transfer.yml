@@ -1,0 +1,47 @@
+name: q3b-step09-unsupervised-transfer
+
+on:
+  push:
+    paths:
+      - 'scripts/q3b_unsupervised_transfer.py'
+      - '.github/workflows/q3b_unsupervised_transfer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-q3b-step09:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy pandas scipy scikit-learn joblib matplotlib
+
+      - name: Run Q3B STEP09
+        run: |
+          mkdir -p outputs/q3b_unsupervised_transfer
+          python scripts/q3b_unsupervised_transfer.py | tee outputs/q3b_unsupervised_transfer/run_output.txt
+
+      - name: Commit generated evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/q3b_unsupervised_transfer
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'Add Q3B STEP09 transfer evidence [skip ci]'
+            git push
+          fi
