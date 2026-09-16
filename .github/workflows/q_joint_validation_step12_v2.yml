@@ -1,0 +1,46 @@
+name: q-joint-validation-step12-v2
+
+on:
+  push:
+    paths:
+      - 'scripts/q_joint_validation_step12_runner.py'
+      - '.github/workflows/q_joint_validation_step12_v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-step12-v2:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy==1.26.4 pandas==2.2.3 scipy==1.14.1 scikit-learn==1.9.1 joblib==1.6.0 matplotlib==3.9.2
+      - name: Run STEP12 fixed
+        shell: bash
+        run: |
+          set -o pipefail
+          rm -rf outputs/q_joint_validation_step12
+          mkdir -p outputs/q_joint_validation_step12
+          python scripts/q_joint_validation_step12_runner.py | tee outputs/q_joint_validation_step12/run_output.txt
+      - name: Commit generated evidence
+        shell: bash
+        run: |
+          set -e
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/q_joint_validation_step12
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'Add STEP12 joint validation evidence [skip ci]'
+            git push
+          fi
