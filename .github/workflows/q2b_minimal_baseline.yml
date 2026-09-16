@@ -1,0 +1,51 @@
+name: q2b-step06-minimal-baseline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/q2b_minimal_baseline.py'
+      - '.github/workflows/q2b_minimal_baseline.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-q2b-step06:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy==1.26.4 pandas==2.2.3 scipy==1.14.1 scikit-learn==1.5.2 joblib==1.4.2
+
+      - name: Run Q2B STEP06
+        run: |
+          set -o pipefail
+          mkdir -p outputs/q2b_minimal_baseline
+          python scripts/q2b_minimal_baseline.py 2>&1 | tee outputs/q2b_minimal_baseline/run_output.txt
+
+      - name: Commit generated evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/q2b_minimal_baseline
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'Add Q2B STEP06 baseline evidence [skip ci]'
+            git push
+          fi
