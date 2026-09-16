@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": {
+    "m1_count_and_class_mapping": true,
+    "m1_de_readable_and_at_least_1s": true,
+    "skf6205_formula_implementation": true,
+    "demean_preserves_variability": true,
+    "reproduces_existing_mechanism_checks": true,
+    "all_required_figures_generated_and_readable": true
+  },
+  "evidence": {
+    "m1_file_audit": "outputs/q1b_signal_mechanism/m1_file_audit.csv",
+    "representative_summary": "outputs/q1b_signal_mechanism/representative_signal_summary.csv",
+    "preprocessing_checks": "outputs/q1b_signal_mechanism/preprocessing_checks.csv",
+    "mechanism_frequency_table": "outputs/q1b_signal_mechanism/mechanism_frequency_table.csv",
+    "mechanism_recalc": "outputs/q1b_signal_mechanism/mechanism_recalc.csv",
+    "baseline_crosscheck": "outputs/q1b_signal_mechanism/crosscheck_existing_outputs.csv",
+    "figure_checks": "outputs/q1b_signal_mechanism/figure_checks.csv",
+    "figures_directory": "outputs/q1b_signal_mechanism/figures/"
+  }
+}

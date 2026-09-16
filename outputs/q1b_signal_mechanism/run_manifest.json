@@ -1,0 +1,44 @@
+{
+  "protocol": "Q1B-STEP03-v1.0",
+  "timestamp_utc": "2026-09-16T04:45:13.931142+00:00",
+  "git_sha_at_run_start": "0dd7896483e899a6ea2a4a0d5b228b50e81d7e3a",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.14.1",
+  "matplotlib": "3.9.2",
+  "source_fs_hz": 48000,
+  "window_seconds": 1.0,
+  "m1_total_files": 56,
+  "m1_class_counts": {
+    "OR": 28,
+    "IR": 12,
+    "B": 12,
+    "N": 4
+  },
+  "representatives": [
+    "OR007@12_0.mat",
+    "IR007_0.mat",
+    "B007_0.mat",
+    "N_1_(1772rpm).mat",
+    "N_0.mat"
+  ],
+  "preprocessing_policy": {
+    "demean": true,
+    "linear_detrend_default": false,
+    "bandpass_default": false,
+    "resample_in_step03": false,
+    "envelope": "Hilbert envelope for mechanism evidence; no forced band-pass"
+  },
+  "h3_adaptive_bsf_trace": {
+    "exists": true,
+    "n_rows": 3,
+    "adaptive_bsf_ratio_values": [
+      0.7520029026016326,
+      0.913596331728138,
+      0.8330323948228021
+    ],
+    "all_adaptive_bsf_ratio_lt_1": true
+  }
+}

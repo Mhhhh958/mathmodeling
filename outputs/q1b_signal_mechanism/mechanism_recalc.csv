@@ -1,0 +1,4 @@
+﻿label,record_id,rpm,frequency_name,theoretical_frequency_hz,window_start,local_envelope_ratio,harmonic_ratios,supported_ratio_gt_1
+OR,source_domain/cwru_48khz_de/OR007@12_0.mat,1796.0,BPFO,107.30428106701366,0,7.363890099253586,8.94605|7.36389|2.77128,True
+IR,source_domain/cwru_48khz_de/IR007_0.mat,1796.0,BPFI,162.09571893298633,0,20.741663105650016,119.195|20.7417|3.30343,True
+B,source_domain/cwru_48khz_de/B007_0.mat,1796.0,BSF,141.08907248279553,0,0.7615659072906779,0.404159|0.761566|1.50488,False

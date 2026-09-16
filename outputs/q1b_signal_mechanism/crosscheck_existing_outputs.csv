@@ -1,0 +1,4 @@
+﻿record_id,baseline_found,frequency_abs_diff_hz,ratio_abs_diff,match_pass
+source_domain/cwru_48khz_de/OR007@12_0.mat,True,2.842170943040401e-14,0.0,True
+source_domain/cwru_48khz_de/IR007_0.mat,True,0.0,0.0,True
+source_domain/cwru_48khz_de/B007_0.mat,True,0.0,0.0,True

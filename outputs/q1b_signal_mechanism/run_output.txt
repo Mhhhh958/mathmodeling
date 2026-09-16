@@ -1,0 +1,9 @@
+Q1B / STEP03 signal mechanism validation
+status=PASS
+M1 files=56; counts={'OR': 28, 'IR': 12, 'B': 12, 'N': 4}
+formula_pass=True
+preprocessing_pass=True
+baseline_crosscheck_pass=True
+figure_pass=True; figure_count=17
+Policy: demean=yes; linear_detrend_default=no; bandpass_default=no; resample_step03=no.
+Mechanism frequencies are supporting evidence, not hard label rules.
