@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'scripts/q3b_unsupervised_transfer.py'
+      - 'scripts/q3b_unsupervised_transfer_runner.py'
       - '.github/workflows/q3b_unsupervised_transfer.yml'
   workflow_dispatch:
 
@@ -30,9 +31,11 @@ jobs:
           pip install numpy pandas scipy scikit-learn joblib matplotlib
 
       - name: Run Q3B STEP09
+        shell: bash
         run: |
+          set -o pipefail
           mkdir -p outputs/q3b_unsupervised_transfer
-          python scripts/q3b_unsupervised_transfer.py | tee outputs/q3b_unsupervised_transfer/run_output.txt
+          python scripts/q3b_unsupervised_transfer_runner.py | tee outputs/q3b_unsupervised_transfer/run_output.txt
 
       - name: Commit generated evidence
         run: |
