@@ -31,6 +31,7 @@ jobs:
 
       - name: Run Q2C STEP07
         run: |
+          mkdir -p outputs/q2c_failure_driven_improvement
           python scripts/q2c_failure_driven_improvement.py | tee outputs/q2c_failure_driven_improvement/run_output.txt
 
       - name: Commit generated evidence
