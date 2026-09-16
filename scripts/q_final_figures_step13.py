@@ -451,7 +451,7 @@ def main():
     fig, axes = plt.subplots(2,2,figsize=(FIGURE_WIDTH_IN,5.2))
     for ax, ftr in zip(axes.ravel(), selected_feats):
         data = [sf.loc[sf.class_label==c, ftr].to_numpy(float) for c in LABELS]
-        bp = ax.boxplot(data, labels=LABELS, patch_artist=True, showfliers=False, widths=0.55)
+        bp = ax.boxplot(data, tick_labels=LABELS, patch_artist=True, showfliers=False, widths=0.55)
         for patch, c in zip(bp["boxes"], LABELS):
             patch.set_facecolor(CLASS_COLORS[c]); patch.set_alpha(0.55)
         ax.set_ylabel(f"{feature_display(ftr)} / {units[ftr]}")
@@ -581,7 +581,8 @@ def main():
     save_figure(fig,"F08_q3_target_scores_uncertainty")
 
     # F09 selected low-trust target window score trajectories; re-inference from frozen model
-    pipe=joblib.load(Q2_FINAL_MODEL)
+    model_bundle=joblib.load(Q2_FINAL_MODEL)
+    pipe=model_bundle["pipeline"] if isinstance(model_bundle, dict) else model_bundle
     classes=list(pipe.named_steps["clf"].classes_)
     P=pipe.predict_proba(tgt[feats].to_numpy(float))
     wp=pd.DataFrame(P,columns=[f"p_{c}" for c in classes])
@@ -656,12 +657,12 @@ def main():
     fig,axes=plt.subplots(1,2,figsize=(FIGURE_WIDTH_IN,3.25))
     groups=["Top5高贡献","Random5随机","Low5低贡献"]
     vals=[f12[(f12.panel=="faithfulness")&(f12.group==g)].value.to_numpy(float) for g in groups]
-    bp=axes[0].boxplot(vals,labels=groups,patch_artist=True,showfliers=True)
+    bp=axes[0].boxplot(vals,tick_labels=groups,patch_artist=True,showfliers=True)
     for p,gray in zip(bp["boxes"],["#555555","#AAAAAA","#DDDDDD"]): p.set_facecolor(gray)
     axes[0].set_ylabel("遮蔽后Top1分数绝对变化 / 1"); axes[0].set_title("(a) 忠实性：高贡献移除影响更大"); clean_axes(axes[0]); axes[0].tick_params(axis="x",rotation=15)
     groups2=["原解释 vs 小扰动","随机排列对照"]
     vals2=[f12[(f12.panel=="stability")&(f12.group==g)].value.to_numpy(float) for g in groups2]
-    bp=axes[1].boxplot(vals2,labels=groups2,patch_artist=True,showfliers=True)
+    bp=axes[1].boxplot(vals2,tick_labels=groups2,patch_artist=True,showfliers=True)
     for p,gray in zip(bp["boxes"],["#555555","#DDDDDD"]): p.set_facecolor(gray)
     axes[1].set_ylabel("Spearman ρ / 1"); axes[1].set_ylim(-1.05,1.05); axes[1].set_title("(b) 稳定性：小扰动 vs 随机对照"); clean_axes(axes[1]); axes[1].tick_params(axis="x",rotation=12)
     fig.suptitle("F12  问题4解释验证：忠实性与局部稳定性",y=1.02)

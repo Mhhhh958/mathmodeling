@@ -1,0 +1,13 @@
+﻿feature,feature_group,rf_gini_importance,rank
+env_rms,envelope,0.09491698791868,1
+env_entropy_0_500,envelope,0.0925003760038194,2
+td_peak_abs,impact,0.0760127445104992,3
+td_ptp,impact,0.0729105291481378,4
+td_std,time_energy,0.0728285721490763,5
+fd_energy_ratio_1500_3000,spectrum,0.0606629221084086,6
+td_rms,time_energy,0.0559595668251851,7
+fd_f95_hz_0_6k,spectrum,0.0551600377894987,8
+env_energy_ratio_50_150,envelope,0.0467668369591862,9
+env_dominant_hz_0_500,envelope,0.0384006826635605,10
+fd_dominant_hz_0_6k,spectrum,0.0360683670012356,11
+td_zero_cross_rate,time_shape,0.0347236705904293,12

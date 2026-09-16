@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "checks": {
+    "step12_pass_and_closed": true,
+    "same_frozen_28_feature_interface": true,
+    "target_truth_unknown": true,
+    "A_P_exactly_once": true,
+    "no_target_accuracy": true,
+    "final_method_is_step09_A0": true,
+    "step10_reinference_exact": true,
+    "main_figure_inventory_12": true,
+    "all_main_figures_png_pdf_svg_bw": true,
+    "supplement_S01_generated": true,
+    "three_data_points_checked_each": true,
+    "fixed_class_colors_recorded": true,
+    "vector_and_450dpi_png_policy": true,
+    "black_white_previews_generated": true,
+    "target_confusion_matrix_deleted": true,
+    "no_old_figure_reuse": true,
+    "frozen_answer_table_present": true,
+    "numeric_and_figure_indices_present": true
+  },
+  "freeze_id": "STEP13-FROZEN-v1",
+  "accepted_step12_evidence_commit": "eb357e98489a3a8704c8b4f2d8686a7a0436dd2d",
+  "figure_main_count": 12,
+  "figure_supplement_count": 1,
+  "target_answer_count": 16,
+  "target_label_counts": {
+    "OR": 16,
+    "IR": 0,
+    "B": 0,
+    "N": 0
+  },
+  "max_step10_reinference_score_diff": 1.1102230246251565e-16,
+  "target_accuracy_reported": false
+}

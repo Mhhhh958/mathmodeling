@@ -1,0 +1,29 @@
+﻿code,feature,display
+F01,td_rms,RMS
+F02,td_std,标准差
+F03,td_peak_abs,绝对峰值
+F04,td_ptp,峰峰值
+F05,td_skewness,偏度
+F06,td_kurtosis,峭度
+F07,td_crest_factor,峰值因子
+F08,td_impulse_factor,脉冲因子
+F09,td_shape_factor,波形因子
+F10,td_clearance_factor,裕度因子
+F11,td_zero_cross_rate,过零率
+F12,fd_dominant_hz_0_6k,主频(0–6 kHz)
+F13,fd_centroid_hz_0_6k,频谱重心(0–6 kHz)
+F14,fd_f95_hz_0_6k,95%累积能量频率
+F15,fd_entropy_0_6k,频谱熵(0–6 kHz)
+F16,fd_energy_ratio_0_500,0–500 Hz能量占比
+F17,fd_energy_ratio_500_1500,0.5–1.5 kHz能量占比
+F18,fd_energy_ratio_1500_3000,1.5–3 kHz能量占比
+F19,fd_energy_ratio_3000_6000,3–6 kHz能量占比
+F20,env_rms,包络RMS
+F21,env_kurtosis,包络峭度
+F22,env_dominant_hz_0_500,包络主频(0–500 Hz)
+F23,env_centroid_hz_0_500,包络谱重心
+F24,env_entropy_0_500,包络谱熵(0–500 Hz)
+F25,env_energy_ratio_0_50,包络0–50 Hz能量占比
+F26,env_energy_ratio_50_150,包络50–150 Hz能量占比
+F27,env_energy_ratio_150_300,包络150–300 Hz能量占比
+F28,env_energy_ratio_300_500,包络300–500 Hz能量占比

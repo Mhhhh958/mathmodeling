@@ -1,0 +1,10 @@
+STEP13 final figures and answers freeze
+status=PASS
+freeze_id=STEP13-FROZEN-v1
+accepted_step12_commit=eb357e98489a3a8704c8b4f2d8686a7a0436dd2d
+main_figures=12; supplement_figures=1; all freshly redrawn
+formats=PNG(450dpi)+PDF+SVG; grayscale preview=300dpi PNG
+A-P mapping=16 unique files; final predictions remain OR x16; truth unknown
+STEP10 re-inference max class-score diff=1.110e-16
+target accuracy not computed; no target confusion matrix generated
+later writing must use this freeze only.

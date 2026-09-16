@@ -1,0 +1,249 @@
+﻿panel,case_id,group,value
+faithfulness,A,Top5高贡献,0.2652592592592592
+faithfulness,A,Random5随机,0.0629037037037037
+faithfulness,A,Low5低贡献,0.0302222222222222
+faithfulness,B,Top5高贡献,0.1404444444444444
+faithfulness,B,Random5随机,0.0572148148148147
+faithfulness,B,Low5低贡献,0.0028888888888888
+faithfulness,C,Top5高贡献,0.2894074074074073
+faithfulness,C,Random5随机,0.0747851851851851
+faithfulness,C,Low5低贡献,0.0108888888888887
+faithfulness,D,Top5高贡献,0.2186666666666668
+faithfulness,D,Random5随机,0.066885185185185
+faithfulness,D,Low5低贡献,0.0251111111111109
+faithfulness,E,Top5高贡献,0.3083703703703702
+faithfulness,E,Random5随机,0.0793111111111112
+faithfulness,E,Low5低贡献,0.0013333333333334
+faithfulness,F,Top5高贡献,0.2140740740740739
+faithfulness,F,Random5随机,0.068125925925926
+faithfulness,F,Low5低贡献,0.0393333333333333
+faithfulness,G,Top5高贡献,0.1476393472680601
+faithfulness,G,Random5随机,0.0591037037037037
+faithfulness,G,Low5低贡献,0.0035555555555556
+faithfulness,H,Top5高贡献,0.3486006600660065
+faithfulness,H,Random5随机,0.0905407407407407
+faithfulness,H,Low5低贡献,0.0113333333333333
+faithfulness,I,Top5高贡献,0.2582222222222223
+faithfulness,I,Random5随机,0.079911111111111
+faithfulness,I,Low5低贡献,0.0124444444444443
+faithfulness,J,Top5高贡献,0.2893333333333334
+faithfulness,J,Random5随机,0.0890592592592592
+faithfulness,J,Low5低贡献,0.0082222222222222
+faithfulness,K,Top5高贡献,0.3482222222222222
+faithfulness,K,Random5随机,0.0854666666666666
+faithfulness,K,Low5低贡献,0.0088888888888888
+faithfulness,L,Top5高贡献,0.1996666666666667
+faithfulness,L,Random5随机,0.0618
+faithfulness,L,Low5低贡献,0.0139999999999999
+faithfulness,M,Top5高贡献,0.3281481481481481
+faithfulness,M,Random5随机,0.0611111111111111
+faithfulness,M,Low5低贡献,0.0348888888888888
+faithfulness,N,Top5高贡献,0.1820296296296296
+faithfulness,N,Random5随机,0.0690740740740741
+faithfulness,N,Low5低贡献,0.0226666666666667
+faithfulness,O,Top5高贡献,0.1541759259259258
+faithfulness,O,Random5随机,0.0453037037037037
+faithfulness,O,Low5低贡献,0.0051111111111111
+faithfulness,P,Top5高贡献,0.2155555555555557
+faithfulness,P,Random5随机,0.0540790123456789
+faithfulness,P,Low5低贡献,0.0217777777777776
+stability,A,原解释 vs 小扰动,0.9999999999999998
+stability,A,随机排列对照,-0.057471264367816
+stability,A,原解释 vs 小扰动,0.9999999999999998
+stability,A,随机排列对照,0.0021893814997263
+stability,A,原解释 vs 小扰动,0.9999999999999998
+stability,A,随机排列对照,0.0848385331143951
+stability,A,原解释 vs 小扰动,0.9999999999999998
+stability,A,随机排列对照,0.1795292829775588
+stability,A,原解释 vs 小扰动,0.9999999999999998
+stability,A,随机排列对照,-0.0914066776135741
+stability,B,原解释 vs 小扰动,0.9999999999999998
+stability,B,随机排列对照,0.2375478927203065
+stability,B,原解释 vs 小扰动,0.9999999999999998
+stability,B,随机排列对照,-0.1718664477285167
+stability,B,原解释 vs 小扰动,0.9999999999999998
+stability,B,随机排列对照,-0.0180623973727422
+stability,B,原解释 vs 小扰动,0.9999999999999998
+stability,B,随机排列对照,0.0580186097427476
+stability,B,原解释 vs 小扰动,0.9999999999999998
+stability,B,随机排列对照,-0.3174603174603174
+stability,C,原解释 vs 小扰动,0.9999999999999998
+stability,C,随机排列对照,-0.0224411603721948
+stability,C,原解释 vs 小扰动,0.9994526546250684
+stability,C,随机排列对照,0.0005473453749315
+stability,C,原解释 vs 小扰动,0.9999999999999998
+stability,C,随机排列对照,-0.227695675971538
+stability,C,原解释 vs 小扰动,0.9999999999999998
+stability,C,随机排列对照,0.1499726327312533
+stability,C,原解释 vs 小扰动,0.9994526546250684
+stability,C,随机排列对照,0.4592227695675971
+stability,D,原解释 vs 小扰动,0.9999999999999998
+stability,D,随机排列对照,0.0558292282430213
+stability,D,原解释 vs 小扰动,0.9999999999999998
+stability,D,随机排列对照,0.1806239737274219
+stability,D,原解释 vs 小扰动,0.9999999999999998
+stability,D,随机排列对照,-0.3021346469622332
+stability,D,原解释 vs 小扰动,0.9999999999999998
+stability,D,随机排列对照,0.0618500273672687
+stability,D,原解释 vs 小扰动,0.9999999999999998
+stability,D,随机排列对照,-0.0492610837438423
+stability,E,原解释 vs 小扰动,0.9999999999999998
+stability,E,随机排列对照,0.0120415982484948
+stability,E,原解释 vs 小扰动,0.9999999999999998
+stability,E,随机排列对照,0.0656814449917898
+stability,E,原解释 vs 小扰动,0.9999999999999998
+stability,E,随机排列对照,-0.1094690749863163
+stability,E,原解释 vs 小扰动,0.9999999999999998
+stability,E,随机排列对照,-0.1237000547345374
+stability,E,原解释 vs 小扰动,0.9999999999999998
+stability,E,随机排列对照,0.1455938697318007
+stability,F,原解释 vs 小扰动,0.9999999999999998
+stability,F,随机排列对照,0.0448823207443897
+stability,F,原解释 vs 小扰动,0.9999999999999998
+stability,F,随机排列对照,0.1094690749863163
+stability,F,原解释 vs 小扰动,0.9999999999999998
+stability,F,随机排列对照,-0.3557744937055281
+stability,F,原解释 vs 小扰动,0.9999999999999998
+stability,F,随机排列对照,-0.0935960591133004
+stability,F,原解释 vs 小扰动,0.9999999999999998
+stability,F,随机排列对照,0.1762452107279693
+stability,G,原解释 vs 小扰动,0.9994526546250684
+stability,G,随机排列对照,-0.0142309797482211
+stability,G,原解释 vs 小扰动,0.9994526546250684
+stability,G,随机排列对照,-0.2320744389709907
+stability,G,原解释 vs 小扰动,0.9994526546250684
+stability,G,随机排列对照,0.1581828133552271
+stability,G,原解释 vs 小扰动,0.9999999999999998
+stability,G,随机排列对照,0.1133004926108374
+stability,G,原解释 vs 小扰动,0.9994526546250684
+stability,G,随机排列对照,-0.3420908593322386
+stability,H,原解释 vs 小扰动,0.9999999999999998
+stability,H,随机排列对照,0.2731253420908593
+stability,H,原解释 vs 小扰动,0.9999999999999998
+stability,H,随机排列对照,0.0136836343732895
+stability,H,原解释 vs 小扰动,0.9999999999999998
+stability,H,随机排列对照,-0.1729611384783798
+stability,H,原解释 vs 小扰动,0.9999999999999998
+stability,H,随机排列对照,0.3152709359605911
+stability,H,原解释 vs 小扰动,0.9999999999999998
+stability,H,随机排列对照,-0.1587301587301587
+stability,I,原解释 vs 小扰动,0.9999999999999998
+stability,I,随机排列对照,-0.3492063492063492
+stability,I,原解释 vs 小扰动,0.9999999999999998
+stability,I,随机排列对照,-0.3836891078270388
+stability,I,原解释 vs 小扰动,0.9999999999999998
+stability,I,随机排列对照,0.0098522167487684
+stability,I,原解释 vs 小扰动,0.9999999999999998
+stability,I,随机排列对照,0.1417624521072797
+stability,I,原解释 vs 小扰动,0.9994526546250684
+stability,I,随机排列对照,0.3639846743295019
+stability,J,原解释 vs 小扰动,0.9994526546250684
+stability,J,随机排列对照,-0.2151067323481116
+stability,J,原解释 vs 小扰动,0.9999999999999998
+stability,J,随机排列对照,0.4915161466885605
+stability,J,原解释 vs 小扰动,0.9994526546250684
+stability,J,随机排列对照,0.0804597701149425
+stability,J,原解释 vs 小扰动,0.9994526546250684
+stability,J,随机排列对照,0.0153256704980842
+stability,J,原解释 vs 小扰动,0.9994526546250684
+stability,J,随机排列对照,0.3333333333333333
+stability,K,原解释 vs 小扰动,0.9999999999999998
+stability,K,随机排列对照,0.0968801313628899
+stability,K,原解释 vs 小扰动,0.9999999999999998
+stability,K,随机排列对照,-0.0322933771209633
+stability,K,原解释 vs 小扰动,0.9999999999999998
+stability,K,随机排列对照,-0.1165845648604269
+stability,K,原解释 vs 小扰动,0.9999999999999998
+stability,K,随机排列对照,-0.3065134099616858
+stability,K,原解释 vs 小扰动,0.9999999999999998
+stability,K,随机排列对照,-0.0082101806239737
+stability,L,原解释 vs 小扰动,0.9999999999999998
+stability,L,随机排列对照,0.2058018609742747
+stability,L,原解释 vs 小扰动,0.9999999999999998
+stability,L,随机排列对照,0.1067323481116584
+stability,L,原解释 vs 小扰动,0.9999999999999998
+stability,L,随机排列对照,0.0131362889983579
+stability,L,原解释 vs 小扰动,0.9994526546250684
+stability,L,随机排列对照,0.318007662835249
+stability,L,原解释 vs 小扰动,0.9999999999999998
+stability,L,随机排列对照,0.0498084291187739
+stability,M,原解释 vs 小扰动,0.9999999999999998
+stability,M,随机排列对照,-0.0974274767378215
+stability,M,原解释 vs 小扰动,0.9994526546250684
+stability,M,随机排列对照,0.0268199233716475
+stability,M,原解释 vs 小扰动,0.9989053092501368
+stability,M,随机排列对照,0.0826491516146688
+stability,M,原解释 vs 小扰动,0.9994526546250684
+stability,M,随机排列对照,-0.0782703886152162
+stability,M,原解释 vs 小扰动,0.9994526546250684
+stability,M,随机排列对照,0.0804597701149425
+stability,N,原解释 vs 小扰动,0.9999999999999998
+stability,N,随机排列对照,-0.0645867542419266
+stability,N,原解释 vs 小扰动,0.9999999999999998
+stability,N,随机排列对照,0.1680350301039956
+stability,N,原解释 vs 小扰动,0.9999999999999998
+stability,N,随机排列对照,-0.1100164203612479
+stability,N,原解释 vs 小扰动,0.9999999999999998
+stability,N,随机排列对照,-0.1981390257252326
+stability,N,原解释 vs 小扰动,0.9999999999999998
+stability,N,随机排列对照,0.0136836343732895
+stability,O,原解释 vs 小扰动,0.9999999999999998
+stability,O,随机排列对照,-0.0175150519978106
+stability,O,原解释 vs 小扰动,0.9999999999999998
+stability,O,随机排列对照,-0.0093048713738368
+stability,O,原解释 vs 小扰动,0.9999999999999998
+stability,O,随机排列对照,-0.1548987411056376
+stability,O,原解释 vs 小扰动,0.9999999999999998
+stability,O,随机排列对照,0.324575807334428
+stability,O,原解释 vs 小扰动,0.9999999999999998
+stability,O,随机排列对照,-0.2255062944718117
+stability,P,原解释 vs 小扰动,0.9999999999999998
+stability,P,随机排列对照,-0.0246305418719211
+stability,P,原解释 vs 小扰动,0.9999999999999998
+stability,P,随机排列对照,-0.1193212917350848
+stability,P,原解释 vs 小扰动,0.9999999999999998
+stability,P,随机排列对照,-0.0514504652435686
+stability,P,原解释 vs 小扰动,0.9999999999999998
+stability,P,随机排列对照,0.0180623973727422
+stability,P,原解释 vs 小扰动,0.9999999999999998
+stability,P,随机排列对照,-0.0996168582375479
+stability,source_OR,原解释 vs 小扰动,0.9999999999999998
+stability,source_OR,随机排列对照,0.0120415982484948
+stability,source_OR,原解释 vs 小扰动,0.9999999999999998
+stability,source_OR,随机排列对照,0.2255062944718117
+stability,source_OR,原解释 vs 小扰动,0.9999999999999998
+stability,source_OR,随机排列对照,-0.2025177887246852
+stability,source_OR,原解释 vs 小扰动,0.9999999999999998
+stability,source_OR,随机排列对照,-0.0120415982484948
+stability,source_OR,原解释 vs 小扰动,0.9999999999999998
+stability,source_OR,随机排列对照,0.2391899288451012
+stability,source_IR,原解释 vs 小扰动,0.9999999999999998
+stability,source_IR,随机排列对照,0.0361247947454844
+stability,source_IR,原解释 vs 小扰动,0.9999999999999998
+stability,source_IR,随机排列对照,0.3103448275862069
+stability,source_IR,原解释 vs 小扰动,0.9999999999999998
+stability,source_IR,随机排列对照,0.4285714285714286
+stability,source_IR,原解释 vs 小扰动,0.9999999999999998
+stability,source_IR,随机排列对照,-0.0394088669950738
+stability,source_IR,原解释 vs 小扰动,0.9999999999999998
+stability,source_IR,随机排列对照,-0.0859332238642583
+stability,source_B,原解释 vs 小扰动,0.9999999999999998
+stability,source_B,随机排列对照,-0.1083743842364532
+stability,source_B,原解释 vs 小扰动,0.9999999999999998
+stability,source_B,随机排列对照,-0.2030651340996168
+stability,source_B,原解释 vs 小扰动,0.9999999999999998
+stability,source_B,随机排列对照,0.2501368363437328
+stability,source_B,原解释 vs 小扰动,0.9999999999999998
+stability,source_B,随机排列对照,-0.0519978106185002
+stability,source_B,原解释 vs 小扰动,0.9999999999999998
+stability,source_B,随机排列对照,-0.0749863163656266
+stability,source_N,原解释 vs 小扰动,0.9952100818529868
+stability,source_N,随机排列对照,0.2595127292636189
+stability,source_N,原解释 vs 小扰动,0.9998631542928932
+stability,source_N,随机排列对照,-0.1516561730084862
+stability,source_N,原解释 vs 小扰动,0.9938415311353668
+stability,source_N,随机排列对照,-0.085956747878456
+stability,source_N,原解释 vs 小扰动,0.9963049224270824
+stability,source_N,随机排列对照,0.2346016972351492
+stability,source_N,原解释 vs 小扰动,0.99685234271413
+stability,source_N,随机排列对照,-0.1552148918696961

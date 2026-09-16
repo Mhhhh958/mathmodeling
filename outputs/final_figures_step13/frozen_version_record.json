@@ -1,0 +1,35 @@
+{
+  "freeze_id": "STEP13-FROZEN-v1",
+  "accepted_step12_evidence_commit": "eb357e98489a3a8704c8b4f2d8686a7a0436dd2d",
+  "run_start_git_sha": "796ef59602eafc56fed80c20718184759d0ec765",
+  "generated_utc": "2026-09-16T07:06:22.126595+00:00",
+  "rule": "All later manuscript numbers/tables/figures must cite this STEP13 freeze or the listed accepted source snapshots; do not reuse historical screenshots/old plots.",
+  "class_color_map": {
+    "OR": "#D55E00",
+    "IR": "#0072B2",
+    "B": "#009E73",
+    "N": "#CC79A7"
+  },
+  "domain_marker_map": {
+    "source": "o",
+    "target": "^"
+  },
+  "label_order": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "final_q3_method": "A0_no_transfer / frozen RandomForest",
+  "target_truth_status": "unknown",
+  "target_accuracy_computed": false,
+  "png_dpi": 450,
+  "print_width_in": 6.5,
+  "vector_formats": [
+    "PDF",
+    "SVG"
+  ],
+  "bw_preview": "300 dpi grayscale PNG",
+  "generated_from_scratch": true,
+  "old_figure_files_reused": false
+}

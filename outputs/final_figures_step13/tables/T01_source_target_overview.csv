@@ -1,0 +1,3 @@
+﻿domain,independent_files,windows,sampling_rate_hz,rpm,channel_sensor,label_status,feature_count
+source_M1,56,400,48000,1718–1797,DE_time / drive_end,known OR/IR/B/N,28
+target_A_to_P,16,240,32000,≈600 (official operating condition; not model input),anonymous single channel / sensor position unknown,unknown; predictions only,28
