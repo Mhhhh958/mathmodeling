@@ -1,0 +1,20 @@
+name: temp-export-step13-figures
+
+on:
+  push:
+    paths:
+      - '.github/workflows/export_step13_figures_temp.yml'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Upload frozen figures
+        uses: actions/upload-artifact@v4
+        with:
+          name: step13-frozen-figures
+          path: outputs/final_figures_step13/figures/*.png
+          if-no-files-found: error
+          retention-days: 1
