@@ -1,0 +1,30 @@
+{
+  "chosen_window_seconds": 1.0,
+  "chosen_overlap_fraction": 0.5,
+  "chosen_stride_seconds": 0.5,
+  "source_points_per_window": 48000,
+  "target_points_per_window": 32000,
+  "same_physical_time_not_same_point_count": true,
+  "fft_resolution_hz_full_1s_window": 1.0,
+  "source_rpm_min": 1718.0,
+  "source_rpm_max": 1797.0,
+  "source_rotations_per_window_min": 28.633333333333333,
+  "source_rotations_per_window_max": 29.95,
+  "target_approx_rotations_per_window": 10.0,
+  "source_bpfo_cycles_per_window_range": [
+    102.64407286922575,
+    107.36402732595967
+  ],
+  "source_bpfi_cycles_per_window_range": [
+    155.05592713077422,
+    162.18597267404036
+  ],
+  "source_bsf_cycles_per_window_range": [
+    134.96159606093693,
+    141.16762987281936
+  ],
+  "why_not_0_5s": "Only 0.5 s physical context and 2 Hz full-window spectral resolution; target has only about 5 shaft rotations per window.",
+  "why_not_2s": "Would discard at least one short M1 source record and reduce available windows; not acceptable for full-data extraction.",
+  "why_50pct_overlap": "Reduces boundary/phase sensitivity with 0.5 s stride while avoiding the roughly 4x redundancy of 75% overlap. Correlated windows remain inside one independent_object_id group.",
+  "group_rule": "Split by independent_object_id before any learned preprocessing/model fitting; windows from one raw MAT may never cross train/test."
+}

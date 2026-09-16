@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "checks": {
+    "m1_source_file_count_56": true,
+    "m1_class_counts": true,
+    "target_file_count_16": true,
+    "all_files_have_windows": true,
+    "window_ids_unique": true,
+    "window_traceable": true,
+    "group_boundary_frozen": true,
+    "one_second_physical_time": true,
+    "source_window_points_48000": true,
+    "target_window_points_32000": true,
+    "raw_feature_rows_match_index": true,
+    "common_features_finite": true,
+    "mechanism_missing_only_target": true,
+    "dictionary_covers_all_features": true,
+    "no_leakage_named_feature": true,
+    "mechanism_not_in_q2_default": true,
+    "q2_row_counts_match": true,
+    "q2_common_features_finite": true,
+    "target_labels_unknown": true
+  },
+  "source_file_counts": {
+    "OR": 28,
+    "B": 12,
+    "IR": 12,
+    "N": 4
+  },
+  "source_windows": 400,
+  "target_windows": 240,
+  "total_windows": 640,
+  "common_feature_count": 28,
+  "source_only_mechanism_feature_count": 11
+}

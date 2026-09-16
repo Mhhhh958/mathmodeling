@@ -1,0 +1,21 @@
+{
+  "step": "Q1C_STEP04",
+  "generated_utc": "2026-09-16T04:59:42.422422+00:00",
+  "git_sha_at_run_start": "0e7cbee3bc834c7dc1525981d1bcd5c67e16a6f4",
+  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "window_seconds": 1.0,
+  "overlap_fraction": 0.5,
+  "stride_seconds": 0.5,
+  "source_fs": 48000,
+  "target_fs": 32000,
+  "common_fmax_hz": 6000.0,
+  "source_files": 56,
+  "target_files": 16,
+  "source_windows": 400,
+  "target_windows": 240,
+  "common_feature_count": 28,
+  "mechanism_feature_count": 11,
+  "learned_preprocessing_applied": false,
+  "validation_status": "PASS"
+}

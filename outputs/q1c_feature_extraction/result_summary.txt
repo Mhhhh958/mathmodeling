@@ -1,0 +1,8 @@
+Q1C / STEP04 full-data feature extraction
+status=PASS
+window=1.0s overlap=50% stride=0.5s
+source_files=56 source_windows=400
+target_files=16 target_windows=240
+common_features=28 source_only_mechanism_features=11
+learned_preprocessing_applied=False
+Q2 split rule: group by independent_object_id before any learned preprocessing.

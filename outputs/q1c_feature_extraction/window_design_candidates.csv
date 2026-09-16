@@ -1,0 +1,11 @@
+﻿window_seconds,overlap_fraction,stride_seconds,domain,file_count,files_with_zero_windows,total_windows,fft_bin_hz_if_full_window_fft,chosen,note
+0.5,0.5,0.25,source,56,0,857,2.0,False,"shorter alternative: higher temporal resolution, only 2 Hz spectral resolution"
+0.5,0.5,0.25,target,16,0,496,2.0,False,"shorter alternative: higher temporal resolution, only 2 Hz spectral resolution"
+1.0,0.0,1.0,source,56,0,226,1.0,False,no overlap: lowest redundancy but more boundary sensitivity
+1.0,0.0,1.0,target,16,0,128,1.0,False,no overlap: lowest redundancy but more boundary sensitivity
+1.0,0.5,0.5,source,56,0,400,1.0,True,chosen compromise: 1 Hz resolution and moderate boundary robustness
+1.0,0.5,0.5,target,16,0,240,1.0,True,chosen compromise: 1 Hz resolution and moderate boundary robustness
+1.0,0.75,0.25,source,56,0,745,1.0,False,"higher redundancy: about 4x stride density, limited independent gain"
+1.0,0.75,0.25,target,16,0,464,1.0,False,"higher redundancy: about 4x stride density, limited independent gain"
+2.0,0.5,1.0,source,56,1,170,0.5,False,longer alternative: better resolution but excludes short source records
+2.0,0.5,1.0,target,16,0,112,0.5,False,longer alternative: better resolution but excludes short source records
