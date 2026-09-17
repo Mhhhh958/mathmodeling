@@ -1,12 +1,15 @@
 {
-  "min_inner_macro_f1_gain": 0.01,
-  "max_mean_min_recall_drop": 0.05,
-  "min_outer_contexts_nonworse": 3,
-  "context_nonworse_tolerance": 0.005,
-  "tie_order": [
-    "inner_macro_f1",
-    "inner_balanced_accuracy",
-    "inner_min_class_recall",
-    "lower_complexity_rank"
-  ]
+  "primary_candidate": "E2_corr98_random_forest",
+  "gate": {
+    "pooled_delta_min": 0.02,
+    "median_fold_delta_gt": 0.0,
+    "folds_nonworse_min": 3,
+    "worst_fold_delta_min": -0.05,
+    "min_recall_drop_max": 0.05
+  },
+  "diagnostic_not_eligible": [
+    "E1_corr98_logreg",
+    "E3_mechanism_logreg"
+  ],
+  "outer_test_hyperparameter_tuning": false
 }
