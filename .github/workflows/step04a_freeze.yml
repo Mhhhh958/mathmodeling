@@ -2,7 +2,7 @@ name: step04a-freeze-validate
 
 on:
   push:
-    branches: [step04a-freeze]
+    branches: [step04a-freeze-final]
     paths:
       - 'scripts/step04a_freeze_validate.py'
       - '.github/workflows/step04a_freeze.yml'
