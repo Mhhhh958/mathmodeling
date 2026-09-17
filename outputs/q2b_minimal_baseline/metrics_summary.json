@@ -1,41 +1,45 @@
 {
+  "status": "PASS",
+  "model": "M1 L2 multinomial LogisticRegression only",
   "file_level_pooled_oof": {
     "n_files": 56,
-    "macro_f1": 0.8681849551414769,
-    "balanced_accuracy": 0.8601190476190477,
-    "accuracy": 0.875,
+    "macro_f1": 0.8539418914418915,
+    "balanced_accuracy": 0.8392857142857143,
+    "accuracy": 0.8571428571428571,
     "min_class_recall": 0.75,
-    "precision_OR": 0.9230769230769231,
+    "precision_OR": 0.8888888888888888,
     "recall_OR": 0.8571428571428571,
-    "f1_OR": 0.8888888888888888,
+    "f1_OR": 0.8727272727272727,
     "support_OR": 28,
-    "precision_IR": 0.9090909090909091,
-    "recall_IR": 0.8333333333333334,
-    "f1_IR": 0.8695652173913043,
+    "precision_IR": 0.9166666666666666,
+    "recall_IR": 0.9166666666666666,
+    "f1_IR": 0.9166666666666666,
     "support_IR": 12,
-    "precision_B": 0.75,
-    "recall_B": 1.0,
-    "f1_B": 0.8571428571428571,
+    "precision_B": 0.7142857142857143,
+    "recall_B": 0.8333333333333334,
+    "f1_B": 0.7692307692307693,
     "support_B": 12,
     "precision_N": 1.0,
     "recall_N": 0.75,
     "f1_N": 0.8571428571428571,
     "support_N": 4
   },
-  "outer_fold_distribution": {
-    "macro_f1_mean": 0.8409798534798535,
-    "macro_f1_std": 0.16679866869407128,
-    "macro_f1_min": 0.5952380952380952,
+  "outer_run_distribution": {
+    "macro_f1_median": 0.8713369963369964,
+    "macro_f1_min": 0.6166666666666667,
     "macro_f1_max": 0.945054945054945,
-    "balanced_accuracy_mean": 0.8601190476190477,
-    "balanced_accuracy_std": 0.15774745405000762,
-    "accuracy_mean": 0.8750000000000001,
-    "accuracy_std": 0.06838765055402418
+    "macro_f1_range": 0.32838827838827833,
+    "macro_f1_mean": 0.826098901098901
   },
   "window_level_auxiliary": {
     "n_windows": 400,
-    "macro_f1": 0.8685717646207296,
-    "balanced_accuracy": 0.87154104953018,
-    "accuracy": 0.8675
+    "macro_f1": 0.8776502137103404,
+    "balanced_accuracy": 0.8698489010989011,
+    "accuracy": 0.8725
+  },
+  "performance_warning_flags_from_step05": {
+    "pooled_macro_f1_below_0.60": false,
+    "any_pooled_class_recall_below_0.50": false,
+    "fold_macro_f1_range_above_0.20": true
   }
 }

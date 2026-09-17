@@ -1,0 +1,5 @@
+﻿evaluation_run,model_file,selected_config_id
+R1,outputs/q2b_minimal_baseline/models/logreg_R1_M1_C0.1_none.joblib,M1_C0.1_none
+R2,outputs/q2b_minimal_baseline/models/logreg_R2_M1_C0.1_bal.joblib,M1_C0.1_bal
+R3,outputs/q2b_minimal_baseline/models/logreg_R3_M1_C0.1_bal.joblib,M1_C0.1_bal
+R4,outputs/q2b_minimal_baseline/models/logreg_R4_M1_C0.1_none.joblib,M1_C0.1_none

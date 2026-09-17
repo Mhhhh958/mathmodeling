@@ -3,39 +3,46 @@
   "checks": {
     "smoke_test_pass": true,
     "source_56_files_400_windows": true,
-    "outer_groups_disjoint": true,
-    "all_outer_tests_have_four_classes": true,
+    "four_runs_group_disjoint": true,
+    "all_roles_have_four_classes": true,
+    "only_m1_model_family_run": true,
     "training_boundary_pipeline": true,
     "no_feature_name_leakage": true,
+    "no_window_oversampling": true,
     "oof_files_exactly_56_once": true,
     "oof_windows_exactly_400_once": true,
     "independent_recalc_pass": true,
     "model_files_saved": true
   },
-  "performance_failure_flags_from_step05": {
-    "any_file_group_leakage": false,
-    "pooled_macro_f1_not_above_b0": false,
-    "any_pooled_class_recall_zero": false
-  },
-  "selected_C_by_outer_fold": [
+  "selected_config_by_run": [
     {
-      "outer_test_load": 0,
-      "selected_C": 10.0
+      "evaluation_run": "R1",
+      "selected_config_id": "M1_C0.1_none",
+      "selected_C": 0.1,
+      "selected_class_weight": "None"
     },
     {
-      "outer_test_load": 1,
-      "selected_C": 10.0
+      "evaluation_run": "R2",
+      "selected_config_id": "M1_C0.1_bal",
+      "selected_C": 0.1,
+      "selected_class_weight": "balanced"
     },
     {
-      "outer_test_load": 2,
-      "selected_C": 1.0
+      "evaluation_run": "R3",
+      "selected_config_id": "M1_C0.1_bal",
+      "selected_C": 0.1,
+      "selected_class_weight": "balanced"
     },
     {
-      "outer_test_load": 3,
-      "selected_C": 10.0
+      "evaluation_run": "R4",
+      "selected_config_id": "M1_C0.1_none",
+      "selected_C": 0.1,
+      "selected_class_weight": "None"
     }
   ],
-  "pooled_file_macro_f1": 0.8681849551414769,
-  "b0_pooled_macro_f1": 0.16666666666666666,
-  "note": "PASS means computational/protocol validation passed. Step05 performance failure flags are reported separately and are not hidden."
+  "performance_warning_flags_from_step05": {
+    "pooled_macro_f1_below_0.60": false,
+    "any_pooled_class_recall_below_0.50": false,
+    "fold_macro_f1_range_above_0.20": true
+  }
 }

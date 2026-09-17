@@ -1,23 +1,23 @@
 {
-  "manual_macro_f1": 0.8681849551414769,
-  "sklearn_macro_f1": 0.8681849551414769,
-  "macro_f1_abs_diff": 0.0,
-  "sample_independent_object_id": "data/raw/source_domain/cwru_48khz_de/B007_0.mat",
-  "sample_window_count": 7,
+  "manual_macro_f1_from_confusion": 0.8539418914418914,
+  "reported_macro_f1": 0.8539418914418915,
+  "macro_f1_abs_diff": 1.1102230246251565e-16,
+  "sample_independent_object_id": "source_domain/cwru_48khz_de/OR007@12_0.mat",
+  "sample_window_count": 4,
   "recalc_mean_probabilities": {
-    "OR": 0.22697221861777322,
-    "IR": 0.0011121755788233714,
-    "B": 0.7698134439431792,
-    "N": 0.0021021618602240287
+    "OR": 0.6431848067998597,
+    "IR": 0.2501407628387293,
+    "B": 0.08485941060642903,
+    "N": 0.02181501975498202
   },
   "stored_file_probabilities": {
-    "OR": 0.2269722186177733,
-    "IR": 0.0011121755788234,
-    "B": 0.7698134439431792,
-    "N": 0.002102161860224
+    "OR": 0.6431848067998597,
+    "IR": 0.2501407628387293,
+    "B": 0.08485941060642903,
+    "N": 0.02181501975498202
   },
-  "max_probability_abs_diff": 8.326672684688674e-17,
-  "recalc_pred_label": "B",
-  "stored_pred_label": "B",
+  "max_probability_abs_diff": 0.0,
+  "recalc_pred_label": "OR",
+  "stored_pred_label": "OR",
   "pass": true
 }

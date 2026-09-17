@@ -1,14 +1,19 @@
 {
-  "step": "Q2B_STEP06",
-  "generated_utc": "2026-09-16T05:18:14.527892+00:00",
-  "git_sha_at_run_start": "8ad2d1b125e84460b28f1a855ab3c96b2cd0a76c",
+  "step": "Q2B_STEP06_STEP05_FROZEN",
+  "generated_utc": "2026-09-17T04:14:27.783395+00:00",
+  "git_sha_at_run_start": "529a7a230006c212849ee2293ed5fdeed0c33e94",
   "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
   "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
-  "random_seed": 20260916,
+  "random_seed": 2025,
   "input_source_csv": "outputs/q1c_feature_extraction/q2_source_raw.csv",
   "input_source_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
   "input_interface_json": "outputs/q1c_feature_extraction/q2_interface.json",
   "input_interface_sha256": "098180153cb460aeef19c0e7b1c22cf74e7eb3ec6fc3f1b93f1397ceab1415ec",
+  "step05_hashes": {
+    "base_fold_csv": "be0b423d5e3cfead8a1b2dc470a23e8db071204497ba78ef818a03bed1e97385",
+    "train_val_test_csv": "541b6fa43fa766a6842533d57a09d57777d15688e3e9a0e71807b272be07ff32",
+    "protocol_json": "9f3c720c2891de66be598a91808a0cb8b7d184471413fd71953936e995bda904"
+  },
   "feature_count": 28,
   "labels": [
     "OR",
@@ -16,22 +21,63 @@
     "B",
     "N"
   ],
-  "outer_test_loads": [
-    0,
-    1,
-    2,
-    3
-  ],
-  "C_grid": [
-    0.1,
-    1.0,
-    10.0
-  ],
-  "model": "L2 LogisticRegression",
-  "imputer": "median fit on training only",
-  "scaler": "StandardScaler fit on training only",
+  "evaluation_runs": {
+    "R1": {
+      "train": [
+        "F3",
+        "F4"
+      ],
+      "validation": [
+        "F2"
+      ],
+      "test": [
+        "F1"
+      ]
+    },
+    "R2": {
+      "train": [
+        "F4",
+        "F1"
+      ],
+      "validation": [
+        "F3"
+      ],
+      "test": [
+        "F2"
+      ]
+    },
+    "R3": {
+      "train": [
+        "F1",
+        "F2"
+      ],
+      "validation": [
+        "F4"
+      ],
+      "test": [
+        "F3"
+      ]
+    },
+    "R4": {
+      "train": [
+        "F2",
+        "F3"
+      ],
+      "validation": [
+        "F1"
+      ],
+      "test": [
+        "F4"
+      ]
+    }
+  },
+  "candidate_model_family": "M1 only",
+  "candidate_configurations_per_run": 6,
+  "maximum_validation_candidate_fits": 24,
+  "model": "L2 multinomial LogisticRegression",
+  "imputer": "median, training-boundary only",
+  "scaler": "StandardScaler, training-boundary only",
   "feature_selection": "none",
-  "class_imbalance": "file-normalized x class-file-balanced sample weight",
-  "aggregation": "mean window class probabilities per file",
-  "validation_status": "PASS"
+  "class_imbalance": "file-equal window weights + class_weight validation hyperparameter; no oversampling",
+  "aggregation": "mean window probabilities per independent file"
 }
