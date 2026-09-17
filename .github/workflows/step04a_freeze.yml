@@ -29,6 +29,8 @@ jobs:
         run: pip install numpy==1.26.4 pandas==2.2.3
       - name: Validate existing STEP04 outputs only
         run: |
+          mkdir -p outputs/step04a_freeze
+          set -o pipefail
           python scripts/step04a_freeze_validate.py | tee outputs/step04a_freeze/validation_run.log
       - name: Upload STEP04-A freeze artifact
         uses: actions/upload-artifact@v4
