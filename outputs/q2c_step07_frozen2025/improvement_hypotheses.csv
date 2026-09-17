@@ -1,0 +1,5 @@
+experiment_id,failure_axis,failure_evidence,change,why_it_may_help,fair_comparison,stop_rule
+E0_baseline,reference,Step06 OR->B/0 hp failures,No change,Reference,Same Step05 folds/seed,Reference
+E1_corr98_logreg,redundancy,RMS/std and related summaries redundant,Training-only |r|>=0.98 pruning; same LR,Stabilize linear boundary,Same folds/seed/grid,One frozen threshold
+E2_corr98_random_forest,nonlinear boundary,OR014@6 systematic ->B; B007_0 near boundary,E1 pruning + small RF grid,Nonlinear interactions may separate OR/B,Same folds/seed/aggregation,Primary candidate; one acceptance gate
+E3_mechanism_logreg,mechanism diagnostic,May lack fault-frequency evidence,Add 11 source mechanism features; same LR,Physical harmonics may help source,Same folds/seed/grid,Not Q3-eligible: target geometry unknown

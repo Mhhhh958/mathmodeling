@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/runner/work/mathmodeling/mathmodeling/scripts/q2c_step07_frozen2025.py", line 26, in <module>
+    mod.main()
+  File "/home/runner/work/mathmodeling/mathmodeling/scripts/q2c_failure_driven_improvement.py", line 102, in main
+    b=R['E0_baseline']['pooled'];c=R['E2_corr98_random_forest']['pooled'];checks={'pooled_delta':c['macro_f1']-b['macro_f1']>=GATE['pooled_delta_min'],'median_fold_delta':eff['median_delta']>GATE['median_fold_delta_gt'],'folds_nonworse':eff['folds_nonworse']>=GATE['folds_nonworse_min'],'worst_fold_delta':eff['min_delta']>=GATE['worst_fold_delta_min'],'min_recall':b['min_class_recall']-c['min_class_recall']<=GATE['min_recall_drop_max']};ok=all(checks.values());fid='E2_corr98_random_forest' if ok else 'E0_baseline';F=R[fid];dec={'primary_candidate':'E2_corr98_random_forest','accepted':ok,'final_experiment_id':fid,'checks':checks,'paired_effect':eff,'selection_note':'Outer test used once only for predeclared accept/retain gate; no hyperparameter, threshold, family, or seed tuning from test.'};(OUT/'selection_decision.json').write_text(json.dumps(dec,indent=2))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable
