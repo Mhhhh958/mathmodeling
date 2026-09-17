@@ -4,6 +4,7 @@ import json, hashlib, shutil
 import numpy as np
 import pandas as pd
 
+# Trigger-only revision for final STEP04-A freeze workflow; validation logic unchanged.
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'outputs' / 'q1c_feature_extraction'
 OUT = ROOT / 'outputs' / 'step04a_freeze'
