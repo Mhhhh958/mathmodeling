@@ -1,0 +1,6 @@
+{
+  "selection_source": "validation_only",
+  "outer_test_used_for_selection": false,
+  "rule": "candidate must be non-worse on all 4 validation folds, improve at least 1, median min-class-recall drop >= -0.05; prefer simpler E1 before E2",
+  "final_experiment_id": "E1_corr98_logreg"
+}

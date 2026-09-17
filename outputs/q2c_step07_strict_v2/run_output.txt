@@ -1,0 +1,6 @@
+STEP07_STRICT_V2 PASS
+final_experiment_id=E1_corr98_logreg
+base_macro_f1=0.853942
+final_macro_f1=0.866667
+outer_test_used_for_selection=False
+paired_effect={"mean_delta": 0.013736263736263743, "median_delta": 0.0, "min_delta": 0.0, "max_delta": 0.05494505494505497, "folds_improved": 1, "folds_nonworse": 4, "cohen_dz": 0.5}

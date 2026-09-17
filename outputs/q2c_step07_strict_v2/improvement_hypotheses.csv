@@ -1,0 +1,5 @@
+experiment_id,failure_axis,failure_evidence,change,why_it_may_help
+E0_baseline,reference,"OR->B=4, N_0->OR, 0 hp weak",No change,Reference
+E1_corr98_logreg,redundancy,correlated amplitude summaries,train-only |r|>=0.98 pruning + LR,simpler boundary and lower redundancy
+E2_corr98_random_forest,nonlinear,OR014@6 ->B and B007_0 boundary,E1 pruning + RF,nonlinear interactions
+E3_mechanism_logreg,mechanism,possible missing fault-frequency evidence,+11 source-only mechanism features + LR,physical diagnostic only

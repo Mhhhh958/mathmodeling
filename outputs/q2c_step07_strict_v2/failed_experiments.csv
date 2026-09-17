@@ -1,0 +1,3 @@
+experiment_id,status,reason
+E2_corr98_random_forest,failed_validation_stability,worse than base on at least one validation fold
+E3_mechanism_logreg,diagnostic_only,source-only mechanism geometry is not target-compatible

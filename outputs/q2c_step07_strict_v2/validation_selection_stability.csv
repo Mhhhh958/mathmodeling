@@ -1,0 +1,3 @@
+experiment_id,nonworse_folds,improved_folds,median_delta,mean_delta,median_minrec_delta,eligible
+E1_corr98_logreg,4,1,0.0,0.0666208791208791,0.0,True
+E2_corr98_random_forest,2,2,0.022321428571428603,0.05257554945054946,0.07142857142857145,False

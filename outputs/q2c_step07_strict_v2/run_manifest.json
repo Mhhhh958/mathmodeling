@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "generated_utc": "2026-09-17T07:38:18.077949+00:00",
+  "git_sha": "97ee793b9fda2a67ef676d060d8453f70faf3c86",
+  "seed": 2025,
+  "selection": "validation_only before outer test",
+  "final_experiment_id": "E1_corr98_logreg",
+  "step06_baseline_reproduced": true
+}
