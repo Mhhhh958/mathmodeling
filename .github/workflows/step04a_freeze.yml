@@ -1,0 +1,39 @@
+name: step04a-freeze-validate
+
+on:
+  push:
+    branches: [step04a-freeze]
+    paths:
+      - 'scripts/step04a_freeze_validate.py'
+      - '.github/workflows/step04a_freeze.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  validate-and-freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen validation dependencies
+        run: pip install numpy==1.26.4 pandas==2.2.3
+      - name: Validate existing STEP04 outputs only
+        run: |
+          python scripts/step04a_freeze_validate.py | tee outputs/step04a_freeze/validation_run.log
+      - name: Upload STEP04-A freeze artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: step04a-freeze
+          path: outputs/step04a_freeze/
+          retention-days: 30
+          if-no-files-found: error
