@@ -1,0 +1,18 @@
+{
+  "selection_source": "validation_only",
+  "outer_test_used_for_selection": false,
+  "eligible": [
+    "E0_baseline",
+    "E2_corr98_random_forest"
+  ],
+  "diagnostic_only": [
+    "E1_corr98_logreg",
+    "E3_mechanism_logreg"
+  ],
+  "checks": {
+    "median_validation_delta_gt_0": true,
+    "validation_folds_nonworse_ge_3": false,
+    "median_minrec_drop_ge_minus_0_05": true
+  },
+  "final_experiment_id": "E0_baseline"
+}

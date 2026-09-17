@@ -1,0 +1,16 @@
+{
+  "final_experiment_id": "E0_baseline",
+  "input_feature_count": 28,
+  "model_feature_count": 28,
+  "serialized_model_bytes": 5306,
+  "cpu_model": "x86_64",
+  "logical_cpu_count": 4,
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "median_ms_per_file": 0.9163320000880049,
+  "p95_ms_per_file": 0.9713414001566889,
+  "timing_repeats_per_file": 5,
+  "batch": "one independent file, all precomputed windows",
+  "includes": "pipeline preprocessing + predict_proba + mean aggregation",
+  "excludes": "raw MAT loading/windowing/feature extraction/CSV I/O",
+  "parameter_count": 116
+}

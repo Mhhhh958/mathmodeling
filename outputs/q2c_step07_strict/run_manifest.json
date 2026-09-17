@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "generated_utc": "2026-09-17T07:35:18.217372+00:00",
+  "git_sha": "88048aaea9c11228c5a16e5bacd32a2e50241754",
+  "seed": 2025,
+  "selection": "validation_only before outer test",
+  "final_experiment_id": "E0_baseline",
+  "source_csv_sha256": "343947006403fcad4c4b2fa123c2efb2b5a34d4a590b1b80c75996e3c1c57823",
+  "step06_baseline_reproduced": true
+}

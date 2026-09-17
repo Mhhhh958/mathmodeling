@@ -1,0 +1,6 @@
+STEP07_STRICT PASS
+final_experiment_id=E0_baseline
+base_macro_f1=0.853942
+final_macro_f1=0.853942
+outer_test_used_for_selection=False
+paired_effect={"mean_delta": 0.0, "median_delta": 0.0, "min_delta": 0.0, "max_delta": 0.0, "folds_improved": 0, "folds_nonworse": 4, "cohen_dz": null}

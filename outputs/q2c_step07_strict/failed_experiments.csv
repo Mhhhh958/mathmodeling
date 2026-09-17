@@ -1,0 +1,3 @@
+experiment_id,status,reason
+E1_corr98_logreg,diagnostic_not_selected,not eligible for final; redundancy test only
+E3_mechanism_logreg,diagnostic_not_selected,source-only geometry makes it non-transferable to target

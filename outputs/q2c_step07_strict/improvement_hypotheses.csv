@@ -1,0 +1,5 @@
+experiment_id,failure_axis,failure_evidence,change,why_it_may_help,fair_comparison,stop_rule
+E0_baseline,reference,"OR->B=4, N_0->OR, 0 hp weak",No change,Reference,same Step05 folds/seed/aggregation,reference
+E1_corr98_logreg,redundancy,highly correlated amplitude summaries,train-only |r|>=0.98 pruning + LR,reduce linear redundancy,same folds/seed/LR grid,diagnostic; stop after one threshold
+E2_corr98_random_forest,nonlinear boundary,OR014@6 systematic ->B; B007_0 near boundary,E1 pruning + small RF grid,nonlinear interactions may separate OR/B,same folds/seed/aggregation; selected only from validation,eligible; stop after 3 RF configs
+E3_mechanism_logreg,mechanism,generic features may miss fault-frequency evidence,add 11 source-only mechanism features + LR,test physical harmonic evidence,same folds/seed/LR grid,diagnostic only; not Q3-eligible
