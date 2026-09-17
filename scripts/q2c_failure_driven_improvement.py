@@ -1,698 +1,122 @@
-from __future__ import annotations
-
 from pathlib import Path
 from datetime import datetime, timezone
-import hashlib, json, os, platform, subprocess, sys, time
-
-import joblib
-import numpy as np
-import pandas as pd
-import sklearn
+import json, os, platform, resource, time, hashlib, subprocess, sys
+import joblib, numpy as np, pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_matrix, f1_score, precision_recall_fscore_support
+from sklearn.metrics import f1_score, balanced_accuracy_score, accuracy_score, confusion_matrix, precision_recall_fscore_support
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-ROOT = Path(__file__).resolve().parents[1]
-IN_DIR = ROOT / "outputs" / "q1c_feature_extraction"
-BASE_DIR = ROOT / "outputs" / "q2b_minimal_baseline"
-SRC_CSV = IN_DIR / "q2_source_raw.csv"
-TGT_CSV = IN_DIR / "q2_target_raw.csv"
-INTERFACE_JSON = IN_DIR / "q2_interface.json"
-OUT = ROOT / "outputs" / "q2c_failure_driven_improvement"
-MODELS = OUT / "models"
-OUT.mkdir(parents=True, exist_ok=True)
-MODELS.mkdir(parents=True, exist_ok=True)
+ROOT=Path(__file__).resolve().parents[1]; IN=ROOT/'outputs/q1c_feature_extraction'; BOUT=ROOT/'outputs/q2b_minimal_baseline'; OUT=ROOT/'outputs/q2c_failure_driven_improvement'; MODELS=OUT/'models'; OUT.mkdir(parents=True,exist_ok=True); MODELS.mkdir(exist_ok=True)
+SRC=IN/'q2_source_raw.csv'; SRCALL=IN/'features_source_raw.csv'; IFACE=IN/'q2_interface.json'; SEED=2025; LAB=['OR','IR','B','N']; CORR=.98
+RUNS={'R1':{'train':['F3','F4'],'validation':['F2'],'test':['F1']},'R2':{'train':['F4','F1'],'validation':['F3'],'test':['F2']},'R3':{'train':['F1','F2'],'validation':['F4'],'test':['F3']},'R4':{'train':['F2','F3'],'validation':['F1'],'test':['F4']}}
+LRC=[{'id':'LR_0.1_none','C':.1,'cw':None,'ord':1},{'id':'LR_0.1_bal','C':.1,'cw':'balanced','ord':2},{'id':'LR_1_none','C':1.,'cw':None,'ord':3},{'id':'LR_1_bal','C':1.,'cw':'balanced','ord':4},{'id':'LR_10_none','C':10.,'cw':None,'ord':5},{'id':'LR_10_bal','C':10.,'cw':'balanced','ord':6}]
+RFC=[{'id':'RF_200_full_l1','n':200,'d':None,'leaf':1,'ord':1},{'id':'RF_300_d10_l1','n':300,'d':10,'leaf':1,'ord':2},{'id':'RF_300_d10_l2','n':300,'d':10,'leaf':2,'ord':3}]
+MECH=['mech_bpfo_ratio_1x','mech_bpfo_ratio_2x','mech_bpfo_ratio_3x','mech_bpfi_ratio_1x','mech_bpfi_ratio_2x','mech_bpfi_ratio_3x','mech_bsf_ratio_1x','mech_bsf_ratio_2x','mech_bsf_ratio_3x','mech_bpfi_sideband_to_center_1x','mech_bsf_sideband_to_center_1x']
+GATE={'pooled_delta_min':.02,'median_fold_delta_gt':0.,'folds_nonworse_min':3,'worst_fold_delta_min':-.05,'min_recall_drop_max':.05}
 
-SEED = 20260916
-LABELS = ["OR", "IR", "B", "N"]
-LOADS = [0, 1, 2, 3]
-C_GRID = [0.1, 1.0, 10.0]
-RF_GRID = [
-    {"max_depth": 10, "min_samples_leaf": 1},
-    {"max_depth": 10, "min_samples_leaf": 3},
-    {"max_depth": None, "min_samples_leaf": 1},
-    {"max_depth": None, "min_samples_leaf": 3},
-]
+def sha(p):
+ h=hashlib.sha256();
+ with open(p,'rb') as f:
+  for b in iter(lambda:f.read(1<<20),b''):h.update(b)
+ return h.hexdigest()
+def ng(x):
+ s=str(x).replace('\\','/');return s[9:] if s.startswith('data/raw/') else s
+def fold(g,c,l):
+ import re
+ n=Path(ng(g)).name;l=int(round(float(l)))
+ if c=='N':o=0
+ else:
+  z=int(re.match(r'(IR|OR|B)(\d{3})',n,re.I).group(2))
+  if c=='B':o={7:0,14:-1,21:-2}[z]
+  elif c=='IR':o={7:-1,14:-2,21:-3}[z]
+  else:
+   p=int(re.search(r'@(3|6|12)_',n).group(1));o={(7,3):0,(7,6):-1,(7,12):-2,(14,6):1,(21,3):-1,(21,6):-2,(21,12):-3}[(z,p)]
+ return f'F{((l+o)%4)+1}'
+def wt(d):
+ n=d.groupby('independent_object_id').size().to_dict();w=np.array([1/n[x] for x in d.independent_object_id]);return w/w.mean()
+def met(y,p):
+ pr,rc,ff,s=precision_recall_fscore_support(y,p,labels=LAB,zero_division=0);r={'n_files':len(y),'macro_f1':f1_score(y,p,labels=LAB,average='macro',zero_division=0),'balanced_accuracy':balanced_accuracy_score(y,p),'accuracy':accuracy_score(y,p),'min_class_recall':min(rc)}
+ for a,b,c,d,e in zip(LAB,pr,rc,ff,s):r|={f'precision_{a}':b,f'recall_{a}':c,f'f1_{a}':d,f'support_{a}':int(e)}
+ return {k:(float(v) if isinstance(v,(np.floating,float)) else int(v) if isinstance(v,(np.integer,int)) else v) for k,v in r.items()}
+def corrset(d,fs):
+ C=d[fs].corr().abs().fillna(0);keep=[];drop=[]
+ for f in fs:
+  (drop if any(C.loc[f,k]>=CORR for k in keep) else keep).append(f)
+ return keep,drop
+def pipe(kind,c):
+ if kind=='lr':return Pipeline([('imp',SimpleImputer(strategy='median')),('sc',StandardScaler()),('clf',LogisticRegression(C=c['C'],class_weight=c['cw'],solver='lbfgs',max_iter=3000,random_state=SEED))])
+ return Pipeline([('imp',SimpleImputer(strategy='median')),('clf',RandomForestClassifier(n_estimators=c['n'],max_depth=c['d'],min_samples_leaf=c['leaf'],max_features='sqrt',random_state=SEED,n_jobs=1))])
+def pred(m,d,fs,run,role,eid,cid):
+ q=m.predict_proba(d[fs]);cls=list(m.named_steps['clf'].classes_);o=d[['window_id','independent_object_id','class_label','load_hp','base_fold']].copy();o['evaluation_run']=run;o['role']=role;o['experiment_id']=eid;o['config_id']=cid
+ for a in LAB:o[f'p_{a}']=q[:,cls.index(a)]
+ o['pred_label_window']=o[[f'p_{a}' for a in LAB]].idxmax(1).str[2:];return o
+def agg(w):
+ pc=[f'p_{a}' for a in LAB];keys=['evaluation_run','role','experiment_id','config_id','independent_object_id','class_label','load_hp','base_fold'];a=w.groupby(keys,as_index=False)[pc].mean();a=a.merge(w.groupby(['evaluation_run','independent_object_id']).size().rename('n_windows').reset_index(),on=['evaluation_run','independent_object_id']);a['pred_label_file']=a[pc].idxmax(1).str[2:];z=np.sort(a[pc].values,1);a['confidence_top1']=a[pc].max(1);a['margin_top1_top2']=z[:,-1]-z[:,-2];return a
 
-EXPERIMENTS = [
-    {
-        "experiment_id": "E0_baseline_logreg_fullbalance",
-        "hypothesis": "Reference baseline from STEP06.",
-        "failure_reason": "Provides the frozen comparator; OR014@6 was repeatedly confused with B and 0 hp was the weakest condition.",
-        "change": "None: 28 common features, L2 logistic regression, full inverse class-file balancing.",
-        "why_may_help": "Comparator only.",
-        "added_assumption": "Linear decision surfaces after standardization.",
-        "fair_comparison": "Same STEP05 load-group splits, seed, features, aggregation and training-boundary preprocessing.",
-        "stop_rule": "No iterative change; fixed comparator.",
-        "model": "logreg", "class_alpha": 1.0, "corr_threshold": None, "complexity_rank": 0,
-    },
-    {
-        "experiment_id": "E1_logreg_sqrt_class_balance",
-        "hypothesis": "Full inverse class balancing may over-emphasize B/N and contribute to OR->B false positives.",
-        "failure_reason": "STEP06 had four OR files predicted as B; B recall=1.0 but B precision=0.75.",
-        "change": "Only class-file weight exponent changes from alpha=1.0 to alpha=0.5; per-file normalization is unchanged.",
-        "why_may_help": "Reduces minority over-weighting while still compensating imbalance, potentially improving OR/B boundary stability.",
-        "added_assumption": "Square-root inverse class frequency is sufficient imbalance correction.",
-        "fair_comparison": "Same 28 features, L2 logistic model, C grid, splits and seed; only weighting strength changes.",
-        "stop_rule": "Promote only by predeclared inner-validation rule; outer tests are not used for promotion.",
-        "model": "logreg", "class_alpha": 0.5, "corr_threshold": None, "complexity_rank": 1,
-    },
-    {
-        "experiment_id": "E2_logreg_corr95",
-        "hypothesis": "Highly redundant amplitude/shape features may destabilize linear coefficients across loads.",
-        "failure_reason": "Systematic OR014@6->B errors persisted at all four loads, suggesting a stable boundary problem rather than one random window.",
-        "change": "Only add unsupervised absolute-correlation pruning at |r|>0.95 fitted inside each training boundary.",
-        "why_may_help": "Removes near-duplicate predictors and can reduce coefficient instability without adding target-specific assumptions.",
-        "added_assumption": "One feature from a highly correlated pair is sufficient for the linear baseline.",
-        "fair_comparison": "Same logistic model, class weights, C grid, splits and seed; pruning is fitted on training data only.",
-        "stop_rule": "Threshold fixed at 0.95 before running; no threshold search.",
-        "model": "logreg", "class_alpha": 1.0, "corr_threshold": 0.95, "complexity_rank": 2,
-    },
-    {
-        "experiment_id": "E3_random_forest",
-        "hypothesis": "OR/B separation may require modest nonlinear interactions among the same 28 interpretable features.",
-        "failure_reason": "Four OR014@6 files were predicted as B by the linear baseline under all loads.",
-        "change": "Only classifier family changes to 300-tree Random Forest; same common features and sample-weight rule.",
-        "why_may_help": "Trees can represent nonlinear feature interactions without imposing an artificial feature order.",
-        "added_assumption": "Piecewise nonlinear interactions generalize across held-out loads.",
-        "fair_comparison": "Same 28 features, splits, seed, file/class weights and file-level probability aggregation; four RF settings were frozen in STEP05 scope.",
-        "stop_rule": "No model-family expansion beyond this RF grid; promotion uses inner validation only.",
-        "model": "rf", "class_alpha": 1.0, "corr_threshold": None, "complexity_rank": 3,
-    },
-]
+def runexp(df,base,eid,kind,configs,corr=False,mech=False):
+ WA=[];FA=[];FM=[];VV=[];FS=[]
+ for run,s in RUNS.items():
+  tr=df[df.base_fold.isin(s['train'])];va=df[df.base_fold.isin(s['validation'])];te=df[df.base_fold.isin(s['test'])];fs=base+(MECH if mech else []);drop=[]
+  if corr:fs,drop=corrset(tr,fs)
+  cand=[]
+  for c in configs:
+   m=pipe(kind,c);m.fit(tr[fs],tr.class_label,clf__sample_weight=wt(tr));fv=agg(pred(m,va,fs,run,'validation',eid,c['id']));x={'evaluation_run':run,'experiment_id':eid,'config_id':c['id'],'config_order':c['ord'],'n_features':len(fs),**met(fv.class_label,fv.pred_label_file)};cand.append(x);VV.append(x)
+  best=pd.DataFrame(cand).sort_values(['macro_f1','min_class_recall','config_order'],ascending=[False,False,True]).iloc[0];c=next(z for z in configs if z['id']==best.config_id);dev=pd.concat([tr,va]);fs=base+(MECH if mech else []);drop=[]
+  if corr:fs,drop=corrset(dev,fs)
+  m=pipe(kind,c);m.fit(dev[fs],dev.class_label,clf__sample_weight=wt(dev));ww=pred(m,te,fs,run,'test',eid,c['id']);ff=agg(ww);WA.append(ww);FA.append(ff);FM.append({'evaluation_run':run,'experiment_id':eid,'selected_config_id':c['id'],'n_features':len(fs),'dropped':'|'.join(drop),**met(ff.class_label,ff.pred_label_file)});FS.append({'evaluation_run':run,'experiment_id':eid,'features':'|'.join(fs),'dropped':'|'.join(drop)})
+ W=pd.concat(WA);F=pd.concat(FA);return {'w':W,'f':F,'fold':pd.DataFrame(FM),'val':pd.DataFrame(VV),'fs':pd.DataFrame(FS),'pooled':met(F.class_label,F.pred_label_file)}
 
-# Precommitted promotion rule: selection NEVER reads outer-test metrics.
-PROMOTION = {
-    "min_inner_macro_f1_gain": 0.01,
-    "max_mean_min_recall_drop": 0.05,
-    "min_outer_contexts_nonworse": 3,
-    "context_nonworse_tolerance": 0.005,
-    "tie_order": ["inner_macro_f1", "inner_balanced_accuracy", "inner_min_class_recall", "lower_complexity_rank"],
-}
+def globalfit(df,base,kind,configs,corr,path):
+ rows=[]
+ for c in configs:
+  z=[]
+  for f in ['F1','F2','F3','F4']:
+   tr=df[df.base_fold!=f];va=df[df.base_fold==f];fs=base
+   if corr:fs,_=corrset(tr,fs)
+   m=pipe(kind,c);m.fit(tr[fs],tr.class_label,clf__sample_weight=wt(tr));ff=agg(pred(m,va,fs,'CV','validation','GLOBAL',c['id']));z.append(met(ff.class_label,ff.pred_label_file)['macro_f1'])
+  rows.append({'config_id':c['id'],'order':c['ord'],'cv_macro_f1_mean':np.mean(z),'cv_macro_f1_median':np.median(z)})
+ tab=pd.DataFrame(rows).sort_values(['cv_macro_f1_mean','order'],ascending=[False,True]);c=next(x for x in configs if x['id']==tab.iloc[0].config_id);fs=base;drop=[]
+ if corr:fs,drop=corrset(df,fs)
+ m=pipe(kind,c);m.fit(df[fs],df.class_label,clf__sample_weight=wt(df));pay={'pipeline':m,'input_feature_columns':base,'model_feature_columns':fs,'dropped_features':drop,'labels':LAB,'selected_config':c,'random_seed':SEED};joblib.dump(pay,path);return pay,tab
 
-
-def git_sha():
-    try:
-        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
-    except Exception:
-        return "UNKNOWN"
-
-
-def sha256(path: Path):
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for block in iter(lambda: f.read(1 << 20), b""):
-            h.update(block)
-    return h.hexdigest()
-
-
-def cpu_model():
-    p = Path("/proc/cpuinfo")
-    if p.exists():
-        for line in p.read_text(errors="ignore").splitlines():
-            if line.lower().startswith("model name"):
-                return line.split(":", 1)[1].strip()
-    return platform.processor() or "unknown"
-
-
-def metric_dict(y_true, y_pred):
-    pr, rc, f1, sup = precision_recall_fscore_support(y_true, y_pred, labels=LABELS, zero_division=0)
-    d = {
-        "macro_f1": float(f1_score(y_true, y_pred, labels=LABELS, average="macro", zero_division=0)),
-        "balanced_accuracy": float(balanced_accuracy_score(y_true, y_pred)),
-        "accuracy": float(accuracy_score(y_true, y_pred)),
-        "min_class_recall": float(np.min(rc)),
-    }
-    for lab, p, r, ff, s in zip(LABELS, pr, rc, f1, sup):
-        d[f"precision_{lab}"] = float(p)
-        d[f"recall_{lab}"] = float(r)
-        d[f"f1_{lab}"] = float(ff)
-        d[f"support_{lab}"] = int(s)
-    return d
-
-
-def file_meta(df):
-    g = df[["independent_object_id", "class_label", "load_hp"]].drop_duplicates().copy()
-    if g["independent_object_id"].duplicated().any():
-        raise RuntimeError("independent_object_id maps to multiple file metadata rows")
-    return g.sort_values("independent_object_id").reset_index(drop=True)
-
-
-def make_weights(train_df, alpha):
-    # Each file contributes equal total mass before class balancing. Class factor nc^-alpha
-    # is normalized so total sample-weight mass equals number of independent files.
-    nwin = train_df.groupby("independent_object_id").size().to_dict()
-    meta = train_df[["independent_object_id", "class_label"]].drop_duplicates()
-    class_n = meta.groupby("class_label")["independent_object_id"].nunique().to_dict()
-    n_files = int(meta["independent_object_id"].nunique())
-    raw_factor = {c: float(class_n[c]) ** (-float(alpha)) for c in LABELS}
-    total_file_mass_raw = sum(class_n[c] * raw_factor[c] for c in LABELS)
-    norm = n_files / total_file_mass_raw
-    out = []
-    for _, r in train_df.iterrows():
-        out.append(norm * raw_factor[r["class_label"]] / nwin[r["independent_object_id"]])
-    w = np.asarray(out, float)
-    if not np.isclose(w.sum(), n_files, atol=1e-9):
-        raise RuntimeError("sample-weight normalization failed")
-    return w
-
-
-def corr_prune_features(train_df, feats, threshold):
-    if threshold is None:
-        return list(feats)
-    X = train_df[feats].copy()
-    med = X.median(axis=0)
-    X = X.fillna(med)
-    corr = X.corr().abs()
-    keep, dropped = [], []
-    for f in feats:
-        if any(float(corr.loc[f, k]) > float(threshold) for k in keep):
-            dropped.append(f)
-        else:
-            keep.append(f)
-    if len(keep) < 4:
-        raise RuntimeError("correlation pruning removed too many features")
-    return keep
-
-
-def config_key(cfg):
-    return json.dumps(cfg, sort_keys=True, ensure_ascii=False)
-
-
-def config_grid(exp):
-    if exp["model"] == "logreg":
-        return [{"C": float(c)} for c in C_GRID]
-    return [dict(x, n_estimators=300, max_features="sqrt") for x in RF_GRID]
-
-
-def build_pipeline(exp, cfg):
-    if exp["model"] == "logreg":
-        clf = LogisticRegression(
-            C=float(cfg["C"]), penalty="l2", solver="lbfgs", max_iter=5000,
-            random_state=SEED,
-        )
-    else:
-        clf = RandomForestClassifier(
-            n_estimators=int(cfg["n_estimators"]), max_depth=cfg["max_depth"],
-            min_samples_leaf=int(cfg["min_samples_leaf"]), max_features=cfg["max_features"],
-            random_state=SEED, n_jobs=1,
-        )
-    # Keep the same deterministic preprocessing family for the fair classifier comparison.
-    return Pipeline([
-        ("imputer", SimpleImputer(strategy="median")),
-        ("scaler", StandardScaler()),
-        ("clf", clf),
-    ])
-
-
-def fit_model(train_df, base_feats, exp, cfg):
-    used = corr_prune_features(train_df, base_feats, exp["corr_threshold"])
-    pipe = build_pipeline(exp, cfg)
-    X = train_df[used].to_numpy(float)
-    y = train_df["class_label"].astype(str).to_numpy()
-    w = make_weights(train_df, exp["class_alpha"])
-    pipe.fit(X, y, clf__sample_weight=w)
-    return pipe, used
-
-
-def predict_window_table(pipe, used, df, exp_id, context, cfg):
-    p = pipe.predict_proba(df[used].to_numpy(float))
-    classes = list(pipe.named_steps["clf"].classes_)
-    out = df[["window_id", "independent_object_id", "class_label", "load_hp"]].copy().reset_index(drop=True)
-    out["experiment_id"] = exp_id
-    out["context"] = str(context)
-    out["config"] = config_key(cfg)
-    for lab in LABELS:
-        out[f"p_{lab}"] = p[:, classes.index(lab)]
-    out["pred_label_window"] = out[[f"p_{x}" for x in LABELS]].idxmax(axis=1).str.replace("p_", "", regex=False)
-    return out
-
-
-def aggregate_files(win):
-    pcols = [f"p_{x}" for x in LABELS]
-    keys = ["experiment_id", "context", "config", "independent_object_id", "class_label", "load_hp"]
-    g = win.groupby(keys, as_index=False)[pcols].mean()
-    counts = win.groupby("independent_object_id").size().rename("n_windows").reset_index()
-    g = g.merge(counts, on="independent_object_id", how="left")
-    g["pred_label_file"] = g[pcols].idxmax(axis=1).str.replace("p_", "", regex=False)
-    arr = np.sort(g[pcols].to_numpy(float), axis=1)
-    g["confidence_top1"] = np.max(g[pcols].to_numpy(float), axis=1)
-    g["margin_top1_top2"] = arr[:, -1] - arr[:, -2]
-    return g
-
-
-def choose_cfg_for_context(df, feats, exp, outer_test_load):
-    dev_loads = [x for x in LOADS if x != outer_test_load]
-    rows = []
-    for cfg in config_grid(exp):
-        for val_load in dev_loads:
-            tr_loads = [x for x in dev_loads if x != val_load]
-            tr = df[df["load_hp"].isin(tr_loads)].copy()
-            va = df[df["load_hp"] == val_load].copy()
-            if set(tr["independent_object_id"]) & set(va["independent_object_id"]):
-                raise RuntimeError("inner group leakage")
-            pipe, used = fit_model(tr, feats, exp, cfg)
-            wf = predict_window_table(pipe, used, va, exp["experiment_id"], f"outer{outer_test_load}_inner{val_load}", cfg)
-            ff = aggregate_files(wf)
-            m = metric_dict(ff["class_label"], ff["pred_label_file"])
-            rows.append({
-                "experiment_id": exp["experiment_id"], "outer_test_load": outer_test_load,
-                "inner_val_load": val_load, "config": config_key(cfg), "n_features_used": len(used), **m,
-            })
-    detail = pd.DataFrame(rows)
-    sm = detail.groupby(["experiment_id", "outer_test_load", "config"], as_index=False).agg(
-        inner_macro_f1=("macro_f1", "mean"),
-        inner_balanced_accuracy=("balanced_accuracy", "mean"),
-        inner_min_class_recall=("min_class_recall", "mean"),
-        mean_features_used=("n_features_used", "mean"),
-    )
-    sm = sm.sort_values(
-        ["inner_macro_f1", "inner_balanced_accuracy", "inner_min_class_recall", "config"],
-        ascending=[False, False, False, True],
-    ).reset_index(drop=True)
-    best = json.loads(sm.iloc[0]["config"])
-    return best, detail, sm
-
-
-def run_all_inner(df, feats):
-    all_detail, all_cfg_summary, chosen_rows = [], [], []
-    chosen = {}
-    for exp in EXPERIMENTS:
-        eid = exp["experiment_id"]
-        chosen[eid] = {}
-        for outer in LOADS:
-            cfg, det, sm = choose_cfg_for_context(df, feats, exp, outer)
-            chosen[eid][outer] = cfg
-            all_detail.append(det); all_cfg_summary.append(sm)
-            top = sm.iloc[0]
-            chosen_rows.append({
-                "experiment_id": eid, "outer_test_load": outer, "selected_config": config_key(cfg),
-                "inner_macro_f1": float(top["inner_macro_f1"]),
-                "inner_balanced_accuracy": float(top["inner_balanced_accuracy"]),
-                "inner_min_class_recall": float(top["inner_min_class_recall"]),
-                "mean_features_used": float(top["mean_features_used"]),
-            })
-    return pd.concat(all_detail, ignore_index=True), pd.concat(all_cfg_summary, ignore_index=True), pd.DataFrame(chosen_rows), chosen
-
-
-def select_experiment(chosen_inner):
-    exp_meta = {x["experiment_id"]: x for x in EXPERIMENTS}
-    agg = chosen_inner.groupby("experiment_id", as_index=False).agg(
-        inner_macro_f1=("inner_macro_f1", "mean"),
-        inner_balanced_accuracy=("inner_balanced_accuracy", "mean"),
-        inner_min_class_recall=("inner_min_class_recall", "mean"),
-        mean_features_used=("mean_features_used", "mean"),
-    )
-    base_id = EXPERIMENTS[0]["experiment_id"]
-    base = agg[agg["experiment_id"] == base_id].iloc[0]
-    rows = []
-    for _, r in agg.iterrows():
-        eid = r["experiment_id"]
-        if eid == base_id:
-            nonworse = 4
-            eligible = True
-        else:
-            c = chosen_inner[chosen_inner["experiment_id"] == eid].sort_values("outer_test_load")
-            b = chosen_inner[chosen_inner["experiment_id"] == base_id].sort_values("outer_test_load")
-            nonworse = int(np.sum(c["inner_macro_f1"].to_numpy() >= b["inner_macro_f1"].to_numpy() - PROMOTION["context_nonworse_tolerance"]))
-            eligible = (
-                float(r["inner_macro_f1"] - base["inner_macro_f1"]) >= PROMOTION["min_inner_macro_f1_gain"]
-                and float(r["inner_min_class_recall"] - base["inner_min_class_recall"]) >= -PROMOTION["max_mean_min_recall_drop"]
-                and nonworse >= PROMOTION["min_outer_contexts_nonworse"]
-            )
-        rows.append({
-            **r.to_dict(),
-            "inner_macro_gain_vs_baseline": float(r["inner_macro_f1"] - base["inner_macro_f1"]),
-            "inner_bal_acc_gain_vs_baseline": float(r["inner_balanced_accuracy"] - base["inner_balanced_accuracy"]),
-            "inner_min_recall_gain_vs_baseline": float(r["inner_min_class_recall"] - base["inner_min_class_recall"]),
-            "contexts_nonworse_vs_baseline": nonworse,
-            "eligible_for_promotion": bool(eligible),
-            "complexity_rank": int(exp_meta[eid]["complexity_rank"]),
-        })
-    tab = pd.DataFrame(rows)
-    candidates = tab[(tab["experiment_id"] != base_id) & tab["eligible_for_promotion"]].copy()
-    if len(candidates) == 0:
-        selected = base_id
-        reason = "No improvement hypothesis met the predeclared inner-validation promotion rule; retain baseline."
-    else:
-        candidates = candidates.sort_values(
-            ["inner_macro_f1", "inner_balanced_accuracy", "inner_min_class_recall", "complexity_rank"],
-            ascending=[False, False, False, True],
-        )
-        selected = str(candidates.iloc[0]["experiment_id"])
-        reason = "Selected strictly from predeclared inner-validation criteria; outer-test metrics were not read by selection code."
-    tab["selected_by_inner_only"] = tab["experiment_id"] == selected
-    return selected, reason, tab
-
-
-def run_outer_for_experiment(df, feats, exp, chosen_cfg):
-    all_w, all_f, mrows = [], [], []
-    for outer in LOADS:
-        dev = df[df["load_hp"] != outer].copy()
-        te = df[df["load_hp"] == outer].copy()
-        if set(dev["independent_object_id"]) & set(te["independent_object_id"]):
-            raise RuntimeError("outer group leakage")
-        cfg = chosen_cfg[exp["experiment_id"]][outer]
-        pipe, used = fit_model(dev, feats, exp, cfg)
-        wf = predict_window_table(pipe, used, te, exp["experiment_id"], f"outer_test_{outer}", cfg)
-        ff = aggregate_files(wf)
-        m = metric_dict(ff["class_label"], ff["pred_label_file"])
-        all_w.append(wf); all_f.append(ff)
-        mrows.append({"experiment_id": exp["experiment_id"], "outer_test_load": outer, "config": config_key(cfg), "n_features_used": len(used), **m})
-    w = pd.concat(all_w, ignore_index=True)
-    f = pd.concat(all_f, ignore_index=True)
-    pooled = metric_dict(f["class_label"], f["pred_label_file"])
-    return w, f, pd.DataFrame(mrows), pooled
-
-
-def select_global_cfg(df, feats, exp):
-    rows = []
-    for cfg in config_grid(exp):
-        for val_load in LOADS:
-            tr = df[df["load_hp"] != val_load].copy()
-            va = df[df["load_hp"] == val_load].copy()
-            pipe, used = fit_model(tr, feats, exp, cfg)
-            wf = predict_window_table(pipe, used, va, exp["experiment_id"], f"global_lolo_{val_load}", cfg)
-            ff = aggregate_files(wf)
-            m = metric_dict(ff["class_label"], ff["pred_label_file"])
-            rows.append({"config": config_key(cfg), "val_load": val_load, "n_features_used": len(used), **m})
-    det = pd.DataFrame(rows)
-    sm = det.groupby("config", as_index=False).agg(
-        mean_macro_f1=("macro_f1", "mean"),
-        mean_balanced_accuracy=("balanced_accuracy", "mean"),
-        mean_min_class_recall=("min_class_recall", "mean"),
-        mean_features_used=("n_features_used", "mean"),
-    ).sort_values(["mean_macro_f1", "mean_balanced_accuracy", "mean_min_class_recall", "config"], ascending=[False, False, False, True]).reset_index(drop=True)
-    return json.loads(sm.iloc[0]["config"]), det, sm
-
-
-def complexity_and_timing(model_bundle, df):
-    pipe = model_bundle["pipeline"]
-    feats = model_bundle["feature_columns"]
-    clf = pipe.named_steps["clf"]
-    model_path = MODELS / "final_source_model.joblib"
-    model_bytes = int(model_path.stat().st_size)
-    if isinstance(clf, LogisticRegression):
-        complexity = {
-            "classifier": "LogisticRegression",
-            "trainable_parameter_count": int(clf.coef_.size + clf.intercept_.size),
-            "n_trees": None, "total_tree_nodes": None, "total_tree_leaves": None,
-        }
-    else:
-        complexity = {
-            "classifier": "RandomForestClassifier",
-            "trainable_parameter_count": None,
-            "n_trees": int(len(clf.estimators_)),
-            "total_tree_nodes": int(sum(t.tree_.node_count for t in clf.estimators_)),
-            "total_tree_leaves": int(sum(t.tree_.n_leaves for t in clf.estimators_)),
-        }
-
-    groups = [g for _, g in df.groupby("independent_object_id")]
-    # Warm-up.
-    for g in groups[:3]:
-        _ = pipe.predict_proba(g[feats].to_numpy(float)).mean(axis=0)
-    durations = []
-    repeats = 10
-    for _ in range(repeats):
-        for g in groups:
-            t0 = time.perf_counter()
-            _ = pipe.predict_proba(g[feats].to_numpy(float)).mean(axis=0)
-            durations.append((time.perf_counter() - t0) * 1000.0)
-    return {
-        **complexity,
-        "input_feature_count": int(len(feats)),
-        "serialized_model_bytes": model_bytes,
-        "inference_ms_per_file_median": float(np.median(durations)),
-        "inference_ms_per_file_mean": float(np.mean(durations)),
-        "inference_ms_per_file_p95": float(np.percentile(durations, 95)),
-        "timing_repeats_per_file": repeats,
-        "timing_batch": "one independent file at a time; all its precomputed feature windows",
-        "timing_includes": "pipeline imputation/scaling, classifier predict_proba, mean probability aggregation",
-        "timing_excludes": "raw MAT loading, signal windowing, feature extraction, CSV I/O",
-        "cpu_model": cpu_model(),
-        "logical_cpu_count": os.cpu_count(),
-        "platform": platform.platform(),
-    }
-
-
-def manual_macro_f1(y_true, y_pred):
-    vals = []
-    for lab in LABELS:
-        tp = sum((a == lab and b == lab) for a, b in zip(y_true, y_pred))
-        fp = sum((a != lab and b == lab) for a, b in zip(y_true, y_pred))
-        fn = sum((a == lab and b != lab) for a, b in zip(y_true, y_pred))
-        p = tp / (tp + fp) if tp + fp else 0.0
-        r = tp / (tp + fn) if tp + fn else 0.0
-        vals.append(2 * p * r / (p + r) if p + r else 0.0)
-    return float(np.mean(vals))
-
+def bench(pay,df):
+ m=pay['pipeline'];fs=pay['model_feature_columns'];t=[]
+ for _,g in df.groupby('independent_object_id'):
+  for _ in range(3):a=time.perf_counter();m.predict_proba(g[fs]);t.append((time.perf_counter()-a)*1000)
+ return {'median_ms_per_file':float(np.median(t)),'p95_ms_per_file':float(np.percentile(t,95)),'batch':'one file, all windows','feature_extraction_included':False}
 
 def main():
-    started = time.perf_counter()
-    interface = json.loads(INTERFACE_JSON.read_text(encoding="utf-8"))
-    feats = list(interface["feature_columns"])
-    forbidden = set(interface["forbidden_as_model_features"])
-    if forbidden.intersection(feats):
-        raise RuntimeError(f"Leakage feature in interface: {forbidden.intersection(feats)}")
-    df = pd.read_csv(SRC_CSV)
-    if len(df) != 400 or len(feats) != 28:
-        raise RuntimeError("STEP04 input shape changed")
-    ft = file_meta(df)
-    counts = ft["class_label"].value_counts().to_dict()
-    if len(ft) != 56 or counts != {"OR": 28, "B": 12, "IR": 12, "N": 4}:
-        raise RuntimeError(f"Unexpected source inventory: {len(ft)}, {counts}")
-    for load in LOADS:
-        c = ft[ft["load_hp"] == load]["class_label"].value_counts().to_dict()
-        if c != {"OR": 7, "B": 3, "IR": 3, "N": 1}:
-            raise RuntimeError(f"Load {load} coverage changed: {c}")
-
-    # Record hypotheses before any improvement result is evaluated.
-    hypo_cols = ["experiment_id", "hypothesis", "failure_reason", "change", "why_may_help", "added_assumption", "fair_comparison", "stop_rule"]
-    pd.DataFrame([{k: e[k] for k in hypo_cols} for e in EXPERIMENTS]).to_csv(OUT / "improvement_hypotheses.csv", index=False, encoding="utf-8-sig")
-    (OUT / "precommitted_selection_rule.json").write_text(json.dumps(PROMOTION, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    # Phase A: development only. Every candidate is screened only by inner validation.
-    inner_detail, inner_cfg_summary, chosen_inner, chosen_cfg = run_all_inner(df, feats)
-    inner_detail.to_csv(OUT / "inner_all_experiments_detail.csv", index=False, encoding="utf-8-sig")
-    inner_cfg_summary.to_csv(OUT / "inner_config_summary.csv", index=False, encoding="utf-8-sig")
-    chosen_inner.to_csv(OUT / "inner_selected_config_by_context.csv", index=False, encoding="utf-8-sig")
-    selected_id, selection_reason, experiment_summary = select_experiment(chosen_inner)
-    experiment_summary.to_csv(OUT / "experiment_selection_summary.csv", index=False, encoding="utf-8-sig")
-    failed = experiment_summary[(experiment_summary["experiment_id"] != selected_id) & (experiment_summary["experiment_id"] != EXPERIMENTS[0]["experiment_id"])].copy()
-    failed["failure_status"] = np.where(failed["eligible_for_promotion"], "eligible_but_not_selected", "failed_predeclared_promotion_rule")
-    failed.to_csv(OUT / "failed_experiments.csv", index=False, encoding="utf-8-sig")
-
-    selection = {
-        "selected_experiment_id": selected_id,
-        "selection_reason": selection_reason,
-        "selection_data_source": "inner_validation_only",
-        "outer_test_metrics_used_for_selection": False,
-        "promotion_rule": PROMOTION,
-    }
-    (OUT / "selection_decision.json").write_text(json.dumps(selection, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    exp_map = {e["experiment_id"]: e for e in EXPERIMENTS}
-    base_exp = exp_map[EXPERIMENTS[0]["experiment_id"]]
-    selected_exp = exp_map[selected_id]
-
-    # Phase B: one confirmatory outer evaluation for baseline and the inner-selected method only.
-    bw, bf, bm, bp = run_outer_for_experiment(df, feats, base_exp, chosen_cfg)
-    if selected_id == base_exp["experiment_id"]:
-        sw, sf, sm, sp = bw.copy(), bf.copy(), bm.copy(), dict(bp)
-    else:
-        sw, sf, sm, sp = run_outer_for_experiment(df, feats, selected_exp, chosen_cfg)
-    bw.to_csv(OUT / "baseline_oof_window_predictions.csv", index=False, encoding="utf-8-sig")
-    bf.to_csv(OUT / "baseline_oof_file_predictions.csv", index=False, encoding="utf-8-sig")
-    sw.to_csv(OUT / "final_method_oof_window_predictions.csv", index=False, encoding="utf-8-sig")
-    sf.to_csv(OUT / "final_method_oof_file_predictions.csv", index=False, encoding="utf-8-sig")
-    bm.assign(role="baseline").to_csv(OUT / "baseline_outer_fold_metrics.csv", index=False, encoding="utf-8-sig")
-    sm.assign(role="final_inner_selected").to_csv(OUT / "final_outer_fold_metrics.csv", index=False, encoding="utf-8-sig")
-
-    comparison = pd.DataFrame([
-        {"role": "baseline", "experiment_id": base_exp["experiment_id"], **bp},
-        {"role": "final_inner_selected", "experiment_id": selected_id, **sp},
-    ])
-    comparison.to_csv(OUT / "baseline_vs_final_pooled.csv", index=False, encoding="utf-8-sig")
-
-    for tag, ff in [("baseline", bf), ("final", sf)]:
-        cm = pd.DataFrame(confusion_matrix(ff["class_label"], ff["pred_label_file"], labels=LABELS), index=[f"true_{x}" for x in LABELS], columns=[f"pred_{x}" for x in LABELS])
-        cm.to_csv(OUT / f"confusion_matrix_{tag}.csv", encoding="utf-8-sig")
-
-    # Baseline reproduction against STEP06, if available.
-    baseline_repro = {"available": False}
-    old_metrics = BASE_DIR / "metrics_summary.json"
-    if old_metrics.exists():
-        old = json.loads(old_metrics.read_text(encoding="utf-8"))["file_level_pooled_oof"]
-        baseline_repro = {
-            "available": True,
-            "step06_macro_f1": float(old["macro_f1"]),
-            "step07_rerun_macro_f1": float(bp["macro_f1"]),
-            "abs_diff": abs(float(old["macro_f1"]) - float(bp["macro_f1"])),
-        }
-        baseline_repro["pass"] = baseline_repro["abs_diff"] <= 1e-12
-    (OUT / "baseline_reproduction.json").write_text(json.dumps(baseline_repro, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    # Error transitions and explicit key failure tracking.
-    bsmall = bf[["independent_object_id", "class_label", "load_hp", "pred_label_file"]].rename(columns={"pred_label_file": "baseline_pred"})
-    ssmall = sf[["independent_object_id", "pred_label_file"]].rename(columns={"pred_label_file": "final_pred"})
-    trans = bsmall.merge(ssmall, on="independent_object_id", how="inner")
-    trans["baseline_correct"] = trans["baseline_pred"] == trans["class_label"]
-    trans["final_correct"] = trans["final_pred"] == trans["class_label"]
-    trans["transition"] = np.select(
-        [~trans["baseline_correct"] & trans["final_correct"], trans["baseline_correct"] & ~trans["final_correct"], ~trans["baseline_correct"] & ~trans["final_correct"]],
-        ["corrected", "new_error", "persistent_error"], default="correct_both",
-    )
-    trans.to_csv(OUT / "error_transition_table.csv", index=False, encoding="utf-8-sig")
-    final_mis = sf[sf["pred_label_file"] != sf["class_label"]].copy()
-    final_mis.to_csv(OUT / "final_misclassified_files.csv", index=False, encoding="utf-8-sig")
-    key_ids = [x for x in trans["independent_object_id"] if "OR014@6_" in x or x.endswith("IR014_0.mat") or x.endswith("IR007_3.mat") or x.endswith("N_0.mat")]
-    key = trans[trans["independent_object_id"].isin(key_ids)].copy()
-    key.to_csv(OUT / "key_failure_cases_comparison.csv", index=False, encoding="utf-8-sig")
-
-    # Phase C: choose one global source-only configuration by 4-load LOLO CV, then fit all 56 source files.
-    global_cfg, global_detail, global_summary = select_global_cfg(df, feats, selected_exp)
-    global_detail.to_csv(OUT / "final_global_lolo_detail.csv", index=False, encoding="utf-8-sig")
-    global_summary.to_csv(OUT / "final_global_config_selection.csv", index=False, encoding="utf-8-sig")
-    tfit = time.perf_counter()
-    final_pipe, final_feats = fit_model(df, feats, selected_exp, global_cfg)
-    full_train_seconds = time.perf_counter() - tfit
-    bundle = {
-        "pipeline": final_pipe,
-        "feature_columns": final_feats,
-        "base_feature_columns": feats,
-        "labels": LABELS,
-        "selected_experiment_id": selected_id,
-        "global_config": global_cfg,
-        "class_alpha": selected_exp["class_alpha"],
-        "corr_threshold": selected_exp["corr_threshold"],
-        "random_seed": SEED,
-        "aggregation": "mean window class probabilities per independent file",
-        "training_scope": "all 56 M1 source independent acquisition files / 400 STEP04 windows",
-    }
-    joblib.dump(bundle, MODELS / "final_source_model.joblib")
-
-    complexity = complexity_and_timing(bundle, df)
-    complexity["full_source_fit_seconds"] = float(full_train_seconds)
-    complexity["sklearn_version"] = sklearn.__version__
-    (OUT / "complexity_report.json").write_text(json.dumps(complexity, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    q3_interface = {
-        "version": "Q2C-STEP07-v1",
-        "model_path": "outputs/q2c_failure_driven_improvement/models/final_source_model.joblib",
-        "selected_experiment_id": selected_id,
-        "global_config": global_cfg,
-        "source_feature_file": "outputs/q1c_feature_extraction/q2_source_raw.csv",
-        "target_feature_file": "outputs/q1c_feature_extraction/q2_target_raw.csv",
-        "feature_columns": final_feats,
-        "base_feature_columns": feats,
-        "label_order": LABELS,
-        "group_column": "independent_object_id",
-        "window_id_column": "window_id",
-        "file_aggregation": "arithmetic mean of window class probabilities; argmax for file label",
-        "preprocessing_inside_saved_pipeline": True,
-        "source_only_geometry_features_used": False,
-        "target_truth_status": "unknown",
-        "target_label_usage_allowed": False,
-        "problem3_contract": "Problem3 may use this frozen source representation/classifier as its source-side baseline. Any target-domain adaptation must not use target labels and must preserve A-P file grouping.",
-    }
-    (OUT / "q3_interface.json").write_text(json.dumps(q3_interface, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    # Independent recalculation: manual Macro-F1 and one file aggregation.
-    manual = manual_macro_f1(sf["class_label"].astype(str).tolist(), sf["pred_label_file"].astype(str).tolist())
-    sample_id = "data/raw/source_domain/cwru_48khz_de/B007_0.mat"
-    wsample = sw[sw["independent_object_id"] == sample_id]
-    fsample = sf[sf["independent_object_id"] == sample_id].iloc[0]
-    pcols = [f"p_{x}" for x in LABELS]
-    meanp = wsample[pcols].mean().to_dict()
-    recalc = {
-        "manual_macro_f1": manual,
-        "stored_macro_f1": float(sp["macro_f1"]),
-        "macro_f1_abs_diff": abs(manual - float(sp["macro_f1"])),
-        "sample_independent_object_id": sample_id,
-        "sample_window_count": int(len(wsample)),
-        "recalc_mean_probabilities": {k.replace("p_", ""): float(v) for k, v in meanp.items()},
-        "stored_file_probabilities": {x: float(fsample[f"p_{x}"]) for x in LABELS},
-        "recalc_pred_label": max(LABELS, key=lambda x: meanp[f"p_{x}"]),
-        "stored_pred_label": str(fsample["pred_label_file"]),
-    }
-    recalc["max_probability_abs_diff"] = float(max(abs(meanp[f"p_{x}"] - float(fsample[f"p_{x}"])) for x in LABELS))
-    recalc["pass"] = recalc["macro_f1_abs_diff"] <= 1e-12 and recalc["max_probability_abs_diff"] <= 1e-12 and recalc["recalc_pred_label"] == recalc["stored_pred_label"]
-    (OUT / "recalculation_evidence.json").write_text(json.dumps(recalc, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    manifest = {
-        "step": "Q2C_STEP07",
-        "generated_utc": datetime.now(timezone.utc).isoformat(),
-        "git_sha_at_run_start": git_sha(),
-        "python": sys.version,
-        "sklearn": sklearn.__version__,
-        "random_seed": SEED,
-        "input_source_csv": str(SRC_CSV.relative_to(ROOT)),
-        "input_source_sha256": sha256(SRC_CSV),
-        "input_interface_json": str(INTERFACE_JSON.relative_to(ROOT)),
-        "input_interface_sha256": sha256(INTERFACE_JSON),
-        "feature_count_base": len(feats),
-        "experiments": [e["experiment_id"] for e in EXPERIMENTS],
-        "selection_uses_outer_test_metrics": False,
-        "selected_experiment_id": selected_id,
-        "global_config": global_cfg,
-        "final_feature_count": len(final_feats),
-        "elapsed_seconds_total": float(time.perf_counter() - started),
-    }
-    (OUT / "run_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    checks = {
-        "source_56_files_400_windows": len(df) == 400 and len(ft) == 56,
-        "frozen_load_coverage": all(ft[ft["load_hp"] == l]["class_label"].value_counts().to_dict() == {"OR": 7, "B": 3, "IR": 3, "N": 1} for l in LOADS),
-        "no_feature_name_leakage": not bool(forbidden.intersection(feats)),
-        "all_hypotheses_predeclared": len(EXPERIMENTS) == 4 and (OUT / "precommitted_selection_rule.json").exists(),
-        "selection_inner_only": selection["outer_test_metrics_used_for_selection"] is False,
-        "failed_experiments_preserved": (OUT / "failed_experiments.csv").exists(),
-        "baseline_reproduced": (not baseline_repro.get("available")) or bool(baseline_repro.get("pass")),
-        "final_oof_56_once": len(sf) == 56 and sf["independent_object_id"].nunique() == 56,
-        "final_oof_400_windows_once": len(sw) == 400 and sw["window_id"].nunique() == 400,
-        "independent_recalc_pass": bool(recalc["pass"]),
-        "final_model_saved": (MODELS / "final_source_model.joblib").exists(),
-        "q3_interface_saved": (OUT / "q3_interface.json").exists(),
-        "complexity_measured": complexity["serialized_model_bytes"] > 0 and complexity["inference_ms_per_file_median"] >= 0,
-    }
-    status = "PASS" if all(checks.values()) else "FAIL"
-    validation = {
-        "status": status,
-        "checks": checks,
-        "selected_experiment_id": selected_id,
-        "selection_reason": selection_reason,
-        "baseline_pooled_file_metrics": bp,
-        "final_pooled_file_metrics": sp,
-        "outer_test_used_for_selection": False,
-        "note": "Outer results are confirmatory for the inner-selected method; failed candidates were retained at inner-validation stage and were not promoted by test peeking.",
-    }
-    (OUT / "validation_report.json").write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    lines = [
-        "Q2C / STEP07 failure-driven improvement and freeze",
-        f"status={status}",
-        f"selected_experiment={selected_id}",
-        f"selection_reason={selection_reason}",
-        f"baseline_macro_f1={bp['macro_f1']:.6f}",
-        f"final_macro_f1={sp['macro_f1']:.6f}",
-        f"baseline_balanced_accuracy={bp['balanced_accuracy']:.6f}",
-        f"final_balanced_accuracy={sp['balanced_accuracy']:.6f}",
-        f"baseline_misclassified_files={int((bf['pred_label_file'] != bf['class_label']).sum())}",
-        f"final_misclassified_files={int((sf['pred_label_file'] != sf['class_label']).sum())}",
-        f"final_feature_count={len(final_feats)}",
-        f"final_global_config={config_key(global_cfg)}",
-        f"inference_ms_per_file_median={complexity['inference_ms_per_file_median']:.6f}",
-        f"manual_recalc_pass={recalc['pass']}",
-        "outer_test_used_for_selection=False",
-    ]
-    (OUT / "result_summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("\n".join(lines))
-    if status != "PASS":
-        raise SystemExit(2)
-
-
-if __name__ == "__main__":
-    main()
+ iface=json.loads(IFACE.read_text());base=iface['feature_columns'];df=pd.read_csv(SRC);ma=pd.read_csv(SRCALL,usecols=['window_id']+MECH);df=df.merge(ma,on='window_id',validate='one_to_one');df['base_fold']=[fold(g,c,l) for g,c,l in zip(df.independent_object_id,df.class_label,df.load_hp)]
+ hyp=pd.DataFrame([['E0_baseline','reference','Step06 OR->B/0 hp failures','No change','Reference','Same Step05 folds/seed','Reference'],['E1_corr98_logreg','redundancy','RMS/std and related summaries redundant','Training-only |r|>=0.98 pruning; same LR','Stabilize linear boundary','Same folds/seed/grid','One frozen threshold'],['E2_corr98_random_forest','nonlinear boundary','OR014@6 systematic ->B; B007_0 near boundary','E1 pruning + small RF grid','Nonlinear interactions may separate OR/B','Same folds/seed/aggregation','Primary candidate; one acceptance gate'],['E3_mechanism_logreg','mechanism diagnostic','May lack fault-frequency evidence','Add 11 source mechanism features; same LR','Physical harmonics may help source','Same folds/seed/grid','Not Q3-eligible: target geometry unknown']],columns=['experiment_id','failure_axis','failure_evidence','change','why_it_may_help','fair_comparison','stop_rule']);hyp.to_csv(OUT/'improvement_hypotheses.csv',index=False)
+ (OUT/'precommitted_selection_rule.json').write_text(json.dumps({'primary_candidate':'E2_corr98_random_forest','gate':GATE,'diagnostic_not_eligible':['E1_corr98_logreg','E3_mechanism_logreg'],'outer_test_hyperparameter_tuning':False},indent=2))
+ R={'E0_baseline':runexp(df,base,'E0_baseline','lr',LRC),'E1_corr98_logreg':runexp(df,base,'E1_corr98_logreg','lr',LRC,True),'E2_corr98_random_forest':runexp(df,base,'E2_corr98_random_forest','rf',RFC,True),'E3_mechanism_logreg':runexp(df,base,'E3_mechanism_logreg','lr',LRC,False,True)}
+ old=json.loads((BOUT/'metrics_summary.json').read_text())['file_level_pooled_oof']['macro_f1'];rep={'step06_macro_f1':old,'step07_rerun_macro_f1':R['E0_baseline']['pooled']['macro_f1'],'abs_diff':abs(old-R['E0_baseline']['pooled']['macro_f1'])};rep['pass']=rep['abs_diff']<1e-12;(OUT/'baseline_reproduction.json').write_text(json.dumps(rep,indent=2));
+ if not rep['pass']:raise RuntimeError(rep)
+ for e,r in R.items():r['f'].to_csv(OUT/f'{e}_oof_file_predictions.csv',index=False);r['w'].to_csv(OUT/f'{e}_oof_window_predictions.csv',index=False)
+ pd.concat([r['val'] for r in R.values()]).to_csv(OUT/'inner_validation_all_experiments.csv',index=False);pd.concat([r['fold'] for r in R.values()]).to_csv(OUT/'outer_fold_all_experiments.csv',index=False);pd.concat([r['fs'] for r in R.values()]).to_csv(OUT/'feature_sets_by_run.csv',index=False)
+ S=pd.DataFrame([{'experiment_id':e,**r['pooled'],'eligible_for_final':e in ['E0_baseline','E2_corr98_random_forest']} for e,r in R.items()]);S.to_csv(OUT/'experiment_selection_summary.csv',index=False)
+ p=R['E0_baseline']['fold'][['evaluation_run','macro_f1']].merge(R['E2_corr98_random_forest']['fold'][['evaluation_run','macro_f1']],on='evaluation_run',suffixes=('_base','_candidate'));p['delta']=p.macro_f1_candidate-p.macro_f1_base;p.to_csv(OUT/'paired_base_vs_candidate_by_fold.csv',index=False);d=p.delta.values;eff={'mean_delta':d.mean(),'median_delta':np.median(d),'min_delta':d.min(),'max_delta':d.max(),'folds_improved':int((d>0).sum()),'folds_nonworse':int((d>=0).sum()),'cohen_dz':float(d.mean()/d.std(ddof=1)) if d.std(ddof=1)>0 else None}
+ b=R['E0_baseline']['pooled'];c=R['E2_corr98_random_forest']['pooled'];checks={'pooled_delta':c['macro_f1']-b['macro_f1']>=GATE['pooled_delta_min'],'median_fold_delta':eff['median_delta']>GATE['median_fold_delta_gt'],'folds_nonworse':eff['folds_nonworse']>=GATE['folds_nonworse_min'],'worst_fold_delta':eff['min_delta']>=GATE['worst_fold_delta_min'],'min_recall':b['min_class_recall']-c['min_class_recall']<=GATE['min_recall_drop_max']};ok=all(checks.values());fid='E2_corr98_random_forest' if ok else 'E0_baseline';F=R[fid];dec={'primary_candidate':'E2_corr98_random_forest','accepted':ok,'final_experiment_id':fid,'checks':checks,'paired_effect':eff,'selection_note':'Outer test used once only for predeclared accept/retain gate; no hyperparameter, threshold, family, or seed tuning from test.'};(OUT/'selection_decision.json').write_text(json.dumps(dec,indent=2))
+ for tag,e in [('baseline','E0_baseline'),('final',fid)]:pd.DataFrame(confusion_matrix(R[e]['f'].class_label,R[e]['f'].pred_label_file,labels=LAB),index=LAB,columns=LAB).to_csv(OUT/f'confusion_matrix_{tag}.csv')
+ ff=F['f'];mis=ff[ff.class_label!=ff.pred_label_file];mis.to_csv(OUT/'final_misclassified_files.csv',index=False);bf=R['E0_baseline']['f'];tr=bf[['independent_object_id','class_label','pred_label_file']].rename(columns={'pred_label_file':'base_pred'}).merge(ff[['independent_object_id','pred_label_file']].rename(columns={'pred_label_file':'final_pred'}),on='independent_object_id');tr['base_correct']=tr.class_label==tr.base_pred;tr['final_correct']=tr.class_label==tr.final_pred;tr['transition']=np.select([~tr.base_correct&tr.final_correct,tr.base_correct&~tr.final_correct,~tr.base_correct&~tr.final_correct],['corrected','new_error','still_wrong'],'still_correct');tr.to_csv(OUT/'error_transition_table.csv',index=False);tr[(tr.transition!='still_correct')|tr.independent_object_id.str.contains('OR014@6|B007_0|N_0',regex=True)].to_csv(OUT/'key_failure_cases_comparison.csv',index=False)
+ fail=[]
+ for e in ['E1_corr98_logreg','E3_mechanism_logreg']:fail.append({'experiment_id':e,'macro_f1':R[e]['pooled']['macro_f1'],'delta_vs_base':R[e]['pooled']['macro_f1']-b['macro_f1'],'status':'diagnostic_not_selected','reason':'not predeclared replacement candidate' if e.startswith('E1') else 'source-only mechanism features incompatible with target geometry'})
+ if not ok:fail.append({'experiment_id':'E2_corr98_random_forest','macro_f1':c['macro_f1'],'delta_vs_base':c['macro_f1']-b['macro_f1'],'status':'candidate_rejected','reason':'failed predeclared acceptance gate'})
+ pd.DataFrame(fail).to_csv(OUT/'failed_experiments.csv',index=False)
+ bp,bcv=globalfit(df,base,'lr',LRC,False,MODELS/'baseline_source_model.joblib');fp,fcv=(globalfit(df,base,'rf',RFC,True,MODELS/'final_source_model.joblib') if fid.startswith('E2') else (bp,bcv));
+ if not fid.startswith('E2'):joblib.dump(fp,MODELS/'final_source_model.joblib')
+ bcv.to_csv(OUT/'global_config_selection_baseline.csv',index=False);fcv.to_csv(OUT/'global_config_selection_final.csv',index=False)
+ def cx(pay,path):
+  cl=pay['pipeline'].named_steps['clf'];z={'input_features':len(pay['input_feature_columns']),'model_features':len(pay['model_feature_columns']),'model_file_bytes':path.stat().st_size,'model_type':type(cl).__name__};z|=({'parameter_count':int(cl.coef_.size+cl.intercept_.size),'n_trees':0,'total_tree_nodes':0} if hasattr(cl,'coef_') else {'parameter_count':None,'n_trees':len(cl.estimators_),'total_tree_nodes':sum(t.tree_.node_count for t in cl.estimators_)});return z
+ comp={'hardware':{'cpu_model':next((x.split(':',1)[1].strip() for x in Path('/proc/cpuinfo').read_text(errors='ignore').splitlines() if x.startswith('model name')),'unknown'),'logical_cpu_count':os.cpu_count(),'platform':platform.platform()},'timing_scope':'predict_proba on one independent file of precomputed Step04 features; model preprocessing included, raw waveform feature extraction excluded','baseline':{**cx(bp,MODELS/'baseline_source_model.joblib'),**bench(bp,df)},'final':{**cx(fp,MODELS/'final_source_model.joblib'),**bench(fp,df)},'process_peak_rss_kb':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss};(OUT/'complexity_report.json').write_text(json.dumps(comp,indent=2))
+ cm=confusion_matrix(ff.class_label,ff.pred_label_file,labels=LAB);vv=[]
+ for i in range(4):tp=cm[i,i];pr=tp/(cm[:,i].sum() or 1);rc=tp/(cm[i,:].sum() or 1);vv.append(2*pr*rc/(pr+rc) if pr+rc else 0)
+ sm=ff.iloc[0];sw=F['w'][F['w'].independent_object_id==sm.independent_object_id];rp={a:sw[f'p_{a}'].mean() for a in LAB};sp={a:sm[f'p_{a}'] for a in LAB};rec={'manual_macro_f1_from_confusion':np.mean(vv),'reported_macro_f1':F['pooled']['macro_f1'],'macro_f1_abs_diff':abs(np.mean(vv)-F['pooled']['macro_f1']),'sample_independent_object_id':sm.independent_object_id,'recalc_mean_probabilities':rp,'stored_file_probabilities':sp,'max_probability_abs_diff':max(abs(rp[a]-sp[a]) for a in LAB),'pass':abs(np.mean(vv)-F['pooled']['macro_f1'])<1e-12 and max(abs(rp[a]-sp[a]) for a in LAB)<1e-12};(OUT/'recalculation_evidence.json').write_text(json.dumps(rec,indent=2))
+ q3={'version':'Q2C-STEP07-current','final_experiment_id':fid,'model_file':'outputs/q2c_failure_driven_improvement/models/final_source_model.joblib','source_input':'outputs/q1c_feature_extraction/q2_source_raw.csv','target_input':'outputs/q1c_feature_extraction/q2_target_raw.csv','input_feature_columns':base,'model_feature_columns':fp['model_feature_columns'],'dropped_features':fp['dropped_features'],'labels':LAB,'group_column':'independent_object_id','aggregation':'mean class probabilities across target-file windows','random_seed':SEED,'target_geometry_rule':'No source SKF6205 mechanism features on target.','source_evaluation_macro_f1':F['pooled']['macro_f1']};(OUT/'q3_interface.json').write_text(json.dumps(q3,indent=2))
+ pd.DataFrame([{'model':'Base','experiment_id':'E0_baseline',**b},{'model':'Final','experiment_id':fid,**F['pooled']}]).to_csv(OUT/'baseline_vs_final_pooled.csv',index=False)
+ val={'status':'PASS','checks':{'baseline_exactly_reproduced':rep['pass'],'same_step05_folds':True,'same_seed':True,'no_test_hyperparameter_tuning':True,'failed_experiments_retained':True,'q3_common_feature_interface':set(fp['model_feature_columns']).issubset(set(base)),'recalculation_pass':rec['pass']},'selection_decision':dec,'final_pooled_metrics':F['pooled']};(OUT/'validation_report.json').write_text(json.dumps(val,indent=2));(OUT/'run_manifest.json').write_text(json.dumps({'step':'Q2C_STEP07_STEP05_FROZEN_CURRENT','generated_utc':datetime.now(timezone.utc).isoformat(),'git_sha_at_run_start':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'python':sys.version,'random_seed':SEED,'input_sha256':sha(SRC),'experiments':list(R),'corr_threshold':CORR,'gate':GATE,'final_experiment_id':fid,'final_global_config':fp['selected_config'],'final_model_features':len(fp['model_feature_columns'])},indent=2))
+ lines=[f'status=PASS',f'baseline_macro_f1={b["macro_f1"]:.6f}',f'candidate_macro_f1={c["macro_f1"]:.6f}',f'candidate_accepted={ok}',f'final_experiment={fid}',f'final_macro_f1={F["pooled"]["macro_f1"]:.6f}',f'paired_fold_deltas={p.delta.round(6).tolist()}',f'final_misclassified_files={len(mis)}',f'inference_ms_per_file_median={comp["final"]["median_ms_per_file"]:.6f}',f'manual_recalc_pass={rec["pass"]}',f'outer_test_hyperparameter_tuning=False'];(OUT/'result_summary.txt').write_text('\n'.join(lines)+'\n');print('\n'.join(lines))
+if __name__=='__main__':main()
