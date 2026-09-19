@@ -1,0 +1,4 @@
+﻿candidate_window_s,candidate_overlap,role,physical_note
+0.5,0.0,step12 sensitivity candidate,target ~600rpm gives ~5 shaft rotations; weakest for stable low-frequency statistics
+1.0,0.5,04-A frozen primary candidate,source fr=28.75-29.97Hz; source min FTF=10.99Hz => >= 11.0 FTF cycles/window; target ~600rpm => ~10 shaft rotations
+2.0,0.5,step12 sensitivity candidate,more cycles per window but fewer windows per file and higher compute per segment

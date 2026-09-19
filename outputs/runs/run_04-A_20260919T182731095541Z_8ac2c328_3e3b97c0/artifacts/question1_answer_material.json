@@ -1,0 +1,44 @@
+{
+  "window_choice": {
+    "duration_s": 1.0,
+    "overlap": 0.5,
+    "common_fs_hz": 12000,
+    "samples": 12000,
+    "stride_samples": 6000,
+    "reason": "physical-time choice: source window contains ~29 shaft rotations and at least ~11 FTF cycles; target ~600rpm contains ~10 shaft rotations; candidate sensitivity 0.5/1.0/2.0s and 0/50% overlap deferred to STEP12"
+  },
+  "counts": {
+    "source_selected_files": 49,
+    "target_files": 16,
+    "processed_files": 65,
+    "source_windows": 733,
+    "target_windows": 240,
+    "total_windows": 973,
+    "source_class_windows": {
+      "OR": 319,
+      "B": 180,
+      "IR": 180,
+      "N": 54
+    },
+    "source_groups": 49,
+    "target_groups": 16,
+    "window_samples": 12000,
+    "stride_samples": 6000,
+    "window_seconds": 1.0,
+    "stride_seconds": 0.5,
+    "files_with_dropped_tail": 2,
+    "max_tail_uncovered_s": 0.09733333333333327,
+    "no_padding": true
+  },
+  "features": {
+    "common_count": 26,
+    "source_mechanism_aux_count": 5,
+    "default_q2_use": "common only"
+  },
+  "leakage_guard": [
+    "labels separate from X",
+    "file/group/load/channel/RPM/bearing are metadata only",
+    "source mechanism auxiliary excluded by default"
+  ],
+  "learning_guard": "no imputer/scaler/selector fit in 04-A; all such fit operations must occur after group split on training groups only"
+}

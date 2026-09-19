@@ -1,0 +1,53 @@
+{
+  "schema_version": "04A-interface-1.0",
+  "run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+  "window_seconds": 1.0,
+  "overlap_fraction": 0.5,
+  "group_key": "independent_object_id",
+  "source": {
+    "X": "q2_interface/X_source_common.csv",
+    "y": "q2_interface/y_source_labels.csv",
+    "groups": "q2_interface/groups_source.csv",
+    "metadata": "q2_interface/source_window_metadata.csv",
+    "rows": 733,
+    "features": [
+      "mean",
+      "std",
+      "rms",
+      "mean_abs",
+      "peak_abs",
+      "peak_to_peak",
+      "skewness",
+      "kurtosis",
+      "crest_factor",
+      "impulse_factor",
+      "shape_factor",
+      "clearance_factor",
+      "zero_cross_rate",
+      "spectral_centroid_hz",
+      "spectral_rms_hz",
+      "spectral_entropy",
+      "spectral_flatness",
+      "dominant_frequency_hz",
+      "rolloff95_hz",
+      "band_ratio_0_500",
+      "band_ratio_500_1500",
+      "band_ratio_1500_3000",
+      "band_ratio_3000_5500",
+      "envelope_rms",
+      "envelope_kurtosis",
+      "envelope_spectral_entropy"
+    ]
+  },
+  "source_optional": {
+    "mechanism_aux": "q2_interface/source_mechanism_aux_optional.csv",
+    "default_use": false
+  },
+  "target": {
+    "X": "target_interface/X_target_common.csv",
+    "metadata": "target_interface/target_window_metadata.csv",
+    "rows": 240,
+    "truth": "unknown"
+  },
+  "fit_boundary": "no learned preprocessing has been fit; Q2 must split by groups before any fit"
+}

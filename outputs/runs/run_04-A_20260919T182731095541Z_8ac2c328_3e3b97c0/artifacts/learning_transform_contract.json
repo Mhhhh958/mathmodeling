@@ -1,0 +1,14 @@
+{
+  "status": "raw_deterministic_features_only",
+  "imputer_fitted": false,
+  "scaler_fitted": false,
+  "feature_selector_fitted": false,
+  "sklearn_used": false,
+  "future_rule": "fit any imputer/scaler/selector on training groups only; transform validation/test/target using that fitted object",
+  "default_q2_X": "q2_interface/X_source_common.csv",
+  "labels": "q2_interface/y_source_labels.csv",
+  "groups": "q2_interface/groups_source.csv",
+  "optional_source_only_mechanism_features": "q2_interface/source_mechanism_aux_optional.csv",
+  "mechanism_default_use": false,
+  "mechanism_exclusion_reason": "target geometry/exact RPM unavailable and source fault-vs-normal acquisition settings differ; avoid non-transferable/confounded default feature use"
+}

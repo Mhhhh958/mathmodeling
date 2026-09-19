@@ -1,0 +1,32 @@
+﻿feature_name,tier,domain,definition_formula,unit,zero_denominator_policy,missing_policy,parameter_source,default_q2_use,target_compatible
+mean,common,time,mean(x),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,finite deterministic input,窗口样本,True,True
+std,common,time,sqrt(mean((x-mean(x))^2)),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,0 for degenerate window,窗口样本,True,True
+rms,common,time,sqrt(mean(x^2)),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,0 for zero signal,窗口样本,True,True
+mean_abs,common,time,mean(|x|),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,0 for zero signal,窗口样本,True,True
+peak_abs,common,time,max(|x|),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,0 for zero signal,窗口样本,True,True
+peak_to_peak,common,time,max(x)-min(x),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,0 for zero signal,窗口样本,True,True
+skewness,common,time,mean(z^3)/std(z)^3,1,if std<=1e-12 -> 0,finite,窗口内中心化z,True,True
+kurtosis,common,time,mean(z^4)/mean(z^2)^2,1,if variance<=1e-12 -> 0,finite,population kurtosis,True,True
+crest_factor,common,time,peak_abs/(rms+eps),1,eps=1e-12,finite,窗口样本,True,True
+impulse_factor,common,time,peak_abs/(mean_abs+eps),1,eps=1e-12,finite,窗口样本,True,True
+shape_factor,common,time,rms/(mean_abs+eps),1,eps=1e-12,finite,窗口样本,True,True
+clearance_factor,common,time,peak_abs/(mean(sqrt(|x|))^2+eps),1,eps=1e-12,finite,窗口样本,True,True
+zero_cross_rate,common,time,sign changes of centered z /(N-1),1,N<2 ->0,finite,窗口内中心化z,True,True
+spectral_centroid_hz,common,frequency,sum(f*P)/sum(P),Hz,if spectral sum<=eps ->0,finite,"Welch 4096, Hann, 50% overlap, 0-5500Hz",True,True
+spectral_rms_hz,common,frequency,sqrt(sum(f^2*P)/sum(P)),Hz,if spectral sum<=eps ->0,finite,同上,True,True
+spectral_entropy,common,frequency,"-sum(q log q)/log(K), q=P/sum(P)",1,if zero spectrum ->0,finite,同上,True,True
+spectral_flatness,common,frequency,geometric_mean(P+eps)/(mean(P)+eps),1,eps=1e-12,finite,同上,True,True
+dominant_frequency_hz,common,frequency,"argmax P(f), f>0",Hz,if no nonzero bin ->0,finite,同上,True,True
+rolloff95_hz,common,frequency,min f with cumulative P >=95% total,Hz,if zero spectrum ->0,finite,同上,True,True
+band_ratio_0_500,common,frequency,"E[0,500]/E[0,5500]",1,denominator +eps,finite,Welch积分,True,True
+band_ratio_500_1500,common,frequency,"E[500,1500]/E[0,5500]",1,denominator +eps,finite,Welch积分,True,True
+band_ratio_1500_3000,common,frequency,"E[1500,3000]/E[0,5500]",1,denominator +eps,finite,Welch积分,True,True
+band_ratio_3000_5500,common,frequency,"E[3000,5500]/E[0,5500]",1,denominator +eps,finite,Welch积分,True,True
+envelope_rms,common,envelope,RMS(|Hilbert(z)|),原始振动信号幅值单位（题面/冻结元数据未给出物理标定单位）,none,finite,无额外带通；z为窗口中心化信号,True,True
+envelope_kurtosis,common,envelope,population kurtosis(|Hilbert(z)|-mean),1,if variance<=eps ->0,finite,无额外带通,True,True
+envelope_spectral_entropy,common,envelope,spectral entropy of demeaned Hilbert envelope,1,if zero spectrum ->0,finite,Welch同公共频域参数,True,True
+mech_bpfo_h1_h3_energy_ratio,source_mechanism_aux,mechanism,"sum energy near 1-3*BPFO / E[0,5500]",1,denominator +eps,source only; target unavailable,"03-A题面公式+文件RPM+轴承参数；tol=max(2df,2%fc)",False,False
+mech_bpfi_h1_h3_energy_ratio,source_mechanism_aux,mechanism,"sum energy near 1-3*BPFI / E[0,5500]",1,denominator +eps,source only; target unavailable,同上,False,False
+mech_bsf_h1_h3_energy_ratio,source_mechanism_aux,mechanism,"sum energy near 1-3*BSF / E[0,5500]",1,denominator +eps,source only; target unavailable,同上,False,False
+mech_bpfi_fr_sideband_energy_ratio,source_mechanism_aux,mechanism,"sum energy at BPFI harmonics ±fr / E[0,5500]",1,denominator +eps,source only; target unavailable,03-A内圈调制口径,False,False
+mech_bsf_ftf_sideband_energy_ratio,source_mechanism_aux,mechanism,"sum energy at BSF harmonics ±FTF / E[0,5500]",1,denominator +eps,source only; target unavailable,03-A滚动体调制口径,False,False
