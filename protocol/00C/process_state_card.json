@@ -1,12 +1,20 @@
 {
   "schema_version": "00C-1.0",
   "state_version": "2026.09.19-r1",
-  "updated_utc": "2026-09-19T15:14:00Z",
+  "updated_utc": "2026-09-19T15:21:00Z",
   "CURRENT_ALLOWED_STEP": "00-D",
   "LAST_PASS_TOKEN": "00-C-V2026.09.19-r1-通过",
   "LATEST_WORD": null,
   "LATEST_FREEZE_PACKAGE": null,
-  "OPEN_P0": [],
+  "OPEN_P0": [
+    {
+      "id": "P0-00D-001",
+      "title": "官方Word模板原始文件当前不可读取",
+      "blocking": true,
+      "required_file": "第二十一届华为杯研赛论文Word标准模板(1).docx",
+      "resolution": "将该官方Word模板原始文件重新上传到当前对话/项目，使其可被实际读取和物化后再执行00-D。"
+    }
+  ],
   "NEXT_ALLOWED": "00-D",
   "previous_gate": {
     "step": "00-B",
@@ -14,9 +22,10 @@
     "next_allowed": "00-C"
   },
   "current_step_record": {
-    "step": "00-C",
-    "intended_status_after_validation": "passed",
-    "pass_token": "00-C-V2026.09.19-r1-通过"
+    "step": "00-D",
+    "status": "blocked",
+    "pass_token": null,
+    "reason": "Required official Word template source bytes are not currently accessible; V0.1 may not be reconstructed from a blank document or substituted with a generated descendant."
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -26,6 +35,7 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/00C/validation_record.json"
+    "latest_validation_record": "protocol/00C/validation_record.json",
+    "latest_00D_blocker": "protocol/00D/blocker_record.json"
   }
 }
