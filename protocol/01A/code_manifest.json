@@ -1,0 +1,23 @@
+{
+  "schema_version": "01A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "code_version_rule": "git commit SHA of exact checked-out tree used for audit",
+  "tracked_code": [
+    {
+      "path": "scripts/step01a_raw_mat_audit.py",
+      "git_blob_sha": "816800ed7791a4109cd3e6e0e56a3924a508b063"
+    },
+    {
+      "path": ".github/workflows/step01a_raw_mat_audit.yml",
+      "git_blob_sha": "9c73267119557a0cb5765d431acdb8b389328de9"
+    }
+  ],
+  "constraints": [
+    "read-only data/raw",
+    "no training",
+    "no Word editing",
+    "no five-ledger edits in A"
+  ]
+}

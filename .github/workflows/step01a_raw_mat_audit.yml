@@ -1,0 +1,41 @@
+name: step01a-raw-mat-audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/step01a_raw_mat_audit.py'
+      - 'protocol/01A/run_config.json'
+      - 'protocol/01A/code_manifest.json'
+      - '.github/workflows/step01a_raw_mat_audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen audit dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy==1.26.4 pandas==2.2.3 scipy==1.14.1
+      - name: Run STEP01-A read-only raw MAT audit
+        run: python scripts/step01a_raw_mat_audit.py
+      - name: Commit STEP01-A evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs protocol/01A/data_manifest.json protocol/01A/raw_data_version_id.txt protocol/01A/validation_record.json protocol/01A/latest_freeze_package.json protocol/01A/latest_run_id.txt
+          if git diff --cached --quiet; then
+            echo 'No STEP01-A evidence to commit.'
+          else
+            git commit -m 'Add STEP01-A raw MAT audit evidence [skip ci]'
+            git push
+          fi

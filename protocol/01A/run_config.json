@@ -1,0 +1,47 @@
+{
+  "schema_version": "01A-1.0",
+  "step_id": "01-A",
+  "purpose": "read_only_raw_mat_file_level_audit",
+  "execution_mode": "chat_plus_git",
+  "seed": 20260919,
+  "raw_root": "data/raw",
+  "no_training": true,
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true,
+  "expected": {
+    "source_files": 161,
+    "target_files": 16,
+    "total_mat_files": 177,
+    "source_class_counts": {
+      "OR": 77,
+      "IR": 40,
+      "B": 40,
+      "N": 4
+    },
+    "target_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P"
+    ],
+    "target_truth": "unknown",
+    "target_duration_seconds": 8,
+    "target_sampling_rate_hz": 32000,
+    "target_rpm_condition": "about 600 rpm; not exact per-time speed"
+  },
+  "independent_sample_rule": "one original MAT file = one independent acquisition object; derived windows inherit relative-path independent_object_id",
+  "fingerprint_rule": "per file relative_path + size_bytes + SHA256; dataset_digest is SHA256 of canonical sorted records",
+  "output_root_rule": "outputs/runs/<run_id>"
+}
