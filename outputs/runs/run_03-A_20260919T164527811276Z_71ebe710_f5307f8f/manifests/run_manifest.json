@@ -1,0 +1,167 @@
+{
+  "schema_version": "03A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+  "step_id": "03-A",
+  "status": "completed",
+  "created_utc": "2026-09-19T16:45:27.808938Z",
+  "binding": {
+    "code_version_id": "git:047e0636f26e00516c56820ae392601395d48ad1",
+    "data_version_id": "FREEZE-02A-6f36d0b4",
+    "run_config_sha256": "b4e9d3874f02bc3d57753dab45bc50de7bf030369eda9b866f54de7be628d36e",
+    "seed": 20260919,
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "71ebe710eb5db52e39cde8f669e92a434f2129627f756bcb576467e932a6fa48"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "047e0636f26e00516c56820ae392601395d48ad1",
+    "entrypoint": "scripts/step03a_signal_mechanism_analysis.py",
+    "code_manifest": "protocol/03A/code_manifest.json"
+  },
+  "data": {
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_02A_freeze": "FREEZE-02A-6f36d0b4",
+    "MVP_files": 49
+  },
+  "blueprint": {
+    "path": "protocol/03A/question1B_argument_blueprint.json",
+    "sha256": "77ed19c9f8e15a32fa8d203cf1205c8c08bad547b98c91b017add48b3154e058"
+  },
+  "problem_basis": {
+    "path": "protocol/03A/problem_statement_mechanism_basis.json",
+    "sha256": "b597d90e8ed20a793dc7f8dd0e4568ac7174e102621866ea49f5ec5df3b4c0de"
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "environment_manifest_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "config": {
+    "path": "protocol/03A/run_config.json",
+    "sha256": "b4e9d3874f02bc3d57753dab45bc50de7bf030369eda9b866f54de7be628d36e"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+    "files": [
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 13076,
+        "sha256": "5ca1818755dc9080aa213fa5b558d142c860bd3c00fd4b04e6af62a1ab2534c3"
+      },
+      {
+        "relative_path": "artifacts/bearing_parameters_and_order_factors.csv",
+        "size_bytes": 459,
+        "sha256": "fc0f4ca6d2d7a318eb9dfe00eac11c34b0af8800fdacb213e6d8d1b64dcb7023"
+      },
+      {
+        "relative_path": "artifacts/class_signal_mechanism_summary.csv",
+        "size_bytes": 982,
+        "sha256": "27591a3b6eef4da07496d6371d4fb133172bb31eff17dd404bd4e7708b961f0d"
+      },
+      {
+        "relative_path": "artifacts/file_mechanism_frequencies.csv",
+        "size_bytes": 12022,
+        "sha256": "c3ef7448614dfcd7bd3609bdd8fa0208633e1652d33ae014693a16eed3007f59"
+      },
+      {
+        "relative_path": "artifacts/filter_resampling_spec.json",
+        "size_bytes": 828,
+        "sha256": "9cf1b42a77c4d8b8009e2ac47cbf1b7cb48d9a068eb2d7e2d057962b13eef4cd"
+      },
+      {
+        "relative_path": "artifacts/mechanism_feature_candidates.csv",
+        "size_bytes": 1311,
+        "sha256": "031bfc55cdb6f6a625a2c1518d4f24b82ca733f44257aa513dbcc56dedc123de"
+      },
+      {
+        "relative_path": "artifacts/preprocessing_decision_table.csv",
+        "size_bytes": 681,
+        "sha256": "0dc905c1c97aa0aba42c49ac8fd0d02cc7140827f2ad8616588b8b8682312075"
+      },
+      {
+        "relative_path": "artifacts/preprocessing_information_fidelity.csv",
+        "size_bytes": 25199,
+        "sha256": "bc11a0b7678aca814cec219c5353038de0e4c0808e5b740235a08f369e252cbf"
+      },
+      {
+        "relative_path": "artifacts/representative_envelope_psd.csv",
+        "size_bytes": 1384816,
+        "sha256": "fb048a0d3510972ead79b381fc25f8dc2d76711dae052b4096cccf64b92b1205"
+      },
+      {
+        "relative_path": "artifacts/representative_psd.csv",
+        "size_bytes": 1203851,
+        "sha256": "9c323736d8535cd94ca722619ff69b5f62630d8e99fd9424c61e203e845cfa5c"
+      },
+      {
+        "relative_path": "artifacts/representative_signal_analysis.json",
+        "size_bytes": 6398,
+        "sha256": "c51876013c38afca812f2cc971e2dc2a4d192a4b42c3d3583f4fb84de06be11e"
+      },
+      {
+        "relative_path": "artifacts/representative_waveform_segments.csv",
+        "size_bytes": 9541048,
+        "sha256": "4991fe1f98e6c25b0ecdcbac0d5ccbdd29b7bbe3bdae661db353b4d84166d109"
+      },
+      {
+        "relative_path": "artifacts/source_signal_mechanism_metrics.csv",
+        "size_bytes": 64067,
+        "sha256": "3d2edeeea59a48d0adf6f456d64082dd3066d6b7b57a8472bc92ccb86481f70f"
+      },
+      {
+        "relative_path": "artifacts/source_target_geometry_boundary.json",
+        "size_bytes": 354,
+        "sha256": "4ad059898131399376b98feece2257b61006ee7bb50fe529ddd86e55374a5995"
+      },
+      {
+        "relative_path": "artifacts/typical_difficult_sample_comparison.csv",
+        "size_bytes": 14024,
+        "sha256": "b435af854ffbfe040ea9777058a87612dca0dc4a0e22c2f6ee80ef8111a101fe"
+      },
+      {
+        "relative_path": "artifacts/validation_formula_unit_check.csv",
+        "size_bytes": 776,
+        "sha256": "5f44d92b8659e41c625b8f3a9cb1491b4d2bfef1cc196d29f3edb042d5a5a20d"
+      },
+      {
+        "relative_path": "artifacts/validation_metric_recalculation.csv",
+        "size_bytes": 409,
+        "sha256": "171e5762437e37b6aad84d6f2cf0f8168beb35e5016555a4e99ffa469f9a088d"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 2469,
+        "sha256": "3cc3c362aaf90cd539655767383e517b84ab700e475cc5280b66bab4f1f69c1b"
+      },
+      {
+        "relative_path": "logs/actual_signal_read_log.csv",
+        "size_bytes": 4685,
+        "sha256": "9ac0da8e1eced7be2e8ab47c1572d370e433c5c0f2b9f09a3c321acf9848f994"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 416,
+        "sha256": "e0d1a2c6cffeb76228e89badb0d13588a9a43beda21dddff16633a08b4625c14"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 117,
+        "sha256": "93a6c6c800ccdb2cfda982c32c6e921199682e9f354c2bf3676ec07333a5b11e"
+      }
+    ],
+    "output_tree_sha256": "835eedbdf1e62bb3d901f34f6145295f714cf777dd5b220654803ed65ed24fb7"
+  },
+  "checkpoint": {
+    "completed_batches": [
+      "49-file-primary-analysis",
+      "representative-selection",
+      "envelope-diagnostics",
+      "fidelity-checks",
+      "validation"
+    ],
+    "pending_batches": [],
+    "resume_token": null
+  },
+  "duration_seconds": 2.6397550106048584
+}

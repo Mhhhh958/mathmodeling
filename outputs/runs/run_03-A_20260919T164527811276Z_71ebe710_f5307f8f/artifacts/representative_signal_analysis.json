@@ -1,0 +1,174 @@
+{
+  "run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+  "MVP_files": 49,
+  "trend": {
+    "threshold_R2": 0.01,
+    "applied_files": 0,
+    "max_R2": 0.0020203158566101634,
+    "median_R2": 3.328032380305398e-07
+  },
+  "class_summary": [
+    {
+      "class_label": "B",
+      "files": 12,
+      "rms_median": 0.168141993837836,
+      "rms_iqr": 0.0517260518541788,
+      "kurtosis_median": 15.99080170880361,
+      "crest_factor_median": 15.875302457151474,
+      "spectral_entropy_median": 0.7776962472445885,
+      "mechanism_score_median": 0.0068146877310485,
+      "mechanism_score_min": 0.0011567430329787,
+      "mechanism_score_max": 0.0145756504752469,
+      "sideband_ratio_median": 0.0048958388892879,
+      "rpm_min": 1732.0,
+      "rpm_max": 1798.0
+    },
+    {
+      "class_label": "IR",
+      "files": 12,
+      "rms_median": 0.2393570750683994,
+      "rms_iqr": 0.1177634804426229,
+      "kurtosis_median": 5.894409288402335,
+      "crest_factor_median": 6.469665235878253,
+      "spectral_entropy_median": 0.7321811438337316,
+      "mechanism_score_median": 0.0040055315791088,
+      "mechanism_score_min": 0.0019560216177394,
+      "mechanism_score_max": 0.0183973372120125,
+      "sideband_ratio_median": 0.0009835647064323,
+      "rpm_min": 1732.0,
+      "rpm_max": 1796.0
+    },
+    {
+      "class_label": "N",
+      "files": 4,
+      "rms_median": 0.0583888937629515,
+      "rms_iqr": 0.0064920990429261,
+      "kurtosis_median": 2.966359354703955,
+      "crest_factor_median": 4.507684733915147,
+      "spectral_entropy_median": 0.641146912971041,
+      "mechanism_score_median": 0.0323426178580191,
+      "mechanism_score_min": 0.0256760704392975,
+      "mechanism_score_max": 0.0395080217648169,
+      "sideband_ratio_median": 0.0169393838846738,
+      "rpm_min": 1725.0,
+      "rpm_max": 1796.0
+    },
+    {
+      "class_label": "OR",
+      "files": 21,
+      "rms_median": 0.1714013543339111,
+      "rms_iqr": 0.272822400923579,
+      "kurtosis_median": 6.6518267246807,
+      "crest_factor_median": 6.424562265953504,
+      "spectral_entropy_median": 0.7115877977473084,
+      "mechanism_score_median": 6.243400546760904e-05,
+      "mechanism_score_min": 3.5050299913159454e-06,
+      "mechanism_score_max": 0.0004056160633861,
+      "sideband_ratio_median": 0.0,
+      "rpm_min": 1728.0,
+      "rpm_max": 1797.0
+    }
+  ],
+  "representative_samples": [
+    {
+      "class_label": "OR",
+      "sample_role": "typical",
+      "relative_path": "source_domain/cwru_12khz_fe/OR021@3_3.mat",
+      "rpm": 1728.0,
+      "mechanism_score": 6.243400546760904e-05,
+      "env_mechanism_score": 0.009474777013613794,
+      "kurtosis": 3.6819119413224373,
+      "crest_factor": 5.682969606285816,
+      "sideband_energy_ratio": 0.0
+    },
+    {
+      "class_label": "OR",
+      "sample_role": "difficult",
+      "relative_path": "source_domain/cwru_12khz_fe/OR014@3_3.mat",
+      "rpm": 1728.0,
+      "mechanism_score": 3.5050299913159454e-06,
+      "env_mechanism_score": 0.0037924044508333018,
+      "kurtosis": 8.351193929476423,
+      "crest_factor": 5.964366256837648,
+      "sideband_energy_ratio": 0.0
+    },
+    {
+      "class_label": "IR",
+      "sample_role": "typical",
+      "relative_path": "source_domain/cwru_12khz_fe/IR007_2.mat",
+      "rpm": 1755.0,
+      "mechanism_score": 0.003836923465718642,
+      "env_mechanism_score": 0.014114674426128683,
+      "kurtosis": 5.928998521282106,
+      "crest_factor": 6.66492664672876,
+      "sideband_energy_ratio": 0.0008799066777118238
+    },
+    {
+      "class_label": "IR",
+      "sample_role": "difficult",
+      "relative_path": "source_domain/cwru_12khz_fe/IR021_1.mat",
+      "rpm": 1776.0,
+      "mechanism_score": 0.0019560216177394625,
+      "env_mechanism_score": 0.03064621043064237,
+      "kurtosis": 6.448090870706036,
+      "crest_factor": 5.878629699166959,
+      "sideband_energy_ratio": 0.0009793624222357014
+    },
+    {
+      "class_label": "B",
+      "sample_role": "typical",
+      "relative_path": "source_domain/cwru_12khz_fe/B021_3.mat",
+      "rpm": 1734.0,
+      "mechanism_score": 0.006763547089970165,
+      "env_mechanism_score": 0.0669822710648951,
+      "kurtosis": 7.828615977873816,
+      "crest_factor": 11.087199219302505,
+      "sideband_energy_ratio": 0.01187511358541675
+    },
+    {
+      "class_label": "B",
+      "sample_role": "difficult",
+      "relative_path": "source_domain/cwru_12khz_fe/B014_2.mat",
+      "rpm": 1755.0,
+      "mechanism_score": 0.0011567430329787597,
+      "env_mechanism_score": 0.10991010628267484,
+      "kurtosis": 8.840735024351517,
+      "crest_factor": 8.997892142806224,
+      "sideband_energy_ratio": 0.0016528119486308819
+    },
+    {
+      "class_label": "N",
+      "sample_role": "typical",
+      "relative_path": "source_domain/cwru_48khz_normal/N_2_(1750rpm).mat",
+      "rpm": 1750.0,
+      "mechanism_score": 0.03155046538571539,
+      "env_mechanism_score": 0.016749485449294322,
+      "kurtosis": 2.978768374298746,
+      "crest_factor": 5.471548699077518,
+      "sideband_energy_ratio": 0.018364193280984424
+    },
+    {
+      "class_label": "N",
+      "sample_role": "difficult",
+      "relative_path": "source_domain/cwru_48khz_normal/N_1_(1772rpm).mat",
+      "rpm": 1772.0,
+      "mechanism_score": 0.03950802176481696,
+      "env_mechanism_score": 0.022238767934580878,
+      "kurtosis": 2.953950335109164,
+      "crest_factor": 4.387018667189838,
+      "sideband_energy_ratio": 0.011016634454456062
+    }
+  ],
+  "resampling_fidelity": {
+    "files": 4,
+    "common_band_ratio_min": 0.9944328350882958,
+    "common_band_ratio_max": 0.9961196599743511,
+    "mechanism_band_ratio_min": 1.0000142030243415,
+    "mechanism_band_ratio_max": 1.0000193925562084,
+    "full_spectrum_total_ratio_min": 0.7623763265256683,
+    "full_spectrum_total_ratio_max": 0.9411106130571304,
+    "note": "Fidelity PSDs use matched physical resolution (48k:16384-point Welch; 12k:4096-point Welch). Full-spectrum ratio may be <1 because >6k content is intentionally rejected; pass uses common 0-6k and matched-tolerance mechanism bands."
+  },
+  "interpretation_guard": "Mechanism-frequency proximity is consistency evidence only; no single peak is treated as proof of class.",
+  "envelope_policy": "Hilbert envelope without extra bandpass is a diagnostic side branch for representative/difficult samples, not the primary signal replacement."
+}
