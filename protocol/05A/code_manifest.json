@@ -1,0 +1,35 @@
+{
+  "schema_version": "05A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "blueprint_commit": "f6d2c6659b9a6488bf7da5fe34dc82b73a888537",
+  "tracked_code": [
+    {
+      "path": "scripts/step05a_grouped_evaluation_protocol.py",
+      "git_blob_sha": "d8ba661b461171e15b9e9154a05fdf54ec571ed8"
+    },
+    {
+      "path": ".github/workflows/step05a_grouped_evaluation_protocol.yml",
+      "git_blob_sha": "4d1536dbeb3a3badd7a44bda4ab50ca53884eed3"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/05A/question2_argument_blueprint.json",
+      "git_blob_sha": "1e2534a39eb43748095491b9574864244ec1004d"
+    },
+    {
+      "path": "protocol/05A/run_config.json",
+      "git_blob_sha": "71bc7782e27f196b59781d0e8e6d25e3842333d0"
+    }
+  ],
+  "constraints": [
+    "no model training",
+    "no Word editing",
+    "no five-ledger edits in A",
+    "group key=independent_object_id",
+    "outer test cannot select model",
+    "N=4 determines 4 outer folds"
+  ]
+}
