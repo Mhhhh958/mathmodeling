@@ -1,0 +1,79 @@
+{
+  "step_id": "04-A",
+  "run_id": "run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69",
+  "checks": {
+    "window_traceability_and_group_boundary": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/validation_window_traceability.csv",
+      "sampled_windows": 8,
+      "groups": 65
+    },
+    "three_feature_independent_recalculation": {
+      "passed": false,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/validation_feature_recalculation.csv",
+      "features": [
+        "rms",
+        "crest_factor",
+        "spectral_centroid_hz"
+      ],
+      "max_abs_diff": 1.1937027011299506e-07
+    },
+    "common_feature_finite": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/feature_quality_audit.csv",
+      "nan_inf_count": 0,
+      "constant_features": []
+    },
+    "mechanism_aux_finite_source": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/feature_quality_audit.csv",
+      "nan_inf_count": 0
+    },
+    "no_label_or_metadata_in_default_X": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/data_interface_manifest.json",
+      "leakage_columns": [],
+      "nonnumeric_columns": []
+    },
+    "learning_transforms_not_fit_globally": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/learning_transform_contract.json",
+      "imputer_fitted": false,
+      "scaler_fitted": false,
+      "feature_selector_fitted": false
+    },
+    "quantity_conservation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/quantity_conservation.json",
+      "key_numbers": {
+        "source_selected_files": 49,
+        "target_files": 16,
+        "processed_files": 65,
+        "source_windows": 733,
+        "target_windows": 240,
+        "total_windows": 973,
+        "source_class_windows": {
+          "OR": 319,
+          "B": 180,
+          "IR": 180,
+          "N": 54
+        },
+        "source_groups": 49,
+        "target_groups": 16,
+        "window_samples": 12000,
+        "stride_samples": 6000,
+        "window_seconds": 1.0,
+        "stride_seconds": 0.5,
+        "files_with_dropped_tail": 2,
+        "max_tail_uncovered_s": 0.09733333333333327,
+        "no_padding": true
+      }
+    },
+    "target_truth_unknown_preserved": {
+      "passed": true,
+      "evidence": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/window_index.csv"
+    }
+  },
+  "passed": false,
+  "status": "failed"
+}

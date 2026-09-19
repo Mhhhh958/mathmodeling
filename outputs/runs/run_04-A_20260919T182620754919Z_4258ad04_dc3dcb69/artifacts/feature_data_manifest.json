@@ -1,0 +1,33 @@
+{
+  "feature_data_version_id": "FEAT-d0da1e7bb7d00971",
+  "files": [
+    {
+      "name": "window_index.csv",
+      "sha256": "32da9e84f5cbe43f124b0833e93ec2dd204094515335f5f26eba39fa4150b1a5",
+      "size_bytes": 283892
+    },
+    {
+      "name": "common_feature_table.csv",
+      "sha256": "c573c7d1d88b1bb0ad90c6ad95800ac518287c405bd86ab96e214041a5e6cc4e",
+      "size_bytes": 495651
+    },
+    {
+      "name": "source_mechanism_feature_table.csv",
+      "sha256": "836b8d1ee280df7227ab1b27e0007f2450870861cfd3f6f8c2e6fa71e394ef03",
+      "size_bytes": 97909
+    },
+    {
+      "name": "feature_dictionary.csv",
+      "sha256": "fab5273e62518203a32f3adb0aab174822e237ffb288d16458903778e9054588",
+      "size_bytes": 4403
+    },
+    {
+      "name": "data_interface_manifest.json",
+      "sha256": "47c0292aa2d1640e38fa9e08a71373d6f9049c8ac0b651a7e7264da80b847818",
+      "size_bytes": 1463
+    }
+  ],
+  "run_id": "run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "input_03A_freeze": "FREEZE-03A-f5307f8f"
+}

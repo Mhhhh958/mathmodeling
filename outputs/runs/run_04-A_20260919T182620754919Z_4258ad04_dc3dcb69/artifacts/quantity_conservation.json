@@ -1,0 +1,23 @@
+{
+  "source_selected_files": 49,
+  "target_files": 16,
+  "processed_files": 65,
+  "source_windows": 733,
+  "target_windows": 240,
+  "total_windows": 973,
+  "source_class_windows": {
+    "OR": 319,
+    "B": 180,
+    "IR": 180,
+    "N": 54
+  },
+  "source_groups": 49,
+  "target_groups": 16,
+  "window_samples": 12000,
+  "stride_samples": 6000,
+  "window_seconds": 1.0,
+  "stride_seconds": 0.5,
+  "files_with_dropped_tail": 2,
+  "max_tail_uncovered_s": 0.09733333333333327,
+  "no_padding": true
+}

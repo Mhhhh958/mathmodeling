@@ -1,0 +1,199 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "04-A",
+  "freeze_package_id": "FREEZE-04A-dc3dcb69",
+  "status": "failed",
+  "run_id": "run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69",
+  "versions": {
+    "code_version_id": "git:1d280348e1f3ebd023f8eed38554056daac73a4b",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-02A-6f36d0b4",
+      "FREEZE-03A-f5307f8f",
+      "FEAT-d0da1e7bb7d00971"
+    ],
+    "run_config_sha256": "19d466809e1f59fae71ec10adf54b1b444feff1b375bf2562673430f472d79cf",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "window_seconds": 1.0,
+    "overlap_fraction": 0.5,
+    "stride_seconds": 0.5,
+    "common_fs_hz": 12000,
+    "feature_fmax_hz": 5500.0,
+    "window_candidates_step12": {
+      "duration_s": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "overlap": [
+        0.0,
+        0.5
+      ]
+    },
+    "common_feature_count": 26,
+    "source_mechanism_aux_count": 5
+  },
+  "real_results": [
+    {
+      "name": "quantity_conservation",
+      "value": {
+        "source_selected_files": 49,
+        "target_files": 16,
+        "processed_files": 65,
+        "source_windows": 733,
+        "target_windows": 240,
+        "total_windows": 973,
+        "source_class_windows": {
+          "OR": 319,
+          "B": 180,
+          "IR": 180,
+          "N": 54
+        },
+        "source_groups": 49,
+        "target_groups": 16,
+        "window_samples": 12000,
+        "stride_samples": 6000,
+        "window_seconds": 1.0,
+        "stride_seconds": 0.5,
+        "files_with_dropped_tail": 2,
+        "max_tail_uncovered_s": 0.09733333333333327,
+        "no_padding": true
+      }
+    },
+    {
+      "name": "feature_data_version_id",
+      "value": "FEAT-d0da1e7bb7d00971"
+    },
+    {
+      "name": "common_feature_quality",
+      "value": {
+        "nan_inf": 0,
+        "constant_features": [],
+        "feature_count": 26
+      }
+    },
+    {
+      "name": "group_boundary",
+      "value": {
+        "source_groups": 49,
+        "target_groups": 16,
+        "rule": "same independent_object_id cannot cross future partitions"
+      }
+    },
+    {
+      "name": "q2_interface",
+      "value": {
+        "schema_version": "04A-interface-1.0",
+        "run_id": "run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69",
+        "window_seconds": 1.0,
+        "overlap_fraction": 0.5,
+        "group_key": "independent_object_id",
+        "source": {
+          "X": "q2_interface/X_source_common.csv",
+          "y": "q2_interface/y_source_labels.csv",
+          "groups": "q2_interface/groups_source.csv",
+          "metadata": "q2_interface/source_window_metadata.csv",
+          "rows": 733,
+          "features": [
+            "mean",
+            "std",
+            "rms",
+            "mean_abs",
+            "peak_abs",
+            "peak_to_peak",
+            "skewness",
+            "kurtosis",
+            "crest_factor",
+            "impulse_factor",
+            "shape_factor",
+            "clearance_factor",
+            "zero_cross_rate",
+            "spectral_centroid_hz",
+            "spectral_rms_hz",
+            "spectral_entropy",
+            "spectral_flatness",
+            "dominant_frequency_hz",
+            "rolloff95_hz",
+            "band_ratio_0_500",
+            "band_ratio_500_1500",
+            "band_ratio_1500_3000",
+            "band_ratio_3000_5500",
+            "envelope_rms",
+            "envelope_kurtosis",
+            "envelope_spectral_entropy"
+          ]
+        },
+        "source_optional": {
+          "mechanism_aux": "q2_interface/source_mechanism_aux_optional.csv",
+          "default_use": false
+        },
+        "target": {
+          "X": "target_interface/X_target_common.csv",
+          "metadata": "target_interface/target_window_metadata.csv",
+          "rows": 240,
+          "truth": "unknown"
+        },
+        "fit_boundary": "no learned preprocessing has been fit; Q2 must split by groups before any fit"
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/validation_window_traceability.csv"
+    },
+    {
+      "path": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/validation_feature_recalculation.csv"
+    },
+    {
+      "path": "outputs/runs/run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69/artifacts/feature_quality_audit.csv"
+    }
+  ],
+  "anomalies_and_failures": [],
+  "b_handoff": {
+    "required_data": [
+      "window_parameter_candidates.csv",
+      "window_index.csv",
+      "feature_dictionary.csv",
+      "quantity_conservation.json",
+      "feature_quality_audit.csv",
+      "question1_answer_material.json",
+      "data_interface_manifest.json"
+    ],
+    "supported_conclusions": [
+      "windowing is defined by physical time not copied point count",
+      "all windows retain original file/group identity",
+      "default Q2 interface contains only deterministic target-compatible common features",
+      "no learned preprocessing was fit globally"
+    ],
+    "wording_limits": [
+      "1s/50% is the frozen primary candidate, not a proven global optimum; sensitivity is deferred to STEP12",
+      "overlapping windows are not independent samples",
+      "source mechanism auxiliary features are not target-compatible default features"
+    ],
+    "approved_tables": [
+      "window_parameter_candidates.csv",
+      "feature_dictionary.csv",
+      "quantity_conservation.json",
+      "feature_quality_audit.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-19T18:26:20.752895Z",
+    "content_sha256": "175e3df5ceaefae29ff9947249f25d460f96e835ad4e179229f96ced90582f68",
+    "invalidation_dependencies": [
+      "02-A source selection changes",
+      "03-A preprocessing/mechanism convention changes",
+      "raw data changes",
+      "window/feature code or parameter changes"
+    ]
+  }
+}

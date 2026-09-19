@@ -1,0 +1,4 @@
+﻿window_id,relative_path,feature,stored,recalculated,abs_diff
+WIN-95cc30d077b989e87041,target_domain/train_bearing_a_to_p/G.mat,rms,1.158442327490968,1.158442327490968,0.0
+WIN-b7bbefe68cdfc4b9c92e,target_domain/train_bearing_a_to_p/D.mat,crest_factor,4.055090307503768,4.055090307503768,0.0
+WIN-da1b2290cde4e3240e8d,source_domain/cwru_12khz_fe/IR021_3.mat,spectral_centroid_hz,3305.419039683485,3305.419039564115,1.1937027011299506e-07
