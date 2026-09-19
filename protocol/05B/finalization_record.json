@@ -1,0 +1,39 @@
+{
+  "schema_version": "05B-1.0",
+  "step_id": "05-B",
+  "status": "passed",
+  "pass_token": "05-B-V2026.09.20-f1131a5f-通过",
+  "next_allowed": "06-A",
+  "run_id": "run_05-B_20260919T195006000000Z_338d8e27_f1131a5f",
+  "source_A_freeze_package_id": "FREEZE-05A-ba6432cf",
+  "output_word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+  "output_word_library_file_id": "libfile_f3e226e221f88191872c63e176fbc950",
+  "validation_record": "protocol/05B/validation_record.json",
+  "delivery_record": "protocol/05B/B_delivery.json",
+  "rendered_pages": 21,
+  "open_P0": [],
+  "object_counts": {
+    "before": {
+      "media": 7,
+      "tables": 14,
+      "drawing": 6,
+      "vml_pict": 1,
+      "math": 5,
+      "math_para": 5,
+      "sections": 6
+    },
+    "after": {
+      "media": 7,
+      "tables": 16,
+      "drawing": 6,
+      "vml_pict": 1,
+      "math": 5,
+      "math_para": 5,
+      "sections": 6
+    }
+  },
+  "word_rebuilt_from_plain_text": false,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
