@@ -1,18 +1,18 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r11",
-  "updated_utc": "2026-09-19T19:27:00Z",
-  "CURRENT_ALLOWED_STEP": "05-B",
-  "LAST_PASS_TOKEN": "05-A-V2026.09.20-338d8e27-通过",
+  "state_version": "2026.09.20-r12",
+  "updated_utc": "2026-09-19T19:55:00Z",
+  "CURRENT_ALLOWED_STEP": "06-A",
+  "LAST_PASS_TOKEN": "05-B-V2026.09.20-f1131a5f-通过",
   "LATEST_WORD": {
-    "version": "V0.5",
-    "artifact_id": "WORD-V0.5-dfbb5d0e",
-    "parent_version": "V0.4",
-    "library_path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
-    "library_file_id": "libfile_c9d50e21e7d88191803a73b277461e12",
-    "sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
-    "source_A_freeze_package_id": "FREEZE-04A-3e3b97c0",
-    "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e"
+    "version": "V0.6",
+    "artifact_id": "WORD-V0.6-f1131a5f",
+    "parent_version": "V0.5",
+    "library_path": "/数学建模/05B/2025华为杯E题论文_步骤05_V0.6.docx",
+    "library_file_id": "libfile_f3e226e221f88191872c63e176fbc950",
+    "sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+    "source_A_freeze_package_id": "FREEZE-05A-ba6432cf",
+    "run_id": "run_05-B_20260919T195006000000Z_338d8e27_f1131a5f"
   },
   "LATEST_FREEZE_PACKAGE": {
     "step_id": "05-A",
@@ -25,24 +25,23 @@
     "content_sha256": "338d8e27604c26061d9e93610b6d299457579f0d113f9a695ec1ab8c9eae6671"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "05-B",
+  "NEXT_ALLOWED": "06-A",
   "previous_gate": {
-    "step": "04-B",
-    "pass_token": "04-B-V2026.09.20-dfbb5d0e-通过",
-    "next_allowed": "05-A"
+    "step": "05-A",
+    "pass_token": "05-A-V2026.09.20-338d8e27-通过",
+    "next_allowed": "05-B"
   },
   "current_step_record": {
-    "step": "05-A",
+    "step": "05-B",
     "status": "passed",
-    "pass_token": "05-A-V2026.09.20-338d8e27-通过",
-    "next_allowed": "05-B",
-    "run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
-    "code_version_id": "git:263bdfefd85850e7d117889882074373e5caa9db",
-    "evidence_commit": "9a4076d27d7600123ef26ed0e36678b666505074",
-    "blueprint_commit": "f6d2c6659b9a6488bf7da5fe34dc82b73a888537",
-    "freeze_package_id": "FREEZE-05A-ba6432cf",
-    "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
-    "validation_record": "protocol/05A/validation_record.json"
+    "pass_token": "05-B-V2026.09.20-f1131a5f-通过",
+    "next_allowed": "06-A",
+    "run_id": "run_05-B_20260919T195006000000Z_338d8e27_f1131a5f",
+    "code_version_id": "CODE-09bb7e36d9ba3206",
+    "data_version_id": "FREEZE-05A-338d8e27604c2606",
+    "word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+    "B_delivery_library_path": "/数学建模/05B/B_delivery_05B.json",
+    "validation_record": "protocol/05B/validation_record.json"
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -52,9 +51,9 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/05A/validation_record.json",
+    "latest_validation_record": "protocol/05B/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
-    "latest_word_library_path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
+    "latest_word_library_path": "/数学建模/05B/2025华为杯E题论文_步骤05_V0.6.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
     "latest_01A_data_manifest": "protocol/01A/data_manifest.json",
     "latest_01B_delivery": "protocol/01B/B_delivery.json",
@@ -75,6 +74,7 @@
     "latest_05A_blueprint": "protocol/05A/question2_argument_blueprint.json",
     "latest_05A_run": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
     "latest_05A_outer_splits": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/outer_split_manifest.csv",
-    "latest_05A_inner_splits": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/inner_split_manifest.csv"
+    "latest_05A_inner_splits": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/inner_split_manifest.csv",
+    "latest_05B_delivery": "protocol/05B/B_delivery.json"
   }
 }
