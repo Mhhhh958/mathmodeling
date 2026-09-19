@@ -1,0 +1,76 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "03-B",
+  "status": "passed",
+  "run_id": "run_03-B_20260919T172539034521Z_69947ed7_6f3e2e9b",
+  "source_A_freeze_package_id": "FREEZE-03A-f5307f8f",
+  "source_A_run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+  "latest_word_before": {
+    "version": "V0.3",
+    "sha256": "f960cde0421d35b42232f25c06f09e8977a9cd7d5c6d81818c06d4a78303a7de",
+    "path": "/数学建模/02B/2025华为杯E题论文_步骤02_V0.3.docx",
+    "library_file_id": "libfile_112a9f7fca088191b90be8203f495829"
+  },
+  "new_word_after": {
+    "version": "V0.4",
+    "sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+    "path": "/数学建模/03B/2025华为杯E题论文_步骤03_V0.4.docx",
+    "library_file_id": "libfile_694b330a482c81918ed25fbd80265d06"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "/数学建模/03B/本步论文变更单_03B.json",
+  "affected_ledger_items": {
+    "version_ledger": [
+      "VER-03B-WORD-V04",
+      "VER-03B-DELIVERY"
+    ],
+    "evidence_issue_ledger": [
+      "EVID-03B-001"
+    ],
+    "result_formula_ledger": [
+      "RES-03B-PREPROC",
+      "RES-03B-FIDELITY",
+      "RES-03B-BEARING-MECH",
+      "RES-03B-B014-MECH",
+      "RES-03B-SAMPLES"
+    ],
+    "figure_table_ledger": [
+      "FIG-03B-002",
+      "FIG-03B-003",
+      "TBL-03B-007",
+      "TBL-03B-008",
+      "TBL-03B-009"
+    ],
+    "citation_ledger": [
+      "C-03B-001",
+      "C-03B-002"
+    ]
+  },
+  "figures_and_captions": [
+    {
+      "file": "/数学建模/03B/图2_B类典型与困难样本时域波形.png",
+      "caption": "图2 B类典型与困难样本的时域波形对照",
+      "sha256": "c7ffa98d6070192df215a9563db7e1494681c5c975fcb695a100fe602bf7cf19"
+    },
+    {
+      "file": "/数学建模/03B/图3_B类困难样本频谱与包络谱.png",
+      "caption": "图3 B类困难样本B014_2.mat的功率谱与包络谱",
+      "sha256": "0ee38447fb07643fc7ed7e3e6e841d401f2c21408ea1268bc8057d831f77e82b"
+    }
+  ],
+  "tables_and_captions": [
+    "表7 典型与困难样本固定选择结果",
+    "表8 预处理决策与信息保真检查",
+    "表9 源域轴承几何参数与理论阶次"
+  ],
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "unsupported_claims_removed_or_downgraded": true,
+    "word_rebuilt_from_plain_text": false,
+    "record": "protocol/03B/validation_record.json"
+  }
+}
