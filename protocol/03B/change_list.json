@@ -1,0 +1,42 @@
+{
+  "schema_version": "03B-1.0",
+  "step_id": "03-B",
+  "run_id": "run_03-B_20260919T172539034521Z_69947ed7_6f3e2e9b",
+  "source_word": "V0.3",
+  "output_word": "V0.4",
+  "source_A_freeze": "FREEZE-03A-f5307f8f",
+  "incremental_only": true,
+  "changes": [
+    {
+      "location": "5.1.2 信号处理与故障机理分析",
+      "action": "insert",
+      "details": "新增原始信号/典型困难样本、预处理保真、机理公式参数、频域包络证据、后续特征候选与证据边界。"
+    },
+    {
+      "location": "表7/图2",
+      "action": "insert",
+      "details": "8个固定样本全部保留；图2对照B021_3典型与B014_2困难时域波形。"
+    },
+    {
+      "location": "表8",
+      "action": "insert",
+      "details": "写入49/49去均值、0/49去趋势、4个正常文件重采样及保真范围。"
+    },
+    {
+      "location": "公式/表9",
+      "action": "insert",
+      "details": "写入fr/BPFO/BPFI/BSF/FTF公式与SKF6205/SKF6203分离参数。"
+    },
+    {
+      "location": "图3",
+      "action": "insert",
+      "details": "同一困难B014_2样本功率谱/包络谱；标注BSF谐波及BSF±FTF。"
+    },
+    {
+      "location": "证据边界",
+      "action": "insert",
+      "details": "明确理论峰仅为机理一致性证据，目标域不套用源域几何。"
+    }
+  ],
+  "untouched": "其余母稿、封面、节设置、样式表、编号、主题和既有图片保持。"
+}
