@@ -1,0 +1,38 @@
+{
+  "schema_version": "02A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "blueprint_commit": "4ba829a40cf9526f95677c9f6d8b75958106f643",
+  "tracked_code": [
+    {
+      "path": "scripts/step02a_transfer_source_selection.py",
+      "git_blob_sha": "ee3d407081bcd87052dd427f86dda347a5d0ad7d"
+    },
+    {
+      "path": ".github/workflows/step02a_transfer_source_selection.yml",
+      "git_blob_sha": "1b5adf93990b179d7cee5ac45909c97a31be0387"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/02A/question1_argument_blueprint.json",
+      "git_blob_sha": "9c3fe38171f30c7756a7487ce0cafa314859eab8"
+    },
+    {
+      "path": "protocol/02A/run_config.json",
+      "git_blob_sha": "ba623b28815750e9e8ef9ddceb3092806673d2df"
+    }
+  ],
+  "prohibited_inputs": [
+    "historical target prediction labels",
+    "target pseudo labels",
+    "final classifier outputs"
+  ],
+  "constraints": [
+    "no final classifier training",
+    "no Word editing",
+    "no five-ledger edits in A",
+    "target A-P truth unknown"
+  ]
+}
