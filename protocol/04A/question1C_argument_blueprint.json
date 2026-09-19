@@ -1,0 +1,64 @@
+{
+  "schema_version": "00C-1.0",
+  "template_type": "question_argument_blueprint",
+  "step_id": "04-A",
+  "question_id": "Q1C",
+  "status": "frozen_before_execution",
+  "delivery_from_problem": "对02-A冻结的49个源域MVP文件和16个未知目标文件建立可追溯的统一时间窗，提取可直接供问题2读取的无泄漏核心特征，并另存仅源域可计算的机理辅助特征；冻结窗口边界、特征定义和学习型变换边界。",
+  "core_contradiction": "窗口过短会导致故障周期/转频统计不稳定，过长又会减少独立文件内可用片段并提高计算开销；同时源域含12/48kHz、目标32kHz，必须先统一物理时间与有效频带，且所有窗口仍属于原始独立采集对象，不能把重叠窗口当独立样本随机切分。",
+  "baseline": {
+    "method": "按共同分析采样率12kHz，以物理秒数定义固定窗；每窗确定性计算时域与频域统计特征，不做任何全量拟合的插补、缩放或筛选。",
+    "why_valid": "物理时间窗避免不同采样率下相同点数代表不同持续时间；确定性公式可同时用于源域和目标域且不需要标签。",
+    "observed_limitations": [
+      "源域MVP正常类只有4个独立文件，50%重叠不会增加独立对象数量。",
+      "目标域缺少与源域同等完整的轴承几何与精确RPM，因此源域机理频率辅助特征不能作为跨域公共特征。",
+      "重叠窗口高度相关，后续训练/测试必须按independent_object_id分组。"
+    ]
+  },
+  "method_choice_reason": "候选窗长0.5/1.0/2.0s；主方案冻结1.0s、50%重叠。源域约1760rpm时1s包含约29个转频周期、约11个最慢FTF周期以及百量级故障冲击周期；目标约600rpm时也约含10个轴转周期。1s比0.5s提供更稳定的频域统计，又比2s产生更多文件内窗口。敏感性仅冻结候选范围，统一在步骤12复核。",
+  "key_improvements": [
+    {
+      "id": "I1",
+      "change": "以1.0s物理时长和0.5s步长定义窗口，先将48kHz正常源文件和32kHz目标文件经显式抗混叠重采样到12kHz；不使用固定点数跨采样率照搬。",
+      "target_problem": "保证不同原采样率在相同物理时长和共同有效频带下可比较。",
+      "evidence_plan": "输出每窗起止秒、共同/原生采样索引、每文件窗口数和尾部未覆盖时长，并做数量守恒。"
+    },
+    {
+      "id": "I2",
+      "change": "冻结文件级group_id=independent_object_id；窗口只继承分组ID，问题2接口把X、y、groups分离。",
+      "target_problem": "避免同一原始采集对象的重叠窗口随机分到训练与测试造成泄漏。",
+      "evidence_plan": "检查每个window_id唯一、每个independent_object_id只映射一个group_id，并抽查窗口回溯。"
+    },
+    {
+      "id": "I3",
+      "change": "将特征分为跨域公共核心特征与源域机理辅助特征；机理辅助特征不进入默认问题2/跨域X接口。",
+      "target_problem": "既保留03-A机理候选，又避免用目标缺失几何/RPM或源域采集配置差异制造不可迁移信息。",
+      "evidence_plan": "输出特征字典、接口清单和列泄漏检查；目标公共特征必须0个NaN/Inf。"
+    }
+  ],
+  "primary_metrics_and_fairness": {
+    "primary_metrics": [
+      "窗口数量守恒、文件覆盖率与尾部未覆盖时长",
+      "公共特征NaN/Inf/常数/极端值审计",
+      "至少3个特征的独立复算绝对误差",
+      "独立对象分组唯一性与特征列泄漏检查"
+    ],
+    "comparison_scope": "源/目标公共特征使用同一12kHz分析率、同一1s窗、同一频谱参数和同一公式；任何需要学习的插补/缩放/筛选均在本步保持未拟合。",
+    "fairness_constraints": [
+      "类别、文件名编码、载荷、通道、RPM、bearing model和group_id都只作为元数据，不进入默认X特征。",
+      "源域机理辅助特征由轴承几何和RPM计算但不使用class_label；因目标不可兼容及采集配置混杂风险，默认模型接口排除。",
+      "不把重叠窗口当作独立采集对象；后续划分必须以group_id分组。"
+    ]
+  },
+  "key_tables_and_figures": [
+    "窗口参数与物理周期依据表",
+    "窗口索引与分组边界表",
+    "完整特征表与特征字典",
+    "处理前后数量守恒表",
+    "特征质量审计表",
+    "问题2数据接口清单"
+  ],
+  "core_conclusion": "只有实际运行确认全部窗口可追溯、公共特征无NaN/Inf、分组边界唯一且独立复算一致后，才冻结1s/50%作为当前候选主设置；窗口敏感性不在本步宣称最优，留至步骤12统一复核。",
+  "next_question_interface": "输出X_source_common.csv、y_source_labels.csv、groups_source.csv和source_window_metadata.csv供问题2直接读取；另提供target_common_features.csv与source_mechanism_aux.csv。任何学习型预处理必须由问题2在训练组内fit。",
+  "evidence_guard": "不得把重叠窗口数量当成独立样本量；不得把目标未知标签或文件名编码混入特征；不得称1s/50%为全局最优窗口，只能称当前冻结候选主设置。"
+}

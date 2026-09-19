@@ -1,0 +1,75 @@
+{
+  "schema_version": "04A-1.0",
+  "step_id": "04-A",
+  "purpose": "windowing_and_full_feature_extraction",
+  "seed": 20260919,
+  "input_03A_freeze_package_id": "FREEZE-03A-f5307f8f",
+  "input_02A_freeze_package_id": "FREEZE-02A-6f36d0b4",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "source_plan": "02-A MVP: source_12khz_fe + all source_48khz_normal, 49 files",
+  "target_plan": "all A-P, truth unknown",
+  "common_fs_hz": 12000,
+  "common_effective_feature_band_hz": [
+    0,
+    5500
+  ],
+  "window": {
+    "duration_seconds": 1,
+    "overlap_fraction": 0.5,
+    "stride_seconds": 0.5,
+    "padding": false,
+    "tail_policy": "drop incomplete tail and report uncovered seconds",
+    "candidate_duration_seconds_for_step12": [
+      0.5,
+      1,
+      2
+    ],
+    "candidate_overlap_fraction_for_step12": [
+      0,
+      0.5
+    ]
+  },
+  "resampling": {
+    "source_12khz_fe": "none",
+    "source_48khz_normal": {
+      "up": 1,
+      "down": 4,
+      "fir_num_taps": 401,
+      "cutoff_hz": 5500,
+      "window": "kaiser",
+      "beta": 8.6
+    },
+    "target_32khz": {
+      "up": 3,
+      "down": 8,
+      "fir_num_taps": 801,
+      "cutoff_hz": 5500,
+      "filter_design_fs_hz": 96000,
+      "window": "kaiser",
+      "beta": 8.6
+    }
+  },
+  "spectrum": {
+    "method": "Welch",
+    "nperseg": 4096,
+    "noverlap_fraction": 0.5,
+    "window": "hann",
+    "frequency_band_hz": [
+      0,
+      5500
+    ]
+  },
+  "feature_tiers": {
+    "common_default": "time + frequency + envelope descriptors available identically for source and target",
+    "source_mechanism_aux": "BPFO/BPFI/BSF harmonic and modulation-band ratios; source-only, excluded from default Q2 X"
+  },
+  "learning_transforms": {
+    "imputation": "not fitted",
+    "scaling": "not fitted",
+    "feature_selection": "not fitted",
+    "future_fit_scope": "training groups only"
+  },
+  "no_classifier_training": true,
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true
+}
