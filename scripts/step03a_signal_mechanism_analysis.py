@@ -197,23 +197,40 @@ def waveform_rows(x,fs,sample_id,stage,duration=0.5):
  n=min(len(x),int(round(fs*duration)))
  return pd.DataFrame({"sample_id":sample_id,"stage":stage,"time_s":np.arange(n)/fs,"value":np.asarray(x[:n],float)})
 
-def key_band_energy_for_all_types(x,fs,m):
- f,p,df=psd(x,fs); out={}
- for c,char in CLASS_CHAR.items():
-  e,tol=freq_band(f,p,m[char],df);out[f"{char}_fund_energy"]=e;out[f"{char}_tol_hz"]=tol
- return out
+def psd_fidelity(x,fs):
+ # Match physical frequency resolution across sampling rates:
+ # 48k uses 16384 samples when 12k uses 4096, so both have df=2.9296875 Hz.
+ target_nper=int(round(NPERSEG*float(fs)/COMMON_FS))
+ nper=min(target_nper,len(x))
+ f,p=welch(x,fs=fs,window="hann",nperseg=nper,noverlap=nper//2,detrend=False,scaling="density")
+ return f,p,float(fs/nper)
+
+def fidelity_spectral_metrics(x,fs):
+ x=np.asarray(x,float)
+ f,p,df=psd_fidelity(x,fs)
+ return {
+  "rms":float(np.sqrt(np.mean(x*x))),
+  "total_psd_energy":integ(f,p,0,float(f[-1])),
+  "common_0_6k_psd_energy":integ(f,p,0,min(COMMON_FMAX,float(f[-1]))),
+  "df_hz":df,
+ }
 
 def fidelity_row(rel,stage,before,bfs,after,afs,m):
- bm=time_spectral_metrics(before,bfs);am=time_spectral_metrics(after,afs)
- bk=key_band_energy_for_all_types(before,bfs,m);ak=key_band_energy_for_all_types(after,afs,m)
+ bm=fidelity_spectral_metrics(before,bfs);am=fidelity_spectral_metrics(after,afs)
+ bf,bp,bdf=psd_fidelity(before,bfs); af,ap,adf=psd_fidelity(after,afs)
+ common_df=max(bdf,adf)
  row={"relative_path":rel,"stage":stage,"before_fs_hz":bfs,"after_fs_hz":afs,
+      "fidelity_df_before_hz":bdf,"fidelity_df_after_hz":adf,
       "rms_before":bm["rms"],"rms_after":am["rms"],"rms_ratio":am["rms"]/(bm["rms"]+1e-30),
       "total_psd_before":bm["total_psd_energy"],"total_psd_after":am["total_psd_energy"],"total_psd_ratio":am["total_psd_energy"]/(bm["total_psd_energy"]+1e-30),
       "common_0_6k_before":bm["common_0_6k_psd_energy"],"common_0_6k_after":am["common_0_6k_psd_energy"],"common_0_6k_ratio":am["common_0_6k_psd_energy"]/(bm["common_0_6k_psd_energy"]+1e-30)}
  for char in ["BPFO","BPFI","BSF"]:
-  row[f"{char}_fund_energy_before"]=bk[f"{char}_fund_energy"]
-  row[f"{char}_fund_energy_after"]=ak[f"{char}_fund_energy"]
-  row[f"{char}_fund_energy_ratio"]=ak[f"{char}_fund_energy"]/(bk[f"{char}_fund_energy"]+1e-30)
+  fc=m[char]; tol=max(2.0*common_df,0.02*fc)
+  eb=integ(bf,bp,fc-tol,fc+tol); ea=integ(af,ap,fc-tol,fc+tol)
+  row[f"{char}_common_tol_hz"]=tol
+  row[f"{char}_fund_energy_before"]=eb
+  row[f"{char}_fund_energy_after"]=ea
+  row[f"{char}_fund_energy_ratio"]=ea/(eb+1e-30)
  return row
 
 def main():
@@ -436,7 +453,7 @@ def main():
   "mechanism_band_ratio_max":float(aa[[f"{c}_fund_energy_ratio" for c in ["BPFO","BPFI","BSF"]]].max().max()) if len(aa) else None,
   "full_spectrum_total_ratio_min":float(aa.total_psd_ratio.min()) if len(aa) else None,
   "full_spectrum_total_ratio_max":float(aa.total_psd_ratio.max()) if len(aa) else None,
-  "note":"full-spectrum ratio may be <1 because >6k content is intentionally rejected before downsampling; pass criterion uses common 0-6k and mechanism bands."
+  "note":"Fidelity PSDs use matched physical resolution (48k:16384-point Welch; 12k:4096-point Welch). Full-spectrum ratio may be <1 because >6k content is intentionally rejected; pass uses common 0-6k and matched-tolerance mechanism bands."
  }
 
  validation={

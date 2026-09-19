@@ -7,7 +7,7 @@
   "tracked_code": [
     {
       "path": "scripts/step03a_signal_mechanism_analysis.py",
-      "git_blob_sha": "3284f2c58a7325e25639515be57c69212b554dc8"
+      "git_blob_sha": "194c8e1a4897bf6aab9c69629761ad03cfc23430"
     },
     {
       "path": ".github/workflows/step03a_signal_mechanism_analysis.yml",
@@ -40,7 +40,13 @@
     {
       "code_commit": "bc13b0bd39b69d0c7afd58dc9377e96dbc3a3cfb",
       "check_run_id": 105930738680,
-      "error": "DataFrame attribute collision g.kurtosis resolved by bracket access; evidence commit path handling also hardened."
+      "error": "Runtime failure: DataFrame kurtosis column collided with method; fixed using bracket access."
+    },
+    {
+      "code_commit": "d3bed807c89b1e2e7476a7642c5df3697bfc0f5b",
+      "check_run_id": 105930903871,
+      "run_id": "run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed",
+      "error": "Validation correctly failed because resampling fidelity compared unequal Welch frequency resolutions (48k nperseg=4096 vs 12k nperseg=4096). Method corrected to equal physical df, not by relaxing thresholds."
     }
   ]
 }
