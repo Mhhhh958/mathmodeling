@@ -1,0 +1,36 @@
+{
+  "schema_version": "04B-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e",
+  "step_id": "04-B",
+  "status": "completed",
+  "created_utc": "2026-09-19T18:45:20Z",
+  "binding": {
+    "code_version_id": "CODE-cc093a709cae50fe",
+    "source_A_freeze_sha256": "d60f9e54ae8aa2e216c4d4540f0c4fda90f64464fc16769c4fa428b41b1bd567",
+    "source_word_sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+    "run_config_sha256": "8e26836a8095cdca7b74d6c2594ebb81a1a012310e3629ddfad68933dac3fe37",
+    "output_word_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+    "binding_digest": "48bbc0c6a7914fbf47b5ff1862df74ee5c0c43d9d7954ba27481db16cb0b8996"
+  },
+  "code_manifest": "/数学建模/04B/code_manifest_04B.json",
+  "run_config": "/数学建模/04B/run_config_04B.json",
+  "validation": "/数学建模/04B/validation_record_04B.json",
+  "output_word": {
+    "path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
+    "sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+    "pages_rendered": 19
+  },
+  "visual_QA": "all 19 final rendered pages inspected",
+  "checkpoint": {
+    "completed": [
+      "incremental edit",
+      "master-part restore",
+      "caption numbering fix",
+      "full render",
+      "19-page visual inspection",
+      "structural validation"
+    ],
+    "pending": []
+  }
+}
