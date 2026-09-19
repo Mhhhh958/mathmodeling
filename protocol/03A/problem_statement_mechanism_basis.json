@@ -1,0 +1,43 @@
+{
+  "schema_version": "03A-1.0",
+  "source_file": "E题：高速列车轴承智能故障诊断问题.pdf",
+  "source_sha256": "d13f851ffd1f5a2017de40ba1a63dcf82809989591450b40cbf73f9c92adef58",
+  "evidence_pages": [
+    3,
+    5,
+    7
+  ],
+  "statement_facts": {
+    "SKF6205_DE": {
+      "rolling_elements_Nd": 9,
+      "ball_diameter_in": 0.3126,
+      "pitch_diameter_in": 1.537,
+      "sampling_rates_hz": [
+        12000,
+        48000
+      ]
+    },
+    "SKF6203_FE": {
+      "rolling_elements_Nd": 9,
+      "ball_diameter_in": 0.2656,
+      "pitch_diameter_in": 1.122,
+      "sampling_rates_hz": [
+        12000
+      ]
+    },
+    "rpm_definition": "fr = n_rpm / 60",
+    "formulas": {
+      "BPFO": "fr * Nd/2 * (1 - d/D)",
+      "BPFI": "fr * Nd/2 * (1 + d/D)",
+      "BSF": "fr * D/d * (1 - (d/D)^2)",
+      "FTF": "0.5 * fr * (1 - d/D)"
+    },
+    "convention_note": "题面公式不含接触角cos(alpha)项；03-A按题面零接触角形式，不静默替换为其他文献约定。",
+    "mechanism_notes": {
+      "OR": "理想外圈故障呈类周期冲击；BPFO与故障周期互为倒数。",
+      "IR": "内圈故障受转频fr调制，幅值随载荷区位置变化。",
+      "B": "滚动体故障受公转频率FTF调制，并随自旋与内外圈交替碰撞。"
+    }
+  },
+  "target_boundary": "目标域约600 rpm，但当前没有与源域同等完整的轴承几何参数冻结；不得将SKF6203/6205尺寸直接套入目标域。"
+}

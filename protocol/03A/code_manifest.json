@@ -1,0 +1,39 @@
+{
+  "schema_version": "03A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "blueprint_commit": "29bb0479ecc8392d9dd188e851c0340466760020",
+  "tracked_code": [
+    {
+      "path": "scripts/step03a_signal_mechanism_analysis.py",
+      "git_blob_sha": "955829df3f64de2f9b910857d03bd6cf4e063318"
+    },
+    {
+      "path": ".github/workflows/step03a_signal_mechanism_analysis.yml",
+      "git_blob_sha": "a85127ac7c4bd0a5246a92f10947f87370780bf2"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/03A/question1B_argument_blueprint.json",
+      "git_blob_sha": "b9c36d8879a0b18b5feff94673ea82872ad5c632"
+    },
+    {
+      "path": "protocol/03A/run_config.json",
+      "git_blob_sha": "b9e2af91d7aa4eee05d1299fa24c2e44a9b9f841"
+    },
+    {
+      "path": "protocol/03A/problem_statement_mechanism_basis.json",
+      "git_blob_sha": "3e9452f1c7f0366435a1dbecfd6b3039de330c00"
+    }
+  ],
+  "constraints": [
+    "02-A MVP source files only",
+    "no classifier training",
+    "no Word editing",
+    "no final paper figures",
+    "no five-ledger edits in A",
+    "no target geometry reuse"
+  ]
+}
