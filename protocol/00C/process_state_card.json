@@ -1,9 +1,9 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r6",
-  "updated_utc": "2026-09-19T16:31:46.907490Z",
-  "CURRENT_ALLOWED_STEP": "03-A",
-  "LAST_PASS_TOKEN": "02-B-V2026.09.20-f960cde0-通过",
+  "state_version": "2026.09.20-r7",
+  "updated_utc": "2026-09-19T16:49:00Z",
+  "CURRENT_ALLOWED_STEP": "03-B",
+  "LAST_PASS_TOKEN": "03-A-V2026.09.20-19705684-通过",
   "LATEST_WORD": {
     "version": "V0.3",
     "artifact_id": "WORD-V0.3-f960cde0",
@@ -15,32 +15,32 @@
     "run_id": "run_02-B_20260919T163146907490Z_594b5a82_6db67e3f"
   },
   "LATEST_FREEZE_PACKAGE": {
-    "step_id": "02-A",
-    "freeze_package_id": "FREEZE-02A-6f36d0b4",
+    "step_id": "03-A",
+    "freeze_package_id": "FREEZE-03A-f5307f8f",
     "status": "passed",
-    "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
+    "run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
     "raw_data_version_id": "RAW-5a5dd129c91bfc64",
-    "path": "protocol/02A/latest_freeze_package.json",
-    "content_sha256": "f9ed0ecc404eb9611e9352c97749eee247a8cf7306c42bb65d2b032e8c8d938b"
+    "path": "protocol/03A/latest_freeze_package.json",
+    "content_sha256": "19705684bfd3fd7a80c97c3cffb83cbb41925aa58b9bbb2251d1c98e69f0fee9"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "03-A",
+  "NEXT_ALLOWED": "03-B",
   "previous_gate": {
-    "step": "02-A",
-    "pass_token": "02-A-V2026.09.20-f9ed0ecc-通过",
-    "next_allowed": "02-B"
+    "step": "02-B",
+    "pass_token": "02-B-V2026.09.20-f960cde0-通过",
+    "next_allowed": "03-A"
   },
   "current_step_record": {
-    "step": "02-B",
+    "step": "03-A",
     "status": "passed",
-    "pass_token": "02-B-V2026.09.20-f960cde0-通过",
-    "next_allowed": "03-A",
-    "run_id": "run_02-B_20260919T163146907490Z_594b5a82_6db67e3f",
-    "code_version_id": "CODE-2946f3170eb31bce",
-    "data_version_id": "FREEZE-02A-f9ed0ecc404eb961",
-    "word_sha256": "f960cde0421d35b42232f25c06f09e8977a9cd7d5c6d81818c06d4a78303a7de",
-    "B_delivery_library_path": "/数学建模/02B/B_delivery_02B.json",
-    "validation_record": "protocol/02B/validation_record.json"
+    "pass_token": "03-A-V2026.09.20-19705684-通过",
+    "next_allowed": "03-B",
+    "run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+    "code_version_id": "git:047e0636f26e00516c56820ae392601395d48ad1",
+    "evidence_commit": "8c5a0f2b3d33faa1ee016016847c8bb97d78afbc",
+    "blueprint_commit": "29bb0479ecc8392d9dd188e851c0340466760020",
+    "freeze_package_id": "FREEZE-03A-f5307f8f",
+    "validation_record": "protocol/03A/validation_record.json"
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -50,7 +50,7 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/02B/validation_record.json",
+    "latest_validation_record": "protocol/03A/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
     "latest_word_library_path": "/数学建模/02B/2025华为杯E题论文_步骤02_V0.3.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
@@ -59,6 +59,9 @@
     "latest_02A_freeze": "protocol/02A/latest_freeze_package.json",
     "latest_02A_blueprint": "protocol/02A/question1_argument_blueprint.json",
     "latest_02A_run": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
-    "latest_02B_delivery": "protocol/02B/B_delivery.json"
+    "latest_02B_delivery": "protocol/02B/B_delivery.json",
+    "latest_03A_freeze": "protocol/03A/latest_freeze_package.json",
+    "latest_03A_blueprint": "protocol/03A/question1B_argument_blueprint.json",
+    "latest_03A_run": "outputs/runs/run_03-A_20260919T164527811276Z_71ebe710_f5307f8f"
   }
 }

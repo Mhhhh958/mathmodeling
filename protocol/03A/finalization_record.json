@@ -1,0 +1,63 @@
+{
+  "schema_version": "03A-1.0",
+  "step_id": "03-A",
+  "status": "passed",
+  "pass_token": "03-A-V2026.09.20-19705684-通过",
+  "next_allowed": "03-B",
+  "run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+  "freeze_package_id": "FREEZE-03A-f5307f8f",
+  "freeze_content_sha256": "19705684bfd3fd7a80c97c3cffb83cbb41925aa58b9bbb2251d1c98e69f0fee9",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "input_02A_freeze": "FREEZE-02A-6f36d0b4",
+  "blueprint_commit": "29bb0479ecc8392d9dd188e851c0340466760020",
+  "code_version_id": "git:047e0636f26e00516c56820ae392601395d48ad1",
+  "evidence_commit": "8c5a0f2b3d33faa1ee016016847c8bb97d78afbc",
+  "github_actions_check_run_id": 105931094871,
+  "github_actions_conclusion": "success",
+  "validation_passed": true,
+  "failed_attempts_preserved": [
+    {
+      "attempt": 1,
+      "code_commit": "bc13b0bd39b69d0c7afd58dc9377e96dbc3a3cfb",
+      "github_actions_check_run_id": 105930738680,
+      "status": "failed_before_validation",
+      "issue": "Runtime coding error: pandas DataFrame column 'kurtosis' was accessed as an attribute and collided with the DataFrame method.",
+      "resolution": "Changed to explicit bracket column access and hardened evidence staging. No scientific result from this attempt was used."
+    },
+    {
+      "attempt": 2,
+      "code_commit": "d3bed807c89b1e2e7476a7642c5df3697bfc0f5b",
+      "github_actions_check_run_id": 105930903871,
+      "run_id": "run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed",
+      "status": "validation_failed",
+      "issue": "The information-fidelity check compared mechanism-band energies with unequal Welch physical frequency resolutions (48 kHz and 12 kHz both used nperseg=4096), causing an invalid apparent mechanism-band loss.",
+      "resolution": "Kept the original acceptance thresholds and corrected only the validation measurement: 48 kHz uses nperseg=16384 and 12 kHz uses nperseg=4096, giving the same 2.9296875 Hz frequency resolution and common physical tolerance bands. The failed run is retained as evidence but not used as the final result."
+    }
+  ],
+  "key_results": {
+    "files_analyzed": 49,
+    "classes": {
+      "OR": 21,
+      "IR": 12,
+      "B": 12,
+      "N": 4
+    },
+    "common_analysis_fs_hz": 12000,
+    "detrend_applied_files": 0,
+    "general_bandpass_applied_files": 0,
+    "resampled_normal_files": 4,
+    "representative_or_difficult_samples": 8,
+    "resample_common_band_energy_ratio_range": [
+      0.9944328350882958,
+      0.9961196599743511
+    ],
+    "resample_mechanism_band_energy_ratio_range": [
+      1.0000142030243415,
+      1.0000193925562084
+    ],
+    "no_final_figures": true,
+    "classifier_training": false
+  },
+  "word_edited_in_A": false,
+  "ledgers_edited_in_A": false
+}
