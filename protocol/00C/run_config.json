@@ -1,0 +1,22 @@
+{
+  "schema_version": "00C-1.0",
+  "step_id": "00-C",
+  "purpose": "validate_global_execution_rules_and_state_machine",
+  "execution_mode": "chat_plus_git",
+  "seed": 20260919,
+  "data": {
+    "manifest": "protocol/00B/data_manifest.draft.json",
+    "raw_data_version_id": null
+  },
+  "environment": {
+    "manifest": "protocol/00B/environment_manifest.json"
+  },
+  "outputs": {
+    "root_rule": "outputs/runs/<run_id>",
+    "overwrite_existing_run": false
+  },
+  "checkpoint": {
+    "enabled": true,
+    "inherit": "protocol/00B/checkpoint_protocol.md"
+  }
+}

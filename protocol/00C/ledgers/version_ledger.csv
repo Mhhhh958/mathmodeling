@@ -1,0 +1,1 @@
+record_id,timestamp_utc,step_id,artifact_type,artifact_id,version_id,parent_version_id,status,run_id,code_version_id,data_version_id,config_sha256,environment_sha256,sha256,path,notes

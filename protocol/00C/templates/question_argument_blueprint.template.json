@@ -1,0 +1,30 @@
+{
+  "schema_version": "00C-1.0",
+  "template_type": "question_argument_blueprint",
+  "question_id": "<Qx>",
+  "delivery_from_problem": "<题目明确要求的交付>",
+  "core_contradiction": "<本问最关键矛盾>",
+  "baseline": {
+    "method": "<baseline>",
+    "why_valid": "<为什么可作为基线>",
+    "observed_limitations": []
+  },
+  "method_choice_reason": "<基于题意/数据/验证的选择理由>",
+  "key_improvements": [
+    {
+      "id": "I1",
+      "change": "<改进1>",
+      "target_problem": "<针对不足>",
+      "evidence_plan": "<验证方式>"
+    }
+  ],
+  "primary_metrics_and_fairness": {
+    "primary_metrics": [],
+    "comparison_scope": "<相同数据切分/预处理/随机种子等>",
+    "fairness_constraints": []
+  },
+  "key_tables_and_figures": [],
+  "core_conclusion": "<只能写真实结果支持的结论>",
+  "next_question_interface": "<向下一问提供的数据/模型/标签/解释接口>",
+  "evidence_guard": "If real results do not support a claim, downgrade the claim or revise this blueprint; never upgrade wording without evidence."
+}

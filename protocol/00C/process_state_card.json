@@ -1,0 +1,31 @@
+{
+  "schema_version": "00C-1.0",
+  "state_version": "2026.09.19-r1",
+  "updated_utc": "2026-09-19T15:14:00Z",
+  "CURRENT_ALLOWED_STEP": "00-D",
+  "LAST_PASS_TOKEN": "00-C-V2026.09.19-r1-通过",
+  "LATEST_WORD": null,
+  "LATEST_FREEZE_PACKAGE": null,
+  "OPEN_P0": [],
+  "NEXT_ALLOWED": "00-D",
+  "previous_gate": {
+    "step": "00-B",
+    "pass_token": "00-B-V2026.09.19-debcd09-通过",
+    "next_allowed": "00-C"
+  },
+  "current_step_record": {
+    "step": "00-C",
+    "intended_status_after_validation": "passed",
+    "pass_token": "00-C-V2026.09.19-r1-通过"
+  },
+  "guard_rules": {
+    "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
+    "unresolved_blocking_P0_prevents_pass": true,
+    "illegal_jump_action": "STOP",
+    "paused_step_action": "KEEP_CURRENT_STEP_AND_SET_PASS_TOKEN_NONE"
+  },
+  "pointers": {
+    "global_rules": "protocol/00C/global_rules.json",
+    "latest_validation_record": "protocol/00C/validation_record.json"
+  }
+}

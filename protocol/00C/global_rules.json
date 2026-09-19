@@ -1,0 +1,119 @@
+{
+  "schema_version": "00C-1.0",
+  "rules_version": "2026.09.19-r1",
+  "status": "frozen_candidate",
+  "prerequisites": {
+    "required_pass_tokens": [
+      "00-A-V2026.09.19-aaf5f88-通过",
+      "00-B-V2026.09.19-debcd09-通过"
+    ],
+    "required_next_allowed_before_step": "00-C"
+  },
+  "ab_boundary": {
+    "A": {
+      "allowed": [
+        "compute",
+        "model",
+        "validate",
+        "save_code",
+        "save_results",
+        "freeze_A_package"
+      ],
+      "forbidden": [
+        "edit_or_rebuild_paper_word",
+        "paper_prose_rewrite_as_primary_task"
+      ],
+      "completion_rule": "A must pass and freeze before the corresponding B step may use its results."
+    },
+    "B": {
+      "allowed": [
+        "use_only_passed_A_results",
+        "incrementally_edit_unique_mother_word",
+        "update_only_affected_ledgers",
+        "add_or_update_approved_figures_tables_captions"
+      ],
+      "forbidden": [
+        "retrain",
+        "retune",
+        "rerun_model_selection",
+        "change_frozen_A_results_without_rollback"
+      ],
+      "source_rule": "B may use only the latest passed A freeze package plus LATEST_WORD and explicitly approved source materials."
+    }
+  },
+  "ledgers": {
+    "version_ledger": "protocol/00C/ledgers/version_ledger.csv",
+    "evidence_issue_ledger": "protocol/00C/ledgers/evidence_issue_ledger.csv",
+    "result_formula_ledger": "protocol/00C/ledgers/result_formula_ledger.csv",
+    "figure_table_ledger": "protocol/00C/ledgers/figure_table_ledger.csv",
+    "citation_ledger": "protocol/00C/ledgers/citation_ledger.csv",
+    "B_update_rule": "Only rows/items affected by the current B change set may be added or updated; unaffected entries must remain unchanged."
+  },
+  "templates": {
+    "A_freeze_package": "protocol/00C/templates/A_freeze_package.template.json",
+    "B_delivery": "protocol/00C/templates/B_delivery.template.json",
+    "argument_blueprint": "protocol/00C/templates/question_argument_blueprint.template.json"
+  },
+  "writing_quality": {
+    "structure": "adaptive_to_problem_not_fixed_chapter_formula",
+    "principle_scope": "Only theory directly used by this problem is written.",
+    "formula_rule": "A core formula must participate in solving, an evaluation metric, or an explanation; decorative formulas are prohibited.",
+    "evidence_words": [
+      "有效",
+      "提升",
+      "稳定",
+      "鲁棒",
+      "优于",
+      "显著",
+      "改善",
+      "更好"
+    ],
+    "evidence_requirement": "Any evidential/evaluative claim must be backed by a number, interval, table/figure, or validation evidence reference; otherwise downgrade the wording or revise the blueprint."
+  },
+  "figure_table_floor": {
+    "figure_follows_text": true,
+    "prefer_table_when_table_is_clearer": true,
+    "forbidden_styles": [
+      "unrelated_2x2_or_2x3_overview",
+      "dashboard",
+      "card_layout",
+      "gradient_shadow",
+      "ppt_style"
+    ],
+    "traceability_required": true
+  },
+  "checkpoint": {
+    "inherits": "protocol/00B/checkpoint_protocol.md",
+    "on_pause": {
+      "pass_token": null,
+      "next_allowed": "CURRENT_STEP",
+      "require_resume_token": true,
+      "require_completed_pending_lists": true
+    }
+  },
+  "state_machine": {
+    "state_card": "protocol/00C/process_state_card.json",
+    "required_fields": [
+      "CURRENT_ALLOWED_STEP",
+      "LAST_PASS_TOKEN",
+      "LATEST_WORD",
+      "LATEST_FREEZE_PACKAGE",
+      "OPEN_P0",
+      "NEXT_ALLOWED"
+    ],
+    "guard": "Before every step, the requested step must equal CURRENT_ALLOWED_STEP and the prior token/next gate must be valid. Otherwise stop without executing.",
+    "p0_rule": "Any unresolved OPEN_P0 blocks passing a dependent step unless an explicit protocol rule marks it non-blocking.",
+    "illegal_jump_rule": "stop_immediately"
+  },
+  "freeze_invalidation": {
+    "trigger_after_step13": [
+      "raw_data_change",
+      "code_change",
+      "model_change",
+      "key_parameter_change",
+      "core_result_change"
+    ],
+    "action": "Invalidate affected freezes and all dependent Word states; roll back to the earliest affected A step, redo STEP13, then redo every dependent later step.",
+    "non_substantive_changes": "Formatting-only changes that do not alter data/code/model/key parameters/core results do not invalidate A freezes."
+  }
+}

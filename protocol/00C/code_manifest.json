@@ -1,0 +1,23 @@
+{
+  "schema_version": "00C-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "code_version_rule": "git commit SHA of exact checked-out tree",
+  "tracked_protocol_code": [
+    {
+      "path": "scripts/protocol/run_contract.py",
+      "git_blob_sha": "5bde35b781815902dd93d3f329f03df6eb64014b"
+    },
+    {
+      "path": "scripts/protocol/validate_00c_state_machine.py",
+      "git_blob_sha": "0725217a86dbaae19272dac1bdcce9af65df0330"
+    },
+    {
+      "path": ".github/workflows/step00c_global_rules_validation.yml",
+      "git_blob_sha": "46f4837f7c48bcad124e373fae3381de16003c66"
+    }
+  ],
+  "formal_code_rule": "Any actually executed analysis/training/plotting code in later steps must be a real repository file and enter the applicable code manifest before formal execution.",
+  "validation_evidence": null
+}

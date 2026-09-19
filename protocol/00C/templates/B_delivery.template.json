@@ -1,0 +1,28 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "B_delivery",
+  "step_id": "<B_STEP_ID>",
+  "status": "draft|passed|failed",
+  "source_A_freeze_package_id": "<passed freeze id>",
+  "source_A_run_id": "<run_id>",
+  "latest_word_before": "<LATEST_WORD id/path>",
+  "new_word_after": "<new version id/path>",
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": [],
+  "affected_ledger_items": {
+    "version_ledger": [],
+    "evidence_issue_ledger": [],
+    "result_formula_ledger": [],
+    "figure_table_ledger": [],
+    "citation_ledger": []
+  },
+  "figures_and_captions": [],
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "unsupported_claims_removed_or_downgraded": true,
+    "word_rebuilt_from_plain_text": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "<A_STEP_ID>",
+  "freeze_package_id": "<FREEZE-...>",
+  "status": "draft|passed|failed|invalidated",
+  "run_id": "<run_id>",
+  "versions": {
+    "code_version_id": "<git:commit or CODE-id>",
+    "raw_data_version_id": "<RAW-id when frozen>",
+    "input_derived_data_ids": [],
+    "run_config_sha256": "<sha256>",
+    "environment_sha256": "<sha256>"
+  },
+  "random_seed": "<int or null>",
+  "parameters": {},
+  "real_results": [],
+  "validation_evidence": [],
+  "anomalies_and_failures": [],
+  "b_handoff": {
+    "required_data": [],
+    "supported_conclusions": [],
+    "wording_limits": [],
+    "approved_tables": [],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "<ISO8601Z>",
+    "content_sha256": "<sha256>",
+    "invalidation_dependencies": []
+  }
+}

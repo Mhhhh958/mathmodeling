@@ -1,0 +1,39 @@
+name: step00c-global-rules-validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'protocol/00C/**'
+      - 'scripts/protocol/validate_00c_state_machine.py'
+      - '.github/workflows/step00c_global_rules_validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-00c:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate 00-C rules, ledgers, templates and state machine
+        run: python scripts/protocol/validate_00c_state_machine.py
+      - name: Commit validation evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs
+          if git diff --cached --quiet; then
+            echo 'No 00-C evidence to commit.'
+          else
+            git commit -m 'Add STEP00-C validation evidence [skip ci]'
+            git push
+          fi

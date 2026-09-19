@@ -1,0 +1,1 @@
+item_id,timestamp_utc,step_id,item_type,severity,claim_or_problem,evidence_status,evidence_refs,owner_status,resolution,affects_steps,opened_run_id,closed_run_id,notes
