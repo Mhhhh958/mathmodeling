@@ -1,0 +1,29 @@
+{
+  "schema_version": "02A-1.0",
+  "step_id": "02-A",
+  "purpose": "transfer_oriented_source_domain_selection_without_classifier_training",
+  "seed": 20260919,
+  "input_raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "input_01A_freeze_package": "protocol/01A/latest_freeze_package.json",
+  "blueprint": "protocol/02A/question1_argument_blueprint.json",
+  "target_truth": "unknown",
+  "target_usage": "unlabeled group-level distribution comparison only",
+  "candidate_fault_subgroups": [
+    "source_12khz_de",
+    "source_12khz_fe",
+    "source_48khz_de"
+  ],
+  "normal_policy": "retain all 4 source_48khz_normal files in every viable plan",
+  "common_analysis_fs_hz": 12000,
+  "common_effective_band_hz": [
+    0,
+    6000
+  ],
+  "file_feature_policy": "compute descriptors after deterministic common preprocessing; no target label/prediction input",
+  "stability_check": "leave one source load hp among 0,1,2,3 and recompute subgroup ranking",
+  "selection_rule": "hard coverage constraints first; if one subgroup ranks first in full data and at least 3 of 4 leave-one-load runs, MVP=that fault subgroup+all normals; otherwise MVP=union of top two full-data fault subgroups+all normals",
+  "alternative_rule": "if MVP is one subgroup+normals, alternative=top two subgroups+normals; otherwise alternative=all three fault subgroups+normals",
+  "no_training": true,
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true
+}

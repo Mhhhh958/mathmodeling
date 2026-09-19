@@ -1,0 +1,63 @@
+{
+  "schema_version": "00C-question-blueprint-1.0",
+  "step_id": "02-A",
+  "question_id": "Q1A",
+  "status": "frozen_before_execution",
+  "delivery_from_problem": "从161个源域文件中形成一个面向无标签目标域迁移的、可复现且保持OR/IR/B/N四类覆盖的源域保留方案，并给出替代方案和验证计划。",
+  "core_contradiction": "源域在采样率、传感器/故障轴承位置、转速与工况上与目标域存在显著差异，而目标A-P真值未知；筛选必须提升可比性又不能利用目标预测标签进行反向挑样。",
+  "baseline": {
+    "method": "直接使用全部161个源域文件，不做面向迁移的筛选。",
+    "why_valid": "最大化源域故障类型/尺寸/载荷覆盖，可作为不筛选基线。",
+    "observed_limitations": [
+      "混合12kHz/48kHz、DE/FE故障轴承位置及不同信号长度，域异质性较强。",
+      "源域约1720-1800rpm而目标仅约600rpm，存在明显速度域差异。",
+      "正常类仅4个且全部来自48kHz正常工况，类别和采集配置高度不平衡。"
+    ]
+  },
+  "method_choice_reason": "先用硬约束保证四分类与工况覆盖，再仅用无标签目标信号的组级统计/频谱可比性选择故障子域；目标预测类别不得参与筛选。若组级结论对留一载荷不稳定，则自动退化为更宽的联合源域方案。",
+  "key_improvements": [
+    {
+      "id": "I1",
+      "change": "统一到共同有效频带0-6kHz与12kHz分析采样率，按采集子域进行无标签源-目标统计/频谱距离比较。",
+      "target_problem": "避免原始采样率与记录长度差异直接主导相似性判断。",
+      "evidence_plan": "对每个原始文件计算固定的无标签时域/频域描述量，比较source_12khz_de、source_12khz_fe、source_48khz_de与目标A-P的组级稳健距离。"
+    },
+    {
+      "id": "I2",
+      "change": "采用覆盖约束：候选故障子域必须覆盖OR/IR/B与0-3hp；正常类4个文件强制全部保留，且不做目标类别导向的抽样。",
+      "target_problem": "防止为了域相似度牺牲四分类可训练性，并如实保留正常类稀缺事实。",
+      "evidence_plan": "自动统计保留方案的类别、载荷、尺寸与外圈位置覆盖，任何一类缺失则候选方案无效。"
+    },
+    {
+      "id": "I3",
+      "change": "执行留一载荷稳定性检查；若单一故障子域在多数留一载荷场景中不保持最优，则改用前两名故障子域联合方案。",
+      "target_problem": "降低筛选对单一工况/单次设置的依赖。",
+      "evidence_plan": "分别排除0/1/2/3hp重新计算组级距离排名，记录赢家频次与排名变动。"
+    }
+  ],
+  "primary_metrics_and_fairness": {
+    "primary_metrics": [
+      "robust_group_distance：共同预处理后多维描述量的稳健标准化中位数距离，仅作内部可比性指标，非官方评分。",
+      "coverage：OR/IR/B/N、0-3hp、故障尺寸与外圈位置覆盖。",
+      "leave_one_load_winner_frequency：四种留一载荷下候选故障子域排名稳定性。"
+    ],
+    "comparison_scope": "所有候选组与目标A-P使用相同预处理、相同0-6kHz有效带宽、相同文件级特征定义；目标仅以无标签信号参与分布比较。",
+    "fairness_constraints": [
+      "不使用任何目标预测类别或历史目标标签。",
+      "不按源域真实类别分别对目标做匹配后再选样。",
+      "每个候选故障子域内部文件按规则整体保留或整体排除，避免人工挑文件。",
+      "正常类4个文件全部保留。"
+    ]
+  },
+  "key_tables_and_figures": [
+    "源—目标可比性表",
+    "候选故障子域距离与留一载荷稳定性表",
+    "最小可行方案/替代方案保留类别与工况统计",
+    "选样清单与排除理由"
+  ],
+  "core_conclusion": "由真实运行决定：若某一故障子域在全量与留一载荷下均表现稳定，则作为最小可行故障源域并叠加全部4个正常文件；若不稳定，则使用前两名故障子域联合方案。不得预设赢家。",
+  "next_question_interface": "向问题1后续特征提取提供冻结的selected_source_file_list、alternative_source_file_list、排除理由、independent_object_id及共同预处理口径。",
+  "evidence_guard": "真实结果不支持单一子域稳定优选时，必须改用联合方案或降调结论；不得为了得到更小数据集而人工挑样。",
+  "target_label_boundary": "A-P均为unknown truth；历史预测结果禁止进入筛选逻辑。",
+  "external_data_policy": "本步默认不引入额外公开源域。若后续引入，必须先核实名称、来源、许可/使用条件、实际文件/类别及对应关系后才能进入正式实验。"
+}
