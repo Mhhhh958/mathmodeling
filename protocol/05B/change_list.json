@@ -1,0 +1,33 @@
+{
+  "schema_version": "05B-1.0",
+  "step_id": "05-B",
+  "run_id": "run_05-B_20260919T195006000000Z_338d8e27_f1131a5f",
+  "source_word": "V0.5",
+  "output_word": "V0.6",
+  "source_A_freeze": "FREEZE-05A-ba6432cf",
+  "incremental_only": true,
+  "changes": [
+    {
+      "location": "5.2.1",
+      "action": "rename placeholder + insert",
+      "details": "将“问题二求解思路”增量改为“训练测试划分与评价协议”，写入独立对象边界、外层4折与内层3折。"
+    },
+    {
+      "location": "表14",
+      "action": "insert",
+      "details": "写入四个外层折的训练池/测试集OR/IR/B/N文件数和对应N类测试文件。"
+    },
+    {
+      "location": "表15",
+      "action": "insert",
+      "details": "写入文件级Macro-F1、逐类Recall、窗口辅助指标、概率聚合、训练内fit、内层选模、外层一次性测试和min–max边界。"
+    },
+    {
+      "location": "5.2.1正文",
+      "action": "insert",
+      "details": "写入LR/RF共12配置、最多144次内层拟合+4次外层重拟合，以及失败/停止标准；明确本节无模型成绩。"
+    }
+  ],
+  "figures": "none; no protocol diagram was needed because table 14/15 express the boundaries without ambiguity",
+  "untouched": "V0.5其他正文、既有图1-图3、表1-表13、5个OMML公式、封面、节和官方母版核心包保持。"
+}
