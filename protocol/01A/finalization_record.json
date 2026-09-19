@@ -1,0 +1,41 @@
+{
+  "schema_version": "01A-1.0",
+  "step_id": "01-A",
+  "status": "passed",
+  "pass_token": "01-A-V2026.09.19-5a5dd129-通过",
+  "next_allowed": "01-B",
+  "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "freeze_package_id": "FREEZE-01A-RAW-5a5dd129c91bfc64-85d31497",
+  "code_version_id": "git:4f6022e0203c41705242dcc543a4ea9dff28b12a",
+  "evidence_commit": "9b51c003123cab393ae72db52c51dd4feec7bfea",
+  "github_actions_check_run_id": 105923977890,
+  "github_actions_conclusion": "success",
+  "validated_facts": {
+    "total_mat": 177,
+    "source_mat": 161,
+    "target_mat": 16,
+    "source_counts": {
+      "OR": 77,
+      "IR": 40,
+      "B": 40,
+      "N": 4
+    },
+    "target_all_points": 256000,
+    "target_fs_hz": 32000,
+    "target_duration_s": 8,
+    "source_rpm_known": 161,
+    "target_exact_rpm": false,
+    "raw_file_duplicate_groups": 0,
+    "primary_signal_duplicate_groups": 0,
+    "nonfinite_files": 0,
+    "constant_files": 0,
+    "severe_mismatch_count": 0,
+    "independent_object_count": 177
+  },
+  "evidence_root": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "nonblocking_irregularities": "protocol/01A/observed_irregularities.json",
+  "ledgers_edited_in_A": false,
+  "word_edited_in_A": false,
+  "training_performed": false
+}

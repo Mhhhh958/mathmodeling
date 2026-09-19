@@ -1,0 +1,67 @@
+{
+  "schema_version": "01A-1.0",
+  "step_id": "01-A",
+  "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "status": "observed_nonblocking",
+  "deletion_policy": "none; all raw files retained read-only",
+  "items": [
+    {
+      "id": "OBS-01A-001",
+      "type": "channel_structure",
+      "scope": "source_12khz_de",
+      "evidence": "file_level_metadata.csv + channel_presence_summary.csv",
+      "observation": "60/60含DE；其中52含FE和BA，8个028故障文件仅含DE。8个文件为B028_0~3与IR028_0~3。",
+      "treatment": "保留；不把FE/BA缺失解释为文件损坏。RPM由文件名注记补充。"
+    },
+    {
+      "id": "OBS-01A-002",
+      "type": "channel_structure",
+      "scope": "source_48khz_de/source_48khz_normal",
+      "evidence": "channel_presence_summary.csv",
+      "observation": "48kHz DE故障52个文件均含DE、FE但无BA；4个48kHz正常文件均含DE、FE且无BA。",
+      "treatment": "保留；BA缺失作为数据结构差异登记，不静默删除。"
+    },
+    {
+      "id": "OBS-01A-003",
+      "type": "length_duration_irregularity",
+      "scope": "source_12khz_fe",
+      "evidence": "file_level_metadata.csv",
+      "observation": "44/45文件为96000点=8秒；OR014@3_1.mat为121168点=10.097333秒。",
+      "treatment": "保留实际长度；后续切片不得假定源域所有文件等长。"
+    },
+    {
+      "id": "OBS-01A-004",
+      "type": "length_duration_irregularity",
+      "scope": "source_48khz_de",
+      "evidence": "file_level_metadata.csv",
+      "observation": "47/52文件为192000点=4秒；5个文件较短：IR014_0=63788点(1.328917s)、OR007@3_0=124602点(2.595875s)、OR007@12_0=129969点(2.707688s)、OR021@3_0=128663点(2.680479s)、OR021@12_0=130549点(2.719771s)。",
+      "treatment": "保留实际长度；后续窗口策略按文件长度处理。"
+    },
+    {
+      "id": "OBS-01A-005",
+      "type": "length_duration_irregularity",
+      "scope": "source_48khz_normal",
+      "evidence": "file_level_metadata.csv",
+      "observation": "N_0.mat为243938点=5.082042秒；N_1~N_3为384000点=8秒。",
+      "treatment": "保留；不补齐、不截断原始数据。"
+    },
+    {
+      "id": "OBS-01A-006",
+      "type": "basename_collision",
+      "scope": "source",
+      "evidence": "file_level_metadata.csv",
+      "observation": "源域存在52组重复basename，涉及145个文件；文件字节SHA和主信号内容SHA均未形成重复组。",
+      "treatment": "独立对象ID必须使用data/raw相对路径，禁止用basename作为唯一ID。"
+    },
+    {
+      "id": "OBS-01A-007",
+      "type": "target_missing_by_design",
+      "scope": "target_32khz",
+      "evidence": "file_level_metadata.csv + target_label_provenance.csv",
+      "observation": "A-P各自只有单一256000x1信号变量，无DE/FE/BA命名、无官方真值标签、无逐时精确RPM。",
+      "treatment": "truth_status=unknown；约600rpm仅作题面近似工况；历史预测全部隔离为非官方真值。"
+    }
+  ],
+  "blocking_severe_mismatches": 0
+}
