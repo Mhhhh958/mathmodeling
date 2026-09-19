@@ -1,0 +1,35 @@
+{
+  "schema_version": "00D-0.1-blocked",
+  "step_id": "00-D",
+  "status": "blocked",
+  "pass_token": null,
+  "next_allowed": "00-D",
+  "blocker_id": "P0-00D-001",
+  "required_source": {
+    "filename": "第二十一届华为杯研赛论文Word标准模板(1).docx",
+    "role": "official highest-priority Word format master",
+    "requirement": "Must be read and copied before cleaning example content; blank reconstruction or generated-paper substitution is prohibited."
+  },
+  "evidence": {
+    "prior_internal_ledger": "Existing generated paper records C-0002 as 第二十一届华为杯研赛论文Word标准模板(1).docx and marks it verified for formatting/structure only.",
+    "official_public_notice": "https://cpipc.acge.org.cn/pw/news/detail/2c90801791c6c0a80191f9a6b0366533?page=5",
+    "official_attachment3_url": "https://cpipc.acge.org.cn/sysFile/downFile.do?fileId=d0a356b420a6490485ec067de3820957",
+    "current_access_check": [
+      "Current conversation files contain only the E-problem PDF.",
+      "Library exact-title search did not return the official template source file.",
+      "Git repository current tree does not contain the template Word file.",
+      "Official web attachment can be identified but its raw binary cannot be materialized into the current file-editing container."
+    ]
+  },
+  "prohibited_fallbacks": [
+    "Do not create V0.1 from a blank Word document.",
+    "Do not claim a generated paper descendant is the official template.",
+    "Do not invent the template SHA256.",
+    "Do not issue PASS_TOKEN until the source bytes are actually available and rendered/verified."
+  ],
+  "required_resolution": [
+    "Upload/attach the exact official Word template into the current chat/project, or make that exact source file accessible through Files.",
+    "Then materialize it, compute SHA256, extract styles/sections, duplicate-and-clean, render V0.1, and complete 00-D validation."
+  ],
+  "deliverables_created": false
+}
