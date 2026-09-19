@@ -1,0 +1,65 @@
+{
+  "schema_version": "00C-question-blueprint-1.0",
+  "step_id": "05-A",
+  "question_id": "Q2A",
+  "status": "frozen_before_execution",
+  "delivery_from_problem": "冻结OR/IR/B/N四分类的文件级分组训练—验证—测试协议、主次评价指标、窗口到文件聚合、候选基线、计算预算与停止/失败标准，为问题2后续训练提供不可事后修改的评价边界。",
+  "core_contradiction": "04-A产生733个源窗口但仅来自49个独立文件，且N类只有4个独立文件；若按窗口随机划分或机械五折，会产生同源泄漏或使正常类在部分折中缺失，并夸大有效样本量。",
+  "baseline": {
+    "method": "按independent_object_id分组；采用4个外层文件级留出折，每折恰留1个N文件作外层测试；每个外层训练池再做3个内层分组验证折，每个内层验证恰含1个剩余N文件。",
+    "why_valid": "4个N文件决定外层最多只能自然形成4个含N的互斥测试折；外层剩余3个N文件又天然对应3个内层验证折，避免虚构五折。",
+    "observed_limitations": [
+      "N类仅4个文件，任何文件级泛化结论方差都会较大；外层仅4折，不报告窗口级置信区间冒充独立样本区间。",
+      "OR/IR/B/N文件数为21/12/12/4，类别不均衡必须在训练边界内处理。",
+      "同一MAT文件的重叠窗口高度相关，窗口级准确率/F1只能作辅助。"
+    ]
+  },
+  "method_choice_reason": "采用4×3嵌套分组协议：外层4折用于一次性文件级泛化评价，内层3折仅用于候选模型/超参数选择。故障类按预冻结随机种子生成4个外层平衡文件组；每个外层训练池再按固定种子分成3个内层验证组。任何插补、缩放、特征筛选和类别权重只在对应内层训练组拟合。",
+  "key_improvements": [
+    {
+      "id": "I1",
+      "change": "把N类4文件约束直接写进4外层×3内层嵌套分组协议，而不是机械五折。",
+      "target_problem": "保证每个外层测试和每个内层验证都真实包含独立N文件。",
+      "evidence_plan": "输出全部外层/内层文件清单与每类文件数，逐折检查group交集为0。"
+    },
+    {
+      "id": "I2",
+      "change": "主指标冻结为文件级Macro-F1；文件预测由同一文件所有窗口的四类概率均值后argmax得到，窗口级指标仅辅助。",
+      "target_problem": "避免长文件或高重叠窗口数量主导评价，并让指标单位与真实独立对象一致。",
+      "evidence_plan": "用独立脚本构造示例窗口概率，复算文件聚合、混淆矩阵、各类召回和Macro-F1。"
+    },
+    {
+      "id": "I3",
+      "change": "冻结训练边界与预算：学习型预处理、类别不平衡处理和超参数选择只看内层训练/验证；外层测试不参与模型选择；候选配置数和拟合次数设上限。",
+      "target_problem": "防止多次试验后挑最高测试结果。",
+      "evidence_plan": "输出model_selection_protocol.json与compute_budget.json，并在后续训练脚本中作为硬约束读取。"
+    }
+  ],
+  "primary_metrics_and_fairness": {
+    "primary_metric": "outer-test file-level Macro-F1",
+    "secondary_metrics": [
+      "file-level per-class recall",
+      "file-level confusion matrix",
+      "file-level accuracy",
+      "window-level Macro-F1 and per-class recall as auxiliary only"
+    ],
+    "aggregation": "for each file, average per-window predicted probability vector across all its windows; predicted file class=argmax(mean_probability). No window-count weighting across files in file-level metrics.",
+    "interval_reporting": "report the four predeclared outer-fold file-level scores individually plus median and min–max; with only four outer folds, do not label this as a statistical confidence interval.",
+    "comparison_scope": "all candidate models use identical frozen outer/inner group lists and the same 26 common features unless a later A-step explicitly freezes an alternative feature branch.",
+    "fairness_constraints": [
+      "same independent_object_id never crosses train/validation/test inside a split",
+      "outer test is untouched during inner model selection",
+      "imputation/scaling/selection/class-balancing parameters are fit from training groups only",
+      "window-level metrics cannot replace file-level primary conclusions"
+    ]
+  },
+  "key_tables_and_figures": [
+    "4个外层测试折文件/类别统计",
+    "12个内层训练—验证清单",
+    "模型选择与指标协议表",
+    "计算预算与停止/失败标准"
+  ],
+  "core_conclusion": "只有实际脚本确认全部外层/内层group零交集、每折OR/IR/B/N覆盖完整、N类分布符合4外层×3内层设计且评价聚合复算无歧义，才冻结该协议供后续模型训练。",
+  "next_question_interface": "向05-B/后续问题2训练提供outer_split_manifest.csv、inner_split_manifest.csv、split_summary.csv、evaluation_protocol.json、baseline_candidates.json、compute_budget.json和04-A X/y/groups接口。",
+  "evidence_guard": "不得把733个窗口当733个独立训练对象来声明泛化样本量；不得根据外层测试结果选择模型或超参数；不得宣称五折交叉验证。"
+}
