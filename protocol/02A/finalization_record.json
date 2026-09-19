@@ -1,0 +1,99 @@
+{
+  "schema_version": "02A-1.0",
+  "step_id": "02-A",
+  "status": "passed",
+  "pass_token": "02-A-V2026.09.20-f9ed0ecc-通过",
+  "next_allowed": "02-B",
+  "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
+  "freeze_package_id": "FREEZE-02A-6f36d0b4",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "blueprint_commit": "4ba829a40cf9526f95677c9f6d8b75958106f643",
+  "code_version_id": "git:60d5e453b9e4d007971dac95bf1421d6ff920b67",
+  "evidence_commit": "f4082f1f22553a2f11d8952957755af164a729ce",
+  "github_actions_check_run_id": 105927559135,
+  "github_actions_conclusion": "success",
+  "selection": {
+    "full_ranking": [
+      {
+        "subgroup": "source_12khz_fe",
+        "distance": 0.8599550818244359,
+        "rank": 1
+      },
+      {
+        "subgroup": "source_12khz_de",
+        "distance": 0.8964830009225436,
+        "rank": 2
+      },
+      {
+        "subgroup": "source_48khz_de",
+        "distance": 0.9472915828793357,
+        "rank": 3
+      }
+    ],
+    "leave_one_load_winner_counts": {
+      "source_12khz_fe": 4
+    },
+    "MVP": {
+      "groups": [
+        "source_12khz_fe",
+        "source_48khz_normal"
+      ],
+      "files": 49,
+      "class_counts": {
+        "OR": 21,
+        "IR": 12,
+        "B": 12,
+        "N": 4
+      },
+      "loads_hp": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fault_sizes_in": [
+        0.007,
+        0.014,
+        0.021
+      ]
+    },
+    "alternative": {
+      "groups": [
+        "source_12khz_fe",
+        "source_12khz_de",
+        "source_48khz_normal"
+      ],
+      "files": 109,
+      "class_counts": {
+        "OR": 49,
+        "IR": 28,
+        "B": 28,
+        "N": 4
+      },
+      "loads_hp": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fault_sizes_in": [
+        0.007,
+        0.014,
+        0.021,
+        0.028
+      ]
+    }
+  },
+  "limitations": [
+    "The three fault-subgroup distances are close; 12kHz FE is only modestly closer, so no significance claim is made.",
+    "All source fault groups run around 1760–1770 rpm while target is only approximately 600 rpm; exact target order normalization is unavailable.",
+    "Target sensor position and exact bearing model are not established by the 01-A freeze, so no DE/FE or bearing-type advantage is scored.",
+    "Normal class has only 4 independent files and all are from the 48kHz normal/DE acquisition setting, creating unavoidable class-versus-acquisition confounding.",
+    "MVP omits 0.028-inch faults; the 109-file alternative restores 0.028 coverage by adding source_12khz_de.",
+    "Amplitude gap is reported but excluded from selection distance because target/source sensor gain and mounting comparability is not established."
+  ],
+  "no_external_public_data": true,
+  "ledgers_edited_in_A": false,
+  "word_edited_in_A": false,
+  "final_classifier_training": false
+}

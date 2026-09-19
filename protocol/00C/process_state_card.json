@@ -1,9 +1,9 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r4",
-  "updated_utc": "2026-09-19T16:11:01.132580Z",
-  "CURRENT_ALLOWED_STEP": "02-A",
-  "LAST_PASS_TOKEN": "01-B-V2026.09.20-6267e371-通过",
+  "state_version": "2026.09.20-r5",
+  "updated_utc": "2026-09-19T16:24:00Z",
+  "CURRENT_ALLOWED_STEP": "02-B",
+  "LAST_PASS_TOKEN": "02-A-V2026.09.20-f9ed0ecc-通过",
   "LATEST_WORD": {
     "version": "V0.2",
     "artifact_id": "WORD-V0.2-6267e371",
@@ -15,32 +15,33 @@
     "run_id": "run_01-B_20260919T161101132580Z_f5b4c3cb_d2885e53"
   },
   "LATEST_FREEZE_PACKAGE": {
-    "step_id": "01-A",
-    "freeze_package_id": "FREEZE-01A-RAW-5a5dd129c91bfc64-85d31497",
+    "step_id": "02-A",
+    "freeze_package_id": "FREEZE-02A-6f36d0b4",
     "status": "passed",
-    "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+    "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
     "raw_data_version_id": "RAW-5a5dd129c91bfc64",
-    "path": "protocol/01A/latest_freeze_package.json",
-    "content_sha256": "bfee1b9a21e097d94e05398eaccdb70a67862ccda99ec2ef9c3c113536dd7b4e"
+    "path": "protocol/02A/latest_freeze_package.json",
+    "content_sha256": "f9ed0ecc404eb9611e9352c97749eee247a8cf7306c42bb65d2b032e8c8d938b"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "02-A",
+  "NEXT_ALLOWED": "02-B",
   "previous_gate": {
-    "step": "01-A",
-    "pass_token": "01-A-V2026.09.19-5a5dd129-通过",
-    "next_allowed": "01-B"
+    "step": "01-B",
+    "pass_token": "01-B-V2026.09.20-6267e371-通过",
+    "next_allowed": "02-A"
   },
   "current_step_record": {
-    "step": "01-B",
+    "step": "02-A",
     "status": "passed",
-    "pass_token": "01-B-V2026.09.20-6267e371-通过",
-    "next_allowed": "02-A",
-    "run_id": "run_01-B_20260919T161101132580Z_f5b4c3cb_d2885e53",
-    "code_version_id": "CODE-ca1f354807ca3730",
+    "pass_token": "02-A-V2026.09.20-f9ed0ecc-通过",
+    "next_allowed": "02-B",
+    "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
     "raw_data_version_id": "RAW-5a5dd129c91bfc64",
-    "word_sha256": "6267e3715abb3243a49ace14339475b4f28b6d476d66a1b7ef3f8953a263d795",
-    "B_delivery_library_path": "/数学建模/01B/B_delivery_01B.json",
-    "validation_record": "protocol/01B/validation_record.json"
+    "code_version_id": "git:60d5e453b9e4d007971dac95bf1421d6ff920b67",
+    "evidence_commit": "f4082f1f22553a2f11d8952957755af164a729ce",
+    "blueprint_commit": "4ba829a40cf9526f95677c9f6d8b75958106f643",
+    "freeze_package_id": "FREEZE-02A-6f36d0b4",
+    "validation_record": "protocol/02A/validation_record.json"
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -50,11 +51,14 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/01B/validation_record.json",
+    "latest_validation_record": "protocol/02A/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
     "latest_word_library_path": "/数学建模/01B/2025华为杯E题论文_步骤01_V0.2.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
     "latest_01A_data_manifest": "protocol/01A/data_manifest.json",
-    "latest_01B_delivery": "protocol/01B/B_delivery.json"
+    "latest_01B_delivery": "protocol/01B/B_delivery.json",
+    "latest_02A_freeze": "protocol/02A/latest_freeze_package.json",
+    "latest_02A_blueprint": "protocol/02A/question1_argument_blueprint.json",
+    "latest_02A_run": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4"
   }
 }
