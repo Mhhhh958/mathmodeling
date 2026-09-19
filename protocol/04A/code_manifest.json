@@ -1,0 +1,36 @@
+{
+  "schema_version": "04A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "blueprint_commit": "39978d067a628c3e11934d031ece3a3b3c9a841c",
+  "tracked_code": [
+    {
+      "path": "scripts/step04a_window_feature_extraction.py",
+      "git_blob_sha": "7dc102994424025aa2c4af1e639160c3bb1cdedd"
+    },
+    {
+      "path": ".github/workflows/step04a_window_feature_extraction.yml",
+      "git_blob_sha": "d1e2c3f0cf69448377492ebb0e39ad69a5740805"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/04A/question1C_argument_blueprint.json",
+      "git_blob_sha": "dc536c690e49db7954b10db915db00c1e29f2c9e"
+    },
+    {
+      "path": "protocol/04A/run_config.json",
+      "git_blob_sha": "9f3dd6a19f7eaa483180746046155a37825bdba1"
+    }
+  ],
+  "constraints": [
+    "02-A MVP source only",
+    "target A-P truth unknown",
+    "no classifier training",
+    "no Word editing",
+    "no five-ledger edits in A",
+    "no fitted imputer/scaler/selector",
+    "group boundary = independent_object_id"
+  ]
+}
