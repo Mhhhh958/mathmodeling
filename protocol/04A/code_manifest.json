@@ -7,7 +7,7 @@
   "tracked_code": [
     {
       "path": "scripts/step04a_window_feature_extraction.py",
-      "git_blob_sha": "7dc102994424025aa2c4af1e639160c3bb1cdedd"
+      "git_blob_sha": "491bfebb79bde431af50f236504bfee996cd0d1a"
     },
     {
       "path": ".github/workflows/step04a_window_feature_extraction.yml",
@@ -32,5 +32,16 @@
     "no five-ledger edits in A",
     "no fitted imputer/scaler/selector",
     "group boundary = independent_object_id"
+  ],
+  "failed_attempts": [
+    {
+      "code_commit": "1d280348e1f3ebd023f8eed38554056daac73a4b",
+      "evidence_commit": "8072a3f",
+      "github_actions_check_run_id": 105945186103,
+      "run_id": "run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69",
+      "status": "validation_failed",
+      "issue": "Independent spectral-centroid validation added EPS to a positive denominator while production feature used the exact positive sum, producing a 1.19e-7 validation-only discrepancy.",
+      "resolution": "Kept the 1e-10 validation tolerance and corrected the independent recomputation to the same stated formula sum(fP)/sum(P), using zero fallback only when sum(P)<=EPS. No feature-extraction formula or window parameter was changed."
+    }
   ]
 }

@@ -274,7 +274,7 @@ def manual_recalc_three(seg):
  nper=min(WELCH_NPER,len(z))
  f,p=welch(z,fs=COMMON_FS,window="hann",nperseg=nper,noverlap=nper//2,detrend=False,scaling="density")
  m=f<=FEATURE_FMAX; f=f[m];p=p[m]
- centroid=float(np.sum(f*p)/(np.sum(p)+EPS))
+ psum=float(np.sum(p)); centroid=float(np.sum(f*p)/psum) if psum>EPS else 0.0
  return {"rms":rms,"crest_factor":crest,"spectral_centroid_hz":centroid}
 
 def main():
