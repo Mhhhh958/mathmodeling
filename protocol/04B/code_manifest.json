@@ -1,0 +1,34 @@
+{
+  "schema_version": "04B-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "direct_container",
+  "code_version_id": "CODE-cc093a709cae50fe",
+  "content_sha256": "cc093a709cae50fe8e35a7397d6a9c93ec494074f792a859bfdc0e65f3be1886",
+  "tracked_code": [
+    {
+      "path": "/mnt/data/04B_work/edit_word_04b.py",
+      "sha256": "4a19da9fbfb5863a9052707c44cb863a305d4827cdc8057f0bd285689ef9ae01"
+    },
+    {
+      "path": "/mnt/data/04B_work/fix_summary_location_04b.py",
+      "sha256": "3d839278d80abf915fb68e3ec02bbf81336e1d4e7ba310a8afc1992627e30ae0"
+    },
+    {
+      "path": "/mnt/data/04B_work/fix_caption_numbering_04b.py",
+      "sha256": "53d2d45789d59fa0bbb31a570712c5632017355534251f58af084482faf813d8"
+    },
+    {
+      "path": "/mnt/data/04B_work/validate_word_04b.py",
+      "sha256": "034837cdd0eb327b965159063165484a0de12819618ebb3fe352d85044515cac"
+    }
+  ],
+  "source_A_freeze_sha256": "d60f9e54ae8aa2e216c4d4540f0c4fda90f64464fc16769c4fa428b41b1bd567",
+  "source_word_sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+  "constraints": [
+    "incremental Word edit only",
+    "only passed 04-A freeze plus latest V0.4",
+    "no training/tuning/model selection",
+    "no unfrozen correlation heatmap",
+    "preserve 00-D master package parts"
+  ]
+}
