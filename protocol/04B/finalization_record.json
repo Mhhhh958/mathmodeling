@@ -1,0 +1,40 @@
+{
+  "schema_version": "04B-1.0",
+  "step_id": "04-B",
+  "status": "passed",
+  "pass_token": "04-B-V2026.09.20-dfbb5d0e-通过",
+  "next_allowed": "05-A",
+  "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e",
+  "source_A_freeze_package_id": "FREEZE-04A-3e3b97c0",
+  "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
+  "output_word_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+  "output_word_library_file_id": "libfile_c9d50e21e7d88191803a73b277461e12",
+  "validation_record": "protocol/04B/validation_record.json",
+  "delivery_record": "protocol/04B/B_delivery.json",
+  "rendered_pages": 19,
+  "open_P0": [],
+  "object_counts": {
+    "before": {
+      "media": 7,
+      "drawing": 6,
+      "vml_pict": 1,
+      "math": 5,
+      "math_para": 5,
+      "tables": 10,
+      "sections": 6
+    },
+    "after": {
+      "media": 7,
+      "drawing": 6,
+      "vml_pict": 1,
+      "math": 5,
+      "math_para": 5,
+      "tables": 14,
+      "sections": 6
+    }
+  },
+  "word_rebuilt_from_plain_text": false,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
