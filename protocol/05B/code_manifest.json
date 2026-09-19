@@ -1,0 +1,30 @@
+{
+  "schema_version": "05B-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "direct_container",
+  "code_version_id": "CODE-09bb7e36d9ba3206",
+  "content_sha256": "09bb7e36d9ba32069ac1e2370b5034af7cd69f8e687f285c056803cd4c24953a",
+  "tracked_code": [
+    {
+      "path": "/mnt/data/05B_work/edit_word_05b.py",
+      "sha256": "419dd59c4b6e591bc3596e606d6a482c5e6ef949af0843af833008f8a3a65695"
+    },
+    {
+      "path": "/mnt/data/05B_work/patch_caption_05b.py",
+      "sha256": "63cabc3d943a240da6948bba85976a394b065563d8f3c2888a6e59901432035d"
+    },
+    {
+      "path": "/mnt/data/05B_work/validate_word_05b.py",
+      "sha256": "c85a401ec6593e4e23e0adb26b9b5b085eced272f5fdb555b4beabde8f849697"
+    }
+  ],
+  "source_A_freeze_sha256": "338d8e27604c26061d9e93610b6d299457579f0d113f9a695ec1ab8c9eae6671",
+  "source_word_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+  "constraints": [
+    "incremental Word edit only",
+    "only passed 05-A freeze plus latest V0.5",
+    "no training/tuning/model selection",
+    "no model scores",
+    "preserve 00-D master parts and existing media"
+  ]
+}
