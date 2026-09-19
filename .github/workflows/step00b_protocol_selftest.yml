@@ -1,0 +1,46 @@
+name: step00b-protocol-selftest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/step00b_protocol_selftest.yml'
+      - 'scripts/protocol/step00b_selftest_run.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-00b:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen baseline dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r protocol/00B/requirements-lock-00b.txt
+      - name: Validate contract helpers
+        run: python scripts/protocol/run_contract.py --selftest
+      - name: Validate baseline package
+        run: python scripts/protocol/validate_00b_baseline.py
+      - name: Create real 00-B validation run
+        run: python scripts/protocol/step00b_selftest_run.py
+      - name: Commit validation evidence
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs
+          if git diff --cached --quiet; then
+            echo 'No validation evidence to commit.'
+          else
+            git commit -m 'Add STEP00-B protocol validation evidence [skip ci]'
+            git push
+          fi

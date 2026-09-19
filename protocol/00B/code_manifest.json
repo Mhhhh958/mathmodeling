@@ -4,7 +4,6 @@
   "mode": "git",
   "repository": "Mhhhh958/mathmodeling",
   "code_version_rule": "git commit SHA of the exact checked-out tree used for the run",
-  "baseline_package_commit": "d19cd711f73b29dd03e8b0f9798f1145e57d4180",
   "tracked_protocol_code": [
     {
       "path": "scripts/protocol/run_contract.py",
@@ -13,9 +12,17 @@
     {
       "path": "scripts/protocol/validate_00b_baseline.py",
       "git_blob_sha": "8947066c8fac468a724c6c1dea9bb3549e9a27fc"
+    },
+    {
+      "path": "scripts/protocol/step00b_selftest_run.py",
+      "git_blob_sha": "8e941f6c2aa7362bdb1474489eb77feffe972d9d"
+    },
+    {
+      "path": ".github/workflows/step00b_protocol_selftest.yml",
+      "git_blob_sha": "49148dcb150a8448348665efbca0fba99c25ecd3"
     }
   ],
-  "formal_code_rule": "Every analysis/training/plotting file actually executed by this process must be added here or to the run-specific code manifest before formal execution.",
+  "formal_code_rule": "Every analysis/training/plotting file actually executed by this process must be present in the run-specific code manifest before formal execution.",
   "chat_direct_fallback": {
     "code_version_id_rule": "CODE-<first16(code_manifest_sha256)>",
     "per_file_sha256_required": true
