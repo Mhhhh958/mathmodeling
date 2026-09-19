@@ -1,0 +1,39 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "04-B",
+  "status": "passed",
+  "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e",
+  "source_A_freeze_package_id": "FREEZE-04A-3e3b97c0",
+  "source_A_run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+  "latest_word_before": {
+    "version": "V0.4",
+    "sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+    "path": "/数学建模/03B/2025华为杯E题论文_步骤03_V0.4.docx",
+    "library_file_id": "libfile_694b330a482c81918ed25fbd80265d06"
+  },
+  "new_word_after": {
+    "version": "V0.5",
+    "sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+    "path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
+    "library_file_id": "libfile_c9d50e21e7d88191803a73b277461e12"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "/数学建模/04B/本步论文变更单_04B.json",
+  "new_figures": [],
+  "new_tables": [
+    "表10 切片规则与处理前后数量守恒",
+    "表11 特征构建定义、单位与默认使用边界",
+    "表12 代表性公共特征的分布与极端值审计",
+    "表13 问题2直接读取的数据接口与边界"
+  ],
+  "validation_record": "protocol/04B/validation_record.json",
+  "code_version_id": "CODE-cc093a709cae50fe",
+  "run_config_sha256": "8e26836a8095cdca7b74d6c2594ebb81a1a012310e3629ddfad68933dac3fe37",
+  "binding_digest": "48bbc0c6a7914fbf47b5ff1862df74ee5c0c43d9d7954ba27481db16cb0b8996",
+  "pass_token": "04-B-V2026.09.20-dfbb5d0e-通过",
+  "next_allowed": "05-A"
+}
