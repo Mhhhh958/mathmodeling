@@ -1,0 +1,27 @@
+{
+  "schema_version": "00D-1.0",
+  "step_id": "00-D",
+  "official_template": {
+    "filename": "第二十一届华为杯研赛论文Word标准模板(1).docx",
+    "sha256": "2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a",
+    "size_bytes": 1020166,
+    "pages_parsed": 10,
+    "pages_rendered_by_libreoffice": 9,
+    "role": "highest_priority_format_master"
+  },
+  "mother_draft": {
+    "filename": "2025华为杯E题论文_母稿_V0.1.docx",
+    "library_path": "/数学建模/00D/2025华为杯E题论文_母稿_V0.1.docx",
+    "library_file_id": "libfile_2b520646de108191acd252cf0ccc192b",
+    "sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+    "size_bytes": 673563,
+    "creation_method": "copy official template then clean/edit in place",
+    "blank_reconstruction": false
+  },
+  "traceability": {
+    "format_master_library_path": "/数学建模/00D/论文格式母版_00D.md",
+    "style_index_library_path": "/数学建模/00D/格式样式索引_00D.csv",
+    "hash_record_library_path": "/数学建模/00D/模板与母稿哈希_00D.json",
+    "structural_validation_library_path": "/数学建模/00D/结构验证_00D.json"
+  }
+}

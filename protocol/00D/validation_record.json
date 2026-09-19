@@ -1,0 +1,41 @@
+{
+  "schema_version": "00D-1.0",
+  "step_id": "00-D",
+  "status": "passed",
+  "pass_token": "00-D-V2026.09.19-eb4a5f0a-通过",
+  "next_allowed": "01-A",
+  "run_id": "run_00-D_20260919T154254724640Z_201f7b70_2bed85de",
+  "binding_digest": "201f7b7099fd61968d27d74aaf1bd95bdfa6a1e89f3cdaf3d9c70bcebe0230b1",
+  "code_version_id": "CODE-1f4007a144fb8318",
+  "template_sha256": "2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a",
+  "mother_draft_sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+  "checks": {
+    "actual_official_template_read": true,
+    "copied_from_official_template_not_blank": true,
+    "template_styles_traceable": true,
+    "styles_xml_byte_identical": true,
+    "numbering_xml_byte_identical": true,
+    "theme_and_font_table_preserved": true,
+    "section_count_preserved_6": true,
+    "page_setup_preserved": true,
+    "cover_preserved": true,
+    "toc_field_preserved": true,
+    "four_question_structure": true,
+    "sample_abstract_body_removed": true,
+    "sample_qr_removed": true,
+    "sample_formula_removed": true,
+    "sample_reference_entries_removed": true,
+    "sample_appendix_code_removed": true,
+    "no_fictional_results": true,
+    "rendered_and_all_pages_visually_checked": true,
+    "chinese_fonts_no_missing_glyphs": true,
+    "page_numbers_not_broken": true,
+    "no_clipping_or_overlap_observed": true
+  },
+  "render_evidence": {
+    "renderer": "LibreOffice 25.2.3.2",
+    "rendered_pages": 9,
+    "all_pages_inspected": true
+  },
+  "persistent_delivery_root": "/数学建模/00D"
+}

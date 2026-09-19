@@ -1,0 +1,32 @@
+{
+  "schema_version": "00D-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_00-D_20260919T154254724640Z_201f7b70_2bed85de",
+  "step_id": "00-D",
+  "status": "completed",
+  "execution_mode": "chat_direct_for_uploaded_docx",
+  "binding": {
+    "code_version_id": "CODE-1f4007a144fb8318",
+    "data_version_id": "TEMPLATE-2381f21f0ae471c0",
+    "run_config_sha256": "d1e9cb7ae792d25a51e40a00e1e2900c2ca27e990c951a5d403c6f02df042ed6",
+    "seed": 20260919,
+    "environment_sha256": "f0d8363ffed06d4320b7ec9b68a450ef3b308d3278e93bcdeac70f358852ab1e",
+    "binding_digest": "201f7b7099fd61968d27d74aaf1bd95bdfa6a1e89f3cdaf3d9c70bcebe0230b1"
+  },
+  "code": {
+    "code_manifest_sha256": "1f4007a144fb831871de6ec477d589383e6b13da14d3b65fa6a2584f4f2a269a",
+    "persisted_library_files": [
+      "/数学建模/00D/build_00d_v01.py",
+      "/数学建模/00D/patch_toc_00d.py",
+      "/数学建模/00D/code_manifest_00D.json"
+    ]
+  },
+  "source_template": {
+    "sha256": "2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a"
+  },
+  "output": {
+    "mother_draft_sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+    "output_tree_sha256": "f3dd4c9bc3a1f6edefeb9c30fd56aa686ade22c449f87ffa714713fdf81ee405",
+    "library_root": "/数学建模/00D"
+  }
+}

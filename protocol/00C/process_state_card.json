@@ -1,31 +1,36 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.19-r1",
-  "updated_utc": "2026-09-19T15:21:00Z",
-  "CURRENT_ALLOWED_STEP": "00-D",
-  "LAST_PASS_TOKEN": "00-C-V2026.09.19-r1-通过",
-  "LATEST_WORD": null,
+  "state_version": "2026.09.19-r2",
+  "updated_utc": "2026-09-19T15:43:00Z",
+  "CURRENT_ALLOWED_STEP": "01-A",
+  "LAST_PASS_TOKEN": "00-D-V2026.09.19-eb4a5f0a-通过",
+  "LATEST_WORD": {
+    "version": "V0.1",
+    "artifact_id": "WORD-V0.1-eb4a5f0a",
+    "library_path": "/数学建模/00D/2025华为杯E题论文_母稿_V0.1.docx",
+    "library_file_id": "libfile_2b520646de108191acd252cf0ccc192b",
+    "sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+    "source_template_filename": "第二十一届华为杯研赛论文Word标准模板(1).docx",
+    "source_template_sha256": "2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a",
+    "run_id": "run_00-D_20260919T154254724640Z_201f7b70_2bed85de"
+  },
   "LATEST_FREEZE_PACKAGE": null,
-  "OPEN_P0": [
-    {
-      "id": "P0-00D-001",
-      "title": "官方Word模板原始文件当前不可读取",
-      "blocking": true,
-      "required_file": "第二十一届华为杯研赛论文Word标准模板(1).docx",
-      "resolution": "将该官方Word模板原始文件重新上传到当前对话/项目，使其可被实际读取和物化后再执行00-D。"
-    }
-  ],
-  "NEXT_ALLOWED": "00-D",
+  "OPEN_P0": [],
+  "NEXT_ALLOWED": "01-A",
   "previous_gate": {
-    "step": "00-B",
-    "pass_token": "00-B-V2026.09.19-debcd09-通过",
-    "next_allowed": "00-C"
+    "step": "00-C",
+    "pass_token": "00-C-V2026.09.19-r1-通过",
+    "next_allowed": "00-D"
   },
   "current_step_record": {
     "step": "00-D",
-    "status": "blocked",
-    "pass_token": null,
-    "reason": "Required official Word template source bytes are not currently accessible; V0.1 may not be reconstructed from a blank document or substituted with a generated descendant."
+    "status": "passed",
+    "pass_token": "00-D-V2026.09.19-eb4a5f0a-通过",
+    "run_id": "run_00-D_20260919T154254724640Z_201f7b70_2bed85de",
+    "code_version_id": "CODE-1f4007a144fb8318",
+    "template_sha256": "2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a",
+    "word_sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+    "validation_record": "protocol/00D/validation_record.json"
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -35,7 +40,8 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/00C/validation_record.json",
-    "latest_00D_blocker": "protocol/00D/blocker_record.json"
+    "latest_validation_record": "protocol/00D/validation_record.json",
+    "latest_00D_blocker": "protocol/00D/blocker_record.json",
+    "latest_word_library_path": "/数学建模/00D/2025华为杯E题论文_母稿_V0.1.docx"
   }
 }

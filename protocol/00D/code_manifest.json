@@ -1,0 +1,19 @@
+{
+  "schema_version": "00D-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "chat_direct",
+  "code_version_id": "CODE-1f4007a144fb8318",
+  "manifest_sha256": "1f4007a144fb831871de6ec477d589383e6b13da14d3b65fa6a2584f4f2a269a",
+  "files": [
+    {
+      "path": "/数学建模/00D/build_00d_v01.py",
+      "library_file_id": "libfile_66f167b48aa0819187eec80e52e8f7e9",
+      "sha256": "b3a79a5ec854966627deeb8fad86d32dadb56e402b3fd8ff70d29b4a5626de41"
+    },
+    {
+      "path": "/数学建模/00D/patch_toc_00d.py",
+      "library_file_id": "libfile_188cba4a0a648191a6bfd5b9556348e3",
+      "sha256": "8e4eb16e9c02d94bac96ddde04ccc1e89cfe077bff4efcb4f510427586c12c90"
+    }
+  ]
+}

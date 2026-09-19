@@ -1,1 +1,2 @@
 item_id,timestamp_utc,step_id,item_type,severity,claim_or_problem,evidence_status,evidence_refs,owner_status,resolution,affects_steps,opened_run_id,closed_run_id,notes
+P0-00D-001,2026-09-19T15:43:00Z,00-D,source_availability,P0,官方Word模板原始文件当前不可读取,resolved,template_sha256:2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a; word_sha256:eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55; run_id:run_00-D_20260919T154254724640Z_201f7b70_2bed85de,closed,用户已上传原始模板；完成真实读取、复制清理、渲染与结构验收,00-D;01-A,,run_00-D_20260919T154254724640Z_201f7b70_2bed85de,此前阻塞已关闭

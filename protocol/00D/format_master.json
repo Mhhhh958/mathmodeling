@@ -1,0 +1,98 @@
+{
+  "schema_version": "00D-1.0",
+  "source_template_sha256": "2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a",
+  "page_setup": {
+    "size": "A4",
+    "width_cm": 21.001,
+    "height_cm": 29.7,
+    "margins_cm": {
+      "top": 2.501,
+      "bottom": 2.501,
+      "left": 2.501,
+      "right": 2.501
+    },
+    "header_distance_cm": 1.501,
+    "footer_distance_cm": 1.75
+  },
+  "sections": {
+    "count": 6,
+    "preserved_from_template": true
+  },
+  "pagination": {
+    "page_field_preserved": true,
+    "footer_based": true
+  },
+  "toc": {
+    "word_field_code": "TOC \\\\o \"1-3\" \\\\h \\\\z \\\\u",
+    "field_preserved": true
+  },
+  "style_integrity": {
+    "styles_xml_byte_identical": true,
+    "numbering_xml_byte_identical": true,
+    "theme1_xml_byte_identical": true,
+    "fontTable_xml_byte_identical": true
+  },
+  "key_styles": [
+    {
+      "name": "Normal",
+      "use": "正文",
+      "source": "official template",
+      "observed": "12pt; justified; first-line indent"
+    },
+    {
+      "name": "Heading 1",
+      "use": "一级标题",
+      "source": "official template",
+      "observed": "14pt; 黑体; centered; keep-next"
+    },
+    {
+      "name": "Heading 2",
+      "use": "二级标题",
+      "source": "official template",
+      "observed": "12pt bold"
+    },
+    {
+      "name": "Heading 3",
+      "use": "三级标题",
+      "source": "official template",
+      "observed": "12pt"
+    },
+    {
+      "name": "图注",
+      "use": "图题/图注",
+      "source": "official template"
+    },
+    {
+      "name": "表注",
+      "use": "表题/表注",
+      "source": "official template",
+      "observed": "11pt bold centered"
+    },
+    {
+      "name": "参考文献",
+      "use": "参考文献条目",
+      "source": "official template"
+    },
+    {
+      "name": "三线表",
+      "use": "三线表",
+      "source": "official template"
+    },
+    {
+      "name": "MTDisplayEquation",
+      "use": "展示公式",
+      "source": "official template"
+    },
+    {
+      "name": "MTEBNumberedEquation",
+      "use": "带编号公式",
+      "source": "official template"
+    },
+    {
+      "name": "TOC1/TOC2/TOC3",
+      "use": "目录层级",
+      "source": "official template"
+    }
+  ],
+  "rule": "Future B steps must inherit V0.1 mother draft and these official-template styles; do not overwrite by experience."
+}

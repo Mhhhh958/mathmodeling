@@ -1,1 +1,2 @@
 item_id,timestamp_utc,step_id,citation_key,source_type,title_or_name,authors_or_org,year,url_or_identifier,accessed_utc,claim_supported,word_location,status,notes
+C-00D-001,2026-09-19T15:43:00Z,00-D,OFFICIAL-WORD-TEMPLATE,official_template,第二十一届华为杯研赛论文Word标准模板(1).docx,中国研究生数学建模竞赛相关官方模板,,sha256:2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a,2026-09-19T15:43:00Z,论文版式、封面、样式、节、目录、图表注、公式、参考文献和附录格式,格式母版/母稿,verified,仅作为格式与结构母版，不作为技术论据
