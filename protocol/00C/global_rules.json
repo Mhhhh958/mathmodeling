@@ -1,7 +1,7 @@
 {
   "schema_version": "00C-1.0",
   "rules_version": "2026.09.19-r1",
-  "status": "frozen_candidate",
+  "status": "frozen",
   "prerequisites": {
     "required_pass_tokens": [
       "00-A-V2026.09.19-aaf5f88-通过",
@@ -115,5 +115,7 @@
     ],
     "action": "Invalidate affected freezes and all dependent Word states; roll back to the earliest affected A step, redo STEP13, then redo every dependent later step.",
     "non_substantive_changes": "Formatting-only changes that do not alter data/code/model/key parameters/core results do not invalidate A freezes."
-  }
+  },
+  "frozen_after_validation_run": "run_00-C_20260919T151722783507Z_8ba12c78_de1300de",
+  "initial_validation_check_run_id": 105918887126
 }
