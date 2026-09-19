@@ -63,8 +63,7 @@
           16
         ],
         "min_samples_leaf": [
-          1,
-          3
+          1
         ],
         "n_estimators": [
           300
@@ -106,5 +105,6 @@
   ],
   "no_model_training": true,
   "no_word_edit": true,
-  "no_ledger_edit_in_A": true
+  "no_ledger_edit_in_A": true,
+  "pre_execution_correction_note": "Before any 05-A execution, RF min_samples_leaf grid was fixed to [1] so LR has 6 configurations and RF has 6 configurations, matching the predeclared 12-configuration/36-inner-fit-per-outer budget."
 }
