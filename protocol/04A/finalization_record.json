@@ -1,0 +1,65 @@
+{
+  "schema_version": "04A-1.0",
+  "step_id": "04-A",
+  "status": "passed",
+  "pass_token": "04-A-V2026.09.20-d60f9e54-通过",
+  "next_allowed": "04-B",
+  "run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+  "freeze_package_id": "FREEZE-04A-3e3b97c0",
+  "freeze_content_sha256": "d60f9e54ae8aa2e216c4d4540f0c4fda90f64464fc16769c4fa428b41b1bd567",
+  "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "input_02A_freeze": "FREEZE-02A-6f36d0b4",
+  "input_03A_freeze": "FREEZE-03A-f5307f8f",
+  "blueprint_commit": "39978d067a628c3e11934d031ece3a3b3c9a841c",
+  "code_version_id": "git:e8d1ed050b609833043653dae736f8d2323e4fbe",
+  "evidence_commit": "8e1fc48dd5e62a5eb9abbc4c12b5f3c50a0f8253",
+  "github_actions_check_run_id": 105945347823,
+  "github_actions_conclusion": "success",
+  "validated_results": {
+    "source_files": 49,
+    "target_files": 16,
+    "processed_files": 65,
+    "source_windows": 733,
+    "target_windows": 240,
+    "total_windows": 973,
+    "source_class_windows": {
+      "OR": 319,
+      "IR": 180,
+      "B": 180,
+      "N": 54
+    },
+    "source_groups": 49,
+    "target_groups": 16,
+    "window_seconds": 1,
+    "overlap_fraction": 0.5,
+    "window_samples": 12000,
+    "stride_samples": 6000,
+    "common_feature_count": 26,
+    "source_mechanism_aux_count": 5,
+    "common_nan_inf": 0,
+    "source_mechanism_nan_inf": 0,
+    "common_constant_features": [],
+    "independent_feature_recalc_max_abs_diff": 0,
+    "default_X_leakage_columns": [],
+    "learned_imputer_fitted": false,
+    "learned_scaler_fitted": false,
+    "learned_selector_fitted": false
+  },
+  "nonblocking_quality_findings": [
+    "Robust extreme-value flags are present in several amplitude/impulsiveness features; they were recorded in feature_quality_audit.csv and were not clipped or silently deleted.",
+    "The combined full_window_feature_table has 240×5 structural missing cells for target-domain source-only mechanism auxiliary features. These are expected by design; the target-compatible/common interface has zero NaN/Inf.",
+    "Only OR014@3_1.mat and N_0.mat have incomplete tails under the no-padding 1 s / 0.5 s stride rule; maximum uncovered tail is 0.097333 s."
+  ],
+  "failed_attempts_preserved": [
+    {
+      "run_id": "run_04-A_20260919T182620754919Z_4258ad04_dc3dcb69",
+      "check_run_id": 105945186103,
+      "reason": "validation-only spectral-centroid recomputation used +EPS on a positive denominator and failed the frozen 1e-10 tolerance",
+      "resolution": "independent recomputation corrected to the stated formula without changing extraction formula, window parameters, thresholds, or data"
+    }
+  ],
+  "word_edited_in_A": false,
+  "ledgers_edited_in_A": false,
+  "classifier_training": false
+}
