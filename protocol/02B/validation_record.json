@@ -1,0 +1,45 @@
+{
+  "schema_version": "02B-1.0",
+  "step_id": "02-B",
+  "status": "passed",
+  "pass_token": "02-B-V2026.09.20-f960cde0-通过",
+  "next_allowed": "03-A",
+  "run_id": "run_02-B_20260919T163146907490Z_594b5a82_6db67e3f",
+  "binding_digest": "594b5a8240b08bc535ae6c722ebfb3eb5c8572908f46f70a420d661c463823e7",
+  "source_A_freeze_package_id": "FREEZE-02A-6f36d0b4",
+  "source_A_freeze_sha256": "f9ed0ecc404eb9611e9352c97749eee247a8cf7306c42bb65d2b032e8c8d938b",
+  "source_word_sha256": "6267e3715abb3243a49ace14339475b4f28b6d476d66a1b7ef3f8953a263d795",
+  "output_word_sha256": "f960cde0421d35b42232f25c06f09e8977a9cd7d5c6d81818c06d4a78303a7de",
+  "checks_summary": {
+    "numbers_and_limits_match_02A": true,
+    "figure_traceability": true,
+    "internal_metric_not_presented_as_official": true,
+    "target_truth_unknown_preserved": true,
+    "official_style_parts_preserved": true,
+    "media_objects_not_reduced": true,
+    "render_all_13_pages_passed": true
+  },
+  "object_counts": {
+    "before": {
+      "media": 4,
+      "drawing": 3,
+      "vml_pict": 1,
+      "math": 0,
+      "tables": 4
+    },
+    "after": {
+      "media": 5,
+      "drawing": 4,
+      "vml_pict": 1,
+      "math": 0,
+      "tables": 7
+    }
+  },
+  "traceability": {
+    "figure_cell": "12 kHz-FE 综合距离 0.860",
+    "source_exact": 0.8599550818244359,
+    "source_artifact": "02-A candidate_group_distances.csv",
+    "result": "match after rounding"
+  },
+  "library_record": "/数学建模/02B/validation_record_02B.json"
+}
