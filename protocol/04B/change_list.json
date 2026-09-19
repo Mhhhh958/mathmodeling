@@ -1,0 +1,47 @@
+{
+  "schema_version": "04B-1.0",
+  "step_id": "04-B",
+  "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e",
+  "source_word": "V0.4",
+  "output_word": "V0.5",
+  "source_A_freeze": "FREEZE-04A-3e3b97c0",
+  "incremental_only": true,
+  "changes": [
+    {
+      "location": "5.1.3 切片与特征构建",
+      "action": "replace placeholder heading and insert content",
+      "details": "写入1s/50%物理时间窗、文件级group边界、26公共+5源域机理辅助特征、质量审计、泄漏防控和Q2接口。"
+    },
+    {
+      "location": "表10",
+      "action": "insert",
+      "details": "04-A窗口规则与49/16文件、733/240窗口数量守恒。"
+    },
+    {
+      "location": "表11",
+      "action": "insert",
+      "details": "按04-A feature_dictionary写入特征定义、公式、单位、异常处理和默认使用边界。"
+    },
+    {
+      "location": "表12",
+      "action": "insert",
+      "details": "从04-A feature_quality_audit写入代表性特征min/median/max与稳健极端窗数。"
+    },
+    {
+      "location": "表13",
+      "action": "insert",
+      "details": "写入问题2直接读取X/y/groups/metadata/optional/target接口与泄漏边界。"
+    },
+    {
+      "location": "5.1.4 问题一小结",
+      "action": "replace placeholder heading and insert 5-item closure",
+      "details": "解决内容、关键真实数字、关键改进、失败/边界、问题2接口。"
+    },
+    {
+      "location": "图表策略",
+      "action": "no new result figures",
+      "details": "04-A冻结包approved_figures为空，未越界制作相关性热力图或未冻结分布图；优先采用已冻结数据表。"
+    }
+  ],
+  "untouched": "V0.4其余正文、既有图1-图3、表1-表9、5个OMML公式、封面、节、样式、编号、主题、字体和内容类型保持。"
+}
