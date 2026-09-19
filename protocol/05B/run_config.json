@@ -1,0 +1,28 @@
+{
+  "schema_version": "05B-1.0",
+  "step_id": "05-B",
+  "source_A_freeze_package_id": "FREEZE-05A-ba6432cf",
+  "source_A_freeze_sha256": "338d8e27604c26061d9e93610b6d299457579f0d113f9a695ec1ab8c9eae6671",
+  "source_A_run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "latest_word_before_version": "V0.5",
+  "latest_word_before_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+  "output_word_version": "V0.6",
+  "writeback_scope": [
+    "independent sample boundary",
+    "4 outer grouped folds",
+    "3 inner grouped validation folds",
+    "normal 4-file constraint",
+    "primary/secondary metrics",
+    "file aggregation",
+    "training-only learned preprocessing",
+    "model selection budget and stopping/failure standards"
+  ],
+  "new_result_figures": false,
+  "new_tables": [
+    "表14 四个外层文件级训练池与测试集划分",
+    "表15 评价指标、聚合方式与模型选择边界"
+  ],
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
