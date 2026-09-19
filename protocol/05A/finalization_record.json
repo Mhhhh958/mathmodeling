@@ -1,0 +1,100 @@
+{
+  "schema_version": "05A-1.0",
+  "step_id": "05-A",
+  "status": "passed",
+  "pass_token": "05-A-V2026.09.20-338d8e27-通过",
+  "next_allowed": "05-B",
+  "run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "freeze_package_id": "FREEZE-05A-ba6432cf",
+  "freeze_content_sha256": "338d8e27604c26061d9e93610b6d299457579f0d113f9a695ec1ab8c9eae6671",
+  "input_04A_freeze": "FREEZE-04A-3e3b97c0",
+  "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
+  "blueprint_commit": "f6d2c6659b9a6488bf7da5fe34dc82b73a888537",
+  "code_version_id": "git:263bdfefd85850e7d117889882074373e5caa9db",
+  "evidence_commit": "9a4076d27d7600123ef26ed0e36678b666505074",
+  "github_actions_check_run_id": 105953253659,
+  "github_actions_conclusion": "success",
+  "validated_protocol": {
+    "independent_files": 49,
+    "source_windows": 733,
+    "class_files": {
+      "OR": 21,
+      "IR": 12,
+      "B": 12,
+      "N": 4
+    },
+    "outer_folds": 4,
+    "inner_folds_per_outer": 3,
+    "outer_test_counts": [
+      {
+        "fold": 0,
+        "OR": 6,
+        "IR": 3,
+        "B": 3,
+        "N": 1
+      },
+      {
+        "fold": 1,
+        "OR": 5,
+        "IR": 3,
+        "B": 3,
+        "N": 1
+      },
+      {
+        "fold": 2,
+        "OR": 5,
+        "IR": 3,
+        "B": 3,
+        "N": 1
+      },
+      {
+        "fold": 3,
+        "OR": 5,
+        "IR": 3,
+        "B": 3,
+        "N": 1
+      }
+    ],
+    "normal_outer_test_mapping": [
+      {
+        "fold": 0,
+        "file": "N_0.mat"
+      },
+      {
+        "fold": 1,
+        "file": "N_2_(1750rpm).mat"
+      },
+      {
+        "fold": 2,
+        "file": "N_3.mat"
+      },
+      {
+        "fold": 3,
+        "file": "N_1_(1772rpm).mat"
+      }
+    ],
+    "all_group_intersections_zero": true,
+    "every_outer_test_has_all_four_classes": true,
+    "every_inner_validation_has_all_four_classes": true,
+    "primary_metric": "file-level Macro-F1",
+    "file_aggregation": "mean window probabilities within file -> argmax",
+    "metric_recalculation": {
+      "sklearn_macro_f1": 0.8333333333333333,
+      "manual_macro_f1": 0.8333333333333333,
+      "abs_diff": 0
+    },
+    "baseline_candidate_configs": 12,
+    "max_total_inner_fits": 144,
+    "outer_refits": 4
+  },
+  "limitations": [
+    "Only four independent normal files exist; therefore no five-fold file-level stratification is claimed.",
+    "Four outer-fold score range is reported as min–max, not a confidence interval.",
+    "Window-level metrics remain auxiliary because overlapping windows are not independent samples.",
+    "The frozen split protocol controls leakage but does not itself provide model performance; no estimator was trained in 05-A."
+  ],
+  "pre_execution_note": "Before any 05-A execution, RF min_samples_leaf grid was fixed to [1] so the candidate grid exactly matched the declared 12-configuration / 144-inner-fit budget. No model training had occurred before this correction.",
+  "word_edited_in_A": false,
+  "ledgers_edited_in_A": false,
+  "model_training": false
+}
