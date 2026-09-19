@@ -1,0 +1,95 @@
+{
+  "schema_version": "04B-1.0",
+  "step_id": "04-B",
+  "status": "passed",
+  "pass_token": "04-B-V2026.09.20-dfbb5d0e-通过",
+  "next_allowed": "05-A",
+  "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e",
+  "source_A_freeze_package_id": "FREEZE-04A-3e3b97c0",
+  "source_A_run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+  "source_word_sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+  "output_word_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+  "checks": {
+    "04A_frozen_data_only": {
+      "passed": true,
+      "evidence": [
+        "protocol/04A/latest_freeze_package.json",
+        "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/quantity_conservation.json",
+        "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/feature_dictionary.csv",
+        "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/feature_quality_audit.csv",
+        "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/data_interface_manifest.json"
+      ],
+      "key_numbers": "49 source files; 733 source windows; 16 target files; 240 target windows; 26 common features; 5 source-only mechanism auxiliary features"
+    },
+    "window_and_feature_tables_traceable": {
+      "passed": true,
+      "evidence": "Word tables 10-13; 04-A freeze artifacts above",
+      "note": "No new correlation heatmap inserted because 04-A froze no correlation/redundancy result; no unfrozen result invented."
+    },
+    "feature_definition_unit_consistency": {
+      "passed": true,
+      "evidence": "Table 11 compared against 04-A feature_dictionary.csv",
+      "checks": "RMS; population kurtosis; crest/impulse/shape/clearance; spectral centroid; 0-5500Hz Welch; epsilon=1e-12; units match frozen dictionary"
+    },
+    "q1_to_q2_interface_and_leakage": {
+      "passed": true,
+      "evidence": "Table 13 and paragraph following it",
+      "interface": [
+        "X_source_common.csv",
+        "y_source_labels.csv",
+        "groups_source.csv",
+        "source_window_metadata.csv",
+        "source_mechanism_aux_optional.csv",
+        "X_target_common.csv",
+        "target_window_metadata.csv"
+      ],
+      "boundary": "split by group_id first; fit imputation/scaling/selection only on training groups"
+    },
+    "problem1_summary_closed_loop": {
+      "passed": true,
+      "evidence": "Section 5.1.4 问题一小结",
+      "five_items": [
+        "solved task",
+        "key numeric result",
+        "key improvement",
+        "failure/applicability boundary",
+        "Q2 interface"
+      ]
+    },
+    "word_persistence": {
+      "passed": true,
+      "evidence": "word_structure_audit_04B.json",
+      "before": {
+        "media": 7,
+        "drawing": 6,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 10,
+        "sections": 6
+      },
+      "after": {
+        "media": 7,
+        "drawing": 6,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 14,
+        "sections": 6
+      },
+      "existing_media_bytes_preserved": true,
+      "master_parts_preserved": true
+    },
+    "visual_render_QA": {
+      "passed": true,
+      "evidence": "/mnt/data/04B_render/page-1.png ... page-19.png",
+      "page_count": 19,
+      "inspection": "all 19 pages visually inspected after final caption patch; no clipping, overlap, missing glyphs, broken tables, or image loss"
+    },
+    "unknown_target_truth_preserved": {
+      "passed": true,
+      "evidence": "Table 10 and Table 13 / 04-A target interface",
+      "statement": "A-P remains UNKNOWN_TRUTH; no prediction written as truth"
+    }
+  }
+}
