@@ -1,0 +1,23 @@
+{
+  "schema_version": "00B-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "code_version_rule": "git commit SHA of the exact checked-out tree used for the run",
+  "baseline_package_commit": "d19cd711f73b29dd03e8b0f9798f1145e57d4180",
+  "tracked_protocol_code": [
+    {
+      "path": "scripts/protocol/run_contract.py",
+      "git_blob_sha": "5bde35b781815902dd93d3f329f03df6eb64014b"
+    },
+    {
+      "path": "scripts/protocol/validate_00b_baseline.py",
+      "git_blob_sha": "8947066c8fac468a724c6c1dea9bb3549e9a27fc"
+    }
+  ],
+  "formal_code_rule": "Every analysis/training/plotting file actually executed by this process must be added here or to the run-specific code manifest before formal execution.",
+  "chat_direct_fallback": {
+    "code_version_id_rule": "CODE-<first16(code_manifest_sha256)>",
+    "per_file_sha256_required": true
+  }
+}
