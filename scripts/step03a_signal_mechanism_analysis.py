@@ -347,7 +347,7 @@ def main():
  agg=[]
  for c,g in adf.groupby("class_label"):
   agg.append({"class_label":c,"files":len(g),"rms_median":float(g.rms.median()),"rms_iqr":float(g.rms.quantile(.75)-g.rms.quantile(.25)),
-   "kurtosis_median":float(g.kurtosis.median()),"crest_factor_median":float(g.crest_factor.median()),
+   "kurtosis_median":float(g["kurtosis"].median()),"crest_factor_median":float(g.crest_factor.median()),
    "spectral_entropy_median":float(g.spectral_entropy.median()),
    "mechanism_score_median":float(g.mechanism_score.median()),"mechanism_score_min":float(g.mechanism_score.min()),"mechanism_score_max":float(g.mechanism_score.max()),
    "sideband_ratio_median":float(g.sideband_energy_ratio.median()),"rpm_min":float(g.rpm.min()),"rpm_max":float(g.rpm.max())})

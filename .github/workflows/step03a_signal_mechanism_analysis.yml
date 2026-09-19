@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/runs protocol/03A/validation_record.json protocol/03A/latest_freeze_package.json protocol/03A/latest_run_id.txt
+          git add outputs/runs protocol/03A
           if git diff --cached --quiet; then
             echo 'No STEP03-A evidence to commit.'
           else

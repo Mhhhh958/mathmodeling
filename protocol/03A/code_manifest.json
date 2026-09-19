@@ -7,11 +7,11 @@
   "tracked_code": [
     {
       "path": "scripts/step03a_signal_mechanism_analysis.py",
-      "git_blob_sha": "955829df3f64de2f9b910857d03bd6cf4e063318"
+      "git_blob_sha": "3284f2c58a7325e25639515be57c69212b554dc8"
     },
     {
       "path": ".github/workflows/step03a_signal_mechanism_analysis.yml",
-      "git_blob_sha": "a85127ac7c4bd0a5246a92f10947f87370780bf2"
+      "git_blob_sha": "c94452afe4e37af456a470cd0fc3d95bf6053a5c"
     }
   ],
   "frozen_inputs": [
@@ -35,5 +35,12 @@
     "no final paper figures",
     "no five-ledger edits in A",
     "no target geometry reuse"
+  ],
+  "failed_attempts": [
+    {
+      "code_commit": "bc13b0bd39b69d0c7afd58dc9377e96dbc3a3cfb",
+      "check_run_id": 105930738680,
+      "error": "DataFrame attribute collision g.kurtosis resolved by bracket access; evidence commit path handling also hardened."
+    }
   ]
 }
