@@ -1,2 +1,3 @@
 item_id,timestamp_utc,step_id,citation_key,source_type,title_or_name,authors_or_org,year,url_or_identifier,accessed_utc,claim_supported,word_location,status,notes
 C-00D-001,2026-09-19T15:43:00Z,00-D,OFFICIAL-WORD-TEMPLATE,official_template,第二十一届华为杯研赛论文Word标准模板(1).docx,中国研究生数学建模竞赛相关官方模板,,sha256:2381f21f0ae471c0ddfff96f45feac4abc18c8dc4178b3f68a291803785dd11a,2026-09-19T15:43:00Z,论文版式、封面、样式、节、目录、图表注、公式、参考文献和附录格式,格式母版/母稿,verified,仅作为格式与结构母版，不作为技术论据
+C-01B-001,2026-09-19T16:11:01.132580Z,01-B,STEP01A-FREEZE,internal_freeze_package,步骤01-A原始MAT逐文件审计冻结包,本项目真实运行,2026,FREEZE-01A-RAW-5a5dd129c91bfc64-85d31497,2026-09-19T16:11:01.132580Z,文件结构、通道、采样率/时长、标签来源、独立样本口径与质量审计,4.1-4.3,verified,内部证据源，不作为外部参考文献列入最终论文

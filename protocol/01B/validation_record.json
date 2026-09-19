@@ -1,0 +1,33 @@
+{
+  "schema_version": "01B-1.0",
+  "step_id": "01-B",
+  "status": "passed",
+  "pass_token": "01-B-V2026.09.20-6267e371-通过",
+  "next_allowed": "02-A",
+  "run_id": "run_01-B_20260919T161101132580Z_f5b4c3cb_d2885e53",
+  "source_A_freeze_package_id": "FREEZE-01A-RAW-5a5dd129c91bfc64-85d31497",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "source_word_sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+  "output_word_sha256": "6267e3715abb3243a49ace14339475b4f28b6d476d66a1b7ef3f8953a263d795",
+  "checks": {
+    "incremental_edit_from_latest_word": true,
+    "only_passed_A_results_used": true,
+    "no_training_tuning_or_model_selection": true,
+    "source_counts_match": true,
+    "channels_sampling_rates_match": true,
+    "target_8s_32khz_match": true,
+    "target_truth_remains_unknown": true,
+    "independent_sample_rule_matches": true,
+    "official_styles_numbering_content_types_preserved": true,
+    "images_before_after": "media 4→4; drawings 3→3; VML pict 1→1",
+    "formula_objects_before_after": "0→0",
+    "tables_before_after": "2→4",
+    "rendered_pages": 11,
+    "all_pages_visually_checked": true,
+    "new_formal_figures": 0
+  },
+  "evidence": {
+    "library_validation": "/数学建模/01B/validation_record_01B.json",
+    "word_library_id": "libfile_bcea8314f6308191abe801e5eec98ea8"
+  }
+}

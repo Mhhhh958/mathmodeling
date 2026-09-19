@@ -1,0 +1,58 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "01-B",
+  "status": "passed",
+  "run_id": "run_01-B_20260919T161101132580Z_f5b4c3cb_d2885e53",
+  "source_A_freeze_package_id": "FREEZE-01A-RAW-5a5dd129c91bfc64-85d31497",
+  "source_A_run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "latest_word_before": {
+    "version": "V0.1",
+    "sha256": "eb4a5f0aadc03c7a96ae626f2288378773172d048c672ed74dd74fc3b127da55",
+    "path": "/数学建模/00D/2025华为杯E题论文_母稿_V0.1.docx"
+  },
+  "new_word_after": {
+    "version": "V0.2",
+    "sha256": "6267e3715abb3243a49ace14339475b4f28b6d476d66a1b7ef3f8953a263d795",
+    "path": "/数学建模/01B/2025华为杯E题论文_步骤01_V0.2.docx",
+    "library_file_id": "libfile_bcea8314f6308191abe801e5eec98ea8"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "/数学建模/01B/本步论文变更单_01B.json",
+  "affected_ledger_items": {
+    "version_ledger": [
+      "VER-01B-WORD-V02",
+      "VER-01B-DELIVERY"
+    ],
+    "evidence_issue_ledger": [
+      "EVID-01B-001"
+    ],
+    "result_formula_ledger": [
+      "RES-01B-DATA-COUNT",
+      "RES-01B-TARGET-TIME",
+      "RES-01B-QUALITY",
+      "RES-01B-INDEPENDENCE"
+    ],
+    "figure_table_ledger": [
+      "TBL-01B-002",
+      "TBL-01B-003"
+    ],
+    "citation_ledger": [
+      "C-01B-001"
+    ]
+  },
+  "figures_and_captions": [],
+  "tables_and_captions": [
+    "表2 原始数据文件结构与主信号规模",
+    "表3 原始数据质量审计及处理原则"
+  ],
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "unsupported_claims_removed_or_downgraded": true,
+    "word_rebuilt_from_plain_text": false,
+    "record": "protocol/01B/validation_record.json"
+  }
+}
