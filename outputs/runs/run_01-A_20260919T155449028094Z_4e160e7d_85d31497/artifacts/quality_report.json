@@ -1,0 +1,58 @@
+{
+  "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "total_files": 177,
+  "read_ok": 177,
+  "read_failed": 0,
+  "source_class_count_check": [
+    {
+      "class": "OR",
+      "expected_files": 77,
+      "actual_files": 77,
+      "difference": 0,
+      "status": "MATCH"
+    },
+    {
+      "class": "IR",
+      "expected_files": 40,
+      "actual_files": 40,
+      "difference": 0,
+      "status": "MATCH"
+    },
+    {
+      "class": "B",
+      "expected_files": 40,
+      "actual_files": 40,
+      "difference": 0,
+      "status": "MATCH"
+    },
+    {
+      "class": "N",
+      "expected_files": 4,
+      "actual_files": 4,
+      "difference": 0,
+      "status": "MATCH"
+    }
+  ],
+  "target_8s_32khz": {
+    "files": 16,
+    "all_256000_points": true,
+    "all_duration_8s": true
+  },
+  "rpm": {
+    "source_known": 161,
+    "source_missing": 0,
+    "target_exact_available": false,
+    "target_condition": "about 600 rpm only"
+  },
+  "duplicates": {
+    "raw_file_hash_groups": 0,
+    "primary_signal_hash_groups": 0
+  },
+  "nonfinite_files": 0,
+  "constant_files": 0,
+  "serious_mismatch_count": 0,
+  "serious_mismatches": [],
+  "target_label_boundary": "A-P raw truth unknown; repository labels/predictions are derived unless separately proven official",
+  "pass": true
+}

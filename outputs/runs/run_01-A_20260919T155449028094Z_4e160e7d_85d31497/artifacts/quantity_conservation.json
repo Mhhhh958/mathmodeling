@@ -1,0 +1,60 @@
+{
+  "total_expected": 177,
+  "total_actual": 177,
+  "source_expected": 161,
+  "source_actual": 161,
+  "target_expected": 16,
+  "target_actual": 16,
+  "source_class_expected": {
+    "OR": 77,
+    "IR": 40,
+    "B": 40,
+    "N": 4
+  },
+  "source_class_actual": {
+    "OR": 77,
+    "IR": 40,
+    "B": 40,
+    "N": 4
+  },
+  "target_ids_expected": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "target_ids_actual": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "all_read_ok": true,
+  "all_target_256000": true,
+  "all_target_8s": true,
+  "passed": true
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "00C-A-freeze-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "01-A",
+  "freeze_package_id": "FREEZE-01A-RAW-5a5dd129c91bfc64-85d31497",
+  "status": "passed",
+  "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "versions": {
+    "code_version_id": "git:4f6022e0203c41705242dcc543a4ea9dff28b12a",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [],
+    "run_config_sha256": "3d4ec763b9cc45cf814b26265632bddd96ea4876bef06065b134688b9b616da9",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "raw_root": "data/raw",
+    "expected_source_counts": {
+      "OR": 77,
+      "IR": 40,
+      "B": 40,
+      "N": 4
+    },
+    "expected_target_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P"
+    ],
+    "target_fs_hz": 32000,
+    "target_duration_s": 8.0,
+    "target_rpm": "about 600 only"
+  },
+  "real_results": [
+    {
+      "name": "file_counts",
+      "value": {
+        "total": 177,
+        "source": 161,
+        "target": 16
+      }
+    },
+    {
+      "name": "source_class_counts",
+      "value": [
+        {
+          "class": "OR",
+          "expected_files": 77,
+          "actual_files": 77,
+          "difference": 0,
+          "status": "MATCH"
+        },
+        {
+          "class": "IR",
+          "expected_files": 40,
+          "actual_files": 40,
+          "difference": 0,
+          "status": "MATCH"
+        },
+        {
+          "class": "B",
+          "expected_files": 40,
+          "actual_files": 40,
+          "difference": 0,
+          "status": "MATCH"
+        },
+        {
+          "class": "N",
+          "expected_files": 4,
+          "actual_files": 4,
+          "difference": 0,
+          "status": "MATCH"
+        }
+      ]
+    },
+    {
+      "name": "target_shape_time",
+      "value": {
+        "files": 16,
+        "points_each": 256000,
+        "fs_hz": 32000,
+        "duration_s": 8.0
+      }
+    },
+    {
+      "name": "duplicates",
+      "value": {
+        "raw_file_hash_groups": 0,
+        "primary_signal_hash_groups": 0
+      }
+    },
+    {
+      "name": "serious_mismatch_count",
+      "value": 0
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/logs/actual_read_log.csv"
+    },
+    {
+      "path": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/raw_fingerprint_manifest.csv"
+    }
+  ],
+  "anomalies_and_failures": [],
+  "b_handoff": {
+    "required_data": [
+      "raw_data_version_id",
+      "data_manifest",
+      "file_level_metadata",
+      "quality_report"
+    ],
+    "supported_conclusions": [
+      "177 raw MAT files actually read",
+      "source counts match 77/40/40/4",
+      "target A-P truth unknown",
+      "target arrays 256000 points => 8 s at 32 kHz",
+      "independent unit is original MAT file"
+    ],
+    "wording_limits": [
+      "historical target predictions are not ground truth",
+      "about-600rpm is not exact target speed",
+      "DE/FE sensor variables are not fault-bearing labels"
+    ],
+    "approved_tables": [
+      "file_level_metadata.csv",
+      "label_mapping.csv",
+      "data_dictionary.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-19T15:54:48.609829Z",
+    "content_sha256": "bfee1b9a21e097d94e05398eaccdb70a67862ccda99ec2ef9c3c113536dd7b4e",
+    "invalidation_dependencies": [
+      "data/raw byte changes",
+      "audit code changes",
+      "metadata parsing rule changes"
+    ]
+  }
+}

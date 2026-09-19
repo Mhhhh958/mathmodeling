@@ -1,0 +1,57 @@
+{
+  "step_id": "01-A",
+  "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "checks": {
+    "spot_check": {
+      "passed": true,
+      "evidence": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/validation_spot_checks.csv",
+      "files": [
+        "source_domain/cwru_12khz_de/IR021_1.mat",
+        "source_domain/cwru_12khz_de/OR007@12_3.mat",
+        "source_domain/cwru_12khz_fe/OR007@12_2.mat",
+        "source_domain/cwru_12khz_fe/OR007@3_1.mat",
+        "source_domain/cwru_12khz_fe/OR021@3_2.mat",
+        "source_domain/cwru_48khz_de/OR014@6_2.mat",
+        "target_domain/train_bearing_a_to_p/A.mat",
+        "target_domain/train_bearing_a_to_p/B.mat",
+        "target_domain/train_bearing_a_to_p/G.mat",
+        "target_domain/train_bearing_a_to_p/I.mat"
+      ]
+    },
+    "hash_and_size_check": {
+      "passed": true,
+      "evidence": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/raw_fingerprint_manifest.csv",
+      "raw_duplicate_groups": 0,
+      "primary_signal_duplicate_groups": 0
+    },
+    "independent_sample_traceability": {
+      "passed": true,
+      "evidence": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/independent_sample_definition.md",
+      "unique_objects": 177
+    },
+    "quantity_conservation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/quantity_conservation.json",
+      "source": 161,
+      "target": 16,
+      "total": 177
+    },
+    "target_8s_32khz": {
+      "passed": true,
+      "evidence": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/file_level_metadata.csv",
+      "key_numbers": {
+        "files": 16,
+        "points": 256000,
+        "fs_hz": 32000,
+        "duration_s": 8.0
+      }
+    },
+    "target_truth_unknown": {
+      "passed": true,
+      "evidence": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497/artifacts/target_label_provenance.csv"
+    }
+  },
+  "passed": true,
+  "status": "passed"
+}

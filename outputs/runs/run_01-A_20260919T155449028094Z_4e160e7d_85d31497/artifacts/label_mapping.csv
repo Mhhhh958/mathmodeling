@@ -1,0 +1,6 @@
+﻿domain,raw_code,meaning,truth_status,source
+source,OR,外圈故障 Outer Race,known,文件名前缀+题面源域类别
+source,IR,内圈故障 Inner Race,known,文件名前缀+题面源域类别
+source,B,滚动体故障 Ball,known,文件名前缀+题面源域类别
+source,N,正常 Normal,known,文件名前缀+题面源域类别
+target,A-P,目标域独立文件ID，不是类别,unknown,原始MAT文件名/变量名

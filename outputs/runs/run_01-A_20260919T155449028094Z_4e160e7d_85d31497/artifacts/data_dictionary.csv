@@ -1,0 +1,13 @@
+﻿field,definition,unit_or_type,provenance_or_rule
+independent_object_id,data/raw下MAT相对路径,string,后续窗口必须继承并按此分组
+sensor_channels,DE/FE/BA为传感器测点,category,不等于故障轴承位置
+fault_bearing_location,DE/FE/NONE/UNKNOWN,category,来自数据子目录语义，不由变量名反推
+class_label,OR/IR/B/N；目标UNKNOWN_TRUTH,category,源域文件名+题面；目标真值未知
+sampling_rate_hz,采样率,Hz,源目录/题面；目标32kHz并用256000/8复核
+duration_seconds,点数/采样率,s,实际数组计算
+rpm,转速,rpm,源MAT变量优先，其次文件名；目标约600仅近似
+fault_size_in,故障尺寸,inch,007/014/021/028解析
+load_hp,负载,hp,文件名工况0/1/2/3
+outer_race_position_clock,外圈故障位置,clock,仅OR的@3/@6/@12
+file_sha256,原始文件字节指纹,hex,版本冻结/重复检查
+primary_signal_sha256,主信号数值内容指纹,hex,内容重复辅助判断

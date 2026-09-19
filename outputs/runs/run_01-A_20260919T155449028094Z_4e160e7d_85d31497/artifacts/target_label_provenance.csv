@@ -1,0 +1,8 @@
+﻿artifact,producer,process,contains_official_truth,status
+data/interim/target_features/目标域特征提取_A.csv ... P.csv,src/feature_engineering/extract_target_features.py,A-P滑窗后提特征,False,derived_features_not_truth
+target_labeledData.csv,src/data_processing/target_dataset_builder.py,仅加入目标代码A-P，未提供真实故障类别,False,A-P_ID_only_not_truth
+legacy/**/target_data_with_predictions.csv,legacy exploratory transfer scripts,迁移试验模型预测,False,historical_predictions_quarantined
+outputs/q3a_domain_diagnosis/target_A_P_no_transfer_file_predictions.csv,Q3A历史运行,无迁移模型预测,False,historical_prediction_not_truth
+outputs/q3b_unsupervised_transfer/target_A_P_*.csv,Q3B历史运行,无监督迁移/候选方法输出,False,historical_prediction_not_truth
+outputs/q3c_final_labels_and_display/final_A_P_label_table.csv,scripts/q3c_final_labels_and_display.py,先显式truth_status=unknown，再predict_proba并文件级聚合生成final_pred_label,False,model_prediction_not_truth
+outputs/q3c_final_labels_and_display/final_A_P_labels_for_answer.csv,scripts/q3c_final_labels_and_display.py,从final_A_P_label_table导出预测标签,False,model_prediction_not_truth

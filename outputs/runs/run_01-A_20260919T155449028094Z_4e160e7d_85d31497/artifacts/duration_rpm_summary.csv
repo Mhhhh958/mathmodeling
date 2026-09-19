@@ -1,0 +1,6 @@
+﻿domain,subgroup,files,points_min,points_max,duration_min_s,duration_max_s,rpm_known
+source,source_12khz_de,60,96000,96000,8.0,8.0,60
+source,source_12khz_fe,45,96000,121168,8.0,10.097333333333333,45
+source,source_48khz_de,52,63788,192000,1.3289166666666667,4.0,52
+source,source_48khz_normal,4,243938,384000,5.082041666666667,8.0,4
+target,target_32khz,16,256000,256000,8.0,8.0,0

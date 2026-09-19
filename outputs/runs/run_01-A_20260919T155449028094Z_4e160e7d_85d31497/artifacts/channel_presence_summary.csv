@@ -1,0 +1,6 @@
+﻿domain,subgroup,de_present,fe_present,ba_present,files
+source,source_12khz_de,60,52,52,60
+source,source_12khz_fe,45,45,45,45
+source,source_48khz_de,52,52,0,52
+source,source_48khz_normal,4,4,0,4
+target,target_32khz,0,0,0,16

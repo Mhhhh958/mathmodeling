@@ -1,0 +1,161 @@
+{
+  "schema_version": "01A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+  "step_id": "01-A",
+  "status": "completed",
+  "created_utc": "2026-09-19T15:54:48.609829Z",
+  "execution_mode": "chat_plus_git",
+  "binding": {
+    "code_version_id": "git:4f6022e0203c41705242dcc543a4ea9dff28b12a",
+    "data_version_id": "RAW-5a5dd129c91bfc64",
+    "run_config_sha256": "3d4ec763b9cc45cf814b26265632bddd96ea4876bef06065b134688b9b616da9",
+    "seed": 20260919,
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "4e160e7dfcb4e98551d0179f639dfbed6cbef388d9b8d777de231978d2aa98aa"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "4f6022e0203c41705242dcc543a4ea9dff28b12a",
+    "entrypoint": "scripts/step01a_raw_mat_audit.py",
+    "code_manifest": "protocol/01A/code_manifest.json"
+  },
+  "data": {
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "data_manifest": "protocol/01A/data_manifest.json",
+    "dataset_digest": "5a5dd129c91bfc6406a37e14cad996316128b7498ad0d021a091464935df6b70",
+    "structure_digest": "2cf41cccf539a4f84aaa1858f683cccc8955c3060f913054add7c6d73805efdd"
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "environment_manifest_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "config": {
+    "path": "protocol/01A/run_config.json",
+    "sha256": "3d4ec763b9cc45cf814b26265632bddd96ea4876bef06065b134688b9b616da9"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+    "files": [
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 3878,
+        "sha256": "70545beec3baeebc5d80b3aeafec7ef693cb06f5ed1e770d9b99712aff289b21"
+      },
+      {
+        "relative_path": "artifacts/channel_presence_summary.csv",
+        "size_bytes": 226,
+        "sha256": "c29b15cbff0fd3cfc0d6289399a0b864a38545eed02ceb5ecc1452de3a3207e5"
+      },
+      {
+        "relative_path": "artifacts/data_dictionary.csv",
+        "size_bytes": 950,
+        "sha256": "29b6c6e16f4a46e09ac06c2d03f526702cab9a6afb2c4f3710a3ea548c833dac"
+      },
+      {
+        "relative_path": "artifacts/data_manifest.json",
+        "size_bytes": 1300,
+        "sha256": "a89048a244696a3aafbe8b7d53cf084a4b10c16bef3bae1798c5a08d05b7f789"
+      },
+      {
+        "relative_path": "artifacts/duplicate_content_check.csv",
+        "size_bytes": 32,
+        "sha256": "8a58aa9eb21695a676844a950ab35ba71a9bb83df84783b71756d61825c9b428"
+      },
+      {
+        "relative_path": "artifacts/duration_rpm_summary.csv",
+        "size_bytes": 380,
+        "sha256": "9acc772e9bba3d0b56892302ec2e01ff77dcf662ca1302a2304cc58c96d14ff4"
+      },
+      {
+        "relative_path": "artifacts/file_level_metadata.csv",
+        "size_bytes": 168785,
+        "sha256": "51ea2ec28e14b02407c20f3731e3c6c8fa68458409672029a67a8bc617fb108c"
+      },
+      {
+        "relative_path": "artifacts/independent_sample_definition.md",
+        "size_bytes": 553,
+        "sha256": "6463ba538ea1b4163f099a606d392507038784b25ae95463a77a71773cf24d38"
+      },
+      {
+        "relative_path": "artifacts/label_mapping.csv",
+        "size_bytes": 419,
+        "sha256": "d4858c7b6658d59d85073b6deb13276c460cfa90ddc633f18c5724eb9c082db0"
+      },
+      {
+        "relative_path": "artifacts/quality_report.json",
+        "size_bytes": 1341,
+        "sha256": "184f9368e5a5bfe1ab2903ebad0b1ccf5f948b79c4c59f66b3d9c9091eaee188"
+      },
+      {
+        "relative_path": "artifacts/quality_report.md",
+        "size_bytes": 596,
+        "sha256": "cf52af030184e5bf954d82cf91ccefea0cd74d1293dad4c20d438fb21c948d3a"
+      },
+      {
+        "relative_path": "artifacts/quantity_conservation.json",
+        "size_bytes": 761,
+        "sha256": "cf49b273ff80755756affd03ef61b4a4081ce8325a6c25e9d1bd3327fe9d9cba"
+      },
+      {
+        "relative_path": "artifacts/raw_fingerprint_manifest.csv",
+        "size_bytes": 20277,
+        "sha256": "fe1e5e1b6c5edb910576aad39dbf42d384c7437bb3fa5a755deb9756101e6090"
+      },
+      {
+        "relative_path": "artifacts/representative_samples.csv",
+        "size_bytes": 4051,
+        "sha256": "e69be18bac622ade7822f8a8ab7771a870f1f5f540e07741293bffd6a0cb6b5c"
+      },
+      {
+        "relative_path": "artifacts/serious_mismatches.csv",
+        "size_bytes": 14,
+        "sha256": "18c536f3a6728f14ebf95396dde74a011693d1e7d5b4107513049a32cfa86756"
+      },
+      {
+        "relative_path": "artifacts/source_class_count_check.csv",
+        "size_bytes": 119,
+        "sha256": "7a611f327834fa69af3e748ae54b7d4427fa38a675efbc15a670390196e843b0"
+      },
+      {
+        "relative_path": "artifacts/target_label_provenance.csv",
+        "size_bytes": 1229,
+        "sha256": "74cbff3d0c37fdc42a5b797e21df3cbb0356d910be976900fbcb5ee93954108e"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 2118,
+        "sha256": "9494f4d122b5d2427f30775b80ef4bebe8736d98b802aaec4b78bcf3a2af67b9"
+      },
+      {
+        "relative_path": "artifacts/validation_spot_checks.csv",
+        "size_bytes": 5356,
+        "sha256": "5f68d4565eacaf4254b0e3fb26cedf7671a389406745bca7a92adba523cd6ad9"
+      },
+      {
+        "relative_path": "logs/actual_read_log.csv",
+        "size_bytes": 20920,
+        "sha256": "07b6a164cc5d1ea7eb5c9be1635024271149c8040d86bf6f8c74c61d7b58ec7e"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 460,
+        "sha256": "f177c7daffa7de9b3d5602e4f260b7431db9c20253502f232b5ec37294f6dcb0"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 117,
+        "sha256": "93a6c6c800ccdb2cfda982c32c6e921199682e9f354c2bf3676ec07333a5b11e"
+      }
+    ],
+    "output_tree_sha256": "eebd6b49124c6cb16baa5169b1cb0ac75dd10f40edd4261a0c24a36741baa4bc"
+  },
+  "checkpoint": {
+    "completed_batches": [
+      "all-177-mat-files"
+    ],
+    "pending_batches": [],
+    "resume_token": null
+  }
+}
