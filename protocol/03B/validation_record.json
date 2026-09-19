@@ -1,0 +1,90 @@
+{
+  "schema_version": "03B-1.0",
+  "step_id": "03-B",
+  "status": "passed",
+  "pass_token": "03-B-V2026.09.20-ddc7abf1-通过",
+  "next_allowed": "04-A",
+  "run_id": "run_03-B_20260919T172539034521Z_69947ed7_6f3e2e9b",
+  "source_A_freeze_package_id": "FREEZE-03A-f5307f8f",
+  "source_A_freeze_sha256": "19705684bfd3fd7a80c97c3cffb83cbb41925aa58b9bbb2251d1c98e69f0fee9",
+  "source_A_run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+  "source_word_sha256": "f960cde0421d35b42232f25c06f09e8977a9cd7d5c6d81818c06d4a78303a7de",
+  "output_word_sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+  "checks_summary": {
+    "only_03A_frozen_results_used": true,
+    "no_training_tuning_model_selection": true,
+    "waveform_psd_envelope_traceable_to_03A": true,
+    "formula_parameters_units_match_03A_code_and_problem_basis": true,
+    "difficult_samples_preserved_not_replaced": true,
+    "evidence_boundary_no_single_peak_proves_class": true,
+    "official_style_and_sections_preserved": true,
+    "media_objects_not_reduced": true,
+    "existing_media_bytes_preserved": true,
+    "render_all_16_pages_passed": true,
+    "toc_update_on_open_enabled": true
+  },
+  "object_counts": {
+    "before": {
+      "media": 5,
+      "drawing": 4,
+      "vml_pict": 1,
+      "math": 0,
+      "math_para": 0,
+      "tables": 7,
+      "sections": 6
+    },
+    "after": {
+      "media": 7,
+      "drawing": 6,
+      "vml_pict": 1,
+      "math": 5,
+      "math_para": 5,
+      "tables": 10,
+      "sections": 6
+    }
+  },
+  "traceability": {
+    "figure2": {
+      "source_run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+      "source_artifact": "representative_waveform_segments.csv",
+      "source_blob_sha": "81f9e342b5cac597c27ae9c7a56ead917f46ba22",
+      "typical_file": "source_domain/cwru_12khz_fe/B021_3.mat",
+      "difficult_file": "source_domain/cwru_12khz_fe/B014_2.mat",
+      "figure_sha256": "c7ffa98d6070192df215a9563db7e1494681c5c975fcb695a100fe602bf7cf19"
+    },
+    "figure3": {
+      "source_run_id": "run_03-A_20260919T164527811276Z_71ebe710_f5307f8f",
+      "source_psd_blob_sha": "082e1a239768d5db6124a274792d1b898d98f79a",
+      "source_envelope_blob_sha": "c91f9d0fcdb85105eb835eb78cd3303cc9968c72",
+      "file": "source_domain/cwru_12khz_fe/B014_2.mat",
+      "rpm": 1755,
+      "fr_hz": 29.25,
+      "FTF_hz": 11.162967914438504,
+      "BSF_hz": 116.6395653469493,
+      "mechanism_score": 0.0011567430329787597,
+      "envelope_mechanism_score": 0.10991010628267484,
+      "figure_sha256": "0ee38447fb07643fc7ed7e3e6e841d401f2c21408ea1268bc8057d831f77e82b"
+    },
+    "information_fidelity": {
+      "common_0_6k_energy_ratio": [
+        0.9944328350882958,
+        0.9961196599743511
+      ],
+      "mechanism_band_ratio": [
+        1.0000142030243415,
+        1.0000193925562084
+      ],
+      "full_spectrum_ratio": [
+        0.7623763265256683,
+        0.9411106130571304
+      ]
+    }
+  },
+  "visual_QA": {
+    "renderer": "/home/oai/skills/docx/render_docx.py",
+    "page_count": 16,
+    "pages_inspected": "1-16",
+    "result": "pass",
+    "notes": "No clipping/overlap/missing glyphs; final rerender also produced 16 pages. Word TOC field remains present and updateFields is enabled."
+  }
+}
