@@ -1,0 +1,20 @@
+{
+  "captured_utc": "2026-09-19T10:16:35.952917Z",
+  "cpu_count_logical": 4,
+  "cpu_model": "AMD EPYC 7763 64-Core Processor",
+  "cuda": null,
+  "git_commit": "b92b027cad04e2888d66250bf067a71e9cef3c06",
+  "github_actions": true,
+  "github_runner_arch": "X64",
+  "github_runner_os": "Linux",
+  "gpu": null,
+  "machine": "x86_64",
+  "pip_freeze_sha256": "10dd5a000d030997936df4c899ed604224960830302e3471c9a9bd0443d37524",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "python_implementation": "CPython",
+  "python_version": "3.11.16",
+  "release": "6.17.0-1022-azure",
+  "schema_version": "00B-1.0",
+  "system": "Linux"
+}

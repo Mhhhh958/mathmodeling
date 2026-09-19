@@ -1,0 +1,18 @@
+{
+  "binding_digest": "1f3a673a615e158c5e4a492727e8f213595f2184aba948d7e98ca296b63ff934",
+  "checks": {
+    "config_hash_bound": true,
+    "environment_hash_bound": true,
+    "git_code_version_bound": true,
+    "output_root_is_run_scoped": true,
+    "raw_data_version_not_frozen": true,
+    "resume_token_created": true,
+    "run_id_embeds_binding": true,
+    "run_id_unique": true,
+    "same_binding_same_digest": true,
+    "seed_change_changes_binding": true
+  },
+  "ok": true,
+  "resume_token": "RESUME_run_00-B_20260919T101635952477Z_1f3a673a_eb9ddf45_batch-001_5f9cf0350bc2",
+  "sample_second_run_id": "run_00-B_20260919T101636189973Z_1f3a673a_f0359abc"
+}
