@@ -1,0 +1,74 @@
+{
+  "schema_version": "00B-1.0",
+  "manifest_type": "data_manifest",
+  "status": "draft_pending_01A",
+  "raw_data_version_id": null,
+  "freeze_step": "01-A",
+  "provisional_source": {
+    "repository": "Mhhhh958/mathmodeling",
+    "00A_reference_commit": "aaf5f88b55897eb3bab6e44ee29a1a3bb31e311a",
+    "source_domain": {
+      "path": "data/raw/source_domain",
+      "git_tree_sha": "035030f29500c8aab49f959ed8d634ac17edcf62",
+      "file_type": ".mat",
+      "file_count": 161,
+      "class_counts_from_path_names": {
+        "OR": 77,
+        "IR": 40,
+        "B": 40,
+        "N": 4
+      }
+    },
+    "target_domain": {
+      "path": "data/raw/target_domain",
+      "git_tree_sha": "5a34c85fac8c04b75340ad2f3dcbdbbb7145f2c9",
+      "file_type": ".mat",
+      "file_count": 16,
+      "ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P"
+      ],
+      "labels": "unknown"
+    }
+  },
+  "raw_fingerprint_rule": {
+    "algorithm": "sha256",
+    "per_file_fields": [
+      "relative_path",
+      "size_bytes",
+      "sha256"
+    ],
+    "ordering": "sort by POSIX relative_path ascending",
+    "dataset_digest": "sha256(canonical_json(per_file_records))",
+    "raw_data_version_id_rule": "RAW-<first16(dataset_digest)>",
+    "note": "Do not freeze raw_data_version_id until 01-A has actually read/audited raw files."
+  },
+  "derived_data_rule": {
+    "derived_data_id_rule": "DERIVED-<type>-<first16(manifest_digest)>",
+    "required_parent_fields": [
+      "parent_raw_data_version_id_or_derived_data_id",
+      "producer_run_id",
+      "code_version_id",
+      "run_config_sha256"
+    ],
+    "required_output_fields": [
+      "relative_path",
+      "size_bytes",
+      "sha256"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "00B-1.0",
+  "manifest_type": "environment_manifest",
+  "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1",
+  "status": "frozen_baseline",
+  "default_execution_mode": "chat_plus_git",
+  "execution_target": {
+    "provider": "github_actions",
+    "runner_label": "ubuntu-24.04",
+    "os": "Ubuntu 24.04",
+    "architecture": "x86_64",
+    "cpu_policy": "CPU-only default; exact CPU model/logical core count captured per run",
+    "gpu_policy": "not required by baseline",
+    "gpu": null,
+    "cuda": null
+  },
+  "python": {
+    "required_major_minor": "3.11",
+    "exact_patch": "capture_at_runtime",
+    "implementation": "CPython"
+  },
+  "randomness": {
+    "default_seed": 20260919,
+    "must_seed": [
+      "python_random",
+      "numpy"
+    ],
+    "conditional_seed": [
+      "torch_if_used",
+      "cuda_if_used"
+    ],
+    "determinism_note": "Any nondeterministic backend must be declared in run_manifest."
+  },
+  "dependency_lock": {
+    "baseline_lock_file": "protocol/00B/requirements-lock-00b.txt",
+    "strategy": "exact pins for baseline core; save pip_freeze.txt for every real run; any new package must be pinned before first formal use",
+    "legacy_requirements_file": "requirements.txt",
+    "legacy_ranges_are_not_a_lock": true
+  },
+  "key_libraries": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "matplotlib": "3.9.2",
+    "pillow": "12.3.0",
+    "pyyaml": "6.0.2",
+    "openpyxl": "3.1.5",
+    "h5py": "3.12.1",
+    "tqdm": "4.67.1"
+  },
+  "deep_learning_policy": {
+    "torch": "not frozen in 00-B because no model family is frozen yet",
+    "rule": "If a later approved step uses torch/GPU, create a new environment version with exact torch/CUDA/driver versions before that formal run."
+  },
+  "runtime_capture_required": [
+    "platform.platform",
+    "python_version",
+    "machine",
+    "processor",
+    "cpu_count_logical",
+    "cpu_count_physical_if_available",
+    "gpu_name_if_any",
+    "cuda_version_if_any",
+    "pip_freeze_sha256"
+  ]
+}

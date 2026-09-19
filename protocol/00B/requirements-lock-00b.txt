@@ -1,0 +1,13 @@
+# STEP 00-B baseline core lock
+# Python: 3.11.x on Ubuntu 24.04 CPU-only baseline
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.9.1
+joblib==1.6.0
+matplotlib==3.9.2
+pillow==12.3.0
+PyYAML==6.0.2
+openpyxl==3.1.5
+h5py==3.12.1
+tqdm==4.67.1

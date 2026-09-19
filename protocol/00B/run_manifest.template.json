@@ -1,0 +1,46 @@
+{
+  "schema_version": "00B-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "<generated>",
+  "step_id": "<STEP>",
+  "status": "initialized|running|paused|completed|failed",
+  "created_utc": "<ISO8601Z>",
+  "execution_mode": "chat_plus_git|chat_direct",
+  "binding": {
+    "code_version_id": "<git commit OR code-manifest-sha256>",
+    "data_version_id": "<RAW/DERIVED id; 00-B selftest may use DATA-DRAFT>",
+    "run_config_sha256": "<sha256>",
+    "seed": 20260919,
+    "environment_sha256": "<sha256>",
+    "binding_digest": "<sha256(canonical binding)>"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "<git sha if git mode>",
+    "code_manifest": "protocol/00B/code_manifest.json"
+  },
+  "data": {
+    "data_manifest": "protocol/00B/data_manifest.draft.json",
+    "raw_data_version_id": null,
+    "derived_input_ids": []
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "config": {
+    "path": "<run config path>",
+    "sha256": "<sha256>"
+  },
+  "outputs": {
+    "root": "outputs/runs/<run_id>",
+    "files": [],
+    "output_tree_sha256": null
+  },
+  "checkpoint": {
+    "resume_token": null,
+    "completed_batches": [],
+    "pending_batches": []
+  },
+  "parent_run_ids": []
+}

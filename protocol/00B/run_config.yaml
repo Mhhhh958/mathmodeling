@@ -1,0 +1,18 @@
+schema_version: "00B-1.0"
+step_id: "00-B"
+purpose: "protocol_baseline_selftest"
+execution_mode: "chat_plus_git"
+seed: 20260919
+data:
+  raw_data_version_id: null
+  data_manifest: "protocol/00B/data_manifest.draft.json"
+environment:
+  manifest: "protocol/00B/environment_manifest.json"
+  lock_file: "protocol/00B/requirements-lock-00b.txt"
+output:
+  root_rule: "outputs/runs/<run_id>"
+  overwrite_existing_run: false
+checkpoint:
+  enabled: true
+  natural_batch_required: true
+  resume_token_required_on_pause: true
