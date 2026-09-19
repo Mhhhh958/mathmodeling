@@ -1,0 +1,35 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "05-B",
+  "status": "passed",
+  "run_id": "run_05-B_20260919T195006000000Z_338d8e27_f1131a5f",
+  "source_A_freeze_package_id": "FREEZE-05A-ba6432cf",
+  "source_A_run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "latest_word_before": {
+    "version": "V0.5",
+    "sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+    "path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
+    "library_file_id": "libfile_c9d50e21e7d88191803a73b277461e12"
+  },
+  "new_word_after": {
+    "version": "V0.6",
+    "sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+    "path": "/数学建模/05B/2025华为杯E题论文_步骤05_V0.6.docx",
+    "library_file_id": "libfile_f3e226e221f88191872c63e176fbc950"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "/数学建模/05B/本步论文变更单_05B.json",
+  "new_figures": [],
+  "new_tables": [
+    "表14 四个外层文件级训练池与测试集划分",
+    "表15 评价指标、聚合方式与模型选择边界"
+  ],
+  "validation_record": "protocol/05B/validation_record.json",
+  "code_version_id": "CODE-09bb7e36d9ba3206",
+  "pass_token": "05-B-V2026.09.20-f1131a5f-通过",
+  "next_allowed": "06-A"
+}
