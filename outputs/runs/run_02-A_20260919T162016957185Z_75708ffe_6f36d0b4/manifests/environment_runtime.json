@@ -1,0 +1,13 @@
+{
+  "captured_utc": "2026-09-19T16:20:16.955122Z",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "python_version": "3.11.16",
+  "cpu_count_logical": 4,
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.14.1",
+  "gpu": null,
+  "cuda": null,
+  "git_commit": "60d5e453b9e4d007971dac95bf1421d6ff920b67",
+  "pip_freeze_sha256": "93a6c6c800ccdb2cfda982c32c6e921199682e9f354c2bf3676ec07333a5b11e"
+}

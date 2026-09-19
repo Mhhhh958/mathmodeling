@@ -1,0 +1,226 @@
+{
+  "schema_version": "00C-A-freeze-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "02-A",
+  "freeze_package_id": "FREEZE-02A-6f36d0b4",
+  "status": "passed",
+  "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
+  "versions": {
+    "code_version_id": "git:60d5e453b9e4d007971dac95bf1421d6ff920b67",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [],
+    "run_config_sha256": "09e46644f444a06a3eacdd71fe3d04fd587bae2454b9699ca64fdd686b73e067",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "common_analysis_fs_hz": 12000,
+    "common_effective_band_hz": [
+      0,
+      6000
+    ],
+    "candidate_fault_subgroups": [
+      "source_12khz_de",
+      "source_12khz_fe",
+      "source_48khz_de"
+    ],
+    "normal_policy": "retain all 4",
+    "distance_feature_families": {
+      "time_shape": [
+        "skew",
+        "kurtosis",
+        "crest_factor",
+        "impulse_factor",
+        "zero_cross_rate"
+      ],
+      "spectral_location": [
+        "spectral_centroid_norm",
+        "rolloff95_norm",
+        "spectral_entropy"
+      ],
+      "band_energy": [
+        "energy_0_500",
+        "energy_500_1500",
+        "energy_1500_3000",
+        "energy_3000_6000"
+      ]
+    },
+    "family_weights": "equal after robust feature scaling; internal metric only",
+    "stability": "leave-one-load 0/1/2/3"
+  },
+  "real_results": [
+    {
+      "name": "full_group_ranking",
+      "value": [
+        {
+          "subgroup": "source_12khz_fe",
+          "exclude_load_hp": "none",
+          "n_files": 45,
+          "robust_group_distance": 0.8599550818244359,
+          "distance_time_shape": 0.39778245927661077,
+          "distance_spectral_location": 1.6253511084655223,
+          "distance_band_energy": 0.5567316777311748,
+          "rank": 1
+        },
+        {
+          "subgroup": "source_12khz_de",
+          "exclude_load_hp": "none",
+          "n_files": 60,
+          "robust_group_distance": 0.8964830009225436,
+          "distance_time_shape": 0.3089730048284087,
+          "distance_spectral_location": 2.0090306779639917,
+          "distance_band_energy": 0.3714453199752302,
+          "rank": 2
+        },
+        {
+          "subgroup": "source_48khz_de",
+          "exclude_load_hp": "none",
+          "n_files": 52,
+          "robust_group_distance": 0.9472915828793357,
+          "distance_time_shape": 0.27580929680439853,
+          "distance_spectral_location": 2.1294342262028048,
+          "distance_band_energy": 0.4366312256308034,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "name": "leave_one_load_winner_counts",
+      "value": {
+        "source_12khz_fe": 4
+      }
+    },
+    {
+      "name": "MVP",
+      "value": {
+        "groups": [
+          "source_12khz_fe",
+          "source_48khz_normal"
+        ],
+        "file_count": 49,
+        "data_need": "only current official source raw MAT; all N=4 retained",
+        "rationale": "hard class/load coverage plus label-blind subgroup comparability",
+        "risk": [
+          "N class only 4 independent files",
+          "target exact RPM/sensor position unknown",
+          "source-target bearing/system gap remains"
+        ],
+        "later_validation": [
+          "grouped-by-file CV only",
+          "compare against all-source baseline",
+          "report per-class metrics especially N",
+          "stress test across loads/sizes"
+        ]
+      }
+    },
+    {
+      "name": "alternative",
+      "value": {
+        "groups": [
+          "source_12khz_fe",
+          "source_12khz_de",
+          "source_48khz_normal"
+        ],
+        "file_count": 109,
+        "data_need": "current official source raw MAT",
+        "rationale": "broader source diversity while retaining top comparable subgroup(s)",
+        "risk": [
+          "larger domain heterogeneity",
+          "possible negative transfer"
+        ],
+        "later_validation": [
+          "same grouped splits as MVP",
+          "paired comparison to MVP and all-source"
+        ]
+      }
+    },
+    {
+      "name": "coverage",
+      "value": [
+        {
+          "plan": "MVP",
+          "files": 49,
+          "OR": 21,
+          "IR": 12,
+          "B": 12,
+          "N": 4,
+          "loads_hp": "0.0;1.0;2.0;3.0",
+          "fault_sizes_in": "0.007;0.014;0.021",
+          "outer_race_positions": "3.0;6.0;12.0",
+          "subgroups": "source_12khz_fe;source_48khz_normal"
+        },
+        {
+          "plan": "alternative",
+          "files": 109,
+          "OR": 49,
+          "IR": 28,
+          "B": 28,
+          "N": 4,
+          "loads_hp": "0.0;1.0;2.0;3.0",
+          "fault_sizes_in": "0.007;0.014;0.021;0.028",
+          "outer_race_positions": "3.0;6.0;12.0",
+          "subgroups": "source_12khz_de;source_12khz_fe;source_48khz_normal"
+        },
+        {
+          "plan": "all_source",
+          "files": 161,
+          "OR": 77,
+          "IR": 40,
+          "B": 40,
+          "N": 4,
+          "loads_hp": "0.0;1.0;2.0;3.0",
+          "fault_sizes_in": "0.007;0.014;0.021;0.028",
+          "outer_race_positions": "3.0;6.0;12.0",
+          "subgroups": "source_12khz_de;source_12khz_fe;source_48khz_de;source_48khz_normal"
+        }
+      ]
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/source_selection_list.csv"
+    },
+    {
+      "path": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/leave_one_load_stability.csv"
+    }
+  ],
+  "anomalies_and_failures": [],
+  "b_handoff": {
+    "required_data": [
+      "source_target_comparability_table.csv",
+      "source_selection_list.csv",
+      "retained_class_condition_stats.csv",
+      "selection_plan_and_alternative.json",
+      "validation_record.json"
+    ],
+    "supported_conclusions": [
+      "selection is subgroup-rule-based and target-label-blind",
+      "all viable plans retain all 4 normal files",
+      "target unlabeled data is used only for group-level comparability"
+    ],
+    "wording_limits": [
+      "robust_group_distance is an internal comparability metric, not an official score",
+      "about-600rpm is approximate",
+      "target sensor position and exact bearing model are not established by 01-A"
+    ],
+    "approved_tables": [
+      "source_target_comparability_table.csv",
+      "candidate_group_distances.csv",
+      "retained_class_condition_stats.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-19T16:20:16.955122Z",
+    "content_sha256": "f9ed0ecc404eb9611e9352c97749eee247a8cf7306c42bb65d2b032e8c8d938b",
+    "invalidation_dependencies": [
+      "RAW-5a5dd129c91bfc64 changes",
+      "02-A selection code/config changes",
+      "01-A label/provenance boundary changes"
+    ]
+  }
+}

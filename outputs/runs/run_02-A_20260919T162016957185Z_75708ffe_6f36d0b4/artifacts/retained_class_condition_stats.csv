@@ -1,0 +1,4 @@
+﻿plan,files,OR,IR,B,N,loads_hp,fault_sizes_in,outer_race_positions,subgroups
+MVP,49,21,12,12,4,0.0;1.0;2.0;3.0,0.007;0.014;0.021,3.0;6.0;12.0,source_12khz_fe;source_48khz_normal
+alternative,109,49,28,28,4,0.0;1.0;2.0;3.0,0.007;0.014;0.021;0.028,3.0;6.0;12.0,source_12khz_de;source_12khz_fe;source_48khz_normal
+all_source,161,77,40,40,4,0.0;1.0;2.0;3.0,0.007;0.014;0.021;0.028,3.0;6.0;12.0,source_12khz_de;source_12khz_fe;source_48khz_de;source_48khz_normal

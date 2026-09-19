@@ -1,0 +1,52 @@
+{
+  "step_id": "02-A",
+  "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
+  "checks": {
+    "rule_recomputation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/source_selection_list.csv",
+      "key_numbers": {
+        "MVP_files": 49,
+        "alternative_files": 109,
+        "winner": "source_12khz_fe"
+      }
+    },
+    "four_class_coverage": {
+      "passed": true,
+      "evidence": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/retained_class_condition_stats.csv",
+      "MVP_counts": {
+        "OR": 21,
+        "IR": 12,
+        "B": 12,
+        "N": 4
+      }
+    },
+    "load_coverage": {
+      "passed": true,
+      "evidence": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/retained_class_condition_stats.csv"
+    },
+    "normal_limit_truthful": {
+      "passed": true,
+      "evidence": "01-A frozen metadata + retained_class_condition_stats.csv",
+      "normal_files": 4
+    },
+    "leave_one_load_sensitivity": {
+      "passed": true,
+      "evidence": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/leave_one_load_stability.csv",
+      "winner_counts": {
+        "source_12khz_fe": 4
+      },
+      "selection_fallback_rule_applied": false
+    },
+    "target_label_boundary": {
+      "passed": true,
+      "evidence": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4/artifacts/target_unlabeled_usage_boundary.json"
+    },
+    "no_final_classifier_training": {
+      "passed": true,
+      "evidence": "script contains signal preprocessing/descriptors/ranking only; no estimator fit/predict"
+    }
+  },
+  "passed": true,
+  "status": "passed"
+}

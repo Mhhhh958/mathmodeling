@@ -1,0 +1,134 @@
+{
+  "schema_version": "02A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
+  "step_id": "02-A",
+  "status": "completed",
+  "created_utc": "2026-09-19T16:20:16.955122Z",
+  "execution_mode": "chat_plus_git",
+  "binding": {
+    "code_version_id": "git:60d5e453b9e4d007971dac95bf1421d6ff920b67",
+    "data_version_id": "RAW-5a5dd129c91bfc64",
+    "run_config_sha256": "09e46644f444a06a3eacdd71fe3d04fd587bae2454b9699ca64fdd686b73e067",
+    "seed": 20260919,
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "75708ffe6f336425d4e0a8ffea494c1f7bae9b545abe6aa9dd97a73527d6234e"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "60d5e453b9e4d007971dac95bf1421d6ff920b67",
+    "entrypoint": "scripts/step02a_transfer_source_selection.py",
+    "code_manifest": "protocol/02A/code_manifest.json"
+  },
+  "data": {
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "source_01A_manifest": "protocol/01A/data_manifest.json"
+  },
+  "blueprint": {
+    "path": "protocol/02A/question1_argument_blueprint.json",
+    "sha256": "3cf804a902becca47c9a6d84a6837d9e013217e8a78d02fcda92d5cdc71e4c7e"
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "environment_manifest_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "config": {
+    "path": "protocol/02A/run_config.json",
+    "sha256": "09e46644f444a06a3eacdd71fe3d04fd587bae2454b9699ca64fdd686b73e067"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_02-A_20260919T162016957185Z_75708ffe_6f36d0b4",
+    "files": [
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 7024,
+        "sha256": "7485a719824084dde916c417b199ecbd7d0d35641e8c55d8d4faa3b84fae9ede"
+      },
+      {
+        "relative_path": "artifacts/candidate_group_distances.csv",
+        "size_bytes": 439,
+        "sha256": "6a56aed10dee546c94080b6a334e822752feeac53dcd0e416e89af56cb1475f2"
+      },
+      {
+        "relative_path": "artifacts/excluded_from_mvp.csv",
+        "size_bytes": 24086,
+        "sha256": "5d2745df32f6e5dea959e1b27188ac5b517b77263baf8891fc02e039c8b39095"
+      },
+      {
+        "relative_path": "artifacts/file_level_comparability_features.csv",
+        "size_bytes": 75765,
+        "sha256": "34b0a6050caa5f627655a201b66c155699ff2338f55af2cdbae7c618b4a5f508"
+      },
+      {
+        "relative_path": "artifacts/leave_one_load_stability.csv",
+        "size_bytes": 1324,
+        "sha256": "b831d589a91bbc266df5fcd6cea1062852120b313d1fed81979fa8ffb9d2f8a9"
+      },
+      {
+        "relative_path": "artifacts/retained_class_condition_stats.csv",
+        "size_bytes": 459,
+        "sha256": "34ce3d16f76a5ea153a2e540145f805dd9dd737d9e2c50854805b185d70d3830"
+      },
+      {
+        "relative_path": "artifacts/selection_plan_and_alternative.json",
+        "size_bytes": 1967,
+        "sha256": "b273d6a2f94489710ab18b3b133998125b1be2b72de7eaf6c25ae037266b0065"
+      },
+      {
+        "relative_path": "artifacts/selection_summary.md",
+        "size_bytes": 1029,
+        "sha256": "0f4eb943bcda84ebc0839c897de1a95d40519599cbf4413959797137dac94288"
+      },
+      {
+        "relative_path": "artifacts/source_selection_list.csv",
+        "size_bytes": 34384,
+        "sha256": "96f2da66e0c441bd3e21b913d29204df9d60b52366beaff11ee7f60b163f0306"
+      },
+      {
+        "relative_path": "artifacts/source_target_comparability_table.csv",
+        "size_bytes": 1511,
+        "sha256": "d0f49d09d8a9c87a5a44bf8bcc7363ca595446d50ec547ceedef7ad3c4b48740"
+      },
+      {
+        "relative_path": "artifacts/target_unlabeled_usage_boundary.json",
+        "size_bytes": 853,
+        "sha256": "2e473e7949cc7b90489f39787805d1f971c6054bfdc3c700852a88ba73c656ca"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 1740,
+        "sha256": "b42e94897497b9279a593f0002f089a3579d82357417bd1a6c1a442afe4bf040"
+      },
+      {
+        "relative_path": "logs/actual_feature_read_log.csv",
+        "size_bytes": 15053,
+        "sha256": "3faade9478465d1d800670a0e93defd0f2b246d8efe3d2f14d5342ccac09ba7f"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 416,
+        "sha256": "11e2dfe454f14b1bde1087fc809c81a9c5acd0d9467c3b8f438a187fc7fa230b"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 117,
+        "sha256": "93a6c6c800ccdb2cfda982c32c6e921199682e9f354c2bf3676ec07333a5b11e"
+      }
+    ],
+    "output_tree_sha256": "c4ec24717f60ee4c7b5382a94de7f0d8f2a4271f761b2a1c8b400a83b4782a39"
+  },
+  "checkpoint": {
+    "completed_batches": [
+      "all-177-file-descriptors",
+      "full-ranking",
+      "leave-one-load-0",
+      "leave-one-load-1",
+      "leave-one-load-2",
+      "leave-one-load-3"
+    ],
+    "pending_batches": [],
+    "resume_token": null
+  },
+  "duration_seconds": 3.6726582050323486
+}

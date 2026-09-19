@@ -1,0 +1,16 @@
+{
+  "target_label_use": "none; A-P truth unknown and no prediction label is read",
+  "target_unlabeled_use": [
+    "common-band file-level amplitude/statistical/spectral descriptors",
+    "group-level median comparison only"
+  ],
+  "target_unlabeled_not_used_for": [
+    "class-conditional matching",
+    "file label inference",
+    "source file cherry-picking within a subgroup"
+  ],
+  "rpm_use": "target about-600rpm is reported as a coarse domain gap only; not used as exact order normalization or ranking weight",
+  "sensor_use": "target sensor position is unknown; DE vs FE is reported but not given a target-derived score advantage",
+  "amplitude_use": "raw/common-band log-RMS gap is reported but excluded from selection distance because sensor gain/mounting is not known to be comparable",
+  "historical_predictions": "not read by this script"
+}
