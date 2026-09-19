@@ -1,0 +1,40 @@
+{
+  "schema_version": "03B-1.0",
+  "step_id": "03-B",
+  "status": "passed",
+  "pass_token": "03-B-V2026.09.20-ddc7abf1-通过",
+  "next_allowed": "04-A",
+  "run_id": "run_03-B_20260919T172539034521Z_69947ed7_6f3e2e9b",
+  "source_A_freeze_package_id": "FREEZE-03A-f5307f8f",
+  "source_A_freeze_sha256": "19705684bfd3fd7a80c97c3cffb83cbb41925aa58b9bbb2251d1c98e69f0fee9",
+  "output_word_sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+  "output_word_library_file_id": "libfile_694b330a482c81918ed25fbd80265d06",
+  "validation_record": "protocol/03B/validation_record.json",
+  "delivery_record": "protocol/03B/B_delivery.json",
+  "object_counts": {
+    "before": {
+      "media": 5,
+      "drawing": 4,
+      "vml_pict": 1,
+      "math": 0,
+      "math_para": 0,
+      "tables": 7,
+      "sections": 6
+    },
+    "after": {
+      "media": 7,
+      "drawing": 6,
+      "vml_pict": 1,
+      "math": 5,
+      "math_para": 5,
+      "tables": 10,
+      "sections": 6
+    }
+  },
+  "rendered_pages": 16,
+  "open_P0": [],
+  "word_rebuilt_from_plain_text": false,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
