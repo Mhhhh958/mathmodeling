@@ -1,0 +1,142 @@
+{
+  "schema_version": "05B-1.0",
+  "step_id": "05-B",
+  "status": "passed",
+  "pass_token": "05-B-V2026.09.20-f1131a5f-通过",
+  "next_allowed": "06-A",
+  "run_id": "run_05-B_20260919T195006000000Z_338d8e27_f1131a5f",
+  "source_A_freeze_package_id": "FREEZE-05A-ba6432cf",
+  "source_A_freeze_sha256": "338d8e27604c26061d9e93610b6d299457579f0d113f9a695ec1ab8c9eae6671",
+  "source_A_run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "source_word_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+  "output_word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+  "checks": {
+    "05A_protocol_numbers_match": {
+      "passed": true,
+      "evidence": [
+        "protocol/05A/latest_freeze_package.json",
+        "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/split_summary.csv",
+        "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/normal_file_distribution.csv"
+      ],
+      "key_numbers": {
+        "independent_files": 49,
+        "source_windows": 733,
+        "class_files": {
+          "OR": 21,
+          "IR": 12,
+          "B": 12,
+          "N": 4
+        },
+        "outer_test_counts": [
+          {
+            "fold": 0,
+            "OR": 6,
+            "IR": 3,
+            "B": 3,
+            "N": 1,
+            "files": 13
+          },
+          {
+            "fold": 1,
+            "OR": 5,
+            "IR": 3,
+            "B": 3,
+            "N": 1,
+            "files": 12
+          },
+          {
+            "fold": 2,
+            "OR": 5,
+            "IR": 3,
+            "B": 3,
+            "N": 1,
+            "files": 12
+          },
+          {
+            "fold": 3,
+            "OR": 5,
+            "IR": 3,
+            "B": 3,
+            "N": 1,
+            "files": 12
+          }
+        ]
+      },
+      "word_locations": [
+        "5.2.1 训练测试划分与评价协议",
+        "表14"
+      ]
+    },
+    "normal_4_file_handling_matches": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/normal_file_distribution.csv",
+      "mapping": {
+        "Fold 0": "N_0.mat",
+        "Fold 1": "N_2_(1750rpm).mat",
+        "Fold 2": "N_3.mat",
+        "Fold 3": "N_1_(1772rpm).mat"
+      },
+      "inner_rule": "within each outer train pool, the 3 remaining N files are each inner-validation exactly once; every inner train has 2 N files"
+    },
+    "group_boundaries_nonoverlap": {
+      "passed": true,
+      "evidence": [
+        "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/outer_split_manifest.csv",
+        "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/inner_split_manifest.csv",
+        "protocol/05A/validation_record.json"
+      ],
+      "issues": [],
+      "protocol_figure": "not created; table + text were sufficient, so no diagram could introduce a contradictory crossing boundary"
+    },
+    "evaluation_protocol_matches": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/evaluation_protocol.json",
+      "primary": "file-level Macro-F1",
+      "secondary": [
+        "file-level per-class Recall",
+        "file-level confusion matrix",
+        "file-level Accuracy",
+        "window-level metrics auxiliary only"
+      ],
+      "aggregation": "mean per-window class probabilities within each independent file, then argmax",
+      "outer_test_for_model_selection": false
+    },
+    "no_unproduced_model_scores": {
+      "passed": true,
+      "evidence": "/数学建模/05B/word_structure_audit_05B.json",
+      "forbidden_score_strings_found": [],
+      "note": "05-A metric-validation toy example score was intentionally not written into the paper because it is not model performance."
+    },
+    "word_persistence": {
+      "passed": true,
+      "evidence": "/数学建模/05B/word_structure_audit_05B.json",
+      "before": {
+        "media": 7,
+        "tables": 14,
+        "drawing": 6,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "sections": 6
+      },
+      "after": {
+        "media": 7,
+        "tables": 16,
+        "drawing": 6,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "sections": 6
+      },
+      "existing_media_bytes_preserved": true,
+      "master_parts_equal": true
+    },
+    "visual_QA": {
+      "passed": true,
+      "renderer": "/home/oai/skills/docx/render_docx.py",
+      "rendered_pages": 21,
+      "inspected_pages": "1-21",
+      "result": "no clipping/overlap/missing glyphs/broken tables; table captions fixed to avoid duplicate numbering"
+    }
+  }
+}
