@@ -19,5 +19,12 @@
     }
   ],
   "formal_code_rule": "Any actually executed analysis/training/plotting code in later steps must be a real repository file and enter the applicable code manifest before formal execution.",
-  "validation_evidence": null
+  "validation_evidence": {
+    "validated_rules_commit": "0572af09a2cdb597c34754f163373c249ae72211",
+    "check_run_id": 105919019440,
+    "conclusion": "success",
+    "validation_run_id": "run_00-C_20260919T151817990529Z_50857da4_d9d776cf",
+    "evidence_root": "outputs/runs/run_00-C_20260919T151817990529Z_50857da4_d9d776cf",
+    "binding_digest": "50857da47c5bac80a1566a57bc5e91908b5feb310b2d8e546ccd8fc602ec00c4"
+  }
 }
