@@ -1,18 +1,18 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r9",
-  "updated_utc": "2026-09-19T18:30:00Z",
-  "CURRENT_ALLOWED_STEP": "04-B",
-  "LAST_PASS_TOKEN": "04-A-V2026.09.20-d60f9e54-通过",
+  "state_version": "2026.09.20-r10",
+  "updated_utc": "2026-09-19T18:50:00Z",
+  "CURRENT_ALLOWED_STEP": "05-A",
+  "LAST_PASS_TOKEN": "04-B-V2026.09.20-dfbb5d0e-通过",
   "LATEST_WORD": {
-    "version": "V0.4",
-    "artifact_id": "WORD-V0.4-ddc7abf1",
-    "parent_version": "V0.3",
-    "library_path": "/数学建模/03B/2025华为杯E题论文_步骤03_V0.4.docx",
-    "library_file_id": "libfile_694b330a482c81918ed25fbd80265d06",
-    "sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
-    "source_A_freeze_package_id": "FREEZE-03A-f5307f8f",
-    "run_id": "run_03-B_20260919T172539034521Z_69947ed7_6f3e2e9b"
+    "version": "V0.5",
+    "artifact_id": "WORD-V0.5-dfbb5d0e",
+    "parent_version": "V0.4",
+    "library_path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
+    "library_file_id": "libfile_c9d50e21e7d88191803a73b277461e12",
+    "sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+    "source_A_freeze_package_id": "FREEZE-04A-3e3b97c0",
+    "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e"
   },
   "LATEST_FREEZE_PACKAGE": {
     "step_id": "04-A",
@@ -25,24 +25,24 @@
     "content_sha256": "d60f9e54ae8aa2e216c4d4540f0c4fda90f64464fc16769c4fa428b41b1bd567"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "04-B",
+  "NEXT_ALLOWED": "05-A",
   "previous_gate": {
-    "step": "03-B",
-    "pass_token": "03-B-V2026.09.20-ddc7abf1-通过",
-    "next_allowed": "04-A"
+    "step": "04-A",
+    "pass_token": "04-A-V2026.09.20-d60f9e54-通过",
+    "next_allowed": "04-B"
   },
   "current_step_record": {
-    "step": "04-A",
+    "step": "04-B",
     "status": "passed",
-    "pass_token": "04-A-V2026.09.20-d60f9e54-通过",
-    "next_allowed": "04-B",
-    "run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
-    "code_version_id": "git:e8d1ed050b609833043653dae736f8d2323e4fbe",
-    "evidence_commit": "8e1fc48dd5e62a5eb9abbc4c12b5f3c50a0f8253",
-    "blueprint_commit": "39978d067a628c3e11934d031ece3a3b3c9a841c",
-    "freeze_package_id": "FREEZE-04A-3e3b97c0",
+    "pass_token": "04-B-V2026.09.20-dfbb5d0e-通过",
+    "next_allowed": "05-A",
+    "run_id": "run_04-B_20260919T184520000000Z_48bbc0c6_dfbb5d0e",
+    "code_version_id": "CODE-cc093a709cae50fe",
+    "data_version_id": "FREEZE-04A-d60f9e54ae8aa2e2",
     "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
-    "validation_record": "protocol/04A/validation_record.json"
+    "word_sha256": "dfbb5d0ed45b47ef30d0336d273e2d425d5d43f57e24f2a9246ce8da9e68feee",
+    "B_delivery_library_path": "/数学建模/04B/B_delivery_04B.json",
+    "validation_record": "protocol/04B/validation_record.json"
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -52,9 +52,9 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/04A/validation_record.json",
+    "latest_validation_record": "protocol/04B/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
-    "latest_word_library_path": "/数学建模/03B/2025华为杯E题论文_步骤03_V0.4.docx",
+    "latest_word_library_path": "/数学建模/04B/2025华为杯E题论文_步骤04_V0.5.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
     "latest_01A_data_manifest": "protocol/01A/data_manifest.json",
     "latest_01B_delivery": "protocol/01B/B_delivery.json",
@@ -69,6 +69,7 @@
     "latest_04A_freeze": "protocol/04A/latest_freeze_package.json",
     "latest_04A_blueprint": "protocol/04A/question1C_argument_blueprint.json",
     "latest_04A_run": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
-    "latest_04A_q2_interface": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/data_interface_manifest.json"
+    "latest_04A_q2_interface": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/data_interface_manifest.json",
+    "latest_04B_delivery": "protocol/04B/B_delivery.json"
   }
 }
