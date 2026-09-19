@@ -44,3 +44,5 @@ jobs:
             git commit -m 'Add STEP00-B protocol validation evidence [skip ci]'
             git push
           fi
+
+# STEP00-B validation trigger
