@@ -1,0 +1,24 @@
+{
+  "schema_version": "04B-1.0",
+  "step_id": "04-B",
+  "source_A_freeze_package_id": "FREEZE-04A-3e3b97c0",
+  "source_A_freeze_sha256": "d60f9e54ae8aa2e216c4d4540f0c4fda90f64464fc16769c4fa428b41b1bd567",
+  "source_A_run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+  "latest_word_before_version": "V0.4",
+  "latest_word_before_sha256": "ddc7abf1e63a1ef9de26f7be23830a80c07cdc7795317cd1a1fbdab32a23b4ef",
+  "output_word_version": "V0.5",
+  "allowed_writeback": [
+    "window rule",
+    "feature definitions and units",
+    "feature quality audit",
+    "leakage guard",
+    "Q2 data interface",
+    "Q1 summary"
+  ],
+  "new_result_figures": false,
+  "reason_no_new_figures": "04-A freeze approved_figures is empty; tables are clearer and prevent introducing unfrozen distribution/correlation results.",
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "seed": null
+}
