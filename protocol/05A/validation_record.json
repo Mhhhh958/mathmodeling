@@ -1,0 +1,50 @@
+{
+  "step_id": "05-A",
+  "run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "checks": {
+    "group_intersections_zero": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/outer_split_manifest.csv + inner_split_manifest.csv",
+      "issues": []
+    },
+    "all_classes_present": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/split_summary.csv"
+    },
+    "normal_4_files_distribution": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/normal_file_distribution.csv",
+      "outer_test_N_per_fold": {
+        "0": 1,
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "inner_val_N_entries": 12
+    },
+    "same_source_windows_grouped": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/window_group_assignment_audit.csv",
+      "source_windows": 733,
+      "source_groups": 49
+    },
+    "metric_and_file_aggregation_recalculation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/metric_validation_result.json",
+      "macro_f1": 0.8333333333333333,
+      "manual_macro_f1": 0.8333333333333333,
+      "abs_diff": 0.0
+    },
+    "training_boundary_frozen": {
+      "passed": true,
+      "evidence": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/evaluation_protocol.json",
+      "statement": "no imputation/scaling/selection/class-weight fit performed in 05-A"
+    },
+    "no_model_training": {
+      "passed": true,
+      "evidence": "script generates split/evaluation artifacts only; no estimator fit"
+    }
+  },
+  "passed": true,
+  "status": "passed"
+}

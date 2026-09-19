@@ -1,0 +1,176 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "05-A",
+  "freeze_package_id": "FREEZE-05A-ba6432cf",
+  "status": "passed",
+  "run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "versions": {
+    "code_version_id": "git:263bdfefd85850e7d117889882074373e5caa9db",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-04A-3e3b97c0",
+      "FEAT-23d45f5649dcd5f1"
+    ],
+    "run_config_sha256": "c8b681bf7d5ef4a3cd8a998f9ece7e4ee4fe2732830e51324cf75add55e99729",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "outer_folds": 4,
+    "inner_folds_per_outer": 3,
+    "group_key": "independent_object_id",
+    "primary_metric": "file_level_macro_f1",
+    "file_aggregation": "mean window probabilities -> argmax",
+    "max_candidate_configurations": 12,
+    "max_total_inner_fits": 144
+  },
+  "real_results": [
+    {
+      "name": "file_class_counts",
+      "value": {
+        "OR": 21,
+        "B": 12,
+        "IR": 12,
+        "N": 4
+      }
+    },
+    {
+      "name": "outer_test_counts",
+      "value": [
+        {
+          "outer_fold": 0,
+          "OR": 6,
+          "IR": 3,
+          "B": 3,
+          "N": 1
+        },
+        {
+          "outer_fold": 1,
+          "OR": 5,
+          "IR": 3,
+          "B": 3,
+          "N": 1
+        },
+        {
+          "outer_fold": 2,
+          "OR": 5,
+          "IR": 3,
+          "B": 3,
+          "N": 1
+        },
+        {
+          "outer_fold": 3,
+          "OR": 5,
+          "IR": 3,
+          "B": 3,
+          "N": 1
+        }
+      ]
+    },
+    {
+      "name": "normal_distribution",
+      "value": {
+        "files": 4,
+        "outer_test_each_once": true,
+        "inner_val_each_remaining_once": true
+      }
+    },
+    {
+      "name": "metric_protocol_validation",
+      "value": {
+        "sklearn": {
+          "macro_f1": 0.8333333333333333,
+          "accuracy": 0.8,
+          "per_class_recall": {
+            "OR": 1.0,
+            "IR": 1.0,
+            "B": 1.0,
+            "N": 0.5
+          },
+          "confusion_matrix": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        "manual_macro_f1": 0.8333333333333333,
+        "abs_diff": 0.0,
+        "passed": true
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/split_summary.csv"
+    },
+    {
+      "path": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/normal_file_distribution.csv"
+    },
+    {
+      "path": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/metric_validation_result.json"
+    }
+  ],
+  "anomalies_and_failures": [],
+  "b_handoff": {
+    "required_data": [
+      "outer_split_manifest.csv",
+      "inner_split_manifest.csv",
+      "split_summary.csv",
+      "normal_file_distribution.csv",
+      "evaluation_protocol.json",
+      "baseline_candidates.json",
+      "compute_budget.json"
+    ],
+    "supported_conclusions": [
+      "4 outer folds are dictated by the four independent N files",
+      "all train/validation/test group intersections are zero",
+      "file-level Macro-F1 is primary and window-level metrics are auxiliary",
+      "outer test is not used for model selection"
+    ],
+    "wording_limits": [
+      "do not call four-fold min-max a confidence interval",
+      "do not call 733 windows 733 independent samples",
+      "do not claim five-fold CV"
+    ],
+    "approved_tables": [
+      "split_summary.csv",
+      "normal_file_distribution.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-19T19:23:38.071888Z",
+    "content_sha256": "338d8e27604c26061d9e93610b6d299457579f0d113f9a695ec1ab8c9eae6671",
+    "invalidation_dependencies": [
+      "04-A group/interface changes",
+      "05-A split seed/protocol changes",
+      "evaluation aggregation/metric changes"
+    ]
+  }
+}

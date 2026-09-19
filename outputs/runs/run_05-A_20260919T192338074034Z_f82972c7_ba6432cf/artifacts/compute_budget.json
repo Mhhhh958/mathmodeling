@@ -1,0 +1,19 @@
+{
+  "compute_budget": {
+    "max_candidate_configurations": 12,
+    "expected_inner_fits_per_outer": 36,
+    "max_total_inner_fits": 144,
+    "outer_refits": 4,
+    "max_parallel_jobs": 4,
+    "fit_timeout_seconds": 120,
+    "adaptive_grid_expansion": false
+  },
+  "failure_standards": [
+    "any group overlap between train/validation/test",
+    "any outer test or inner validation missing OR/IR/B/N",
+    "any preprocessing object fit using validation/test groups",
+    "candidate fails or times out in more than 25% of required inner folds",
+    "file-level probability aggregation unavailable or non-finite",
+    "outer test consulted before candidate/hyperparameters frozen"
+  ]
+}

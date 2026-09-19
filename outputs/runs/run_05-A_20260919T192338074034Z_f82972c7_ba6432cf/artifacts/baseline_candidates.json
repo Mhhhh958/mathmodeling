@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "id": "LR",
+      "estimator": "multinomial logistic regression",
+      "learned_steps": [
+        "optional median imputer if training data requires it",
+        "StandardScaler",
+        "LogisticRegression"
+      ],
+      "grid": {
+        "C": [
+          0.1,
+          1,
+          10
+        ],
+        "imbalance_weighting": [
+          "file_balanced",
+          "file_and_class_balanced"
+        ]
+      },
+      "probability_output": true
+    },
+    {
+      "id": "RF",
+      "estimator": "RandomForestClassifier",
+      "learned_steps": [
+        "optional median imputer if training data requires it",
+        "RandomForestClassifier"
+      ],
+      "grid": {
+        "max_depth": [
+          8,
+          null,
+          16
+        ],
+        "min_samples_leaf": [
+          1
+        ],
+        "n_estimators": [
+          300
+        ],
+        "imbalance_weighting": [
+          "file_balanced",
+          "file_and_class_balanced"
+        ]
+      },
+      "probability_output": true
+    }
+  ],
+  "weighting": {
+    "base_file_balance": "each training file contributes equal total window weight: 1 / number_of_training_windows_in_that_file",
+    "optional_class_balance": "multiply by inverse training-file count of the class; compute from training groups only; normalize mean training weight to 1"
+  },
+  "selection_rule": {
+    "score": "mean inner-validation file-level Macro-F1 across the 3 inner folds of the current outer fold",
+    "tie_break_1": "higher minimum per-class file recall averaged across inner folds",
+    "tie_break_2": "simpler model/configuration in fixed order LR before RF, lower complexity before higher",
+    "outer_test_use": "one-time evaluation after inner selection and refit on all outer-train groups"
+  }
+}

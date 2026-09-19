@@ -1,0 +1,24 @@
+{
+  "primary_metric": "file_level_macro_f1",
+  "labels": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "file_aggregation": {
+    "input": "per-window probability vector [p_OR,p_IR,p_B,p_N]",
+    "rule": "arithmetic mean by independent file, then argmax",
+    "tie_rule": "numpy argmax over fixed order OR,IR,B,N; exact ties are deterministic but must be reported if observed"
+  },
+  "secondary_file_metrics": [
+    "per-class recall",
+    "confusion matrix",
+    "accuracy"
+  ],
+  "window_metrics": "Macro-F1/per-class recall/confusion matrix may be reported only as auxiliary",
+  "outer_reporting": "four predeclared outer folds individually + median + min-max; not called a confidence interval",
+  "model_selection": "within each outer fold choose candidate/config by mean 3-inner-fold file Macro-F1; tie-break by higher minimum per-class recall then frozen simplicity order; refit on all outer train-pool groups; evaluate outer test once",
+  "preprocessing_boundary": "imputer/scaler/feature selector and any class/file weighting parameters fit using inner-train groups only; outer refit uses outer-train-pool only",
+  "test_prohibition": "outer-test labels/probabilities/metrics cannot be consulted for candidate selection or tuning"
+}

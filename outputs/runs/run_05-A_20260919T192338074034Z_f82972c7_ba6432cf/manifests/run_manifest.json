@@ -1,0 +1,140 @@
+{
+  "schema_version": "05A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+  "step_id": "05-A",
+  "status": "completed",
+  "created_utc": "2026-09-19T19:23:38.071888Z",
+  "binding": {
+    "code_version_id": "git:263bdfefd85850e7d117889882074373e5caa9db",
+    "data_version_id": "FREEZE-04A-3e3b97c0",
+    "run_config_sha256": "c8b681bf7d5ef4a3cd8a998f9ece7e4ee4fe2732830e51324cf75add55e99729",
+    "seed": 20260919,
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "f82972c73a2af6b9aa09d42975ecf3c653f5e33b9b0a177e82ce60f6697b3e3e"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "263bdfefd85850e7d117889882074373e5caa9db",
+    "entrypoint": "scripts/step05a_grouped_evaluation_protocol.py",
+    "code_manifest": "protocol/05A/code_manifest.json"
+  },
+  "data": {
+    "input_04A_freeze": "FREEZE-04A-3e3b97c0",
+    "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
+    "source_files": 49,
+    "source_windows": 733
+  },
+  "blueprint": {
+    "path": "protocol/05A/question2_argument_blueprint.json",
+    "sha256": "683eb4fcdfd2067c26d4686ddbb0250d6ae555c92cba208951dd9a18493324c6"
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "environment_manifest_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "config": {
+    "path": "protocol/05A/run_config.json",
+    "sha256": "c8b681bf7d5ef4a3cd8a998f9ece7e4ee4fe2732830e51324cf75add55e99729"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+    "files": [
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 4528,
+        "sha256": "22c9fdc1d58553088686bbdfd54d662b9fa029682bf19f220e3f27ce149bfe85"
+      },
+      {
+        "relative_path": "artifacts/baseline_candidates.json",
+        "size_bytes": 1788,
+        "sha256": "a75d952c7911bfc90b0bb0bf8e05860911eeebfe78208c502f47f9713e8cf3b7"
+      },
+      {
+        "relative_path": "artifacts/compute_budget.json",
+        "size_bytes": 685,
+        "sha256": "1466cf3b86a1db1255691e718fadfd1d6ac3d527d76859edccd138ac29301778"
+      },
+      {
+        "relative_path": "artifacts/evaluation_protocol.json",
+        "size_bytes": 1239,
+        "sha256": "71735cd6fbf2dbefb3b1ec8435c8be956c8136b0cc74a2ce1be90e333ca2bb9f"
+      },
+      {
+        "relative_path": "artifacts/inner_split_manifest.csv",
+        "size_bytes": 41612,
+        "sha256": "07b3316570afc4826ebaf1ed518d4abb3f21286874a741bd69b80c832af4eefd"
+      },
+      {
+        "relative_path": "artifacts/metric_validation_file_aggregation.csv",
+        "size_bytes": 462,
+        "sha256": "b23fdeafe7b839ddee900e468208da00a3fb211effd6c2c4bfe00edc019882b8"
+      },
+      {
+        "relative_path": "artifacts/metric_validation_result.json",
+        "size_bytes": 526,
+        "sha256": "1441a3cfc9caab1232c32c3a7126e492030ebcb08ddbb859fcaf0abf6dbdc456"
+      },
+      {
+        "relative_path": "artifacts/metric_validation_window_probabilities.csv",
+        "size_bytes": 531,
+        "sha256": "1d7008dadcf5caea546a378adfc219b2e06dda192aaf9eacfd18db7c8ef0c5a3"
+      },
+      {
+        "relative_path": "artifacts/normal_file_distribution.csv",
+        "size_bytes": 4053,
+        "sha256": "bf1f7a1db0365c2d8e38e54c730bd0ecd2d01e4074df4baa3c91234fed5d4f9f"
+      },
+      {
+        "relative_path": "artifacts/outer_split_manifest.csv",
+        "size_bytes": 18944,
+        "sha256": "d271092831a9f531fcc5578e880814d1459dc60d990943038e524fd62051371c"
+      },
+      {
+        "relative_path": "artifacts/split_protocol_summary.json",
+        "size_bytes": 1107,
+        "sha256": "a5403c0656a2f3a40ff5cec9e4dfb89c7f7c93ce4b72ebac2b0374d04013acdf"
+      },
+      {
+        "relative_path": "artifacts/split_summary.csv",
+        "size_bytes": 1317,
+        "sha256": "39a17d7a825caad61b7f740f0c267761b977566ebd450c594c45c964d363b734"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 1840,
+        "sha256": "bbfc139e84986900894e02128ee9fbced66badf0b17aac3537d57c1ea6c13ae5"
+      },
+      {
+        "relative_path": "artifacts/window_group_assignment_audit.csv",
+        "size_bytes": 356052,
+        "sha256": "77ced4abc64f9ed99b69ef2c12ed7c986dc3c5ccc8101a5b5cc920323b847041"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 417,
+        "sha256": "a5d491ea75f48ef4ce493e23f635114521721dd424866640e2f44e5caf220a6d"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 208,
+        "sha256": "5cae8a612fd386ba0ab3262f967f080781c3fa636ee77f3c1231836d3721fa79"
+      }
+    ],
+    "output_tree_sha256": "4a1f920d050c341317531e2fabefbb3162648571d321cc6a4d560e220e90f2b5"
+  },
+  "checkpoint": {
+    "completed_batches": [
+      "outer-splits",
+      "inner-splits",
+      "normal-audit",
+      "window-group-audit",
+      "metric-protocol-validation",
+      "freeze"
+    ],
+    "pending_batches": [],
+    "resume_token": null
+  },
+  "duration_seconds": 0.38298892974853516
+}

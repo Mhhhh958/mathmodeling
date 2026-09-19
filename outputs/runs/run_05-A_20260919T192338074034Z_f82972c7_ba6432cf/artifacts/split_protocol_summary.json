@@ -1,0 +1,46 @@
+{
+  "source_independent_files": 49,
+  "source_windows": 733,
+  "file_class_counts": {
+    "OR": 21,
+    "B": 12,
+    "IR": 12,
+    "N": 4
+  },
+  "outer_folds": 4,
+  "inner_folds_per_outer": 3,
+  "outer_test_class_counts_by_fold": [
+    {
+      "outer_fold": 0,
+      "OR": 6,
+      "IR": 3,
+      "B": 3,
+      "N": 1
+    },
+    {
+      "outer_fold": 1,
+      "OR": 5,
+      "IR": 3,
+      "B": 3,
+      "N": 1
+    },
+    {
+      "outer_fold": 2,
+      "OR": 5,
+      "IR": 3,
+      "B": 3,
+      "N": 1
+    },
+    {
+      "outer_fold": 3,
+      "OR": 5,
+      "IR": 3,
+      "B": 3,
+      "N": 1
+    }
+  ],
+  "normal_file_count": 4,
+  "normal_protocol": "each N file outer-test exactly once; within each outer train-pool, each remaining N file inner-validation exactly once",
+  "why_not_5_fold": "only four independent N files; five-fold file-level stratification cannot guarantee an independent N in every fold",
+  "multi_channel_leakage_check": "04-A frozen interface uses one primary analysis channel per independent_object_id; if more channels are introduced later, they must share the same group_id"
+}
