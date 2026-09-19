@@ -1,0 +1,56 @@
+{
+  "schema_version": "03A-1.0",
+  "step_id": "03-A",
+  "purpose": "source_signal_processing_and_bearing_mechanism_analysis",
+  "seed": 20260919,
+  "input_02A_freeze": "protocol/02A/latest_freeze_package.json",
+  "source_plan": "MVP only",
+  "expected_MVP_files": 49,
+  "common_analysis_fs_hz": 12000,
+  "preprocessing": {
+    "demean": true,
+    "linear_detrend": "diagnose R2 first; do not apply in primary pipeline unless pre-frozen criterion R2>0.01 is met",
+    "general_bandpass": false,
+    "resample_48k_to_12k": {
+      "required_for": "MVP normal files only",
+      "anti_alias_filter": "FIR Kaiser window beta=8.6, 161 taps, cutoff=5500 Hz at 48000 Hz",
+      "phase": "zero-phase forward-backward filtering",
+      "downsample_factor": 4
+    },
+    "envelope_branch": "Hilbert envelope on primary 12kHz signal without extra bandpass; used for weak/difficult fault diagnostics only"
+  },
+  "spectrum": {
+    "welch_nperseg": 4096,
+    "common_band_hz": [
+      0,
+      6000
+    ],
+    "harmonic_count": 3,
+    "tolerance_rule": "max(2*df, 0.02*fc)",
+    "OR_sidebands": "none required",
+    "IR_sidebands": "±1*fr around each BPFI harmonic",
+    "B_sidebands": "±1*FTF around each BSF harmonic"
+  },
+  "sample_selection": {
+    "fault_typical": "mechanism_score closest to class median",
+    "fault_difficult": "lowest mechanism_score",
+    "normal_typical": "spurious mechanism score closest to N median",
+    "normal_difficult": "highest spurious mechanism score"
+  },
+  "bearing_parameters": {
+    "SKF6205_DE": {
+      "rolling_elements": 9,
+      "ball_diameter_in": 0.3126,
+      "pitch_diameter_in": 1.537
+    },
+    "SKF6203_FE": {
+      "rolling_elements": 9,
+      "ball_diameter_in": 0.2656,
+      "pitch_diameter_in": 1.122
+    }
+  },
+  "no_final_figures": true,
+  "no_classifier_training": true,
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true
+}
