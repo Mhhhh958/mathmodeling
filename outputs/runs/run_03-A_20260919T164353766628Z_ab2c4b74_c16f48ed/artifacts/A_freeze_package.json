@@ -1,0 +1,350 @@
+{
+  "schema_version": "00C-A-freeze-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "03-A",
+  "freeze_package_id": "FREEZE-03A-c16f48ed",
+  "status": "failed",
+  "run_id": "run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed",
+  "versions": {
+    "code_version_id": "git:d3bed807c89b1e2e7476a7642c5df3697bfc0f5b",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-02A-6f36d0b4"
+    ],
+    "run_config_sha256": "b4e9d3874f02bc3d57753dab45bc50de7bf030369eda9b866f54de7be628d36e",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "MVP_files": 49,
+    "common_analysis_fs_hz": 12000,
+    "welch_nperseg": 4096,
+    "harmonics": 3,
+    "frequency_tolerance": "max(2*df, 2%*fc)",
+    "trend_R2_threshold": 0.01,
+    "anti_alias": {
+      "taps": 401,
+      "cutoff_hz": 5500.0,
+      "kaiser_beta": 8.6
+    },
+    "problem_basis_sha256": "b597d90e8ed20a793dc7f8dd0e4568ac7174e102621866ea49f5ec5df3b4c0de"
+  },
+  "real_results": [
+    {
+      "name": "preprocessing_decisions",
+      "value": [
+        {
+          "operation": "去均值",
+          "decision": "必要并应用",
+          "reason": "移除DC，避免0Hz分量干扰谱能量；关键机理频带保真由逐文件检查确认",
+          "applied_files": 49
+        },
+        {
+          "operation": "线性去趋势",
+          "decision": "仅当trend_R2>0.01时应用",
+          "reason": "固定阈值检查后实际触发0/49文件；不对其余文件强制去趋势",
+          "applied_files": 0
+        },
+        {
+          "operation": "一般带通/降噪滤波",
+          "decision": "不应用",
+          "reason": "没有足够依据设定统一带通；避免人为滤掉冲击谐波和调制侧带",
+          "applied_files": 0
+        },
+        {
+          "operation": "48kHz→12kHz重采样",
+          "decision": "仅N类4文件应用",
+          "reason": "MVP故障类为12kHz FE而N类为48kHz；统一时基前使用显式抗混叠FIR",
+          "applied_files": 4
+        },
+        {
+          "operation": "包络解调",
+          "decision": "仅代表性/困难样本诊断分支",
+          "reason": "Hilbert包络不替换主信号；不增加带通滤波，主要检查弱机理成分",
+          "applied_files": 8
+        }
+      ]
+    },
+    {
+      "name": "bearing_parameters_and_orders",
+      "value": [
+        {
+          "bearing": "SKF6205_DE",
+          "rolling_elements_Nd": 9,
+          "ball_diameter_in": 0.3126,
+          "pitch_diameter_in": 1.537,
+          "d_over_D": 0.2033832140533507,
+          "FTF_order": 0.39830839297332465,
+          "BPFO_order": 3.584775536759922,
+          "BPFI_order": 5.415224463240078,
+          "BSF_order": 4.713443401429695,
+          "formula_convention": "problem-statement zero-contact-angle form"
+        },
+        {
+          "bearing": "SKF6203_FE",
+          "rolling_elements_Nd": 9,
+          "ball_diameter_in": 0.2656,
+          "pitch_diameter_in": 1.122,
+          "d_over_D": 0.23672014260249552,
+          "FTF_order": 0.38163992869875224,
+          "BPFO_order": 3.4347593582887703,
+          "BPFI_order": 5.56524064171123,
+          "BSF_order": 3.987677447758951,
+          "formula_convention": "problem-statement zero-contact-angle form"
+        }
+      ]
+    },
+    {
+      "name": "typical_difficult_samples",
+      "value": [
+        {
+          "class_label": "OR",
+          "sample_role": "typical",
+          "relative_path": "source_domain/cwru_12khz_fe/OR021@3_3.mat",
+          "rpm": 1728.0,
+          "mechanism_score": 6.243400546760904e-05,
+          "env_mechanism_score": 0.009474777013613794,
+          "kurtosis": 3.6819119413224373,
+          "crest_factor": 5.682969606285816,
+          "sideband_energy_ratio": 0.0
+        },
+        {
+          "class_label": "OR",
+          "sample_role": "difficult",
+          "relative_path": "source_domain/cwru_12khz_fe/OR014@3_3.mat",
+          "rpm": 1728.0,
+          "mechanism_score": 3.5050299913159454e-06,
+          "env_mechanism_score": 0.0037924044508333018,
+          "kurtosis": 8.351193929476423,
+          "crest_factor": 5.964366256837648,
+          "sideband_energy_ratio": 0.0
+        },
+        {
+          "class_label": "IR",
+          "sample_role": "typical",
+          "relative_path": "source_domain/cwru_12khz_fe/IR007_2.mat",
+          "rpm": 1755.0,
+          "mechanism_score": 0.003836923465718642,
+          "env_mechanism_score": 0.014114674426128683,
+          "kurtosis": 5.928998521282106,
+          "crest_factor": 6.66492664672876,
+          "sideband_energy_ratio": 0.0008799066777118238
+        },
+        {
+          "class_label": "IR",
+          "sample_role": "difficult",
+          "relative_path": "source_domain/cwru_12khz_fe/IR021_1.mat",
+          "rpm": 1776.0,
+          "mechanism_score": 0.0019560216177394625,
+          "env_mechanism_score": 0.03064621043064237,
+          "kurtosis": 6.448090870706036,
+          "crest_factor": 5.878629699166959,
+          "sideband_energy_ratio": 0.0009793624222357014
+        },
+        {
+          "class_label": "B",
+          "sample_role": "typical",
+          "relative_path": "source_domain/cwru_12khz_fe/B021_3.mat",
+          "rpm": 1734.0,
+          "mechanism_score": 0.006763547089970165,
+          "env_mechanism_score": 0.0669822710648951,
+          "kurtosis": 7.828615977873816,
+          "crest_factor": 11.087199219302505,
+          "sideband_energy_ratio": 0.01187511358541675
+        },
+        {
+          "class_label": "B",
+          "sample_role": "difficult",
+          "relative_path": "source_domain/cwru_12khz_fe/B014_2.mat",
+          "rpm": 1755.0,
+          "mechanism_score": 0.0011567430329787597,
+          "env_mechanism_score": 0.10991010628267484,
+          "kurtosis": 8.840735024351517,
+          "crest_factor": 8.997892142806224,
+          "sideband_energy_ratio": 0.0016528119486308819
+        },
+        {
+          "class_label": "N",
+          "sample_role": "typical",
+          "relative_path": "source_domain/cwru_48khz_normal/N_2_(1750rpm).mat",
+          "rpm": 1750.0,
+          "mechanism_score": 0.03155046538571539,
+          "env_mechanism_score": 0.016749485449294322,
+          "kurtosis": 2.978768374298746,
+          "crest_factor": 5.471548699077518,
+          "sideband_energy_ratio": 0.018364193280984424
+        },
+        {
+          "class_label": "N",
+          "sample_role": "difficult",
+          "relative_path": "source_domain/cwru_48khz_normal/N_1_(1772rpm).mat",
+          "rpm": 1772.0,
+          "mechanism_score": 0.03950802176481696,
+          "env_mechanism_score": 0.022238767934580878,
+          "kurtosis": 2.953950335109164,
+          "crest_factor": 4.387018667189838,
+          "sideband_energy_ratio": 0.011016634454456062
+        }
+      ]
+    },
+    {
+      "name": "trend_result",
+      "value": {
+        "threshold_R2": 0.01,
+        "applied_files": 0,
+        "max_R2": 0.0020203158566101634,
+        "median_R2": 3.328032380305398e-07
+      }
+    },
+    {
+      "name": "resampling_information_fidelity",
+      "value": {
+        "files": 4,
+        "common_band_ratio_min": 0.9939326702204639,
+        "common_band_ratio_max": 0.9981601226172558,
+        "mechanism_band_ratio_min": 0.019031942076150922,
+        "mechanism_band_ratio_max": 0.8389750215275172,
+        "full_spectrum_total_ratio_min": 0.761804462480492,
+        "full_spectrum_total_ratio_max": 0.9397891638124045,
+        "note": "full-spectrum ratio may be <1 because >6k content is intentionally rejected before downsampling; pass criterion uses common 0-6k and mechanism bands."
+      }
+    },
+    {
+      "name": "mechanism_feature_candidates",
+      "value": [
+        {
+          "feature_id": "td_rms",
+          "name": "RMS",
+          "mechanism_rationale": "冲击/振动总体强度",
+          "domain": "time",
+          "applicable_class": "all",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "td_kurtosis",
+          "name": "峭度",
+          "mechanism_rationale": "稀疏冲击敏感",
+          "domain": "time",
+          "applicable_class": "all",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "td_crest_factor",
+          "name": "峰值因子",
+          "mechanism_rationale": "峰值冲击相对能量",
+          "domain": "time",
+          "applicable_class": "all",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "mech_harmonic_energy_ratio",
+          "name": "故障频率1-3次谐波邻域能量占比",
+          "mechanism_rationale": "BPFO/BPFI/BSF机理一致性",
+          "domain": "frequency/order",
+          "applicable_class": "OR/IR/B",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "mech_peak_offset_order",
+          "name": "理论基频附近实测峰的阶次偏差",
+          "mechanism_rationale": "弱化RPM差异后的频率偏移",
+          "domain": "order",
+          "applicable_class": "OR/IR/B",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "ir_fr_sideband_ratio",
+          "name": "BPFI谐波±fr侧带能量占比",
+          "mechanism_rationale": "内圈受转频调制",
+          "domain": "frequency/order",
+          "applicable_class": "IR",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "b_ftf_sideband_ratio",
+          "name": "BSF谐波±FTF侧带能量占比",
+          "mechanism_rationale": "滚动体受公转频率调制",
+          "domain": "frequency/order",
+          "applicable_class": "B",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "env_harmonic_energy_ratio",
+          "name": "Hilbert包络中的故障谐波能量占比",
+          "mechanism_rationale": "弱冲击解调候选",
+          "domain": "envelope/order",
+          "applicable_class": "OR/IR/B",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        },
+        {
+          "feature_id": "spectral_entropy",
+          "name": "谱熵",
+          "mechanism_rationale": "噪声/分散程度",
+          "domain": "frequency",
+          "applicable_class": "all",
+          "status": "candidate_for_later_feature_extraction_not_finalized"
+        }
+      ]
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/preprocessing_information_fidelity.csv"
+    },
+    {
+      "path": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/validation_formula_unit_check.csv"
+    },
+    {
+      "path": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/validation_metric_recalculation.csv"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "issue": "one_or_more_validation_checks_failed"
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "bearing_parameters_and_order_factors.csv",
+      "preprocessing_decision_table.csv",
+      "typical_difficult_sample_comparison.csv",
+      "class_signal_mechanism_summary.csv",
+      "mechanism_feature_candidates.csv",
+      "preprocessing_information_fidelity.csv"
+    ],
+    "supported_conclusions": [
+      "03-A uses only the 49-file MVP selected in 02-A",
+      "problem-statement zero-contact-angle BPFO/BPFI/BSF formulas are used",
+      "SKF6203 and SKF6205 parameters are kept separate",
+      "representative and difficult samples are selected by deterministic rules",
+      "target geometry is not inferred from source"
+    ],
+    "wording_limits": [
+      "a peak near a theoretical fault frequency is mechanism-consistent evidence, not proof of class",
+      "target about-600rpm is not used for source mechanism frequency calculation",
+      "envelope branch has no extra bandpass and is diagnostic only"
+    ],
+    "approved_tables": [
+      "bearing_parameters_and_order_factors.csv",
+      "preprocessing_decision_table.csv",
+      "typical_difficult_sample_comparison.csv",
+      "preprocessing_information_fidelity.csv",
+      "mechanism_feature_candidates.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-19T16:43:53.764841Z",
+    "content_sha256": "0a556b430bb3842b32d0e80d5de01d3a673086e66c9cefd9e93e8e03ef7447b9",
+    "invalidation_dependencies": [
+      "02-A source selection changes",
+      "RAW source data changes",
+      "problem formula/parameter basis changes",
+      "03-A preprocessing/mechanism code changes"
+    ]
+  }
+}

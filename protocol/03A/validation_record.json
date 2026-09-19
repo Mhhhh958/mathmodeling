@@ -1,0 +1,56 @@
+{
+  "step_id": "03-A",
+  "run_id": "run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed",
+  "checks": {
+    "random_typical_difficult_recalculation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/validation_metric_recalculation.csv",
+      "files": [
+        "source_domain/cwru_12khz_fe/OR021@3_3.mat",
+        "source_domain/cwru_12khz_fe/B014_2.mat"
+      ]
+    },
+    "formula_parameter_rpm_unit_check": {
+      "passed": true,
+      "evidence": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/validation_formula_unit_check.csv",
+      "problem_basis": "protocol/03A/problem_statement_mechanism_basis.json"
+    },
+    "preprocessing_information_fidelity": {
+      "passed": false,
+      "evidence": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/preprocessing_information_fidelity.csv",
+      "resample_summary": {
+        "files": 4,
+        "common_band_ratio_min": 0.9939326702204639,
+        "common_band_ratio_max": 0.9981601226172558,
+        "mechanism_band_ratio_min": 0.019031942076150922,
+        "mechanism_band_ratio_max": 0.8389750215275172,
+        "full_spectrum_total_ratio_min": 0.761804462480492,
+        "full_spectrum_total_ratio_max": 0.9397891638124045,
+        "note": "full-spectrum ratio may be <1 because >6k content is intentionally rejected before downsampling; pass criterion uses common 0-6k and mechanism bands."
+      }
+    },
+    "typical_and_difficult_all_classes": {
+      "passed": true,
+      "evidence": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/typical_difficult_sample_comparison.csv",
+      "sample_count": 8
+    },
+    "MVP_only": {
+      "passed": true,
+      "evidence": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/source_signal_mechanism_metrics.csv"
+    },
+    "target_geometry_not_reused": {
+      "passed": true,
+      "evidence": "outputs/runs/run_03-A_20260919T164353766628Z_ab2c4b74_c16f48ed/artifacts/source_target_geometry_boundary.json"
+    },
+    "no_final_figures": {
+      "passed": true,
+      "evidence": "artifacts directory contains data/table/json/md results only"
+    },
+    "no_classifier_training": {
+      "passed": true,
+      "evidence": "03-A code contains no estimator fit/predict"
+    }
+  },
+  "passed": false,
+  "status": "failed"
+}

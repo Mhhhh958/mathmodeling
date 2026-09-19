@@ -1,0 +1,23 @@
+{
+  "resampling_filter": {
+    "type": "symmetric FIR low-pass passed explicitly to scipy.signal.resample_poly",
+    "native_fs_hz": 48000,
+    "output_fs_hz": 12000,
+    "downsample_factor": 4,
+    "num_taps": 401,
+    "fir_order": 400,
+    "cutoff_hz": 5500.0,
+    "window": "Kaiser",
+    "kaiser_beta": 8.6,
+    "phase_handling": "linear-phase symmetric FIR; resample_poly centers/compensates delay (zero-phase aligned output)",
+    "anti_alias_role": "attenuate content approaching/new Nyquist 6000 Hz before downsampling"
+  },
+  "general_bandpass": {
+    "applied": false,
+    "reason": "no evidence-supported single band that can be used without risking mechanism harmonics/sidebands"
+  },
+  "envelope": {
+    "extra_bandpass_applied": false,
+    "method": "abs(hilbert(primary_processed)) then remove envelope mean"
+  }
+}

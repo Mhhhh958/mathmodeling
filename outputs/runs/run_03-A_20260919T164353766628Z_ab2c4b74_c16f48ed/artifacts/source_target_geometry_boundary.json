@@ -1,0 +1,9 @@
+{
+  "source_bearing_parameters_used": {
+    "source_12khz_fe": "SKF6203_FE",
+    "source_48khz_normal": "SKF6205_DE"
+  },
+  "target_domain_geometry_used": false,
+  "target_rpm_used": false,
+  "statement": "03-A analyzes source signals only. SKF6203/SKF6205 dimensions are not transferred to target A-P because equivalent target geometry is not frozen."
+}
