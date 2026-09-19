@@ -19,10 +19,17 @@
     },
     {
       "path": ".github/workflows/step00b_protocol_selftest.yml",
-      "git_blob_sha": "49148dcb150a8448348665efbca0fba99c25ecd3"
+      "git_blob_sha": "b2713059515ecf2d2b3cb87edd8560441eb56e83"
     }
   ],
   "formal_code_rule": "Every analysis/training/plotting file actually executed by this process must be present in the run-specific code manifest before formal execution.",
+  "validation_evidence": {
+    "validated_code_version_id": "git:b92b027cad04e2888d66250bf067a71e9cef3c06",
+    "github_actions_check_run_id": 105881073321,
+    "github_actions_conclusion": "success",
+    "validation_run_id": "run_00-B_20260919T101635952477Z_1f3a673a_eb9ddf45",
+    "evidence_root": "outputs/runs/run_00-B_20260919T101635952477Z_1f3a673a_eb9ddf45"
+  },
   "chat_direct_fallback": {
     "code_version_id_rule": "CODE-<first16(code_manifest_sha256)>",
     "per_file_sha256_required": true

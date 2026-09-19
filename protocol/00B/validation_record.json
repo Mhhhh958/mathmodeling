@@ -1,0 +1,34 @@
+{
+  "schema_version": "00B-1.0",
+  "step_id": "00-B",
+  "status": "passed",
+  "executed_on": "github_actions",
+  "workflow_check_run_id": 105881073321,
+  "workflow_conclusion": "success",
+  "validated_code_version_id": "git:b92b027cad04e2888d66250bf067a71e9cef3c06",
+  "validation_run_id": "run_00-B_20260919T101635952477Z_1f3a673a_eb9ddf45",
+  "binding_digest": "1f3a673a615e158c5e4a492727e8f213595f2184aba948d7e98ca296b63ff934",
+  "evidence_root": "outputs/runs/run_00-B_20260919T101635952477Z_1f3a673a_eb9ddf45",
+  "checks": {
+    "run_id_unique": true,
+    "run_id_embeds_binding": true,
+    "same_binding_same_digest": true,
+    "seed_change_changes_binding": true,
+    "git_code_version_bound": true,
+    "raw_data_version_not_frozen": true,
+    "config_hash_bound": true,
+    "environment_hash_bound": true,
+    "resume_token_created": true,
+    "output_root_is_run_scoped": true
+  },
+  "runtime_observed": {
+    "os": "Linux / Ubuntu 24.04 GitHub-hosted runner baseline",
+    "kernel": "6.17.0-1022-azure",
+    "arch": "x86_64",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "logical_cpu_visible": 4,
+    "gpu": null,
+    "cuda": null,
+    "python": "3.11.16"
+  }
+}
