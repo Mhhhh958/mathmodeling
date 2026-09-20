@@ -1,0 +1,143 @@
+{
+  "schema_version": "09A-method-plan-1.0",
+  "step_id": "09-A",
+  "status": "frozen_before_execution",
+  "source_model": {
+    "freeze_id": "FREEZE-07A-7e8829fb",
+    "family": "H1_RF",
+    "preserved_parts": [
+      "26-D target-compatible feature interface",
+      "OR/IR/B/N class order",
+      "300-tree RF family",
+      "max_depth=8",
+      "min_samples_leaf=1",
+      "max_features=sqrt",
+      "file-level mean model-score aggregation"
+    ],
+    "final_model_path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib"
+  },
+  "methods": [
+    {
+      "id": "T1-SHRINK-MOMENT",
+      "role": "simple baseline",
+      "fixed_from_08A": true,
+      "parameter": {
+        "alpha": 0.25
+      },
+      "target_gap": "marginal location/scale shift",
+      "target_objective": "move unlabeled target feature moments toward source moments without changing source classifier",
+      "source_model_change": false
+    },
+    {
+      "id": "T2-CORAL",
+      "role": "candidate 1",
+      "beta_grid": [
+        0.25,
+        0.5,
+        1
+      ],
+      "ridge_rule": "1e-6 * trace(cov)/d",
+      "target_gap": "multivariate covariance + mean shift left after marginal alignment",
+      "target_objective": "target-to-source CORAL; minimize covariance mismatch ||C_t'-C_s||_F while preserving the frozen source classifier; blend raw and full CORAL by beta",
+      "source_model_change": false
+    },
+    {
+      "id": "T3-DOMAIN-WEIGHT",
+      "role": "candidate 2",
+      "clip_grid": [
+        3,
+        10
+      ],
+      "target_gap": "partial-support/covariate shift",
+      "target_objective": "fit source-vs-unlabeled-target logistic domain classifier on file means; convert source target-odds into clipped importance weights, then refit the same frozen RF family on labeled source only",
+      "source_model_change": true
+    }
+  ],
+  "pseudo_label_policy": {
+    "used_for_training": false,
+    "reason": "avoid self-training/self-confirmation under unknown A-P truth",
+    "diagnostic_thresholds": [
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "diagnostic_only": "report accepted-file coverage, class counts/entropy; on held pseudo-target also report accepted pseudo-label precision after prediction; never use these thresholds to update the model"
+  },
+  "pseudo_target_protocol": {
+    "axis": "load_hp",
+    "tuning_loads": [
+      0,
+      1,
+      2
+    ],
+    "final_validation_load": 3,
+    "labels_hidden_during_adaptation": true,
+    "truth_revealed_only_after_predictions_for_metrics": true
+  },
+  "stability": {
+    "seeds": [
+      20260919,
+      20260920,
+      20260921
+    ],
+    "rule": "all candidate/config tuning scores are averaged over the same three seeds and the same loads0/1/2",
+    "final_validation": "selected family/config only, same three seeds on load3; no retuning after seeing load3"
+  },
+  "metrics": {
+    "primary": "file-level Macro-F1 on pseudo-target",
+    "secondary": [
+      "minimum class Recall",
+      "file-level Accuracy",
+      "paired per-file correctness delta vs same-seed no-transfer",
+      "negative-transfer harmed-file count",
+      "normalized predicted-class entropy",
+      "dominant predicted-class fraction",
+      "domain discrepancy reduction"
+    ],
+    "target_real": [
+      "prediction counts",
+      "normalized predicted-class entropy",
+      "dominant fraction",
+      "per-file label stability across seeds",
+      "would-be pseudo-label threshold coverage"
+    ],
+    "target_truth_metrics_forbidden": true
+  },
+  "class_collapse_rule": {
+    "pseudo_target": "collapse warning if a four-class pseudo-target prediction uses one class for >90% of files or only one predicted class; also report any zero-predicted class",
+    "real_target": "collapse warning if one predicted class exceeds 90% of A-P files or only one class is predicted; absence of a class is not by itself called wrong because truth is unknown"
+  },
+  "negative_transfer": {
+    "file_delta": "I(adapt correct)-I(no-transfer correct) in {-1,0,1}",
+    "report": [
+      "improved_files",
+      "harmed_files",
+      "same_files",
+      "mean_paired_delta"
+    ],
+    "final_promotion": "selected method may proceed to real A-P only if held-load3 mean Macro-F1 delta >=0, no held-load3 harmed-file excess over improved files, and no collapse warning"
+  },
+  "source_retention": {
+    "T1": "exact by construction: source model bytes unchanged and target-side adapter is bypassed on source",
+    "T2": "exact by construction: source model bytes unchanged and target-side CORAL is bypassed on source",
+    "T3": "must pass a 4-fold source-retention audit on the frozen 07-A outer source test folds using real A-P only as unlabeled domain data; mean Macro-F1 drop <=0.02 and worst-fold drop <=0.05",
+    "T3_retention_used_before_family_selection": true
+  },
+  "tuning_and_selection": {
+    "within_family": "maximize mean tuning Macro-F1 across loads0/1/2 × 3 seeds; tie-break mean min-class Recall, lower harmed-file fraction, then simpler/smaller transform",
+    "family_selection": "among T1, best T2, and retention-eligible best T3, use the same tuning-only rule; do not use A-P labels or load3 to choose the family",
+    "held_validation": "evaluate the selected family/config once on load3 across frozen seeds; if promotion rule fails, 09-A fails rather than switching families post hoc",
+    "real_target": "only after held validation passes, execute the frozen selected adapter on A-P and save adapted window/file model scores and predictions"
+  },
+  "distribution_warning": "lower MMD/domain separability is supporting evidence only and can never substitute for pseudo-target classification metrics",
+  "compute_budget": {
+    "T1_configs": 1,
+    "T2_configs": 3,
+    "T3_configs": 2,
+    "tuning_domains": 3,
+    "seeds": 3,
+    "final_domains": 1,
+    "source_retention_outer_folds_for_T3_best": 4
+  }
+}
