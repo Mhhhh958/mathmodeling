@@ -1,0 +1,54 @@
+{
+  "schema_version": "10B-change-1.0",
+  "step_id": "10-B",
+  "run_id": "run_10-B_20260920T091327000000Z_4346ce31_49e30c62",
+  "source_word": "V1.0",
+  "output_word": "V1.1",
+  "source_A_freeze_package_id": "FREEZE-10A-4346ce31",
+  "changes": [
+    {
+      "location": "5.3.5",
+      "action": "insert heading and final prediction identity/aggregation writeback",
+      "content": "T1 alpha=0.25; all 240 unlabeled target windows contribute to target moments; transductive identity; 15 windows/file mean uncalibrated OR/IR/B/N scores then argmax"
+    },
+    {
+      "location": "5.3.5",
+      "action": "insert table",
+      "object": "表23 目标域A—P的最终传导式文件级预测结果",
+      "source": "10-A A_P_final_label_table.csv"
+    },
+    {
+      "location": "5.3.5",
+      "action": "insert simple figure",
+      "object": "图11 T1传导式适配后A—P文件级模型分数与窗口一致性",
+      "sha256": "c4b65db645ac41ca65c910a3dbeaeb43d29c14a2946de46e84ae0a3f2c7cb1b3",
+      "source": "10-A A_P_final_label_table.csv + source_uncertainty_reference.json"
+    },
+    {
+      "location": "5.3.5",
+      "action": "insert low-confidence table and mechanism-side explanation",
+      "object": "表24 低可信文件及多证据核查结果",
+      "source": "10-A low_confidence_cases.csv + mechanism_side_evidence.csv"
+    },
+    {
+      "location": "5.3.5",
+      "action": "write problem3 result analysis",
+      "content": "OR/B=8/8; C,D B→OR; mean window agreement=0.8625; min 9-setting vote=0.333; mechanism prototype agreement=5/16; no target accuracy"
+    },
+    {
+      "location": "5.3.6",
+      "action": "replace previous one-paragraph Q3 close with required five-part short summary",
+      "content": "solved problem; key numbers; selected T1; failures/boundaries; interface to Q4"
+    }
+  ],
+  "unchanged_boundaries": [
+    "no retraining",
+    "no retuning",
+    "no model selection",
+    "no A-P target truth",
+    "no correctness probability wording",
+    "no rebuild of mother Word",
+    "Problem 4 and later content unchanged except pagination"
+  ],
+  "word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318"
+}
