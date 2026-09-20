@@ -28,7 +28,7 @@
   "tracked_code": [
     {
       "path": "scripts/step09a_unsupervised_transfer.py",
-      "git_blob_sha": "252f6415a34c84453dda48b9defe888c6c6f68f4"
+      "git_blob_sha": "0f56ac147fca9559f505792272dc9ed17f73b434"
     },
     {
       "path": "scripts/step08a_domain_diagnosis.py",
@@ -60,6 +60,17 @@
       "thresholds_changed": false,
       "data_split_changed": false,
       "code_commit": "08aaa9fd4f8acd60c71a12abae353ba5de3e4d1a"
+    },
+    {
+      "attempt_run_id": "github-actions-run-35495858172",
+      "issue": "paired negative-transfer helper merged truth into a prediction table that could already carry class_label, yielding suffixed class_label columns and a KeyError",
+      "fix": "select prediction-only columns first, then merge a deduplicated truth table by group_id",
+      "scientific_protocol_changed": false,
+      "run_config_changed": false,
+      "candidate_grid_changed": false,
+      "thresholds_changed": false,
+      "data_split_changed": false,
+      "code_commit": "aaceed9ae2aa6381e0581a931ed457c38654abfb"
     }
   ]
 }
