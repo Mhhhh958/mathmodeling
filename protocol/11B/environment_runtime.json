@@ -1,0 +1,20 @@
+{
+  "step_id": "11-B",
+  "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844",
+  "created_utc": "2026-09-20T15:38:44Z",
+  "source_A_freeze_package_id": "FREEZE-11A-1f812c22",
+  "source_A_run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "source_A_freeze_content_sha256": "5e001ea74638f7ebde24630844fa0af85eef71fbf47fc49cd7fa0598525aa317",
+  "source_word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+  "output_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "schema_version": "11B-env-1.0",
+  "execution_mode": "container_incremental_docx_edit",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python_version": "3.13.5",
+  "python_docx_version": "1.2.0",
+  "matplotlib_version": "3.10.8",
+  "pillow_version": "12.3.0",
+  "libreoffice_version": "LibreOffice 25.2.3.2 520(Build:2)",
+  "renderer": "/home/oai/skills/docx/render_docx.py",
+  "writeback_code_sha256": "7f90f03a18f1efd0d034ff9846fb535266977b0a0b7beb43410481eb0b07d4d9"
+}
