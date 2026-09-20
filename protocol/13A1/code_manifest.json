@@ -1,0 +1,45 @@
+{
+  "schema_version": "13A1-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "tracked_code": [
+    {
+      "path": "scripts/step13a1_final_freeze.py",
+      "git_blob_sha": "a76b22363536a4b5129bdb78ace7fe621430a39c"
+    },
+    {
+      "path": ".github/workflows/step13a1_final_freeze.yml",
+      "git_blob_sha": "f22f8f07fac5e484c197808b573ce275991de62b"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/13A1/run_config.json",
+      "git_blob_sha": "48a1fb0aebc77da7c8b4c1e34af477411f25fcce"
+    },
+    {
+      "path": "protocol/12A1/latest_freeze_package.json",
+      "freeze_id": "FREEZE-12A1-5e3e74e2"
+    },
+    {
+      "path": "protocol/12A2/latest_freeze_package.json",
+      "freeze_id": "FREEZE-12A2-f107c2fa"
+    },
+    {
+      "path": "protocol/12B/B_delivery.json",
+      "word_artifact_id": "WORD-V1.3-9c38c898"
+    },
+    {
+      "path": "protocol/00B/environment_manifest.json",
+      "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1"
+    }
+  ],
+  "constraints": [
+    "freeze/trace only; no new training/tuning/model selection",
+    "no formal figures and no Word edit",
+    "A-P labels come from STEP10 official table and must be revalidated against STEP12",
+    "all final IDs and numeric rows must carry lineage/code/run/model trace",
+    "uncalibrated model scores must never be called probabilities"
+  ]
+}
