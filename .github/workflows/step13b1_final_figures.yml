@@ -1,0 +1,57 @@
+name: step13b1-final-figures
+
+on:
+  push:
+    paths:
+      - 'protocol/13B1/dispatch_token.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-step13b1:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen Python environment and CJK font
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r protocol/00B/requirements-lock-00b.txt
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+          fc-cache -f
+      - name: Generate and validate final scientific figures
+        run: |
+          python scripts/step13b1_generate_final_figures.py
+      - name: Upload final figure package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: step13b1-final-figure-package
+          path: |
+            outputs/runs/run_13-B1_*/artifacts/final_figure_package.zip
+            outputs/runs/run_13-B1_*/artifacts/figure_manifest.csv
+            outputs/runs/run_13-B1_*/artifacts/source_data_index.csv
+            outputs/runs/run_13-B1_*/artifacts/unpassed_figures.csv
+            outputs/runs/run_13-B1_*/artifacts/validation_record.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit STEP13-B1 delivery
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs protocol/13B1/B_delivery.json protocol/13B1/validation_record.json protocol/13B1/latest_run_id.txt protocol/13B1/code_manifest.json || true
+          if git diff --cached --quiet; then
+            echo 'No generated STEP13-B1 changes.'
+          else
+            git commit -m '13-B1: generate and validate final scientific figures [skip ci]'
+            git push
+          fi
