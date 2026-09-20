@@ -1,0 +1,44 @@
+{
+  "schema_version": "07A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "blueprint_commit": "8b53fd909c1fd528625c1e25fec92d63ab3ca36a",
+  "tracked_code": [
+    {
+      "path": "scripts/step07a_failure_driven_improvement.py",
+      "git_blob_sha": "fc4d2a4d07b6e86f85b3593309531e01e42cfd67"
+    },
+    {
+      "path": ".github/workflows/step07a_failure_driven_improvement.yml",
+      "git_blob_sha": "3a1562d96df2bfec48bb26bbe3bbc6c437844a19"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/07A/question2C_argument_blueprint.json",
+      "git_blob_sha": "8c8869eb0987a081f3411bb1a776784d7df19994"
+    },
+    {
+      "path": "protocol/07A/run_config.json",
+      "git_blob_sha": "788eebab1e71b3f7811e7120d9d8f1c325d9a540"
+    },
+    {
+      "path": "protocol/05A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-05A-ba6432cf"
+    },
+    {
+      "path": "protocol/06A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-06A-01576948"
+    }
+  ],
+  "constraints": [
+    "same 05-A groups/seed/metric",
+    "H2 inner-only fixed-threshold ablation",
+    "H1 outer test only after frozen inner gate",
+    "no post-outer experiments",
+    "target-compatible 26 common features only for Final",
+    "no Word editing",
+    "no five-ledger edit in A"
+  ]
+}
