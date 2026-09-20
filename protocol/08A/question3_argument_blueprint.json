@@ -1,0 +1,64 @@
+{
+  "schema_version": "00C-question-blueprint-1.0",
+  "step_id": "08-A",
+  "question_id": "Q3A",
+  "status": "frozen_before_execution",
+  "delivery_from_problem": "在目标域A-P真值不可见的前提下，诊断源—目标域差异，建立冻结源模型的无迁移预测基线，构造可评价的多个模拟目标域，并冻结后续无监督迁移的候选、选择条件、预算和失败标准。",
+  "core_contradiction": "07-A最终H1_RF在源域49个文件上OOF表现较高，但目标A-P来自不同采样率、转速、传感器/设备与幅值尺度，且无真值；必须先区分可共享的故障机理与设备/工况偏移，再决定是否值得无监督适配，不能用目标预测反当标签。",
+  "baseline": {
+    "method": "直接加载07-A冻结 final_source_model.joblib，以04-A冻结的26个target-compatible公共特征对A-P窗口推理，按07-A规则对同文件窗口未校准模型分数取均值后argmax。",
+    "why_valid": "不引入任何目标域适配或伪标签，完整继承07-A最终源模型、特征顺序、类别顺序与文件聚合规则，可作为迁移增益的唯一自然零点。",
+    "observed_limitations": [
+      "目标域原始采样率32kHz，而源域入选故障文件主要为12kHz FE、正常文件来自48kHz normal；虽然04-A统一到12kHz公共特征，原始采集链仍不同。",
+      "源域实测转速约1722–1798rpm；目标域原始MAT无逐文件精确RPM，题面仅约600rpm。",
+      "目标传感器位置/轴承几何未知，不能把源域SKF6203/SKF6205几何专属机理特征直接作为目标输入。",
+      "目标原始幅值尺度与源域差异可能很大，因此源模型分数只能称预测，不能据此推断目标准确率。"
+    ]
+  },
+  "method_choice_reason": "本步先做三层域差异证据：原始/机理兼容特征分布、分类器输出结构、无标签目标相对源类条件结构。迁移仅实际评估一个简单的无监督逐特征位置—尺度对齐，并用源域载荷轮换构造4个模拟目标域；前三个载荷用于选择对齐强度，载荷3完全不参与调参、仅作最终模拟迁移验证。复杂候选只冻结方案，不在真实A-P上训练。",
+  "key_improvements": [
+    {
+      "id": "T1-SHRINK-MOMENT",
+      "change": "简单迁移基线：在不读取模拟目标标签的情况下，用源训练池与无标签模拟目标的逐特征均值/标准差做位置—尺度对齐，并设置shrinkage α∈{0.25,0.5,0.75,1.0}；α仅在模拟载荷0/1/2上确定，载荷3完全留作最终验证。",
+      "target_problem": "针对目标域幅值、谱统计和包络统计的整体位置/尺度漂移。",
+      "evidence_plan": "每个载荷均先训练与07-A配置一致的RF源模型；适配函数只接收X，不接收标签。调参域报告文件级Macro-F1，冻结α后仅在未参与调参的载荷3揭示保留真值评价。"
+    },
+    {
+      "id": "T2-CORAL",
+      "change": "候选1：无监督CORAL二阶协方差对齐，仅使用无标签目标26维公共特征的协方差。",
+      "target_problem": "若独立特征位置—尺度校正不足，而域分类器/MMD显示跨特征协方差结构仍有明显偏移。",
+      "evidence_plan": "08-A仅冻结触发条件与预算；08-B若T1未达到门槛且协方差偏移证据充分，再在同一模拟域调参/验证隔离协议下评价。"
+    },
+    {
+      "id": "T3-DOMAIN-WEIGHT",
+      "change": "候选2：域分类器估计源样本接近目标分布的程度，用于源实例加权；不生成目标伪标签。",
+      "target_problem": "若目标仅覆盖源域分布的一部分，统一全局对齐可能引入负迁移。",
+      "evidence_plan": "08-A仅冻结触发条件与预算；仅当域可分性较高且目标相对源类中心存在支持重叠时进入08-B候选。"
+    }
+  ],
+  "primary_metrics_and_fairness": {
+    "primary_metrics": [
+      "模拟目标域文件级Macro-F1",
+      "模拟目标域最小类别Recall",
+      "Final-validation相对无迁移Macro-F1差值"
+    ],
+    "comparison_scope": "所有模拟域均按独立文件group划分；同一载荷下No-transfer与T1使用完全相同的源训练文件、模拟目标文件、26特征、RF配置和聚合规则。",
+    "fairness_constraints": [
+      "目标A-P真标签全程不可见，不计算目标Accuracy/F1/Recall。",
+      "模拟目标标签在适配与预测阶段从函数输入中剥离，只在预测完成后用于评价。",
+      "α只用载荷0/1/2选择；载荷3不得参与任何调参或候选选择。",
+      "随机种子固定20260919；RF固定300树、max_depth=8、min_samples_leaf=1、max_features=sqrt、file_and_class_balanced。",
+      "复杂候选本步不在真实目标上训练。"
+    ]
+  },
+  "key_tables_and_figures": [
+    "源—目标采集条件与原始幅值差异表",
+    "26维公共特征文件级域差异表及机制兼容特征子集摘要",
+    "A-P无迁移窗口/文件预测表",
+    "分类器输出漂移与源类中心距离诊断表",
+    "四个载荷模拟目标域方案及T1调参/最终留出验证表"
+  ],
+  "core_conclusion": "本步结论以真实运行后冻结包为准；预先只允许得到三类结论：是否存在可证实域差异、07-A模型对A-P的无迁移预测分布、以及T1在严格模拟目标调参/留出验证下是否值得进入08-B。不得由A-P预测反推真值或目标准确率。",
+  "next_question_interface": "向08-B提供：A-P无迁移窗口/文件模型分数与预测、域差异三层证据、目标无标签使用台账、4个模拟载荷的严格调参/最终验证划分、冻结T1 α及其模拟验证结果、T2/T3触发条件与计算预算。",
+  "evidence_guard": "If real results do not support a claim, downgrade the claim or revise this blueprint; never upgrade wording without evidence. Target A-P predictions are never truth; source-specific bearing-geometry features are not target-compatible."
+}
