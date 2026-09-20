@@ -1,0 +1,47 @@
+{
+  "schema_version": "10A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "tracked_code": [
+    {
+      "path": "scripts/step10a_final_labels_and_display.py",
+      "git_blob_sha": "2cbfb502ec4057a1bbe60336cc4d04581bfe7d6d"
+    },
+    {
+      "path": ".github/workflows/step10a_final_labels.yml",
+      "git_blob_sha": "c57d208c3d1175cf4a7e578ae73bbc9c70a6ff6e"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/10A/inference_protocol.json",
+      "git_blob_sha": "e1ae5516cfd58ebd87f6adc612b5357cb70717b9"
+    },
+    {
+      "path": "protocol/10A/run_config.json",
+      "git_blob_sha": "d205981cf81687d6f3a4cc7658c01a5283d48ba8"
+    },
+    {
+      "path": "protocol/09A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-09A-26f99878"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/models/final_transfer_bundle.joblib",
+      "sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729"
+    },
+    {
+      "path": "protocol/00B/environment_manifest.json",
+      "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1"
+    }
+  ],
+  "constraints": [
+    "STEP09 frozen final transfer bundle only; no retraining/tuning/model selection",
+    "official aggregation fixed before STEP10 run: mean of 15 window class scores then argmax",
+    "A-P target truth remains unknown; no target accuracy/F1/Recall",
+    "stability uses fixed-model window bootstrap, alpha sensitivity 0.20/0.25/0.30, and mean/median/majority aggregations",
+    "low-confidence rule frozen before final inference and requires at least two evidence categories",
+    "mechanism evidence is source-prototype explanation only",
+    "no Word editing in A step"
+  ]
+}
