@@ -1,0 +1,7 @@
+STEP13-B1 dispatch
+requested_step=13-B1
+source_freezes=FREEZE-13A1-0eedc9bc;FREEZE-13A2-90264cb7
+previous_pass=13-A2-V2026.09.21-002855b0-通过
+mode=final_scientific_figures_only
+word_edit=false
+model_recompute=false
