@@ -8,7 +8,7 @@
   "tracked_code": [
     {
       "path": "scripts/step08a_domain_diagnosis.py",
-      "git_blob_sha": "a246cc442c7f09ce63e34b51c6f72d78e8bb6336"
+      "git_blob_sha": "de55b28bd6a056cd8994eaf3504e5845b6659ef4"
     },
     {
       "path": ".github/workflows/q3a_domain_diagnosis.yml",
@@ -44,5 +44,16 @@
     "pseudo-target adaptation receives features and group IDs only, never class labels",
     "real A-P is not adapted in 08-A; complex transfer candidates are design-only",
     "no Word editing and no five-ledger editing in A"
+  ],
+  "patch_history": [
+    {
+      "attempt_run_id": "github-actions-run-35493407789",
+      "issue": "validation dictionary encoded 'complex real target transfer trained' as false and all(checks.values()) therefore failed despite the desired no-complex-transfer condition being satisfied",
+      "fix": "rename to complex_real_target_transfer_not_trained=true and explicitly list failed_checks",
+      "scientific_protocol_changed": false,
+      "blueprint_or_run_config_changed": false,
+      "results_or_thresholds_changed": false,
+      "code_commit": "2cbdd1fb8b54762d679c945478799248b1cf3a0c"
+    }
   ]
 }
