@@ -1,0 +1,11 @@
+{
+  "schema_version": "09B-env-1.0",
+  "captured_utc": "2026-09-20T08:01:01Z",
+  "python": "3.13.5",
+  "python_docx": "1.2.0",
+  "matplotlib": "3.10.8",
+  "lxml": "6.1.1",
+  "renderer": "/home/oai/skills/docx/render_docx.py",
+  "rendered_pages": 32,
+  "training_runtime_used": false
+}
