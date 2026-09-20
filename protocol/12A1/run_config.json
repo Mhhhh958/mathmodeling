@@ -1,0 +1,52 @@
+{
+  "schema_version": "12A1-1.0",
+  "step_id": "12-A1",
+  "mode": "audit_existing_frozen_results_only",
+  "source_freezes": {
+    "Q1": [
+      "FREEZE-02A-6f36d0b4",
+      "FREEZE-03A-f5307f8f",
+      "FREEZE-04A-3e3b97c0"
+    ],
+    "Q2": [
+      "FREEZE-05A-ba6432cf",
+      "FREEZE-06A-01576948",
+      "FREEZE-07A-7e8829fb"
+    ],
+    "Q3": [
+      "FREEZE-08A-8cd7401f",
+      "FREEZE-09A-26f99878",
+      "FREEZE-10A-4346ce31"
+    ],
+    "Q4": [
+      "FREEZE-11A-1f812c22"
+    ]
+  },
+  "audit_rules": {
+    "p0": [
+      "same independent group appears in train and test/validation within a fold",
+      "learned preprocessing is fit using validation/test rows",
+      "outer/final test is used to tune or accept the reported final model while the same test result is later treated as untouched generalization evidence",
+      "target pseudo-labels or predicted A-P labels are treated as target truth for selection/validation",
+      "historical/legacy results are mixed into current frozen conclusions without identity trace"
+    ],
+    "p1": [
+      "important robustness evidence explicitly deferred but not yet run",
+      "target-unlabeled-informed source selection lacks alternative-source-plan sensitivity",
+      "transductive target adaptation lacks leave-one-target-file/self-influence robustness",
+      "main-model reliability evidence is present but would benefit from an orthogonal validation axis"
+    ],
+    "p2": [
+      "inherent data limitation cannot be removed with current data",
+      "interpretability reference dependence/off-manifold caveat",
+      "unknown target geometry/RPM or unknown target ground truth"
+    ]
+  },
+  "random_spot_check": {
+    "seed": 20260920,
+    "count": 6
+  },
+  "no_word_edit": true,
+  "no_new_large_scale_experiment": true,
+  "no_formal_paper_figure": true
+}
