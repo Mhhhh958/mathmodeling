@@ -1,0 +1,102 @@
+{
+  "schema_version": "08A-1.0",
+  "step_id": "08-A",
+  "seed": 20260919,
+  "inputs": {
+    "freeze07": "FREEZE-07A-7e8829fb",
+    "run07": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+    "freeze04": "FREEZE-04A-3e3b97c0",
+    "run04": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+    "run01": "run_01-A_20260919T155449028094Z_4e160e7d_85d31497",
+    "final_model": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
+    "q3_interface": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json",
+    "source_features": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/q2_interface/X_source_common.csv",
+    "target_features": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/target_interface/X_target_common.csv"
+  },
+  "target_truth_policy": {
+    "expected_label_status": "unknown_truth",
+    "expected_class_label": "UNKNOWN_TRUTH",
+    "may_compute_target_accuracy": false,
+    "target_predictions_are_truth": false
+  },
+  "domain_diagnosis": {
+    "independent_unit": "file/group mean for source-target distribution statistics",
+    "raw_context": [
+      "analysis channel/sensor availability",
+      "native sampling rate",
+      "duration",
+      "RPM or RPM provenance",
+      "raw signal std/peak-to-peak scale"
+    ],
+    "feature_layers": [
+      "26 target-compatible common features",
+      "geometry-free mechanism proxies: envelope/spectral/band-ratio features"
+    ],
+    "output_layer": [
+      "file-level uncalibrated score entropy",
+      "top model score",
+      "score margin",
+      "window-to-file agreement"
+    ],
+    "class_structure": [
+      "distance from each unlabeled target file to source class centroids after source z-standardization"
+    ],
+    "supporting_evidence": [
+      "biased RBF-MMD on file means",
+      "source-vs-target domain-classifier cross-validated AUC",
+      "PCA coordinates"
+    ],
+    "wording": "MMD/PCA/domain classifier are domain-gap evidence only, never target-accuracy evidence"
+  },
+  "pseudo_target": {
+    "axis": "load_hp",
+    "rotated_domains": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "hyperparameter_selection_loads": [
+      0,
+      1,
+      2
+    ],
+    "final_validation_load": 3,
+    "require_all_four_classes_each_domain": true,
+    "adaptation_label_visibility": "hidden; feature adaptation receives no class_label",
+    "reveal_truth_only_after_prediction_for_metrics": true
+  },
+  "simple_transfer_baseline": {
+    "id": "T1-SHRINK-MOMENT",
+    "alpha_grid": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "transformation": "Xt'=(1-alpha)*Xt + alpha*((Xt-mu_t)/sd_t*sd_s + mu_s)",
+    "source_moments": "file-balanced window weights from source training pool",
+    "target_moments": "file-balanced window weights from unlabeled pseudo-target only",
+    "selection": "maximize mean file Macro-F1 across loads0/1/2; tie-break higher mean min-class Recall then smaller alpha",
+    "final_validation": "evaluate selected alpha once on load3; no retuning afterward"
+  },
+  "frozen_rf_retraining_for_pseudo_target": {
+    "family": "RandomForestClassifier",
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "weighting": "file_and_class_balanced",
+    "seed": 20260919,
+    "n_jobs": 1
+  },
+  "promotion_and_failure": {
+    "T1_promotion_min_final_gain": 0,
+    "failure_if_final_macro_f1_drop_below": -0.05,
+    "candidate_T2_trigger": "T1 fails or is unstable AND covariance/domain evidence indicates residual multivariate shift",
+    "candidate_T3_trigger": "domain classifier AUC high AND target files show uneven overlap with source class/support structure",
+    "max_additional_candidate_families_in_08B": 2
+  },
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true
+}
