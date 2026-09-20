@@ -1,0 +1,38 @@
+{
+  "schema_version": "09A-validation-1.0",
+  "step_id": "09-A",
+  "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_inputs_bound": true,
+    "A_P_true_labels_unavailable": true,
+    "step08_A0_exactly_reproduced": true,
+    "T1_T2_T3_tuning_runs_complete": true,
+    "selection_uses_only_loads0_1_2": true,
+    "held_load3_not_used_until_method_frozen": true,
+    "held_load3_acceptance_passed": true,
+    "pseudo_labels_not_used": true,
+    "pseudo_label_threshold_sensitivity_recorded_as_not_applicable": true,
+    "three_seed_stability_checked": true,
+    "stability_passed": true,
+    "paired_negative_transfer_quantified_per_simulated_file": true,
+    "source_retention_checked": true,
+    "source_retention_passed": true,
+    "real_A_P_adaptation_executed": true,
+    "real_A_P_accuracy_not_computed": true,
+    "class_distribution_entropy_and_collapse_checked": true,
+    "no_unexplained_real_A_P_severe_collapse": true,
+    "final_transfer_bundle_saved": true
+  },
+  "key_evidence": {
+    "selection": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/candidate_family_summary.csv",
+    "held": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/held_load3_acceptance.json",
+    "paired_negative_transfer": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/primary_seed_paired_file_negative_transfer.csv",
+    "stability": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/stability_summary.json",
+    "source_retention": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/source_retention_check.json",
+    "A_P_final": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/A_P_final_transfer_file_predictions.csv"
+  },
+  "target_accuracy_reported": false,
+  "word_edit_performed": false
+}

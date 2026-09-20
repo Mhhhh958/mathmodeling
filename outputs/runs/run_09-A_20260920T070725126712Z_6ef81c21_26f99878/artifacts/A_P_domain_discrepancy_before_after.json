@@ -1,0 +1,7 @@
+{
+  "mmd2_before": 0.8360769364217773,
+  "mmd2_after": 0.755629813889295,
+  "decreased": true,
+  "comparison": "source vs adapted target",
+  "warning": "distribution proximity is not diagnostic accuracy"
+}

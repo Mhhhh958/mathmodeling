@@ -1,0 +1,7 @@
+{
+  "items": [
+    "A-P ground truth remains unknown; no real target accuracy/F1/Recall can be verified.",
+    "Pseudo-target load shift cannot reproduce all real sensor/RPM/sampling-path differences.",
+    "A lower MMD after adaptation is not proof of better diagnosis."
+  ]
+}

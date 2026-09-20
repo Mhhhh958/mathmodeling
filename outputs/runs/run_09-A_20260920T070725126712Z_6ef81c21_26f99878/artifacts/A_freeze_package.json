@@ -1,0 +1,216 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "09-A",
+  "freeze_package_id": "FREEZE-09A-26f99878",
+  "status": "passed",
+  "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878",
+  "versions": {
+    "code_version_id": "git:13d8a7411c7330126c4063d38d4d009e4be0f3d2",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-07A-7e8829fb",
+      "FREEZE-08A-8cd7401f",
+      "FEAT-23d45f5649dcd5f1"
+    ],
+    "run_config_sha256": "45a4de2b3a0c4efc955ec9ac4874721472e86d29057527d2c37014e95dcb0c0e",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "features": 26,
+    "class_order": [
+      "OR",
+      "IR",
+      "B",
+      "N"
+    ],
+    "T1_alpha": 0.25,
+    "T2_lambda": [
+      0.01,
+      0.1,
+      1
+    ],
+    "T3_clip": [
+      2,
+      5
+    ],
+    "tuning_loads": [
+      0,
+      1,
+      2
+    ],
+    "final_validation_load": 3,
+    "stability_seeds": [
+      20260919,
+      20260920,
+      20260921
+    ],
+    "pseudo_labels_used": false
+  },
+  "real_results": [
+    {
+      "name": "method_selection",
+      "value": {
+        "selected_method": "T1",
+        "selected_setting": "0.25"
+      }
+    },
+    {
+      "name": "held_load3",
+      "value": {
+        "selected_method": "T1",
+        "selected_setting": "0.25",
+        "A0_macro_f1": 1.0,
+        "transfer_macro_f1": 1.0,
+        "macro_delta": 0.0,
+        "A0_min_recall": 1.0,
+        "transfer_min_recall": 1.0,
+        "min_recall_delta": 0.0,
+        "new_zero_recall": false,
+        "max_class_share": 0.4166666666666667,
+        "passed": true
+      }
+    },
+    {
+      "name": "seed_stability",
+      "value": {
+        "seeds": [
+          20260919,
+          20260920,
+          20260921
+        ],
+        "held_load3_macro_delta_by_seed": {
+          "20260919": 0.0,
+          "20260920": 0.0,
+          "20260921": 0.0
+        },
+        "held_load3_worst_macro_delta": 0.0,
+        "held_load3_all_seed_file_label_agreement": 1.0,
+        "passed": true
+      }
+    },
+    {
+      "name": "source_retention",
+      "value": {
+        "mode": "exact_classifier_preservation",
+        "source_model_sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+        "max_source_window_score_delta": 0.0,
+        "macro_f1_delta_by_construction": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "name": "paired_negative_transfer",
+      "value": {
+        "degraded_files_total": 0,
+        "improved_files_total": 0,
+        "unchanged_files_total": 49
+      }
+    },
+    {
+      "name": "A_P_output",
+      "value": {
+        "truth": "unknown",
+        "distribution": {
+          "pred_count_OR": 8,
+          "pred_count_IR": 0,
+          "pred_count_B": 8,
+          "pred_count_N": 0,
+          "predicted_class_count": 2,
+          "max_class_share": 0.5,
+          "hard_class_entropy_norm": 0.5
+        },
+        "domain_gap": {
+          "mmd2_before": 0.8360769364217773,
+          "mmd2_after": 0.755629813889295,
+          "decreased": true,
+          "comparison": "source vs adapted target",
+          "warning": "distribution proximity is not diagnostic accuracy"
+        }
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/candidate_config_summary.csv"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/held_load3_acceptance.json"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/selected_method_paired_file_deltas_all_seeds.csv"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/source_retention_check.json"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/A_P_class_distribution_collapse_check.json"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/artifacts/pseudo_label_threshold_sensitivity.json"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "item": "pseudo_labeling",
+      "status": "not_used_by_design",
+      "reason": "08-A no-transfer A-P predictions occupy only OR/B while target truth is unknown; self-training would risk reinforcing source bias. No selected 09-A candidate requires pseudo-labels."
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "final_transfer_selection.json",
+      "candidate_config_summary.csv",
+      "candidate_family_summary.csv",
+      "held_load3_acceptance.json",
+      "primary_seed_negative_transfer_summary_by_load.csv",
+      "stability_summary.json",
+      "source_retention_check.json",
+      "A_P_A0_reproduced.csv",
+      "A_P_final_transfer_file_predictions.csv",
+      "A_P_before_after_comparison.csv",
+      "A_P_domain_discrepancy_before_after.json",
+      "A_P_class_distribution_collapse_check.json",
+      "unverified_items.json"
+    ],
+    "supported_conclusions": [
+      "Method/config selection used only simulated target loads0/1/2.",
+      "Held load3 was evaluated only after method/config freeze.",
+      "A-P labels remained unknown; final A-P outputs are predictions only.",
+      "Pseudo-label self-training was not used.",
+      "Distribution-gap reduction, if observed, is not claimed as target diagnostic accuracy."
+    ],
+    "wording_limits": [
+      "do not report A-P accuracy/F1/Recall",
+      "do not call uncalibrated scores confidence/probability",
+      "do not claim MMD reduction proves accuracy improvement",
+      "do not claim pseudo-target results equal real target performance"
+    ],
+    "approved_tables": [
+      "candidate_family_summary.csv",
+      "held_load3_primary_metrics.csv",
+      "primary_seed_negative_transfer_summary_by_load.csv",
+      "A_P_before_after_comparison.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [
+    "A-P ground truth remains unknown; no real target accuracy/F1/Recall can be verified.",
+    "Pseudo-target load shift cannot reproduce all real sensor/RPM/sampling-path differences.",
+    "A lower MMD after adaptation is not proof of better diagnosis."
+  ],
+  "freeze": {
+    "created_utc": "2026-09-20T07:08:01.543689Z",
+    "content_sha256": "29cd1a44e645021c578a974a59c6b42d0b3792b8cd65b808364f51b8a80e888e",
+    "invalidation_dependencies": [
+      "07-A final source model changes",
+      "08-A frozen domain/pseudo-target protocol changes",
+      "04-A common feature data changes",
+      "09-A config/protocol/code changes"
+    ]
+  }
+}

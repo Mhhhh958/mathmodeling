@@ -1,0 +1,15 @@
+{
+  "seeds": [
+    20260919,
+    20260920,
+    20260921
+  ],
+  "held_load3_macro_delta_by_seed": {
+    "20260919": 0.0,
+    "20260920": 0.0,
+    "20260921": 0.0
+  },
+  "held_load3_worst_macro_delta": 0.0,
+  "held_load3_all_seed_file_label_agreement": 1.0,
+  "passed": true
+}

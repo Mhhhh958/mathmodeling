@@ -1,0 +1,7 @@
+{
+  "mode": "exact_classifier_preservation",
+  "source_model_sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+  "max_source_window_score_delta": 0.0,
+  "macro_f1_delta_by_construction": 0.0,
+  "passed": true
+}

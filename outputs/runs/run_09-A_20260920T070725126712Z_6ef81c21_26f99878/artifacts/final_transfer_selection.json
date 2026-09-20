@@ -1,0 +1,66 @@
+{
+  "selected_method": "T1",
+  "selected_setting": "0.25",
+  "pre_held_selection_evidence": "loads0/1/2 only",
+  "held_load3": {
+    "selected_method": "T1",
+    "selected_setting": "0.25",
+    "A0_macro_f1": 1.0,
+    "transfer_macro_f1": 1.0,
+    "macro_delta": 0.0,
+    "A0_min_recall": 1.0,
+    "transfer_min_recall": 1.0,
+    "min_recall_delta": 0.0,
+    "new_zero_recall": false,
+    "max_class_share": 0.4166666666666667,
+    "passed": true
+  },
+  "stability": {
+    "seeds": [
+      20260919,
+      20260920,
+      20260921
+    ],
+    "held_load3_macro_delta_by_seed": {
+      "20260919": 0.0,
+      "20260920": 0.0,
+      "20260921": 0.0
+    },
+    "held_load3_worst_macro_delta": 0.0,
+    "held_load3_all_seed_file_label_agreement": 1.0,
+    "passed": true
+  },
+  "source_retention": {
+    "mode": "exact_classifier_preservation",
+    "source_model_sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+    "max_source_window_score_delta": 0.0,
+    "macro_f1_delta_by_construction": 0.0,
+    "passed": true
+  },
+  "A_P_output_safety": {
+    "A0": {
+      "pred_count_OR": 6,
+      "pred_count_IR": 0,
+      "pred_count_B": 10,
+      "pred_count_N": 0,
+      "predicted_class_count": 2,
+      "max_class_share": 0.625,
+      "hard_class_entropy_norm": 0.4772170014624825
+    },
+    "transfer": {
+      "pred_count_OR": 8,
+      "pred_count_IR": 0,
+      "pred_count_B": 8,
+      "pred_count_N": 0,
+      "predicted_class_count": 2,
+      "max_class_share": 0.5,
+      "hard_class_entropy_norm": 0.5
+    },
+    "severe_threshold": 0.875,
+    "severe_collapse": false,
+    "selection_used_this": false
+  },
+  "A_P_truth": "unknown",
+  "pseudo_labels_used": false,
+  "passed": true
+}

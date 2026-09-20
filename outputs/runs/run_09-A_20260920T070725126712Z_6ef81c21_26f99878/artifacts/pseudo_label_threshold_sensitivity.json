@@ -1,0 +1,6 @@
+{
+  "pseudo_labels_used": false,
+  "threshold_sensitivity_applicable": false,
+  "reason": "08-A no-transfer A-P predictions occupy only OR/B while target truth is unknown; self-training would risk reinforcing source bias. No selected 09-A candidate requires pseudo-labels.",
+  "error_accumulation_control": "avoid pseudo-label self-training entirely; selection uses only source truth in simulated targets after prediction"
+}

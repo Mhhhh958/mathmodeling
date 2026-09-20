@@ -1,0 +1,5 @@
+﻿load,files,improved_files,degraded_files,unchanged_files,mean_correct_delta,mean_true_score_delta
+0,13,0,0,13,0.0,0.008959762961616926
+1,12,0,0,12,0.0,-0.03970636760827425
+2,12,0,0,12,0.0,-0.021753055215958415
+3,12,0,0,12,0.0,-0.004494944680038082

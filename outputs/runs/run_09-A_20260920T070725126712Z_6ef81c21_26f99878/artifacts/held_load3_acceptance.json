@@ -1,0 +1,13 @@
+{
+  "selected_method": "T1",
+  "selected_setting": "0.25",
+  "A0_macro_f1": 1.0,
+  "transfer_macro_f1": 1.0,
+  "macro_delta": 0.0,
+  "A0_min_recall": 1.0,
+  "transfer_min_recall": 1.0,
+  "min_recall_delta": 0.0,
+  "new_zero_recall": false,
+  "max_class_share": 0.4166666666666667,
+  "passed": true
+}

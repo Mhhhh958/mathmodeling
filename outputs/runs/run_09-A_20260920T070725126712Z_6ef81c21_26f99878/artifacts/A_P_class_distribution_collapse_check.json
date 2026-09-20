@@ -1,0 +1,23 @@
+{
+  "A0": {
+    "pred_count_OR": 6,
+    "pred_count_IR": 0,
+    "pred_count_B": 10,
+    "pred_count_N": 0,
+    "predicted_class_count": 2,
+    "max_class_share": 0.625,
+    "hard_class_entropy_norm": 0.4772170014624825
+  },
+  "transfer": {
+    "pred_count_OR": 8,
+    "pred_count_IR": 0,
+    "pred_count_B": 8,
+    "pred_count_N": 0,
+    "predicted_class_count": 2,
+    "max_class_share": 0.5,
+    "hard_class_entropy_norm": 0.5
+  },
+  "severe_threshold": 0.875,
+  "severe_collapse": false,
+  "selection_used_this": false
+}

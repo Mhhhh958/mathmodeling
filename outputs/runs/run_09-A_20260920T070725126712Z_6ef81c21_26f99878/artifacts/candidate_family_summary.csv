@@ -1,0 +1,4 @@
+﻿method,setting,mean_tuning_macro_f1,mean_tuning_min_class_recall,mean_gain_vs_A0,worst_tuning_load_delta,new_zero_recall,severe_simulated_collapse,eligible,tie,complexity_rank
+T1,0.25,0.9345950345950346,0.7555555555555555,0.0,0.0,False,False,True,0.0,0
+T2,1.0,0.7078463203463204,0.4444444444444444,-0.22674871424871423,-0.5273601398601399,True,False,False,-1.0,1
+T3,2.0,0.9345950345950346,0.7555555555555555,0.0,0.0,False,False,True,2.0,2
