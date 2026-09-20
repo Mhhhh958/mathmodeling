@@ -5,3 +5,6 @@ previous_pass=13-A2-V2026.09.21-002855b0-通过
 mode=final_scientific_figures_only
 word_edit=false
 model_recompute=false
+
+retry=1
+fix=json_bool_and_staging
