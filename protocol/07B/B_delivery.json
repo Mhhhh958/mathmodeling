@@ -1,0 +1,76 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "07-B",
+  "status": "passed",
+  "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed",
+  "source_A_freeze_package_id": "FREEZE-07A-7e8829fb",
+  "source_A_run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+  "latest_word_before": {
+    "version": "V0.7.1",
+    "artifact_id": "WORD-V0.7.1-890aa7df",
+    "sha256": "890aa7dff094d6d64795d2968cd16c78a9668d22e0da203d248e1f059bb4cb31",
+    "path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
+    "library_file_id": "libfile_916202dedb84819192dc67df70aea809"
+  },
+  "new_word_after": {
+    "version": "V0.8",
+    "artifact_id": "WORD-V0.8-1d19b9ed",
+    "sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "path": "/数学建模/07B/2025华为杯E题论文_步骤07_V0.8.docx",
+    "library_file_id": "libfile_e7508cc024548191a5fbf1b9ea5d63ec"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "protocol/07B/change_list.json",
+  "validation_record": "protocol/07B/validation_record.json",
+  "affected_ledger_items": {
+    "version_ledger": [
+      "VER-07B-WORD-V08"
+    ],
+    "evidence_issue_ledger": [
+      "EVID-07B-001"
+    ],
+    "result_formula_ledger": [
+      "RES-07B-H1-GATE",
+      "RES-07B-OUTER",
+      "RES-07B-FINAL",
+      "RES-07B-H2",
+      "RES-07B-COMPLEXITY",
+      "RES-07B-Q3-INTERFACE"
+    ],
+    "figure_table_ledger": [
+      "FIG-07B-007",
+      "FIG-07B-008",
+      "TBL-07B-019"
+    ],
+    "citation_ledger": [
+      "C-07B-001"
+    ]
+  },
+  "figures_and_captions": [
+    {
+      "file": "/数学建模/07B/图7_Base与最终RF四折配对对照.png",
+      "caption": "图7 Base与最终RF在四个冻结外层折上的文件级Macro-F1配对对照",
+      "sha256": "52bb9966baafc5a4ca4786e2c1511fbf5772885315bd684e29cf676cc96811f2",
+      "source": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/Base_vs_H1_paired_outer.csv"
+    },
+    {
+      "file": "/数学建模/07B/图8_相关性裁剪消融12折配对变化.png",
+      "caption": "图8 相关性裁剪消融在12个冻结内层验证折上的文件级Macro-F1配对变化",
+      "sha256": "ca8c0129b2db61f2c042f4cb6390a08edace539480fc5c2582a0cb6038f8d24d",
+      "source": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/H2_corr_lr_paired_inner_comparison.csv"
+    }
+  ],
+  "new_tables": [
+    "表19 问题2最终模型与问题3冻结接口"
+  ],
+  "code_version_id": "CODE-b3f851bee945d637",
+  "code_sha256": "b3f851bee945d63735cc2c4ba6f99e933b446382d60b28f5c3d1e6f1237de27d",
+  "run_config_sha256": "a07ba4cb7bb7244b495c9bc60a49ed698eb793d5ad6a99f9b2f8931bd3f14518",
+  "environment_sha256": "f9c8d6bec7a0e144c964fd693ecfc2ddfe23abedefa3a048d45da7e2853c2058",
+  "pass_token": "07-B-V2026.09.20-1d19b9ed-通过",
+  "next_allowed": "08-A"
+}
