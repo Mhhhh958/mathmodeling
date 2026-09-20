@@ -1,0 +1,58 @@
+{
+  "schema_version": "08B-1.0",
+  "step_id": "08-B",
+  "run_id": "run_08-B_20260920T062914179544Z_8cd7401f_28dc6d43",
+  "created_utc": "2026-09-20T06:29:14Z",
+  "source_A_freeze_package_id": "FREEZE-08A-8cd7401f",
+  "source_A_run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f",
+  "source_A_freeze_content_sha256": "3f1ba0ce2e43c91b0c4d49d823a75e053096dd889e56b59ca6cc648b2d2b79d8",
+  "latest_word_before": {
+    "version": "V0.8",
+    "artifact_id": "WORD-V0.8-1d19b9ed",
+    "sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "library_path": "/数学建模/07B/2025华为杯E题论文_步骤07_V0.8.docx",
+    "library_file_id": "libfile_e7508cc024548191a5fbf1b9ea5d63ec"
+  },
+  "output_word": {
+    "version": "V0.9",
+    "artifact_id": "WORD-V0.9-28dc6d43",
+    "sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08",
+    "library_path": "/数学建模/08B/2025华为杯E题论文_步骤08_V0.9.docx",
+    "library_file_id": "libfile_005d1a7b193c8191b52a0df62e44dfd4"
+  },
+  "allowed_actions": [
+    "incrementally edit latest mother Word",
+    "use only passed 08-A frozen results",
+    "update affected ledgers",
+    "insert approved figure/table/captions"
+  ],
+  "forbidden_actions": [
+    "retrain",
+    "retune",
+    "rerun model selection",
+    "change 08-A frozen results",
+    "rebuild paper from plain text"
+  ],
+  "writeback_scope": [
+    "5.3.1 域差异诊断",
+    "5.3.2 无迁移基线",
+    "5.3.3 模拟目标域与后续迁移边界"
+  ],
+  "figure_policy": {
+    "inserted": [
+      "图9_源目标公共特征族标准化均值偏移.png"
+    ],
+    "embedding_figure_used": false,
+    "overview_panel_used": false
+  },
+  "table_policy": {
+    "inserted": [
+      "表20 目标域A—P的无迁移文件级预测结果",
+      "表21 多模拟目标域的调参与最终验证隔离"
+    ]
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
