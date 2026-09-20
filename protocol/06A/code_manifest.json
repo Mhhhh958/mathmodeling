@@ -1,0 +1,42 @@
+{
+  "schema_version": "06A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "run_config_commit": "524573166204e63ab8be42c04f52a3b8ea01b9ce",
+  "tracked_code": [
+    {
+      "path": "scripts/step06a_minimal_logistic_baseline.py",
+      "git_blob_sha": "a686d0dea6fa38ad7b2691227d9da196c6f772f8"
+    },
+    {
+      "path": ".github/workflows/step06a_minimal_logistic_baseline.yml",
+      "git_blob_sha": "fbdbc506203c8c8f3d4c29b03e75d4d4a1776a5a"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/06A/run_config.json",
+      "git_blob_sha": "ae97cba6a88079467cfe4590c3a56b19f0a10ed3"
+    },
+    {
+      "path": "protocol/05A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-05A-ba6432cf"
+    },
+    {
+      "path": "protocol/04A/latest_freeze_package.json",
+      "feature_data_version_id": "FEAT-23d45f5649dcd5f1"
+    }
+  ],
+  "constraints": [
+    "LR only in 06-A",
+    "frozen 05-A outer/inner groups",
+    "26 common features only",
+    "training-boundary StandardScaler and weighting",
+    "no duplicated windows for imbalance",
+    "outer test never selects config",
+    "uncalibrated outputs called model scores",
+    "no Word edit",
+    "no five-ledger edit in A"
+  ]
+}
