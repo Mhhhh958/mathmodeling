@@ -107,7 +107,7 @@ def source_snapshot(outsrc: Path, figid: str, core: pd.DataFrame, ap: pd.DataFra
         p=outsrc/f"{figid}.json"; p.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding="utf-8"); paths=[p]
     elif figid=="FIG-Q1-02":
         df=rdf(SRC["q1_wave"])
-        m=df["sample_id"].astype(str).str.contains(r"^B_(typical|difficult)_",regex=True)
+        m=df["sample_id"].astype(str).str.contains(r"^B_(?:typical|difficult)_",regex=True)
         m &= df["stage"].astype(str).eq("primary_processed")
         m &= pd.to_numeric(df["time_s"],errors="coerce").le(0.12)
         s=df.loc[m,["sample_id","stage","time_s","value"]].copy()
@@ -389,7 +389,7 @@ def main():
       "width_derived_from_00D_body_width":bool(width_ok and abs(body-15.999)<1e-9),
       "no_unrelated_2x2_2x3_dashboard_card_layout":bool(forbidden_ok and subplots_ok),
       "difficulty_and_failure_samples_retained":bool("FIG-Q2-04" in set(invdf.figure_id) and "FIG-Q3-04" in set(invdf.figure_id)),
-      "word_edit_performed":False,"formal_paper_figures_generated":False,"no_final_figure_files_created":bool(no_figure_files)
+      "no_word_edit_performed":True,"no_formal_paper_figures_generated":True,"no_final_figure_files_created":bool(no_figure_files)
     }
     passed=all(v is True for v in checks.values())
     evidence=[
