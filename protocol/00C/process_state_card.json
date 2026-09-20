@@ -1,24 +1,18 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r17",
-  "updated_utc": "2026-09-20T05:35:00Z",
-  "CURRENT_ALLOWED_STEP": "07-B",
-  "LAST_PASS_TOKEN": "07-A-V2026.09.20-2e401561-通过",
+  "state_version": "2026.09.20-r18",
+  "updated_utc": "2026-09-20T05:50:01Z",
+  "CURRENT_ALLOWED_STEP": "08-A",
+  "LAST_PASS_TOKEN": "07-B-V2026.09.20-1d19b9ed-通过",
   "LATEST_WORD": {
-    "version": "V0.7.1",
-    "artifact_id": "WORD-V0.7.1-890aa7df",
-    "parent_version": "V0.7",
-    "library_path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
-    "library_file_id": "libfile_916202dedb84819192dc67df70aea809",
-    "sha256": "890aa7dff094d6d64795d2968cd16c78a9668d22e0da203d248e1f059bb4cb31",
-    "source_A_freeze_package_id": "FREEZE-06A-01576948",
-    "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
-    "identity_revalidation": {
-      "status": "passed",
-      "path": "protocol/06B/word_identity_revalidation_20260920T053500Z.json",
-      "previous_recorded_sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
-      "reason": "byte-level OOXML package drift; content/render equivalence revalidated"
-    }
+    "version": "V0.8",
+    "artifact_id": "WORD-V0.8-1d19b9ed",
+    "parent_version": "V0.7.1",
+    "library_path": "/数学建模/07B/2025华为杯E题论文_步骤07_V0.8.docx",
+    "library_file_id": "libfile_e7508cc024548191a5fbf1b9ea5d63ec",
+    "sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "source_A_freeze_package_id": "FREEZE-07A-7e8829fb",
+    "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed"
   },
   "LATEST_FREEZE_PACKAGE": {
     "step_id": "07-A",
@@ -31,25 +25,25 @@
     "content_sha256": "2e4015619ac816cfcb0e6d7c60f71855875af0ca4339217178a204e06f5c5af8"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "07-B",
+  "NEXT_ALLOWED": "08-A",
   "previous_gate": {
-    "step": "06-B",
-    "pass_token": "06-B-V2026.09.20-317ed7ab-通过",
-    "next_allowed": "07-A"
+    "step": "07-A",
+    "pass_token": "07-A-V2026.09.20-2e401561-通过",
+    "next_allowed": "07-B"
   },
   "current_step_record": {
-    "step": "07-A",
+    "step": "07-B",
     "status": "passed",
-    "pass_token": "07-A-V2026.09.20-2e401561-通过",
-    "next_allowed": "07-B",
-    "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
-    "code_version_id": "git:2a27ea8b8c684da035a18d1efc8844f1ca224df8",
-    "evidence_commit": "acd7408e37e7e0263714c52ec7c68c1486dd2a4f",
-    "blueprint_commit": "8b53fd909c1fd528625c1e25fec92d63ab3ca36a",
-    "freeze_package_id": "FREEZE-07A-7e8829fb",
-    "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
-    "final_model_sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
-    "validation_record": "protocol/07A/validation_record.json"
+    "pass_token": "07-B-V2026.09.20-1d19b9ed-通过",
+    "next_allowed": "08-A",
+    "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed",
+    "code_version_id": "CODE-b3f851bee945d637",
+    "source_A_freeze_package_id": "FREEZE-07A-7e8829fb",
+    "source_A_run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+    "output_word_artifact_id": "WORD-V0.8-1d19b9ed",
+    "output_word_sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "validation_record": "protocol/07B/validation_record.json",
+    "B_delivery": "protocol/07B/B_delivery.json"
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -59,9 +53,9 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/07A/validation_record.json",
+    "latest_validation_record": "protocol/07B/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
-    "latest_word_library_path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
+    "latest_word_library_path": "/数学建模/07B/2025华为杯E题论文_步骤07_V0.8.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
     "latest_01A_data_manifest": "protocol/01A/data_manifest.json",
     "latest_01B_delivery": "protocol/01B/B_delivery.json",
@@ -95,6 +89,9 @@
     "latest_07A_run": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
     "latest_07A_final_model": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
     "latest_07A_q3_interface": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json",
-    "latest_word_identity_revalidation": "protocol/06B/word_identity_revalidation_20260920T053500Z.json"
+    "latest_word_identity_revalidation": "protocol/06B/word_identity_revalidation_20260920T053500Z.json",
+    "latest_07B_validation": "protocol/07B/validation_record.json",
+    "latest_07B_change_list": "protocol/07B/change_list.json",
+    "latest_07B_delivery": "protocol/07B/B_delivery.json"
   }
 }
