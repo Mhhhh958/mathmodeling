@@ -1,0 +1,111 @@
+{
+  "schema_version": "12B-validation-1.0",
+  "step_id": "12-B",
+  "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898",
+  "created_utc": "2026-09-20T17:08:37Z",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_and_sources": {
+      "passed": true,
+      "evidence": "state r29; NEXT_ALLOWED=12-B; prior token=12-A2-V2026.09.20-3e9264b1-通过; OPEN_P0=[]; sources FREEZE-12A1-5e3e74e2 + FREEZE-12A2-f107c2fa"
+    },
+    "only_frozen_results_used": {
+      "passed": true,
+      "evidence": "No training/tuning/model selection in 12-B; all new numbers trace to 12-A1/12-A2 artifacts"
+    },
+    "validation_tables_traceable": {
+      "passed": true,
+      "evidence": {
+        "表28": "A2_02_window_parameter_sensitivity.csv",
+        "表29": "A2_01_load_holdout_seed_summary.csv",
+        "表30": "A2_03_source_plan_sensitivity.csv",
+        "表31": "A2_04_target_LOTO_stability.csv + A2_05_source_bootstrap_summary.csv",
+        "表32": "formula_code_unit_audit.json + result_version_identity_audit.json"
+      }
+    },
+    "affected_conclusions_synchronized": {
+      "passed": true,
+      "evidence": "摘要、5.1、5.2、5.3、5.4、模型检验与稳健性、模型评价与创新、结论均同步回写"
+    },
+    "unsupported_claims_removed_or_downgraded": {
+      "passed": true,
+      "evidence": "claim_disposition_allow_downgrade_delete.csv; 07-A 0.9675改为开发配对OOF；不称1s/50%最优、MVP普遍最优、A-P整体稳定可靠；不写真实目标迁移显著增益"
+    },
+    "word_persistence": {
+      "passed": true,
+      "before": {
+        "paragraphs": 295,
+        "tables": 28,
+        "sections": 6,
+        "inline_shapes": 18,
+        "media": 19,
+        "drawings": 18,
+        "math": 5,
+        "math_para": 5,
+        "pages": 43
+      },
+      "after": {
+        "paragraphs": 315,
+        "tables": 33,
+        "sections": 6,
+        "inline_shapes": 18,
+        "media": 19,
+        "drawings": 18,
+        "math": 5,
+        "math_para": 5,
+        "pages": 48
+      },
+      "all_source_media_names_retained": true,
+      "all_source_media_bytes_unchanged": true
+    },
+    "official_format_master_preserved": {
+      "passed": true,
+      "byte_identical_parts": [
+        "word/styles.xml",
+        "word/numbering.xml",
+        "word/theme/theme1.xml",
+        "word/fontTable.xml"
+      ],
+      "toc_field_preserved": true
+    },
+    "visual_QA": {
+      "passed": true,
+      "rendered_pages": 48,
+      "all_pages_inspected": true,
+      "no_clipping_overlap_missing_glyphs": true
+    },
+    "library_byte_identity": {
+      "passed": true,
+      "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+      "library_file_id": "libfile_71ac40e4114081918d7d407bb92bb847"
+    },
+    "no_new_formal_figures": {
+      "passed": true,
+      "evidence": "12-A2 approved_figures=[]; 12-B新增表28–32，不新增正式论文图"
+    }
+  },
+  "key_numbers": {
+    "Q1_window_macro_f1_range": [
+      0.9508739837398374,
+      0.9672619047619048
+    ],
+    "Q1_source_plan_macro_f1": {
+      "MVP": 0.9508739837398374,
+      "alternative": 0.9562356591151472,
+      "all_source": 0.9482950974230044
+    },
+    "Q2_load_holdout_macro_f1": 0.9508739837398374,
+    "Q2_load_holdout_accuracy": 0.9387755102040817,
+    "Q2_min_class_recall": 0.9047619047619048,
+    "Q3_target_LOTO_agreement": 0.9375,
+    "Q3_source_bootstrap_min_retention": 0.38333333333333336,
+    "formula_reextract_max_abs_diff": 4.547473508864641e-13
+  },
+  "source_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "output_word_sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "target_accuracy_reported": false
+}
