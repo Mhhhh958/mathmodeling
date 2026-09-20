@@ -1,0 +1,4 @@
+08-A formal run dispatch 2026-09-20T06:05:00Z
+blueprint_commit=b9502a78a8e727b2086d824df4160dbc8a6596b6
+run_config_commit=623c7e6a2aac053eddf4c41d742fb9dd149ab0a2
+code_manifest_commit=bb57590b7cf3bd8f26a56f7894742c99303e536f
