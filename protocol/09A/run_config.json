@@ -1,0 +1,61 @@
+{
+  "schema_version": "09A-1.0",
+  "step_id": "09-A",
+  "seed": 20260919,
+  "stability_seeds": [
+    20260919,
+    20260920,
+    20260921
+  ],
+  "inputs": {
+    "freeze07": "FREEZE-07A-7e8829fb",
+    "freeze08": "FREEZE-08A-8cd7401f",
+    "source_run07": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+    "source_run04": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0",
+    "source_model": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
+    "source_features": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/q2_interface/X_source_common.csv",
+    "source_labels": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/q2_interface/y_source_labels.csv",
+    "source_groups": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/q2_interface/groups_source.csv",
+    "source_metadata": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/q2_interface/source_window_metadata.csv",
+    "target_features": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/target_interface/X_target_common.csv",
+    "target_metadata": "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/target_interface/target_window_metadata.csv",
+    "step08_no_transfer": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/A_P_no_transfer_file_predictions.csv",
+    "outer_splits": "outputs/runs/run_05-A_20260919T192338074034Z_f82972c7_ba6432cf/artifacts/outer_split_manifest.csv",
+    "h1_oof": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/H1_rf_oof_file_predictions.csv"
+  },
+  "inventory": {
+    "source_files": 49,
+    "source_windows": 733,
+    "target_files": 16,
+    "target_windows": 240,
+    "features": 26,
+    "class_order": [
+      "OR",
+      "IR",
+      "B",
+      "N"
+    ]
+  },
+  "methods": {
+    "T1_alpha": 0.25,
+    "T2_ridge_lambda": [
+      0.01,
+      0.1,
+      1
+    ],
+    "T3_density_ratio_clip": [
+      2,
+      5
+    ]
+  },
+  "pseudo_target": {
+    "tuning_loads": [
+      0,
+      1,
+      2
+    ],
+    "held_final_load": 3
+  },
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true
+}
