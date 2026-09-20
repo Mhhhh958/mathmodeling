@@ -6,7 +6,7 @@
   "tracked_code": [
     {
       "path": "scripts/step10a_final_labels_and_display.py",
-      "git_blob_sha": "2cbfb502ec4057a1bbe60336cc4d04581bfe7d6d"
+      "git_blob_sha": "785c3e99bddabf82a6a929619fe69e224c963bd9"
     },
     {
       "path": ".github/workflows/step10a_final_labels.yml",
@@ -43,5 +43,16 @@
     "low-confidence rule frozen before final inference and requires at least two evidence categories",
     "mechanism evidence is source-prototype explanation only",
     "no Word editing in A step"
+  ],
+  "patch_history": [
+    {
+      "attempt_run_id": "github-actions-run-35500595537",
+      "issue": "formal run completed calculations but aggregate validation returned false; add failed_checks diagnostics only",
+      "scientific_protocol_changed": false,
+      "frozen_aggregation_changed": false,
+      "uncertainty_rule_changed": false,
+      "stability_scope_changed": false,
+      "code_commit": "e61b89302f38c239ee99d92c706af64e2fcc59b0"
+    }
   ]
 }
