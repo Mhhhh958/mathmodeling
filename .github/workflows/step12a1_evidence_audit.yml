@@ -1,0 +1,39 @@
+name: step12a1-evidence-audit
+
+on:
+  push:
+    paths:
+      - 'protocol/12A1/dispatch_token.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-step12a1:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen 00-B environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r protocol/00B/requirements-lock-00b.txt
+      - name: Run STEP12-A1 audit
+        run: |
+          python scripts/step12a1_evidence_audit.py
+      - name: Commit audit freeze
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs protocol/12A1/latest_freeze_package.json protocol/12A1/latest_run_id.txt protocol/12A1/validation_record.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+          else
+            git commit -m '12-A1: add four-question evidence audit freeze [skip ci]'
+            git push
+          fi
