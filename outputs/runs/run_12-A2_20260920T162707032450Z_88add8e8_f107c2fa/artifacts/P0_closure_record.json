@@ -1,0 +1,27 @@
+{
+  "P0-01": {
+    "status": "closed",
+    "checks": {
+      "primary_seed_pooled_macro_f1": true,
+      "primary_seed_min_class_recall": true,
+      "all_seed_pooled_macro_f1": true,
+      "seed_mean_pooled_macro_f1": true,
+      "independent_manual_metric_recalc": true
+    },
+    "primary_seed_metrics": {
+      "macro_f1": 0.9508739837398374,
+      "accuracy": 0.9387755102040817,
+      "min_class_recall": 0.9047619047619048,
+      "recall_OR": 0.9047619047619048,
+      "recall_IR": 0.9166666666666666,
+      "recall_B": 1.0,
+      "recall_N": 1.0
+    },
+    "seed_macro_f1": {
+      "20260919": 0.9508739837398374,
+      "20260920": 0.9508739837398374,
+      "20260921": 0.9508739837398374
+    },
+    "closure_basis": "orthogonal leave-one-load-out fixed-model stress, no held-load tuning"
+  }
+}

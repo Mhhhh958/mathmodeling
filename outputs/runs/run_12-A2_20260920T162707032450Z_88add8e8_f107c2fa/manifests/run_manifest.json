@@ -1,0 +1,150 @@
+{
+  "schema_version": "12A2-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+  "step_id": "12-A2",
+  "status": "completed",
+  "created_utc": "2026-09-20T16:27:07.030390Z",
+  "binding": {
+    "step_id": "12-A2",
+    "git_commit": "a27d0365fedd88e6d334008efdd4f3fc82c39d74",
+    "run_config_sha256": "ecdf81c636f9276011e5c7f5d4d5c1a45d553c9b14476af191620e6e47c9e4c6",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "source_state_version": "2026.09.20-r28",
+    "source_audit_freeze": "FREEZE-12A1-5e3e74e2",
+    "binding_digest": "88add8e8c24ed07150b3aeba49458d486cbcf117c66880dbf28d29e9824b9167"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "a27d0365fedd88e6d334008efdd4f3fc82c39d74",
+    "entrypoint": "scripts/step12a2_gap_validations.py",
+    "code_manifest": "protocol/12A2/code_manifest.json"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+    "files": [
+      {
+        "relative_path": "artifacts/A2_01_load_holdout_by_seed_and_load.csv",
+        "size_bytes": 1742,
+        "sha256": "c6dfbd871cd1110f88d61390afd6ecaefbd5e1e2cd629309d4a0eb539b47949c"
+      },
+      {
+        "relative_path": "artifacts/A2_01_load_holdout_file_predictions.csv",
+        "size_bytes": 25001,
+        "sha256": "d9d5518e53cc237ffafa4eac245dcc7f67aa97f26f4535b7a1ad066a0ea910cf"
+      },
+      {
+        "relative_path": "artifacts/A2_01_load_holdout_seed_summary.csv",
+        "size_bytes": 745,
+        "sha256": "aa7d540a30b2c0c62ae0ee2c12e6936f83c9fa4af73febe913cc05979d715092"
+      },
+      {
+        "relative_path": "artifacts/A2_02_window_parameter_by_load.csv",
+        "size_bytes": 3682,
+        "sha256": "5a4827222ad0b4279e8e22bd3df862db900d58d02ef70eea1f31e3807a208b1c"
+      },
+      {
+        "relative_path": "artifacts/A2_02_window_parameter_sensitivity.csv",
+        "size_bytes": 1246,
+        "sha256": "31682ad748ca551db69a42389e8a6c5629499733f5eb6c8da64de769d3940d76"
+      },
+      {
+        "relative_path": "artifacts/A2_03_source_plan_by_load.csv",
+        "size_bytes": 2041,
+        "sha256": "729286beeebc655ef770771bbccc1a28a368e1c05f560656f7223f43ab1d948f"
+      },
+      {
+        "relative_path": "artifacts/A2_03_source_plan_sensitivity.csv",
+        "size_bytes": 523,
+        "sha256": "38a2505c7e3be1a12c481ab1a4cec1ada0509a36602837b9dd19c3312c8394ad"
+      },
+      {
+        "relative_path": "artifacts/A2_04_target_LOTO_stability.csv",
+        "size_bytes": 3071,
+        "sha256": "f4b90fdcb052a3a99a556c15d5ea3fe82f6b0b3bbb72eeca6840317b8f5874fd"
+      },
+      {
+        "relative_path": "artifacts/A2_05_source_bootstrap_detail.csv",
+        "size_bytes": 125413,
+        "sha256": "6dd598a87b573d5f4608b16c7e59ff0748c82f70436c1ddd27c4f97ea64099de"
+      },
+      {
+        "relative_path": "artifacts/A2_05_source_bootstrap_summary.csv",
+        "size_bytes": 2379,
+        "sha256": "4992c4c92336c22298938424ea47a6a924e27ba3f30803d7dc4ff4f7df81c647"
+      },
+      {
+        "relative_path": "artifacts/A2_06_N_load_holdout_summary.csv",
+        "size_bytes": 142,
+        "sha256": "563aed9df9096e25d5a283d310bd26ad39f80ead2ebd344d91b8200a6baf5335"
+      },
+      {
+        "relative_path": "artifacts/A2_06_N_source_plan_summary.csv",
+        "size_bytes": 139,
+        "sha256": "5416efad1a60f2d4377729f53a1d42977be705b9ae5c82c6ce5d36504bd0bae3"
+      },
+      {
+        "relative_path": "artifacts/AP_existing_9setting_reaudit.csv",
+        "size_bytes": 252,
+        "sha256": "d6cfaad6b2aaed226821d562d8ecb4dd5757ed39000226992958f227e01b0aa2"
+      },
+      {
+        "relative_path": "artifacts/AP_stability_final_audit.json",
+        "size_bytes": 291,
+        "sha256": "e555b660d852849934e213b210b24d6678eaa04cf1bc8c05e6283dc74a328295"
+      },
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 12193,
+        "sha256": "1f7e413dccc402ca1f7b2aaa43311d2c19135c7c83cee475ae6fffbaad1e0ea5"
+      },
+      {
+        "relative_path": "artifacts/P0_closure_record.json",
+        "size_bytes": 802,
+        "sha256": "f6d14a2f33b64d1a937ea0e97f9b3c3d0df3455911c3eb427863f5a460e4c1af"
+      },
+      {
+        "relative_path": "artifacts/P1_closure_and_residual_risk.json",
+        "size_bytes": 889,
+        "sha256": "248f12d7349033afbed36045ccffaa97ac8b77d1378b45f764cc1bc73e5352e3"
+      },
+      {
+        "relative_path": "artifacts/claim_disposition_allow_downgrade_delete.csv",
+        "size_bytes": 2126,
+        "sha256": "d06c286a4cf36a9961516bdf515df05a1a9f8f89f67aefc72d7d09131b741db1"
+      },
+      {
+        "relative_path": "artifacts/explanation_final_audit.json",
+        "size_bytes": 265,
+        "sha256": "bb17f1ff7c2dd75d3f181d2b1dd4a6bbe2f5df1e4238e9aa0266dde36cd51f7a"
+      },
+      {
+        "relative_path": "artifacts/failure_and_no_gain_results.csv",
+        "size_bytes": 680,
+        "sha256": "9bd38e0fa11b4feaf7f2db4804066075abf020a1ee757d468357786ad29a9fc0"
+      },
+      {
+        "relative_path": "artifacts/final_validation_matrix.csv",
+        "size_bytes": 1679,
+        "sha256": "f51818363cf81b89b23f1e5678a3e787fa800a464f14bb68568cb75cde49fca9"
+      },
+      {
+        "relative_path": "artifacts/formula_code_unit_audit.json",
+        "size_bytes": 1404,
+        "sha256": "83d2bfa2d1d2b9b6acddaa1298a41e7f828a8b23f6ad7020e6688e6f36309762"
+      },
+      {
+        "relative_path": "artifacts/result_version_identity_audit.json",
+        "size_bytes": 230,
+        "sha256": "ecfb49f2bef46df9e1c2d2e6c82f5197bb6a0550711151bcddf2416a1d48fac4"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 2533,
+        "sha256": "32055221a538d091f051f9e26ff1e4b5c9e939a015f52c4fdf0083e69dc2a36e"
+      }
+    ],
+    "output_tree_sha256": "ad8fd5e28bf60cad1a36b3dad8d9dcf24f97e6d116e34141aa8be37a73715936"
+  },
+  "duration_seconds": 127.63935279846191
+}

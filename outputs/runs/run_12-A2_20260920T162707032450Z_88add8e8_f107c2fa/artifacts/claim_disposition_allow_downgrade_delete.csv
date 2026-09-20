@@ -1,0 +1,10 @@
+﻿category,claim,required_wording_or_action,evidence
+ALLOW,固定H1_RF具有跨载荷条件的独立稳健性证据,可表述为“固定模型在未参与调参的leave-one-load-out压力测试下仍保持可接受文件级性能”；不得把07-A 0.9675称为完全独立终测。,"A2-01 primary pooled Macro-F1=0.9509, min-class Recall=0.9048"
+DOWNGRADE,07-A pooled OOF Macro-F1=0.9675是完全独立最终测试成绩,改为“按预冻结开发规则得到的四折配对OOF结果”；独立稳健性引用12-A2 load-held-out结果。,P0-01 audit + A2-01
+DOWNGRADE,1 s、50%重叠窗口是最优参数,只能称冻结主配置；敏感性范围单独报告，不得从12-A2反向重选。,A2-02 Macro-F1 range=0.0164
+DOWNGRADE,MVP源数据方案具有普遍最优性,只能称02-A按无标签可比性规则冻结的主方案，并报告alternative/all-source敏感性。,"{""mvp_macro_f1"": 0.9508739837398374, ""alternative_macro_f1"": 0.9562356591151472, ""all_source_macro_f1"": 0.9482950974230044, ""mvp_mmd2"": 0.7922234132610404, ""alternative_mmd2"": 0.7265208821280266, ""all_source_mmd2"": 0.7285708291438756}"
+DOWNGRADE,A-P预测整体稳定可靠,必须逐文件报告跨设置/LOTO/源Bootstrap稳定性，并继续突出低可信文件。,"{""files"": 16, ""nine_setting_min_official_vote_rate"": 0.3333333333333333, ""nine_setting_full_agreement_files"": 14, ""step10_bootstrap_min_agreement"": 0.6566666666666666, ""A2_04_loto_label_agreement_rate"": 0.9375, ""A2_05_source_bootstrap_min_label_retention"": 0.38333333333333336}"
+MUST_DELETE,T1迁移显著提高真实目标诊断准确率,删除；伪目标held-load增益为0且A-P真值未知。,09-A held load3 delta=0; target truth unknown
+MUST_DELETE,MMD下降证明A-P分类正确或更准确,删除；MMD仅为域分布接近证据。,09-A wording limit
+MUST_DELETE,A-P模型分数是真实正确概率,删除；所有分数均未校准。,10-A score interpretation
+MUST_DELETE,问题4解释证明了目标故障真值或因果关系,删除；解释仅说明最终模型响应，目标真值未知。,11-A no causal claim / target truth unknown

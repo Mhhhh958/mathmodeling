@@ -1,0 +1,9 @@
+{
+  "07_final_family_H1_RF": true,
+  "07_features_26": true,
+  "09_source_model_sha": true,
+  "10_transfer_freeze_bound": true,
+  "11_transfer_and_prediction_bound": true,
+  "official_target_reproduction": true,
+  "passed": true
+}

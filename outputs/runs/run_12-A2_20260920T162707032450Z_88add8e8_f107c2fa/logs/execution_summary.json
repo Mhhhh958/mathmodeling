@@ -1,0 +1,15 @@
+{
+  "p0_closed": true,
+  "p0_checks": {
+    "primary_seed_pooled_macro_f1": true,
+    "primary_seed_min_class_recall": true,
+    "all_seed_pooled_macro_f1": true,
+    "seed_mean_pooled_macro_f1": true,
+    "independent_manual_metric_recalc": true
+  },
+  "formula_audit_passed": true,
+  "version_check_passed": true,
+  "explanation_check_passed": true,
+  "word_edited": false,
+  "formal_paper_figures_generated": false
+}

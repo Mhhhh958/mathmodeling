@@ -1,0 +1,12 @@
+﻿item,status,target_id,retention
+A2-04-target-LOTO,label_flip,D,
+A2-05-source-bootstrap,low_label_retention,B,0.7
+A2-05-source-bootstrap,low_label_retention,C,0.5416666666666666
+A2-05-source-bootstrap,low_label_retention,D,0.38333333333333336
+A2-05-source-bootstrap,low_label_retention,E,0.625
+A2-05-source-bootstrap,low_label_retention,G,0.7333333333333333
+A2-05-source-bootstrap,low_label_retention,J,0.6666666666666666
+A2-05-source-bootstrap,low_label_retention,L,0.5833333333333334
+A2-05-source-bootstrap,low_label_retention,N,0.7416666666666667
+A2-05-source-bootstrap,low_label_retention,O,0.7583333333333333
+A2-05-source-bootstrap,low_label_retention,P,0.7166666666666667

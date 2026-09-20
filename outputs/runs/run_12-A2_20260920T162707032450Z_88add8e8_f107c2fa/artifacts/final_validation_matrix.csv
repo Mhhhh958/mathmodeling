@@ -1,0 +1,10 @@
+﻿validation_id,gap_or_scope,validation,status,key_result
+A2-01,P0-01,Q2 fixed H1_RF leave-one-load-out + 3 seeds,PASS,primary Macro-F1=0.950874; minRecall=0.904762; seed min=0.950874; seed mean=0.950874
+A2-02,P1-01,6 frozen window settings,PASS_COMPLETED,Macro-F1 min/max=0.950874/0.967262; primary=0.950874
+A2-03,P1-02,MVP/alternative/all_source source-plan sensitivity,PASS_COMPLETED,"{""mvp_macro_f1"": 0.9508739837398374, ""alternative_macro_f1"": 0.9562356591151472, ""all_source_macro_f1"": 0.9482950974230044, ""mvp_mmd2"": 0.7922234132610404, ""alternative_mmd2"": 0.7265208821280266, ""all_source_mmd2"": 0.7285708291438756}"
+A2-04,P1-03,leave-one-target-file-out T1 moments,PASS_COMPLETED,label agreement=15/16; changed=D
+A2-05,P1-04,120 stratified source-file bootstraps,PASS_COMPLETED,min A-P official-label retention=0.383333
+A2-06,P2-01,N small-sample derived summary,LIMIT_REMAINS,N files=4; load-holdout recall min=1.000000
+FINAL-FORMULA,critical,formula-code-unit raw re-extraction,PASS,733 windows; 26 features; max abs diff=4.547e-13
+FINAL-VERSION,critical,07/09/10/11 identity chain,PASS,"{""07_final_family_H1_RF"": true, ""07_features_26"": true, ""09_source_model_sha"": true, ""10_transfer_freeze_bound"": true, ""11_transfer_and_prediction_bound"": true, ""official_target_reproduction"": true, ""passed"": true}"
+FINAL-EXPLAIN,critical,11-A faithfulness/stability/sanity identity,PASS,"{""final_model_identity"": true, ""target_10A_reproduction"": true, ""faithfulness"": true, ""stability"": true, ""random_sanity"": true, ""contradictions_retained"": true, ""case_pass_rate_faithfulness"": 1.0, ""case_pass_rate_stability"": 1.0, ""passed"": true}"

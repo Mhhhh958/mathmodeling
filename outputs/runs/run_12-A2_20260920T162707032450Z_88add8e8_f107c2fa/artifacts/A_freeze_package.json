@@ -1,0 +1,392 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "12-A2",
+  "freeze_package_id": "FREEZE-12A2-f107c2fa",
+  "status": "passed",
+  "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+  "versions": {
+    "code_version_id": "git:a27d0365fedd88e6d334008efdd4f3fc82c39d74",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-12A1-5e3e74e2",
+      "FREEZE-04A-3e3b97c0",
+      "FREEZE-07A-7e8829fb",
+      "FREEZE-09A-26f99878",
+      "FREEZE-10A-4346ce31",
+      "FREEZE-11A-1f812c22"
+    ],
+    "run_config_sha256": "ecdf81c636f9276011e5c7f5d4d5c1a45d553c9b14476af191620e6e47c9e4c6",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": [
+    20260919,
+    20260920,
+    20260921
+  ],
+  "parameters": {
+    "fixed_model": {
+      "family": "H1_RF",
+      "n_estimators": 300,
+      "max_depth": 8,
+      "min_samples_leaf": 1,
+      "max_features": "sqrt",
+      "weighting": "file_and_class_balanced",
+      "class_order": [
+        "OR",
+        "IR",
+        "B",
+        "N"
+      ],
+      "official_seed": 20260919,
+      "seed_sensitivity": [
+        20260919,
+        20260920,
+        20260921
+      ]
+    },
+    "tasks": {
+      "A2-01": {
+        "gap": "P0-01",
+        "type": "orthogonal_fixed_model_load_holdout",
+        "rule": "leave one physical load_hp in {0,1,2,3} out; fit fixed H1_RF only on other loads; held load never used for tuning or acceptance-rule modification",
+        "primary_metric": "file-level Macro-F1",
+        "secondary": [
+          "per-class Recall",
+          "confusion matrix",
+          "file accuracy"
+        ],
+        "closure_thresholds": {
+          "primary_seed_pooled_macro_f1_min": 0.75,
+          "primary_seed_min_class_recall_min": 0.5,
+          "all_seed_pooled_macro_f1_min": 0.65,
+          "seed_mean_pooled_macro_f1_min": 0.75
+        },
+        "note": "thresholds define absence of catastrophic condition-shift failure; they are frozen before results"
+      },
+      "A2-02": {
+        "gap": "P1-01",
+        "window_candidates": [
+          [
+            0.5,
+            0
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0.5
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0.5
+          ]
+        ],
+        "evaluation": "same fixed H1_RF, official seed, leave-one-load-out; sensitivity only, not reselection",
+        "diagnostic_rule": "report candidate pooled Macro-F1/per-class recall and delta to frozen 1.0s/0.5; never change official window setting here"
+      },
+      "A2-03": {
+        "gap": "P1-02",
+        "source_plans": [
+          "MVP",
+          "alternative",
+          "all_source"
+        ],
+        "expected_file_counts": {
+          "MVP": 49,
+          "alternative": 109,
+          "all_source": 161
+        },
+        "evaluation": "same fixed H1_RF, official seed, leave-one-load-out",
+        "domain_gap": "same 08-A biased RBF MMD2 on independent-file mean 26-D vectors standardized by each source plan",
+        "diagnostic_only": true
+      },
+      "A2-04": {
+        "gap": "P1-03",
+        "type": "leave_one_target_file_out_moment_estimation",
+        "alpha": 0.25,
+        "classifier": "exact frozen STEP09 classifier; no retraining",
+        "rule": "for each A-P file, estimate target moments from the other 15 files only, transform held file, then use official mean-window-score aggregation",
+        "compare_to": "STEP10 official labels/scores"
+      },
+      "A2-05": {
+        "gap": "P1-04",
+        "type": "stratified_source_file_bootstrap",
+        "seeds": [
+          20260919,
+          20260920,
+          20260921
+        ],
+        "replicates_per_seed": 40,
+        "total_replicates": 120,
+        "rule": "sample 49 source files with replacement within OR/IR/B/N class counts; duplicated files receive distinct bootstrap group identities; refit only frozen H1_RF config; recompute source T1 moments; alpha fixed 0.25; predict frozen A-P windows",
+        "outputs": [
+          "per-file official-label retention rate",
+          "top-score distribution",
+          "margin distribution"
+        ],
+        "diagnostic_only": true
+      },
+      "A2-06": {
+        "gap": "P2-01",
+        "type": "derived_summary_only",
+        "rule": "derive N-class uncertainty from A2-01 and A2-03; no additional experiment"
+      }
+    },
+    "no_model_selection": true
+  },
+  "real_results": [
+    {
+      "name": "P0_01_closure",
+      "value": {
+        "closed": true,
+        "checks": {
+          "primary_seed_pooled_macro_f1": true,
+          "primary_seed_min_class_recall": true,
+          "all_seed_pooled_macro_f1": true,
+          "seed_mean_pooled_macro_f1": true,
+          "independent_manual_metric_recalc": true
+        },
+        "primary_macro_f1": 0.9508739837398374,
+        "primary_min_class_recall": 0.9047619047619048,
+        "seed_min_macro_f1": 0.9508739837398374
+      }
+    },
+    {
+      "name": "window_sensitivity",
+      "value": {
+        "primary_macro_f1": 0.9508739837398374,
+        "min_macro_f1": 0.9508739837398374,
+        "max_macro_f1": 0.9672619047619048,
+        "range": 0.01638792102206732
+      }
+    },
+    {
+      "name": "source_plan_sensitivity",
+      "value": {
+        "mvp_macro_f1": 0.9508739837398374,
+        "alternative_macro_f1": 0.9562356591151472,
+        "all_source_macro_f1": 0.9482950974230044,
+        "mvp_mmd2": 0.7922234132610404,
+        "alternative_mmd2": 0.7265208821280266,
+        "all_source_mmd2": 0.7285708291438756
+      }
+    },
+    {
+      "name": "target_LOTO",
+      "value": {
+        "files": 16,
+        "label_agreement_count": 15,
+        "label_agreement_rate": 0.9375,
+        "changed_files": [
+          "D"
+        ],
+        "max_abs_top_score_delta": 0.023759649122807036
+      }
+    },
+    {
+      "name": "source_bootstrap_AP",
+      "value": {
+        "replicates": 120,
+        "min_label_retention": 0.38333333333333336,
+        "files_below_0_8": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "G",
+          "J",
+          "L",
+          "N",
+          "O",
+          "P"
+        ]
+      }
+    },
+    {
+      "name": "formula_code_unit",
+      "value": {
+        "passed": true,
+        "max_abs_feature_diff": 4.547473508864641e-13,
+        "feature_count": 26
+      }
+    },
+    {
+      "name": "AP_stability_final",
+      "value": {
+        "files": 16,
+        "nine_setting_min_official_vote_rate": 0.3333333333333333,
+        "nine_setting_full_agreement_files": 14,
+        "step10_bootstrap_min_agreement": 0.6566666666666666,
+        "A2_04_loto_label_agreement_rate": 0.9375,
+        "A2_05_source_bootstrap_min_label_retention": 0.38333333333333336
+      }
+    },
+    {
+      "name": "explanation_final_check",
+      "value": {
+        "final_model_identity": true,
+        "target_10A_reproduction": true,
+        "faithfulness": true,
+        "stability": true,
+        "random_sanity": true,
+        "contradictions_retained": true,
+        "case_pass_rate_faithfulness": 1.0,
+        "case_pass_rate_stability": 1.0,
+        "passed": true
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/final_validation_matrix.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_01_load_holdout_seed_summary.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_02_window_parameter_sensitivity.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_03_source_plan_sensitivity.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_04_target_LOTO_stability.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_05_source_bootstrap_summary.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/failure_and_no_gain_results.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/claim_disposition_allow_downgrade_delete.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/validation_record.json"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "item": "A2-04-target-LOTO",
+      "status": "label_flip",
+      "target_id": "D"
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "B",
+      "retention": 0.7
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "C",
+      "retention": 0.5416666666666666
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "D",
+      "retention": 0.38333333333333336
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "E",
+      "retention": 0.625
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "G",
+      "retention": 0.7333333333333333
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "J",
+      "retention": 0.6666666666666666
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "L",
+      "retention": 0.5833333333333334
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "N",
+      "retention": 0.7416666666666667
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "O",
+      "retention": 0.7583333333333333
+    },
+    {
+      "item": "A2-05-source-bootstrap",
+      "status": "low_label_retention",
+      "target_id": "P",
+      "retention": 0.7166666666666667
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "final_validation_matrix.csv",
+      "failure_and_no_gain_results.csv",
+      "claim_disposition_allow_downgrade_delete.csv",
+      "P0_closure_record.json",
+      "P1_closure_and_residual_risk.json"
+    ],
+    "supported_conclusions": [
+      "12-A2 uses only prelisted 12-A1 gaps and fixed model/data boundaries.",
+      "P0-01 is closed only if the preregistered load-held-out thresholds pass.",
+      "Window/source-plan/target-LOTO/source-bootstrap results are robustness diagnostics and do not retune the frozen model.",
+      "A-P truth remains unknown and all scores remain uncalibrated.",
+      "Q4 final explanation evidence remains bound to the actual 09/10 final model."
+    ],
+    "wording_limits": [
+      "07-A 0.9675 pooled OOF is development paired evidence, not a completely untouched final test.",
+      "do not call 1s/50% globally optimal",
+      "do not call MVP universally optimal",
+      "do not claim real-target accuracy or significant migration gain",
+      "do not treat MMD or explanations as correctness/causal proof"
+    ],
+    "approved_tables": [
+      "final_validation_matrix.csv",
+      "A2_01_load_holdout_seed_summary.csv",
+      "A2_02_window_parameter_sensitivity.csv",
+      "A2_03_source_plan_sensitivity.csv",
+      "A2_04_target_LOTO_stability.csv",
+      "A2_05_source_bootstrap_summary.csv",
+      "claim_disposition_allow_downgrade_delete.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-20T16:27:07.030390Z",
+    "content_sha256": "3e9264b1fdaf3931d4f4f946221134ea02a9602fb6eafa07a22a90e58ea6bddc",
+    "invalidation_dependencies": [
+      "Any 12-A1 gap/protocol change",
+      "04-A feature formula/data change",
+      "07-A model change",
+      "09/10 transfer/prediction change",
+      "11-A explanation identity change",
+      "12-A2 code/config change"
+    ]
+  }
+}

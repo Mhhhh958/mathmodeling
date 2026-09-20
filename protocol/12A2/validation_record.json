@@ -1,0 +1,53 @@
+{
+  "schema_version": "12A2-validation-1.0",
+  "step_id": "12-A2",
+  "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_bound_to_12A2": true,
+    "only_12A1_listed_tasks_executed": true,
+    "no_model_search_or_reselection": true,
+    "independent_object_file_level_primary": true,
+    "P0_01_closed": true,
+    "independent_key_metric_recalculation": true,
+    "formula_code_unit_check": true,
+    "result_version_identity_check": true,
+    "official_AP_reproduction": true,
+    "AP_stability_checked": true,
+    "explanation_faithfulness_stability_final_checked": true,
+    "unsupported_claim_disposition_created": true,
+    "word_not_edited": true,
+    "formal_paper_figure_not_generated": true
+  },
+  "evidence": {
+    "A2_01": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_01_load_holdout_seed_summary.csv",
+    "P0_closure": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/P0_closure_record.json",
+    "A2_02": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_02_window_parameter_sensitivity.csv",
+    "A2_03": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_03_source_plan_sensitivity.csv",
+    "A2_04": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_04_target_LOTO_stability.csv",
+    "A2_05": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/A2_05_source_bootstrap_summary.csv",
+    "formula_code_unit": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/formula_code_unit_audit.json",
+    "claim_disposition": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/claim_disposition_allow_downgrade_delete.csv",
+    "key_numbers": {
+      "A2_01_primary_macro_f1": 0.9508739837398374,
+      "A2_01_primary_min_class_recall": 0.9047619047619048,
+      "A2_01_seed_min_macro_f1": 0.9508739837398374,
+      "A2_02_macro_f1_range": [
+        0.9508739837398374,
+        0.9672619047619048
+      ],
+      "A2_04_loto_agreement_rate": 0.9375,
+      "A2_05_min_label_retention": 0.38333333333333336,
+      "formula_reextract_max_abs_diff": 4.547473508864641e-13
+    }
+  },
+  "open_P0_after_step": [],
+  "residual_P2": [
+    "P2-01 N only four independent files",
+    "P2-02 A-P truth unknown",
+    "P2-03 target geometry/exact RPM unknown",
+    "P2-04 occlusion reference/off-manifold limitation"
+  ],
+  "word_edit_performed": false
+}

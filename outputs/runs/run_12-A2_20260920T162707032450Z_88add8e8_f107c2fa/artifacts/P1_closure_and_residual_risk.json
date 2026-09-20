@@ -1,0 +1,41 @@
+{
+  "P1-01": {
+    "status": "closed_quantified",
+    "stable_enough_for_strong_wording": true,
+    "macro_f1_range": 0.01638792102206732
+  },
+  "P1-02": {
+    "status": "closed_quantified",
+    "source_plan_sensitivity": {
+      "mvp_macro_f1": 0.9508739837398374,
+      "alternative_macro_f1": 0.9562356591151472,
+      "all_source_macro_f1": 0.9482950974230044,
+      "mvp_mmd2": 0.7922234132610404,
+      "alternative_mmd2": 0.7265208821280266,
+      "all_source_mmd2": 0.7285708291438756
+    }
+  },
+  "P1-03": {
+    "status": "closed_quantified",
+    "loto_agreement_rate": 0.9375,
+    "changed_files": [
+      "D"
+    ]
+  },
+  "P1-04": {
+    "status": "closed_quantified",
+    "min_source_bootstrap_label_retention": 0.38333333333333336,
+    "files_below_0_8": [
+      "B",
+      "C",
+      "D",
+      "E",
+      "G",
+      "J",
+      "L",
+      "N",
+      "O",
+      "P"
+    ]
+  }
+}

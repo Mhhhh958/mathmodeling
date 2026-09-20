@@ -1,0 +1,11 @@
+{
+  "final_model_identity": true,
+  "target_10A_reproduction": true,
+  "faithfulness": true,
+  "stability": true,
+  "random_sanity": true,
+  "contradictions_retained": true,
+  "case_pass_rate_faithfulness": 1.0,
+  "case_pass_rate_stability": 1.0,
+  "passed": true
+}
