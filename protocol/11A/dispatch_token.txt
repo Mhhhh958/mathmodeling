@@ -1,0 +1,6 @@
+11-A formal interpretability run 2026-09-20T15:13:00Z
+source_model_freeze=FREEZE-09A-26f99878
+source_prediction_freeze=FREEZE-10A-4346ce31
+blueprint_commit=14bdeea409703759c1136fa10db60d807cdd7152
+run_config_commit=13985ea8af98c8f2f0d399b637a7fc7ea8af0ae6
+code_manifest_commit=d32e8edf019bed559bf502671db0f8149da83db4
