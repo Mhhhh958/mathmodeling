@@ -1,0 +1,53 @@
+{
+  "schema_version": "11A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "tracked_code": [
+    {
+      "path": "scripts/step11a_interpretability.py",
+      "git_blob_sha": "7c469f8a4f789f5f7eeac826507bdebf5f2393b5"
+    },
+    {
+      "path": ".github/workflows/step11a_interpretability.yml",
+      "git_blob_sha": "bda3dca4b8f4cdd1ccfb50af189f4dc1f5bf7507"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/11A/question4_argument_blueprint.json",
+      "git_blob_sha": "c06be9240eca8e5c1c176df4c5a1f422f921fcdf"
+    },
+    {
+      "path": "protocol/11A/run_config.json",
+      "git_blob_sha": "b29a8f851720bd06ed099fd1f2895e96db3eeaab"
+    },
+    {
+      "path": "protocol/09A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-09A-26f99878"
+    },
+    {
+      "path": "protocol/10A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-10A-4346ce31"
+    },
+    {
+      "path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/models/final_transfer_bundle.joblib",
+      "sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729"
+    },
+    {
+      "path": "protocol/00B/environment_manifest.json",
+      "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1"
+    }
+  ],
+  "constraints": [
+    "no retraining, retuning or model selection",
+    "explanation object is the actual final T1(alpha=0.25) transformed 26-D input and frozen RF",
+    "source labels may be used only for source-case interpretation/validation; A-P target truth remains unknown",
+    "file-level aggregation remains mean window class scores then argmax",
+    "occlusion reference is median of source independent-file means for each feature",
+    "faithfulness, stability and mechanism checks follow the pre-run frozen blueprint",
+    "random/low-contribution controls and 200-subset sanity null are retained",
+    "failed or contradictory explanations are preserved",
+    "no Word editing in A step"
+  ]
+}
