@@ -1,0 +1,40 @@
+{
+  "schema_version": "06B-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
+  "step_id": "06-B",
+  "status": "completed",
+  "created_utc": "2026-09-20T04:22:58Z",
+  "binding": {
+    "code_version_id": "CODE-6da78131d4bed122",
+    "source_A_freeze_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
+    "source_word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+    "run_config_sha256": "698fc6f7c9ad796178fd42d934d0872e3c26e9f538547005cd4753dbbeacce14",
+    "environment_sha256": "868d181a65863fe27446ee9307723200a78f0e26ce7a1ce47d9ca40e91e4ccf3",
+    "output_word_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650"
+  },
+  "output_word": {
+    "path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.docx",
+    "sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+    "rendered_pages": 24
+  },
+  "figures": {
+    "figure4": "e17545a7f19b259b36742b13aac70f91b6754ede2ab22bdea4d54358e3c476f5",
+    "figure5": "2dfe7b877142374e509efa57b1e91a8ba37af844d86483845755742c061fc51a",
+    "figure6": "75c7bbf5cefa4b68885048da51302919b8e53b8c447f43329f7909d1c094201d"
+  },
+  "validation": "/数学建模/06B/validation_record_06B.json",
+  "visual_QA": "final render 24 pages; no layout defects; Table16-18 caption duplication fixed before final render",
+  "checkpoint": {
+    "completed": [
+      "figure generation from frozen outputs",
+      "incremental Word edit",
+      "master-part restore",
+      "caption patch",
+      "structure audit",
+      "final render",
+      "visual inspection"
+    ],
+    "pending": []
+  }
+}
