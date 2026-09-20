@@ -1,5 +1,6 @@
-10-A formal run dispatch 2026-09-20T08:20:00Z
+10-A formal run dispatch retry-2 2026-09-20T08:55:00Z
 source_freeze=FREEZE-09A-26f99878
 protocol_commit=50df566f4388e24b8ef6bba4858a2c3b1d85fcb5
 run_config_commit=db58a493de64bd3523f728c297b81afd885d5409
-code_manifest_commit=c69bd08b21f160d62f64da485c3fdef50593d3e3
+code_manifest_commit=2390c83c6061f79e018b9f44ae8747dddfae9ced
+validation_diagnostic_patch=e61b89302f38c239ee99d92c706af64e2fcc59b0
