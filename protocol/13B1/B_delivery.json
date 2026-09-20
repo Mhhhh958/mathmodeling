@@ -1,0 +1,147 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "13-B1",
+  "run_id": "run_13-B1_20260920T175357679755Z_902d55df_90264cb7",
+  "created_utc": "2026-09-20T17:54:15.840074Z",
+  "status": "failed",
+  "source_A_freeze_package_id": "FREEZE-13A2-90264cb7",
+  "source_A_freeze_package_ids": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "latest_word_before": {
+    "version": "V1.3",
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "parent_version": "V1.2",
+    "library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
+    "library_file_id": "libfile_71ac40e4114081918d7d407bb92bb847",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+    "source_A_freeze_package_id": "FREEZE-12A2-f107c2fa",
+    "source_audit_freeze_package_id": "FREEZE-12A1-5e3e74e2",
+    "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898"
+  },
+  "new_word_after": {
+    "version": "V1.3",
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "parent_version": "V1.2",
+    "library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
+    "library_file_id": "libfile_71ac40e4114081918d7d407bb92bb847",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+    "source_A_freeze_package_id": "FREEZE-12A2-f107c2fa",
+    "source_audit_freeze_package_id": "FREEZE-12A1-5e3e74e2",
+    "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "figures_and_captions": [
+    {
+      "figure_id": "FIG-Q1-01",
+      "placeholder": "图Q1-01",
+      "title": "问题一数据处理与特征构建技术框架",
+      "section": "5.1标题下、5.1.1前"
+    },
+    {
+      "figure_id": "FIG-Q1-02",
+      "placeholder": "图Q1-02",
+      "title": "B类典型与困难样本的时域波形对照",
+      "section": "5.1.2（1）原始信号与典型/困难样本"
+    },
+    {
+      "figure_id": "FIG-Q1-03",
+      "placeholder": "图Q1-03",
+      "title": "B类困难样本的功率谱与包络谱",
+      "section": "5.1.2（4）频域、包络与故障机理证据"
+    },
+    {
+      "figure_id": "FIG-Q2-01",
+      "placeholder": "图Q2-01",
+      "title": "问题二源域故障诊断技术框架",
+      "section": "5.2标题下、5.2.1前"
+    },
+    {
+      "figure_id": "FIG-Q2-02",
+      "placeholder": "图Q2-02",
+      "title": "49个独立源域文件的OOF文件级混淆矩阵",
+      "section": "5.2.2（2）基线结果"
+    },
+    {
+      "figure_id": "FIG-Q2-03",
+      "placeholder": "图Q2-03",
+      "title": "Base与最终RF在四个冻结外层折上的文件级Macro-F1配对对照",
+      "section": "5.2.3（2）改进效果"
+    },
+    {
+      "figure_id": "FIG-Q2-04",
+      "placeholder": "图Q2-04",
+      "title": "典型误判文件的窗口级模型分数演化",
+      "section": "5.2.2（3）误判与困难案例"
+    },
+    {
+      "figure_id": "FIG-Q3-01",
+      "placeholder": "图Q3-01",
+      "title": "问题三无监督迁移与目标域诊断技术框架",
+      "section": "5.3标题下、5.3.1前"
+    },
+    {
+      "figure_id": "FIG-Q3-02",
+      "placeholder": "图Q3-02",
+      "title": "源—目标偏移最显著的8个公共特征",
+      "section": "5.3.1（2）特征分布、模型输出与类条件结构"
+    },
+    {
+      "figure_id": "FIG-Q3-03",
+      "placeholder": "图Q3-03",
+      "title": "多模拟目标域上的无迁移—候选迁移对照",
+      "section": "5.3.4（3）迁移效果与失败候选"
+    },
+    {
+      "figure_id": "FIG-Q3-04",
+      "placeholder": "图Q3-04",
+      "title": "A—P源文件Bootstrap标签保持率与目标留一翻转",
+      "section": "5.3.5（3）低可信案例与机理旁证"
+    },
+    {
+      "figure_id": "FIG-Q4-01",
+      "placeholder": "图Q4-01",
+      "title": "问题四最终诊断链路的可解释性技术框架",
+      "section": "5.4标题下、5.4.1前"
+    },
+    {
+      "figure_id": "FIG-Q4-02",
+      "placeholder": "图Q4-02",
+      "title": "源域已知标签案例的Top-5单特征遮蔽贡献",
+      "section": "5.4.3 源域已知标签解释案例"
+    },
+    {
+      "figure_id": "FIG-Q4-03",
+      "placeholder": "图Q4-03",
+      "title": "目标域预测案例的Top-5单特征遮蔽贡献",
+      "section": "5.4.4 目标域预测解释"
+    },
+    {
+      "figure_id": "FIG-Q4-04",
+      "placeholder": "图Q4-04",
+      "title": "高贡献遮蔽与低贡献/随机对照的忠实性验证",
+      "section": "5.4.5 解释验证与矛盾案例"
+    }
+  ],
+  "figure_manifest": "outputs/runs/run_13-B1_20260920T175357679755Z_902d55df_90264cb7/artifacts/figure_manifest.csv",
+  "source_data_index": "outputs/runs/run_13-B1_20260920T175357679755Z_902d55df_90264cb7/artifacts/source_data_index.csv",
+  "final_figure_package": "outputs/runs/run_13-B1_20260920T175357679755Z_902d55df_90264cb7/artifacts/final_figure_package.zip",
+  "final_figure_package_sha256": "c3b55aa5225cf50288125d9233e2258a753996d645405dceb3a4deee7a95f722",
+  "unpassed_figures": "outputs/runs/run_13-B1_20260920T175357679755Z_902d55df_90264cb7/artifacts/unpassed_figures.csv",
+  "validation_record": "protocol/13B1/validation_record.json",
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "figures_traceable": true,
+    "final_size_readability_checked": true,
+    "chinese_and_visual_spec_checked": true,
+    "reproducibility_spot_check_passed": true,
+    "word_unchanged": true
+  },
+  "pass_token": null,
+  "next_allowed": "13-B1"
+}

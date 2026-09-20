@@ -1,0 +1,43 @@
+{
+  "schema_version": "13B1-validation-1.0",
+  "step_id": "13-B1",
+  "run_id": "run_13-B1_20260920T175357679755Z_902d55df_90264cb7",
+  "status": "failed",
+  "passed": false,
+  "source_freezes": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "font": {
+    "selected": "Noto Sans CJK JP",
+    "path": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "glyph_probe_missing": []
+  },
+  "checks": {
+    "gate_13B1_valid": true,
+    "A1_A2_frozen_sources_only": true,
+    "source_snapshot_sha256_all_match": true,
+    "figure_count_15": true,
+    "all_three_formats_present": true,
+    "all_figures_chinese_and_no_missing_glyphs": true,
+    "all_figures_visual_encoding_consistent": true,
+    "all_figures_final_size_readable": false,
+    "all_svg_vector_text_editable": false,
+    "key_figure_rerun_exact_png_reproducible": true,
+    "difficulty_failure_figures_retained": true,
+    "table_preferred_items_not_rendered": true,
+    "word_edit_performed": false,
+    "training_performed": false,
+    "tuning_performed": false,
+    "model_selection_performed": false
+  },
+  "figure_count": 15,
+  "unpassed_figure_count": 1,
+  "reproducibility_spot_check_count": 4,
+  "word_artifact_before": "WORD-V1.3-9c38c898",
+  "word_artifact_after": "WORD-V1.3-9c38c898",
+  "word_edit_performed": false,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}

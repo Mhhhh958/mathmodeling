@@ -1,0 +1,35 @@
+{
+  "schema_version": "13B1-1.0",
+  "manifest_type": "code_manifest",
+  "repository": "Mhhhh958/mathmodeling",
+  "execution_commit": "d664973df4081469b103f15d9d04b95c3823c786",
+  "tracked_code": [
+    {
+      "path": "scripts/step13b1_generate_final_figures.py",
+      "git_blob_sha": "ae8c92ecdee252f7eac54a1cf124a8e483c2a7aa"
+    },
+    {
+      "path": "scripts/step13b1_final_figure_renderer.py",
+      "git_blob_sha": "80ffc5440a82413a2db8960497275a6843acbf6c"
+    },
+    {
+      "path": ".github/workflows/step13b1_final_figures.yml",
+      "git_blob_sha": "7e58730f80fe2f6135a90798a3a9e83323a1d5fc"
+    }
+  ],
+  "frozen_renderer_reference": {
+    "path": "scripts/step13a2_figure_renderer.py",
+    "git_blob_sha": "b31ae81ff8d52fc07426c72ec6cf447a9ac9b013"
+  },
+  "source_13A2_freeze_sha256": "002855b09ce348b49e2d450207e55a387df5941cced35744c386791fb820d460",
+  "constraints": {
+    "edit_word": false,
+    "retrain": false,
+    "retune": false,
+    "rerun_model_selection": false,
+    "recompute_model_outputs": false,
+    "use_only_frozen_source_snapshots": true,
+    "preserve_difficult_and_failure_samples": true,
+    "no_generated_image_for_technical_diagrams": true
+  }
+}

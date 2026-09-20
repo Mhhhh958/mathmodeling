@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="442.52904pt" height="271.373604pt" viewBox="0 0 442.52904 271.373604" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>STEP13-B1</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 271.373604 
+L 442.52904 271.373604 
+L 442.52904 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 40.28 101.829952 
+L 432.87654 101.829952 
+L 432.87654 2.281299 
+L 40.28 2.281299 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m1226d2abef" d="M 0 0 
+L 0 3 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m1226d2abef" x="40.28" y="101.829952" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="40.28" y="115.493389" transform="rotate(-0 40.28 115.493389)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m1226d2abef" x="118.799308" y="101.829952" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="118.799308" y="115.493389" transform="rotate(-0 118.799308 115.493389)">100</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m1226d2abef" x="197.318616" y="101.829952" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="197.318616" y="115.493389" transform="rotate(-0 197.318616 115.493389)">200</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m1226d2abef" x="275.837924" y="101.829952" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="275.837924" y="115.493389" transform="rotate(-0 275.837924 115.493389)">300</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m1226d2abef" x="354.357232" y="101.829952" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="354.357232" y="115.493389" transform="rotate(-0 354.357232 115.493389)">400</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m1226d2abef" x="432.87654" y="101.829952" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="432.87654" y="115.493389" transform="rotate(-0 432.87654 115.493389)">500</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font: 10px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="236.57827" y="129.514327" transform="rotate(-0 236.57827 129.514327)">频率 / Hz</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m2c4a6c3095" d="M 0 0 
+L -3 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m2c4a6c3095" x="40.28" y="72.214465" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- $\mathdefault{10^{-8}}$ -->
+      <g transform="translate(16.41 75.796184)">
+       <text>
+        <tspan style="font: 9px 'Noto Sans CJK JP'" x="0 4.994995" y="-0.5125000000000011">10</tspan>
+        <tspan style="font: 6.3px 'Noto Sans CJK JP'" x="10.080225 13.576721" y="-4.121875000000001">−8</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m2c4a6c3095" x="40.28" y="38.978092" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- $\mathdefault{10^{-6}}$ -->
+      <g transform="translate(16.41 42.559811)">
+       <text>
+        <tspan style="font: 9px 'Noto Sans CJK JP'" x="0 4.994995" y="-0.5015625000000004">10</tspan>
+        <tspan style="font: 6.3px 'Noto Sans CJK JP'" x="10.080225 13.576721" y="-4.1109375">−6</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m2c4a6c3095" x="40.28" y="5.741719" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- $\mathdefault{10^{-4}}$ -->
+      <g transform="translate(16.41 9.323437)">
+       <text>
+        <tspan style="font: 9px 'Noto Sans CJK JP'" x="0 4.994995" y="-0.5890625000000007">10</tspan>
+        <tspan style="font: 6.3px 'Noto Sans CJK JP'" x="10.080225 13.576721" y="-4.198437500000001">−4</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="text_11">
+     <text style="font: 10px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="10.119375" y="52.055625" transform="rotate(-90 10.119375 52.055625)">功率谱密度</text>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <path d="M 40.28 68.311558 
+L 42.58037 71.947344 
+L 44.880741 86.043412 
+L 47.181111 73.464202 
+L 49.481481 68.738514 
+L 51.781852 81.678139 
+L 54.082222 86.66354 
+L 56.382592 76.286302 
+L 58.682963 75.641181 
+L 60.983333 49.73362 
+L 63.283704 40.138399 
+L 65.584074 50.538131 
+L 67.884444 86.093688 
+L 70.184815 97.113384 
+L 72.485185 96.677981 
+L 74.785555 95.717724 
+L 77.085926 97.115379 
+L 79.386296 97.305013 
+L 81.686666 95.75844 
+L 83.987037 70.034518 
+L 86.287407 58.707251 
+L 88.587777 64.232495 
+L 90.888148 85.445852 
+L 93.188518 85.751164 
+L 95.488888 77.20096 
+L 97.789259 76.8095 
+L 100.089629 78.875585 
+L 102.39 83.661475 
+L 104.69037 83.927432 
+L 106.99074 64.926014 
+L 109.291111 56.655223 
+L 111.591481 65.447657 
+L 113.891851 80.167641 
+L 116.192222 64.915315 
+L 118.492592 56.278194 
+L 120.792962 54.523897 
+L 123.093333 48.075728 
+L 125.393703 59.028998 
+L 127.694073 65.405854 
+L 129.994444 51.295051 
+L 132.294814 47.291569 
+L 134.595184 57.981708 
+L 136.895555 67.509872 
+L 141.496296 51.916152 
+L 143.796666 57.319429 
+L 146.097036 61.431428 
+L 148.397407 61.033835 
+L 150.697777 38.274459 
+L 152.998147 22.373312 
+L 155.298518 26.985484 
+L 157.598888 55.678106 
+L 159.899258 62.486311 
+L 162.199629 17.330794 
+L 164.499999 9.181644 
+L 166.800369 21.184749 
+L 169.10074 59.090017 
+L 171.40111 63.993115 
+L 173.70148 57.532366 
+L 176.001851 49.374081 
+L 178.302221 47.28746 
+L 180.602592 55.291768 
+L 182.902962 59.712351 
+L 185.203332 35.306148 
+L 187.503703 27.664848 
+L 189.804073 39.789424 
+L 192.104443 68.50404 
+L 194.404814 66.848392 
+L 196.705184 62.951964 
+L 199.005554 53.855017 
+L 201.305925 55.559176 
+L 203.606295 54.164401 
+L 205.906665 49.460053 
+L 208.207036 48.253917 
+L 210.507406 41.332572 
+L 212.807776 43.054834 
+L 215.108147 36.052479 
+L 217.408517 30.719513 
+L 219.708888 34.536386 
+L 222.009258 42.384029 
+L 224.309628 48.017841 
+L 226.609999 51.9528 
+L 228.910369 53.207824 
+L 231.210739 51.534452 
+L 233.51111 53.934266 
+L 235.81148 57.939542 
+L 238.11185 63.866869 
+L 240.412221 65.420744 
+L 242.712591 56.59678 
+L 245.012961 56.680086 
+L 247.313332 64.955929 
+L 249.613702 67.650694 
+L 251.914073 60.889532 
+L 254.214443 55.450327 
+L 256.514813 59.269949 
+L 258.815184 65.857568 
+L 261.115554 65.548037 
+L 263.415924 66.218228 
+L 265.716295 63.13286 
+L 268.016665 61.660053 
+L 270.317035 60.047445 
+L 272.617406 64.095452 
+L 274.917776 54.433879 
+L 277.218146 49.345424 
+L 279.518517 57.927653 
+L 281.818887 64.826748 
+L 284.119257 63.11372 
+L 286.419628 56.650019 
+L 288.719998 53.077392 
+L 291.020369 52.27442 
+L 293.320739 54.947016 
+L 295.621109 54.456632 
+L 297.92148 46.525833 
+L 300.22185 40.747459 
+L 302.52222 45.895083 
+L 304.822591 45.806685 
+L 307.122961 46.59843 
+L 309.423331 42.61081 
+L 311.723702 36.704445 
+L 314.024072 28.401079 
+L 316.324442 32.690947 
+L 318.624813 45.760615 
+L 320.925183 22.047899 
+L 323.225553 14.927689 
+L 325.525924 27.088552 
+L 327.826294 45.859805 
+L 330.126665 47.358762 
+L 332.427035 50.243782 
+L 334.727405 52.686874 
+L 337.027776 51.401421 
+L 339.328146 46.333294 
+L 341.628516 45.258988 
+L 343.928887 27.007622 
+L 346.229257 20.354203 
+L 348.529627 29.732377 
+L 350.829998 36.804466 
+L 353.130368 36.437192 
+L 355.430738 35.849664 
+L 357.731109 29.775708 
+L 360.031479 20.721729 
+L 364.63222 27.733074 
+L 366.93259 12.572734 
+L 369.232961 6.806238 
+L 371.533331 19.730141 
+L 373.833701 36.091319 
+L 376.134072 39.655163 
+L 378.434442 42.592388 
+L 380.734812 45.243071 
+L 383.035183 44.68299 
+L 385.335553 43.102372 
+L 387.635923 47.642781 
+L 389.936294 33.873631 
+L 392.236664 28.203438 
+L 394.537034 39.142963 
+L 396.837405 47.25066 
+L 399.137775 48.653569 
+L 401.438145 46.967126 
+L 403.738516 48.811386 
+L 406.038886 47.104073 
+L 408.339257 49.55424 
+L 410.639627 53.117969 
+L 412.939997 49.051838 
+L 415.240368 45.745254 
+L 417.540738 52.560713 
+L 419.841108 57.522824 
+L 422.141479 56.163167 
+L 424.441849 55.524405 
+L 426.742219 56.425081 
+L 429.04259 47.038664 
+L 431.34296 43.212176 
+L 431.34296 43.212176 
+" clip-path="url(#p305b3bf783)" style="fill: none; stroke: #4477aa; stroke-linecap: square"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 40.28 101.829952 
+L 40.28 2.281299 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 40.28 101.829952 
+L 432.87654 101.829952 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="44.205965" y="13.426683" transform="rotate(-0 44.205965 13.426683)">（a）主信号功率谱</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_11">
+     <path d="M 345.57654 14.394736 
+L 354.57654 14.394736 
+L 363.57654 14.394736 
+" style="fill: none; stroke: #4477aa; stroke-linecap: square"/>
+    </g>
+    <g id="text_13">
+     <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="370.77654" y="17.544736" transform="rotate(-0 370.77654 17.544736)">主信号功率谱</text>
+    </g>
+    <g id="line2d_12">
+     <path d="M 345.57654 28.119736 
+L 354.57654 28.119736 
+L 363.57654 28.119736 
+" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #666666; stroke-width: 0.8"/>
+    </g>
+    <g id="text_14">
+     <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="370.77654" y="31.269736" transform="rotate(-0 370.77654 31.269736)">BSF及谐波</text>
+    </g>
+    <g id="line2d_13">
+     <path d="M 345.57654 41.844736 
+L 354.57654 41.844736 
+L 363.57654 41.844736 
+" style="fill: none; stroke-dasharray: 0.8,1.32; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.8"/>
+    </g>
+    <g id="text_15">
+     <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="370.77654" y="44.994736" transform="rotate(-0 370.77654 44.994736)">BSF邻近侧带</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 40.28 239.238604 
+L 432.87654 239.238604 
+L 432.87654 139.689952 
+L 40.28 139.689952 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_7">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m1226d2abef" x="40.28" y="239.238604" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="40.28" y="252.902042" transform="rotate(-0 40.28 252.902042)">0</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m1226d2abef" x="118.799308" y="239.238604" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="118.799308" y="252.902042" transform="rotate(-0 118.799308 252.902042)">100</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m1226d2abef" x="197.318616" y="239.238604" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="197.318616" y="252.902042" transform="rotate(-0 197.318616 252.902042)">200</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m1226d2abef" x="275.837924" y="239.238604" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="275.837924" y="252.902042" transform="rotate(-0 275.837924 252.902042)">300</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m1226d2abef" x="354.357232" y="239.238604" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="354.357232" y="252.902042" transform="rotate(-0 354.357232 252.902042)">400</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m1226d2abef" x="432.87654" y="239.238604" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="432.87654" y="252.902042" transform="rotate(-0 432.87654 252.902042)">500</text>
+     </g>
+    </g>
+    <g id="text_22">
+     <text style="font: 10px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="236.57827" y="266.922979" transform="rotate(-0 236.57827 266.922979)">频率 / Hz</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m2c4a6c3095" x="40.28" y="230.878131" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <!-- $\mathdefault{10^{-5}}$ -->
+      <g transform="translate(16.41 234.45985)">
+       <text>
+        <tspan style="font: 9px 'Noto Sans CJK JP'" x="0 4.994995" y="-0.5890625000000007">10</tspan>
+        <tspan style="font: 6.3px 'Noto Sans CJK JP'" x="10.080225 13.576721" y="-4.198437500000001">−5</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m2c4a6c3095" x="40.28" y="197.640888" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <!-- $\mathdefault{10^{-4}}$ -->
+      <g transform="translate(16.41 201.222606)">
+       <text>
+        <tspan style="font: 9px 'Noto Sans CJK JP'" x="0 4.994995" y="-0.5890625000000007">10</tspan>
+        <tspan style="font: 6.3px 'Noto Sans CJK JP'" x="10.080225 13.576721" y="-4.198437500000001">−4</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m2c4a6c3095" x="40.28" y="164.403644" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <!-- $\mathdefault{10^{-3}}$ -->
+      <g transform="translate(16.41 167.985363)">
+       <text>
+        <tspan style="font: 9px 'Noto Sans CJK JP'" x="0 4.994995" y="-0.5015625000000004">10</tspan>
+        <tspan style="font: 6.3px 'Noto Sans CJK JP'" x="10.080225 13.576721" y="-4.1109375">−3</tspan>
+       </text>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_23">
+      <defs>
+       <path id="mccb34cc496" d="M 0 0 
+L -2 0 
+" style="stroke: #000000; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="238.251772" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="236.026645" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="234.099153" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="232.398984" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="220.872724" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="215.019936" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="210.867316" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="207.646295" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="205.014528" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="202.789402" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_33">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="200.861909" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_34">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="199.16174" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_35">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="187.63548" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_36">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="181.782692" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_37">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="177.630073" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_38">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="174.409052" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_39">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="171.777285" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_40">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="169.552159" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_41">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="167.624666" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_42">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="165.924497" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_27">
+     <g id="line2d_43">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="154.398237" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_28">
+     <g id="line2d_44">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="148.545449" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_29">
+     <g id="line2d_45">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="144.39283" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_30">
+     <g id="line2d_46">
+      <g>
+       <use xlink:href="#mccb34cc496" x="40.28" y="141.171808" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_26">
+     <text style="font: 10px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="10.119375" y="189.464278" transform="rotate(-90 10.119375 189.464278)">功率谱密度</text>
+    </g>
+   </g>
+   <g id="line2d_47">
+    <path d="M 40.28 178.076849 
+L 42.58037 176.54055 
+L 44.880741 184.175115 
+L 47.181111 154.29057 
+L 49.481481 144.21489 
+L 51.781852 171.675292 
+L 54.082222 180.774477 
+L 56.382592 161.893464 
+L 58.682963 160.953977 
+L 60.983333 193.414738 
+L 63.283704 196.259637 
+L 65.584074 189.346238 
+L 67.884444 195.188729 
+L 70.184815 211.341548 
+L 72.485185 207.766935 
+L 74.785555 209.205989 
+L 77.085926 210.95682 
+L 79.386296 211.958718 
+L 81.686666 208.046251 
+L 83.987037 200.772275 
+L 86.287407 203.840528 
+L 88.587777 210.338635 
+L 90.888148 208.18684 
+L 93.188518 206.712584 
+L 95.488888 218.042077 
+L 97.789259 226.552423 
+L 100.089629 220.810346 
+L 102.39 219.043649 
+L 104.69037 221.343596 
+L 106.99074 218.721923 
+L 109.291111 203.765845 
+L 111.591481 201.324918 
+L 113.891851 199.486805 
+L 116.192222 197.432807 
+L 118.492592 189.478091 
+L 120.792962 193.970637 
+L 123.093333 193.792984 
+L 125.393703 178.212116 
+L 127.694073 169.380745 
+L 129.994444 173.04656 
+L 132.294814 180.536494 
+L 134.595184 187.300355 
+L 136.895555 186.091733 
+L 139.195925 186.05808 
+L 141.496296 190.645112 
+L 143.796666 196.652095 
+L 146.097036 199.95742 
+L 148.397407 202.518353 
+L 150.697777 209.304022 
+L 152.998147 215.663783 
+L 155.298518 216.01938 
+L 157.598888 217.07762 
+L 159.899258 221.944735 
+L 162.199629 225.220774 
+L 164.499999 225.354724 
+L 166.800369 226.86274 
+L 169.10074 221.885639 
+L 171.40111 216.580127 
+L 173.70148 213.679234 
+L 176.001851 215.367824 
+L 178.302221 221.751343 
+L 180.602592 220.982021 
+L 182.902962 221.21584 
+L 185.203332 224.414274 
+L 187.503703 230.298504 
+L 189.804073 234.085912 
+L 192.104443 234.713665 
+L 194.404814 232.156595 
+L 196.705184 224.066929 
+L 199.005554 227.798304 
+L 201.305925 229.821548 
+L 203.606295 228.038678 
+L 205.906665 225.40706 
+L 208.207036 225.011638 
+L 210.507406 226.965523 
+L 212.807776 214.151134 
+L 215.108147 202.080981 
+L 217.408517 194.680828 
+L 219.708888 200.945681 
+L 222.009258 205.268643 
+L 224.309628 205.179538 
+L 226.609999 204.145233 
+L 228.910369 208.392 
+L 231.210739 214.004665 
+L 233.51111 207.532839 
+L 235.81148 205.102234 
+L 240.412221 214.651547 
+L 242.712591 209.88569 
+L 245.012961 209.167093 
+L 247.313332 214.235336 
+L 249.613702 220.856443 
+L 251.914073 218.03743 
+L 254.214443 222.470152 
+L 256.514813 228.313298 
+L 258.815184 230.536355 
+L 261.115554 229.445629 
+L 263.415924 231.20319 
+L 265.716295 229.033172 
+L 268.016665 230.351626 
+L 270.317035 231.889289 
+L 272.617406 231.058557 
+L 274.917776 228.848853 
+L 277.218146 228.936451 
+L 279.518517 227.226429 
+L 281.818887 223.940547 
+L 284.119257 223.766846 
+L 286.419628 222.573296 
+L 288.719998 227.8865 
+L 291.020369 226.021193 
+L 293.320739 226.582544 
+L 295.621109 228.419344 
+L 297.92148 224.201413 
+L 300.22185 217.434652 
+L 302.52222 204.863643 
+L 304.822591 193.691556 
+L 307.122961 193.830594 
+L 309.423331 197.21361 
+L 311.723702 201.77998 
+L 314.024072 198.243671 
+L 316.324442 197.873422 
+L 318.624813 200.401783 
+L 320.925183 203.162588 
+L 323.225553 200.723918 
+L 325.525924 198.573666 
+L 327.826294 204.445517 
+L 330.126665 210.890601 
+L 332.427035 207.070869 
+L 334.727405 212.277967 
+L 337.027776 218.799526 
+L 339.328146 221.144437 
+L 341.628516 219.963413 
+L 343.928887 224.152028 
+L 346.229257 230.504053 
+L 348.529627 230.514111 
+L 350.829998 225.196514 
+L 353.130368 227.713417 
+L 355.430738 226.215617 
+L 357.731109 227.300305 
+L 360.031479 220.849259 
+L 362.331849 225.140047 
+L 364.63222 224.46987 
+L 366.93259 218.388216 
+L 369.232961 212.831526 
+L 371.533331 224.902251 
+L 373.833701 223.087773 
+L 376.134072 220.156842 
+L 380.734812 222.478258 
+L 383.035183 215.153474 
+L 385.335553 206.473562 
+L 387.635923 210.6014 
+L 389.936294 217.125838 
+L 392.236664 216.015342 
+L 394.537034 213.036343 
+L 396.837405 216.424548 
+L 399.137775 218.361266 
+L 403.738516 206.389071 
+L 406.038886 209.577729 
+L 408.339257 208.052234 
+L 410.639627 204.28154 
+L 412.939997 200.791218 
+L 415.240368 205.013853 
+L 417.540738 207.284509 
+L 419.841108 203.100699 
+L 422.141479 205.418876 
+L 424.441849 213.364363 
+L 426.742219 218.893187 
+L 429.04259 212.474188 
+L 431.34296 215.185778 
+L 431.34296 215.185778 
+" clip-path="url(#p4ed23c7d19)" style="fill: none; stroke: #228833; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 40.28 239.238604 
+L 40.28 139.689952 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 40.28 239.238604 
+L 432.87654 239.238604 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_27">
+    <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="44.205965" y="150.835335" transform="rotate(-0 44.205965 150.835335)">（b）Hilbert包络谱</text>
+   </g>
+   <g id="legend_2">
+    <g id="line2d_48">
+     <path d="M 343.559978 151.803389 
+L 352.559978 151.803389 
+L 361.559978 151.803389 
+" style="fill: none; stroke: #228833; stroke-linecap: square"/>
+    </g>
+    <g id="text_28">
+     <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="368.759978" y="154.953389" transform="rotate(-0 368.759978 154.953389)">Hilbert包络谱</text>
+    </g>
+    <g id="line2d_49">
+     <path d="M 343.559978 165.528389 
+L 352.559978 165.528389 
+L 361.559978 165.528389 
+" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #666666; stroke-width: 0.8"/>
+    </g>
+    <g id="text_29">
+     <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="368.759978" y="168.678389" transform="rotate(-0 368.759978 168.678389)">BSF及谐波</text>
+    </g>
+    <g id="line2d_50">
+     <path d="M 343.559978 179.253389 
+L 352.559978 179.253389 
+L 361.559978 179.253389 
+" style="fill: none; stroke-dasharray: 0.8,1.32; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.8"/>
+    </g>
+    <g id="text_30">
+     <text style="font: 9px 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="368.759978" y="182.403389" transform="rotate(-0 368.759978 182.403389)">BSF邻近侧带</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p305b3bf783">
+   <rect x="40.28" y="2.281299" width="392.59654" height="99.548653"/>
+  </clipPath>
+  <clipPath id="p4ed23c7d19">
+   <rect x="40.28" y="139.689952" width="392.59654" height="99.548653"/>
+  </clipPath>
+ </defs>
+</svg>

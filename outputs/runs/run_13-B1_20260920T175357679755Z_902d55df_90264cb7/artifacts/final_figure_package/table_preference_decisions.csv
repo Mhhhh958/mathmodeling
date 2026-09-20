@@ -1,0 +1,5 @@
+﻿topic,section,reason,source
+Q1窗口参数敏感性,6.3/问题一小结,6种设置同时包含窗口数、Macro-F1、最低Recall和ΔF1，表格比多指标图更清楚,A2_02_window_parameter_sensitivity.csv
+Q2最终模型参数与复杂度,5.2.3（4）,参数、推理时间、模型体积量纲异质，不做性能—复杂度拼图,07-A final model/complexity artifacts
+Q3 A—P最终标签与分数,5.3.5（1）,16文件需逐项读取标签、分数、一致率和不确定标记，保留表格比另画总览更清楚,13-A1 A_P_final_answer_table.csv
+Q4解释验证汇总,5.4.5,忠实性、Spearman、Jaccard、机理占比量纲不同，保留表格而不做异质指标柱状图,11-A validation artifacts
