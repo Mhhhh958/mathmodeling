@@ -1,0 +1,40 @@
+{
+  "schema_version": "06B-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "direct_container",
+  "code_version_id": "CODE-6da78131d4bed122",
+  "content_sha256": "6da78131d4bed122e7ce1b55aac130f67603114d3d27501a4d877d256f358545",
+  "tracked_code": [
+    {
+      "path": "/mnt/data/06B_work/make_figures_06b.py",
+      "sha256": "f414a3e1463e9f01cf81cc32d2ab601f99ef0b11dd6faeea64e73eceb06c060a"
+    },
+    {
+      "path": "/mnt/data/06B_work/edit_word_06b.py",
+      "sha256": "54bd49380904b591cb53cf810146c38542e3c1b2ad45970d86aa9415926898ee"
+    },
+    {
+      "path": "/mnt/data/06B_work/fix_caption_numbering_06b.py",
+      "sha256": "9847b440bea00a77b8ae551e747ea21bbdd0341465a4d18aa83036eb0464e7b2"
+    },
+    {
+      "path": "/mnt/data/06B_work/validate_word_06b.py",
+      "sha256": "9c839ff96add847eb0d352b8175e497f4547a1daa8f3db94510cb2c24535a271"
+    },
+    {
+      "path": "/mnt/data/06B_work/make_protocol_06b.py",
+      "sha256": "b1b58af83f8d19c660ff44841d9817adbc9a152e7588e797c0d0a6b5ce309f7f"
+    }
+  ],
+  "source_A_freeze_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
+  "source_word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+  "constraints": [
+    "incremental Word edit only",
+    "only passed 06-A freeze + latest V0.6",
+    "no retraining/tuning/model selection",
+    "figures are direct views of frozen 06-A outputs",
+    "file-level primary, window-level auxiliary",
+    "uncalibrated score wording",
+    "preserve 00-D master package parts"
+  ]
+}
