@@ -48,7 +48,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/runs protocol/13B1/B_delivery.json protocol/13B1/validation_record.json protocol/13B1/latest_run_id.txt protocol/13B1/code_manifest.json || true
+          git add outputs/runs protocol/13B1 || true
           if git diff --cached --quiet; then
             echo 'No generated STEP13-B1 changes.'
           else
