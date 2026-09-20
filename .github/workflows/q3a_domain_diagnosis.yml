@@ -1,47 +1,45 @@
-name: q3a-step08-domain-diagnosis
+name: step08a-domain-diagnosis-current-freeze
 
 on:
   push:
     paths:
-      - 'scripts/q3a_domain_diagnosis.py'
-      - '.github/workflows/q3a_domain_diagnosis.yml'
+      - 'protocol/08A/dispatch_token.txt'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  run-q3a-step08:
-    runs-on: ubuntu-latest
+  run-step08a:
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install frozen 00-B environment
         run: |
           python -m pip install --upgrade pip
-          pip install numpy pandas scipy scikit-learn joblib matplotlib
+          pip install -r protocol/00B/requirements-lock-00b.txt
 
-      - name: Run Q3A STEP08
+      - name: Run STEP08-A
         run: |
-          mkdir -p outputs/q3a_domain_diagnosis
-          python scripts/q3a_domain_diagnosis.py | tee outputs/q3a_domain_diagnosis/run_output.txt
+          python scripts/step08a_domain_diagnosis.py
 
-      - name: Commit generated evidence
+      - name: Commit frozen evidence
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/q3a_domain_diagnosis
+          git add outputs/runs protocol/08A/latest_freeze_package.json protocol/08A/latest_run_id.txt protocol/08A/validation_record.json
           if git diff --cached --quiet; then
             echo 'No generated changes to commit.'
           else
-            git commit -m 'Add Q3A STEP08 domain diagnosis evidence [skip ci]'
+            git commit -m '08-A: add domain diagnosis and no-transfer freeze [skip ci]'
             git push
           fi
