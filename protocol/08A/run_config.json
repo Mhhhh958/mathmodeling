@@ -98,5 +98,27 @@
     "max_additional_candidate_families_in_08B": 2
   },
   "no_word_edit": true,
-  "no_ledger_edit_in_A": true
+  "no_ledger_edit_in_A": true,
+  "diagnostic_triggers": {
+    "domain_classifier_auc_high_at_or_above": 0.75,
+    "descriptive_mmd2_material_at_or_above": 0.05,
+    "target_outside_nearest_source_class_p95_fraction_material_at_or_above": 0.25,
+    "T2_CORAL_condition": "T1 final held-load gain <= 0 OR T1 severe-failure, and (domain AUC>=0.75 or MMD2>=0.05).",
+    "T3_domain_weight_condition": "domain AUC>=0.75 and fewer than 75% of target files lie within the nearest source-class p95 radius."
+  },
+  "compute_budget": {
+    "step08A": {
+      "pseudo_target_rf_refits": 4,
+      "T1_tuning_alpha_values": 4,
+      "T1_tuning_domains": 3,
+      "T1_final_validation_domains": 1,
+      "max_T1_adapted_inference_evaluations": 13
+    },
+    "step08B_if_reached": {
+      "T2_CORAL_max_configs": 3,
+      "T3_weighting_max_configs": 2,
+      "max_additional_candidate_families": 2,
+      "rule": "each family tuned only on pseudo-target loads 0/1/2 and evaluated once on held load3; no A-P truth"
+    }
+  }
 }
