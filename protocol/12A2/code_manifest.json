@@ -1,0 +1,58 @@
+{
+  "schema_version": "12A2-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "tracked_code": [
+    {
+      "path": "scripts/step12a2_gap_validations.py",
+      "git_blob_sha": "72a431dad845b80b8940a5685ca7cd2a2466d204"
+    },
+    {
+      "path": ".github/workflows/step12a2_gap_validations.yml",
+      "git_blob_sha": "c11c5cd081775028cae91a13afa9be5dc44fe932"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/12A2/run_config.json",
+      "git_blob_sha": "75d53bfe38662ca0bed2605a8b33ae0e4c0a056f"
+    },
+    {
+      "path": "protocol/12A1/latest_freeze_package.json",
+      "freeze_id": "FREEZE-12A1-5e3e74e2"
+    },
+    {
+      "path": "protocol/04A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-04A-3e3b97c0"
+    },
+    {
+      "path": "protocol/07A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-07A-7e8829fb"
+    },
+    {
+      "path": "protocol/09A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-09A-26f99878"
+    },
+    {
+      "path": "protocol/10A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-10A-4346ce31"
+    },
+    {
+      "path": "protocol/11A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-11A-1f812c22"
+    },
+    {
+      "path": "protocol/00B/environment_manifest.json",
+      "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1"
+    }
+  ],
+  "constraints": [
+    "execute only A2-01..A2-06 from frozen 12-A1 gap list",
+    "fixed H1_RF family/config; no hyperparameter search or family reselection",
+    "independent file/object evidence is primary",
+    "target A-P truth remains unknown; no target accuracy/F1/Recall",
+    "no Word editing and no formal paper figures",
+    "P0-01 must satisfy preregistered thresholds or STEP12-A2 fails"
+  ]
+}
