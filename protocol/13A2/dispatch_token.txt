@@ -5,3 +5,6 @@ previous_pass=13-A1-V2026.09.20-24e90683-通过
 mode=source_and_blueprint_freeze_only
 word_edit=false
 formal_figure_render=false
+
+retry=1
+fix=validation_no_edit_polarity
