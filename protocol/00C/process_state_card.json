@@ -1,18 +1,19 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r29",
-  "updated_utc": "2026-09-20T16:31:00Z",
-  "CURRENT_ALLOWED_STEP": "12-B",
-  "LAST_PASS_TOKEN": "12-A2-V2026.09.20-3e9264b1-通过",
+  "state_version": "2026.09.20-r30",
+  "updated_utc": "2026-09-20T17:12:30Z",
+  "CURRENT_ALLOWED_STEP": "13-A1",
+  "LAST_PASS_TOKEN": "12-B-V2026.09.20-9c38c898-通过",
   "LATEST_WORD": {
-    "version": "V1.2",
-    "artifact_id": "WORD-V1.2-df1a4844",
-    "parent_version": "V1.1",
-    "library_path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
-    "library_file_id": "libfile_00c22705998c819193201ec371963931",
-    "sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
-    "source_A_freeze_package_id": "FREEZE-11A-1f812c22",
-    "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844"
+    "version": "V1.3",
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "parent_version": "V1.2",
+    "library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
+    "library_file_id": "libfile_71ac40e4114081918d7d407bb92bb847",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+    "source_A_freeze_package_id": "FREEZE-12A2-f107c2fa",
+    "source_audit_freeze_package_id": "FREEZE-12A1-5e3e74e2",
+    "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898"
   },
   "LATEST_FREEZE_PACKAGE": {
     "step_id": "12-A2",
@@ -25,32 +26,35 @@
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "12-B",
+  "NEXT_ALLOWED": "13-A1",
   "previous_gate": {
-    "step": "12-A1",
-    "pass_token": "12-A1-V2026.09.20-3257a6ab-通过",
-    "next_allowed": "12-A2"
+    "step": "12-A2",
+    "pass_token": "12-A2-V2026.09.20-3e9264b1-通过",
+    "next_allowed": "12-B"
   },
   "current_step_record": {
-    "step": "12-A2",
+    "step": "12-B",
     "status": "passed",
-    "pass_token": "12-A2-V2026.09.20-3e9264b1-通过",
-    "next_allowed": "12-B",
-    "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
-    "freeze_package_id": "FREEZE-12A2-f107c2fa",
-    "freeze_content_sha256": "3e9264b1fdaf3931d4f4f946221134ea02a9602fb6eafa07a22a90e58ea6bddc",
-    "validation_record": "protocol/12A2/validation_record.json",
-    "code_manifest": "protocol/12A2/code_manifest.json",
-    "closed_P0": [
-      "P0-01"
+    "pass_token": "12-B-V2026.09.20-9c38c898-通过",
+    "next_allowed": "13-A1",
+    "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898",
+    "source_A_freeze_package_ids": [
+      "FREEZE-12A1-5e3e74e2",
+      "FREEZE-12A2-f107c2fa"
     ],
-    "open_P0_after_step": [],
-    "fixed_config_refits_performed": true,
-    "hyperparameter_search_performed": false,
-    "model_family_reselection_performed": false,
-    "target_label_supervision_performed": false,
-    "word_edit_performed": false,
-    "formal_paper_figure_generated": false
+    "validation_record": "protocol/12B/validation_record.json",
+    "change_list": "protocol/12B/change_list.json",
+    "B_delivery": "protocol/12B/B_delivery.json",
+    "output_word_artifact_id": "WORD-V1.3-9c38c898",
+    "output_word_sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+    "output_word_library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
+    "word_persistence_passed": true,
+    "official_format_master_preserved": true,
+    "visual_QA_pages": 48,
+    "mother_draft_incremental_edit_only": true,
+    "training_performed": false,
+    "tuning_performed": false,
+    "model_selection_performed": false
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -60,9 +64,9 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/12A2/validation_record.json",
+    "latest_validation_record": "protocol/12B/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
-    "latest_word_library_path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
+    "latest_word_library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
     "latest_01A_data_manifest": "protocol/01A/data_manifest.json",
     "latest_01B_delivery": "protocol/01B/B_delivery.json",
@@ -155,6 +159,10 @@
     "latest_12A2_final_matrix": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/final_validation_matrix.csv",
     "latest_12A2_claim_disposition": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/claim_disposition_allow_downgrade_delete.csv",
     "latest_12A2_failures": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/failure_and_no_gain_results.csv",
-    "latest_12A2_P0_closure": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/P0_closure_record.json"
+    "latest_12A2_P0_closure": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/P0_closure_record.json",
+    "latest_12B_validation": "protocol/12B/validation_record.json",
+    "latest_12B_change_list": "protocol/12B/change_list.json",
+    "latest_12B_delivery": "protocol/12B/B_delivery.json",
+    "latest_12B_run_config": "protocol/12B/run_config.json"
   }
 }
