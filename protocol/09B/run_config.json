@@ -1,0 +1,55 @@
+{
+  "schema_version": "09B-1.0",
+  "step_id": "09-B",
+  "run_id": "run_09-B_20260920T080101000000Z_26f99878_cbbd4e50",
+  "created_utc": "2026-09-20T08:01:01Z",
+  "source_A_freeze_package_id": "FREEZE-09A-26f99878",
+  "source_A_run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878",
+  "source_A_freeze_content_sha256": "29cd1a44e645021c578a974a59c6b42d0b3792b8cd65b808364f51b8a80e888e",
+  "latest_word_before": {
+    "version": "V0.9.1",
+    "artifact_id": "WORD-V0.9.1-c3741e8b",
+    "sha256": "c3741e8b505f8726a3e72a799f1701344c3566a76ecab61c8c5880f16fc493d6",
+    "library_path": "/数学建模/08B/2025华为杯E题论文_步骤08_V0.9.1.docx",
+    "library_file_id": "libfile_acce1daf74c4819188ea7c5fe4da01ed"
+  },
+  "output_word": {
+    "version": "V1.0",
+    "artifact_id": "WORD-V1.0-cbbd4e50",
+    "sha256": "cbbd4e50959ab35d00abed5811e81667e5a28d97c5ada58f1f5eb081bc016b1e",
+    "library_path": "/数学建模/09B/2025华为杯E题论文_步骤09_V1.0.docx",
+    "library_file_id": "libfile_4cdd221d210c81919d296aa26f459ac9"
+  },
+  "allowed_actions": [
+    "incrementally edit latest mother Word",
+    "use only passed 09-A frozen results",
+    "update affected ledgers",
+    "insert approved figure/table/captions"
+  ],
+  "forbidden_actions": [
+    "retrain",
+    "retune",
+    "rerun model selection",
+    "change 09-A frozen results",
+    "rebuild paper from plain text"
+  ],
+  "writeback_scope": [
+    "5.3.4 无监督迁移模型与验证"
+  ],
+  "figure_policy": {
+    "inserted": [
+      "图10_多模拟目标域无迁移与候选迁移对照.png"
+    ],
+    "loss_curve_inserted": false,
+    "dashboard_used": false
+  },
+  "table_policy": {
+    "inserted": [
+      "表22 迁移稳定性、负迁移与类别塌缩检查"
+    ]
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
