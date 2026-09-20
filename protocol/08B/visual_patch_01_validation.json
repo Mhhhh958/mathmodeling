@@ -1,0 +1,57 @@
+{
+  "schema_version": "08B-visual-patch-validation-1.0",
+  "patch_id": "08B-VISUAL-PATCH-01",
+  "status": "passed",
+  "passed": true,
+  "source_word_sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08",
+  "output_word_sha256": "c3741e8b505f8726a3e72a799f1701344c3566a76ecab61c8c5880f16fc493d6",
+  "figure_sha256": "48d5cad5ba03a8ee4c957b16775b7bd2a5596299a310e994bcf32260b625bdb7",
+  "evidence_source": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/feature_shift_file_level.csv",
+  "value_checks": {
+    "peak_abs": 37.80667625763619,
+    "peak_to_peak": 36.132757614870364,
+    "mean_abs": 34.08387791453944,
+    "std": 27.136676289465704,
+    "envelope_rms": 27.136672467682374,
+    "rms": 27.12748193320321,
+    "spectral_flatness": 7.2740995149700245,
+    "band_ratio_1500_3000": 5.31784483266972
+  },
+  "render_checks": {
+    "page_count": 30,
+    "unchanged_pages_pixel_identical": "1-24,29-30",
+    "changed_pages_visually_checked": [
+      25,
+      26,
+      27,
+      28
+    ],
+    "before": {
+      "tables": 22,
+      "sections": 6,
+      "inline_shapes": 12,
+      "media": 13
+    },
+    "after": {
+      "tables": 22,
+      "sections": 6,
+      "inline_shapes": 12,
+      "media": 13
+    },
+    "object_counts_preserved": true,
+    "master_parts_byte_equal": [
+      "word/styles.xml",
+      "word/numbering.xml",
+      "word/theme/theme1.xml",
+      "word/fontTable.xml"
+    ],
+    "no_clipping_overlap_missing_glyphs": true,
+    "figure_caption_same_page": true,
+    "library_byte_identity": true
+  },
+  "scientific_claim_changed": false,
+  "frozen_A_result_changed": false,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
