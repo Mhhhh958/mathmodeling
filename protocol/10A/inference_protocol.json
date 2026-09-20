@@ -1,0 +1,125 @@
+{
+  "schema_version": "10A-inference-protocol-1.0",
+  "step_id": "10-A",
+  "status": "frozen_before_execution",
+  "source_freeze": {
+    "freeze_package_id": "FREEZE-09A-26f99878",
+    "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878",
+    "model_path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/models/final_transfer_bundle.joblib",
+    "model_sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+    "selected_method": "T1",
+    "selected_setting": 0.25
+  },
+  "label_mapping": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "target_inventory": {
+    "expected_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P"
+    ],
+    "expected_files": 16,
+    "expected_windows_per_file": 15,
+    "expected_total_windows": 240,
+    "truth_status": "unknown"
+  },
+  "official_aggregation": {
+    "rule_id": "MEAN_SCORE_ARGMAX_V1",
+    "rule": "For each target file, average the four uncalibrated class scores across its 15 frozen windows, then take argmax in fixed OR/IR/B/N order.",
+    "tie_rule": "fixed class order OR,IR,B,N only if exact numerical tie remains after averaging",
+    "manual_adjustment": false
+  },
+  "stability_checks": {
+    "random_resampling": {
+      "type": "window bootstrap without model retraining",
+      "seeds": [
+        20260919,
+        20260920,
+        20260921
+      ],
+      "replicates_per_seed": 200,
+      "sample_size_per_file": 15,
+      "aggregation": "mean score then argmax",
+      "purpose": "test file-label robustness to window composition while using the same frozen STEP09 classifier"
+    },
+    "reasonable_aggregations": [
+      "mean class score then argmax (official)",
+      "median class score then argmax",
+      "majority of window argmax labels; exact vote ties broken by official mean scores among tied classes"
+    ],
+    "hyperparameter_sensitivity": {
+      "method": "T1 only; same frozen classifier",
+      "alpha_values": [
+        0.2,
+        0.25,
+        0.3
+      ],
+      "official_alpha": 0.25,
+      "note": "sensitivity analysis only; no retuning or reselection"
+    },
+    "cross_setting_vote_grid": "3 alpha values x 3 aggregation rules = 9 label votes per target file"
+  },
+  "uncertainty_rule": {
+    "source_reference_population": "correct source OOF independent files from STEP07 H1_RF",
+    "score_evidence": "flag if top score < source-correct q10 OR margin < source-correct q10 OR normalized entropy > source-correct q90",
+    "window_stability_evidence": "flag if official window-file agreement <0.80 OR 9-setting vote agreement <0.80 OR bootstrap agreement <0.90",
+    "mechanism_evidence": "flag if mechanism-feature nearest source prototype differs from final prediction OR predicted-class mechanism distance exceeds that source class p95 radius",
+    "low_confidence": "at least 2 of {score, window/stability, mechanism} evidence categories flagged",
+    "very_low_confidence": "all 3 evidence categories flagged",
+    "probability_wording": "all RF outputs are uncalibrated model scores, never true correctness probabilities"
+  },
+  "mechanism_evidence": {
+    "method": "source-class prototype distance on source-standardized, geometry-free mechanism proxy features",
+    "features": [
+      "zero_cross_rate",
+      "spectral_centroid_hz",
+      "spectral_rms_hz",
+      "spectral_entropy",
+      "spectral_flatness",
+      "dominant_frequency_hz",
+      "rolloff95_hz",
+      "band_ratio_0_500",
+      "band_ratio_500_1500",
+      "band_ratio_1500_3000",
+      "band_ratio_3000_5500",
+      "envelope_kurtosis",
+      "envelope_spectral_entropy"
+    ],
+    "role": "explanatory side evidence only; not target truth"
+  },
+  "visualization": {
+    "method": "PCA fitted once on source independent-file mean 26-D standardized features",
+    "panels": [
+      "before T1 adaptation",
+      "after T1 alpha=0.25 adaptation"
+    ],
+    "projector_reused": true,
+    "source_symbol": "circle = source-domain true class label",
+    "target_symbol": "x = target-domain final predicted label",
+    "warning": "clustering/separation is descriptive and does not prove target correctness"
+  },
+  "prohibited": [
+    "target accuracy/F1/Recall",
+    "manual class-ratio adjustment",
+    "target-label supervised tuning",
+    "retraining STEP09 model in STEP10-A",
+    "calling uncalibrated scores probabilities/confidence of correctness"
+  ]
+}
