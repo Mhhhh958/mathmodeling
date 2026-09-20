@@ -1,0 +1,73 @@
+{
+  "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+  "repository": "Mhhhh958/mathmodeling",
+  "final_step12_repository_snapshot_commit": "10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+  "final_scientific_execution_commit": "a27d0365fedd88e6d334008efdd4f3fc82c39d74",
+  "tracked_code": [
+    {
+      "manifest": "protocol/04A/code_manifest.json",
+      "path": "scripts/step04a_window_feature_extraction.py",
+      "git_blob_sha": "491bfebb79bde431af50f236504bfee996cd0d1a"
+    },
+    {
+      "manifest": "protocol/04A/code_manifest.json",
+      "path": ".github/workflows/step04a_window_feature_extraction.yml",
+      "git_blob_sha": "d1e2c3f0cf69448377492ebb0e39ad69a5740805"
+    },
+    {
+      "manifest": "protocol/07A/code_manifest.json",
+      "path": "scripts/step07a_failure_driven_improvement.py",
+      "git_blob_sha": "fc4d2a4d07b6e86f85b3593309531e01e42cfd67"
+    },
+    {
+      "manifest": "protocol/07A/code_manifest.json",
+      "path": ".github/workflows/step07a_failure_driven_improvement.yml",
+      "git_blob_sha": "3a1562d96df2bfec48bb26bbe3bbc6c437844a19"
+    },
+    {
+      "manifest": "protocol/09A/code_manifest.json",
+      "path": "scripts/step09a_unsupervised_transfer.py",
+      "git_blob_sha": "0f56ac147fca9559f505792272dc9ed17f73b434"
+    },
+    {
+      "manifest": "protocol/09A/code_manifest.json",
+      "path": "scripts/step08a_domain_diagnosis.py",
+      "git_blob_sha": "de55b28bd6a056cd8994eaf3504e5845b6659ef4"
+    },
+    {
+      "manifest": "protocol/09A/code_manifest.json",
+      "path": ".github/workflows/q3b_unsupervised_transfer.yml",
+      "git_blob_sha": "538ab300d57cd9a959ec9b2f24031c043377556a"
+    },
+    {
+      "manifest": "protocol/10A/code_manifest.json",
+      "path": "scripts/step10a_final_labels_and_display.py",
+      "git_blob_sha": "bd8b4c9f3442ead9b58c525fd7140e77bd57391e"
+    },
+    {
+      "manifest": "protocol/10A/code_manifest.json",
+      "path": ".github/workflows/step10a_final_labels.yml",
+      "git_blob_sha": "c57d208c3d1175cf4a7e578ae73bbc9c70a6ff6e"
+    },
+    {
+      "manifest": "protocol/11A/code_manifest.json",
+      "path": "scripts/step11a_interpretability.py",
+      "git_blob_sha": "7c469f8a4f789f5f7eeac826507bdebf5f2393b5"
+    },
+    {
+      "manifest": "protocol/11A/code_manifest.json",
+      "path": ".github/workflows/step11a_interpretability.yml",
+      "git_blob_sha": "bda3dca4b8f4cdd1ccfb50af189f4dc1f5bf7507"
+    },
+    {
+      "manifest": "protocol/12A2/code_manifest.json",
+      "path": "scripts/step12a2_gap_validations.py",
+      "git_blob_sha": "2b1f8948439cff1bb31331f7e8fd16f94f4b3810"
+    },
+    {
+      "manifest": "protocol/12A2/code_manifest.json",
+      "path": ".github/workflows/step12a2_gap_validations.yml",
+      "git_blob_sha": "c11c5cd081775028cae91a13afa9be5dc44fe932"
+    }
+  ]
+}

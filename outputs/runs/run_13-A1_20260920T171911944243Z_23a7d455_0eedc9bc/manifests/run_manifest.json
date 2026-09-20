@@ -1,0 +1,89 @@
+{
+  "schema_version": "13A1-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc",
+  "step_id": "13-A1",
+  "status": "completed",
+  "created_utc": "2026-09-20T17:19:11.942154Z",
+  "binding": {
+    "step_id": "13-A1",
+    "current_git_commit": "34928e5177ab141493a644901960e8c0082f7db3",
+    "run_config_sha256": "9353672d17300bbb1b8fa5d60ba1245a5108f0b65dd7cf6cc308b9d07cb08f02",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
+    "primary_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "34928e5177ab141493a644901960e8c0082f7db3",
+    "entrypoint": "scripts/step13a1_final_freeze.py",
+    "code_manifest": "protocol/13A1/code_manifest.json"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc",
+    "files": [
+      {
+        "relative_path": "artifacts/A_P_final_answer_table.csv",
+        "size_bytes": 7084,
+        "sha256": "d3eb9192ef11fce6bbe793c01fc7f5682709b4de03407077037d090d850803e7"
+      },
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 5768,
+        "sha256": "2f6334c72b550fa98602c38ada475d49f8e1c45449e3aae5f7b8d66f9e86652c"
+      },
+      {
+        "relative_path": "artifacts/core_numbers_master.csv",
+        "size_bytes": 7546,
+        "sha256": "e3d68126fa24cb51e9c6d67f91f1a0e04bdad23c08445599ee63ffa6b4e8853c"
+      },
+      {
+        "relative_path": "artifacts/final_code_bundle.json",
+        "size_bytes": 2828,
+        "sha256": "43859beb90a68366663de46ffb921fb3b066649e00bef699f1d37f86a1f4704f"
+      },
+      {
+        "relative_path": "artifacts/final_data_lineage.json",
+        "size_bytes": 511,
+        "sha256": "9cbd0c57d159376e41bbd2a607dfce1dac2c435ba3b4c0f9ad27195b65d99c2d"
+      },
+      {
+        "relative_path": "artifacts/final_ids.json",
+        "size_bytes": 452,
+        "sha256": "9cba3042a0803aca6323e7086334ba74d5147901847ec2b8633095d1aa8371bf"
+      },
+      {
+        "relative_path": "artifacts/final_model_artifacts.csv",
+        "size_bytes": 698,
+        "sha256": "b202f7be986e6920dee1e4b628f8c2a45238a5b2f6e15c2494a29a88d0b83072"
+      },
+      {
+        "relative_path": "artifacts/final_result_version_list.csv",
+        "size_bytes": 607,
+        "sha256": "28c27ab2043bd8ce2b1973c963f831ec12defcc25b3cf66a3ba6025463d3e19a"
+      },
+      {
+        "relative_path": "artifacts/final_run_id_list.csv",
+        "size_bytes": 1940,
+        "sha256": "4b8ef61e5608a4a109283446221daf69e0633206390a6a29d5b3db0b442a3fb5"
+      },
+      {
+        "relative_path": "artifacts/random_numeric_spot_check.csv",
+        "size_bytes": 2033,
+        "sha256": "b119e4c9d7d79ad0e6dbe08adefef704bfba665902eabfdb02e17fce5a5570ab"
+      },
+      {
+        "relative_path": "artifacts/traceability_index.csv",
+        "size_bytes": 12538,
+        "sha256": "92472a0d980698e7627da836a6073e5c81d4aea6c699242c220d30f7eb69fa95"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 1931,
+        "sha256": "85f69bd925d858fd718011d4763698e610d366cc4c6eeca0b9701d16977a6b62"
+      }
+    ],
+    "output_tree_sha256": "2a93ec6baf21db4bca0509d4dd86a30042e18905605fb68157f5c39d4dba824d"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+  "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
+  "final_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+  "final_source_model_artifact_id": "MODEL-SOURCE-4ee408ac96054e3b",
+  "final_transfer_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+  "final_result_freeze_id": "FREEZE-12A2-f107c2fa",
+  "latest_word_artifact_id": "WORD-V1.3-9c38c898"
+}

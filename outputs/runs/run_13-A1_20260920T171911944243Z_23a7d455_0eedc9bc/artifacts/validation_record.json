@@ -1,0 +1,47 @@
+{
+  "schema_version": "13A1-validation-1.0",
+  "step_id": "13-A1",
+  "run_id": "run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_valid": true,
+    "step12_sources_passed": true,
+    "final_code_commit_exists_and_blobs_match": true,
+    "data_lineage_chain_exact": true,
+    "model_artifact_sha_exact": true,
+    "AP_16_files_once_and_15_windows_each": true,
+    "AP_labels_scores_from_authoritative_final_table": true,
+    "AP_truth_unknown": true,
+    "AP_scores_not_probabilities": true,
+    "core_numbers_have_units_scope_decimals": true,
+    "core_numbers_have_run_ids": true,
+    "random_spot_checks_passed": true,
+    "latest_word_identity_only_not_edited": true,
+    "no_new_experiment_or_plot": true
+  },
+  "evidence": {
+    "A_P": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/A_P_final_answer_table.csv",
+    "core_numbers": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv",
+    "traceability": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv",
+    "spot_check": "12/12 passed",
+    "model_shas": {
+      "final_source_classifier": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+      "final_transfer_inference_bundle": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729"
+    },
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
+    "key_numbers": {
+      "AP_distribution": {
+        "OR": 8,
+        "B": 8
+      },
+      "AP_low_or_very_low_count": 13,
+      "Q2_orthogonal_macro_f1": 0.9508739837398374,
+      "Q3_loto_agreement": 0.9375,
+      "Q3_source_bootstrap_min_retention": 0.38333333333333336
+    }
+  },
+  "word_edit_performed": false,
+  "formal_paper_figures_generated": false
+}

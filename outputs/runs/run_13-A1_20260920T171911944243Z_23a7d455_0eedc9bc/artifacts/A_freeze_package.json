@@ -1,0 +1,178 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "13-A1",
+  "freeze_package_id": "FREEZE-13A1-0eedc9bc",
+  "status": "passed",
+  "run_id": "run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc",
+  "versions": {
+    "code_version_id": "git:34928e5177ab141493a644901960e8c0082f7db3",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-12A1-5e3e74e2",
+      "FREEZE-12A2-f107c2fa"
+    ],
+    "run_config_sha256": "9353672d17300bbb1b8fa5d60ba1245a5108f0b65dd7cf6cc308b9d07cb08f02",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260921,
+  "parameters": {
+    "freeze_only": true,
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
+    "final_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+    "display_policy": {
+      "AP_score_decimals": 3,
+      "rates_and_metrics_decimals": 4,
+      "MMD_decimals": 4,
+      "feature_recompute_error_scientific_digits": 3,
+      "counts_decimals": 0,
+      "exact_values_always_retained_in_machine_readable_columns": true
+    }
+  },
+  "real_results": [
+    {
+      "name": "final_ids",
+      "value": {
+        "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+        "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
+        "final_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+        "final_source_model_artifact_id": "MODEL-SOURCE-4ee408ac96054e3b",
+        "final_transfer_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+        "final_result_freeze_id": "FREEZE-12A2-f107c2fa",
+        "latest_word_artifact_id": "WORD-V1.3-9c38c898"
+      }
+    },
+    {
+      "name": "A_P_final_labels",
+      "value": {
+        "A": "OR",
+        "B": "B",
+        "C": "OR",
+        "D": "OR",
+        "E": "B",
+        "F": "OR",
+        "G": "B",
+        "H": "OR",
+        "I": "B",
+        "J": "B",
+        "K": "OR",
+        "L": "B",
+        "M": "OR",
+        "N": "OR",
+        "O": "B",
+        "P": "B"
+      }
+    },
+    {
+      "name": "A_P_prediction_counts",
+      "value": {
+        "OR": 8,
+        "B": 8
+      }
+    },
+    {
+      "name": "core_number_rows",
+      "value": 23
+    },
+    {
+      "name": "traceability_rows",
+      "value": 39
+    },
+    {
+      "name": "random_spot_checks",
+      "value": {
+        "count": 12,
+        "passed": 12
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/A_P_final_answer_table.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_code_bundle.json"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_data_lineage.json"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_model_artifacts.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_run_id_list.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_result_version_list.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/random_numeric_spot_check.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/validation_record.json"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "item": "target_truth",
+      "status": "unknown",
+      "effect": "A-P labels are predictions only; no target accuracy/F1/Recall"
+    },
+    {
+      "item": "scores",
+      "status": "uncalibrated",
+      "effect": "model scores are not true probabilities"
+    },
+    {
+      "item": "07A_development_OOF",
+      "status": "wording_limited",
+      "effect": "0.9675 is development paired OOF, not untouched final test"
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "A_P_final_answer_table.csv",
+      "core_numbers_master.csv",
+      "final_ids.json",
+      "final_run_id_list.csv",
+      "final_result_version_list.csv",
+      "traceability_index.csv"
+    ],
+    "supported_conclusions": [
+      "Final answers/numbers/models/versions are frozen and traceable to STEP12-passed identities.",
+      "A-P final labels remain the STEP10 official predictions revalidated by STEP12; truth is unknown and scores are uncalibrated.",
+      "Final code/data/model IDs are frozen for downstream final consistency review."
+    ],
+    "wording_limits": [
+      "Do not change frozen A-P labels from robustness diagnostics.",
+      "Do not call scores probabilities.",
+      "Do not mix old screenshots/figures into numeric sources.",
+      "Do not call 07-A 0.9675 an untouched final test."
+    ],
+    "approved_tables": [
+      "A_P_final_answer_table.csv",
+      "core_numbers_master.csv",
+      "final_run_id_list.csv",
+      "final_result_version_list.csv",
+      "traceability_index.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-20T17:19:11.942154Z",
+    "content_sha256": "24e90683ad27908f7035f18f971e553d1b5a2baaa1220f4bcf3a4fca32a3db99",
+    "invalidation_dependencies": [
+      "Any STEP12-passed result/version changes",
+      "final code/data/model identity changes",
+      "A-P official table changes"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+﻿spot_id,type,expected,source_path,passed,note
+Q2-BASE,core_number,0.8184523809523809,protocol/06A/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q1-N-TGT,core_number,16.0,protocol/04A/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q1-WIN-MAX,core_number,0.9672619047619048,protocol/12A2/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q1-W-SRC,core_number,733.0,protocol/04A/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q4-MECH,core_number,0.6,protocol/11A/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q1-WIN-MIN,core_number,0.9508739837398374,protocol/12A2/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q2-DEPTH,core_number,8.0,protocol/07A/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+Q2-TREES,core_number,300.0,protocol/07A/latest_freeze_package.json,True,value constructed directly from authoritative frozen JSON/table in this run
+AP-G,A-P row,B|0.5406836304436304,outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv,True,label and top score exact-match authoritative table
+AP-L,A-P row,B|0.4849346993191394,outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv,True,label and top score exact-match authoritative table
+AP-F,A-P row,OR|0.6292316704977636,outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv,True,label and top score exact-match authoritative table
+AP-N,A-P row,OR|0.5109938371449287,outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv,True,label and top score exact-match authoritative table

@@ -1,0 +1,19 @@
+{
+  "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+  "feature_version_id": "FEAT-23d45f5649dcd5f1",
+  "derived_chain": [
+    "FREEZE-02A-6f36d0b4",
+    "FREEZE-03A-f5307f8f",
+    "FREEZE-04A-3e3b97c0",
+    "FREEZE-05A-ba6432cf",
+    "FREEZE-06A-01576948",
+    "FREEZE-07A-7e8829fb",
+    "FREEZE-08A-8cd7401f",
+    "FREEZE-09A-26f99878",
+    "FREEZE-10A-4346ce31",
+    "FREEZE-11A-1f812c22",
+    "FREEZE-12A1-5e3e74e2",
+    "FREEZE-12A2-f107c2fa"
+  ],
+  "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028"
+}
