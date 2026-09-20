@@ -1,0 +1,44 @@
+{
+  "final_family": "H1_RF",
+  "H1_inner_gate": {
+    "base_selected_inner_mean_macro_f1": 0.7836670274170274,
+    "H1_selected_inner_mean_macro_f1": 0.934935434935435,
+    "inner_gain": 0.15126840751840753,
+    "base_mean_min_class_recall": 0.6722222222222222,
+    "H1_mean_min_class_recall": 0.85,
+    "min_class_recall_delta": 0.1777777777777778,
+    "required_inner_gain": 0.01,
+    "allowed_min_class_recall_delta": -0.05,
+    "passed": true
+  },
+  "H1_outer_effect": {
+    "fold_deltas": [
+      0.4951298701298702,
+      -0.0634920634920636,
+      0.19047619047619047,
+      0.07272727272727275
+    ],
+    "mean_delta": 0.17371031746031745,
+    "median_delta": 0.1316017316017316,
+    "min_delta": -0.0634920634920636,
+    "max_delta": 0.4951298701298702,
+    "nonnegative_folds": 3,
+    "positive_folds": 3,
+    "n_folds": 4,
+    "wording": "paired frozen-fold effect; not a statistical significance claim",
+    "H1_outer_acceptance_passed": true
+  },
+  "H2_inner_effect": {
+    "mean_delta": -0.012408309283309252,
+    "median_delta": 0.0,
+    "min_delta": -0.13802308802308783,
+    "max_delta": 0.04318181818181821,
+    "positive_folds": 3,
+    "nonnegative_folds": 10,
+    "pairs": 12,
+    "mean_feature_count": 19.416666666666668,
+    "decision": "no_gain_stop"
+  },
+  "rule": "H1 replaces Base only if pre-outer inner gate passes, then one-shot paired outer median delta>0 and >=3/4 nonnegative folds. H2 is inner-only diagnostic and cannot become Final in this step.",
+  "no_more_experiments_after_outer": true
+}

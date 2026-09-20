@@ -1,0 +1,5 @@
+﻿outer_fold,C,weighting,mean_inner_file_macro_f1,min_class_recall_mean_across_inner
+0,1.0,file_balanced,0.9132275132275133,0.8000000000000002
+1,0.1,file_and_class_balanced,0.6292568542568543,0.4444444444444444
+2,1.0,file_balanced,0.8037698412698413,0.6666666666666666
+3,1.0,file_balanced,0.7387806637806639,0.6666666666666666

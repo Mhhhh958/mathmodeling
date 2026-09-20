@@ -1,0 +1,5 @@
+﻿outer_fold,max_depth,weighting,file_macro_f1,file_accuracy,file_recall_OR,file_recall_IR,file_recall_B,file_recall_N,train_time_s,test_files,test_windows
+0,8,file_balanced,0.9415584415584415,0.9230769230769231,0.8333333333333334,1.0,1.0,1.0,0.29097217099999284,13,193
+1,8,file_and_class_balanced,0.9365079365079365,0.9166666666666666,0.8,1.0,1.0,1.0,0.2987630330000002,12,180
+2,8,file_and_class_balanced,1.0,1.0,1.0,1.0,1.0,1.0,0.29976782500000354,12,180
+3,8,file_and_class_balanced,1.0,1.0,1.0,1.0,1.0,1.0,0.2932199800000035,12,180

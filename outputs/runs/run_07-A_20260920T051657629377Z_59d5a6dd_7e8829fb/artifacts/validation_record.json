@@ -1,0 +1,46 @@
+{
+  "step_id": "07-A",
+  "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+  "checks": {
+    "Base_Final_same_data_splits_seed_metric": {
+      "passed": true,
+      "evidence": "split_sha={'outer': 'd271092831a9f531fcc5578e880814d1459dc60d990943038e524fd62051371c', 'inner': '07b3316570afc4826ebaf1ed518d4abb3f21286874a741bd69b80c832af4eefd'}; seed=20260919; primary=file-level Macro-F1",
+      "H1_outer_evaluated": true
+    },
+    "H1_pre_outer_gate_enforced": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/H1_pre_outer_gate.json",
+      "outer_accessed": true
+    },
+    "paired_comparison_and_ablation_preserved": {
+      "passed": true,
+      "evidence": [
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/H2_corr_lr_paired_inner_comparison.csv",
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/Base_vs_H1_paired_effect.json"
+      ]
+    },
+    "no_post_outer_retuning": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/final_model_decision.json",
+      "statement": "candidate set, thresholds, seed and acceptance rules were frozen before execution; no experiment after H1 outer results"
+    },
+    "complexity_timing_scope_explicit": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/complexity_and_runtime.json"
+    },
+    "final_model_and_q3_interface_exist": {
+      "passed": true,
+      "evidence": [
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json"
+      ]
+    },
+    "target_compatible_final_features_only": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/feature_order.csv",
+      "source_only_mechanism_features_used": false
+    }
+  },
+  "passed": true,
+  "status": "passed"
+}

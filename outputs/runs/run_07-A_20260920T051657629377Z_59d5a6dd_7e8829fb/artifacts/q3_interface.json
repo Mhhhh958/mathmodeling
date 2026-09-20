@@ -1,0 +1,20 @@
+{
+  "schema_version": "07A-Q3-interface-1.0",
+  "final_model_file": "models/final_source_model.joblib",
+  "final_family": "H1_RF",
+  "feature_input": "04-A target-compatible 26 common features in feature_order.csv",
+  "target_input": "04-A target_interface/X_target_common.csv + target_window_metadata.csv",
+  "class_order": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "file_aggregation": "mean per-window normalized model score vector, then argmax",
+  "score_semantics": "uncalibrated model score; do not call confidence/calibrated probability",
+  "target_truth": "unknown",
+  "source_only_mechanism_features_used": false,
+  "fit_on_all_source_after_model_family/config_frozen": true,
+  "training_source_groups": 49,
+  "transfer_warning": "source OOF performance does not establish target-domain accuracy; Q3 must analyze domain shift and target predictions separately"
+}

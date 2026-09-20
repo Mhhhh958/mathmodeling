@@ -1,0 +1,5 @@
+﻿outer_fold,path,sha256,bytes,trees,total_nodes,total_leaves,mean_tree_depth,max_tree_depth
+0,models/H1_rf_outer_fold_0.joblib,4eac13ebae27f6791e0aaa4823ff39926c25aec9495c37ab455141351d16b14a,239375,300,10228,5264,7.36,8
+1,models/H1_rf_outer_fold_1.joblib,17cc5a0fcc2d927732833bb6b60f3df7a8412d812b9023d69fabcacf1392d1ad,232603,300,9998,5149,7.516666666666667,8
+2,models/H1_rf_outer_fold_2.joblib,e2af87a170ca750a581c3e19c8c2878910817d6a4696d4a63748bab4374c1967,230945,300,9954,5127,7.586666666666667,8
+3,models/H1_rf_outer_fold_3.joblib,c45ec90d119d5ecb52b5f4f0e74b2d80d0e7190739ddf703aecb0b7ccec2c9ba,222075,300,9478,4889,7.5633333333333335,8

@@ -1,0 +1,238 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "07-A",
+  "freeze_package_id": "FREEZE-07A-7e8829fb",
+  "status": "passed",
+  "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+  "versions": {
+    "code_version_id": "git:2a27ea8b8c684da035a18d1efc8844f1ca224df8",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-05A-ba6432cf",
+      "FREEZE-06A-01576948",
+      "FEAT-23d45f5649dcd5f1"
+    ],
+    "run_config_sha256": "4065d95e9a11398acc83be11acdd611eb97e6c51e77e2a182efb658e8985c5c6",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "Base": "06-A LR",
+    "H1": "RF 300 trees / max_depth {8,16,None} / two weighting modes",
+    "H2": "LR + train-only abs Pearson corr pruning >0.95",
+    "primary": "file-level Macro-F1",
+    "outer_folds": 4,
+    "inner_folds": 3
+  },
+  "real_results": [
+    {
+      "name": "H2_inner_effect",
+      "value": {
+        "mean_delta": -0.012408309283309252,
+        "median_delta": 0.0,
+        "min_delta": -0.13802308802308783,
+        "max_delta": 0.04318181818181821,
+        "positive_folds": 3,
+        "nonnegative_folds": 10,
+        "pairs": 12,
+        "mean_feature_count": 19.416666666666668,
+        "decision": "no_gain_stop"
+      }
+    },
+    {
+      "name": "H1_inner_gate",
+      "value": {
+        "base_selected_inner_mean_macro_f1": 0.7836670274170274,
+        "H1_selected_inner_mean_macro_f1": 0.934935434935435,
+        "inner_gain": 0.15126840751840753,
+        "base_mean_min_class_recall": 0.6722222222222222,
+        "H1_mean_min_class_recall": 0.85,
+        "min_class_recall_delta": 0.1777777777777778,
+        "required_inner_gain": 0.01,
+        "allowed_min_class_recall_delta": -0.05,
+        "passed": true
+      }
+    },
+    {
+      "name": "H1_outer_paired_effect",
+      "value": {
+        "fold_deltas": [
+          0.4951298701298702,
+          -0.0634920634920636,
+          0.19047619047619047,
+          0.07272727272727275
+        ],
+        "mean_delta": 0.17371031746031745,
+        "median_delta": 0.1316017316017316,
+        "min_delta": -0.0634920634920636,
+        "max_delta": 0.4951298701298702,
+        "nonnegative_folds": 3,
+        "positive_folds": 3,
+        "n_folds": 4,
+        "wording": "paired frozen-fold effect; not a statistical significance claim",
+        "H1_outer_acceptance_passed": true
+      }
+    },
+    {
+      "name": "final_decision",
+      "value": {
+        "final_family": "H1_RF",
+        "H1_inner_gate": {
+          "base_selected_inner_mean_macro_f1": 0.7836670274170274,
+          "H1_selected_inner_mean_macro_f1": 0.934935434935435,
+          "inner_gain": 0.15126840751840753,
+          "base_mean_min_class_recall": 0.6722222222222222,
+          "H1_mean_min_class_recall": 0.85,
+          "min_class_recall_delta": 0.1777777777777778,
+          "required_inner_gain": 0.01,
+          "allowed_min_class_recall_delta": -0.05,
+          "passed": true
+        },
+        "H1_outer_effect": {
+          "fold_deltas": [
+            0.4951298701298702,
+            -0.0634920634920636,
+            0.19047619047619047,
+            0.07272727272727275
+          ],
+          "mean_delta": 0.17371031746031745,
+          "median_delta": 0.1316017316017316,
+          "min_delta": -0.0634920634920636,
+          "max_delta": 0.4951298701298702,
+          "nonnegative_folds": 3,
+          "positive_folds": 3,
+          "n_folds": 4,
+          "wording": "paired frozen-fold effect; not a statistical significance claim",
+          "H1_outer_acceptance_passed": true
+        },
+        "H2_inner_effect": {
+          "mean_delta": -0.012408309283309252,
+          "median_delta": 0.0,
+          "min_delta": -0.13802308802308783,
+          "max_delta": 0.04318181818181821,
+          "positive_folds": 3,
+          "nonnegative_folds": 10,
+          "pairs": 12,
+          "mean_feature_count": 19.416666666666668,
+          "decision": "no_gain_stop"
+        },
+        "rule": "H1 replaces Base only if pre-outer inner gate passes, then one-shot paired outer median delta>0 and >=3/4 nonnegative folds. H2 is inner-only diagnostic and cannot become Final in this step.",
+        "no_more_experiments_after_outer": true
+      }
+    },
+    {
+      "name": "complexity",
+      "value": {
+        "hardware": {
+          "runner": "GitHub Actions ubuntu-24.04",
+          "cpu_logical": 4,
+          "gpu": null
+        },
+        "timing_scope": {
+          "input": "already-extracted 26-D window features",
+          "raw_signal_preprocessing_and_feature_extraction_included": false,
+          "model_preprocessing_included": true,
+          "batch": "all windows of one file",
+          "warmup_repeats": 20,
+          "timed_repeats": 200
+        },
+        "Base_LR": {
+          "features": 26,
+          "coefficient_parameters": 108,
+          "median_serialized_bytes": 3148.0,
+          "median_single_file_inference_ms": 0.13793299999065312,
+          "p95_across_file_medians_ms": 0.14319319997753152
+        },
+        "Final": {
+          "family": "H1_RF",
+          "features": 26,
+          "serialized_bytes": 275708,
+          "global_fit_time_s": 0.3544895400000314,
+          "structure": {
+            "trees": 300,
+            "total_nodes": 11596,
+            "total_leaves": 5948,
+            "mean_tree_depth": 7.85,
+            "max_tree_depth": 8
+          }
+        },
+        "H1_RF_outer_models": {
+          "median_serialized_bytes": 231774.0,
+          "median_total_nodes": 9976.0,
+          "median_single_file_inference_ms": 7.283341000032806,
+          "p95_across_file_medians_ms": 7.414632799998344,
+          "mean_outer_refit_time_s": 0.29568075225
+        }
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/final_model_decision.json"
+    },
+    {
+      "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/Base_vs_H1_paired_effect.json"
+    },
+    {
+      "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/H2_corr_lr_effect.json"
+    },
+    {
+      "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/complexity_and_runtime.json"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "experiment": "H2-CORR-LR",
+      "status": "no_gain_stop",
+      "evidence": "H2_corr_lr_effect.json"
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "step07A_summary.json",
+      "improvement_hypotheses.csv",
+      "H1_pre_outer_gate.json",
+      "Base_vs_H1_paired_effect.json",
+      "H2_corr_lr_effect.json",
+      "final_model_decision.json",
+      "complexity_and_runtime.json",
+      "failure_comparison.json",
+      "q3_interface.json",
+      "feature_order.csv"
+    ],
+    "supported_conclusions": [
+      "Base and H1 used identical frozen outer groups and metric if H1 reached outer evaluation",
+      "H2 correlation pruning result is preserved even if non-beneficial",
+      "final family selected by the predeclared one-shot rule",
+      "Q3 inherits only the 26 target-compatible common features"
+    ],
+    "wording_limits": [
+      "do not use statistically significant",
+      "four-fold paired min-max is not a confidence interval",
+      "model scores are uncalibrated",
+      "source-domain OOF performance does not imply target-domain accuracy"
+    ],
+    "approved_tables": [
+      "Base_vs_H1_paired_outer.csv",
+      "H2_corr_lr_paired_inner_comparison.csv",
+      "H1_rf_outer_metrics.csv",
+      "Base_vs_Final_file_transitions.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-20T05:16:57.627631Z",
+    "content_sha256": "2e4015619ac816cfcb0e6d7c60f71855875af0ca4339217178a204e06f5c5af8",
+    "invalidation_dependencies": [
+      "05-A split protocol changes",
+      "06-A baseline evidence changes",
+      "04-A common feature data changes",
+      "07-A hypotheses/gates/implementation changes"
+    ]
+  }
+}

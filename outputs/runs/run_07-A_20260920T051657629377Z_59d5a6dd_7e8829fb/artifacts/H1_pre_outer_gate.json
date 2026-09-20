@@ -1,0 +1,11 @@
+{
+  "base_selected_inner_mean_macro_f1": 0.7836670274170274,
+  "H1_selected_inner_mean_macro_f1": 0.934935434935435,
+  "inner_gain": 0.15126840751840753,
+  "base_mean_min_class_recall": 0.6722222222222222,
+  "H1_mean_min_class_recall": 0.85,
+  "min_class_recall_delta": 0.1777777777777778,
+  "required_inner_gain": 0.01,
+  "allowed_min_class_recall_delta": -0.05,
+  "passed": true
+}

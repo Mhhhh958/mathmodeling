@@ -1,0 +1,11 @@
+{
+  "mean_delta": -0.012408309283309252,
+  "median_delta": 0.0,
+  "min_delta": -0.13802308802308783,
+  "max_delta": 0.04318181818181821,
+  "positive_folds": 3,
+  "nonnegative_folds": 10,
+  "pairs": 12,
+  "mean_feature_count": 19.416666666666668,
+  "decision": "no_gain_stop"
+}

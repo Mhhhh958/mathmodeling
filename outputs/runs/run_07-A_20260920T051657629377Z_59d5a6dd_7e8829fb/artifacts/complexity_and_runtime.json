@@ -1,0 +1,42 @@
+{
+  "hardware": {
+    "runner": "GitHub Actions ubuntu-24.04",
+    "cpu_logical": 4,
+    "gpu": null
+  },
+  "timing_scope": {
+    "input": "already-extracted 26-D window features",
+    "raw_signal_preprocessing_and_feature_extraction_included": false,
+    "model_preprocessing_included": true,
+    "batch": "all windows of one file",
+    "warmup_repeats": 20,
+    "timed_repeats": 200
+  },
+  "Base_LR": {
+    "features": 26,
+    "coefficient_parameters": 108,
+    "median_serialized_bytes": 3148.0,
+    "median_single_file_inference_ms": 0.13793299999065312,
+    "p95_across_file_medians_ms": 0.14319319997753152
+  },
+  "Final": {
+    "family": "H1_RF",
+    "features": 26,
+    "serialized_bytes": 275708,
+    "global_fit_time_s": 0.3544895400000314,
+    "structure": {
+      "trees": 300,
+      "total_nodes": 11596,
+      "total_leaves": 5948,
+      "mean_tree_depth": 7.85,
+      "max_tree_depth": 8
+    }
+  },
+  "H1_RF_outer_models": {
+    "median_serialized_bytes": 231774.0,
+    "median_total_nodes": 9976.0,
+    "median_single_file_inference_ms": 7.283341000032806,
+    "p95_across_file_medians_ms": 7.414632799998344,
+    "mean_outer_refit_time_s": 0.29568075225
+  }
+}
