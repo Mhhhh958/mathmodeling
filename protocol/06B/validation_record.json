@@ -1,0 +1,114 @@
+{
+  "schema_version": "06B-1.0",
+  "step_id": "06-B",
+  "status": "passed",
+  "pass_token": "06-B-V2026.09.20-0e671b79-通过",
+  "next_allowed": "07-A",
+  "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
+  "source_A_freeze_package_id": "FREEZE-06A-01576948",
+  "source_A_freeze_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
+  "source_A_run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "source_word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+  "output_word_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+  "checks": {
+    "current_06A_results_only": {
+      "passed": true,
+      "evidence": [
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/baseline_result_summary.json",
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/outer_fold_metrics.csv",
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/pooled_file_class_metrics.csv",
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/pooled_file_confusion_matrix.csv",
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/misclassified_files.csv"
+      ],
+      "key_numbers": "outer file Macro-F1=0.446429/1.0/0.809524/0.927273; pooled file Macro-F1=0.818452; Accuracy=0.795918; OR/IR/B/N recall=0.714286/0.75/1.0/0.75; misclassified files=10"
+    },
+    "file_vs_window_scope_not_mixed": {
+      "passed": true,
+      "evidence": "Table16 labels window Macro-F1 with * as auxiliary; Figure4/Table17/Table18 and main conclusions are file-level",
+      "primary": "file-level Macro-F1",
+      "auxiliary": "window-level Macro-F1 only"
+    },
+    "confusion_matrix_traceability": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/pooled_file_confusion_matrix.csv",
+      "matrix": [
+        [
+          15,
+          6,
+          0,
+          0
+        ],
+        [
+          3,
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          3
+        ]
+      ],
+      "figure_sha256": "e17545a7f19b259b36742b13aac70f91b6754ede2ab22bdea4d54358e3c476f5"
+    },
+    "misclassification_traceability": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/misclassified_files.csv",
+      "IR007_0_scores": [
+        0.7137469672,
+        0.2861644059,
+        0.0000819532,
+        0.0000066737
+      ],
+      "N_0_scores": [
+        0.9813072074,
+        0.0037753053,
+        0.0000406888,
+        0.0148767984
+      ]
+    },
+    "no_historical_scores_substituted": {
+      "passed": true,
+      "evidence": "final Word rendered/opened and checked; inserted values match current 06-A run only"
+    },
+    "word_persistence": {
+      "passed": true,
+      "evidence": "/数学建模/06B/word_structure_audit_06B.json",
+      "before": {
+        "media": 7,
+        "drawing": 6,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 16,
+        "sections": 6
+      },
+      "after": {
+        "media": 10,
+        "drawing": 9,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 19,
+        "sections": 6
+      },
+      "existing_media_bytes_preserved": true,
+      "master_parts_equal": true
+    },
+    "visual_QA": {
+      "passed": true,
+      "renderer": "/home/oai/skills/docx/render_docx.py",
+      "rendered_pages": 24,
+      "result": "pass",
+      "notes": "caption auto-number duplication on Table16-18 was found, patched, rerendered; no clipping/overlap/missing glyphs/broken tables/image loss"
+    }
+  }
+}
