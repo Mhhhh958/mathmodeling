@@ -1,0 +1,79 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "10-B",
+  "status": "passed",
+  "run_id": "run_10-B_20260920T091327000000Z_4346ce31_49e30c62",
+  "source_A_freeze_package_id": "FREEZE-10A-4346ce31",
+  "source_A_run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31",
+  "latest_word_before": {
+    "version": "V1.0",
+    "artifact_id": "WORD-V1.0-cbbd4e50",
+    "sha256": "cbbd4e50959ab35d00abed5811e81667e5a28d97c5ada58f1f5eb081bc016b1e",
+    "path": "/数学建模/09B/2025华为杯E题论文_步骤09_V1.0.docx",
+    "library_file_id": "libfile_4cdd221d210c81919d296aa26f459ac9"
+  },
+  "new_word_after": {
+    "version": "V1.1",
+    "artifact_id": "WORD-V1.1-49e30c62",
+    "sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+    "path": "/数学建模/10B/2025华为杯E题论文_步骤10_V1.1.docx",
+    "library_file_id": "libfile_a581d1c2ab308191b3d744723618a233"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "protocol/10B/change_list.json",
+  "validation_record": "protocol/10B/validation_record.json",
+  "affected_ledger_items": {
+    "version_ledger": [
+      "VER-10B-WORD-V11"
+    ],
+    "evidence_issue_ledger": [
+      "EVID-10B-001"
+    ],
+    "result_formula_ledger": [
+      "RES-10B-AGG",
+      "RES-10B-AP",
+      "RES-10B-STABILITY",
+      "RES-10B-UNCERTAINTY"
+    ],
+    "figure_table_ledger": [
+      "TBL-10B-023",
+      "FIG-10B-011",
+      "TBL-10B-024"
+    ],
+    "citation_ledger": [
+      "C-10B-001"
+    ]
+  },
+  "figures_and_captions": [
+    {
+      "file": "/数学建模/10B/图11_T1传导式适配后文件级模型分数与窗口一致性.png",
+      "caption": "图11 T1传导式适配后A—P文件级模型分数与窗口一致性",
+      "sha256": "c4b65db645ac41ca65c910a3dbeaeb43d29c14a2946de46e84ae0a3f2c7cb1b3",
+      "source": "10-A A_P_final_label_table.csv + source_uncertainty_reference.json"
+    }
+  ],
+  "new_tables": [
+    "表23 目标域A—P的最终传导式文件级预测结果",
+    "表24 低可信文件及多证据核查结果"
+  ],
+  "code_version_id": "CODE-ba4d79a9d13333c2",
+  "code_sha256": "ba4d79a9d13333c2638e9e3e7790720af74de70462b32f00749654816b5a32a6",
+  "run_config_sha256": "1f6562c4359796d4b6187aba048202589de6054ca489f85c4313a61bcaa85fc2",
+  "environment_sha256": "f3a160ab3aba5062aa21be227d35c91e8857e4b8342bfdd18c26b833e9f7ec21",
+  "pass_token": "10-B-V2026.09.20-49e30c62-通过",
+  "next_allowed": "11-A",
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "A_P_exactly_matches_10A": true,
+    "transductive_identity_explicit": true,
+    "uncalibrated_scores_not_probability": true,
+    "low_confidence_and_figure_consistent": true,
+    "word_object_persistence_passed": true,
+    "official_format_master_preserved": true,
+    "word_rebuilt_from_plain_text": false
+  }
+}
