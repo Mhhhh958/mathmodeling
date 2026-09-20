@@ -536,11 +536,12 @@ def main():
         "target_accuracy_not_computed":True,
         "word_edit_performed":False
     }
-    passed=all(validation_checks.values())
+    failed_checks=[k for k,v in validation_checks.items() if not bool(v)]
+    passed=len(failed_checks)==0
     validation={
         "schema_version":"10A-validation-1.0","step_id":STEP,"run_id":run_id,
         "status":"passed" if passed else "failed","passed":passed,
-        "checks":validation_checks,
+        "checks":validation_checks,"failed_checks":failed_checks,
         "evidence":{
             "final_table":f"outputs/runs/{run_id}/artifacts/A_P_final_label_table.csv",
             "window_recompute":f"outputs/runs/{run_id}/artifacts/A_P_recomputed_window_predictions.csv",
@@ -663,7 +664,7 @@ def main():
         "labels":labels_dict,"low_confidence_files":analysis["low_confidence_files"],
         "min_cross_setting_vote_agreement":analysis["min_cross_setting_vote_agreement"],
         "min_bootstrap_agreement":analysis["min_bootstrap_official_agreement"],
-        "target_accuracy_reported":False
+        "target_accuracy_reported":False,"failed_checks":failed_checks
     },ensure_ascii=False))
     if not passed:
         raise SystemExit(2)
