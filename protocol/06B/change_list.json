@@ -1,0 +1,32 @@
+{
+  "schema_version": "06B-1.0",
+  "step_id": "06-B",
+  "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
+  "source_word": "V0.6",
+  "output_word": "V0.7",
+  "source_A_freeze": "FREEZE-06A-01576948",
+  "incremental_only": true,
+  "changes": [
+    {
+      "location": "5.2.2",
+      "action": "rename placeholder + insert",
+      "details": "改为“基线模型与真实评价”；回写06-A LR基线、训练边界、6配置内层选择、72次内层拟合+4次外层重拟合及模型分数语义。"
+    },
+    {
+      "location": "表16/图4/表17",
+      "action": "insert",
+      "details": "分别写入4折文件级结果、49文件OOF混淆矩阵、逐类Precision/Recall/F1。"
+    },
+    {
+      "location": "图5/图6/表18",
+      "action": "insert",
+      "details": "保留IR007_0与N_0两个真实误判案例，并汇总OR→IR=6、IR→OR=3、N→OR=1。"
+    },
+    {
+      "location": "5.2.2末",
+      "action": "insert",
+      "details": "写入独立复算、四折波动、N仅4文件及未校准分数边界。"
+    }
+  ],
+  "untouched": "V0.6其余正文、5.2.1协议、5.2.3与后续章节、既有图1-图3、表1-表15、5个OMML公式和官方母版核心包保持。"
+}
