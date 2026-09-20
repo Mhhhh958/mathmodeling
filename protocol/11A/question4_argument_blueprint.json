@@ -1,0 +1,98 @@
+{
+  "schema_version": "00C-question-blueprint-1.0",
+  "template_type": "question_argument_blueprint",
+  "step_id": "11-A",
+  "question_id": "Q4",
+  "status": "frozen_before_execution",
+  "delivery_from_problem": "解释步骤09/10最终实际迁移诊断模型：给出源域已知标签与目标域预测案例的可核查解释，至少完成忠实性/稳定性/机理一致性中的两类验证，设置随机或低贡献信息对照，并保留失败/矛盾案例与局限。",
+  "core_contradiction": "最终模型并非端到端深度网络，而是T1(alpha=0.25)无监督矩收缩适配后输入冻结RF；因此解释必须作用于真实26维工程特征和真实文件级聚合，不能虚构注意力热图、不能把目标域未知真值写成已验证，也不能把迁移后的域接近或特征贡献写成因果关系。",
+  "baseline": {
+    "method": "直接读取RF内置feature_importances_作为全局重要性参考，但不把MDI权重单独作为物理合理性证明。",
+    "why_valid": "它来自最终冻结RF本体，可作为最小全局参考。",
+    "observed_limitations": [
+      "MDI可能受特征尺度/分裂机会影响，不能给出单个文件为什么被判为某类的充分解释。",
+      "全局权重不包含T1迁移对目标输入的实际位移。",
+      "权重本身不能证明轴承故障物理因果。"
+    ]
+  },
+  "method_choice_reason": "选择与真实模型兼容的模型无关遮蔽解释：对文件内全部15个真实窗口，在T1适配后的26维RF输入上逐特征替换为源域独立文件均值的中位参考值，记录最终预测类文件级未校准模型分数的下降量。该方法直接作用于最终RF和冻结文件聚合；同时单独记录T1前后源标准化位移。解释类别始终是模型真实输出类别；源域案例同时记录已知真标签，目标域只记录预测标签。",
+  "key_improvements": [
+    {
+      "id": "I1-FINAL-PIPELINE-OCCLUSION",
+      "change": "在最终T1→RF链上生成文件级和窗口级遮蔽贡献，并分离记录T1输入位移；源域选每类一个OOF正确高分代表及一个历史OOF困难样本，目标域按10-A冻结稳定性规则自动选稳定OR、稳定B及两个最不稳定案例。",
+      "target_problem": "避免使用与最终模型不兼容的SHAP/注意力图或只看RF全局权重；同时让源域已知标签与目标域预测案例使用同一解释口径。",
+      "evidence_plan": "保存case_inventory.csv、file_feature_contributions.csv、window_feature_contributions.csv、migration_feature_shift.csv及解释案例表；所有目标标签字段保持unknown_truth。"
+    },
+    {
+      "id": "I2-VALIDATED-EXPLANATION",
+      "change": "对遮蔽解释做三层验证：Top-5高贡献特征联合移除 vs Low-5 vs 固定随机5的文件级分数下降；相邻50%重叠窗口的贡献向量Spearman与Top-5 Jaccard稳定性；Top-5特征与预冻结冲击/频谱机理代理及预测类源域原型方向的一致性。另以200个随机5特征子集构成sanity null。",
+      "target_problem": "防止解释只是可视化算法自身结构、随机排序或漂亮热力图；同时保留D/N等解释不稳定和机理矛盾案例。",
+      "evidence_plan": "忠实性预判阈值：每案例Top5联合遮蔽分数下降>0且高于Low5，并高于200随机子集下降的中位数；总体通过率>=2/3。稳定性预判阈值：相邻窗口贡献向量中位Spearman>=0.30且Top5中位Jaccard>=0.20的案例比例>=2/3。机理一致性作为第三类验证：源域正确代表Top5中预定义机理代理占比及原型方向一致率分别报告；目标域只作预测解释，不以不一致判真值。"
+    }
+  ],
+  "case_selection": {
+    "source_known_label_cases": "在07-A OOF文件表中，对OR/IR/B/N各选择pred_label=true label且真实类分数最高的1个文件；另选OOF误分类中分数间隔最小的1个历史困难文件。选择只依赖既冻结07-A OOF，不看11-A解释结果。",
+    "target_prediction_cases": "从10-A冻结表自动选择：满足window=vote=bootstrap=1的OR中top_model_score最高1个；同条件B中最高1个；bootstrap agreement最低1个；排除前者后cross-setting vote agreement最低1个。预计但不硬编码具体字母，选择由脚本复算。",
+    "explanation_class": "源域代表解释最终RF实际预测类并同时保存真标签；目标域解释10-A正式pred_label。"
+  },
+  "perturbation_protocol": {
+    "input_space": "最终分类器实际输入空间；source使用原26维公共特征，target使用09-A冻结T1(alpha=0.25)后的26维特征。",
+    "file_score": "15窗口（或源文件实际冻结窗口数）的四类RF未校准分数均值；解释类取该文件模型输出类。",
+    "reference_value": "每个特征使用49个源域独立文件均值的中位数，避免窗口数不等导致长文件过度加权。",
+    "individual_contribution": "delta_j = original file score for explained class - score after replacing feature j for all windows by reference value.",
+    "top5": "按delta_j从大到小取5个；若存在负值仍保留真实排序，不强制正贡献。",
+    "low5": "按delta_j从小到大取5个。",
+    "random5": "seed=20260919，在非Top5特征中无放回固定抽5个。",
+    "sanity_null": "seed=20260919，对每案例生成200个5特征随机子集，比较Top5联合遮蔽分数下降在null中的经验百分位。"
+  },
+  "mechanism_link": {
+    "impulse_features": [
+      "kurtosis",
+      "crest_factor",
+      "impulse_factor",
+      "clearance_factor",
+      "envelope_kurtosis"
+    ],
+    "spectral_structure_features": [
+      "spectral_centroid_hz",
+      "spectral_rms_hz",
+      "spectral_entropy",
+      "spectral_flatness",
+      "dominant_frequency_hz",
+      "rolloff95_hz",
+      "band_ratio_0_500",
+      "band_ratio_500_1500",
+      "band_ratio_1500_3000",
+      "band_ratio_3000_5500",
+      "envelope_spectral_entropy"
+    ],
+    "prototype_direction_test": "对Top5中上述机理代理，比较案例文件均值相对源域全局参考值是否沿预测类源域文件均值原型方向移动；只记directional consistency，不解释为因果。",
+    "target_limit": "目标域缺少与源域完全一致的冻结轴承几何/精确RPM接口，因此不对A-P声称BPFO/BPFI等精确故障频率命中；仅讨论冲击性和频谱能量结构代理。"
+  },
+  "primary_metrics_and_fairness": {
+    "primary_metrics": [
+      "Top5/Low5/Random5联合遮蔽后的预测类文件级分数下降",
+      "Top5下降在200随机5特征子集null中的经验百分位",
+      "相邻50%重叠窗口贡献向量Spearman和Top5 Jaccard",
+      "Top5机理代理占比与源类原型方向一致率"
+    ],
+    "comparison_scope": "所有解释使用同一09/10冻结T1、同一冻结RF、同一26特征顺序、同一文件聚合和同一源域参考值；无重新训练、无目标标签。",
+    "fairness_constraints": [
+      "不根据解释结果重新选择目标案例；案例选择规则先冻结。",
+      "不将未校准模型分数称为正确概率。",
+      "不把源域训练文件上的最终RF解释当作独立泛化性能验证；源域OOF只用于先验案例选择。",
+      "目标域真值始终未知，解释只说明模型响应。",
+      "所有失败的忠实性/稳定性/机理一致性结果保留。"
+    ]
+  },
+  "key_tables_and_figures": [
+    "迁移过程：26特征源标准化均值差T1前后变化数据/图",
+    "源域已知标签与目标域预测案例Top贡献表/图",
+    "Top5 vs Low5 vs Random5忠实性对照",
+    "相邻重叠窗口解释稳定性表",
+    "机理一致与矛盾案例表"
+  ],
+  "core_conclusion": "只有真实运行显示遮蔽贡献具有高于低贡献/随机对照的忠实性，并且稳定性或机理一致性至少再有一类达到预冻结判据，11-A才可通过；否则保留失败并停止在11-A。任何目标域解释都不能升级为真实故障验证。",
+  "next_question_interface": "向11-B提供冻结的解释数据、案例表、验证结果、失败/矛盾案例、可追溯图源数据和表述边界；11-B只能基于本冻结包增量回写Word。",
+  "evidence_guard": "不能以RF权重、PCA聚团、T1域接近或单张热力图证明物理合理性；贡献是条件响应而非因果；目标A-P无真值；精确故障频率对应只在所需几何/RPM真实可用时讨论。"
+}
