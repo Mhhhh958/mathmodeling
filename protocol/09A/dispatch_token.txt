@@ -1,6 +1,5 @@
-09-A formal run dispatch 2026-09-20T06:45:00Z
+09-A formal run dispatch retry-2 2026-09-20T07:06:00Z
 protocol_commit=27fe3b040e28a89048f9488f8c612d1ae2d0e68e
 run_config_commit=024b5c6480c7975c356d5c179df2438d4a3feb79
-runner_commit=534f4844ca476a60d96eb1919058f895ce6dd27e
-workflow_commit=990f4b034438687a8043f719a08d5b1bf16a42a1
-code_manifest_commit=7a5db0cbdbd07d0619bbf84ed8f9384da4173033
+runner_patch_commit=08aaa9fd4f8acd60c71a12abae353ba5de3e4d1a
+code_manifest_patch_commit=fe4d9650f5e2203a3dc4e05b387565bdfa70298c
