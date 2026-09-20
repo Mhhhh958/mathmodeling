@@ -1,0 +1,79 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "12-B",
+  "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898",
+  "created_utc": "2026-09-20T17:08:37Z",
+  "status": "passed",
+  "source_A_freeze_package_id": "FREEZE-12A2-f107c2fa",
+  "source_A_run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+  "source_A_freeze_package_ids": [
+    "FREEZE-12A1-5e3e74e2",
+    "FREEZE-12A2-f107c2fa"
+  ],
+  "latest_word_before": {
+    "version": "V1.2",
+    "artifact_id": "WORD-V1.2-df1a4844",
+    "path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
+    "library_file_id": "libfile_00c22705998c819193201ec371963931",
+    "sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9"
+  },
+  "new_word_after": {
+    "version": "V1.3",
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
+    "library_file_id": "libfile_71ac40e4114081918d7d407bb92bb847",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "protocol/12B/change_list.json",
+  "validation_record": "protocol/12B/validation_record.json",
+  "affected_ledger_items": {
+    "version_ledger": [
+      "VER-12B-WORD-V13"
+    ],
+    "evidence_issue_ledger": [
+      "EVID-12B-001"
+    ],
+    "result_formula_ledger": [
+      "RES-12B-Q1-WINDOW",
+      "RES-12B-Q1-SOURCE",
+      "RES-12B-Q2-ORTHO",
+      "RES-12B-Q3-LOTO",
+      "RES-12B-Q3-BOOT",
+      "RES-12B-FORMULA"
+    ],
+    "figure_table_ledger": [
+      "TBL-12B-028",
+      "TBL-12B-029",
+      "TBL-12B-030",
+      "TBL-12B-031",
+      "TBL-12B-032"
+    ],
+    "citation_ledger": [
+      "C-12B-001"
+    ]
+  },
+  "figures_and_captions": [],
+  "new_tables": [
+    "表28 窗口参数敏感性",
+    "表29 固定H1_RF跨载荷与随机种子压力测试",
+    "表30 源选择方案敏感性",
+    "表31 A-P目标留一与源文件组成稳定性",
+    "表32 公式—代码—单位与版本一致性核对"
+  ],
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "unsupported_claims_removed_or_downgraded": true,
+    "affected_conclusions_synchronized": true,
+    "figures_tables_traceable": true,
+    "word_object_persistence_passed": true,
+    "official_format_master_preserved": true,
+    "word_rebuilt_from_plain_text": false
+  },
+  "pass_token": "12-B-V2026.09.20-9c38c898-通过",
+  "next_allowed": "13-A1"
+}
