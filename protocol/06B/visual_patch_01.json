@@ -1,0 +1,53 @@
+{
+  "schema_version": "06B-patch-1.0",
+  "patch_id": "06B-VISUAL-PATCH-01",
+  "status": "passed",
+  "source_word": {
+    "version": "V0.7",
+    "sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650"
+  },
+  "output_word": {
+    "version": "V0.7.1",
+    "sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+    "path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
+    "library_file_id": "libfile_916202dedb84819192dc67df70aea809"
+  },
+  "source_A_freeze_package_id": "FREEZE-06A-01576948",
+  "changed_objects": [
+    {
+      "old": "图5 文件级平均模型分数柱状图",
+      "new": "图5 IR007_0窗口级OR/IR模型分数演化",
+      "sha256": "ad72b89a06bf750f4a7e2e2a9298d6f03a8e454973b1849b0b875949437b8b0d"
+    },
+    {
+      "old": "图6 文件级平均模型分数柱状图",
+      "new": "图6 N_0窗口级OR/N模型分数演化（同文件上下对齐）",
+      "sha256": "d86babfd70978db4e7b853c124f00c2091c123d6309b223043ac90437a657ad7"
+    },
+    {
+      "text": "对应两段误判案例解释改为跨窗口持续性分析"
+    }
+  ],
+  "unchanged_results": [
+    "outer-fold Macro-F1",
+    "pooled file Macro-F1/Accuracy",
+    "per-class metrics",
+    "confusion matrix",
+    "misclassified-file counts and types",
+    "model files and selected configs"
+  ],
+  "validation": {
+    "page_count": 24,
+    "unchanged_pages_pixel_identical": "1-19,23-24",
+    "changed_pages_visually_checked": [
+      20,
+      21,
+      22
+    ],
+    "object_counts_unchanged": true,
+    "unmodified_media_preserved": true,
+    "master_parts_equal": true
+  },
+  "pass_token": "06-B-V2026.09.20-317ed7ab-通过",
+  "next_allowed": "07-A"
+}

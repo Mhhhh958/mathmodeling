@@ -13,10 +13,10 @@
     "library_file_id": "libfile_f3e226e221f88191872c63e176fbc950"
   },
   "new_word_after": {
-    "version": "V0.7",
-    "sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
-    "path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.docx",
-    "library_file_id": "libfile_17abfce6b3b881918be58523cb1f5ef7"
+    "version": "V0.7.1",
+    "sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+    "path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
+    "library_file_id": "libfile_916202dedb84819192dc67df70aea809"
   },
   "mother_draft_incremental_edit_only": true,
   "training_performed": false,
@@ -30,16 +30,16 @@
       "source": "06-A pooled_file_confusion_matrix.csv"
     },
     {
-      "file": "/数学建模/06B/图5_IR007_0误判文件模型分数.png",
-      "caption": "图5 误判文件IR007_0.mat的文件级平均模型分数",
-      "sha256": "2dfe7b877142374e509efa57b1e91a8ba37af844d86483845755742c061fc51a",
-      "source": "06-A misclassified_files.csv"
+      "file": "/数学建模/06B/图5_IR007_0窗口级模型分数演化.png",
+      "caption": "图5 误判文件IR007_0.mat的窗口级模型分数演化",
+      "sha256": "ad72b89a06bf750f4a7e2e2a9298d6f03a8e454973b1849b0b875949437b8b0d",
+      "source": "06-A oof_window_predictions.csv + 04-A source_window_metadata.csv"
     },
     {
-      "file": "/数学建模/06B/图6_N_0误判文件模型分数.png",
-      "caption": "图6 误判正常文件N_0.mat的文件级平均模型分数",
-      "sha256": "75c7bbf5cefa4b68885048da51302919b8e53b8c447f43329f7909d1c094201d",
-      "source": "06-A misclassified_files.csv"
+      "file": "/数学建模/06B/图6_N_0窗口级模型分数演化.png",
+      "caption": "图6 误判正常文件N_0.mat的窗口级模型分数演化",
+      "sha256": "d86babfd70978db4e7b853c124f00c2091c123d6309b223043ac90437a657ad7",
+      "source": "06-A oof_window_predictions.csv + 04-A source_window_metadata.csv"
     }
   ],
   "new_tables": [
@@ -52,6 +52,13 @@
   "code_version_id": "CODE-6da78131d4bed122",
   "run_config_sha256": "698fc6f7c9ad796178fd42d934d0872e3c26e9f538547005cd4753dbbeacce14",
   "environment_sha256": "868d181a65863fe27446ee9307723200a78f0e26ce7a1ce47d9ca40e91e4ccf3",
-  "pass_token": "06-B-V2026.09.20-0e671b79-通过",
-  "next_allowed": "07-A"
+  "pass_token": "06-B-V2026.09.20-317ed7ab-通过",
+  "next_allowed": "07-A",
+  "visual_patch": {
+    "patch_id": "06B-VISUAL-PATCH-01",
+    "from_version": "V0.7",
+    "to_version": "V0.7.1",
+    "reason": "Replace low-information four-bar case plots with window-level score evolution using the same frozen 06-A predictions.",
+    "model_results_changed": false
+  }
 }

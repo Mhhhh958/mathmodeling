@@ -2,12 +2,12 @@
   "schema_version": "06B-1.0",
   "step_id": "06-B",
   "status": "passed",
-  "pass_token": "06-B-V2026.09.20-0e671b79-通过",
+  "pass_token": "06-B-V2026.09.20-317ed7ab-通过",
   "next_allowed": "07-A",
   "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
   "source_A_freeze_package_id": "FREEZE-06A-01576948",
-  "output_word_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
-  "output_word_library_file_id": "libfile_17abfce6b3b881918be58523cb1f5ef7",
+  "output_word_sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+  "output_word_library_file_id": "libfile_916202dedb84819192dc67df70aea809",
   "validation_record": "protocol/06B/validation_record.json",
   "delivery_record": "protocol/06B/B_delivery.json",
   "rendered_pages": 24,
@@ -35,5 +35,6 @@
   "word_rebuilt_from_plain_text": false,
   "training_performed": false,
   "tuning_performed": false,
-  "model_selection_performed": false
+  "model_selection_performed": false,
+  "visual_patch_id": "06B-VISUAL-PATCH-01"
 }

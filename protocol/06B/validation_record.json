@@ -2,14 +2,14 @@
   "schema_version": "06B-1.0",
   "step_id": "06-B",
   "status": "passed",
-  "pass_token": "06-B-V2026.09.20-0e671b79-通过",
+  "pass_token": "06-B-V2026.09.20-317ed7ab-通过",
   "next_allowed": "07-A",
   "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
   "source_A_freeze_package_id": "FREEZE-06A-01576948",
   "source_A_freeze_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
   "source_A_run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
   "source_word_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
-  "output_word_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+  "output_word_sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
   "checks": {
     "current_06A_results_only": {
       "passed": true,
@@ -61,7 +61,11 @@
     },
     "misclassification_traceability": {
       "passed": true,
-      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/misclassified_files.csv",
+      "evidence": [
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/misclassified_files.csv",
+        "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/oof_window_predictions.csv",
+        "outputs/runs/run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0/artifacts/q2_interface/source_window_metadata.csv"
+      ],
       "IR007_0_scores": [
         0.7137469672,
         0.2861644059,
@@ -73,7 +77,33 @@
         0.0037753053,
         0.0000406888,
         0.0148767984
-      ]
+      ],
+      "visual_patch": {
+        "IR007_0": {
+          "windows": 15,
+          "OR_predicted_windows": 14,
+          "IR_predicted_windows": 1,
+          "only_IR_window_start_s": 4.5,
+          "mean_OR_score": 0.7137469672,
+          "mean_IR_score": 0.2861644059,
+          "figure_sha256": "ad72b89a06bf750f4a7e2e2a9298d6f03a8e454973b1849b0b875949437b8b0d"
+        },
+        "N_0": {
+          "windows": 9,
+          "OR_predicted_windows": 9,
+          "OR_score_range": [
+            0.9652834826,
+            0.9922693273
+          ],
+          "N_score_range": [
+            0.0054274748,
+            0.0316235958
+          ],
+          "mean_OR_score": 0.9813072074,
+          "mean_N_score": 0.0148767984,
+          "figure_sha256": "d86babfd70978db4e7b853c124f00c2091c123d6309b223043ac90437a657ad7"
+        }
+      }
     },
     "no_historical_scores_substituted": {
       "passed": true,
@@ -101,14 +131,29 @@
         "sections": 6
       },
       "existing_media_bytes_preserved": true,
-      "master_parts_equal": true
+      "master_parts_equal": true,
+      "visual_patch": {
+        "from_word_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+        "to_word_sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+        "counts_unchanged": {
+          "media": 10,
+          "drawing": 9,
+          "vml_pict": 1,
+          "math": 5,
+          "math_para": 5,
+          "tables": 19,
+          "sections": 6
+        },
+        "unmodified_media_preserved": true,
+        "master_parts_equal": true
+      }
     },
     "visual_QA": {
       "passed": true,
       "renderer": "/home/oai/skills/docx/render_docx.py",
       "rendered_pages": 24,
       "result": "pass",
-      "notes": "caption auto-number duplication on Table16-18 was found, patched, rerendered; no clipping/overlap/missing glyphs/broken tables/image loss"
+      "notes": "V0.7.1 rerendered after replacing figures 5-6 and case-analysis text. Pages 1-19 and 23-24 are pixel-identical to validated V0.7; changed pages 20-22 were visually inspected with no clipping, overlap, missing glyphs or broken objects."
     }
   }
 }
