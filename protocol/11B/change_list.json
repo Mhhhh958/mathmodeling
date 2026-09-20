@@ -1,0 +1,76 @@
+{
+  "step_id": "11-B",
+  "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844",
+  "created_utc": "2026-09-20T15:38:44Z",
+  "source_A_freeze_package_id": "FREEZE-11A-1f812c22",
+  "source_A_run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "source_A_freeze_content_sha256": "5e001ea74638f7ebde24630844fa0af85eef71fbf47fc49cd7fa0598525aa317",
+  "source_word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+  "output_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "schema_version": "11B-change-1.0",
+  "source_word": "V1.1",
+  "output_word": "V1.2",
+  "changes": [
+    {
+      "location": "5.4.1",
+      "action": "replace placeholder headings and add final-pipeline explanation method",
+      "content": "T1(alpha=0.25)->frozen RF; feature occlusion relative to source-file-median reference; contribution is model sensitivity, not causality"
+    },
+    {
+      "location": "5.4.2",
+      "action": "insert migration-process explanation and figure",
+      "object": "图12",
+      "key_numbers": "mean standardized gap 8.3552→6.2664; median relative reduction 25.0%"
+    },
+    {
+      "location": "5.4.3",
+      "action": "insert source known-label case table/figure",
+      "objects": [
+        "表25",
+        "图13"
+      ],
+      "cases": [
+        "OR007@6_1",
+        "IR014_1",
+        "B014_3",
+        "N_1_(1772rpm)",
+        "OR021@3_2 historical OOF difficult"
+      ]
+    },
+    {
+      "location": "5.4.4",
+      "action": "insert target prediction case table/figure",
+      "objects": [
+        "表26",
+        "图14"
+      ],
+      "cases": [
+        "H",
+        "O",
+        "D",
+        "N"
+      ],
+      "boundary": "target truth UNKNOWN_TRUTH"
+    },
+    {
+      "location": "5.4.5",
+      "action": "insert validation figure/table and retain contradictions",
+      "objects": [
+        "图15",
+        "表27"
+      ],
+      "key_numbers": "faithfulness 9/9; stability 9/9; top5 median drop 0.4488; Spearman median 0.9762; Jaccard median 1.000; sanity percentile median 1.000"
+    },
+    {
+      "location": "5.4.6",
+      "action": "write limitations",
+      "content": "no target truth/accuracy; no causal claim; no exact target BPFO/BPFI/BSF/FTF assertion"
+    },
+    {
+      "location": "5.4.7",
+      "action": "write five-part Q4 summary",
+      "next_interface": "12-A1"
+    }
+  ],
+  "word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9"
+}
