@@ -1,0 +1,67 @@
+{
+  "schema_version": "12B-change-1.0",
+  "step_id": "12-B",
+  "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898",
+  "created_utc": "2026-09-20T17:08:37Z",
+  "source_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "output_word_sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+  "source_freezes": [
+    "FREEZE-12A1-5e3e74e2",
+    "FREEZE-12A2-f107c2fa"
+  ],
+  "changes": [
+    {
+      "location": "摘要",
+      "action": "同步12-A2补证与边界",
+      "key_numbers": "窗口Macro-F1 0.9509–0.9673；固定模型load-held-out Macro-F1=0.9509；A-P LOTO=15/16；源Bootstrap最低保持率=0.3833"
+    },
+    {
+      "location": "5.1/问题一小结",
+      "action": "回写窗口参数和源方案敏感性",
+      "key_numbers": "六设置Macro-F1=0.9509–0.9673；MVP/alternative/all-source=0.9509/0.9562/0.9483",
+      "wording": "1s/50%仅为冻结主配置，不称全局最优；MVP不称普遍最优"
+    },
+    {
+      "location": "5.2/问题二",
+      "action": "降调07-A开发OOF身份并增加独立压力测试",
+      "key_numbers": "07-A开发OOF=0.9675；12-A2三个随机种子Macro-F1均0.9509，Accuracy=0.9388，最低Recall=0.9048",
+      "wording": "0.9675不得称完全独立终测"
+    },
+    {
+      "location": "5.3/问题三",
+      "action": "补入目标LOTO与源文件Bootstrap失效边界",
+      "key_numbers": "15/16 LOTO保持；D OR→B；120次源Bootstrap最低保持率0.3833；10/16文件<0.80",
+      "wording": "不概括A-P整体稳定可靠，不改10-A冻结正式标签"
+    },
+    {
+      "location": "5.4/问题四",
+      "action": "同步D/N预测脆弱性与解释身份",
+      "key_numbers": "D源Bootstrap=0.3833；N=0.7417",
+      "wording": "局部解释稳定不等于文件级预测稳定，更不证明真值"
+    },
+    {
+      "location": "模型检验与稳健性",
+      "action": "新增统一验证章节",
+      "objects": [
+        "表28",
+        "表29",
+        "表30",
+        "表31",
+        "表32"
+      ],
+      "content": "消融/无增益、参数敏感性、跨载荷与随机种子、源方案、模拟域、目标失效边界、公式代码单位与版本核对"
+    },
+    {
+      "location": "模型评价与创新/结论",
+      "action": "删除或降调不受证据支持的强结论",
+      "removed_or_downgraded": [
+        "完全独立终测",
+        "1 s/50%最优",
+        "MVP普遍最优",
+        "A-P整体稳定可靠",
+        "迁移显著提高真实目标准确率",
+        "MMD或解释证明分类正确"
+      ]
+    }
+  ]
+}
