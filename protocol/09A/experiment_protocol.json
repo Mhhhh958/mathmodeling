@@ -1,0 +1,115 @@
+{
+  "schema_version": "09A-protocol-1.0",
+  "step_id": "09-A",
+  "status": "frozen_before_execution",
+  "source_freezes": {
+    "source_model": "FREEZE-07A-7e8829fb",
+    "domain_diagnosis": "FREEZE-08A-8cd7401f"
+  },
+  "target_truth_policy": "A-P class_label=UNKNOWN_TRUTH and label_status=unknown_truth are boundary sentinels only; no target fault label may enter fitting, tuning, selection, validation metrics, or final claims.",
+  "candidates": [
+    {
+      "id": "T1-SHRINK-MOMENT",
+      "role": "simple baseline",
+      "frozen_setting": {
+        "alpha": 0.25
+      },
+      "retained_source_parts": "exact 07-A H1_RF classifier, 26-feature order, class order and file aggregation",
+      "target_shift": "marginal location/scale shift",
+      "objective": "closed-form interpolation toward source file-balanced feature moments; no target labels and no iterative fitting"
+    },
+    {
+      "id": "T2-CORAL",
+      "role": "candidate",
+      "configs": [
+        0.01,
+        0.1,
+        1
+      ],
+      "config_name": "ridge_lambda",
+      "retained_source_parts": "exact 07-A H1_RF classifier; only target features are transformed",
+      "target_shift": "residual covariance structure shift",
+      "objective": "target-to-source covariance alignment in source-standardized space using regularized symmetric covariance square roots"
+    },
+    {
+      "id": "T3-DOMAIN-WEIGHT",
+      "role": "candidate",
+      "configs": [
+        2,
+        5
+      ],
+      "config_name": "density_ratio_clip",
+      "retained_source_parts": "07-A RF family/hyperparameters, 26 features, class order and aggregation; classifier is refit on source labels only with unsupervised domain-ratio source weights",
+      "target_shift": "partial support / covariate shift",
+      "objective": "file/class-balanced source RF empirical risk multiplied by clipped p(target|x)/p(source|x) weights from a domain-only logistic classifier"
+    }
+  ],
+  "pseudo_label_policy": {
+    "used": false,
+    "reason": "08-A no-transfer A-P predictions occupy only OR/B while target truth is unknown; self-training would risk reinforcing source bias. No selected 09-A candidate requires pseudo-labels.",
+    "threshold_sensitivity": "not_applicable; explicitly logged rather than fabricated"
+  },
+  "pseudo_target_protocol": {
+    "axis": "load_hp",
+    "tuning_loads": [
+      0,
+      1,
+      2
+    ],
+    "final_validation_load": 3,
+    "label_visibility": "hidden from all adaptation functions; revealed only after prediction for evaluation",
+    "independent_unit": "source file/group"
+  },
+  "selection": {
+    "primary_seed": 20260919,
+    "stability_seeds": [
+      20260919,
+      20260920,
+      20260921
+    ],
+    "tuning_only_rule": "All T2/T3 config selection and family selection use only loads 0/1/2 under the primary seed. Load3 is never consulted until family/config are frozen.",
+    "config_rank": [
+      "mean tuning file Macro-F1 desc",
+      "mean tuning min-class Recall desc",
+      "conservative config tie-break"
+    ],
+    "family_eligibility": {
+      "min_mean_macro_f1_gain_vs_A0": 0,
+      "worst_tuning_load_macro_f1_delta_floor": -0.05,
+      "no_new_zero_class_recall": true,
+      "simulated_max_predicted_class_share_ceiling": 0.8
+    },
+    "family_rank": [
+      "mean tuning file Macro-F1 desc",
+      "mean tuning min-class Recall desc",
+      "complexity preference T1 then T2 then T3"
+    ],
+    "final_load3_acceptance": {
+      "macro_f1_delta_floor": 0,
+      "min_class_recall_delta_floor": 0,
+      "no_new_zero_class_recall": true,
+      "simulated_max_predicted_class_share_ceiling": 0.8
+    },
+    "seed_stability_after_freeze": {
+      "held_load3_worst_macro_delta_floor": -0.05,
+      "all_seed_label_agreement_floor": 0.85
+    },
+    "A_P_safety_only_not_selection": {
+      "severe_collapse_max_class_share": 0.875,
+      "rule": "If the already-selected method causes severe A-P output collapse, fail 09-A; do not switch methods by inspecting A-P appearance."
+    }
+  },
+  "source_retention": {
+    "T1_T2": "exact source classifier is unchanged; verify serialized source classifier SHA and source prediction identity by construction",
+    "T3": "if selected, evaluate 4 frozen outer source folds with A-P unlabeled domain weights; compare to 07-A H1_RF frozen OOF",
+    "macro_f1_drop_floor": -0.02,
+    "no_class_recall_drop_below": -0.1
+  },
+  "domain_gap_evidence": {
+    "metric": "biased RBF MMD2 on independent-file mean vectors in source-standardized 26-D space",
+    "T1_T2": "compare source vs adapted target file means",
+    "T3": "compare target vs domain-weighted source file means",
+    "warning": "lower MMD is evidence of distribution proximity only, never proof of diagnostic correctness"
+  },
+  "final_real_target_run": "After family/config is frozen and held-load3 acceptance passes, apply exactly once to all 240 unlabeled A-P windows; save pre/post scores/predictions and final transfer bundle. No target accuracy/F1/Recall."
+}
