@@ -1,0 +1,83 @@
+{
+  "schema_version": "08B-patch-1.0",
+  "patch_id": "08B-VISUAL-PATCH-01",
+  "status": "passed",
+  "created_utc": "2026-09-20T06:37:00Z",
+  "reason": "Replace low-information, visually unbalanced three-family median bar chart with a directly traceable top-feature domain-shift figure.",
+  "source_word": {
+    "version": "V0.9",
+    "sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08",
+    "path": "/数学建模/08B/2025华为杯E题论文_步骤08_V0.9.docx"
+  },
+  "output_word": {
+    "version": "V0.9.1",
+    "sha256": "c3741e8b505f8726a3e72a799f1701344c3566a76ecab61c8c5880f16fc493d6",
+    "path": "/数学建模/08B/2025华为杯E题论文_步骤08_V0.9.1.docx",
+    "library_file_id": "libfile_acce1daf74c4819188ea7c5fe4da01ed"
+  },
+  "source_A_freeze_package_id": "FREEZE-08A-8cd7401f",
+  "changed_objects": [
+    {
+      "old": "图9 源—目标公共特征族的文件级标准化绝对均值偏移中位数",
+      "new": "图9 源—目标偏移最显著的8个公共特征",
+      "sha256": "48d5cad5ba03a8ee4c957b16775b7bd2a5596299a310e994bcf32260b625bdb7",
+      "source": "08-A feature_shift_file_level.csv"
+    },
+    {
+      "text": "5.3.1相邻一段由三类特征族中位数概述改为逐特征冻结证据：peak_abs/peak_to_peak/mean_abs/std/envelope_rms/rms/spectral_flatness/band_ratio_1500_3000。"
+    }
+  ],
+  "frozen_values_used": {
+    "peak_abs": 37.80667625763619,
+    "peak_to_peak": 36.132757614870364,
+    "mean_abs": 34.08387791453944,
+    "std": 27.136676289465704,
+    "envelope_rms": 27.136672467682374,
+    "rms": 27.12748193320321,
+    "spectral_flatness": 7.2740995149700245,
+    "band_ratio_1500_3000": 5.31784483266972
+  },
+  "unchanged_results": [
+    "MMD2=0.7922234132610413",
+    "domain classifier AUC mean=1.0",
+    "16/16 target files outside nearest source-class p95 radius",
+    "A-P no-transfer predictions B=10, OR=6",
+    "T1 selected alpha=0.25 and held-load3 gain=0",
+    "all target truth/accuracy boundaries",
+    "all tables 20-21 and all prior question1/question2 results"
+  ],
+  "validation": {
+    "page_count": 30,
+    "unchanged_pages_pixel_identical": "1-24,29-30",
+    "changed_pages_visually_checked": [
+      25,
+      26,
+      27,
+      28
+    ],
+    "before": {
+      "tables": 22,
+      "sections": 6,
+      "inline_shapes": 12,
+      "media": 13
+    },
+    "after": {
+      "tables": 22,
+      "sections": 6,
+      "inline_shapes": 12,
+      "media": 13
+    },
+    "object_counts_preserved": true,
+    "master_parts_byte_equal": [
+      "word/styles.xml",
+      "word/numbering.xml",
+      "word/theme/theme1.xml",
+      "word/fontTable.xml"
+    ],
+    "no_clipping_overlap_missing_glyphs": true,
+    "figure_caption_same_page": true,
+    "library_byte_identity": true
+  },
+  "pass_token": "08-B-V2026.09.20-c3741e8b-通过",
+  "next_allowed": "09-A"
+}
