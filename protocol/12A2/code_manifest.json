@@ -6,7 +6,7 @@
   "tracked_code": [
     {
       "path": "scripts/step12a2_gap_validations.py",
-      "git_blob_sha": "72a431dad845b80b8940a5685ca7cd2a2466d204"
+      "git_blob_sha": "2b1f8948439cff1bb31331f7e8fd16f94f4b3810"
     },
     {
       "path": ".github/workflows/step12a2_gap_validations.yml",
@@ -54,5 +54,12 @@
     "target A-P truth remains unknown; no target accuracy/F1/Recall",
     "no Word editing and no formal paper figures",
     "P0-01 must satisfy preregistered thresholds or STEP12-A2 fails"
+  ],
+  "implementation_fix_history": [
+    {
+      "issue": "09-A bundle uses feature_names rather than feature_order",
+      "fix_commit": "3f1648f5087e7ea8ed9bb52c474878313a157a93",
+      "scientific_protocol_changed": false
+    }
   ]
 }
