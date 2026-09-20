@@ -1,0 +1,35 @@
+{
+  "step_id": "11-B",
+  "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844",
+  "created_utc": "2026-09-20T15:38:44Z",
+  "source_A_freeze_package_id": "FREEZE-11A-1f812c22",
+  "source_A_run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "source_A_freeze_content_sha256": "5e001ea74638f7ebde24630844fa0af85eef71fbf47fc49cd7fa0598525aa317",
+  "source_word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+  "output_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "schema_version": "11B-1.0",
+  "latest_word_before": {
+    "version": "V1.1",
+    "artifact_id": "WORD-V1.1-49e30c62",
+    "path": "/数学建模/10B/2025华为杯E题论文_步骤10_V1.1.docx",
+    "library_file_id": "libfile_a581d1c2ab308191b3d744723618a233"
+  },
+  "output_word": {
+    "version": "V1.2",
+    "artifact_id": "WORD-V1.2-df1a4844",
+    "path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
+    "library_file_id": "libfile_00c22705998c819193201ec371963931"
+  },
+  "writeback_scope": [
+    "5.4.1 方法选择与解释对象",
+    "5.4.2 迁移过程解释",
+    "5.4.3 源域已知标签解释案例",
+    "5.4.4 目标域预测解释",
+    "5.4.5 解释验证与矛盾案例",
+    "5.4.6 局限与适用边界",
+    "5.4.7 问题四小结"
+  ],
+  "training": false,
+  "tuning": false,
+  "model_selection": false
+}
