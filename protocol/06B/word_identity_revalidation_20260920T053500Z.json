@@ -1,0 +1,98 @@
+{
+  "schema_version": "06B-word-identity-revalidation-1.0",
+  "purpose": "pre-07B minimal revalidation of the unique mother Word after byte-level hash drift",
+  "status": "passed",
+  "checked_utc": "2026-09-20T05:35:00Z",
+  "latest_word": {
+    "version": "V0.7.1",
+    "library_path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
+    "library_file_id": "libfile_916202dedb84819192dc67df70aea809",
+    "previously_recorded_sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+    "observed_current_sha256": "890aa7dff094d6d64795d2968cd16c78a9668d22e0da203d248e1f059bb4cb31"
+  },
+  "control_word": {
+    "version": "V0.7",
+    "observed_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+    "expected_sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+    "exact_match": true
+  },
+  "structure_checks": {
+    "media": 10,
+    "drawing": 9,
+    "vml_pict": 1,
+    "math": 5,
+    "math_para": 5,
+    "tables": 19,
+    "sections": 6,
+    "matches_06B_visual_patch_validation": true
+  },
+  "frozen_media_checks": {
+    "image8_sha256": "e17545a7f19b259b36742b13aac70f91b6754ede2ab22bdea4d54358e3c476f5",
+    "image9_sha256": "ad72b89a06bf750f4a7e2e2a9298d6f03a8e454973b1849b0b875949437b8b0d",
+    "image10_sha256": "d86babfd70978db4e7b853c124f00c2091c123d6309b223043ac90437a657ad7",
+    "matches_frozen_records": true
+  },
+  "package_diff_vs_V0_7": {
+    "changed_parts": [
+      "[Content_Types].xml",
+      "word/document.xml",
+      "word/media/image9.png",
+      "word/media/image10.png",
+      "word/numbering.xml",
+      "word/styles.xml"
+    ],
+    "styles_canonical_xml_equal": true,
+    "numbering_canonical_xml_equal": true,
+    "content_types_difference": "only the unused .wmf default declaration is absent in the current V0.7.1 package",
+    "wmf_payload_present": false,
+    "document_text_changes": "exactly the approved Figure 5/Figure 6 captions and their two case-analysis paragraphs from visual patch 01; no additional paragraph-text changes detected"
+  },
+  "render_regression": {
+    "pages_V0_7": 24,
+    "pages_current_V0_7_1": 24,
+    "changed_pages": [
+      20,
+      21,
+      22
+    ],
+    "pixel_identical_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      23,
+      24
+    ],
+    "matches_original_visual_patch_validation": true,
+    "visual_inspection_changed_pages": "passed; no clipping, overlap, missing glyphs, or figure displacement observed"
+  },
+  "classification": {
+    "substantive_content_drift": false,
+    "model_data_or_result_change": false,
+    "A_freeze_invalidation_required": false,
+    "finding": "non-substantive OOXML reserialization / unused content-type cleanup with content and rendered output equivalent to the passed 06-B visual patch"
+  },
+  "action": {
+    "historical_06B_records_immutable": true,
+    "latest_word_refrozen_to_current_bytes": true,
+    "new_artifact_id": "WORD-V0.7.1-890aa7df",
+    "CURRENT_ALLOWED_STEP_remains": "07-B",
+    "NEXT_ALLOWED_remains": "07-B",
+    "OPEN_P0_remains": []
+  }
+}
