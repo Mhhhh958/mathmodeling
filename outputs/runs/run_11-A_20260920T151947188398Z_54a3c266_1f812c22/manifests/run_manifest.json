@@ -1,0 +1,140 @@
+{
+  "schema_version": "11A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "step_id": "11-A",
+  "status": "completed",
+  "created_utc": "2026-09-20T15:19:47.184865Z",
+  "binding": {
+    "step_id": "11-A",
+    "git_commit": "06947a0991645b9f92a196dccf952c28ee34ac26",
+    "freeze09": "FREEZE-09A-26f99878",
+    "freeze10": "FREEZE-10A-4346ce31",
+    "model_sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+    "blueprint_sha256": "4236a794b003eb02bb8b296135a5dd51e20320930a612d67469fb1a28d72212a",
+    "run_config_sha256": "2fe3a12bdce5ec802f121f5f41368559d9ef4fe612372ff89e1bc9e79032cc24",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "54a3c2664f21f6083358b5ba977901062e476e61439963736558285bfea09b1d"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "06947a0991645b9f92a196dccf952c28ee34ac26",
+    "entrypoint": "scripts/step11a_interpretability.py",
+    "code_manifest": "protocol/11A/code_manifest.json"
+  },
+  "data": {
+    "source_files": 49,
+    "source_windows": 733,
+    "target_files": 16,
+    "target_windows": 240,
+    "features": 26,
+    "target_truth": "unknown"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+    "files": [
+      {
+        "relative_path": "artifacts/10A_reproduction_check.csv",
+        "size_bytes": 541,
+        "sha256": "98852d67dc635f90f5c6357cab7944e8d05d4d8a8ace026194ab3384e5ce467d"
+      },
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 6607,
+        "sha256": "7c37db9c4c9a9af1463951afa677a5db9e63d898651274195a7411a48a1cbcf1"
+      },
+      {
+        "relative_path": "artifacts/case_inventory.csv",
+        "size_bytes": 2312,
+        "sha256": "2cb889bcf7f5cbfbfeb5963f27e9be485ae675949a8e8fd90cb95b4ba035bf7d"
+      },
+      {
+        "relative_path": "artifacts/explanation_case_table.csv",
+        "size_bytes": 2956,
+        "sha256": "7c3f12deb3d7b9a17f36173219731142287b83f48b37a073e7ca3b44f4434560"
+      },
+      {
+        "relative_path": "artifacts/explanation_stability.csv",
+        "size_bytes": 1095,
+        "sha256": "c551aa523c0068df4dc175db36fb5c1cb040ad7ec0520094a90a4db31601ae56"
+      },
+      {
+        "relative_path": "artifacts/failure_and_contradiction_cases.csv",
+        "size_bytes": 837,
+        "sha256": "03f641fb3a3ac59b06b5c0d9fe4fd37b7044b195f8d5671c423748bb88fd0bd1"
+      },
+      {
+        "relative_path": "artifacts/faithfulness_ablation.csv",
+        "size_bytes": 3628,
+        "sha256": "0bc80f1fe76715ec751f55fc7d2c4c831afc17410a6bcbccb58742eeccc26744"
+      },
+      {
+        "relative_path": "artifacts/file_feature_contributions.csv",
+        "size_bytes": 46935,
+        "sha256": "c93cb31433c28a75ebde8b7ba8bfbf2b76144715f46b9390693622e2121f595c"
+      },
+      {
+        "relative_path": "artifacts/mechanism_consistency.csv",
+        "size_bytes": 2164,
+        "sha256": "276ed7f28dc446fc58e5cbf1f546c9c47766d7170accd0ded7bb65b2134add88"
+      },
+      {
+        "relative_path": "artifacts/migration_feature_shift.csv",
+        "size_bytes": 2596,
+        "sha256": "2bcb8288a09521cea0545eb085a9ddc41d0985dfeee2e6dc68fa22c74edc94f0"
+      },
+      {
+        "relative_path": "artifacts/problem4_analysis.json",
+        "size_bytes": 6912,
+        "sha256": "417137c4b6a940795db93d8580a39553b55be0066de5ac287e982fa99fec7b97"
+      },
+      {
+        "relative_path": "artifacts/sanity_random5_null.csv",
+        "size_bytes": 196929,
+        "sha256": "7f6d2de9184d5dc0ce1f5152bf54b064903e4ec9ad47ee3c7dbf653138f21503"
+      },
+      {
+        "relative_path": "artifacts/target_case_T1_input_shift.csv",
+        "size_bytes": 3420,
+        "sha256": "e0ec14f6f142ccd8b586d512213d4ec52f4171fac27c84864dd33a7fb5aebfc8"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 1865,
+        "sha256": "a669fe3e27b875025fe06770127b699e76d65643753647e39ea5e3c0068dd58c"
+      },
+      {
+        "relative_path": "artifacts/window_feature_contributions.csv",
+        "size_bytes": 339904,
+        "sha256": "908804cec36c700a03f0bebd03e04278ed4275b3e3d3ef7133e81f0948545152"
+      },
+      {
+        "relative_path": "figures/q4_T1_feature_shift.png",
+        "size_bytes": 78565,
+        "sha256": "9f04236c12c30672b0f1a03dedaedbdea67248ccb43ada013839c612c39978b7"
+      },
+      {
+        "relative_path": "figures/q4_case_top5_contributions.png",
+        "size_bytes": 280682,
+        "sha256": "4a34b6167a2dae7fdf4086951dbfb90a0c8cd4e83e17830fc84940698c488370"
+      },
+      {
+        "relative_path": "figures/q4_faithfulness_controls.png",
+        "size_bytes": 108869,
+        "sha256": "81b146663734568a2ee916f02dd6ccd6d1d90cac7613af41c7d589a93a6f3ecd"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 466,
+        "sha256": "84d0a70c656c1cc3085919068665e5c07e3873eb499fc33bc746e701fea23502"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 416,
+        "sha256": "10dd5a000d030997936df4c899ed604224960830302e3471c9a9bd0443d37524"
+      }
+    ],
+    "output_tree_sha256": "b2c31428e2b6287048030742b066dec631b6df6ee3d527e8e67d7ae2efd267cc"
+  },
+  "duration_seconds": 107.33105039596558
+}

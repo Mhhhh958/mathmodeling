@@ -1,0 +1,10 @@
+﻿case_id,domain,group_id,adjacent_pair_count,median_adjacent_spearman,median_adjacent_top5_jaccard,stability_case_pass,spearman_threshold,jaccard_threshold
+SRC_OR_REP,source,source_domain/cwru_12khz_fe/OR007@6_1.mat,14,0.9936733567655547,1.0,True,0.3,0.2
+SRC_IR_REP,source,source_domain/cwru_12khz_fe/IR014_1.mat,14,0.9702766771965179,1.0,True,0.3,0.2
+SRC_B_REP,source,source_domain/cwru_12khz_fe/B014_3.mat,14,0.8675016769513645,1.0,True,0.3,0.2
+SRC_N_REP,source,source_domain/cwru_48khz_normal/N_1_(1772rpm).mat,14,1.0,1.0,True,0.3,0.2
+SRC_OOF_DIFFICULT,source,source_domain/cwru_12khz_fe/OR021@3_2.mat,14,0.9836510205144461,0.8333333333333333,True,0.3,0.2
+TGT_STABLE_OR,target,target_domain/train_bearing_a_to_p/H.mat,14,0.9761823248143944,1.0,True,0.3,0.2
+TGT_STABLE_B,target,target_domain/train_bearing_a_to_p/O.mat,14,0.9897392119509444,1.0,True,0.3,0.2
+TGT_LOW_BOOT,target,target_domain/train_bearing_a_to_p/D.mat,14,0.9634596133190751,0.6666666666666666,True,0.3,0.2
+TGT_LOW_SETTING,target,target_domain/train_bearing_a_to_p/N.mat,14,0.9574976676779283,0.6666666666666666,True,0.3,0.2

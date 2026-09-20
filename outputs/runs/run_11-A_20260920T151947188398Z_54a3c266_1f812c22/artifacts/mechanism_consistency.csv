@@ -1,0 +1,10 @@
+﻿case_id,domain,group_id,true_label,explained_label,top5_mechanism_proxy_share,prototype_direction_alignment_rate,top5_mechanism_features,mechanism_note
+SRC_OR_REP,source,source_domain/cwru_12khz_fe/OR007@6_1.mat,OR,OR,0.4,1.0,rolloff95_hz;envelope_spectral_entropy,directional consistency with source true-class prototype; not causality and not target truth
+SRC_IR_REP,source,source_domain/cwru_12khz_fe/IR014_1.mat,IR,IR,1.0,0.8,spectral_flatness;band_ratio_1500_3000;rolloff95_hz;band_ratio_3000_5500;spectral_entropy,directional consistency with source true-class prototype; not causality and not target truth
+SRC_B_REP,source,source_domain/cwru_12khz_fe/B014_3.mat,B,B,1.0,1.0,crest_factor;envelope_kurtosis;impulse_factor;clearance_factor;kurtosis,directional consistency with source true-class prototype; not causality and not target truth
+SRC_N_REP,source,source_domain/cwru_48khz_normal/N_1_(1772rpm).mat,N,N,0.0,,,directional consistency with source true-class prototype; not causality and not target truth
+SRC_OOF_DIFFICULT,source,source_domain/cwru_12khz_fe/OR021@3_2.mat,OR,OR,0.8,0.5,envelope_kurtosis;impulse_factor;kurtosis;crest_factor,directional consistency with source true-class prototype; not causality and not target truth
+TGT_STABLE_OR,target,target_domain/train_bearing_a_to_p/H.mat,UNKNOWN_TRUTH,OR,0.8,0.25,clearance_factor;impulse_factor;kurtosis;envelope_kurtosis,directional consistency with source true-class prototype; not causality and not target truth
+TGT_STABLE_B,target,target_domain/train_bearing_a_to_p/O.mat,UNKNOWN_TRUTH,B,0.8,0.5,band_ratio_0_500;envelope_spectral_entropy;kurtosis;envelope_kurtosis,directional consistency with source true-class prototype; not causality and not target truth
+TGT_LOW_BOOT,target,target_domain/train_bearing_a_to_p/D.mat,UNKNOWN_TRUTH,OR,0.4,0.0,impulse_factor;clearance_factor,directional consistency with source true-class prototype; not causality and not target truth
+TGT_LOW_SETTING,target,target_domain/train_bearing_a_to_p/N.mat,UNKNOWN_TRUTH,OR,0.4,0.5,clearance_factor;envelope_kurtosis,directional consistency with source true-class prototype; not causality and not target truth

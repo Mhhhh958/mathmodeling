@@ -1,0 +1,190 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "11-A",
+  "freeze_package_id": "FREEZE-11A-1f812c22",
+  "status": "passed",
+  "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "versions": {
+    "code_version_id": "git:06947a0991645b9f92a196dccf952c28ee34ac26",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-09A-26f99878",
+      "FREEZE-10A-4346ce31",
+      "FEAT-23d45f5649dcd5f1"
+    ],
+    "run_config_sha256": "2fe3a12bdce5ec802f121f5f41368559d9ef4fe612372ff89e1bc9e79032cc24",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "method": "file/window feature occlusion on actual final RF inputs",
+    "top_k": 5,
+    "random_null_subsets": 200,
+    "stability_spearman_threshold": 0.3,
+    "stability_top5_jaccard_threshold": 0.2,
+    "faithfulness_case_pass_rate_floor": 0.6666666666666666,
+    "stability_case_pass_rate_floor": 0.6666666666666666
+  },
+  "real_results": [
+    {
+      "name": "selected_cases",
+      "value": [
+        "SRC_OR_REP",
+        "SRC_IR_REP",
+        "SRC_B_REP",
+        "SRC_N_REP",
+        "SRC_OOF_DIFFICULT",
+        "TGT_STABLE_OR",
+        "TGT_STABLE_B",
+        "TGT_LOW_BOOT",
+        "TGT_LOW_SETTING"
+      ]
+    },
+    {
+      "name": "faithfulness",
+      "value": {
+        "valid": true,
+        "case_pass_rate": 1.0,
+        "median_top5_drop": 0.44884402757514785,
+        "median_low5_drop": -0.009858594938436216,
+        "median_random_null_drop": 0.07751305157275795
+      }
+    },
+    {
+      "name": "stability",
+      "value": {
+        "valid": true,
+        "case_pass_rate": 1.0,
+        "median_case_spearman": 0.9761823248143944,
+        "median_case_top5_jaccard": 1.0
+      }
+    },
+    {
+      "name": "mechanism_consistency",
+      "value": {
+        "valid": true,
+        "source_representative_mean_top5_proxy_share": 0.6,
+        "source_representative_median_prototype_direction_alignment": 1.0,
+        "warning": "feature-direction consistency is not causal proof; target exact fault frequency is not asserted"
+      }
+    },
+    {
+      "name": "sanity_check",
+      "value": {
+        "valid": true,
+        "median_top5_null_percentile": 1.0,
+        "fraction_cases_percentile_ge_0_75": 1.0
+      }
+    },
+    {
+      "name": "migration_process",
+      "value": {
+        "median_relative_mean_gap_reduction": 0.25,
+        "mean_before_gap": 8.355199881359233,
+        "mean_after_gap": 6.266399911019425,
+        "warning": "marginal gap reduction describes T1 input alignment only; it is not target diagnostic accuracy"
+      }
+    },
+    {
+      "name": "contradiction_case_count",
+      "value": 3
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/explanation_case_table.csv"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/faithfulness_ablation.csv"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/explanation_stability.csv"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/mechanism_consistency.csv"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/failure_and_contradiction_cases.csv"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/figures/q4_case_top5_contributions.png"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/figures/q4_faithfulness_controls.png"
+    },
+    {
+      "path": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/figures/q4_T1_feature_shift.png"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "item": "target_truth",
+      "status": "unknown",
+      "effect": "target explanations cannot verify diagnosis correctness"
+    },
+    {
+      "item": "exact_target_fault_frequency",
+      "status": "not_asserted",
+      "reason": "target lacks frozen equivalent bearing geometry/exact RPM interface"
+    },
+    {
+      "item": "contradiction_cases",
+      "status": "retained",
+      "count": 3
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "explanation_case_table.csv",
+      "file_feature_contributions.csv",
+      "migration_feature_shift.csv",
+      "faithfulness_ablation.csv",
+      "explanation_stability.csv",
+      "mechanism_consistency.csv",
+      "failure_and_contradiction_cases.csv",
+      "problem4_analysis.json"
+    ],
+    "supported_conclusions": [
+      "Explanations are computed on the actual frozen T1(alpha=0.25)->RF pipeline input and file aggregation.",
+      "High-contribution feature occlusion is compared with low/random controls; random-subset sanity null is retained.",
+      "Adjacent overlapping-window explanation stability is quantified and failures are retained.",
+      "Mechanism proxy/prototype-direction agreement is descriptive, not causal; target truth remains unknown."
+    ],
+    "wording_limits": [
+      "do not call feature contribution causal",
+      "do not report A-P target accuracy/F1/Recall",
+      "do not claim exact target BPFO/BPFI/BSF/FTF match without frozen geometry/RPM",
+      "do not hide unstable or mechanism-inconsistent explanations"
+    ],
+    "approved_tables": [
+      "explanation_case_table.csv",
+      "faithfulness_ablation.csv",
+      "explanation_stability.csv",
+      "failure_and_contradiction_cases.csv"
+    ],
+    "approved_figures": [
+      "q4_T1_feature_shift.png",
+      "q4_case_top5_contributions.png",
+      "q4_faithfulness_controls.png"
+    ]
+  },
+  "unresolved_issues": [
+    "A-P ground truth remains unknown.",
+    "Occlusion uses a source file-balanced median reference and therefore explains sensitivity relative to that reference, not a unique causal decomposition.",
+    "Engineered-feature explanations do not localize raw waveform time samples unless a separate raw-signal mapping is introduced."
+  ],
+  "freeze": {
+    "created_utc": "2026-09-20T15:19:47.184865Z",
+    "content_sha256": "5e001ea74638f7ebde24630844fa0af85eef71fbf47fc49cd7fa0598525aa317",
+    "invalidation_dependencies": [
+      "09-A final transfer bundle changes",
+      "10-A final A-P labels/aggregation changes",
+      "04-A 26-feature data changes",
+      "11-A blueprint/code changes"
+    ]
+  }
+}

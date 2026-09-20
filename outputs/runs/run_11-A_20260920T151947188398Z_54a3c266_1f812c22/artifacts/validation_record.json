@@ -1,0 +1,42 @@
+{
+  "schema_version": "11A-validation-1.0",
+  "step_id": "11-A",
+  "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_bound_to_11A": true,
+    "final_09_10_model_identity_verified": true,
+    "model_sha_matches_frozen": true,
+    "target_10A_predictions_exactly_reproduced": true,
+    "target_truth_remains_unknown": true,
+    "source_known_label_cases_present": true,
+    "target_prediction_cases_present": true,
+    "faithfulness_validation_executed": true,
+    "stability_validation_executed": true,
+    "mechanism_consistency_executed": true,
+    "at_least_two_validation_types_effective": true,
+    "randomized_sanity_check_executed_and_effective": true,
+    "failure_contradiction_cases_retained": true,
+    "no_causal_claim": true,
+    "no_target_accuracy": true,
+    "word_not_edited": true
+  },
+  "evidence": {
+    "model": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/models/final_transfer_bundle.joblib sha256=82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+    "10A_reproduction": "max score diff=2.220e-16; 16/16 labels match",
+    "case_inventory": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/case_inventory.csv",
+    "faithfulness": "pass_rate=1.000; median top5 drop=0.448844; median low5 drop=-0.009859",
+    "stability": "pass_rate=1.000; median Spearman=0.976; median Jaccard=1.000",
+    "mechanism": "source representative proxy share=0.600; direction alignment median=1.000",
+    "sanity": "median top5 random-null percentile=1.000",
+    "contradictions": "3 retained in failure_and_contradiction_cases.csv"
+  },
+  "valid_validation_types": {
+    "faithfulness": true,
+    "stability": true,
+    "mechanism_consistency": true
+  },
+  "target_accuracy_reported": false,
+  "word_edit_performed": false
+}

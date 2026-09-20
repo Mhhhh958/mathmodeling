@@ -1,0 +1,4 @@
+﻿case_id,domain,group_id,true_label,explained_label,reasons,interpretation_limit
+SRC_OOF_DIFFICULT,source,source_domain/cwru_12khz_fe/OR021@3_2.mat,OR,OR,historical OOF misclassification/difficult case retained by design,explanation describes model response; mismatch is not hidden or converted into causal evidence
+TGT_STABLE_OR,target,target_domain/train_bearing_a_to_p/H.mat,UNKNOWN_TRUTH,OR,top mechanism-feature directions weakly aligned with predicted-class source prototype,explanation describes model response; mismatch is not hidden or converted into causal evidence
+TGT_LOW_BOOT,target,target_domain/train_bearing_a_to_p/D.mat,UNKNOWN_TRUTH,OR,top mechanism-feature directions weakly aligned with predicted-class source prototype,explanation describes model response; mismatch is not hidden or converted into causal evidence

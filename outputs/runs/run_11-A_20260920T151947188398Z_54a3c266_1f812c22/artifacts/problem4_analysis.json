@@ -1,0 +1,182 @@
+{
+  "final_model_identity": {
+    "transfer": "T1",
+    "alpha": 0.25,
+    "classifier": "STEP07 frozen H1_RF",
+    "features": 26,
+    "aggregation": "mean window class scores -> argmax",
+    "model_sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729"
+  },
+  "selected_cases": [
+    {
+      "case_id": "SRC_OR_REP",
+      "domain": "source",
+      "group_id": "source_domain/cwru_12khz_fe/OR007@6_1.mat",
+      "target_id": "",
+      "selection_role": "known-label representative OR",
+      "selection_evidence": "highest correct OOF true-class score",
+      "true_label": "OR",
+      "truth_status": "known_source",
+      "explained_label": "OR",
+      "tenA_final_label": "",
+      "final_model_label_matches_true": true,
+      "original_explained_class_score": 0.9968888888888888,
+      "input_space": "source common features -> frozen RF"
+    },
+    {
+      "case_id": "SRC_IR_REP",
+      "domain": "source",
+      "group_id": "source_domain/cwru_12khz_fe/IR014_1.mat",
+      "target_id": "",
+      "selection_role": "known-label representative IR",
+      "selection_evidence": "highest correct OOF true-class score",
+      "true_label": "IR",
+      "truth_status": "known_source",
+      "explained_label": "IR",
+      "tenA_final_label": "",
+      "final_model_label_matches_true": true,
+      "original_explained_class_score": 0.9920088016082567,
+      "input_space": "source common features -> frozen RF"
+    },
+    {
+      "case_id": "SRC_B_REP",
+      "domain": "source",
+      "group_id": "source_domain/cwru_12khz_fe/B014_3.mat",
+      "target_id": "",
+      "selection_role": "known-label representative B",
+      "selection_evidence": "highest correct OOF true-class score",
+      "true_label": "B",
+      "truth_status": "known_source",
+      "explained_label": "B",
+      "tenA_final_label": "",
+      "final_model_label_matches_true": true,
+      "original_explained_class_score": 0.9988940581616378,
+      "input_space": "source common features -> frozen RF"
+    },
+    {
+      "case_id": "SRC_N_REP",
+      "domain": "source",
+      "group_id": "source_domain/cwru_48khz_normal/N_1_(1772rpm).mat",
+      "target_id": "",
+      "selection_role": "known-label representative N",
+      "selection_evidence": "highest correct OOF true-class score",
+      "true_label": "N",
+      "truth_status": "known_source",
+      "explained_label": "N",
+      "tenA_final_label": "",
+      "final_model_label_matches_true": true,
+      "original_explained_class_score": 1.0,
+      "input_space": "source common features -> frozen RF"
+    },
+    {
+      "case_id": "SRC_OOF_DIFFICULT",
+      "domain": "source",
+      "group_id": "source_domain/cwru_12khz_fe/OR021@3_2.mat",
+      "target_id": "",
+      "selection_role": "known-label historical OOF difficult case",
+      "selection_evidence": "smallest OOF top-two score margin among OOF errors",
+      "true_label": "OR",
+      "truth_status": "known_source",
+      "explained_label": "OR",
+      "tenA_final_label": "",
+      "final_model_label_matches_true": true,
+      "original_explained_class_score": 0.9583292739853648,
+      "input_space": "source common features -> frozen RF"
+    },
+    {
+      "case_id": "TGT_STABLE_OR",
+      "domain": "target",
+      "group_id": "target_domain/train_bearing_a_to_p/H.mat",
+      "target_id": "H",
+      "selection_role": "stable predicted OR representative",
+      "selection_evidence": "window/vote/bootstrap all 1; highest top_model_score",
+      "true_label": "UNKNOWN_TRUTH",
+      "truth_status": "unknown_target",
+      "explained_label": "OR",
+      "tenA_final_label": "OR",
+      "final_model_label_matches_true": "",
+      "original_explained_class_score": 0.7398812790820156,
+      "input_space": "T1(alpha=0.25)-adapted common features -> frozen RF"
+    },
+    {
+      "case_id": "TGT_STABLE_B",
+      "domain": "target",
+      "group_id": "target_domain/train_bearing_a_to_p/O.mat",
+      "target_id": "O",
+      "selection_role": "stable predicted B representative",
+      "selection_evidence": "window/vote/bootstrap all 1; highest top_model_score",
+      "true_label": "UNKNOWN_TRUTH",
+      "truth_status": "unknown_target",
+      "explained_label": "B",
+      "tenA_final_label": "B",
+      "final_model_label_matches_true": "",
+      "original_explained_class_score": 0.5663567195767196,
+      "input_space": "T1(alpha=0.25)-adapted common features -> frozen RF"
+    },
+    {
+      "case_id": "TGT_LOW_BOOT",
+      "domain": "target",
+      "group_id": "target_domain/train_bearing_a_to_p/D.mat",
+      "target_id": "D",
+      "selection_role": "lowest bootstrap-stability target case",
+      "selection_evidence": "minimum frozen bootstrap official-label agreement",
+      "true_label": "UNKNOWN_TRUTH",
+      "truth_status": "unknown_target",
+      "explained_label": "OR",
+      "tenA_final_label": "OR",
+      "final_model_label_matches_true": "",
+      "original_explained_class_score": 0.4543644774328985,
+      "input_space": "T1(alpha=0.25)-adapted common features -> frozen RF"
+    },
+    {
+      "case_id": "TGT_LOW_SETTING",
+      "domain": "target",
+      "group_id": "target_domain/train_bearing_a_to_p/N.mat",
+      "target_id": "N",
+      "selection_role": "lowest cross-setting-vote remaining target case",
+      "selection_evidence": "minimum frozen 9-setting vote agreement after prior selections",
+      "true_label": "UNKNOWN_TRUTH",
+      "truth_status": "unknown_target",
+      "explained_label": "OR",
+      "tenA_final_label": "OR",
+      "final_model_label_matches_true": "",
+      "original_explained_class_score": 0.5109938371449287,
+      "input_space": "T1(alpha=0.25)-adapted common features -> frozen RF"
+    }
+  ],
+  "migration_process": {
+    "median_relative_mean_gap_reduction": 0.25,
+    "mean_before_gap": 8.355199881359233,
+    "mean_after_gap": 6.266399911019425,
+    "warning": "marginal gap reduction describes T1 input alignment only; it is not target diagnostic accuracy"
+  },
+  "faithfulness": {
+    "valid": true,
+    "case_pass_rate": 1.0,
+    "median_top5_drop": 0.44884402757514785,
+    "median_low5_drop": -0.009858594938436216,
+    "median_random_null_drop": 0.07751305157275795
+  },
+  "stability": {
+    "valid": true,
+    "case_pass_rate": 1.0,
+    "median_case_spearman": 0.9761823248143944,
+    "median_case_top5_jaccard": 1.0
+  },
+  "mechanism_consistency": {
+    "valid": true,
+    "source_representative_mean_top5_proxy_share": 0.6,
+    "source_representative_median_prototype_direction_alignment": 1.0,
+    "warning": "feature-direction consistency is not causal proof; target exact fault frequency is not asserted"
+  },
+  "sanity_check": {
+    "valid": true,
+    "median_top5_null_percentile": 1.0,
+    "fraction_cases_percentile_ge_0_75": 1.0
+  },
+  "validation_type_count": 3,
+  "contradiction_case_count": 3,
+  "target_truth": "unknown",
+  "target_accuracy_reported": false,
+  "causal_claim_made": false
+}
