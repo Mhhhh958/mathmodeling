@@ -1,9 +1,9 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r30",
-  "updated_utc": "2026-09-20T17:12:30Z",
-  "CURRENT_ALLOWED_STEP": "13-A1",
-  "LAST_PASS_TOKEN": "12-B-V2026.09.20-9c38c898-通过",
+  "state_version": "2026.09.20-r31",
+  "updated_utc": "2026-09-20T17:23:30Z",
+  "CURRENT_ALLOWED_STEP": "13-A2",
+  "LAST_PASS_TOKEN": "13-A1-V2026.09.20-24e90683-通过",
   "LATEST_WORD": {
     "version": "V1.3",
     "artifact_id": "WORD-V1.3-9c38c898",
@@ -16,45 +16,39 @@
     "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898"
   },
   "LATEST_FREEZE_PACKAGE": {
-    "step_id": "12-A2",
-    "freeze_package_id": "FREEZE-12A2-f107c2fa",
+    "step_id": "13-A1",
+    "freeze_package_id": "FREEZE-13A1-0eedc9bc",
     "status": "passed",
-    "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
-    "path": "protocol/12A2/latest_freeze_package.json",
-    "content_sha256": "3e9264b1fdaf3931d4f4f946221134ea02a9602fb6eafa07a22a90e58ea6bddc",
+    "run_id": "run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc",
+    "path": "protocol/13A1/latest_freeze_package.json",
+    "content_sha256": "24e90683ad27908f7035f18f971e553d1b5a2baaa1220f4bcf3a4fca32a3db99",
     "raw_data_version_id": "RAW-5a5dd129c91bfc64",
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "13-A1",
+  "NEXT_ALLOWED": "13-A2",
   "previous_gate": {
-    "step": "12-A2",
-    "pass_token": "12-A2-V2026.09.20-3e9264b1-通过",
-    "next_allowed": "12-B"
+    "step": "12-B",
+    "pass_token": "12-B-V2026.09.20-9c38c898-通过",
+    "next_allowed": "13-A1"
   },
   "current_step_record": {
-    "step": "12-B",
+    "step": "13-A1",
     "status": "passed",
-    "pass_token": "12-B-V2026.09.20-9c38c898-通过",
-    "next_allowed": "13-A1",
-    "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898",
-    "source_A_freeze_package_ids": [
-      "FREEZE-12A1-5e3e74e2",
-      "FREEZE-12A2-f107c2fa"
-    ],
-    "validation_record": "protocol/12B/validation_record.json",
-    "change_list": "protocol/12B/change_list.json",
-    "B_delivery": "protocol/12B/B_delivery.json",
-    "output_word_artifact_id": "WORD-V1.3-9c38c898",
-    "output_word_sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
-    "output_word_library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
-    "word_persistence_passed": true,
-    "official_format_master_preserved": true,
-    "visual_QA_pages": 48,
-    "mother_draft_incremental_edit_only": true,
-    "training_performed": false,
-    "tuning_performed": false,
-    "model_selection_performed": false
+    "pass_token": "13-A1-V2026.09.20-24e90683-通过",
+    "next_allowed": "13-A2",
+    "run_id": "run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc",
+    "freeze_package_id": "FREEZE-13A1-0eedc9bc",
+    "freeze_content_sha256": "24e90683ad27908f7035f18f971e553d1b5a2baaa1220f4bcf3a4fca32a3db99",
+    "validation_record": "protocol/13A1/validation_record.json",
+    "code_manifest": "protocol/13A1/code_manifest.json",
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
+    "final_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+    "final_source_model_artifact_id": "MODEL-SOURCE-4ee408ac96054e3b",
+    "latest_word_artifact_id": "WORD-V1.3-9c38c898",
+    "word_edit_performed": false,
+    "formal_paper_figure_generated": false
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -64,7 +58,7 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/12B/validation_record.json",
+    "latest_validation_record": "protocol/13A1/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
     "latest_word_library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
@@ -163,6 +157,14 @@
     "latest_12B_validation": "protocol/12B/validation_record.json",
     "latest_12B_change_list": "protocol/12B/change_list.json",
     "latest_12B_delivery": "protocol/12B/B_delivery.json",
-    "latest_12B_run_config": "protocol/12B/run_config.json"
+    "latest_12B_run_config": "protocol/12B/run_config.json",
+    "latest_13A1_freeze": "protocol/13A1/latest_freeze_package.json",
+    "latest_13A1_run": "protocol/13A1/latest_run_id.txt",
+    "latest_13A1_validation": "protocol/13A1/validation_record.json",
+    "latest_13A1_code_manifest": "protocol/13A1/code_manifest.json",
+    "latest_13A1_AP_table": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/A_P_final_answer_table.csv",
+    "latest_13A1_core_numbers": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv",
+    "latest_13A1_traceability": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv",
+    "latest_13A1_final_ids": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_ids.json"
   }
 }
