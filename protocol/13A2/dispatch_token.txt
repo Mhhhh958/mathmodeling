@@ -1,0 +1,7 @@
+STEP13-A2 dispatch
+requested_step=13-A2
+source_freeze=FREEZE-13A1-0eedc9bc
+previous_pass=13-A1-V2026.09.20-24e90683-通过
+mode=source_and_blueprint_freeze_only
+word_edit=false
+formal_figure_render=false
