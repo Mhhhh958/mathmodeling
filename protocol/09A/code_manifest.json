@@ -1,0 +1,52 @@
+{
+  "schema_version": "09A-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "frozen_inputs": [
+    {
+      "path": "protocol/09A/experiment_protocol.json",
+      "git_blob_sha": "ae8dd75abe85cb113518ff462922492e17564bd9"
+    },
+    {
+      "path": "protocol/09A/run_config.json",
+      "git_blob_sha": "da251be895f98ca8314e4ce4d7b5e0643d1e93db"
+    },
+    {
+      "path": "protocol/08A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-08A-8cd7401f"
+    },
+    {
+      "path": "protocol/07A/latest_freeze_package.json",
+      "freeze_id": "FREEZE-07A-7e8829fb"
+    },
+    {
+      "path": "protocol/00B/environment_manifest.json",
+      "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1"
+    }
+  ],
+  "tracked_code": [
+    {
+      "path": "scripts/step09a_unsupervised_transfer.py",
+      "git_blob_sha": "3b9d83d7a3e907d43dd2f2f32e26a427598b7aa4"
+    },
+    {
+      "path": "scripts/step08a_domain_diagnosis.py",
+      "git_blob_sha": "de55b28bd6a056cd8994eaf3504e5845b6659ef4",
+      "role": "imported aggregation/helper dependency"
+    },
+    {
+      "path": ".github/workflows/q3b_unsupervised_transfer.yml",
+      "git_blob_sha": "538ab300d57cd9a959ec9b2f24031c043377556a"
+    }
+  ],
+  "constraints": [
+    "49 source files / 733 windows, 16 target files / 240 windows, 26 frozen target-compatible features",
+    "Tuning and method selection only on pseudo-target loads 0/1/2; load3 held out until method/config freeze",
+    "T1 fixed alpha=0.25 from 08-A; T2 has exactly 3 ridge configs; T3 exactly 2 clip configs",
+    "A-P truth remains UNKNOWN_TRUTH / unknown_truth; no A-P Accuracy/F1/Recall",
+    "A-P prediction appearance cannot change selected family/config; severe collapse is safety blocker only",
+    "No pseudo-labeling; pseudo-label threshold sensitivity recorded as not applicable with rationale",
+    "No Word edit and no five-ledger edit in A"
+  ]
+}
