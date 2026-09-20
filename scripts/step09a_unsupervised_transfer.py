@@ -228,7 +228,10 @@ def candidate_summary(metrics_df,protocol):
     rows=[]
     configs=[("T1","0.25")]+[("T2",str(x)) for x in [0.01,0.1,1.0]]+[("T3",str(x)) for x in [2.0,5.0]]
     for method,setting in configs:
-        g=tuning[(tuning["method"]==method)&(tuning["setting"]==setting)].merge(base,on="load")
+        gm=tuning[tuning["method"]==method].copy()
+        gm["_setting_num"]=pd.to_numeric(gm["setting"],errors="coerce")
+        target_setting=float(setting)
+        g=gm[np.isclose(gm["_setting_num"].to_numpy(float),target_setting,rtol=0,atol=1e-12)].drop(columns=["_setting_num"]).merge(base,on="load")
         if len(g)!=3: raise RuntimeError(f"missing tuning rows {method}/{setting}")
         deltas=g["macro_f1"]-g["base_macro_f1"]
         new_zero=False
