@@ -1,0 +1,118 @@
+{
+  "schema_version": "07B-validation-1.0",
+  "step_id": "07-B",
+  "status": "passed",
+  "passed": true,
+  "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed",
+  "source_A": {
+    "freeze_package_id": "FREEZE-07A-7e8829fb",
+    "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+    "freeze_content_sha256": "2e4015619ac816cfcb0e6d7c60f71855875af0ca4339217178a204e06f5c5af8"
+  },
+  "word_chain": {
+    "source_version": "V0.7.1",
+    "source_sha256": "890aa7dff094d6d64795d2968cd16c78a9668d22e0da203d248e1f059bb4cb31",
+    "output_version": "V0.8",
+    "output_sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "mother_draft_incremental_edit_only": true,
+    "library_path": "/数学建模/07B/2025华为杯E题论文_步骤07_V0.8.docx",
+    "library_file_id": "libfile_e7508cc024548191a5fbf1b9ea5d63ec"
+  },
+  "checks": {
+    "base_final_figure_same_frozen_comparison": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/Base_vs_H1_paired_outer.csv",
+      "github_blob_sha": "46d0509c7710e29b846c14abd85d7140ea88220c",
+      "key_numbers": "fold deltas=+0.4951298701,-0.0634920635,+0.1904761905,+0.0727272727; median=+0.1316017316"
+    },
+    "ablation_figure_same_frozen_comparison": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/H2_corr_lr_paired_inner_comparison.csv",
+      "github_blob_sha": "b66d60617dd49f3760877be32e0e4d218b5afd83",
+      "key_numbers": "12 pairs; mean delta=-0.0124083093; median=0; min=-0.1380230880; max=+0.0431818182"
+    },
+    "evidence_backed_wording_and_failure_preserved": {
+      "passed": true,
+      "evidence": [
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/final_model_decision.json",
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/failure_comparison.json"
+      ],
+      "key_numbers": "Final pooled file Macro-F1=0.9675 vs Base=0.81845238095; Accuracy=0.95918367347 vs 0.79591836735; errors 10→2; H1 Fold1 delta=-0.06349206349; H2 no_gain_stop"
+    },
+    "q2_to_q3_interface_exact": {
+      "passed": true,
+      "evidence": [
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json",
+        "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/feature_order.csv"
+      ],
+      "model": "H1_RF / models/final_source_model.joblib",
+      "model_sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+      "params": "300 trees; max_depth=8; min_samples_leaf=1; max_features=sqrt; file_and_class_balanced; seed=20260919; n_jobs=1",
+      "features": 26,
+      "class_order": [
+        "OR",
+        "IR",
+        "B",
+        "N"
+      ],
+      "aggregation": "mean per-window normalized model score vector, then argmax",
+      "target_truth": "unknown"
+    },
+    "complexity_scope_exact": {
+      "passed": true,
+      "evidence": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/complexity_and_runtime.json",
+      "key_numbers": "Base 0.137933 ms/3148 B; H1 outer 7.283341 ms/231774 B; final 275708 B; final fit 0.354490 s; timing excludes raw feature extraction",
+      "complexity_scatter_created": false
+    },
+    "word_persistence": {
+      "passed": true,
+      "before": {
+        "media": 10,
+        "drawing": 9,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 19,
+        "sections": 6,
+        "inline_shapes": 9,
+        "pages": 24
+      },
+      "after": {
+        "media": 12,
+        "drawing": 11,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 20,
+        "sections": 6,
+        "inline_shapes": 11,
+        "pages": 28
+      },
+      "new_figures": [
+        {
+          "caption": "图7 Base与最终RF在四个冻结外层折上的文件级Macro-F1配对对照",
+          "sha256": "52bb9966baafc5a4ca4786e2c1511fbf5772885315bd684e29cf676cc96811f2"
+        },
+        {
+          "caption": "图8 相关性裁剪消融在12个冻结内层验证折上的文件级Macro-F1配对变化",
+          "sha256": "ca8c0129b2db61f2c042f4cb6390a08edace539480fc5c2582a0cb6038f8d24d"
+        }
+      ],
+      "new_table": "表19 问题2最终模型与问题3冻结接口"
+    },
+    "visual_QA": {
+      "passed": true,
+      "renderer": "/home/oai/skills/docx/render_docx.py",
+      "rendered_pages": 28,
+      "result": "all pages inspected; no clipping, overlap, missing glyphs, broken figures/tables; duplicate caption numbering fixed before final save"
+    },
+    "library_byte_identity": {
+      "passed": true,
+      "local_sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+      "materialized_library_sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645"
+    }
+  },
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
