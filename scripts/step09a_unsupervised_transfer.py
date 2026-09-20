@@ -274,8 +274,10 @@ def candidate_summary(metrics_df,protocol):
     return tab,best,str(win["method"]),str(win["setting"])
 
 def paired_deltas(base_files,transfer_files,truth,load):
-    b=base_files.merge(truth,on="group_id",validate="one_to_one")
-    t=transfer_files.merge(truth,on="group_id",validate="one_to_one")
+    predcols=["group_id","pred_label",*[f"score_{c}" for c in CLASSES]]
+    truth2=truth[["group_id","class_label"]].drop_duplicates()
+    b=base_files[predcols].merge(truth2,on="group_id",validate="one_to_one")
+    t=transfer_files[predcols].merge(truth2,on="group_id",validate="one_to_one")
     keep=["group_id","class_label","pred_label",*[f"score_{c}" for c in CLASSES]]
     b=b[keep].rename(columns={"pred_label":"A0_pred",**{f"score_{c}":f"A0_score_{c}" for c in CLASSES}})
     t=t[keep].rename(columns={"pred_label":"transfer_pred",**{f"score_{c}":f"transfer_score_{c}" for c in CLASSES}})
