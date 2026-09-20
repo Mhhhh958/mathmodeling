@@ -1,0 +1,60 @@
+{
+  "schema_version": "06A-1.0",
+  "step_id": "06-A",
+  "seed": 20260919,
+  "input_05A_freeze_package_id": "FREEZE-05A-ba6432cf",
+  "input_feature_data_version_id": "FEAT-23d45f5649dcd5f1",
+  "baseline_family": "multinomial_logistic_regression_only",
+  "rationale": "minimum viable, interpretable, low-compute baseline; do not run RF or historical repository model zoo in this step",
+  "features": "04-A 26 common features only",
+  "preprocessing": {
+    "imputation": "none; fail if any non-finite value is encountered",
+    "scaler": "StandardScaler fit on current training groups only, using file-balanced training-window weights",
+    "feature_selection": "none"
+  },
+  "candidate_grid": {
+    "C": [
+      0.1,
+      1,
+      10
+    ],
+    "imbalance_weighting": [
+      "file_balanced",
+      "file_and_class_balanced"
+    ]
+  },
+  "sample_weighting": {
+    "file_balanced": "each training file has equal total weight = 1/n_windows_in_file; normalize mean training-window weight to 1",
+    "file_and_class_balanced": "file-balanced weight multiplied by inverse number of training files in that class; normalize mean to 1"
+  },
+  "selection_rule": "within each outer fold, select among the 6 LR configurations by mean inner-validation file-level Macro-F1 across the frozen 3 inner folds; tie-break by minimum class recall averaged over inner folds, then lower C, then file_balanced before file_and_class_balanced",
+  "outer_refit": "refit selected configuration on all outer-train-pool groups; evaluate frozen outer-test groups exactly once",
+  "score_semantics": "use LogisticRegression predict_proba normalized outputs as model score vectors for the frozen mean-across-windows aggregation; they are not calibrated and must not be described as calibrated probabilities/confidence",
+  "calibration": {
+    "performed": false,
+    "reason": "no probability/confidence claim in 06-A; all output columns and prose use model score terminology"
+  },
+  "compute_budget": {
+    "inner_fits": 72,
+    "outer_refits": 4,
+    "total_model_fits": 76,
+    "max_iter": 2000,
+    "solver": "lbfgs",
+    "n_jobs": 1
+  },
+  "smoke_test": {
+    "source_boundary": "outer_fold=0, inner_fold=0 only; no outer-test use",
+    "max_train_windows_per_class": 12,
+    "max_validation_windows_per_class": 4,
+    "checks": [
+      "row alignment",
+      "26 feature dimensions",
+      "finite arrays",
+      "four-class label mapping",
+      "score matrix rows sum to 1",
+      "legal predicted labels"
+    ]
+  },
+  "no_word_edit": true,
+  "no_ledger_edit_in_A": true
+}
