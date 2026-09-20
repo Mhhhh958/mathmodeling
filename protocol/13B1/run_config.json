@@ -1,0 +1,91 @@
+{
+  "schema_version": "13B1-1.0",
+  "step_id": "13-B1",
+  "mode": "final_figure_render_and_file_validation_only",
+  "source_A_freeze_package_ids": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "source_13A2_run_id": "run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc",
+  "source_13A2_content_sha256": "002855b09ce348b49e2d450207e55a387df5941cced35744c386791fb820d460",
+  "latest_word_artifact_id": "WORD-V1.3-9c38c898",
+  "render": {
+    "png_dpi": 450,
+    "vector_formats": [
+      "svg",
+      "pdf"
+    ],
+    "raster_formats": [
+      "png"
+    ],
+    "svg_text_editable": true,
+    "pdf_fonttype": 42,
+    "white_background": true,
+    "transparent": false,
+    "tight_bbox": true,
+    "pad_inches": 0.03
+  },
+  "readability": {
+    "min_effective_font_pt": 6.5,
+    "min_effective_png_dpi": 300,
+    "max_effective_png_dpi": 600,
+    "width_tolerance_fraction": 0.05
+  },
+  "reproducibility_spot_check": [
+    "FIG-Q1-03",
+    "FIG-Q2-03",
+    "FIG-Q3-04",
+    "FIG-Q4-04"
+  ],
+  "forbidden_visible_english_words": [
+    "source",
+    "target",
+    "prediction",
+    "window",
+    "feature",
+    "class",
+    "load",
+    "file",
+    "fold",
+    "score"
+  ],
+  "allowed_technical_tokens": [
+    "OR",
+    "IR",
+    "B",
+    "N",
+    "RF",
+    "H1_RF",
+    "Base",
+    "A0",
+    "T1",
+    "T2",
+    "T3",
+    "CORAL",
+    "Macro-F1",
+    "OOF",
+    "BSF",
+    "FTF",
+    "Hilbert",
+    "Bootstrap",
+    "Top-5",
+    "Low-5",
+    "Spearman",
+    "Jaccard",
+    "MMD",
+    "MAT",
+    "hp",
+    "s",
+    "Hz"
+  ],
+  "constraints": {
+    "edit_word": false,
+    "retrain": false,
+    "retune": false,
+    "rerun_model_selection": false,
+    "recompute_model_outputs": false,
+    "use_only_frozen_source_snapshots": true,
+    "preserve_difficult_and_failure_samples": true,
+    "no_generated_image_for_technical_diagrams": true
+  }
+}
