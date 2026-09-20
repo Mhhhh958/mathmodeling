@@ -28,7 +28,7 @@
   "tracked_code": [
     {
       "path": "scripts/step09a_unsupervised_transfer.py",
-      "git_blob_sha": "3b9d83d7a3e907d43dd2f2f32e26a427598b7aa4"
+      "git_blob_sha": "252f6415a34c84453dda48b9defe888c6c6f68f4"
     },
     {
       "path": "scripts/step08a_domain_diagnosis.py",
@@ -48,5 +48,18 @@
     "A-P prediction appearance cannot change selected family/config; severe collapse is safety blocker only",
     "No pseudo-labeling; pseudo-label threshold sensitivity recorded as not applicable with rationale",
     "No Word edit and no five-ledger edit in A"
+  ],
+  "patch_history": [
+    {
+      "attempt_run_id": "github-actions-run-35495794862",
+      "issue": "candidate summary matched numeric config values by string, so T2 lambda 1 vs 1.0 representation caused a false missing-row failure",
+      "fix": "compare setting values numerically with exact tolerance",
+      "scientific_protocol_changed": false,
+      "run_config_changed": false,
+      "candidate_grid_changed": false,
+      "thresholds_changed": false,
+      "data_split_changed": false,
+      "code_commit": "08aaa9fd4f8acd60c71a12abae353ba5de3e4d1a"
+    }
   ]
 }
