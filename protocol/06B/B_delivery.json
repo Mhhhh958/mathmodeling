@@ -1,0 +1,57 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "06-B",
+  "status": "passed",
+  "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
+  "source_A_freeze_package_id": "FREEZE-06A-01576948",
+  "source_A_run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "latest_word_before": {
+    "version": "V0.6",
+    "sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+    "path": "/数学建模/05B/2025华为杯E题论文_步骤05_V0.6.docx",
+    "library_file_id": "libfile_f3e226e221f88191872c63e176fbc950"
+  },
+  "new_word_after": {
+    "version": "V0.7",
+    "sha256": "0e671b79e603713d3c3a9924cfc8ad41de52f329a7b89166ddfe7a8ffae0b650",
+    "path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.docx",
+    "library_file_id": "libfile_17abfce6b3b881918be58523cb1f5ef7"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "new_figures": [
+    {
+      "file": "/数学建模/06B/图4_文件级混淆矩阵.png",
+      "caption": "图4 49个独立源域文件的OOF文件级混淆矩阵",
+      "sha256": "e17545a7f19b259b36742b13aac70f91b6754ede2ab22bdea4d54358e3c476f5",
+      "source": "06-A pooled_file_confusion_matrix.csv"
+    },
+    {
+      "file": "/数学建模/06B/图5_IR007_0误判文件模型分数.png",
+      "caption": "图5 误判文件IR007_0.mat的文件级平均模型分数",
+      "sha256": "2dfe7b877142374e509efa57b1e91a8ba37af844d86483845755742c061fc51a",
+      "source": "06-A misclassified_files.csv"
+    },
+    {
+      "file": "/数学建模/06B/图6_N_0误判文件模型分数.png",
+      "caption": "图6 误判正常文件N_0.mat的文件级平均模型分数",
+      "sha256": "75c7bbf5cefa4b68885048da51302919b8e53b8c447f43329f7909d1c094201d",
+      "source": "06-A misclassified_files.csv"
+    }
+  ],
+  "new_tables": [
+    "表16 四个外层折的逻辑回归基线实算结果",
+    "表17 49个独立文件的OOF逐类评价指标",
+    "表18 文件级误判类型及冻结工况摘要"
+  ],
+  "change_list": "/数学建模/06B/本步论文变更单_06B.json",
+  "validation_record": "protocol/06B/validation_record.json",
+  "code_version_id": "CODE-6da78131d4bed122",
+  "run_config_sha256": "698fc6f7c9ad796178fd42d934d0872e3c26e9f538547005cd4753dbbeacce14",
+  "environment_sha256": "868d181a65863fe27446ee9307723200a78f0e26ce7a1ce47d9ca40e91e4ccf3",
+  "pass_token": "06-B-V2026.09.20-0e671b79-通过",
+  "next_allowed": "07-A"
+}
