@@ -1,0 +1,52 @@
+{
+  "schema_version": "12B-1.0",
+  "step_id": "12-B",
+  "run_id": "run_12-B_20260920T170837Z_f107c2fa_9c38c898",
+  "created_utc": "2026-09-20T17:08:37Z",
+  "source_audit_freeze": {
+    "id": "FREEZE-12A1-5e3e74e2",
+    "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+    "content_sha256": "3257a6ab60fe59f2fa5a1a1a135a633d6807bc003013900c58bf67bb6b9a0cff"
+  },
+  "source_validation_freeze": {
+    "id": "FREEZE-12A2-f107c2fa",
+    "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+    "content_sha256": "3e9264b1fdaf3931d4f4f946221134ea02a9602fb6eafa07a22a90e58ea6bddc"
+  },
+  "latest_word_before": {
+    "version": "V1.2",
+    "artifact_id": "WORD-V1.2-df1a4844",
+    "path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
+    "library_file_id": "libfile_00c22705998c819193201ec371963931",
+    "sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9"
+  },
+  "output_word": {
+    "version": "V1.3",
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx",
+    "library_file_id": "libfile_71ac40e4114081918d7d407bb92bb847",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5"
+  },
+  "writeback_scope": [
+    "摘要与全文边界表述",
+    "5.1 问题一：窗口参数敏感性、源方案敏感性与小样本边界",
+    "5.2 问题二：07-A开发OOF身份降调、12-A2固定模型跨载荷/随机种子补证",
+    "5.3 问题三：LOTO与源文件Bootstrap失效边界、A-P不确定性",
+    "5.4 问题四：D/N等预测不稳定边界与解释身份同步",
+    "模型检验与稳健性：新增12-A1/12-A2统一验证章节",
+    "模型评价与创新、结论：同步降调不支持的强结论"
+  ],
+  "new_tables": [
+    "表28 窗口参数敏感性",
+    "表29 固定H1_RF跨载荷与随机种子压力测试",
+    "表30 源选择方案敏感性",
+    "表31 A-P目标留一与源文件组成稳定性",
+    "表32 公式—代码—单位与版本一致性核对"
+  ],
+  "new_formal_figures": [],
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "target_label_supervision_performed": false
+}
