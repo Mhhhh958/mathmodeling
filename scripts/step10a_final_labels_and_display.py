@@ -534,7 +534,7 @@ def main():
         "same_PCA_projector_before_after":True,
         "source_true_vs_target_predicted_identity_explicit":True,
         "target_accuracy_not_computed":True,
-        "word_edit_performed":False
+        "word_not_edited":True
     }
     failed_checks=[k for k,v in validation_checks.items() if not bool(v)]
     passed=len(failed_checks)==0
