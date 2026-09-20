@@ -1,0 +1,48 @@
+{
+  "schema_version": "09B-change-1.0",
+  "step_id": "09-B",
+  "run_id": "run_09-B_20260920T080101000000Z_26f99878_cbbd4e50",
+  "source_word": "V0.9.1",
+  "output_word": "V1.0",
+  "source_A_freeze_package_id": "FREEZE-09A-26f99878",
+  "changes": [
+    {
+      "location": "5.3.4",
+      "action": "insert heading and frozen method/objective/workflow writeback",
+      "content": "T1/T2/T3 objectives; no pseudo-label self-training; no artificial loss curve"
+    },
+    {
+      "location": "5.3.4",
+      "action": "insert figure",
+      "object": "图10 多模拟目标域上的无迁移—候选迁移对照",
+      "sha256": "96990e0afb2b15bffa1b4e43e954b3bf0c0fface52c6b87fbbee5b295e8bbb1b",
+      "source": "09-A tuning_metrics_loads0_1_2.csv + held_load3_primary_metrics.csv"
+    },
+    {
+      "location": "5.3.4",
+      "action": "insert table",
+      "object": "表22 迁移稳定性、负迁移与类别塌缩检查",
+      "source": "09-A held/stability/negative-transfer/source-retention/A-P collapse artifacts"
+    },
+    {
+      "location": "5.3.4",
+      "action": "write transductive A-P boundary",
+      "content": "all 240 unlabeled target windows contribute to target moments; not independent blind test"
+    },
+    {
+      "location": "5.3.4",
+      "action": "write final selection and limitations",
+      "content": "T1 alpha=0.25 selected for simplicity/source preservation; no target accuracy claim"
+    }
+  ],
+  "unchanged_boundaries": [
+    "no retraining",
+    "no retuning",
+    "no model selection",
+    "no A-P target truth",
+    "no pseudo-label self-training",
+    "no rebuild of mother Word",
+    "Problem 4 and later placeholders retained"
+  ],
+  "word_sha256": "cbbd4e50959ab35d00abed5811e81667e5a28d97c5ada58f1f5eb081bc016b1e"
+}
