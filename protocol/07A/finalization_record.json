@@ -1,0 +1,200 @@
+{
+  "schema_version": "07A-1.0",
+  "step_id": "07-A",
+  "status": "passed",
+  "pass_token": "07-A-V2026.09.20-2e401561-通过",
+  "next_allowed": "07-B",
+  "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+  "freeze_package_id": "FREEZE-07A-7e8829fb",
+  "freeze_content_sha256": "2e4015619ac816cfcb0e6d7c60f71855875af0ca4339217178a204e06f5c5af8",
+  "inputs": {
+    "freeze05": "FREEZE-05A-ba6432cf",
+    "freeze06": "FREEZE-06A-01576948",
+    "feature_data_version": "FEAT-23d45f5649dcd5f1"
+  },
+  "blueprint_commit": "8b53fd909c1fd528625c1e25fec92d63ab3ca36a",
+  "code_version_id": "git:2a27ea8b8c684da035a18d1efc8844f1ca224df8",
+  "evidence_commit": "acd7408e37e7e0263714c52ec7c68c1486dd2a4f",
+  "github_actions_check_run_id": 106026455770,
+  "github_actions_conclusion": "success",
+  "hypotheses": {
+    "H1_RF": {
+      "purpose": "replace only model structure; keep same 26 common features and frozen groups",
+      "inner_gate": {
+        "base_mean_macro_f1": 0.7836670274170274,
+        "rf_mean_macro_f1": 0.934935434935435,
+        "delta": 0.15126840751840753,
+        "base_mean_min_class_recall": 0.6722222222222222,
+        "rf_mean_min_class_recall": 0.85,
+        "delta_min_class_recall": 0.1777777777777778,
+        "passed": true
+      },
+      "outer_paired_effect": {
+        "deltas": [
+          0.4951298701298702,
+          -0.0634920634920636,
+          0.19047619047619047,
+          0.07272727272727275
+        ],
+        "mean": 0.17371031746031745,
+        "median": 0.1316017316017316,
+        "min": -0.0634920634920636,
+        "max": 0.4951298701298702,
+        "positive_folds": 3,
+        "nonnegative_folds": 3,
+        "passed": true
+      },
+      "note": "3/4 frozen folds improved and one fold declined; this is not a statistical significance claim."
+    },
+    "H2_CORR_LR": {
+      "purpose": "fixed 0.95 train-only correlation pruning while retaining LR",
+      "paired_inner_effect": {
+        "mean_delta": -0.012408309283309252,
+        "median_delta": 0,
+        "min": -0.13802308802308783,
+        "max": 0.04318181818181821,
+        "positive_pairs": 3,
+        "nonnegative_pairs": 10,
+        "total_pairs": 12,
+        "mean_feature_count": 19.416666666666668
+      },
+      "decision": "no_gain_stop; threshold not retuned and outer test not opened"
+    }
+  },
+  "final_source_model": {
+    "family": "RandomForestClassifier",
+    "config": {
+      "n_estimators": 300,
+      "max_depth": 8,
+      "min_samples_leaf": 1,
+      "max_features": "sqrt",
+      "weighting": "file_and_class_balanced",
+      "random_state": 20260919,
+      "n_jobs": 1
+    },
+    "features": 26,
+    "feature_source": "04-A target-compatible common features only",
+    "trained_on_all_source_groups": 49,
+    "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
+    "sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+    "size_bytes": 275708,
+    "class_order": [
+      "OR",
+      "IR",
+      "B",
+      "N"
+    ],
+    "score_semantics": "uncalibrated normalized model scores"
+  },
+  "source_evaluation": {
+    "Base": {
+      "pooled_file_macro_f1": 0.8184523809523809,
+      "accuracy": 0.7959183673469388,
+      "recall": {
+        "OR": 0.7142857142857143,
+        "IR": 0.75,
+        "B": 1,
+        "N": 0.75
+      },
+      "errors": 10
+    },
+    "Final": {
+      "pooled_file_macro_f1": 0.9675,
+      "accuracy": 0.9591836734693877,
+      "recall": {
+        "OR": 0.9047619047619048,
+        "IR": 1,
+        "B": 1,
+        "N": 1
+      },
+      "errors": 2,
+      "confusion_matrix": [
+        [
+          19,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4
+        ]
+      ]
+    },
+    "error_transition": {
+      "base_wrong_final_correct": 9,
+      "base_correct_final_wrong": 1,
+      "both_wrong": 1
+    },
+    "remaining_failures": [
+      {
+        "file": "OR014@3_1.mat",
+        "truth": "OR",
+        "pred": "IR",
+        "load_hp": 1,
+        "fault_size_in": 0.014,
+        "position_clock": 3,
+        "score_OR": 0.4455050477857047,
+        "score_IR": 0.47063714911291266
+      },
+      {
+        "file": "OR021@3_2.mat",
+        "truth": "OR",
+        "pred": "B",
+        "load_hp": 2,
+        "fault_size_in": 0.021,
+        "position_clock": 3,
+        "score_OR": 0.4840395043612945,
+        "score_B": 0.5028509948335524
+      }
+    ]
+  },
+  "complexity": {
+    "hardware": "GitHub Actions ubuntu-24.04, 4 logical CPU, no GPU",
+    "timing_scope": "already-extracted 26-D window features; model-side preprocessing included; raw signal feature extraction excluded; all windows of one file as one batch; 20 warmups + 200 timed repeats",
+    "Base_LR": {
+      "parameters": 108,
+      "median_model_bytes": 3148,
+      "median_single_file_inference_ms": 0.13793299999065312
+    },
+    "Final_RF": {
+      "trees": 300,
+      "total_nodes": 11596,
+      "total_leaves": 5948,
+      "mean_tree_depth": 7.85,
+      "max_tree_depth": 8,
+      "model_bytes": 275708,
+      "global_fit_time_s": 0.3544895400000314,
+      "median_outer_model_single_file_inference_ms": 7.283341000032806
+    },
+    "tradeoff": "RF is about 52.8x slower in feature-ready single-file inference and about 87.6x larger than LR by these measured medians, but remains millisecond-scale and sub-megabyte."
+  },
+  "q3_interface": {
+    "path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json",
+    "target_input": "04-A target_interface/X_target_common.csv + target_window_metadata.csv",
+    "source_only_mechanism_features_used": false,
+    "target_truth": "unknown"
+  },
+  "guards": {
+    "same_05A_groups": true,
+    "same_seed": true,
+    "no_post_outer_retuning": true,
+    "no_statistical_significance_claim": true,
+    "word_edited_in_A": false,
+    "ledgers_edited_in_A": false
+  }
+}
