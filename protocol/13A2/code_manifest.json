@@ -1,0 +1,46 @@
+{
+  "schema_version": "13A2-1.0",
+  "manifest_type": "code_manifest",
+  "mode": "git",
+  "repository": "Mhhhh958/mathmodeling",
+  "tracked_code": [
+    {
+      "path": "scripts/step13a2_figure_blueprint_freeze.py",
+      "git_blob_sha": "1e59c7434f8014bc4a03aa17f361cc0c947eed78"
+    },
+    {
+      "path": "scripts/step13a2_figure_renderer.py",
+      "git_blob_sha": "b31ae81ff8d52fc07426c72ec6cf447a9ac9b013"
+    },
+    {
+      "path": ".github/workflows/step13a2_figure_blueprint_freeze.yml",
+      "git_blob_sha": "811457c801e7ae7d3cc53a0d1a616ab54a66eed4"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "protocol/13A2/run_config.json",
+      "git_blob_sha": "318ef3d3743928c84c4052b765de29cc312f5c9b"
+    },
+    {
+      "path": "protocol/13A1/latest_freeze_package.json",
+      "freeze_id": "FREEZE-13A1-0eedc9bc",
+      "content_sha256": "24e90683ad27908f7035f18f971e553d1b5a2baaa1220f4bcf3a4fca32a3db99"
+    },
+    {
+      "path": "protocol/00D/format_master.json",
+      "body_width_cm": 15.999
+    },
+    {
+      "path": "protocol/00B/environment_manifest.json",
+      "environment_version_id": "ENV-00B-UBUNTU2404-PY311-CPU-V1"
+    }
+  ],
+  "constraints": [
+    "source/blueprint freeze only; no retraining/tuning/model selection",
+    "no Word edit",
+    "no formal figure rendering in 13-A2",
+    "renderer may only use 13-A2 frozen source snapshots in 13-B1",
+    "all final plot text planned in Chinese except necessary abbreviations/math symbols"
+  ]
+}

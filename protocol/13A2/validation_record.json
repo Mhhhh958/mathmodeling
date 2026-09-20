@@ -1,0 +1,61 @@
+{
+  "schema_version": "13A2-validation-1.0",
+  "step_id": "13-A2",
+  "run_id": "run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_valid": true,
+    "13A1_source_freeze_passed": true,
+    "authoritative_source_runs_only": true,
+    "all_planned_figures_have_nonempty_source_snapshots": true,
+    "all_figures_have_section_pre_and_post_narrative": true,
+    "all_figures_have_single_primary_purpose": true,
+    "renderer_entry_present_for_every_figure": true,
+    "chinese_title_axis_legend_plan_passed": true,
+    "units_and_sample_scope_present": true,
+    "coordinate_limits_frozen": true,
+    "width_derived_from_00D_body_width": true,
+    "no_unrelated_2x2_2x3_dashboard_card_layout": true,
+    "difficulty_and_failure_samples_retained": true,
+    "no_word_edit_performed": true,
+    "no_formal_paper_figures_generated": true,
+    "no_final_figure_files_created": true
+  },
+  "evidence": [
+    {
+      "check": "源数据",
+      "evidence": "15 figures; 16 nonempty snapshots",
+      "file": "figure_source_manifest.csv",
+      "run_id": "run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc"
+    },
+    {
+      "check": "关键数字-Q2",
+      "evidence": "orthogonal Macro-F1=0.9509",
+      "file": "core_numbers_master.csv",
+      "run_id": "run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc"
+    },
+    {
+      "check": "关键数字-Q3",
+      "evidence": "LOTO=0.9375; min bootstrap retention=0.3833",
+      "file": "FIG-Q3-04.csv",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "check": "关键数字-Q4",
+      "evidence": "median Top-5 drop=0.4488; median Spearman=0.9762",
+      "file": "FIG-Q4-04.csv",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "check": "正文宽度",
+      "evidence": "21.001-2.501-2.501=15.999 cm",
+      "file": "protocol/00D/format_master.json",
+      "run_id": "run_00-D_20260919T154254724640Z_201f7b70_2bed85de"
+    }
+  ],
+  "planned_figure_count": 15,
+  "source_snapshot_count": 16,
+  "word_edit_performed": false,
+  "formal_paper_figures_generated": false
+}

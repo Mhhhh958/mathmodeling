@@ -1,0 +1,123 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "13-A2",
+  "freeze_package_id": "FREEZE-13A2-90264cb7",
+  "status": "passed",
+  "run_id": "run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc",
+  "versions": {
+    "code_version_id": "git:024d40cc79ee18473f9981a049d2b7181580ce58",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-13A1-0eedc9bc"
+    ],
+    "run_config_sha256": "662b014ba453a353841906330ef0d1f45a001ace7c2ad43318530836ff0677fa",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260921,
+  "parameters": {
+    "figure_count": 15,
+    "body_width_cm": 15.999,
+    "width_classes_cm": {
+      "full": 15.999,
+      "medium": 13.59915,
+      "compact": 11.51928
+    },
+    "final_rendering_performed": false,
+    "word_edit_performed": false
+  },
+  "real_results": [
+    {
+      "name": "final_figure_count",
+      "value": 15
+    },
+    {
+      "name": "framework_figure_count",
+      "value": 4
+    },
+    {
+      "name": "empirical_figure_count",
+      "value": 11
+    },
+    {
+      "name": "source_snapshot_count",
+      "value": 16
+    },
+    {
+      "name": "body_width_cm",
+      "value": 15.999
+    },
+    {
+      "name": "table_preferred_count",
+      "value": 4
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/final_figure_inventory.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_section_locator.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/question_framework_decision.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/research_figure_visual_spec.json"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/caption_drafts.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_traceability_index.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_source_manifest.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/coordinate_limits.json"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_type_plan.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/table_preference_decisions.csv"
+    },
+    {
+      "path": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/validation_record.json"
+    }
+  ],
+  "b_handoff": {
+    "next_step": "13-B1",
+    "required_data": [
+      "final_figure_inventory.csv",
+      "figure_section_locator.csv",
+      "research_figure_visual_spec.json",
+      "caption_drafts.csv",
+      "figure_traceability_index.csv",
+      "figure_source_manifest.csv",
+      "coordinate_limits.json",
+      "figure_sources/"
+    ],
+    "renderer": "scripts/step13a2_figure_renderer.py",
+    "rules": [
+      "render only from this 13-A2 source snapshot package",
+      "do not retrain/retune/reselect models",
+      "keep each figure in its frozen section",
+      "do not combine unrelated evidence",
+      "preserve difficult/failure cases",
+      "use Chinese figure text and 00-D-derived widths"
+    ]
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-20T17:43:14.251398+00:00",
+    "content_sha256": "002855b09ce348b49e2d450207e55a387df5941cced35744c386791fb820d460",
+    "invalidation_dependencies": [
+      "13-A1 freeze identity changes",
+      "authoritative source run/result changes",
+      "00-D page width/margins change",
+      "figure list/source/renderer changes"
+    ]
+  }
+}

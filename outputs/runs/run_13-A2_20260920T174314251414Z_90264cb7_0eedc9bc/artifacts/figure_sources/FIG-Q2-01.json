@@ -1,0 +1,69 @@
+{
+  "figure_id": "FIG-Q2-01",
+  "nodes": [
+    {
+      "id": "i",
+      "text": "49个独立源文件 + 26维公共特征",
+      "evidence": {
+        "files": 49.0,
+        "features": 26.0
+      }
+    },
+    {
+      "id": "g",
+      "text": "按原始文件分组的嵌套验证",
+      "evidence": "05-A冻结外层/内层分组"
+    },
+    {
+      "id": "b",
+      "text": "Base逻辑回归基线",
+      "evidence": {
+        "Macro-F1": 0.8184523809523809
+      }
+    },
+    {
+      "id": "h",
+      "text": "H1_RF单因素改进并冻结",
+      "evidence": {
+        "development_Macro-F1": 0.9675,
+        "trees": 300.0,
+        "depth": 8.0
+      }
+    },
+    {
+      "id": "v",
+      "text": "固定模型跨载荷正交压力测试",
+      "evidence": {
+        "Macro-F1": 0.9508739837398374,
+        "min_recall": 0.9047619047619048
+      }
+    },
+    {
+      "id": "o",
+      "text": "问题三接口：冻结RF + 26维特征",
+      "evidence": "MODEL-SOURCE-4ee408ac96054e3b"
+    }
+  ],
+  "edges": [
+    [
+      "i",
+      "g"
+    ],
+    [
+      "g",
+      "b"
+    ],
+    [
+      "b",
+      "h"
+    ],
+    [
+      "h",
+      "v"
+    ],
+    [
+      "v",
+      "o"
+    ]
+  ]
+}

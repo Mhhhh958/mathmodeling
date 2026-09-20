@@ -1,0 +1,54 @@
+{
+  "figure_id": "FIG-Q4-01",
+  "nodes": [
+    {
+      "id": "i",
+      "text": "T1适配后的26维目标输入",
+      "evidence": {
+        "alpha": 0.25
+      }
+    },
+    {
+      "id": "m",
+      "text": "冻结H1_RF文件级预测",
+      "evidence": "MODEL-TRANSFER-82c6b6ba4d2dd557"
+    },
+    {
+      "id": "e",
+      "text": "逐特征遮蔽贡献",
+      "evidence": "源域独立文件均值的中位数作为参考"
+    },
+    {
+      "id": "c",
+      "text": "源域已知标签/目标预测案例",
+      "evidence": "9个冻结解释案例"
+    },
+    {
+      "id": "v",
+      "text": "忠实性 + 相邻窗口稳定性 + 机理旁证",
+      "evidence": {
+        "top5_drop_median": 0.4488440275751478,
+        "spearman_median": 0.9761823248143944,
+        "jaccard_median": 1.0
+      }
+    }
+  ],
+  "edges": [
+    [
+      "i",
+      "m"
+    ],
+    [
+      "m",
+      "e"
+    ],
+    [
+      "e",
+      "c"
+    ],
+    [
+      "c",
+      "v"
+    ]
+  ]
+}
