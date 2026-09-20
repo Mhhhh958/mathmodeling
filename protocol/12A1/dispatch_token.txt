@@ -1,0 +1,5 @@
+12-A1 formal evidence audit 2026-09-20T16:05:00Z
+run_config_commit=494b9c8d362dbe9539fdb0f4058401a8ca4fc5ba
+audit_script_commit=31c8738bd41352ccdd37766a1a6a4d0a46fd2dd3
+workflow_commit=b60aa558936df2f1a52d7e2bbdc31e30fb37c76f
+code_manifest_commit=c66413bbc6d0e3fa0b60be633d8e73f01c8e5b3c
