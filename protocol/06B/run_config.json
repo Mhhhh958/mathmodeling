@@ -1,0 +1,22 @@
+{
+  "schema_version": "06B-1.0",
+  "step_id": "06-B",
+  "source_A_freeze_package_id": "FREEZE-06A-01576948",
+  "source_A_freeze_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
+  "source_A_run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "latest_word_before_version": "V0.6",
+  "latest_word_before_sha256": "f1131a5f160bf53821d87e88be611b93f26f916d5941596bc58387f26bcf3026",
+  "output_word_version": "V0.7",
+  "writeback_scope": [
+    "baseline model and training boundary",
+    "outer-fold file-level results",
+    "OOF file confusion matrix",
+    "per-class file metrics",
+    "misclassification/failure cases",
+    "score semantics and limitations"
+  ],
+  "derived_visualizations_from_frozen_A_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
