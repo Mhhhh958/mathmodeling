@@ -10,7 +10,7 @@
   "source_13A2_content_sha256": "002855b09ce348b49e2d450207e55a387df5941cced35744c386791fb820d460",
   "latest_word_artifact_id": "WORD-V1.3-9c38c898",
   "render": {
-    "png_dpi": 450,
+    "png_dpi": 600,
     "vector_formats": [
       "svg",
       "pdf"
