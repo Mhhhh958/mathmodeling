@@ -1,0 +1,43 @@
+{
+  "schema_version": "10A-validation-1.0",
+  "step_id": "10-A",
+  "run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_bound_to_10A": true,
+    "freeze09_passed_and_bound": true,
+    "step09_frozen_bundle_sha_matches": true,
+    "bundle_method_T1_alpha025": true,
+    "A_P_truth_unavailable": true,
+    "exact_16_files_A_to_P_once_each": true,
+    "exact_15_windows_each": true,
+    "label_mapping_consistent": true,
+    "official_aggregation_fixed_before_run": true,
+    "step09_file_results_exactly_reproduced": true,
+    "no_manual_label_adjustment": true,
+    "random_seed_window_bootstrap_checked": true,
+    "reasonable_aggregation_and_alpha_sensitivity_checked": true,
+    "mechanism_side_evidence_for_all_16": true,
+    "low_confidence_requires_two_evidence_categories": true,
+    "uncalibrated_scores_not_called_correctness_probability": true,
+    "same_PCA_projector_before_after": true,
+    "source_true_vs_target_predicted_identity_explicit": true,
+    "target_accuracy_not_computed": true,
+    "word_not_edited": true
+  },
+  "failed_checks": [],
+  "evidence": {
+    "final_table": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv",
+    "window_recompute": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_recomputed_window_predictions.csv",
+    "step09_reproduction": "max class-score difference=9.021e-17; labels_match=True",
+    "stability": "min 9-setting agreement=0.333; min bootstrap agreement=0.657",
+    "low_confidence": "13 files: A,B,C,D,E,F,G,I,J,L,N,O,P",
+    "mechanism": "mechanism prototype agrees with model for 5/16 files",
+    "visualization": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/figures/transfer_display_before_after.png",
+    "model_sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+    "input_freeze": "FREEZE-09A-26f99878"
+  },
+  "target_accuracy_reported": false,
+  "word_edit_performed": false
+}

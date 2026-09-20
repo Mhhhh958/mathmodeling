@@ -1,0 +1,65 @@
+{
+  "final_labels": {
+    "A": "OR",
+    "B": "B",
+    "C": "OR",
+    "D": "OR",
+    "E": "B",
+    "F": "OR",
+    "G": "B",
+    "H": "OR",
+    "I": "B",
+    "J": "B",
+    "K": "OR",
+    "L": "B",
+    "M": "OR",
+    "N": "OR",
+    "O": "B",
+    "P": "B"
+  },
+  "prediction_counts": {
+    "OR": 8,
+    "IR": 0,
+    "B": 8,
+    "N": 0
+  },
+  "changed_vs_no_transfer_files": [
+    "C",
+    "D"
+  ],
+  "mean_window_file_agreement": 0.8625,
+  "min_cross_setting_vote_agreement": 0.3333333333333333,
+  "min_bootstrap_official_agreement": 0.6566666666666666,
+  "low_confidence_files": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "J",
+    "L",
+    "N",
+    "O",
+    "P"
+  ],
+  "very_low_confidence_files": [
+    "C",
+    "D",
+    "J",
+    "L",
+    "N"
+  ],
+  "mechanism_prediction_agreement_count": 5,
+  "pca_explained_variance_ratio": [
+    0.4689227474774453,
+    0.2096931957920318
+  ],
+  "target_truth": "unknown",
+  "target_accuracy_reported": false,
+  "score_warning": "uncalibrated scores are not correctness probabilities",
+  "visualization_warning": "PCA clustering is descriptive only and does not prove target correctness",
+  "problem3_result_analysis": "Final answer is the fixed mean-score aggregation of STEP09 T1(alpha=0.25) frozen outputs. Stability uses only fixed-model sensitivity/resampling; no retraining or target-label tuning occurred."
+}

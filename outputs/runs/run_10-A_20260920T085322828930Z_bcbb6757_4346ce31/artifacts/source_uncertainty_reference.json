@@ -1,0 +1,8 @@
+{
+  "reference_population": "correct STEP07 source OOF independent files",
+  "n_files": 47,
+  "top_score_q10": 0.6183479480669369,
+  "margin_q10": 0.3590954969416603,
+  "entropy_q90": 0.6227087485565435,
+  "interpretation": "source-derived descriptive thresholds only; not target correctness calibration"
+}

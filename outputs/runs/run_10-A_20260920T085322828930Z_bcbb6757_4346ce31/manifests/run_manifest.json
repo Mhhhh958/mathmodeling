@@ -1,0 +1,132 @@
+{
+  "schema_version": "10A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31",
+  "step_id": "10-A",
+  "status": "completed",
+  "created_utc": "2026-09-20T08:53:22.825550Z",
+  "binding": {
+    "step_id": "10-A",
+    "code_commit": "a99bca7d7b7a924487f8cd56cbb60961f53393f0",
+    "freeze09": "FREEZE-09A-26f99878",
+    "model_sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+    "run_config_sha256": "d1295df374ad0811d2772260f57e633cc6998937af4929537b1b058a6b6f8ee9",
+    "inference_protocol_sha256": "2a2045fb0064815461127792311cd8f8007e379894b0f8f8046e92a2c3fad599",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "bcbb675734c0f494dded75a9e28597211722bab74362c740b0d717b25b67e484"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "a99bca7d7b7a924487f8cd56cbb60961f53393f0",
+    "entrypoint": "scripts/step10a_final_labels_and_display.py",
+    "code_manifest": "protocol/10A/code_manifest.json"
+  },
+  "data": {
+    "source_files": 49,
+    "source_windows": 733,
+    "target_files": 16,
+    "target_windows": 240,
+    "features": 26,
+    "target_truth": "unknown"
+  },
+  "protocol": {
+    "path": "protocol/10A/inference_protocol.json",
+    "sha256": "2a2045fb0064815461127792311cd8f8007e379894b0f8f8046e92a2c3fad599"
+  },
+  "config": {
+    "path": "protocol/10A/run_config.json",
+    "sha256": "d1295df374ad0811d2772260f57e633cc6998937af4929537b1b058a6b6f8ee9"
+  },
+  "environment": {
+    "manifest": "protocol/00B/environment_manifest.json",
+    "sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime": "manifests/environment_runtime.json"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31",
+    "files": [
+      {
+        "relative_path": "artifacts/A_P_aggregation_alpha_sensitivity.csv",
+        "size_bytes": 2311,
+        "sha256": "666010ed866ff1d761b27fea0f961448dd29e132460049af0a12a1f9a66312af"
+      },
+      {
+        "relative_path": "artifacts/A_P_bootstrap_seed_stability.csv",
+        "size_bytes": 1124,
+        "sha256": "0043156d8c78de364db4e458ca40e331790a8af7b37bbc8b98f27b2e432ebd8d"
+      },
+      {
+        "relative_path": "artifacts/A_P_final_label_table.csv",
+        "size_bytes": 15164,
+        "sha256": "9c70a8c7ee043d4c0d4d1f872901cbbe2a3a6f8b9bacf0ec0705b4f876f3afd6"
+      },
+      {
+        "relative_path": "artifacts/A_P_final_labels_for_answer.csv",
+        "size_bytes": 96,
+        "sha256": "16fefd9c4af41d528f4988672652a7eb3e787cf81fb271b13fa8021f277f4cee"
+      },
+      {
+        "relative_path": "artifacts/A_P_no_transfer_vs_transfer.csv",
+        "size_bytes": 2454,
+        "sha256": "c67a313a75a37799162a47ea30403a0590d03c50a104e3416c9740ac7457ffc7"
+      },
+      {
+        "relative_path": "artifacts/A_P_recomputed_window_predictions.csv",
+        "size_bytes": 43707,
+        "sha256": "225f705113f39490e535d4970e95053cfa5dd40e77b38f61b3f4173bff030d20"
+      },
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 5359,
+        "sha256": "12ea2404fcf61c1a8424fe8a1ff3bb6ca4a06511efd1b44f7d125c739f19c60c"
+      },
+      {
+        "relative_path": "artifacts/low_confidence_cases.csv",
+        "size_bytes": 12838,
+        "sha256": "99b8b9cb662eef3f9da0b8b8e781b8c82469226bbafce4857d60cfc807c2ee4e"
+      },
+      {
+        "relative_path": "artifacts/mechanism_side_evidence.csv",
+        "size_bytes": 6747,
+        "sha256": "738f1c303b7c87b7953b1e0bb6d99a72f1cf2597afa7e81aacccdbbef2708466"
+      },
+      {
+        "relative_path": "artifacts/problem3_result_analysis.json",
+        "size_bytes": 1386,
+        "sha256": "492e320136cf0f9e0c9d1a6f8c8b11e110cf65e288bc655d529b9978d9d9b27e"
+      },
+      {
+        "relative_path": "artifacts/source_uncertainty_reference.json",
+        "size_bytes": 306,
+        "sha256": "e74d01a44a20caef63ed80787cf25a703af56b5b6d06f4f37c9b68a2d4588442"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 2043,
+        "sha256": "e86d87e7e59c5691b1de2354512fc8b1616428e1d28c74c999589c6bdd2a4170"
+      },
+      {
+        "relative_path": "figures/mechanism_prototype_side_evidence.png",
+        "size_bytes": 74137,
+        "sha256": "a0cd3ba4898794858dc9223f9fa088d3d990b7379bfc4d468f9ce7289f5d0502"
+      },
+      {
+        "relative_path": "figures/transfer_display_before_after.png",
+        "size_bytes": 110919,
+        "sha256": "197524425399bf8f7a3eb4e89aff932426458bf94fc4f05198aac175ba1b39fa"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 466,
+        "sha256": "0b6019441477873e5b5d97645a1b23ef2e2df9c80e1b658cbd34d877339bb38d"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 416,
+        "sha256": "10dd5a000d030997936df4c899ed604224960830302e3471c9a9bd0443d37524"
+      }
+    ],
+    "output_tree_sha256": "e8b9fa0a39cece7ebb4f52ce16c5b66360430e45e4792721a8c3ca482023fce2"
+  },
+  "duration_seconds": 1.4615190029144287
+}

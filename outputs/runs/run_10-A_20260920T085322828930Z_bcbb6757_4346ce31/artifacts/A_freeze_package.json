@@ -1,0 +1,194 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "10-A",
+  "freeze_package_id": "FREEZE-10A-4346ce31",
+  "status": "passed",
+  "run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31",
+  "versions": {
+    "code_version_id": "git:a99bca7d7b7a924487f8cd56cbb60961f53393f0",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-09A-26f99878",
+      "FEAT-23d45f5649dcd5f1"
+    ],
+    "run_config_sha256": "d1295df374ad0811d2772260f57e633cc6998937af4929537b1b058a6b6f8ee9",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": [
+    20260919,
+    20260920,
+    20260921
+  ],
+  "parameters": {
+    "frozen_transfer_method": "T1",
+    "alpha": 0.25,
+    "features": 26,
+    "class_order": [
+      "OR",
+      "IR",
+      "B",
+      "N"
+    ],
+    "official_aggregation": "mean of 15 window class scores then argmax",
+    "sensitivity_alpha": [
+      0.2,
+      0.25,
+      0.3
+    ],
+    "sensitivity_aggregations": [
+      "mean",
+      "median",
+      "majority"
+    ],
+    "bootstrap_replicates_per_seed": 200
+  },
+  "real_results": [
+    {
+      "name": "A_P_final_labels",
+      "value": {
+        "A": "OR",
+        "B": "B",
+        "C": "OR",
+        "D": "OR",
+        "E": "B",
+        "F": "OR",
+        "G": "B",
+        "H": "OR",
+        "I": "B",
+        "J": "B",
+        "K": "OR",
+        "L": "B",
+        "M": "OR",
+        "N": "OR",
+        "O": "B",
+        "P": "B"
+      }
+    },
+    {
+      "name": "prediction_counts",
+      "value": {
+        "OR": 8,
+        "IR": 0,
+        "B": 8,
+        "N": 0
+      }
+    },
+    {
+      "name": "changed_vs_no_transfer",
+      "value": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "name": "stability",
+      "value": {
+        "min_cross_setting_vote_agreement": 0.3333333333333333,
+        "min_bootstrap_agreement": 0.6566666666666666
+      }
+    },
+    {
+      "name": "low_confidence_files",
+      "value": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "I",
+        "J",
+        "L",
+        "N",
+        "O",
+        "P"
+      ]
+    },
+    {
+      "name": "mechanism_prototype_agreement_count",
+      "value": 5
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv"
+    },
+    {
+      "path": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_aggregation_alpha_sensitivity.csv"
+    },
+    {
+      "path": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_bootstrap_seed_stability.csv"
+    },
+    {
+      "path": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/mechanism_side_evidence.csv"
+    },
+    {
+      "path": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/figures/transfer_display_before_after.png"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "item": "target_truth",
+      "status": "unknown",
+      "effect": "no target accuracy/F1/Recall can be computed"
+    },
+    {
+      "item": "legacy_q3c_script",
+      "status": "not_used",
+      "reason": "legacy script bound to old 28-feature/A0 interface; STEP10 uses new frozen-chain script"
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "A_P_final_label_table.csv",
+      "A_P_final_labels_for_answer.csv",
+      "A_P_no_transfer_vs_transfer.csv",
+      "A_P_aggregation_alpha_sensitivity.csv",
+      "A_P_bootstrap_seed_stability.csv",
+      "mechanism_side_evidence.csv",
+      "low_confidence_cases.csv",
+      "problem3_result_analysis.json",
+      "transfer_display_before_after.png",
+      "mechanism_prototype_side_evidence.png"
+    ],
+    "supported_conclusions": [
+      "A-P final labels are predictions from the frozen STEP09 T1(alpha=0.25) model and fixed mean-score aggregation.",
+      "16 files A-P are present exactly once and each uses 15 frozen windows.",
+      "Uncertainty flags use pre-frozen score/window/mechanism evidence rules.",
+      "Mechanism prototype evidence is explanatory only and target truth remains unknown."
+    ],
+    "wording_limits": [
+      "do not report target accuracy/F1/Recall",
+      "do not call model scores correctness probabilities",
+      "do not use PCA clustering/prototype similarity as proof of correctness",
+      "do not hide low-confidence files"
+    ],
+    "approved_tables": [
+      "A_P_final_label_table.csv",
+      "low_confidence_cases.csv",
+      "mechanism_side_evidence.csv"
+    ],
+    "approved_figures": [
+      "transfer_display_before_after.png",
+      "mechanism_prototype_side_evidence.png"
+    ]
+  },
+  "unresolved_issues": [
+    "A-P ground truth remains unknown.",
+    "Prototype similarity and PCA geometry cannot verify diagnostic correctness."
+  ],
+  "freeze": {
+    "created_utc": "2026-09-20T08:53:22.825550Z",
+    "content_sha256": "b34626f2fffc3bab01f646bfa8f7cf068e00b733cb2e11114a91657883556048",
+    "invalidation_dependencies": [
+      "09-A final transfer bundle changes",
+      "04-A target/source common feature data changes",
+      "10-A inference protocol or code changes"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "captured_utc": "2026-09-20T08:53:22.825550Z",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "python_version": "3.11.16",
+  "machine": "x86_64",
+  "cpu_count_logical": 4,
+  "gpu": null,
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.14.1",
+  "sklearn": "1.9.1",
+  "joblib": "1.6.0",
+  "git_commit": "a99bca7d7b7a924487f8cd56cbb60961f53393f0",
+  "pip_freeze_sha256": "10dd5a000d030997936df4c899ed604224960830302e3471c9a9bd0443d37524"
+}
