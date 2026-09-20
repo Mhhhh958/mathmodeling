@@ -1,0 +1,121 @@
+{
+  "schema_version": "10B-validation-1.0",
+  "step_id": "10-B",
+  "status": "passed",
+  "passed": true,
+  "run_id": "run_10-B_20260920T091327000000Z_4346ce31_49e30c62",
+  "source_A": {
+    "freeze_package_id": "FREEZE-10A-4346ce31",
+    "run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31",
+    "freeze_content_sha256": "b34626f2fffc3bab01f646bfa8f7cf068e00b733cb2e11114a91657883556048"
+  },
+  "word_chain": {
+    "source_version": "V1.0",
+    "source_sha256": "cbbd4e50959ab35d00abed5811e81667e5a28d97c5ada58f1f5eb081bc016b1e",
+    "output_version": "V1.1",
+    "output_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+    "mother_draft_incremental_edit_only": true,
+    "library_path": "/数学建模/10B/2025华为杯E题论文_步骤10_V1.1.docx",
+    "library_file_id": "libfile_a581d1c2ab308191b3d744723618a233"
+  },
+  "checks": {
+    "only_passed_10A_results_used": {
+      "passed": true,
+      "evidence": "protocol/10A/latest_freeze_package.json; FREEZE-10A-4346ce31"
+    },
+    "A_P_final_table_exact_match": {
+      "passed": true,
+      "evidence": "Word 表23 vs outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv",
+      "key_numbers": "16 files exactly once; A-P labels=OR,B,OR,OR,B,OR,B,OR,B,B,OR,B,OR,OR,B,B; OR/B=8/8"
+    },
+    "transductive_identity_explicit": {
+      "passed": true,
+      "evidence": "Word 5.3.5 paragraph (1)",
+      "key_numbers": "all 240 unlabeled target windows contribute to target moment estimation; same A-P then predicted; not independent blind test"
+    },
+    "aggregation_rule_exact": {
+      "passed": true,
+      "evidence": "Word 5.3.5 paragraph (1); protocol/10A/inference_protocol.json",
+      "key_numbers": "15 windows/file; mean four uncalibrated OR/IR/B/N scores then argmax"
+    },
+    "uncalibrated_score_wording": {
+      "passed": true,
+      "evidence": "Word 5.3.5 paragraph (1) + 图11 explanation",
+      "key_numbers": "explicitly not true correctness probability"
+    },
+    "stability_and_low_confidence_consistency": {
+      "passed": true,
+      "evidence": "Word 表23/表24 + 10-A stability artifacts",
+      "key_numbers": "mean window agreement=0.8625; min 9-setting agreement=0.333(N); D vote=0.444/bootstrap=0.657; low-confidence=13; very-low=C,D,J,L,N"
+    },
+    "mechanism_evidence_boundary": {
+      "passed": true,
+      "evidence": "Word 表24 + mechanism_side_evidence.csv",
+      "key_numbers": "mechanism prototype agrees with prediction for 5/16; explanatory only, not truth"
+    },
+    "figure11_backtrace_and_wording": {
+      "passed": true,
+      "evidence": "图11 sha256 c4b65db645ac41ca65c910a3dbeaeb43d29c14a2946de46e84ae0a3f2c7cb1b3; Word 5.3.5",
+      "key_numbers": "source-correct OOF top-score Q10=0.618; window agreement reference=0.80; no correctness claim"
+    },
+    "Q3_short_summary_complete": {
+      "passed": true,
+      "evidence": "Word 5.3.6 问题三小结",
+      "key_numbers": "five required closure elements present"
+    },
+    "target_accuracy_not_reported": {
+      "passed": true,
+      "evidence": "Word 5.3.5/5.3.6",
+      "key_numbers": "A-P truth unknown; no target Accuracy/Macro-F1/Recall"
+    },
+    "word_persistence": {
+      "passed": true,
+      "before": {
+        "media": 14,
+        "drawing": 13,
+        "math": 5,
+        "math_para": 5,
+        "tables": 23,
+        "sections": 6,
+        "inline_shapes": 13,
+        "pages": 32
+      },
+      "after": {
+        "media": 15,
+        "drawing": 14,
+        "math": 5,
+        "math_para": 5,
+        "tables": 25,
+        "sections": 6,
+        "inline_shapes": 14,
+        "pages": 36
+      },
+      "note": "new figure and two tables added; all previous media hashes retained"
+    },
+    "official_format_master_preserved": {
+      "passed": true,
+      "evidence": "V1.0 vs V1.1 core OOXML byte-identical",
+      "parts": [
+        "word/styles.xml",
+        "word/numbering.xml",
+        "word/theme/theme1.xml",
+        "word/fontTable.xml"
+      ]
+    },
+    "visual_QA": {
+      "passed": true,
+      "renderer": "/home/oai/skills/docx/render_docx.py",
+      "rendered_pages": 36,
+      "evidence": "pages 1-29 pixel-identical to passed V1.0; pages 30-36 visually inspected; no clipping/overlap/missing glyphs/caption breaks"
+    },
+    "library_byte_identity": {
+      "passed": true,
+      "local_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+      "materialized_library_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318"
+    }
+  },
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "target_accuracy_reported": false
+}
