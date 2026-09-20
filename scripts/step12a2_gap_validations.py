@@ -380,7 +380,7 @@ def main():
     bundle=joblib.load(B09/"models"/"final_transfer_bundle.joblib")
     require(bundle["adaptation_artifact"]["method"]=="T1-SHRINK-MOMENT","bundle is not T1")
     require(abs(float(bundle["adaptation_artifact"]["alpha"])-0.25)<1e-12,"bundle alpha mismatch")
-    require(list(bundle["feature_order"])==FEATURES,"bundle feature order mismatch")
+    require(list(bundle["feature_names"])==FEATURES,"bundle feature order mismatch")
 
     cache={}
     # A2-02 re-extract all six frozen window candidates on MVP. Primary also becomes independent formula/code check.
