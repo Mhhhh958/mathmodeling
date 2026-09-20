@@ -1,0 +1,46 @@
+{
+  "schema_version": "07B-change-1.0",
+  "step_id": "07-B",
+  "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed",
+  "source_word": "V0.7.1",
+  "output_word": "V0.8",
+  "source_A_freeze_package_id": "FREEZE-07A-7e8829fb",
+  "changes": [
+    {
+      "location": "5.2.3",
+      "action": "rename placeholder heading and incrementally write 模型改进、对照实验与最终定型",
+      "content": "H1 improvement, frozen outer comparison, H2 ablation failure, finalization and cost"
+    },
+    {
+      "location": "5.2.3",
+      "action": "insert figure",
+      "object": "图7",
+      "sha256": "52bb9966baafc5a4ca4786e2c1511fbf5772885315bd684e29cf676cc96811f2"
+    },
+    {
+      "location": "5.2.3",
+      "action": "insert figure",
+      "object": "图8",
+      "sha256": "ca8c0129b2db61f2c042f4cb6390a08edace539480fc5c2582a0cb6038f8d24d"
+    },
+    {
+      "location": "5.2.3",
+      "action": "insert table",
+      "object": "表19 问题2最终模型与问题3冻结接口"
+    },
+    {
+      "location": "5.2.4",
+      "action": "insert required question summary",
+      "content": "5-point closed-loop summary"
+    }
+  ],
+  "unchanged_boundaries": [
+    "no retraining",
+    "no retuning",
+    "no model selection",
+    "no changes to 07-A frozen results",
+    "no rebuild of mother Word",
+    "problem 3 body not written"
+  ],
+  "word_sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645"
+}
