@@ -1,0 +1,74 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "08-B",
+  "status": "passed",
+  "run_id": "run_08-B_20260920T062914179544Z_8cd7401f_28dc6d43",
+  "source_A_freeze_package_id": "FREEZE-08A-8cd7401f",
+  "source_A_run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f",
+  "latest_word_before": {
+    "version": "V0.8",
+    "artifact_id": "WORD-V0.8-1d19b9ed",
+    "sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "library_path": "/数学建模/07B/2025华为杯E题论文_步骤07_V0.8.docx",
+    "library_file_id": "libfile_e7508cc024548191a5fbf1b9ea5d63ec"
+  },
+  "new_word_after": {
+    "version": "V0.9",
+    "artifact_id": "WORD-V0.9-28dc6d43",
+    "sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08",
+    "library_path": "/数学建模/08B/2025华为杯E题论文_步骤08_V0.9.docx",
+    "library_file_id": "libfile_005d1a7b193c8191b52a0df62e44dfd4"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "protocol/08B/change_list.json",
+  "validation_record": "protocol/08B/validation_record.json",
+  "affected_ledger_items": {
+    "version_ledger": [
+      "VER-08B-WORD-V09"
+    ],
+    "evidence_issue_ledger": [
+      "EVID-08B-001"
+    ],
+    "result_formula_ledger": [
+      "RES-08B-DOMAIN",
+      "RES-08B-NOTRANSFER",
+      "RES-08B-PSEUDO",
+      "RES-08B-T1"
+    ],
+    "figure_table_ledger": [
+      "FIG-08B-009",
+      "TBL-08B-020",
+      "TBL-08B-021"
+    ],
+    "citation_ledger": [
+      "C-08B-001"
+    ]
+  },
+  "figures_and_captions": [
+    {
+      "file": "/数学建模/08B/图9_源目标公共特征族标准化均值偏移.png",
+      "caption": "图9 源—目标公共特征族的文件级标准化绝对均值偏移中位数",
+      "sha256": "033e834f76e0346e98778ba663003a308a40328fbd3735de53e3b17ac5d9a90c",
+      "source": "08-A feature_family_shift_summary.csv"
+    }
+  ],
+  "new_tables": [
+    "表20 目标域A—P的无迁移文件级预测结果",
+    "表21 多模拟目标域的调参与最终验证隔离"
+  ],
+  "code_version_id": "CODE-07525150aea10bb0",
+  "code_sha256": "07525150aea10bb06b2de5efa3102b41d4ae3f51bc506be132c2dc10db52fbb2",
+  "run_config_sha256": "a69225c24ce368b0101a5bbd5260045c695da168622154b2ab5c091496526b85",
+  "environment_sha256": "6bf86e32ff19a099f4acc13edf6ae5c7e2d2ab3c0999cea01279c49381ce1670",
+  "pass_token": "08-B-V2026.09.20-28dc6d43-通过",
+  "next_allowed": "09-A",
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "unsupported_claims_removed_or_downgraded": true,
+    "word_rebuilt_from_plain_text": false
+  }
+}
