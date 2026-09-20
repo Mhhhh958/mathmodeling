@@ -1,0 +1,108 @@
+{
+  "schema_version": "06A-1.0",
+  "step_id": "06-A",
+  "status": "passed",
+  "pass_token": "06-A-V2026.09.20-e55b0303-通过",
+  "next_allowed": "06-B",
+  "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "freeze_package_id": "FREEZE-06A-01576948",
+  "freeze_content_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
+  "input_05A_freeze": "FREEZE-05A-ba6432cf",
+  "feature_data_version_id": "FEAT-23d45f5649dcd5f1",
+  "code_version_id": "git:9313b5e5aa5734ef6088626fcad1904bb7ead347",
+  "evidence_commit": "560888d768e4de2283df98102740ca47e7d344ef",
+  "github_actions_check_run_id": 106017506342,
+  "github_actions_conclusion": "success",
+  "actual_run_results": {
+    "model": "multinomial logistic regression",
+    "common_features": 26,
+    "source_independent_files": 49,
+    "source_windows": 733,
+    "formal_inner_fits": 72,
+    "outer_refits": 4,
+    "smoke_fit": 1,
+    "selected_C_by_outer": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "selected_weighting_by_outer": [
+      "file_balanced",
+      "file_and_class_balanced",
+      "file_balanced",
+      "file_balanced"
+    ],
+    "outer_file_macro_f1": [
+      0.4464285714285714,
+      1,
+      0.8095238095238095,
+      0.9272727272727272
+    ],
+    "outer_file_macro_f1_median": 0.8683982683982684,
+    "outer_file_macro_f1_min": 0.4464285714285714,
+    "outer_file_macro_f1_max": 1,
+    "pooled_oof_file_macro_f1": 0.8184523809523809,
+    "pooled_oof_file_accuracy": 0.7959183673469388,
+    "pooled_oof_window_macro_f1_aux": 0.8037470662898439,
+    "pooled_file_recall": {
+      "OR": 0.7142857142857143,
+      "IR": 0.75,
+      "B": 1,
+      "N": 0.75
+    },
+    "pooled_file_confusion_matrix": [
+      [
+        15,
+        6,
+        0,
+        0
+      ],
+      [
+        3,
+        9,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        3
+      ]
+    ],
+    "misclassified_files": 10,
+    "misclassification_types": {
+      "OR->IR": 6,
+      "IR->OR": 3,
+      "N->OR": 1
+    },
+    "model_files": 4,
+    "calibration_performed": false
+  },
+  "validation": {
+    "smoke_test_passed": true,
+    "frozen_split_and_seed_passed": true,
+    "independent_macro_f1_abs_diff": 0,
+    "confusion_matrix_exact_match": true,
+    "aggregation_recalculation_passed": true,
+    "misclassification_integrity_passed": true,
+    "group_leakage_detected": false,
+    "duplicated_normal_windows_for_balance": false
+  },
+  "limitations": [
+    "Four outer-fold file Macro-F1 values vary widely (0.4464 to 1.0000); this min-max is not a confidence interval.",
+    "Normal class has only four independent files; pooled N recall is 0.75 (3/4 files correct).",
+    "Most errors are OR/IR confusion (9 of 10 file errors), and one normal file N_0.mat is predicted OR.",
+    "LogisticRegression predict_proba outputs were not calibrated; all such outputs are model scores and must not be described as calibrated probability/confidence.",
+    "Window-level metrics are auxiliary because overlapping windows are not independent samples."
+  ],
+  "word_edited_in_A": false,
+  "ledgers_edited_in_A": false
+}
