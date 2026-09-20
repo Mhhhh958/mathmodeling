@@ -248,18 +248,18 @@ done
       encoding="utf-8")
 
     # Copy manifests/validation assets after first creation.
-    all_pass=(len(failed)==0 and repro_ok and len(manifest)==15 and manifest["status"].eq("passed").all())
+    all_pass=bool(len(failed)==0 and repro_ok and len(manifest)==15 and bool(manifest["status"].eq("passed").all()))
     checks={
-      "gate_13B1_valid":True,"A1_A2_frozen_sources_only":True,"source_snapshot_sha256_all_match":all(source_checks),
-      "figure_count_15":len(manifest)==15,"all_three_formats_present":all(bool(x) for x in manifest["png_path"]) and all(bool(x) for x in manifest["svg_path"]) and all(bool(x) for x in manifest["pdf_path"]),
-      "all_figures_chinese_and_no_missing_glyphs":manifest["chinese_plan_pass"].eq("true").all(),
-      "all_figures_visual_encoding_consistent":manifest["visual_encoding_pass"].eq("true").all(),
-      "all_figures_final_size_readable":manifest["readability_pass"].eq("true").all(),
-      "all_svg_vector_text_editable":manifest["editable_vector_pass"].eq("true").all(),
+      "gate_13B1_valid":True,"A1_A2_frozen_sources_only":True,"source_snapshot_sha256_all_match":bool(all(source_checks)),
+      "figure_count_15":bool(len(manifest)==15),"all_three_formats_present":bool(all(bool(x) for x in manifest["png_path"]) and all(bool(x) for x in manifest["svg_path"]) and all(bool(x) for x in manifest["pdf_path"])),
+      "all_figures_chinese_and_no_missing_glyphs":bool(manifest["chinese_plan_pass"].eq("true").all()),
+      "all_figures_visual_encoding_consistent":bool(manifest["visual_encoding_pass"].eq("true").all()),
+      "all_figures_final_size_readable":bool(manifest["readability_pass"].eq("true").all()),
+      "all_svg_vector_text_editable":bool(manifest["editable_vector_pass"].eq("true").all()),
       "key_figure_rerun_exact_png_reproducible":repro_ok,"difficulty_failure_figures_retained":set(["FIG-Q2-04","FIG-Q3-04"]).issubset(set(manifest["figure_id"])),
       "table_preferred_items_not_rendered":len(inv)==15,"word_edit_performed":False,"training_performed":False,"tuning_performed":False,"model_selection_performed":False
     }
-    passed=all(v is True for v in checks.values()) and not failed
+    passed=bool(all(v is True for v in checks.values()) and not failed)
     validation={"schema_version":"13B1-validation-1.0","step_id":"13-B1","run_id":run_id,"status":"passed" if passed else "failed","passed":passed,
       "source_freezes":["FREEZE-13A1-0eedc9bc","FREEZE-13A2-90264cb7"],"font":{"selected":chosen,"path":font_path,"glyph_probe_missing":missing},
       "checks":checks,"figure_count":len(manifest),"unpassed_figure_count":len(failed),"reproducibility_spot_check_count":len(repro),
