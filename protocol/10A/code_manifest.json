@@ -6,7 +6,7 @@
   "tracked_code": [
     {
       "path": "scripts/step10a_final_labels_and_display.py",
-      "git_blob_sha": "785c3e99bddabf82a6a929619fe69e224c963bd9"
+      "git_blob_sha": "bd8b4c9f3442ead9b58c525fd7140e77bd57391e"
     },
     {
       "path": ".github/workflows/step10a_final_labels.yml",
@@ -53,6 +53,20 @@
       "uncertainty_rule_changed": false,
       "stability_scope_changed": false,
       "code_commit": "e61b89302f38c239ee99d92c706af64e2fcc59b0"
+    },
+    {
+      "attempt_run_id": "github-actions-run-35500684934",
+      "failed_checks": [
+        "word_edit_performed"
+      ],
+      "issue": "validation polarity bug: the correct no-Word-edit behavior was stored as false under a positive all-check aggregation",
+      "fix": "replace word_edit_performed=false with word_not_edited=true",
+      "scientific_protocol_changed": false,
+      "frozen_aggregation_changed": false,
+      "uncertainty_rule_changed": false,
+      "stability_scope_changed": false,
+      "labels_or_scores_changed": false,
+      "code_commit": "d646c0f0d0857e3e9f0086e71abd46b83ff3a454"
     }
   ]
 }
