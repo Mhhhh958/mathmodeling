@@ -1,0 +1,39 @@
+name: step13a1-final-freeze
+
+on:
+  push:
+    paths:
+      - 'protocol/13A1/dispatch_token.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-step13a1:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen 00-B environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r protocol/00B/requirements-lock-00b.txt
+      - name: Run STEP13-A1
+        run: |
+          python scripts/step13a1_final_freeze.py
+      - name: Commit final freeze
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs protocol/13A1/latest_freeze_package.json protocol/13A1/latest_run_id.txt protocol/13A1/validation_record.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+          else
+            git commit -m '13-A1: add final answer/version freeze [skip ci]'
+            git push
+          fi
