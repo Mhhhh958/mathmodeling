@@ -1,0 +1,47 @@
+{
+  "schema_version": "12A1-validation-1.0",
+  "step_id": "12-A1",
+  "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_valid": true,
+    "all_random_spot_check_evidence_exists": true,
+    "outer_group_leakage_zero": true,
+    "inner_group_leakage_zero": true,
+    "each_source_file_outer_test_once": true,
+    "learned_preprocessing_training_boundary_verified": true,
+    "target_pseudo_labels_not_used": true,
+    "historical_legacy_not_used_in_10A": true,
+    "q4_final_model_identity_verified": true,
+    "outer_test_final_family_selection_risk_identified": true,
+    "all_P0_have_closure_task": true,
+    "all_gaps_have_evidence_and_close_condition": true,
+    "no_unidentified_P0": true,
+    "word_not_edited": true,
+    "no_new_large_scale_experiment": true,
+    "no_formal_paper_figure": true
+  },
+  "evidence": {
+    "claim_matrix": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/claim_evidence_matrix.csv",
+    "spot_check": "6/6 sampled claims have existing evidence paths",
+    "split_reaudit": {
+      "outer_group_overlap": 0,
+      "outer_duplicate_role": 0,
+      "outer_every_file_test_once": true,
+      "inner_train_val_overlap": 0,
+      "inner_outer_test_intrusion": 0,
+      "inner_outside_outer_train": 0
+    },
+    "test_selection_P0": "07-A final_model_decision uses paired outer effect in final family acceptance",
+    "pseudo_label_cycle": "09-A pseudo_labels_used=false",
+    "q4_identity": "11-A exact final model identity + 10-A 16/16 reproduction",
+    "gap_register": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/gap_register_P0_P1_P2.csv",
+    "A2_tasks": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/step12A2_validation_task_list.csv"
+  },
+  "recognized_open_P0": [
+    "P0-01"
+  ],
+  "unidentified_P0": [],
+  "word_edit_performed": false
+}

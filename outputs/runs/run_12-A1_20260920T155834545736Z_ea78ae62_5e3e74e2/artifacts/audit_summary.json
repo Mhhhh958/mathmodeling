@@ -1,0 +1,43 @@
+{
+  "step_id": "12-A1",
+  "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+  "status": "passed",
+  "claim_count": 13,
+  "random_spot_checks": 6,
+  "interfaces": {
+    "pass": 3,
+    "pass_with_note": 1
+  },
+  "leakage_summary": {
+    "hard_split_leakage_found": false,
+    "global_learned_preprocess_leakage_found": false,
+    "target_pseudo_label_cycle_found": false,
+    "historical_result_mix_found": false,
+    "recognized_P0": [
+      "P0-01"
+    ],
+    "recognized_P1": [
+      "P1-01",
+      "P1-02",
+      "P1-03",
+      "P1-04"
+    ]
+  },
+  "gap_counts": {
+    "P1": 4,
+    "P2": 4,
+    "P0": 1
+  },
+  "P0_open": [
+    "P0-01"
+  ],
+  "P0_interpretation": "07-A outer tests participated in final family acceptance; this is recognized, not hidden. 12-A2 must add an orthogonal fixed-model validation and final wording must not call 07-A pooled OOF an untouched final test.",
+  "Q3_checks": {
+    "no_transfer_baseline": true,
+    "pseudo_target_holdout": true,
+    "negative_transfer_check": true,
+    "A_P_stability": true
+  },
+  "Q4_final_model_identity": true,
+  "word_edit_performed": false
+}

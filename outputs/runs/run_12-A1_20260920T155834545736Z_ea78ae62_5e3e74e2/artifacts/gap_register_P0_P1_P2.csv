@@ -1,0 +1,10 @@
+﻿gap_id,level,scope,gap,evidence,closure_condition,status
+P0-01,P0,Q2,07-A outer test参与最终模型家族接受，导致同一outer结果不能作为完全独立最终泛化估计。,07-A final_model_decision: replace Base if paired outer median delta>0 and >=3/4 nonnegative; pooled H1 OOF Macro-F1=0.9675。,12-A2预冻结一个不参与模型选择的正交条件留出/固定模型压力测试；若结果支持则把07-A outer定位为开发配对证据，若明显失败则回滚/降级核心结论。,open
+P1-01,P1,Q1,窗口长度/重叠敏感性明确延期到STEP12，当前1s/50%不是已证明全局最优。,04-A b_handoff wording_limits明确deferred to STEP12。,12-A2对0.5/1/2s×0/50%候选做固定协议敏感性，报告核心分类/特征结论是否稳定，不据此反调正式主配置。,open
+P1-02,P1,Q1→Q2,源MVP使用目标无标签可比性选择，缺alternative/all-source后续结果敏感性。,02-A已冻结MVP=49、alternative=109、all_source=161，并把paired comparison列为later_validation。,12-A2用同一冻结评价口径做轻量方案敏感性；至少验证MVP选择不是唯一导致结论成立的方案。,open
+P1-03,P1,Q3,A-P真实T1为传导式，单个目标文件也参与目标矩估计；当前稳定性未覆盖这种自影响。,09-A用全部240目标窗口估计无标签矩；10-A已有alpha/aggregation/window bootstrap但未leave-one-file-out。,12-A2逐文件留一目标文件不参与目标矩估计后再预测该文件，报告16/16标签/分数变化；重点D/N/C。,open
+P1-04,P1,Q3,A-P对源样本组成的不确定性尚未量化，13/16低可信且仅OR/B两类输出。,10-A low_confidence=13，OR/B=8/8，IR/N=0。,12-A2对源文件做分层bootstrap/jackknife（不调参）重复T1+推理，输出标签保持率与分数区间。,open
+P2-01,P2,Q2,N类仅4个独立正常文件，逐类Recall估计不确定性高。,02-A/05-A file_class_counts N=4；每个outer test仅1个N。,无法用现有数据消除；12-A2可给重采样范围但最终论文必须保留小样本限制。,open_limit
+P2-02,P2,Q3/Q4,A-P真值未知，无法计算真实目标Accuracy/F1/Recall，也无法用解释证明目标真值。,08/09/10/11全部冻结truth=unknown。,不可关闭；保持预测/解释身份，绝不补造真值。,open_limit
+P2-03,P2,Q3/Q4,目标轴承几何与逐文件精确RPM未知，不能验证精确BPFO/BPFI/BSF/FTF命中。,08-A target exact rpm unavailable; geometry unknown；11-A exact target fault frequency not asserted。,不可关闭；只讨论冲击/频谱代理和源域机理。,open_limit
+P2-04,P2,Q4,遮蔽解释依赖源文件中位参考，工程特征扰动可能离开真实数据流形。,11-A unresolved issue明确reference dependence/off-manifold。,可在论文说明；如12-A2有余量可做替代参考值敏感性，但非核心必跑。,open_limit

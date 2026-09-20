@@ -1,0 +1,152 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "12-A1",
+  "freeze_package_id": "FREEZE-12A1-5e3e74e2",
+  "status": "passed",
+  "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+  "versions": {
+    "code_version_id": "git:10cc392fdae09c5d7211ac12a6d72a19e56f6b75",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-04A-3e3b97c0",
+      "FREEZE-07A-7e8829fb",
+      "FREEZE-10A-4346ce31",
+      "FREEZE-11A-1f812c22"
+    ],
+    "run_config_sha256": "32f138f65f1c86947251d0decbb4c36383ff9089dd70b9c324bdfa979fea0e03",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260920,
+  "parameters": {
+    "audit_only": true,
+    "random_claim_spot_check_count": 6,
+    "new_large_scale_experiment": false
+  },
+  "real_results": [
+    {
+      "name": "claim_evidence_rows",
+      "value": 13
+    },
+    {
+      "name": "split_leakage_reaudit",
+      "value": {
+        "outer_group_overlap": 0,
+        "outer_duplicate_role": 0,
+        "outer_every_file_test_once": true,
+        "inner_train_val_overlap": 0,
+        "inner_outer_test_intrusion": 0,
+        "inner_outside_outer_train": 0
+      }
+    },
+    {
+      "name": "gap_counts",
+      "value": {
+        "P1": 4,
+        "P2": 4,
+        "P0": 1
+      }
+    },
+    {
+      "name": "recognized_P0",
+      "value": [
+        "P0-01"
+      ]
+    },
+    {
+      "name": "unidentified_P0",
+      "value": []
+    },
+    {
+      "name": "Q3_required_evidence_present",
+      "value": {
+        "no_transfer": true,
+        "pseudo_target": true,
+        "negative_transfer": true,
+        "A_P_stability": true
+      }
+    },
+    {
+      "name": "Q4_final_model_identity",
+      "value": true
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/claim_evidence_matrix.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/four_question_interface_audit.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/leakage_and_circularity_audit.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/main_model_reliability_evidence_selector.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/gap_register_P0_P1_P2.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/step12A2_validation_task_list.csv"
+    },
+    {
+      "path": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/random_claim_spot_check.csv"
+    }
+  ],
+  "anomalies_and_failures": [
+    {
+      "item": "P0-01",
+      "status": "recognized_open",
+      "detail": "07-A outer test participated in final family acceptance; requires 12-A2 orthogonal fixed-model validation and wording boundary."
+    }
+  ],
+  "b_handoff": {
+    "required_data": [
+      "claim_evidence_matrix.csv",
+      "four_question_interface_audit.csv",
+      "leakage_and_circularity_audit.csv",
+      "main_model_reliability_evidence_selector.csv",
+      "gap_register_P0_P1_P2.csv",
+      "step12A2_validation_task_list.csv"
+    ],
+    "supported_conclusions": [
+      "Four-question data/model identities are connected and traceable.",
+      "No same-file window leakage, global learned-preprocessing leakage, target pseudo-label self-training, or legacy-result contamination was found.",
+      "One explicit P0 is recognized: Q2 outer-test participation in final model-family acceptance.",
+      "Q3 already has no-transfer/pseudo-target/negative-transfer/A-P stability evidence; Q4 explains the actual final model."
+    ],
+    "wording_limits": [
+      "Do not call 07-A pooled H1 OOF a completely untouched final test until P0-01 is addressed.",
+      "Do not report A-P target accuracy/F1/Recall.",
+      "Do not treat explanation as causal or target truth."
+    ],
+    "approved_tables": [
+      "claim_evidence_matrix.csv",
+      "four_question_interface_audit.csv",
+      "leakage_and_circularity_audit.csv",
+      "main_model_reliability_evidence_selector.csv",
+      "gap_register_P0_P1_P2.csv",
+      "step12A2_validation_task_list.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [
+    "P0-01 must be addressed in 12-A2 before later final-quality acceptance.",
+    "P1-01..04 should be run in 12-A2 if compute budget permits; P2 limitations remain wording boundaries."
+  ],
+  "freeze": {
+    "created_utc": "2026-09-20T15:58:34.544402Z",
+    "content_sha256": "3257a6ab60fe59f2fa5a1a1a135a633d6807bc003013900c58bf67bb6b9a0cff",
+    "invalidation_dependencies": [
+      "Any upstream A freeze changes",
+      "05-A split manifests change",
+      "07-A final decision changes",
+      "09/10/11 final model/prediction/explanation identity changes",
+      "12-A1 audit code/rules change"
+    ]
+  }
+}

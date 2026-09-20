@@ -1,0 +1,18 @@
+﻿audit_id,scope,status,evidence,risk,severity_if_fail
+OUTER-0,Q2 outer grouped CV,PASS,36 train-pool files; 13 test files; intersection=0,same-file/window leakage,P0
+OUTER-1,Q2 outer grouped CV,PASS,37 train-pool files; 12 test files; intersection=0,same-file/window leakage,P0
+OUTER-2,Q2 outer grouped CV,PASS,37 train-pool files; 12 test files; intersection=0,same-file/window leakage,P0
+OUTER-3,Q2 outer grouped CV,PASS,37 train-pool files; 12 test files; intersection=0,same-file/window leakage,P0
+OUTER-TEST-ONCE,Q2 outer grouped CV,PASS,49 test assignments over 49 files; every file test exactly once=True,OOF completeness / duplicate test reuse,P0
+INNER-0-0,Q2 inner grouped CV,PASS,train=24 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-0-1,Q2 inner grouped CV,PASS,train=24 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-0-2,Q2 inner grouped CV,PASS,train=24 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-1-0,Q2 inner grouped CV,PASS,train=24 val=13 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-1-1,Q2 inner grouped CV,PASS,train=25 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-1-2,Q2 inner grouped CV,PASS,train=25 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-2-0,Q2 inner grouped CV,PASS,train=24 val=13 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-2-1,Q2 inner grouped CV,PASS,train=25 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-2-2,Q2 inner grouped CV,PASS,train=25 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-3-0,Q2 inner grouped CV,PASS,train=24 val=13 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-3-1,Q2 inner grouped CV,PASS,train=25 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0
+INNER-3-2,Q2 inner grouped CV,PASS,train=25 val=12 train∩val=0 outer-test intrusion=0 outside outer-train=0,inner/outer leakage,P0

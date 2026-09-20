@@ -1,0 +1,7 @@
+﻿task_id,closes_gap,priority,task,frozen_execution_rule,outputs,close_rule
+A2-01,P0-01,must,Q2固定最终H1_RF的正交条件压力测试,冻结当前H1_RF家族/参数，不再模型选择；按物理条件（优先leave-one-load-out，其次预注册condition-group holdout）重训训练侧并只在留出条件评价。,每个留出条件的file Macro-F1、逐类Recall、混淆矩阵；不得用留出结果调参。,若整体/逐类不出现灾难性失效，则关闭P0并将07-A outer改称开发配对证据；若失效则触发回滚/降级。
+A2-02,P1-01,should,窗口参数敏感性,对04-A已冻结候选0.5/1/2s×overlap 0/0.5，使用固定特征定义和固定模型家族做有限重算。,各候选文件级指标、逐类Recall与相对1s/50%的变化。,核心结论不因合理窗口选择大幅翻转；否则保留敏感性并限制结论。
+A2-03,P1-02,should,源选择方案敏感性,MVP/alternative/all-source按相同分组评价与固定H1_RF家族做对照，不再扩大候选。,三方案Macro-F1/逐类Recall及Q3域差异指标。,若MVP并非唯一有效且无严重退化，关闭；否则明确目标无标签源选择依赖。
+A2-04,P1-03,should,A-P leave-one-target-file-out传导式稳定性,对每个目标文件，估计T1目标矩时排除该文件15窗，再用同一冻结RF预测该文件。,16文件LOTO标签、分数、与正式10-A一致率。,逐文件报告；D/N/C若翻转继续标高风险，不人工改正式标签。
+A2-05,P1-04,should,源文件组成不确定性,分层按OR/IR/B/N对49源文件bootstrap/jackknife，固定RF家族/参数和T1 alpha，不做调参。,A-P每文件标签保持率、最高分数分布/区间。,量化13个低可信文件的源样本敏感性；结果只补证不反调10-A。
+A2-06,P2-01,optional,N类小样本不确定性摘要,从A2-01/03已有重采样结果提取N类Recall范围，不新增独立大实验。,N类Recall范围/失败条件。,只能量化，不能声称消除4文件限制。

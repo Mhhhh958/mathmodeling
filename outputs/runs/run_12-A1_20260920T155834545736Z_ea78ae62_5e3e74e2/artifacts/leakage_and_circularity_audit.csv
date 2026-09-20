@@ -1,0 +1,8 @@
+﻿item_id,risk,status,finding,evidence,closure_or_boundary
+LEAK-01,同源窗口跨集合,PASS,05-A以独立文件group_id分组；outer/inner集合交集脚本复核均为0，49文件各outer-test一次。,05-A outer/inner manifests,P0 if violated
+LEAK-02,全量拟合学习型预处理,PASS,04-A仅确定性特征；06-A StandardScaler与权重只在当前inner-train/outer-train-pool拟合；07-A相关裁剪仅inner-train。,04-A fit_boundary + 06-A run_config/validation + 07-A blueprint,P0 if violated
+LEAK-03,测试集调参/模型选择,P0_IDENTIFIED,07-A预先冻结规则后仍以4个outer test的paired effect决定H1是否替换Base，因此同一outer结果参与最终家族接受。,07-A final_model_decision.json,12-A2必须补独立/正交验证；07-A pooled OOF不得称完全独立终测
+LEAK-04,目标伪标签循环自证,PASS,09-A pseudo_labels_used=false；A-P真值unknown；08-A使用目标数据仅无标签域诊断，09-A用无标签矩/协方差。,08-A target_unlabeled_usage_ledger + 09-A freeze,无循环自证
+LEAK-05,A-P传导式自影响,DISCLOSED_P1,T1真实目标矩由全部240目标窗口共同估计，同一A-P集合参与适配和预测；这是公开的transductive设置，不是标签泄漏，但个体预测存在自影响。,09-A/10-A protocol,12-A2做leave-one-target-file-out目标矩稳定性
+LEAK-06,历史结果混入,PASS,10-A明确旧28维q3c脚本未使用；各A步以run_id/SHA/code_manifest绑定，失败运行未进入最终冻结。,10-A anomalies + 各code_manifest,继续保持冻结身份
+LEAK-07,目标无标签参与Q1源组选择,DISCLOSED_P1,02-A以目标无标签组级可比性选择MVP；没有读取目标故障标签，但整个源模型开发具有目标域导向。,02-A freeze/b_handoff,12-A2比较MVP/alternative/all-source敏感性，避免把源选择写成完全目标无关

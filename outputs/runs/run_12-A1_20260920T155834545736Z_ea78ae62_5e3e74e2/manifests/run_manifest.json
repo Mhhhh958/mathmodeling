@@ -1,0 +1,85 @@
+{
+  "schema_version": "12A1-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+  "step_id": "12-A1",
+  "status": "completed",
+  "created_utc": "2026-09-20T15:58:34.544402Z",
+  "binding": {
+    "step_id": "12-A1",
+    "git_commit": "10cc392fdae09c5d7211ac12a6d72a19e56f6b75",
+    "run_config_sha256": "32f138f65f1c86947251d0decbb4c36383ff9089dd70b9c324bdfa979fea0e03",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "source_state_version": "2026.09.20-r27",
+    "latest_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+    "binding_digest": "ea78ae62382be346f622cf6b03453ddb39ed14a06cd2c25b4fe7a32998b1b70c"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "10cc392fdae09c5d7211ac12a6d72a19e56f6b75",
+    "entrypoint": "scripts/step12a1_evidence_audit.py",
+    "code_manifest": "protocol/12A1/code_manifest.json"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+    "files": [
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 5161,
+        "sha256": "00cd47086faaed32f27ccb6b7bf14b3129a76ad0c8999c2021f6cfdc5606a95d"
+      },
+      {
+        "relative_path": "artifacts/audit_summary.json",
+        "size_bytes": 1118,
+        "sha256": "2d8668313fd55e8e25920ad628f7ec109cc81bee242b1d6af2b1d02a441c17b1"
+      },
+      {
+        "relative_path": "artifacts/claim_evidence_matrix.csv",
+        "size_bytes": 4992,
+        "sha256": "a9dd4cb4c7b3b631c31c7905769260d02249747fe8893ae028ce7569999dfe39"
+      },
+      {
+        "relative_path": "artifacts/four_question_interface_audit.csv",
+        "size_bytes": 929,
+        "sha256": "f20551f59250c24ffd2132e1906e87cb6b225df43708a27ae83c46dcad8023ee"
+      },
+      {
+        "relative_path": "artifacts/gap_register_P0_P1_P2.csv",
+        "size_bytes": 2871,
+        "sha256": "32fe41841ab6c0984ebca465ccaa451f0ab429d6a5974e4a986bb394f690831b"
+      },
+      {
+        "relative_path": "artifacts/group_split_reaudit.csv",
+        "size_bytes": 2253,
+        "sha256": "09ea6fe7a4af0321cb45521876edbf70d7dd4ac64cb1590d64d22a98ea88ebc0"
+      },
+      {
+        "relative_path": "artifacts/leakage_and_circularity_audit.csv",
+        "size_bytes": 1856,
+        "sha256": "fb1753646da2fffdac0e5fa792208c8886666449fdd2c04fc589d21452fdcce1"
+      },
+      {
+        "relative_path": "artifacts/main_model_reliability_evidence_selector.csv",
+        "size_bytes": 1283,
+        "sha256": "c9d7b4f0bf142261533fdb6d4e427c194655cda6261b608c0dc39595ef33daf7"
+      },
+      {
+        "relative_path": "artifacts/random_claim_spot_check.csv",
+        "size_bytes": 1237,
+        "sha256": "ed915a53ac17300d96393c6edbee605e519dd78d5f3dcd27e32f0b33206905f4"
+      },
+      {
+        "relative_path": "artifacts/step12A2_validation_task_list.csv",
+        "size_bytes": 1991,
+        "sha256": "c60a6ac868541b16d773965057889d9f32c3685899af7740af69850f0d47a235"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 1939,
+        "sha256": "31e0242af0d7d1fd8ac9c805265db7e00cd6e2466fe6b2b337c6ae31eb038339"
+      }
+    ],
+    "output_tree_sha256": "92157e6d3455bead70947a25acd33545a7b29789a0a52a8ebed937950428edc4"
+  },
+  "duration_seconds": 0.0246737003326416
+}

@@ -1,0 +1,5 @@
+﻿interface_id,interface,status,finding,evidence,gap
+IF-Q1-Q2,Q1→Q2,PASS,04-A输出733源窗口/49组、26公共特征、group key=independent_object_id；05-A/06-A直接使用同一接口。,04-A data_interface_manifest + 05-A split manifests + 06-A run_config,无断链
+IF-Q2-Q3,Q2→Q3,PASS_WITH_P0_RELIABILITY_NOTE,07-A冻结final_source_model.joblib、26特征顺序、OR/IR/B/N类序、文件聚合规则；08/09直接继承。模型身份连通，但Q2性能证据存在outer-test选择偏差P0。,07-A q3_interface + 09-A source model SHA,接口连通；性能独立性需12-A2补证
+IF-Q3-Q4,Q3→Q4,PASS,11-A加载09-A final_transfer_bundle并复现10-A 16/16 A-P标签，最大分数差2.22e-16。,11-A validation_record,无断链
+IF-Q4-NEXT,Q4→审计/后续,PASS,11-A冻结解释数据、失败案例和表述边界；11-B只回写冻结结果；12-A1只审计不改Word。,11-A freeze + 11-B delivery,无断链

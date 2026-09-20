@@ -1,0 +1,5 @@
+﻿question,core_model,selected_reliability_evidence,current_status,gap_level,decision
+Q1,数据/特征构建与源组选择,预处理信息保真 + 参数敏感性,已有：48k→12k公共频带保持率min=0.9944；组选择leave-one-load稳定。缺：0.5/1/2s×0/50%窗口敏感性。,P1,12-A2运行冻结窗口候选的轻量敏感性；不改正式主配置，量化特征/模型结论是否翻转。
+Q2,四分类 H1_RF,混淆矩阵/逐类Recall + 分组稳定性,已有：OOF混淆矩阵与逐类Recall；4折file Macro-F1=0.9416/0.9365/1/1。问题：outer test参与最终家族接受。,P0,12-A2增加预冻结正交条件留出/重采样验证，并明确07-A outer为开发选择证据而非完全独立终测。
+Q3,无监督迁移 T1,无迁移基线 + 域差异变化 + 负迁移 + 稳定性,已有：A0基线、MMD、伪目标留出、49文件负迁移、alpha/聚合/bootstrap稳定性。,P1,12-A2做leave-one-target-file-out传导式稳定性及源文件扰动/重采样，重点D/N/C。
+Q4,最终模型解释,忠实性 + 稳定性 + 随机对照,已有且充分：Top5 vs Low5/random、窗口Spearman/Jaccard、200随机子集sanity；机理矛盾案例保留。,P2,不必堆更多解释指标；仅保留源中位参考依赖和无法定位原始波形的局限。
