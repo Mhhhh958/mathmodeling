@@ -1,0 +1,108 @@
+{
+  "schema_version": "08B-validation-1.0",
+  "step_id": "08-B",
+  "status": "passed",
+  "passed": true,
+  "run_id": "run_08-B_20260920T062914179544Z_8cd7401f_28dc6d43",
+  "source_A": {
+    "freeze_package_id": "FREEZE-08A-8cd7401f",
+    "run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f",
+    "freeze_content_sha256": "3f1ba0ce2e43c91b0c4d49d823a75e053096dd889e56b59ca6cc648b2d2b79d8"
+  },
+  "word_chain": {
+    "source_version": "V0.8",
+    "source_sha256": "1d19b9ed8f2cbaa21a756045ae7975561ab98494c64ee0480e604f3134d6a645",
+    "output_version": "V0.9",
+    "output_sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08",
+    "mother_draft_incremental_edit_only": true,
+    "library_path": "/数学建模/08B/2025华为杯E题论文_步骤08_V0.9.docx",
+    "library_file_id": "libfile_005d1a7b193c8191b52a0df62e44dfd4"
+  },
+  "checks": {
+    "only_passed_08A_results_used": {
+      "passed": true,
+      "evidence": "protocol/08A/latest_freeze_package.json; FREEZE-08A-8cd7401f"
+    },
+    "target_truth_prediction_pseudo_truth_strictly_distinguished": {
+      "passed": true,
+      "evidence": "Word 5.3.2/5.3.3; A-P stated unknown; table20 explicitly no-transfer prediction; pseudo-target labels revealed only after prediction"
+    },
+    "embedding_rule": {
+      "passed": true,
+      "embedding_figure_used": false,
+      "evidence": "No PCA/t-SNE/UMAP figure inserted; therefore same-projector condition is not triggered."
+    },
+    "domain_figure_backtrace": {
+      "passed": true,
+      "evidence": "08-A feature_family_shift_summary.csv",
+      "key_numbers": "median abs standardized mean shift: amplitude_or_scale=27.1274819332; geometry_free_mechanism_proxy=0.8190076641; shape_statistics=0.1279397739",
+      "figure_sha256": "033e834f76e0346e98778ba663003a308a40328fbd3735de53e3b17ac5d9a90c"
+    },
+    "domain_independent_evidence_backtrace": {
+      "passed": true,
+      "evidence": "08-A mmd_summary.json + domain_separation_summary.json + class_conditional_structure_diagnostic.csv + classifier_output_shift.json",
+      "key_numbers": "MMD2=0.7922234133; domain AUC mean=1.0; target outside nearest source-class p95=16/16; source/target top score medians=0.864985/0.556958; entropy medians=0.358526/0.646841"
+    },
+    "no_transfer_table_backtrace": {
+      "passed": true,
+      "evidence": "08-A A_P_no_transfer_file_predictions.csv",
+      "key_numbers": "16 files; B=10, OR=6; C/D/N/P margins <=0.031; target accuracy not reported"
+    },
+    "pseudo_target_protocol_backtrace": {
+      "passed": true,
+      "evidence": "08-A pseudo_target_metrics.csv + T1_alpha_tuning_summary.csv",
+      "key_numbers": "loads0/1/2 tuning; load3 held; alpha=0.25; tune mean Macro-F1=0.934595; held load3 A0=1.0,T1=1.0,delta=0"
+    },
+    "word_persistence": {
+      "passed": true,
+      "before": {
+        "media": 12,
+        "drawing": 11,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 20,
+        "sections": 6,
+        "inline_shapes": 11,
+        "pages": 28
+      },
+      "after": {
+        "media": 13,
+        "drawing": 12,
+        "vml_pict": 1,
+        "math": 5,
+        "math_para": 5,
+        "tables": 22,
+        "sections": 6,
+        "inline_shapes": 12,
+        "pages": 30
+      },
+      "note": "image/drawing counts increased as expected; no existing object loss"
+    },
+    "official_format_master_preserved": {
+      "passed": true,
+      "evidence": "V0.8 vs V0.9 core OOXML parts byte-identical",
+      "parts": [
+        "word/styles.xml",
+        "word/numbering.xml",
+        "word/theme/theme1.xml",
+        "word/fontTable.xml"
+      ]
+    },
+    "visual_QA": {
+      "passed": true,
+      "renderer": "/home/oai/skills/docx/render_docx.py",
+      "rendered_pages": 30,
+      "evidence": "pages1-24 pixel-identical to passed V0.8; pages25-30 visually inspected after fixing figure/table caption pagination; no clipping/overlap/missing glyphs"
+    },
+    "library_byte_identity": {
+      "passed": true,
+      "local_sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08",
+      "materialized_library_sha256": "28dc6d439bc3e3cb18dbf866b109b817d0217ec0f9d522e5ebe36a8451341f08"
+    }
+  },
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "target_accuracy_reported": false
+}
