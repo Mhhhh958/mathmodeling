@@ -1,0 +1,141 @@
+{
+  "schema_version": "12A2-1.0",
+  "step_id": "12-A2",
+  "status": "frozen_before_execution",
+  "source_audit_freeze": "FREEZE-12A1-5e3e74e2",
+  "source_data_version": "RAW-5a5dd129c91bfc64",
+  "feature_version": "FEAT-23d45f5649dcd5f1",
+  "fixed_model": {
+    "family": "H1_RF",
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "weighting": "file_and_class_balanced",
+    "class_order": [
+      "OR",
+      "IR",
+      "B",
+      "N"
+    ],
+    "official_seed": 20260919,
+    "seed_sensitivity": [
+      20260919,
+      20260920,
+      20260921
+    ]
+  },
+  "tasks": {
+    "A2-01": {
+      "gap": "P0-01",
+      "type": "orthogonal_fixed_model_load_holdout",
+      "rule": "leave one physical load_hp in {0,1,2,3} out; fit fixed H1_RF only on other loads; held load never used for tuning or acceptance-rule modification",
+      "primary_metric": "file-level Macro-F1",
+      "secondary": [
+        "per-class Recall",
+        "confusion matrix",
+        "file accuracy"
+      ],
+      "closure_thresholds": {
+        "primary_seed_pooled_macro_f1_min": 0.75,
+        "primary_seed_min_class_recall_min": 0.5,
+        "all_seed_pooled_macro_f1_min": 0.65,
+        "seed_mean_pooled_macro_f1_min": 0.75
+      },
+      "note": "thresholds define absence of catastrophic condition-shift failure; they are frozen before results"
+    },
+    "A2-02": {
+      "gap": "P1-01",
+      "window_candidates": [
+        [
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.5
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0.5
+        ]
+      ],
+      "evaluation": "same fixed H1_RF, official seed, leave-one-load-out; sensitivity only, not reselection",
+      "diagnostic_rule": "report candidate pooled Macro-F1/per-class recall and delta to frozen 1.0s/0.5; never change official window setting here"
+    },
+    "A2-03": {
+      "gap": "P1-02",
+      "source_plans": [
+        "MVP",
+        "alternative",
+        "all_source"
+      ],
+      "expected_file_counts": {
+        "MVP": 49,
+        "alternative": 109,
+        "all_source": 161
+      },
+      "evaluation": "same fixed H1_RF, official seed, leave-one-load-out",
+      "domain_gap": "same 08-A biased RBF MMD2 on independent-file mean 26-D vectors standardized by each source plan",
+      "diagnostic_only": true
+    },
+    "A2-04": {
+      "gap": "P1-03",
+      "type": "leave_one_target_file_out_moment_estimation",
+      "alpha": 0.25,
+      "classifier": "exact frozen STEP09 classifier; no retraining",
+      "rule": "for each A-P file, estimate target moments from the other 15 files only, transform held file, then use official mean-window-score aggregation",
+      "compare_to": "STEP10 official labels/scores"
+    },
+    "A2-05": {
+      "gap": "P1-04",
+      "type": "stratified_source_file_bootstrap",
+      "seeds": [
+        20260919,
+        20260920,
+        20260921
+      ],
+      "replicates_per_seed": 40,
+      "total_replicates": 120,
+      "rule": "sample 49 source files with replacement within OR/IR/B/N class counts; duplicated files receive distinct bootstrap group identities; refit only frozen H1_RF config; recompute source T1 moments; alpha fixed 0.25; predict frozen A-P windows",
+      "outputs": [
+        "per-file official-label retention rate",
+        "top-score distribution",
+        "margin distribution"
+      ],
+      "diagnostic_only": true
+    },
+    "A2-06": {
+      "gap": "P2-01",
+      "type": "derived_summary_only",
+      "rule": "derive N-class uncertainty from A2-01 and A2-03; no additional experiment"
+    }
+  },
+  "final_checks": {
+    "formula_code_unit": "recompute selected 04-A frozen window features from raw data with STEP04 implementation and compare exact frozen feature table; verify 26 feature order and units",
+    "result_version": "verify 07/09/10/11 frozen identities and SHA-linked interfaces",
+    "AP_reasonable_setting": "re-read/recompute summary from 10-A 9-setting and bootstrap tables plus A2-04/A2-05",
+    "explanation": "verify 11-A faithfulness/stability/sanity status against final 09/10 model identity"
+  },
+  "prohibitions": [
+    "no hyperparameter search",
+    "no model-family reselection",
+    "no Word edit",
+    "no formal paper figure",
+    "no target accuracy/F1/Recall",
+    "no manual A-P label adjustment"
+  ],
+  "p0_pass_rule": "A2-01 must meet all frozen closure thresholds and formula/code/unit checks must pass; otherwise STEP12-A2 fails and NEXT_ALLOWED remains 12-A2"
+}
