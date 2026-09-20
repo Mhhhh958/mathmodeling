@@ -1,0 +1,67 @@
+{
+  "step_id": "11-B",
+  "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844",
+  "created_utc": "2026-09-20T15:38:44Z",
+  "source_A_freeze_package_id": "FREEZE-11A-1f812c22",
+  "source_A_run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "source_A_freeze_content_sha256": "5e001ea74638f7ebde24630844fa0af85eef71fbf47fc49cd7fa0598525aa317",
+  "source_word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+  "output_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "status": "passed",
+  "latest_word_before": {
+    "version": "V1.1",
+    "artifact_id": "WORD-V1.1-49e30c62",
+    "sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+    "path": "/数学建模/10B/2025华为杯E题论文_步骤10_V1.1.docx",
+    "library_file_id": "libfile_a581d1c2ab308191b3d744723618a233"
+  },
+  "new_word_after": {
+    "version": "V1.2",
+    "artifact_id": "WORD-V1.2-df1a4844",
+    "sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+    "path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
+    "library_file_id": "libfile_00c22705998c819193201ec371963931"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "change_list": "protocol/11B/change_list.json",
+  "validation_record": "protocol/11B/validation_record.json",
+  "figures_and_captions": [
+    {
+      "caption": "图12 T1适配前后偏移最大的10个公共特征",
+      "sha256": "adc3a2560427a4326ad6606b393d720d2668311522bff17ef7cf81500705c98c"
+    },
+    {
+      "caption": "图13 源域已知标签案例的Top-5单特征遮蔽贡献",
+      "sha256": "833d3634625e18f3bea0e917dfa3660ec7e1cda00de5652cb96bc9db0f186a5f"
+    },
+    {
+      "caption": "图14 目标域预测案例的Top-5单特征遮蔽贡献",
+      "sha256": "3760d4f2827a7755c40fab66d4098c3ceb7494bf7479b850e05a44ef12b86dbe"
+    },
+    {
+      "caption": "图15 高贡献遮蔽与低贡献/随机对照的忠实性验证",
+      "sha256": "5988978d79b72cd7a3e0c3d222e4f4762f1b3df946bd77efff24e284ea365010"
+    }
+  ],
+  "new_tables": [
+    "表25 源域已知标签案例的最终模型解释",
+    "表26 目标域预测案例的解释与稳定性边界",
+    "表27 问题四解释验证结果"
+  ],
+  "pass_token": "11-B-V2026.09.20-df1a4844-通过",
+  "next_allowed": "12-A1",
+  "validation": {
+    "only_frozen_A_results_used": true,
+    "source_target_identity_clear": true,
+    "figures_traceable": true,
+    "target_truth_not_proven": true,
+    "word_object_persistence_passed": true,
+    "official_format_master_preserved": true,
+    "word_rebuilt_from_plain_text": false
+  }
+}
