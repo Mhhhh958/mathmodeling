@@ -1,0 +1,21 @@
+{
+  "schema_version": "10B-env-1.0",
+  "step_id": "10-B",
+  "run_id": "run_10-B_20260920T091327000000Z_4346ce31_49e30c62",
+  "captured_utc": "2026-09-20T09:13:27Z",
+  "execution_mode": "container_incremental_docx_edit",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python_version": "3.13.5",
+  "python_docx_version": "1.2.0",
+  "matplotlib_version": "3.10.8",
+  "pillow_version": "12.3.0",
+  "libreoffice_version": "LibreOffice 25.2.3.2 520(Build:2)",
+  "renderer": "/home/oai/skills/docx/render_docx.py",
+  "source_word_sha256": "cbbd4e50959ab35d00abed5811e81667e5a28d97c5ada58f1f5eb081bc016b1e",
+  "output_word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+  "figure11_sha256": "c4b65db645ac41ca65c910a3dbeaeb43d29c14a2946de46e84ae0a3f2c7cb1b3",
+  "writeback_code_sha256": "ba4d79a9d13333c2638e9e3e7790720af74de70462b32f00749654816b5a32a6",
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false
+}
