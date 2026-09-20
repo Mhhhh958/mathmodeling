@@ -1,0 +1,92 @@
+{
+  "schema_version": "13A1-1.0",
+  "step_id": "13-A1",
+  "status": "frozen_before_execution",
+  "scope": "freeze final answers/numbers/result versions only; no experiments, no formal figures, no Word edits",
+  "source_step12": {
+    "audit_freeze_id": "FREEZE-12A1-5e3e74e2",
+    "validation_freeze_id": "FREEZE-12A2-f107c2fa",
+    "latest_word_artifact_id": "WORD-V1.3-9c38c898",
+    "latest_word_sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5"
+  },
+  "final_code_bundle": {
+    "mode": "git",
+    "final_step12_repository_snapshot_commit": "10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "final_scientific_execution_commit": "a27d0365fedd88e6d334008efdd4f3fc82c39d74",
+    "required_scientific_code_manifests": [
+      "protocol/04A/code_manifest.json",
+      "protocol/07A/code_manifest.json",
+      "protocol/09A/code_manifest.json",
+      "protocol/10A/code_manifest.json",
+      "protocol/11A/code_manifest.json",
+      "protocol/12A2/code_manifest.json"
+    ]
+  },
+  "final_data_lineage": {
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "feature_version_id": "FEAT-23d45f5649dcd5f1",
+    "derived_chain": [
+      "FREEZE-02A-6f36d0b4",
+      "FREEZE-03A-f5307f8f",
+      "FREEZE-04A-3e3b97c0",
+      "FREEZE-05A-ba6432cf",
+      "FREEZE-06A-01576948",
+      "FREEZE-07A-7e8829fb",
+      "FREEZE-08A-8cd7401f",
+      "FREEZE-09A-26f99878",
+      "FREEZE-10A-4346ce31",
+      "FREEZE-11A-1f812c22",
+      "FREEZE-12A1-5e3e74e2",
+      "FREEZE-12A2-f107c2fa"
+    ]
+  },
+  "final_model_artifacts": [
+    {
+      "role": "final_source_classifier",
+      "artifact_path": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
+      "expected_sha256": "4ee408ac96054e3b86e1c62c7a7afedc4baabd792390b1ad8bbb338da404d685",
+      "model_family": "H1_RF"
+    },
+    {
+      "role": "final_transfer_inference_bundle",
+      "artifact_path": "outputs/runs/run_09-A_20260920T070725126712Z_6ef81c21_26f99878/models/final_transfer_bundle.joblib",
+      "expected_sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+      "model_family": "T1(alpha=0.25) + frozen H1_RF"
+    }
+  ],
+  "official_AP": {
+    "answer_source": "outputs/runs/run_10-A_20260920T085322828930Z_bcbb6757_4346ce31/artifacts/A_P_final_label_table.csv",
+    "final_validation_source": "protocol/12A2/validation_record.json",
+    "expected_files": 16,
+    "expected_windows_per_file": 15,
+    "label_order": [
+      "OR",
+      "IR",
+      "B",
+      "N"
+    ],
+    "score_identity": "uncalibrated model score; never true correctness probability",
+    "truth_identity": "UNKNOWN/unknown target truth"
+  },
+  "display_policy": {
+    "AP_score_decimals": 3,
+    "rates_and_metrics_decimals": 4,
+    "MMD_decimals": 4,
+    "feature_recompute_error_scientific_digits": 3,
+    "counts_decimals": 0,
+    "exact_values_always_retained_in_machine_readable_columns": true
+  },
+  "random_spot_check": {
+    "seed": 20260921,
+    "core_number_count": 8,
+    "AP_row_count": 4
+  },
+  "prohibitions": [
+    "no new model training/tuning/reselection",
+    "no formal plotting",
+    "no Word edit",
+    "no numeric inference from screenshots/old figures",
+    "no target Accuracy/F1/Recall",
+    "no probability wording for uncalibrated RF scores"
+  ]
+}
