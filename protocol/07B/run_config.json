@@ -1,0 +1,24 @@
+{
+  "schema_version": "07B-1.0",
+  "step_id": "07-B",
+  "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed",
+  "source_A_freeze_package_id": "FREEZE-07A-7e8829fb",
+  "source_A_run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
+  "source_word": {
+    "version": "V0.7.1",
+    "artifact_id": "WORD-V0.7.1-890aa7df",
+    "sha256": "890aa7dff094d6d64795d2968cd16c78a9668d22e0da203d248e1f059bb4cb31",
+    "library_file_id": "libfile_916202dedb84819192dc67df70aea809"
+  },
+  "output_version": "V0.8",
+  "mode": "incremental_word_writeback_only",
+  "training": false,
+  "tuning": false,
+  "model_selection": false,
+  "figure_policy": {
+    "base_final": "single_figure",
+    "ablation": "single_figure",
+    "complexity_scatter": "omitted_as_unnecessary"
+  },
+  "random_seed_used_for_new_modeling": null
+}
