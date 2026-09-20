@@ -1,0 +1,14 @@
+{
+  "group_id": "source_domain/cwru_12khz_fe/IR007_0.mat",
+  "relative_path": "source_domain/cwru_12khz_fe/IR007_0.mat",
+  "true_label_file": "IR",
+  "pred_label_file": "OR",
+  "window_count_source_interface": 15,
+  "unique_window_labels": [
+    "IR"
+  ],
+  "all_window_labels_match_file_truth": true,
+  "all_group_ids_match": true,
+  "outer_fold": 0,
+  "passed": true
+}

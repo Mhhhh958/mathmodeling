@@ -1,0 +1,9 @@
+{
+  "calibration_performed": false,
+  "term_to_use": "model score",
+  "term_not_to_use": [
+    "calibrated probability",
+    "confidence"
+  ],
+  "aggregation": "mean normalized LR score vector by file then argmax"
+}

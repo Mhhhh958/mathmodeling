@@ -1,0 +1,245 @@
+{
+  "baseline": "multinomial logistic regression, 26 common features",
+  "source_files": 49,
+  "source_windows": 733,
+  "outer_folds": 4,
+  "inner_folds_per_outer": 3,
+  "formal_inner_fits": 72,
+  "outer_refits": 4,
+  "smoke_fit": 1,
+  "selected_configs": [
+    {
+      "outer_fold": 0,
+      "C": 1.0,
+      "weighting": "file_balanced",
+      "mean_inner_file_macro_f1": 0.9132275132275133,
+      "min_inner_file_macro_f1": 0.8666666666666667,
+      "min_class_recall_mean_across_inner": 0.8000000000000002,
+      "mean_recall_OR": 0.8000000000000002,
+      "mean_recall_IR": 0.8888888888888888,
+      "mean_recall_B": 1.0,
+      "mean_recall_N": 1.0,
+      "convergence_warning_count": 0
+    },
+    {
+      "outer_fold": 1,
+      "C": 1.0,
+      "weighting": "file_and_class_balanced",
+      "mean_inner_file_macro_f1": 0.6752645502645503,
+      "min_inner_file_macro_f1": 0.3142857142857143,
+      "min_class_recall_mean_across_inner": 0.5555555555555555,
+      "mean_recall_OR": 0.5666666666666668,
+      "mean_recall_IR": 0.5555555555555555,
+      "mean_recall_B": 1.0,
+      "mean_recall_N": 0.6666666666666666,
+      "convergence_warning_count": 0
+    },
+    {
+      "outer_fold": 2,
+      "C": 1.0,
+      "weighting": "file_balanced",
+      "mean_inner_file_macro_f1": 0.8217893217893217,
+      "min_inner_file_macro_f1": 0.7142857142857143,
+      "min_class_recall_mean_across_inner": 0.6666666666666666,
+      "mean_recall_OR": 0.8111111111111112,
+      "mean_recall_IR": 0.8888888888888888,
+      "mean_recall_B": 1.0,
+      "mean_recall_N": 0.6666666666666666,
+      "convergence_warning_count": 0
+    },
+    {
+      "outer_fold": 3,
+      "C": 1.0,
+      "weighting": "file_balanced",
+      "mean_inner_file_macro_f1": 0.7243867243867244,
+      "min_inner_file_macro_f1": 0.5151515151515151,
+      "min_class_recall_mean_across_inner": 0.6666666666666666,
+      "mean_recall_OR": 0.8222222222222223,
+      "mean_recall_IR": 0.6666666666666666,
+      "mean_recall_B": 0.7777777777777777,
+      "mean_recall_N": 0.6666666666666666,
+      "convergence_warning_count": 0
+    }
+  ],
+  "outer_file_metrics": [
+    {
+      "outer_fold": 0,
+      "selected_C": 1.0,
+      "selected_weighting": "file_balanced",
+      "train_files": 36,
+      "test_files": 13,
+      "train_windows": 540,
+      "test_windows": 193,
+      "file_macro_f1": 0.4464285714285714,
+      "file_accuracy": 0.5384615384615384,
+      "file_recall_OR": 0.5,
+      "file_recall_IR": 0.3333333333333333,
+      "file_recall_B": 1.0,
+      "file_recall_N": 0.0,
+      "window_macro_f1_aux": 0.42993549349521315,
+      "window_accuracy_aux": 0.5233160621761658,
+      "convergence_warning_count": 0
+    },
+    {
+      "outer_fold": 1,
+      "selected_C": 1.0,
+      "selected_weighting": "file_and_class_balanced",
+      "train_files": 37,
+      "test_files": 12,
+      "train_windows": 553,
+      "test_windows": 180,
+      "file_macro_f1": 1.0,
+      "file_accuracy": 1.0,
+      "file_recall_OR": 1.0,
+      "file_recall_IR": 1.0,
+      "file_recall_B": 1.0,
+      "file_recall_N": 1.0,
+      "window_macro_f1_aux": 0.9640717067811844,
+      "window_accuracy_aux": 0.9555555555555556,
+      "convergence_warning_count": 0
+    },
+    {
+      "outer_fold": 2,
+      "selected_C": 1.0,
+      "selected_weighting": "file_balanced",
+      "train_files": 37,
+      "test_files": 12,
+      "train_windows": 553,
+      "test_windows": 180,
+      "file_macro_f1": 0.8095238095238095,
+      "file_accuracy": 0.75,
+      "file_recall_OR": 0.4,
+      "file_recall_IR": 1.0,
+      "file_recall_B": 1.0,
+      "file_recall_N": 1.0,
+      "window_macro_f1_aux": 0.7956322272498744,
+      "window_accuracy_aux": 0.7333333333333333,
+      "convergence_warning_count": 0
+    },
+    {
+      "outer_fold": 3,
+      "selected_C": 1.0,
+      "selected_weighting": "file_balanced",
+      "train_files": 37,
+      "test_files": 12,
+      "train_windows": 553,
+      "test_windows": 180,
+      "file_macro_f1": 0.9272727272727272,
+      "file_accuracy": 0.9166666666666666,
+      "file_recall_OR": 1.0,
+      "file_recall_IR": 0.6666666666666666,
+      "file_recall_B": 1.0,
+      "file_recall_N": 1.0,
+      "window_macro_f1_aux": 0.8873868819649459,
+      "window_accuracy_aux": 0.8611111111111112,
+      "convergence_warning_count": 0
+    }
+  ],
+  "file_macro_f1_distribution": {
+    "file_macro_f1_values": [
+      0.4464285714285714,
+      1.0,
+      0.8095238095238095,
+      0.9272727272727272
+    ],
+    "median": 0.8683982683982684,
+    "min": 0.4464285714285714,
+    "max": 1.0,
+    "note": "four frozen outer-fold results; min-max is not a confidence interval",
+    "pooled_oof_file_macro_f1": 0.8184523809523809,
+    "pooled_oof_file_accuracy": 0.7959183673469388,
+    "pooled_oof_window_macro_f1_aux": 0.8037470662898439
+  },
+  "pooled_oof_file_metrics": {
+    "macro_f1": 0.8184523809523809,
+    "accuracy": 0.7959183673469388,
+    "per_class_recall": {
+      "OR": 0.7142857142857143,
+      "IR": 0.75,
+      "B": 1.0,
+      "N": 0.75
+    },
+    "confusion_matrix": [
+      [
+        15,
+        6,
+        0,
+        0
+      ],
+      [
+        3,
+        9,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        3
+      ]
+    ]
+  },
+  "pooled_oof_window_metrics_aux": {
+    "macro_f1": 0.8037470662898439,
+    "accuracy": 0.7639836289222374,
+    "per_class_recall": {
+      "OR": 0.6614420062695925,
+      "IR": 0.7777777777777778,
+      "B": 0.9111111111111111,
+      "N": 0.8333333333333334
+    },
+    "confusion_matrix": [
+      [
+        211,
+        100,
+        8,
+        0
+      ],
+      [
+        39,
+        140,
+        1,
+        0
+      ],
+      [
+        15,
+        1,
+        164,
+        0
+      ],
+      [
+        9,
+        0,
+        0,
+        45
+      ]
+    ]
+  },
+  "misclassified_files": 10,
+  "misclassification_types": [
+    {
+      "class_label": "OR",
+      "pred_label": "IR",
+      "file_count": 6
+    },
+    {
+      "class_label": "IR",
+      "pred_label": "OR",
+      "file_count": 3
+    },
+    {
+      "class_label": "N",
+      "pred_label": "OR",
+      "file_count": 1
+    }
+  ],
+  "calibration_performed": false,
+  "score_wording": "model score only; not calibrated probability/confidence"
+}

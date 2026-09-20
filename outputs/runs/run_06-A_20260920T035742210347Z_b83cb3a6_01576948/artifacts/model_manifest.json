@@ -1,0 +1,45 @@
+{
+  "models": [
+    {
+      "outer_fold": 0,
+      "path": "models/outer_fold_0_logistic_baseline.joblib",
+      "sha256": "974c00c24e71f4d46737e2171721c02851bc20b69893965c6d9ff49f752a1efb",
+      "selected_C": 1.0,
+      "selected_weighting": "file_balanced",
+      "train_files": 36,
+      "test_files": 13
+    },
+    {
+      "outer_fold": 1,
+      "path": "models/outer_fold_1_logistic_baseline.joblib",
+      "sha256": "a745f250375624af5bfa3b491be1b8ad9228f3e486a8f11350e42076c4180b3d",
+      "selected_C": 1.0,
+      "selected_weighting": "file_and_class_balanced",
+      "train_files": 37,
+      "test_files": 12
+    },
+    {
+      "outer_fold": 2,
+      "path": "models/outer_fold_2_logistic_baseline.joblib",
+      "sha256": "bb4a3192fc8eae71151bb8c98563f300cd88ce3773c58f83daeb3b4b874da174",
+      "selected_C": 1.0,
+      "selected_weighting": "file_balanced",
+      "train_files": 37,
+      "test_files": 12
+    },
+    {
+      "outer_fold": 3,
+      "path": "models/outer_fold_3_logistic_baseline.joblib",
+      "sha256": "2b8616ed58262565743ea1153abd807df635cbc94230ef335e8e2ed0d401b656",
+      "selected_C": 1.0,
+      "selected_weighting": "file_balanced",
+      "train_files": 37,
+      "test_files": 12
+    }
+  ],
+  "formal_fit_count": 76,
+  "smoke_fit_count": 1,
+  "total_fit_count": 77,
+  "calibrated": false,
+  "score_semantics": "use LogisticRegression predict_proba normalized outputs as model score vectors for the frozen mean-across-windows aggregation; they are not calibrated and must not be described as calibrated probabilities/confidence"
+}

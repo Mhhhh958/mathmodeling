@@ -1,0 +1,75 @@
+{
+  "file_level": {
+    "macro_f1": 0.8184523809523809,
+    "accuracy": 0.7959183673469388,
+    "per_class_recall": {
+      "OR": 0.7142857142857143,
+      "IR": 0.75,
+      "B": 1.0,
+      "N": 0.75
+    },
+    "confusion_matrix": [
+      [
+        15,
+        6,
+        0,
+        0
+      ],
+      [
+        3,
+        9,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        3
+      ]
+    ]
+  },
+  "window_level_auxiliary": {
+    "macro_f1": 0.8037470662898439,
+    "accuracy": 0.7639836289222374,
+    "per_class_recall": {
+      "OR": 0.6614420062695925,
+      "IR": 0.7777777777777778,
+      "B": 0.9111111111111111,
+      "N": 0.8333333333333334
+    },
+    "confusion_matrix": [
+      [
+        211,
+        100,
+        8,
+        0
+      ],
+      [
+        39,
+        140,
+        1,
+        0
+      ],
+      [
+        15,
+        1,
+        164,
+        0
+      ],
+      [
+        9,
+        0,
+        0,
+        45
+      ]
+    ]
+  },
+  "score_semantics": "uncalibrated normalized model scores; no confidence/probability claim"
+}

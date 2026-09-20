@@ -1,0 +1,63 @@
+{
+  "step_id": "06-A",
+  "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "checks": {
+    "smoke_test_before_formal_training": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/smoke_test.json",
+      "key_numbers": {
+        "feature_dim": 26,
+        "train_rows": 48,
+        "validation_rows": 16
+      }
+    },
+    "frozen_splits_and_seed_used": {
+      "passed": true,
+      "evidence": "05-A split hashes {'outer_split_sha256': 'd271092831a9f531fcc5578e880814d1459dc60d990943038e524fd62051371c', 'inner_split_sha256': '07b3316570afc4826ebaf1ed518d4abb3f21286874a741bd69b80c832af4eefd'}; seed=20260919",
+      "group_overlap": false
+    },
+    "independent_metric_and_confusion_recalculation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/independent_metric_recalculation.json",
+      "macro_abs_diff": 0.0,
+      "confusion_exact": true
+    },
+    "window_to_file_aggregation_recalculation": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/aggregation_recalculation.csv",
+      "checked_groups": [
+        "source_domain/cwru_48khz_normal/N_1_(1772rpm).mat",
+        "source_domain/cwru_12khz_fe/IR007_0.mat"
+      ]
+    },
+    "misclassification_integrity": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/misclassification_integrity_check.json",
+      "misclassified_files": 10
+    },
+    "training_boundary": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/logs/training_log.jsonl",
+      "statement": "StandardScaler and sample weights are created only from current inner-train or outer-train-pool rows; outer test first used after selected config is logged"
+    },
+    "no_window_duplication_for_normal_balance": {
+      "passed": true,
+      "evidence": "sample weights only; no resampling/SMOTE/row duplication code path",
+      "normal_independent_files": 4
+    },
+    "score_not_claimed_calibrated": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/score_semantics.json",
+      "calibration_performed": false
+    },
+    "artifacts_complete": {
+      "passed": true,
+      "evidence": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/model_manifest.json",
+      "model_files": 4,
+      "oof_windows": 733,
+      "oof_files": 49
+    }
+  },
+  "passed": true,
+  "status": "passed"
+}

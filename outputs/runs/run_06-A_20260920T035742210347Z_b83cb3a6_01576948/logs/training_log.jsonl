@@ -1,0 +1,13 @@
+{"utc": "2026-09-20T03:57:42.251670Z", "event": "smoke_test", "passed": true, "boundary": "outer0/inner0 train and validation only; no outer-test rows used", "train_rows": 48, "validation_rows": 16, "feature_dim": 26, "train_classes": {"OR": 12, "IR": 12, "B": 12, "N": 12}, "validation_classes": {"OR": 4, "IR": 4, "B": 4, "N": 4}, "label_order": ["OR", "IR", "B", "N"], "score_shape": [16, 4], "score_row_sum_min": 0.9999999999999998, "score_row_sum_max": 1.0, "predicted_labels": ["B", "IR", "N", "OR"], "convergence_warnings": []}
+{"utc": "2026-09-20T03:57:42.251782Z", "event": "outer_start", "outer_fold": 0}
+{"utc": "2026-09-20T03:57:43.045764Z", "event": "config_selected_before_outer_test", "outer_fold": 0, "C": 1.0, "weighting": "file_balanced", "mean_inner_file_macro_f1": 0.9132275132275133}
+{"utc": "2026-09-20T03:57:43.111036Z", "event": "outer_test_evaluated", "outer_fold": 0, "file_macro_f1": 0.4464285714285714, "file_accuracy": 0.5384615384615384, "misclassified_files": 6}
+{"utc": "2026-09-20T03:57:43.111135Z", "event": "outer_start", "outer_fold": 1}
+{"utc": "2026-09-20T03:57:43.894393Z", "event": "config_selected_before_outer_test", "outer_fold": 1, "C": 1.0, "weighting": "file_and_class_balanced", "mean_inner_file_macro_f1": 0.6752645502645503}
+{"utc": "2026-09-20T03:57:43.956935Z", "event": "outer_test_evaluated", "outer_fold": 1, "file_macro_f1": 1.0, "file_accuracy": 1.0, "misclassified_files": 0}
+{"utc": "2026-09-20T03:57:43.957026Z", "event": "outer_start", "outer_fold": 2}
+{"utc": "2026-09-20T03:57:44.850916Z", "event": "config_selected_before_outer_test", "outer_fold": 2, "C": 1.0, "weighting": "file_balanced", "mean_inner_file_macro_f1": 0.8217893217893217}
+{"utc": "2026-09-20T03:57:44.918163Z", "event": "outer_test_evaluated", "outer_fold": 2, "file_macro_f1": 0.8095238095238095, "file_accuracy": 0.75, "misclassified_files": 3}
+{"utc": "2026-09-20T03:57:44.918255Z", "event": "outer_start", "outer_fold": 3}
+{"utc": "2026-09-20T03:57:45.803435Z", "event": "config_selected_before_outer_test", "outer_fold": 3, "C": 1.0, "weighting": "file_balanced", "mean_inner_file_macro_f1": 0.7243867243867244}
+{"utc": "2026-09-20T03:57:45.869985Z", "event": "outer_test_evaluated", "outer_fold": 3, "file_macro_f1": 0.9272727272727272, "file_accuracy": 0.9166666666666666, "misclassified_files": 1}

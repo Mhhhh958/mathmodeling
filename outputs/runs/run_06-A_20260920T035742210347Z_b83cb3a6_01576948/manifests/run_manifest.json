@@ -1,0 +1,199 @@
+{
+  "schema_version": "06A-1.0",
+  "manifest_type": "run_manifest",
+  "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "step_id": "06-A",
+  "status": "completed",
+  "created_utc": "2026-09-20T03:57:42.208100Z",
+  "binding": {
+    "code_version_id": "git:9313b5e5aa5734ef6088626fcad1904bb7ead347",
+    "data_version_id": "FREEZE-05A-ba6432cf",
+    "run_config_sha256": "4ca4c132a663eac78825fbc2e859f1d22c6ced5d12b7e5d376d55f5a1cd9e1ae",
+    "seed": 20260919,
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "binding_digest": "b83cb3a66d32e8ab8d9c6cd3e834a9d159f122ec31d767351e3e85e05f780775"
+  },
+  "code": {
+    "repository": "Mhhhh958/mathmodeling",
+    "commit": "9313b5e5aa5734ef6088626fcad1904bb7ead347",
+    "entrypoint": "scripts/step06a_minimal_logistic_baseline.py",
+    "code_manifest": "protocol/06A/code_manifest.json"
+  },
+  "data": {
+    "input_05A_freeze": "FREEZE-05A-ba6432cf",
+    "input_feature_version": "FEAT-23d45f5649dcd5f1",
+    "source_files": 49,
+    "source_windows": 733
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "environment_manifest_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "config": {
+    "path": "protocol/06A/run_config.json",
+    "sha256": "4ca4c132a663eac78825fbc2e859f1d22c6ced5d12b7e5d376d55f5a1cd9e1ae"
+  },
+  "outputs": {
+    "root": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+    "files": [
+      {
+        "relative_path": "artifacts/A_freeze_package.json",
+        "size_bytes": 10259,
+        "sha256": "05c89316383c12b9631ad35b949e6e226ddc4ec8a7f5c2c9ecf4d1ec2a32c4f1"
+      },
+      {
+        "relative_path": "artifacts/aggregation_recalculation.csv",
+        "size_bytes": 896,
+        "sha256": "70f73fcfad3f47459e506a567820b67c71a5e277cd509b40b3e91a3b4fdb8350"
+      },
+      {
+        "relative_path": "artifacts/baseline_result_summary.json",
+        "size_bytes": 6278,
+        "sha256": "83a74dee3835d28a27a6c13465dfae32f2c017692dc5a8a5660de45cce16b57e"
+      },
+      {
+        "relative_path": "artifacts/failure_condition_summary.csv",
+        "size_bytes": 287,
+        "sha256": "9248549a359b302c5669c0ba5f23f60c713f4772c45054a7836ec60f52890dcd"
+      },
+      {
+        "relative_path": "artifacts/file_metric_distribution.json",
+        "size_bytes": 428,
+        "sha256": "ed2c83be2cbbb6d6eb577bb25e1b298201ed18a275529b3b14c065fb68eade81"
+      },
+      {
+        "relative_path": "artifacts/independent_metric_recalculation.json",
+        "size_bytes": 758,
+        "sha256": "665b014dd2856cb338dfd078e726dfcf5fbcd154e8cb2fbcfaf06efcd6c7cb70"
+      },
+      {
+        "relative_path": "artifacts/inner_lr_results.csv",
+        "size_bytes": 7816,
+        "sha256": "6c3d01874ab829a0b2128598243df1ec13f9b48e8a1938d57a56c7b75b0e7359"
+      },
+      {
+        "relative_path": "artifacts/misclassification_integrity_check.json",
+        "size_bytes": 370,
+        "sha256": "0e4ba043285d01ea77684aab388efc5ad2f86484d3049a9c046721319574851e"
+      },
+      {
+        "relative_path": "artifacts/misclassification_type_summary.csv",
+        "size_bytes": 60,
+        "sha256": "06e583e23c783e051c9efe53ed4e4265e158e4257cd648cdbc27d0edfab7f823"
+      },
+      {
+        "relative_path": "artifacts/misclassified_files.csv",
+        "size_bytes": 2687,
+        "sha256": "191505e95cc8351b349fd24e57ee95018b8561c88ce073447878c2310d6bdb0c"
+      },
+      {
+        "relative_path": "artifacts/model_manifest.json",
+        "size_bytes": 1568,
+        "sha256": "de04963f81ab535839aff8b40d1d8655ddf6d4ee416d1bd6a2d6d16006242e91"
+      },
+      {
+        "relative_path": "artifacts/oof_file_predictions.csv",
+        "size_bytes": 12345,
+        "sha256": "feaaaf919b5455c18a5157626848bc5e088da7dea59b2b3c2144d148f904428c"
+      },
+      {
+        "relative_path": "artifacts/oof_window_predictions.csv",
+        "size_bytes": 178697,
+        "sha256": "503d0b522ed9d452af125cd3d0324dc2bf15b7c79ee272579ae08f9127319fde"
+      },
+      {
+        "relative_path": "artifacts/outer_fold_metrics.csv",
+        "size_bytes": 755,
+        "sha256": "fbee7e75d4775f34008b6e754ee20944643142c9dd807ce812e0a4ae5e8f17cf"
+      },
+      {
+        "relative_path": "artifacts/pooled_file_class_metrics.csv",
+        "size_bytes": 181,
+        "sha256": "4185e5055083ad6a2b95c50c96bd2cc15492f3994f9d5f974f3196dac65a0de8"
+      },
+      {
+        "relative_path": "artifacts/pooled_file_confusion_matrix.csv",
+        "size_bytes": 98,
+        "sha256": "59b2f53b3a37081ae3154c94efee8222ee2c2ddf744cb7f1a2b8ea6b23dfdd5b"
+      },
+      {
+        "relative_path": "artifacts/pooled_oof_metrics.json",
+        "size_bytes": 1126,
+        "sha256": "b37c458715d8eb020dbcdb0dbee8106bf3860096898df59ec09099bcbeb01625"
+      },
+      {
+        "relative_path": "artifacts/score_semantics.json",
+        "size_bytes": 215,
+        "sha256": "7edf7e84cc635dc8c58ea979224b9715f3aa3ddb55577246194ecc6fc0e91e5c"
+      },
+      {
+        "relative_path": "artifacts/selected_lr_config_by_outer_fold.csv",
+        "size_bytes": 764,
+        "sha256": "8bcabddc63590e83797da7c2edbdc91b12eeb66c9f02f568de1b7f9d35760c0c"
+      },
+      {
+        "relative_path": "artifacts/smoke_test.json",
+        "size_bytes": 593,
+        "sha256": "08eb42b54b84cdd9a4bf0de6ad610dadc757a190de0f36a0ef05ad9b106d09b5"
+      },
+      {
+        "relative_path": "artifacts/validation_record.json",
+        "size_bytes": 2633,
+        "sha256": "7811187ef896a0efa0f727295fa49121fc97c720f730dbfda74a596218c37c9f"
+      },
+      {
+        "relative_path": "logs/training_log.jsonl",
+        "size_bytes": 2337,
+        "sha256": "5630792db66667714852a47f9f7d8cd4e7beb1bcced2cd9660a507cd3ccd5430"
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "size_bytes": 438,
+        "sha256": "5ec43021f174a62058296746c0fc686eda81be044a180f26e427ba677b1d07d8"
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "size_bytes": 208,
+        "sha256": "5cae8a612fd386ba0ab3262f967f080781c3fa636ee77f3c1231836d3721fa79"
+      },
+      {
+        "relative_path": "models/outer_fold_0_logistic_baseline.joblib",
+        "size_bytes": 3149,
+        "sha256": "974c00c24e71f4d46737e2171721c02851bc20b69893965c6d9ff49f752a1efb"
+      },
+      {
+        "relative_path": "models/outer_fold_1_logistic_baseline.joblib",
+        "size_bytes": 3155,
+        "sha256": "a745f250375624af5bfa3b491be1b8ad9228f3e486a8f11350e42076c4180b3d"
+      },
+      {
+        "relative_path": "models/outer_fold_2_logistic_baseline.joblib",
+        "size_bytes": 3147,
+        "sha256": "bb4a3192fc8eae71151bb8c98563f300cd88ce3773c58f83daeb3b4b874da174"
+      },
+      {
+        "relative_path": "models/outer_fold_3_logistic_baseline.joblib",
+        "size_bytes": 3147,
+        "sha256": "2b8616ed58262565743ea1153abd807df635cbc94230ef335e8e2ed0d401b656"
+      }
+    ],
+    "output_tree_sha256": "984afbce61a7e15b4b48d893b6751870e5ea36da3948c476038fc03823eb80d1"
+  },
+  "checkpoint": {
+    "completed_batches": [
+      "smoke-test",
+      "outer0",
+      "outer1",
+      "outer2",
+      "outer3",
+      "OOF-aggregation",
+      "independent-recalculation",
+      "failure-analysis",
+      "freeze"
+    ],
+    "pending_batches": [],
+    "resume_token": null
+  },
+  "duration_seconds": 3.988001823425293
+}

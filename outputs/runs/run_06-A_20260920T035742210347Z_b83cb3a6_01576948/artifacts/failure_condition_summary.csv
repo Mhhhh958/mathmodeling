@@ -1,0 +1,11 @@
+﻿class_label,pred_label,load_hp,fault_size_in,outer_race_position_clock,file_count
+IR,OR,0.0,0.007,,1
+IR,OR,0.0,0.014,,1
+IR,OR,3.0,0.007,,1
+N,OR,0.0,,,1
+OR,IR,0.0,0.014,3.0,1
+OR,IR,1.0,0.014,3.0,1
+OR,IR,1.0,0.021,3.0,1
+OR,IR,2.0,0.014,3.0,1
+OR,IR,3.0,0.007,3.0,1
+OR,IR,3.0,0.021,3.0,1

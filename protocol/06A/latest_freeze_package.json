@@ -1,0 +1,335 @@
+{
+  "schema_version": "00C-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "06-A",
+  "freeze_package_id": "FREEZE-06A-01576948",
+  "status": "passed",
+  "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948",
+  "versions": {
+    "code_version_id": "git:9313b5e5aa5734ef6088626fcad1904bb7ead347",
+    "raw_data_version_id": "RAW-5a5dd129c91bfc64",
+    "input_derived_data_ids": [
+      "FREEZE-05A-ba6432cf",
+      "FEAT-23d45f5649dcd5f1"
+    ],
+    "run_config_sha256": "4ca4c132a663eac78825fbc2e859f1d22c6ced5d12b7e5d376d55f5a1cd9e1ae",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369"
+  },
+  "random_seed": 20260919,
+  "parameters": {
+    "model": "LogisticRegression",
+    "features": 26,
+    "C_candidates": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "weighting_candidates": [
+      "file_balanced",
+      "file_and_class_balanced"
+    ],
+    "outer_folds": 4,
+    "inner_folds": 3,
+    "formal_inner_fits": 72,
+    "outer_refits": 4,
+    "calibration": false
+  },
+  "real_results": [
+    {
+      "name": "outer_fold_file_metrics",
+      "value": [
+        {
+          "outer_fold": 0,
+          "selected_C": 1.0,
+          "selected_weighting": "file_balanced",
+          "train_files": 36,
+          "test_files": 13,
+          "train_windows": 540,
+          "test_windows": 193,
+          "file_macro_f1": 0.4464285714285714,
+          "file_accuracy": 0.5384615384615384,
+          "file_recall_OR": 0.5,
+          "file_recall_IR": 0.3333333333333333,
+          "file_recall_B": 1.0,
+          "file_recall_N": 0.0,
+          "window_macro_f1_aux": 0.42993549349521315,
+          "window_accuracy_aux": 0.5233160621761658,
+          "convergence_warning_count": 0
+        },
+        {
+          "outer_fold": 1,
+          "selected_C": 1.0,
+          "selected_weighting": "file_and_class_balanced",
+          "train_files": 37,
+          "test_files": 12,
+          "train_windows": 553,
+          "test_windows": 180,
+          "file_macro_f1": 1.0,
+          "file_accuracy": 1.0,
+          "file_recall_OR": 1.0,
+          "file_recall_IR": 1.0,
+          "file_recall_B": 1.0,
+          "file_recall_N": 1.0,
+          "window_macro_f1_aux": 0.9640717067811844,
+          "window_accuracy_aux": 0.9555555555555556,
+          "convergence_warning_count": 0
+        },
+        {
+          "outer_fold": 2,
+          "selected_C": 1.0,
+          "selected_weighting": "file_balanced",
+          "train_files": 37,
+          "test_files": 12,
+          "train_windows": 553,
+          "test_windows": 180,
+          "file_macro_f1": 0.8095238095238095,
+          "file_accuracy": 0.75,
+          "file_recall_OR": 0.4,
+          "file_recall_IR": 1.0,
+          "file_recall_B": 1.0,
+          "file_recall_N": 1.0,
+          "window_macro_f1_aux": 0.7956322272498744,
+          "window_accuracy_aux": 0.7333333333333333,
+          "convergence_warning_count": 0
+        },
+        {
+          "outer_fold": 3,
+          "selected_C": 1.0,
+          "selected_weighting": "file_balanced",
+          "train_files": 37,
+          "test_files": 12,
+          "train_windows": 553,
+          "test_windows": 180,
+          "file_macro_f1": 0.9272727272727272,
+          "file_accuracy": 0.9166666666666666,
+          "file_recall_OR": 1.0,
+          "file_recall_IR": 0.6666666666666666,
+          "file_recall_B": 1.0,
+          "file_recall_N": 1.0,
+          "window_macro_f1_aux": 0.8873868819649459,
+          "window_accuracy_aux": 0.8611111111111112,
+          "convergence_warning_count": 0
+        }
+      ]
+    },
+    {
+      "name": "file_macro_f1_distribution",
+      "value": {
+        "file_macro_f1_values": [
+          0.4464285714285714,
+          1.0,
+          0.8095238095238095,
+          0.9272727272727272
+        ],
+        "median": 0.8683982683982684,
+        "min": 0.4464285714285714,
+        "max": 1.0,
+        "note": "four frozen outer-fold results; min-max is not a confidence interval",
+        "pooled_oof_file_macro_f1": 0.8184523809523809,
+        "pooled_oof_file_accuracy": 0.7959183673469388,
+        "pooled_oof_window_macro_f1_aux": 0.8037470662898439
+      }
+    },
+    {
+      "name": "pooled_oof_file_metrics",
+      "value": {
+        "macro_f1": 0.8184523809523809,
+        "accuracy": 0.7959183673469388,
+        "per_class_recall": {
+          "OR": 0.7142857142857143,
+          "IR": 0.75,
+          "B": 1.0,
+          "N": 0.75
+        },
+        "confusion_matrix": [
+          [
+            15,
+            6,
+            0,
+            0
+          ],
+          [
+            3,
+            9,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "name": "pooled_oof_file_class_metrics",
+      "value": [
+        {
+          "class_label": "OR",
+          "precision": 0.7894736842105263,
+          "recall": 0.7142857142857143,
+          "f1": 0.75,
+          "support_files": 21
+        },
+        {
+          "class_label": "IR",
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666666,
+          "support_files": 12
+        },
+        {
+          "class_label": "B",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support_files": 12
+        },
+        {
+          "class_label": "N",
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "support_files": 4
+        }
+      ]
+    },
+    {
+      "name": "misclassification_summary",
+      "value": {
+        "count": 10,
+        "types": [
+          {
+            "class_label": "OR",
+            "pred_label": "IR",
+            "file_count": 6
+          },
+          {
+            "class_label": "IR",
+            "pred_label": "OR",
+            "file_count": 3
+          },
+          {
+            "class_label": "N",
+            "pred_label": "OR",
+            "file_count": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "model_manifest",
+      "value": {
+        "models": [
+          {
+            "outer_fold": 0,
+            "path": "models/outer_fold_0_logistic_baseline.joblib",
+            "sha256": "974c00c24e71f4d46737e2171721c02851bc20b69893965c6d9ff49f752a1efb",
+            "selected_C": 1.0,
+            "selected_weighting": "file_balanced",
+            "train_files": 36,
+            "test_files": 13
+          },
+          {
+            "outer_fold": 1,
+            "path": "models/outer_fold_1_logistic_baseline.joblib",
+            "sha256": "a745f250375624af5bfa3b491be1b8ad9228f3e486a8f11350e42076c4180b3d",
+            "selected_C": 1.0,
+            "selected_weighting": "file_and_class_balanced",
+            "train_files": 37,
+            "test_files": 12
+          },
+          {
+            "outer_fold": 2,
+            "path": "models/outer_fold_2_logistic_baseline.joblib",
+            "sha256": "bb4a3192fc8eae71151bb8c98563f300cd88ce3773c58f83daeb3b4b874da174",
+            "selected_C": 1.0,
+            "selected_weighting": "file_balanced",
+            "train_files": 37,
+            "test_files": 12
+          },
+          {
+            "outer_fold": 3,
+            "path": "models/outer_fold_3_logistic_baseline.joblib",
+            "sha256": "2b8616ed58262565743ea1153abd807df635cbc94230ef335e8e2ed0d401b656",
+            "selected_C": 1.0,
+            "selected_weighting": "file_balanced",
+            "train_files": 37,
+            "test_files": 12
+          }
+        ],
+        "formal_fit_count": 76,
+        "smoke_fit_count": 1,
+        "total_fit_count": 77,
+        "calibrated": false,
+        "score_semantics": "use LogisticRegression predict_proba normalized outputs as model score vectors for the frozen mean-across-windows aggregation; they are not calibrated and must not be described as calibrated probabilities/confidence"
+      }
+    }
+  ],
+  "validation_evidence": [
+    {
+      "path": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/validation_record.json"
+    },
+    {
+      "path": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/independent_metric_recalculation.json"
+    },
+    {
+      "path": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/aggregation_recalculation.csv"
+    },
+    {
+      "path": "outputs/runs/run_06-A_20260920T035742210347Z_b83cb3a6_01576948/artifacts/misclassification_integrity_check.json"
+    }
+  ],
+  "anomalies_and_failures": [],
+  "b_handoff": {
+    "required_data": [
+      "baseline_result_summary.json",
+      "outer_fold_metrics.csv",
+      "pooled_oof_metrics.json",
+      "pooled_file_class_metrics.csv",
+      "pooled_file_confusion_matrix.csv",
+      "misclassified_files.csv",
+      "failure_condition_summary.csv",
+      "selected_lr_config_by_outer_fold.csv"
+    ],
+    "supported_conclusions": [
+      "all reported baseline metrics are from the current run on frozen 05-A groups",
+      "file-level Macro-F1 is primary",
+      "four outer-fold results provide the frozen distribution/min-max",
+      "normal imbalance is handled by training weights rather than duplicating windows",
+      "misclassified files are retained and analyzed"
+    ],
+    "wording_limits": [
+      "uncalibrated LogisticRegression outputs must be called model scores, not calibrated probabilities/confidence",
+      "window-level metrics are auxiliary",
+      "four-fold min-max is not a confidence interval",
+      "do not generalize beyond 49 independent source files"
+    ],
+    "approved_tables": [
+      "outer_fold_metrics.csv",
+      "pooled_file_class_metrics.csv",
+      "pooled_file_confusion_matrix.csv",
+      "misclassified_files.csv",
+      "failure_condition_summary.csv"
+    ],
+    "approved_figures": []
+  },
+  "unresolved_issues": [],
+  "freeze": {
+    "created_utc": "2026-09-20T03:57:42.208100Z",
+    "content_sha256": "e55b030399965f25849fff60f8632495fbfd6763c974b49923177033e2b18af2",
+    "invalidation_dependencies": [
+      "05-A split/evaluation protocol changes",
+      "04-A feature data changes",
+      "06-A model/config/weighting implementation changes"
+    ]
+  }
+}

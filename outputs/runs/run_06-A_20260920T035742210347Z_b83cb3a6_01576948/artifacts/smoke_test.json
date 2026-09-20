@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "boundary": "outer0/inner0 train and validation only; no outer-test rows used",
+  "train_rows": 48,
+  "validation_rows": 16,
+  "feature_dim": 26,
+  "train_classes": {
+    "OR": 12,
+    "IR": 12,
+    "B": 12,
+    "N": 12
+  },
+  "validation_classes": {
+    "OR": 4,
+    "IR": 4,
+    "B": 4,
+    "N": 4
+  },
+  "label_order": [
+    "OR",
+    "IR",
+    "B",
+    "N"
+  ],
+  "score_shape": [
+    16,
+    4
+  ],
+  "score_row_sum_min": 0.9999999999999998,
+  "score_row_sum_max": 1.0,
+  "predicted_labels": [
+    "B",
+    "IR",
+    "N",
+    "OR"
+  ],
+  "convergence_warnings": []
+}
