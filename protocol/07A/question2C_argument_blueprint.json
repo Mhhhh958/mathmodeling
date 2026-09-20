@@ -1,0 +1,81 @@
+{
+  "schema_version": "00C-question-blueprint-1.0",
+  "step_id": "07-A",
+  "question_id": "Q2C",
+  "status": "frozen_before_execution",
+  "delivery_from_problem": "在05-A固定分组/评价协议和06-A真实LR失败基础上，用少量可检验改进完成公平配对比较，保留无增益实验，冻结最终源域分类器及问题3直接继承接口。",
+  "core_contradiction": "06-A文件级OOF Macro-F1=0.818452，但10/49文件误判中9个为OR↔IR混淆，且N_0被系统判为OR；需要提高非线性类间边界表达，同时不能引入目标域不可计算的源域机理特征、不能重切测试集或反复观看测试结果调参。",
+  "baseline": {
+    "method": "06-A multinomial LogisticRegression + 26 target-compatible common features，完全沿用05-A 4 outer × 3 inner grouped protocol。",
+    "observed_failures": {
+      "total_misclassified_files": 10,
+      "types": {
+        "OR->IR": 6,
+        "IR->OR": 3,
+        "N->OR": 1
+      },
+      "outer_file_macro_f1": [
+        0.4464285714285714,
+        1,
+        0.8095238095238095,
+        0.9272727272727272
+      ],
+      "pooled_file_macro_f1": 0.8184523809523809,
+      "note": "Fold0最弱，且N_0的9/9窗口均判OR；IR007_0的15窗中14窗判OR，表明并非索引错位。"
+    }
+  },
+  "method_choice_reason": "只保留两个有证据价值且单因素可解释的改进：H1仅把LR线性决策边界换成05-A已预注册的RandomForest，特征和分组不变；H2保持LR不变，仅在每个训练边界内做固定阈值的相关冗余裁剪。H2只在内层验证上做配对消融，避免无必要地重复查看外层测试；H1只有在内层预门槛通过后才对各外层测试集进行一次性评价。",
+  "key_improvements": [
+    {
+      "id": "H1-RF",
+      "failure_reason": "OR与IR的公共统计特征可能存在非线性交互，LR线性边界在Fold0和多个3点钟OR工况上失效。",
+      "change": "仅将分类器替换为RandomForestClassifier；使用05-A预注册6配置：max_depth∈{8,16,None} × {file_balanced,file_and_class_balanced}，n_estimators=300，min_samples_leaf=1；26公共特征、分组、评价、聚合规则完全不变。",
+      "why_may_work": "树模型可表达特征阈值和交互，不要求把特征排序伪装成时间序列。",
+      "added_assumption": "训练源域中的非线性交互在目标域仍具有一定可迁移性；树模型不会因源域尺度差异过拟合。",
+      "fair_compare": "与Base使用完全相同的05-A inner/outer group IDs、seed=20260919、26列特征、文件级Macro-F1和文件聚合；每个outer先用3个inner fold选择RF配置，再一次性评估outer test。",
+      "stop_rule": "不扩网格、不换seed、不追加树模型；若预冻结内层门槛不通过，则不打开H1外层测试。"
+    },
+    {
+      "id": "H2-CORR-LR",
+      "failure_reason": "26个公共统计特征中幅值/谱统计可能高度相关，线性模型可能受冗余方向影响。",
+      "change": "保持06-A LR候选与权重策略不变；仅在每个inner-train上按绝对Pearson相关系数>0.95确定冗余特征并裁剪，列顺序按04-A feature_dictionary固定，验证集只transform不参与裁剪决定。",
+      "why_may_work": "减少近共线维度，可能改善小文件数条件下线性边界稳定性。",
+      "added_assumption": "0.95阈值足以代表强冗余且不会移除互补信息。",
+      "fair_compare": "仅在05-A全部12个inner validation fold上与对应Base LR做配对比较；不访问任何outer-test结果。",
+      "stop_rule": "H2无论好坏均不继续调阈值；若内层平均Macro-F1提升不足0.01或有明显类别召回退化，则记录为无增益/失败，不进入Final候选。"
+    }
+  ],
+  "selection_and_test_guard": {
+    "H2_gate": "inner-only diagnostic; never reaches outer test in this step",
+    "H1_pre_outer_gate": "across the four outer contexts, selected RF mean inner-validation file Macro-F1 must exceed the corresponding selected Base LR mean by at least 0.01, and mean of minimum-class-recall metric must not decrease by more than 0.05.",
+    "one_shot_outer_acceptance": "If H1 passes the inner gate, evaluate H1 once on the already-frozen four outer tests. Replace Base only if paired outer file Macro-F1 median delta > 0 and at least 3/4 fold deltas are >=0. Otherwise retain Base. No further candidate, seed, threshold or split may be tried after seeing outer results.",
+    "significance_wording": "With only four outer folds, do not use 'statistically significant'. Report paired fold deltas, median delta, mean delta, min-max delta, and nonnegative-fold count."
+  },
+  "primary_metrics_and_fairness": {
+    "primary": "file-level Macro-F1",
+    "secondary": [
+      "file-level per-class Recall",
+      "file-level confusion matrix",
+      "file accuracy",
+      "window Macro-F1 auxiliary only"
+    ],
+    "aggregation": "mean per-window class score vector within file -> argmax",
+    "paired_effect": "Final-Base file Macro-F1 on the same 4 outer folds; report foldwise deltas, mean, median, min-max and nonnegative count",
+    "constraints": [
+      "05-A outer/inner group IDs unchanged",
+      "seed fixed to 20260919",
+      "same 26 target-compatible common features for Base and H1",
+      "no target labels or target pseudo-labels used",
+      "all learned transforms/feature pruning/weights fit only inside current training boundary",
+      "outer test unavailable to H2 and unavailable to H1 until H1 inner gate is frozen and passed"
+    ]
+  },
+  "complexity_and_interface": {
+    "measure": "report feature dimension, fitted structural parameter count proxy, serialized model size, training time, and feature-ready single-file inference time",
+    "timing_scope": "GitHub Actions ubuntu-24.04 CPU; inference accepts already-extracted 26-dimensional window features; preprocessing/model inference included, raw signal feature extraction excluded; measure each outer test file as one batch and repeat for stable median.",
+    "q3_requirement": "Final pipeline must use target-compatible 26 common features only; source-only mechanism features are not eligible for Final because target lacks equivalent frozen geometry/exact RPM."
+  },
+  "core_conclusion": "Only the predeclared H1 one-shot acceptance rule can replace the 06-A baseline; H2 is a fixed-threshold inner-fold ablation. If H1 does not pass, retain LR baseline and still freeze a problem3 interface from the retained pipeline.",
+  "next_question_interface": "Provide final_source_model.joblib, final_pipeline_spec.json, q3_interface.json, feature_order.csv, class_order.json and source-final training manifest. Problem3 must consume the same 26 common features and score semantics.",
+  "evidence_guard": "不得宣称复杂模型天然更优；不得把四折配对差值写成显著性检验；不得在看到H1 outer结果后继续增加候选/改阈值/换seed；不得把source-only机理特征塞入问题3默认接口。"
+}
