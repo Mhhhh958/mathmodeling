@@ -1,18 +1,24 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r16",
-  "updated_utc": "2026-09-20T05:22:00Z",
+  "state_version": "2026.09.20-r17",
+  "updated_utc": "2026-09-20T05:35:00Z",
   "CURRENT_ALLOWED_STEP": "07-B",
   "LAST_PASS_TOKEN": "07-A-V2026.09.20-2e401561-通过",
   "LATEST_WORD": {
     "version": "V0.7.1",
-    "artifact_id": "WORD-V0.7.1-317ed7ab",
+    "artifact_id": "WORD-V0.7.1-890aa7df",
     "parent_version": "V0.7",
     "library_path": "/数学建模/06B/2025华为杯E题论文_步骤06_V0.7.1_图表优化.docx",
     "library_file_id": "libfile_916202dedb84819192dc67df70aea809",
-    "sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+    "sha256": "890aa7dff094d6d64795d2968cd16c78a9668d22e0da203d248e1f059bb4cb31",
     "source_A_freeze_package_id": "FREEZE-06A-01576948",
-    "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79"
+    "run_id": "run_06-B_20260920T042258000000Z_e55b0303_0e671b79",
+    "identity_revalidation": {
+      "status": "passed",
+      "path": "protocol/06B/word_identity_revalidation_20260920T053500Z.json",
+      "previous_recorded_sha256": "317ed7ab475dc6f5e7cb784b6ff769760d76ad98fb760a98d7750731d1033c96",
+      "reason": "byte-level OOXML package drift; content/render equivalence revalidated"
+    }
   },
   "LATEST_FREEZE_PACKAGE": {
     "step_id": "07-A",
@@ -88,6 +94,7 @@
     "latest_07A_blueprint": "protocol/07A/question2C_argument_blueprint.json",
     "latest_07A_run": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb",
     "latest_07A_final_model": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/models/final_source_model.joblib",
-    "latest_07A_q3_interface": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json"
+    "latest_07A_q3_interface": "outputs/runs/run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb/artifacts/q3_interface.json",
+    "latest_word_identity_revalidation": "protocol/06B/word_identity_revalidation_20260920T053500Z.json"
   }
 }
