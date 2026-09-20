@@ -1,0 +1,76 @@
+{
+  "binding": {
+    "binding_digest": "bf342d2c4fab7680dcdd9fa944440683f7d7fc713e551e63dcb7eb6e209bc372",
+    "code_version_id": "git:ebed42ae7023f8afdef93d5721af17b0fd8377c3",
+    "data_version_id": "DATA-DRAFT:2d339c5234d66401",
+    "environment_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "run_config_sha256": "fcff1a21c9df8253096daf54b3704016f9aff25a521b731782b0e210ae5fc192",
+    "seed": 20260919
+  },
+  "checkpoint": {
+    "completed_batches": [
+      "rules-and-ledgers-validation"
+    ],
+    "pending_batches": [],
+    "protocol_smoke_resume_token": "RESUME_run_00-C_20260920T091710927956Z_bf342d2c_f3a04807_batch-001_84c0dee8ffd7"
+  },
+  "code": {
+    "code_manifest": "protocol/00C/code_manifest.json",
+    "code_manifest_sha256": "9b8e21337dab0dbc7d0568f1be6107aae2d8d0788daf8065c056b272edd4888f",
+    "commit": "ebed42ae7023f8afdef93d5721af17b0fd8377c3",
+    "repository": "Mhhhh958/mathmodeling"
+  },
+  "config": {
+    "path": "protocol/00C/run_config.json",
+    "sha256": "fcff1a21c9df8253096daf54b3704016f9aff25a521b731782b0e210ae5fc192"
+  },
+  "created_utc": "2026-09-20T09:17:11.227511Z",
+  "data": {
+    "data_manifest": "protocol/00B/data_manifest.draft.json",
+    "data_manifest_sha256": "2d339c5234d6640118a2990925f66997101446093e8bebf09610fb10b375e1dd",
+    "provisional_data_version_id": "DATA-DRAFT:2d339c5234d66401",
+    "raw_data_version_id": null
+  },
+  "environment": {
+    "environment_manifest": "protocol/00B/environment_manifest.json",
+    "environment_manifest_sha256": "a2b2756b2bf58e499ace87efcddacfb64ef7398aae81a1664fbb476fc578f369",
+    "runtime_pip_freeze": "manifests/pip_freeze.txt"
+  },
+  "execution_mode": "chat_plus_git",
+  "manifest_type": "run_manifest",
+  "outputs": {
+    "files": [
+      {
+        "relative_path": "checkpoints/batch-001/RESUME_TOKEN.txt",
+        "sha256": "0df19c7f6a06e16bbda77813f4b19595ac7bd3add5c5c0ade7bf1f3f6f13687f",
+        "size_bytes": 80
+      },
+      {
+        "relative_path": "checkpoints/batch-001/checkpoint_state.json",
+        "sha256": "84c0dee8ffd76bde76da8cbad913c730e887fbbd838bb2f9657b58daf0bcf2ef",
+        "size_bytes": 143
+      },
+      {
+        "relative_path": "logs/validation.json",
+        "sha256": "2bb0b87dccd9ab607910b1cf4147f6cfeb12bcf875235b30d36cb66321a7bfba",
+        "size_bytes": 1538
+      },
+      {
+        "relative_path": "manifests/environment_runtime.json",
+        "sha256": "a57f37667663f43aa2b80079cc0aea99adadb45e9a792ff97820609f90e80fb6",
+        "size_bytes": 398
+      },
+      {
+        "relative_path": "manifests/pip_freeze.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      }
+    ],
+    "output_tree_sha256": "be1e0427f19690eb9fe84afcf5a9880aa5e82ecdd46bc6c92c6cb2f60a8ccf21",
+    "root": "outputs/runs/run_00-C_20260920T091710927956Z_bf342d2c_f3a04807"
+  },
+  "run_id": "run_00-C_20260920T091710927956Z_bf342d2c_f3a04807",
+  "schema_version": "00C-1.0",
+  "status": "failed",
+  "step_id": "00-C"
+}
