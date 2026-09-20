@@ -1,6 +1,6 @@
-12-A2 formal robustness validation 2026-09-21T00:20:00+08:00
+12-A2 formal robustness validation rerun after implementation-only fix 2026-09-21T00:26:00+08:00
 source_audit_freeze=FREEZE-12A1-5e3e74e2
 run_config_commit=ee7a149432bf26994b297e7e54346bfc44e2a5a3
-script_commit=fd6b58afeac9c30c56e2428a2435fca86ad9d5ce
-workflow_commit=a7a0a7aea40c79834a2e283b271d2ec30838878e
-code_manifest_commit=d3b9f35aaedfdf1fd2db353a1b8100115e4c2a48
+script_fix_commit=3f1648f5087e7ea8ed9bb52c474878313a157a93
+code_manifest_fix_commit=116029b97db31ceccfe2ec50f879adb5ffa7af64
+scientific_protocol_changed=false
