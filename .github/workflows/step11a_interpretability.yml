@@ -1,0 +1,45 @@
+name: step11a-interpretability
+
+on:
+  push:
+    paths:
+      - 'protocol/11A/dispatch_token.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-step11a:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install frozen 00-B environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r protocol/00B/requirements-lock-00b.txt
+
+      - name: Run STEP11-A
+        run: |
+          python scripts/step11a_interpretability.py
+
+      - name: Commit frozen evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/runs protocol/11A/latest_freeze_package.json protocol/11A/latest_run_id.txt protocol/11A/validation_record.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m '11-A: add interpretability evidence freeze [skip ci]'
+            git push
+          fi
