@@ -1,9 +1,9 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.20-r28",
-  "updated_utc": "2026-09-20T16:02:30Z",
-  "CURRENT_ALLOWED_STEP": "12-A2",
-  "LAST_PASS_TOKEN": "12-A1-V2026.09.20-3257a6ab-通过",
+  "state_version": "2026.09.20-r29",
+  "updated_utc": "2026-09-20T16:31:00Z",
+  "CURRENT_ALLOWED_STEP": "12-B",
+  "LAST_PASS_TOKEN": "12-A2-V2026.09.20-3e9264b1-通过",
   "LATEST_WORD": {
     "version": "V1.2",
     "artifact_id": "WORD-V1.2-df1a4844",
@@ -15,50 +15,42 @@
     "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844"
   },
   "LATEST_FREEZE_PACKAGE": {
-    "step_id": "12-A1",
-    "freeze_package_id": "FREEZE-12A1-5e3e74e2",
+    "step_id": "12-A2",
+    "freeze_package_id": "FREEZE-12A2-f107c2fa",
     "status": "passed",
-    "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
-    "path": "protocol/12A1/latest_freeze_package.json",
-    "content_sha256": "3257a6ab60fe59f2fa5a1a1a135a633d6807bc003013900c58bf67bb6b9a0cff",
+    "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+    "path": "protocol/12A2/latest_freeze_package.json",
+    "content_sha256": "3e9264b1fdaf3931d4f4f946221134ea02a9602fb6eafa07a22a90e58ea6bddc",
     "raw_data_version_id": "RAW-5a5dd129c91bfc64",
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
-  "OPEN_P0": [
-    {
-      "id": "P0-01",
-      "scope": "Q2",
-      "status": "recognized_open",
-      "summary": "07-A outer test participated in final model-family acceptance; current 0.9675 pooled OOF must not be treated as a completely untouched final test.",
-      "close_in_step": "12-A2",
-      "close_task": "A2-01",
-      "evidence": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/gap_register_P0_P1_P2.csv"
-    }
-  ],
-  "NEXT_ALLOWED": "12-A2",
+  "OPEN_P0": [],
+  "NEXT_ALLOWED": "12-B",
   "previous_gate": {
-    "step": "11-B",
-    "pass_token": "11-B-V2026.09.20-df1a4844-通过",
-    "next_allowed": "12-A1"
+    "step": "12-A1",
+    "pass_token": "12-A1-V2026.09.20-3257a6ab-通过",
+    "next_allowed": "12-A2"
   },
   "current_step_record": {
-    "step": "12-A1",
+    "step": "12-A2",
     "status": "passed",
-    "pass_token": "12-A1-V2026.09.20-3257a6ab-通过",
-    "next_allowed": "12-A2",
-    "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
-    "freeze_package_id": "FREEZE-12A1-5e3e74e2",
-    "freeze_content_sha256": "3257a6ab60fe59f2fa5a1a1a135a633d6807bc003013900c58bf67bb6b9a0cff",
-    "validation_record": "protocol/12A1/validation_record.json",
-    "code_manifest": "protocol/12A1/code_manifest.json",
-    "recognized_open_P0": [
+    "pass_token": "12-A2-V2026.09.20-3e9264b1-通过",
+    "next_allowed": "12-B",
+    "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+    "freeze_package_id": "FREEZE-12A2-f107c2fa",
+    "freeze_content_sha256": "3e9264b1fdaf3931d4f4f946221134ea02a9602fb6eafa07a22a90e58ea6bddc",
+    "validation_record": "protocol/12A2/validation_record.json",
+    "code_manifest": "protocol/12A2/code_manifest.json",
+    "closed_P0": [
       "P0-01"
     ],
-    "unidentified_P0": [],
+    "open_P0_after_step": [],
+    "fixed_config_refits_performed": true,
+    "hyperparameter_search_performed": false,
+    "model_family_reselection_performed": false,
+    "target_label_supervision_performed": false,
     "word_edit_performed": false,
-    "training_performed": false,
-    "tuning_performed": false,
-    "model_selection_performed": false
+    "formal_paper_figure_generated": false
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -68,7 +60,7 @@
   },
   "pointers": {
     "global_rules": "protocol/00C/global_rules.json",
-    "latest_validation_record": "protocol/12A1/validation_record.json",
+    "latest_validation_record": "protocol/12A2/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
     "latest_word_library_path": "/数学建模/11B/2025华为杯E题论文_步骤11_V1.2.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
@@ -155,6 +147,14 @@
     "latest_12A1_code_manifest": "protocol/12A1/code_manifest.json",
     "latest_12A1_claim_matrix": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/claim_evidence_matrix.csv",
     "latest_12A1_gap_register": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/gap_register_P0_P1_P2.csv",
-    "latest_12A1_A2_tasks": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/step12A2_validation_task_list.csv"
+    "latest_12A1_A2_tasks": "outputs/runs/run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2/artifacts/step12A2_validation_task_list.csv",
+    "latest_12A2_freeze": "protocol/12A2/latest_freeze_package.json",
+    "latest_12A2_run": "protocol/12A2/latest_run_id.txt",
+    "latest_12A2_validation": "protocol/12A2/validation_record.json",
+    "latest_12A2_code_manifest": "protocol/12A2/code_manifest.json",
+    "latest_12A2_final_matrix": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/final_validation_matrix.csv",
+    "latest_12A2_claim_disposition": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/claim_disposition_allow_downgrade_delete.csv",
+    "latest_12A2_failures": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/failure_and_no_gain_results.csv",
+    "latest_12A2_P0_closure": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/P0_closure_record.json"
   }
 }
