@@ -1,0 +1,50 @@
+{
+  "simple_transfer_baseline": {
+    "id": "T1-SHRINK-MOMENT",
+    "selected_alpha": 0.25,
+    "selection_domains": [
+      0,
+      1,
+      2
+    ],
+    "final_validation_domain": 3,
+    "final_macro_f1_gain": 0.0,
+    "status": "no_positive_gain_on_held_domain"
+  },
+  "candidate_1": {
+    "id": "T2-CORAL",
+    "triggered_for_08B": true,
+    "target_problem": "residual multivariate covariance shift after simple marginal alignment",
+    "target_input_if_run": "unlabeled 26-D target covariance only",
+    "config_budget_if_run": 3,
+    "failure_standard": "no positive held-load3 Macro-F1 gain over no-transfer or >0.05 loss on held validation"
+  },
+  "candidate_2": {
+    "id": "T3-DOMAIN-WEIGHT",
+    "triggered_for_08B": true,
+    "target_problem": "partial source-support mismatch / covariate shift",
+    "target_input_if_run": "domain membership only; no target fault labels/pseudo-label truth",
+    "config_budget_if_run": 2,
+    "failure_standard": "no positive held-load3 Macro-F1 gain over no-transfer or zeroing a previously nonzero class recall"
+  },
+  "diagnostic_values": {
+    "mmd2_biased": 0.7922234132610413,
+    "domain_classifier_auc_mean": 1.0,
+    "target_outside_nearest_source_class_p95_fraction": 1.0
+  },
+  "compute_budget": {
+    "step08A": {
+      "pseudo_target_rf_refits": 4,
+      "T1_tuning_alpha_values": 4,
+      "T1_tuning_domains": 3,
+      "T1_final_validation_domains": 1,
+      "max_T1_adapted_inference_evaluations": 13
+    },
+    "step08B_if_reached": {
+      "T2_CORAL_max_configs": 3,
+      "T3_weighting_max_configs": 2,
+      "max_additional_candidate_families": 2,
+      "rule": "each family tuned only on pseudo-target loads 0/1/2 and evaluated once on held load3; no A-P truth"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "selected_alpha_from_tuning_loads_0_1_2": 0.25,
+  "tuning_loads": [
+    0,
+    1,
+    2
+  ],
+  "final_validation_load": 3,
+  "final_no_transfer_macro_f1": 1.0,
+  "final_T1_macro_f1": 1.0,
+  "final_macro_f1_gain": 0.0,
+  "final_no_transfer_min_class_recall": 1.0,
+  "final_T1_min_class_recall": 1.0,
+  "severe_failure": false,
+  "post_final_retuning_performed": false,
+  "interpretation": "pseudo-target validation only; does not estimate A-P target accuracy"
+}

@@ -1,0 +1,15 @@
+{
+  "domain_classifier_auc_folds": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "domain_classifier_auc_mean": 1.0,
+  "domain_classifier_auc_std": 0.0,
+  "pca_explained_variance_ratio": [
+    0.9038326410917904,
+    0.058004215453560846
+  ],
+  "note": "domain labels only; no target fault labels used"
+}

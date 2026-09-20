@@ -1,0 +1,23 @@
+{
+  "problems_to_solve_before_real_target_adaptation": [
+    "large acquisition/operating shift: source measured ~1722-1798rpm vs target only ~600rpm approximate and no exact per-file RPM",
+    "native sampling/sensor path mismatch: selected source includes 12kHz FE faults and 48kHz normal files, target is 32kHz unknown sensor; common feature extraction normalizes sampling but not all transfer-path effects",
+    "raw amplitude-scale mismatch, so absolute-amplitude features may dominate source-trained decision boundaries",
+    "feature marginal/multivariate shift evidenced by file-level shift, MMD/domain separability",
+    "possible class-conditional support mismatch: target files can sit outside source class p95 radii; target truth remains unknown"
+  ],
+  "mechanism_shared_but_not_geometry_shared": {
+    "shared": "OR/IR/B/N均对应滚动轴承局部状态；冲击、调制、包络与频带能量等概念可作为跨域机理线索。",
+    "not_shared_by_assumption": "源/目标轴承几何、传感器安装与传递路径、目标逐文件精确RPM、绝对幅值尺度。",
+    "source_geometry_specific_aux_on_target": "prohibited because target bearing geometry/exact RPM are not frozen",
+    "target_compatible_mechanism_proxies": [
+      "envelope_rms",
+      "envelope_kurtosis",
+      "envelope_spectral_entropy",
+      "spectral_centroid_hz",
+      "spectral_entropy",
+      "band_ratio_*"
+    ]
+  },
+  "target_accuracy_available": false
+}

@@ -1,0 +1,4 @@
+﻿family,feature_count,median_abs_standardized_mean_shift,max_abs_standardized_mean_shift,median_wasserstein_over_source_sd,max_ks_statistic
+amplitude_or_scale,11,27.12748193320321,37.80667625763619,27.127481933203214,1.0
+geometry_free_mechanism_proxy,13,0.819007664096764,7.2740995149700245,0.8909896240502787,1.0
+shape_statistics,2,0.12793977385389407,0.20479933733993463,0.5688652519159367,0.48341836734693877

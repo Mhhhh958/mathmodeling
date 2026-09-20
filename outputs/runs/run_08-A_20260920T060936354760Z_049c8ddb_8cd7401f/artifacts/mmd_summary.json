@@ -1,0 +1,8 @@
+{
+  "comparison_unit": "independent-file mean vector",
+  "feature_count": 26,
+  "mmd2_biased": 0.7922234132610413,
+  "rbf_gamma": 0.00492616989461989,
+  "median_pairwise_squared_distance": 101.49873242213476,
+  "interpretation": "descriptive domain-gap evidence only; not an accuracy estimate"
+}

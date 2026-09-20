@@ -1,0 +1,42 @@
+{
+  "step_id": "08-A",
+  "run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "gate_bound_to_current_freezes": true,
+    "A_P_true_labels_unavailable": true,
+    "A_P_predictions_are_labeled_as_prediction_only": true,
+    "A_P_no_transfer_saved_16_files": true,
+    "no_target_accuracy_or_F1_computed": true,
+    "pseudo_targets_rotate_multiple_loads": true,
+    "pseudo_target_each_load_has_all_classes": true,
+    "pseudo_adaptation_function_has_no_label_argument": true,
+    "pseudo_adaptation_rows_record_no_label_use": true,
+    "tuning_and_final_validation_domains_separated": true,
+    "no_post_final_retuning": true,
+    "domain_evidence_raw_context": true,
+    "domain_evidence_feature_distribution": true,
+    "domain_evidence_classifier_output": true,
+    "domain_evidence_class_structure": true,
+    "at_least_two_independent_evidence_types": true,
+    "target_unlabeled_input_use_recorded": true,
+    "transfer_candidates_and_selection_rules_saved": true,
+    "complex_real_target_transfer_not_trained": true
+  },
+  "failed_checks": [],
+  "evidence": {
+    "A_P_truth_boundary": "04-A target_window_metadata.csv: class_label=UNKNOWN_TRUTH,label_status=unknown_truth for all 240 windows",
+    "no_transfer": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/A_P_no_transfer_file_predictions.csv",
+    "raw_context": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/domain_context_comparison.json",
+    "feature_shift": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/feature_shift_file_level.csv",
+    "mmd": "mmd2=0.79222341",
+    "domain_classifier": "AUC_mean=1.00000000",
+    "classifier_output": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/classifier_output_shift.json",
+    "class_structure": "outside_source_class_p95_fraction=1.00000000",
+    "pseudo_target": "loads0/1/2 tuning, load3 final; selected_alpha=0.25; final_gain=0.00000000",
+    "target_usage": "outputs/runs/run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f/artifacts/target_unlabeled_usage_ledger.json"
+  },
+  "word_edit_performed": false,
+  "target_accuracy_reported": false
+}

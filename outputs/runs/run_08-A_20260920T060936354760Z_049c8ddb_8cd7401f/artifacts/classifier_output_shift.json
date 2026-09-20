@@ -1,0 +1,16 @@
+{
+  "source_oof_files": 49,
+  "target_files": 16,
+  "source_top_model_score_median": 0.8649851851851852,
+  "target_top_model_score_median": 0.5569576068376068,
+  "source_score_entropy_median": 0.3585258732355276,
+  "target_score_entropy_median": 0.6468411538147065,
+  "target_score_margin_median": 0.18884808257040214,
+  "target_window_file_agreement_mean": 0.8916666666666666,
+  "target_prediction_counts": {
+    "B": 10,
+    "OR": 6
+  },
+  "score_semantics": "uncalibrated model scores; do not call confidence or calibrated probability",
+  "target_truth": "unknown"
+}

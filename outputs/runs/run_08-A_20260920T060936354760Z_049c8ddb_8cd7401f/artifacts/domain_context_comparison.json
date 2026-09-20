@@ -1,0 +1,68 @@
+{
+  "comparison_unit": "independent raw file",
+  "source_selected_files": 49,
+  "target_files": 16,
+  "source_native_sampling_hz_counts": {
+    "12000": 45,
+    "48000": 4
+  },
+  "target_native_sampling_hz_counts": {
+    "32000": 16
+  },
+  "common_feature_sampling_hz": {
+    "source": [
+      12000
+    ],
+    "target": [
+      12000
+    ]
+  },
+  "source_analysis_channel_counts": {
+    "FE": 45,
+    "DE": 4
+  },
+  "target_analysis_channel_counts": {
+    "TARGET_UNKNOWN_SENSOR": 16
+  },
+  "source_rpm": {
+    "available_files": 49,
+    "min": 1725.0,
+    "max": 1798.0,
+    "median": 1772.0,
+    "source": "raw MAT RPM variable"
+  },
+  "target_rpm": {
+    "exact_available_files": 0,
+    "problem_statement_approx_rpm": 600,
+    "source": "题面约600rpm仅作近似工况；原始MAT无逐时精确RPM"
+  },
+  "duration_seconds": {
+    "source_min": 5.082041666666667,
+    "source_max": 10.097333333333331,
+    "source_median": 8.0,
+    "target_min": 8.0,
+    "target_max": 8.0,
+    "target_median": 8.0
+  },
+  "raw_amplitude": {
+    "source_signal_std_median": 0.1714013543339111,
+    "target_signal_std_median": 8.857471947729557,
+    "target_over_source_signal_std_median_ratio": 51.676790899062,
+    "source_peak_to_peak_median": 3.776324675324676,
+    "target_peak_to_peak_median": 87.778235934375,
+    "target_over_source_peak_to_peak_median_ratio": 23.244356214373468
+  },
+  "common_mechanism_boundary": {
+    "shared": "OR/IR/B/N均对应滚动轴承局部状态；冲击、调制、包络与频带能量等概念可作为跨域机理线索。",
+    "not_shared_by_assumption": "源/目标轴承几何、传感器安装与传递路径、目标逐文件精确RPM、绝对幅值尺度。",
+    "source_geometry_specific_aux_on_target": "prohibited because target bearing geometry/exact RPM are not frozen",
+    "target_compatible_mechanism_proxies": [
+      "envelope_rms",
+      "envelope_kurtosis",
+      "envelope_spectral_entropy",
+      "spectral_centroid_hz",
+      "spectral_entropy",
+      "band_ratio_*"
+    ]
+  }
+}

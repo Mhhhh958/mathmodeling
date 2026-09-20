@@ -1,0 +1,80 @@
+{
+  "source_files": 49,
+  "source_windows": 733,
+  "target_files": 16,
+  "target_windows": 240,
+  "target_truth": "unknown",
+  "target_accuracy_reported": false,
+  "no_transfer_prediction_counts": {
+    "B": 10,
+    "OR": 6
+  },
+  "raw_amplitude_target_over_source_std_median_ratio": 51.676790899062,
+  "top_feature_shifts": [
+    {
+      "feature": "peak_abs",
+      "family": "amplitude_or_scale",
+      "abs_standardized_mean_shift": 37.80667625763619,
+      "wasserstein_over_source_sd": 37.806676257636184,
+      "ks_statistic": 0.9795918367346939
+    },
+    {
+      "feature": "peak_to_peak",
+      "family": "amplitude_or_scale",
+      "abs_standardized_mean_shift": 36.132757614870364,
+      "wasserstein_over_source_sd": 36.132757614870364,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "mean_abs",
+      "family": "amplitude_or_scale",
+      "abs_standardized_mean_shift": 34.08387791453944,
+      "wasserstein_over_source_sd": 34.08387791453944,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "std",
+      "family": "amplitude_or_scale",
+      "abs_standardized_mean_shift": 27.136676289465704,
+      "wasserstein_over_source_sd": 27.136676289465704,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "envelope_rms",
+      "family": "amplitude_or_scale",
+      "abs_standardized_mean_shift": 27.136672467682374,
+      "wasserstein_over_source_sd": 27.13667246768237,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "rms",
+      "family": "amplitude_or_scale",
+      "abs_standardized_mean_shift": 27.12748193320321,
+      "wasserstein_over_source_sd": 27.127481933203214,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "spectral_flatness",
+      "family": "geometry_free_mechanism_proxy",
+      "abs_standardized_mean_shift": 7.2740995149700245,
+      "wasserstein_over_source_sd": 7.2740995149700245,
+      "ks_statistic": 1.0
+    },
+    {
+      "feature": "band_ratio_1500_3000",
+      "family": "geometry_free_mechanism_proxy",
+      "abs_standardized_mean_shift": 5.31784483266972,
+      "wasserstein_over_source_sd": 5.31784483266972,
+      "ks_statistic": 0.9795918367346939
+    }
+  ],
+  "mmd2_biased": 0.7922234132610413,
+  "domain_classifier_auc_mean": 1.0,
+  "target_outside_nearest_source_class_p95_fraction": 1.0,
+  "T1_selected_alpha": 0.25,
+  "T1_final_held_load3_no_transfer_macro_f1": 1.0,
+  "T1_final_held_load3_macro_f1": 1.0,
+  "T1_final_gain": 0.0,
+  "T2_triggered_for_08B": true,
+  "T3_triggered_for_08B": true
+}

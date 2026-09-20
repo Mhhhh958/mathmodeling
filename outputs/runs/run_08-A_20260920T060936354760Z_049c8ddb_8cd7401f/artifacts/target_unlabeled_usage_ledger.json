@@ -1,0 +1,45 @@
+{
+  "target_files": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P"
+  ],
+  "target_windows": 240,
+  "truth_status": "unknown",
+  "target_truth_values_available_to_modeling": false,
+  "target_label_columns_read_only_for_boundary_assertion": [
+    "class_label=UNKNOWN_TRUTH",
+    "label_status=unknown_truth"
+  ],
+  "used_in_08A_for": [
+    "frozen-source-model no-transfer inference",
+    "file-level feature shift/MMD/PCA/domain-classifier diagnostics",
+    "source-class-centroid distance diagnostics",
+    "classifier score entropy/margin/window-agreement diagnostics"
+  ],
+  "used_for_real_target_adaptation_parameters_in_08A": false,
+  "allowed_for_08B_unsupervised_adaptation": [
+    "all 240 target 26-D feature rows for global unlabeled moments/covariance",
+    "target group IDs only for file-balanced weighting and file aggregation",
+    "unlabeled target-vs-source domain membership for domain-classifier weighting"
+  ],
+  "forbidden": [
+    "target Accuracy/F1/Recall",
+    "supervised selection on A-P",
+    "treating A-P predictions as truth or pseudo-ground-truth",
+    "source-geometry-specific mechanism features on target"
+  ]
+}
