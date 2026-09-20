@@ -111,7 +111,11 @@ def q1_psd(axes,d,markers,spec):
 
 def q2_confusion(ax,d):
     labels=["OR","IR","B","N"]; arr=d[[f"pred_{x}" for x in labels]].to_numpy(float)
-    im=ax.imshow(arr,cmap="Blues",vmin=0,vmax=max(1,float(np.nanmax(arr))))
+    vmax=max(1,float(np.nanmax(arr)))
+    # Vector heatmap: pcolormesh keeps SVG/PDF cells as editable vector paths.
+    edges=np.arange(5)-0.5
+    im=ax.pcolormesh(edges,edges,arr,cmap="Blues",vmin=0,vmax=vmax,shading="flat")
+    ax.set_xlim(-0.5,3.5); ax.set_ylim(3.5,-0.5); ax.set_aspect("equal")
     ax.set_xticks(range(4),labels); ax.set_yticks(range(4),labels)
     common(ax,"预测类别","真实类别")
     threshold=np.nanmax(arr)*0.55
