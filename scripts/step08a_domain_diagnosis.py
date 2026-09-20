@@ -701,15 +701,17 @@ def main():
         "at_least_two_independent_evidence_types": True,
         "target_unlabeled_input_use_recorded": (art / "target_unlabeled_usage_ledger.json").exists(),
         "transfer_candidates_and_selection_rules_saved": (art / "transfer_candidate_plan.json").exists(),
-        "complex_real_target_transfer_trained": False,
+        "complex_real_target_transfer_not_trained": True,
     }
-    passed = all(checks.values())
+    failed_checks = [k for k, v in checks.items() if not v]
+    passed = len(failed_checks) == 0
     validation = {
         "step_id": STEP,
         "run_id": run_id,
         "status": "passed" if passed else "failed",
         "passed": passed,
         "checks": checks,
+        "failed_checks": failed_checks,
         "evidence": {
             "A_P_truth_boundary": "04-A target_window_metadata.csv: class_label=UNKNOWN_TRUTH,label_status=unknown_truth for all 240 windows",
             "no_transfer": f"outputs/runs/{run_id}/artifacts/A_P_no_transfer_file_predictions.csv",
