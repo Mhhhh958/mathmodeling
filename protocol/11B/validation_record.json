@@ -1,0 +1,85 @@
+{
+  "step_id": "11-B",
+  "run_id": "run_11-B_20260920T153844Z_1f812c22_df1a4844",
+  "created_utc": "2026-09-20T15:38:44Z",
+  "source_A_freeze_package_id": "FREEZE-11A-1f812c22",
+  "source_A_run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22",
+  "source_A_freeze_content_sha256": "5e001ea74638f7ebde24630844fa0af85eef71fbf47fc49cd7fa0598525aa317",
+  "source_word_sha256": "49e30c62d8da13091e427dbb5580be427e30a829f0929f6d484d50b94d2d6318",
+  "output_word_sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9",
+  "schema_version": "11B-validation-1.0",
+  "status": "passed",
+  "passed": true,
+  "checks": {
+    "only_passed_11A_results_used": {
+      "passed": true,
+      "evidence": "FREEZE-11A-1f812c22"
+    },
+    "final_model_identity_consistent": {
+      "passed": true,
+      "key_numbers": "T1 alpha=0.25 -> frozen H1_RF -> 26 features -> mean window scores -> argmax"
+    },
+    "source_and_target_cases_separated": {
+      "passed": true,
+      "evidence": "Word 5.4.3 source known labels; 5.4.4 target predictions"
+    },
+    "figure_data_matches_11A": {
+      "passed": true,
+      "key_numbers": "图12 8.3552→6.2664; 图13/14 frozen Top-5 contributions; 图15 frozen faithfulness controls"
+    },
+    "target_truth_not_claimed": {
+      "passed": true,
+      "key_numbers": "A-P true labels remain UNKNOWN_TRUTH; no target Accuracy/F1/Recall"
+    },
+    "explanation_validations_consistent": {
+      "passed": true,
+      "key_numbers": "faithfulness 9/9; stability 9/9; mechanism proxy share mean 0.60; direction median 1.00; 3 contradictions retained"
+    },
+    "word_persistence": {
+      "passed": true,
+      "before": {
+        "media": 15,
+        "drawings": 14,
+        "math": 5,
+        "math_para": 5,
+        "tables": 25,
+        "sections": 6,
+        "pages": 36
+      },
+      "after": {
+        "media": 19,
+        "drawings": 18,
+        "math": 5,
+        "math_para": 5,
+        "tables": 28,
+        "sections": 6,
+        "pages": 43
+      },
+      "old_media_all_retained": true
+    },
+    "official_format_master_preserved": {
+      "passed": true,
+      "byte_identical_parts": [
+        "word/styles.xml",
+        "word/numbering.xml",
+        "word/theme/theme1.xml",
+        "word/fontTable.xml"
+      ]
+    },
+    "visual_QA": {
+      "passed": true,
+      "rendered_pages": 43,
+      "first_32_pages_pixel_identical_to_V1_1": true,
+      "changed_pages_33_43_visually_inspected": true,
+      "no_clipping_overlap_missing_glyphs": true
+    },
+    "library_byte_identity": {
+      "passed": true,
+      "sha256": "df1a48443e0c0f723ed9fc114beb8ddba3bfbbb707895808a25e83758277b2e9"
+    }
+  },
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "target_accuracy_reported": false
+}
