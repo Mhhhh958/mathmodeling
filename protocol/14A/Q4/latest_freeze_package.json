@@ -1,0 +1,24 @@
+{
+  "schema_version": "14A-Q4-1.0",
+  "package_type": "A_freeze_package",
+  "step_id": "14-A-Q4",
+  "freeze_package_id": "FREEZE-14A-Q4-r45",
+  "status": "passed",
+  "run_id": "run_14-A-Q4_20260921T174500Z_evidence_review",
+  "source_word_artifact_id": "WORD-V1.7-e5295682",
+  "source_freeze_package_ids": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "review_only": true,
+  "model_run_performed": false,
+  "word_edit_performed": false,
+  "approved_revision_scope": "Q4 only",
+  "deliverables": [
+    "protocol/14A/Q4/chapter_revision_checklist.json",
+    "protocol/14A/Q4/quality_card.json",
+    "protocol/14A/Q4/validation_record.json"
+  ],
+  "pass_token": "14-A-Q4-V2026.09.21-r45-通过",
+  "next_allowed": "14-B-Q4"
+}
