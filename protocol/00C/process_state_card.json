@@ -1,7 +1,7 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.21-r42",
-  "updated_utc": "2026-09-21T14:34:00Z",
+  "state_version": "2026.09.21-r43",
+  "updated_utc": "2026-09-21T16:15:00Z",
   "CURRENT_ALLOWED_STEP": "14-B-Q3",
   "LAST_PASS_TOKEN": "14-A-Q3-V2026.09.21-r42-通过",
   "LATEST_WORD": {
@@ -37,24 +37,32 @@
     "next_allowed": "14-A-Q3"
   },
   "current_step_record": {
-    "step": "14-A-Q3",
+    "step": "14-B-Q3",
     "question": "Q3",
-    "status": "passed",
-    "pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+    "status": "candidate_passed_pending_user_confirmation",
+    "internal_validation_passed": true,
+    "user_confirmation_received": false,
+    "pass_token": null,
     "next_allowed": "14-B-Q3",
-    "run_id": "run_14-A-Q3_20260921T143400Z_evidence_review",
-    "freeze_package_id": "FREEZE-14A-Q3-r42",
-    "review_only": true,
-    "source_word_artifact_id": "WORD-V1.6-b8ee9bdc",
-    "source_freeze_package_ids": [
-      "FREEZE-13A1-0eedc9bc",
-      "FREEZE-13A2-90264cb7"
-    ],
-    "chapter_revision_checklist": "protocol/14A/Q3/chapter_revision_checklist.json",
-    "quality_card": "protocol/14A/Q3/quality_card.json",
-    "validation_record": "protocol/14A/Q3/validation_record.json",
-    "word_edit_performed": false,
-    "model_run_performed": false
+    "run_id": "run_14-B-Q3_20260921T161500Z_e5295682",
+    "source_A_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+    "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
+    "parent_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "candidate_word_artifact_id": "WORD-V1.7-e5295682",
+    "candidate_word_sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "candidate_word_library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
+    "candidate_word_library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "validation_record": "protocol/14B/Q3/validation_record.json",
+    "change_list": "protocol/14B/Q3/change_list.json",
+    "B_delivery": "protocol/14B/Q3/B_delivery.json",
+    "word_edit_performed": true,
+    "model_run_performed": false,
+    "render_page_count": 47,
+    "image_relationships": "19/19 resolved",
+    "media_byte_preserved": "19/19",
+    "tables": "35 (34 prior + 1 algorithm box)",
+    "formula_display_paragraphs": "1 new MTDisplayEquation + 4 prior",
+    "note": "Awaiting explicit user inspection/approval before issuing 14-B-Q3 pass token, updating LATEST_WORD, and advancing CURRENT_Q to 4."
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -230,11 +238,16 @@
     "latest_14A_Q3_checklist": "protocol/14A/Q3/chapter_revision_checklist.json",
     "latest_14A_Q3_quality_card": "protocol/14A/Q3/quality_card.json",
     "latest_14A_Q3_validation": "protocol/14A/Q3/validation_record.json",
-    "latest_14A_Q3_run": "protocol/14A/Q3/latest_run_id.txt"
+    "latest_14A_Q3_run": "protocol/14A/Q3/latest_run_id.txt",
+    "latest_14B_Q3_candidate": "protocol/14B/Q3/latest_candidate.json",
+    "latest_14B_Q3_validation": "protocol/14B/Q3/validation_record.json",
+    "latest_14B_Q3_delivery": "protocol/14B/Q3/B_delivery.json",
+    "latest_14B_Q3_change_list": "protocol/14B/Q3/change_list.json",
+    "latest_14B_Q3_run": "protocol/14B/Q3/latest_run_id.txt"
   },
   "CURRENT_Q": 3,
   "chapter14_loop": {
-    "status": "Q3_A_passed",
+    "status": "Q3_B_candidate_pending_user_confirmation",
     "CURRENT_Q": 3,
     "current_question": "问题3",
     "allowed_step": "14-B-Q3",
@@ -243,6 +256,8 @@
       "Q1",
       "Q2"
     ],
-    "rule": "Only execute 14-A/14-B for CURRENT_Q; advance Q only after current question B step passes."
+    "rule": "Only execute 14-A/14-B for CURRENT_Q; advance Q only after current question B step passes.",
+    "candidate_word_artifact_id": "WORD-V1.7-e5295682",
+    "user_confirmation_received": false
   }
 }
