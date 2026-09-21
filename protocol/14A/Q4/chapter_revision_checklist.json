@@ -1,0 +1,182 @@
+{
+  "schema_version": "14A-Q4-1.0",
+  "step_id": "14-A-Q4",
+  "question": "Q4",
+  "mode": "evidence_review_only",
+  "source_word_artifact_id": "WORD-V1.7-e5295682",
+  "source_freezes": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "conclusion": "pass_with_executable_revision_list",
+  "keep": [
+    "5.4总体链路：最终T1(α=0.25)适配输入→冻结RF→26维工程特征遮蔽→源/目标案例→忠实性、局部稳定性与机理旁证→失败/适用边界。",
+    "解释对象始终绑定最终真实T1+RF链路；源域案例可用真标签，目标A—P真值保持UNKNOWN_TRUTH，只解释冻结预测。",
+    "遮蔽参考值保持为49个源域独立文件均值的逐特征中位数；贡献定义为原解释类文件级未校准模型分数减去遮蔽后的同类分数。",
+    "5.4.2迁移过程解释：平均源标准化均值差8.3552→6.2664、26维相对均值差中位缩减25.0%；只说明T1按设计改变输入，不证明目标准确率。",
+    "5.4.3五个源域案例：OR/IR/B/N四个已知标签代表+历史OOF困难OR021@3_2；解释作用于最终全源RF，不抹去历史OOF失败身份。",
+    "5.4.4四个目标预测案例H/O/D/N：H、O为冻结稳定代表，D、N为冻结不确定代表；目标标签仅写预测类别。",
+    "5.4.5预冻结解释验证：Top-5 vs Low-5/固定随机5/200随机5 null；相邻50%重叠窗口Spearman/Jaccard；机理代理/原型方向一致性。",
+    "困难/矛盾案例必须保留：OR021@3_2历史OOF困难，H机理方向一致率0.25，D为0且目标LOTO翻类、源文件Bootstrap保持率0.3833。",
+    "5.4.6五条边界必须保留：目标真值未知、决策不稳定不能被局部解释稳定抵消、参考值依赖/可能离流形、26维解释不能定位原始采样点、目标轴承几何/RPM不足不声称精确故障频率命中。"
+  ],
+  "rewrite_or_strengthen": [
+    {
+      "location": "5.4开头（图12前后1—2段）",
+      "action": "重写开头",
+      "instruction": "直接说明本问目标是解释“最终已经冻结的迁移诊断链路”，不是重新证明分类正确；点明三个难点：RF非端到端模型、目标真值未知、解释必须验证忠实性且保留矛盾案例。随后给出“最终输入→遮蔽贡献→源/目标案例→忠实性/稳定性/机理旁证”的路线。",
+      "evidence": "FIG-Q4-01 + protocol/11A/question4_argument_blueprint.json"
+    },
+    {
+      "location": "5.4全文",
+      "action": "删除内部流水号式写法",
+      "instruction": "将09/10、07-A、10-A、11-A、12-A2、12-A1等改为“最终迁移链路”“冻结源分类器”“最终目标预测”“解释实验”“补充一致性复核/全篇审计”等论文语言；run_id/freeze_id只保留证据总账。",
+      "evidence": "13-A1 traceability already retains all run IDs and model identities"
+    },
+    {
+      "location": "5.4.1 方法选择与解释对象",
+      "action": "增加1条核心展示公式并压缩方法描述",
+      "instruction": "用00-D展示公式定义单特征遮蔽贡献：Δ_j^(c)=S_c(X)-S_c(X_{j←r_j})，其中S_c为文件级解释类未校准模型分数，r_j为49个源域独立文件均值在特征j上的中位数。文件级分数聚合规则直接引用5.2，不重复推导。",
+      "evidence": "RES-11B-METHOD + protocol/11A/question4_argument_blueprint.json"
+    },
+    {
+      "location": "5.4.1末/5.4.2前",
+      "action": "加入1个简洁算法框",
+      "instruction": "算法框写“最终链路遮蔽解释与验证流程”：输入冻结T1+RF、26维特征、冻结案例与源域参考值；逐特征遮蔽→计算文件级贡献→Top/Low/Random集合→200随机子集忠实性null→相邻窗口稳定性→源域机理旁证→输出贡献、验证与矛盾案例。不重复写RF或标准置换算法伪代码。",
+      "evidence": "Q4多阶段解释/验证流程 + step11A blueprint"
+    },
+    {
+      "location": "5.4.2 迁移过程解释",
+      "action": "压缩并收紧语义",
+      "instruction": "保留8.3552→6.2664、25.0%及4个代表幅值特征，但把结论限定为“输入边际差按T1设计收缩”；不得写成迁移提高诊断正确率或解释质量。",
+      "evidence": "RES-11B-MIGRATION"
+    },
+    {
+      "location": "5.4.3 源域已知标签解释案例",
+      "action": "突出案例角色",
+      "instruction": "明确四个代表案例仅用于已知标签下的可核查解释，OR021@3_2用于保留历史泛化失败背景；这些案例不是新的独立性能测试。表25→图13→图后分析的顺序保持不变。",
+      "evidence": "problem4_analysis.json + explanation_case_table.csv + FIG-Q4-02"
+    },
+    {
+      "location": "5.4.4 目标域预测解释",
+      "action": "强化目标真值边界",
+      "instruction": "把“目标案例按冻结稳定性规则选择、不读取未知真值”放在段首；H/O/D/N所有OR/B均统一称“预测类别”。D/N局部解释稳定不能覆盖其文件级决策不稳定。",
+      "evidence": "explanation_case_table.csv + RES-12B-Q3-LOTO/BOOT + FIG-Q4-03"
+    },
+    {
+      "location": "5.4.5 解释验证与矛盾案例",
+      "action": "突出三层验证和数字",
+      "instruction": "先给总结果：忠实性9/9、稳定性9/9；Top-5下降中位0.4488，高于Low-5=-0.0099和随机null=0.0775；Spearman=0.9762、Jaccard=1.000。随后再解释D/N局部稳定与文件决策不稳定并不矛盾。表27承担异质指标汇总，不新增综合柱状图。",
+      "evidence": "RES-11B-VALIDATION + Q4-FAITH/Q4-SPEAR/Q4-JACC + 13-A2 table_preference_decisions.csv"
+    },
+    {
+      "location": "5.4.5机理一致性段",
+      "action": "降低“通过”措辞的解释强度",
+      "instruction": "机理一致性仍可报告源域四类代表Top-5代理占比均值0.60、方向一致率中位1.00，但只能写成旁证；H=0.25、D=0必须同段保留，不能用总体中位数掩盖矛盾。",
+      "evidence": "RES-11B-MECHANISM + mechanism_consistency.csv"
+    },
+    {
+      "location": "5.4.7 问题四小结",
+      "action": "重写为4项并删除“最有效/最终审计步骤号”",
+      "instruction": "按“最终解释方案→核心验证结果→矛盾/适用边界→全篇验证接口”组织；把“最有效的方法”改为“最终采用的解释方案”。Q4为最后一问，不再写‘下一问接口’，而是明确向第六章统一模型检验和第七章模型评价传递忠实性/稳定性数字与因果边界。",
+      "evidence": "Q4 final question + FINAL-EXPLAIN"
+    }
+  ],
+  "frozen_figures": [
+    {
+      "figure_id": "FIG-Q4-01",
+      "status": "keep",
+      "location": "5.4标题下、5.4.1前",
+      "reason": "13-A2明确判定Q4需要技术框架图；解释对象、遮蔽与三类验证链路一次交代。"
+    },
+    {
+      "figure_id": "FIG-Q4-02",
+      "status": "keep",
+      "location": "5.4.3",
+      "reason": "五个源域已知标签/历史困难案例的Top-5贡献；用于可核查解释而非性能证明。"
+    },
+    {
+      "figure_id": "FIG-Q4-03",
+      "status": "keep",
+      "location": "5.4.4",
+      "reason": "H/O/D/N目标预测案例；必须明确均为预测类别而非真值。"
+    },
+    {
+      "figure_id": "FIG-Q4-04",
+      "status": "keep",
+      "location": "5.4.5",
+      "reason": "Top-5与Low-5/随机null的忠实性对照；保留负Low-5值与困难案例。"
+    }
+  ],
+  "tables_and_references": [
+    "表25保留：源域已知标签代表与历史困难案例；不把最终RF训练文件解释当独立泛化验证。",
+    "表26保留：H/O/D/N目标预测案例；OR/B只表示冻结预测类别。",
+    "表27保留：13-A2已判定忠实性、Spearman、Jaccard、机理占比量纲异质，应以表格汇总，不画异质指标总览图。",
+    "不恢复早期11-B的“迁移前后偏移Top10图”；13-A2最终Q4图集已冻结为FIG-Q4-01/02/03/04。"
+  ],
+  "delete_or_downgrade": [
+    "删除Q4正文中的09/10、07-A、10-A、11-A、12-A1、12-A2等内部流程号。",
+    "删除或改写“最有效的方法”为“最终采用的解释方案”，因为未对所有解释算法做全局优劣搜索。",
+    "不把Top-5遮蔽贡献写成因果效应、真实物理重要性或目标真值证明。",
+    "不把9/9局部解释稳定概括为目标预测整体稳定；D的LOTO翻类和0.3833保持率必须同章保留。",
+    "不计算或暗示目标Accuracy/Macro-F1/Recall，不把未校准模型分数称为正确概率/置信度。",
+    "不新增注意力热力图、SHAP等未运行解释算法，也不新增问题级总览面板。",
+    "不对A—P声称精确BPFO/BPFI/BSF/FTF命中。"
+  ],
+  "key_number_sources": [
+    {
+      "id": "Q4-FAITH",
+      "value": "median Top-5 drop=0.448844→0.4488",
+      "scope": "9 selected explanation cases",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "id": "Q4-LOW5/RANDOM",
+      "value": "median Low-5=-0.0098586; random5 null median=0.0775131",
+      "scope": "9 cases",
+      "source": "problem4_analysis.json / faithfulness_ablation.csv"
+    },
+    {
+      "id": "Q4-SPEAR",
+      "value": "median adjacent-window Spearman=0.976182→0.9762",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "id": "Q4-JACC",
+      "value": "median Top-5 Jaccard=1.0000",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "id": "Q4-MECH",
+      "value": "source representative mean Top-5 mechanism proxy share=0.6000; median prototype direction alignment=1.00",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "id": "migration-shift",
+      "value": "mean standardized gap 8.3552→6.2664; median relative mean-gap reduction=25.0%",
+      "source": "RES-11B-MIGRATION"
+    },
+    {
+      "id": "contradictions",
+      "value": "H direction=0.25; D direction=0; D LOTO flip; D source-bootstrap retention=0.3833",
+      "source": "mechanism_consistency.csv + Q3-LOTO/Q3-BOOT"
+    },
+    {
+      "id": "final-explain-validation",
+      "value": "faithfulness=true; stability=true; random_sanity=true; contradictions_retained=true",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa",
+      "source": "final_validation_matrix.csv"
+    }
+  ],
+  "remaining_evidence_gaps": [
+    "无需要新增训练、调参或解释实验才能关闭的科学证据缺口。",
+    "当前5.4.1只有文字定义遮蔽贡献，缺少一个正式数学表达；14-B可完全依据RES-11B-METHOD补写，不新增口径。",
+    "当前Q4正文内部步骤号较多，属于论文表达问题而非证据缺口；14-B应统一改为论文语言。",
+    "Q4是最后一问，当前5.4.7缺少明确的‘全篇模型检验/评价接口’表达；14-B应改为第六章/第七章接口，而不是虚构下一问。",
+    "全局3.1假设占位与3.2符号表仍位于Q4之外，本A步不修改。"
+  ],
+  "pseudocode_decision": {
+    "needed": true,
+    "reason": "Q4不是单一标准解释算法，而是案例冻结→26维逐特征遮蔽→Top/Low/Random集合→200随机null→相邻窗口稳定性→机理旁证→矛盾案例保留的多阶段可复现审计流程；14-B加入1个简洁算法框有助复现，且不重复RF或标准置换算法。"
+  }
+}
