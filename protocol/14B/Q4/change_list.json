@@ -1,0 +1,43 @@
+{
+  "schema_version": "14B-Q4-change-1.0",
+  "step_id": "14-B-Q4",
+  "question": "Q4",
+  "parent_word": "WORD-V1.7-e5295682",
+  "candidate_word": "WORD-V1.8-3cbc8bfe",
+  "changed_scope": "Only the Q4 chapter (5.4) in word/document.xml; no Q1/Q2/Q3 or Chapter 6+ prose was changed.",
+  "closed_items": [
+    "5.4 opening rewritten to state that Q4 explains the already-frozen final chain rather than re-proving classification correctness, with three explicit interpretation difficulties.",
+    "All internal workflow IDs inside Q4 were removed and replaced by paper-language references such as final transfer chain, frozen prediction, and supplementary consistency review.",
+    "One 00-D MTDisplayEquation was added for the actually-used single-feature occlusion contribution Δ_j^(c)=S_c(X)-S_c(X_{j←r_j}); file-level aggregation is referenced to 5.2 rather than re-derived.",
+    "One compact Algorithm 3 box was added for feature occlusion, contribution ranking, Low-5/random-null faithfulness controls, adjacent-window local stability, mechanism side evidence, and contradiction retention.",
+    "Migration-process interpretation was compressed and limited to input marginal-gap shrinkage: 8.3552→6.2664 and median relative mean-gap reduction 25.0%, with no accuracy claim.",
+    "Source cases were explicitly framed as known-label explanation checks rather than a new independent performance test; OR021@3_2 retains historical OOF-failure identity.",
+    "Target H/O/D/N cases are explicitly labeled as prediction classes only; D/N local explanation stability is separated from their file-level decision instability.",
+    "Q4 validation results were front-loaded: faithfulness 9/9, local stability 9/9, Top-5=0.4488 vs Low-5=-0.0099/random=0.0775, Spearman=0.9762 and Jaccard=1.000.",
+    "Mechanism consistency was downgraded to side evidence in Table 27/prose; H=0.25 and D=0 contradictions remain visible.",
+    "Q4 summary was rewritten to four items: final explanation scheme, core validation results, contradictions/applicability boundary, and interface to Chapters 6/7."
+  ],
+  "retained_and_unchanged": [
+    "Frozen Q4 figures FIG-Q4-01/02/03/04, captions and media bytes.",
+    "Tables 25–27 numerical values; only the Table 27 mechanism-conclusion wording was downgraded from a generic pass label to side-evidence wording.",
+    "All frozen T1/RF predictions and explanation outputs.",
+    "All 19 embedded media bytes and 19/19 image relationships.",
+    "00-D styles/numbering/theme/fontTable and headers/footers.",
+    "All text before the actual Q4 heading and from the Chapter 6 heading onward."
+  ],
+  "deferred_items": [
+    {
+      "item": "Global 3.1 model-assumption placeholder",
+      "reason": "Outside Q4 chapter; one-question-only edit scope prohibits changing it here."
+    },
+    {
+      "item": "Global 3.2 symbol table completion",
+      "reason": "Outside Q4 chapter; deferred to STEP15/global-finalization if authorized."
+    },
+    {
+      "item": "Chapter 6/7 internal workflow-number wording",
+      "reason": "Outside Q4 chapter and therefore deliberately left unchanged in this B step."
+    }
+  ],
+  "user_confirmation_required": true
+}
