@@ -1,0 +1,150 @@
+{
+  "schema_version": "14B-Q4-validation-1.0",
+  "step_id": "14-B-Q4",
+  "question": "Q4",
+  "run_id": "run_14-B-Q4_20260921T180000Z_3cbc8bfe",
+  "status": "candidate_passed_pending_user_confirmation",
+  "internal_validation_passed": true,
+  "formal_gate_passed": false,
+  "formal_gate_reason": "The workflow requires explicit user inspection/confirmation of the Q4 Word before issuing the formal 14-B-Q4 pass token and advancing to STEP15-A.",
+  "source": {
+    "A_pass_token": "14-A-Q4-V2026.09.21-r45-通过",
+    "A_freeze": "FREEZE-14A-Q4-r45",
+    "parent_word_artifact_id": "WORD-V1.7-e5295682",
+    "parent_word_sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ]
+  },
+  "candidate_word": {
+    "version": "V1.8",
+    "artifact_id": "WORD-V1.8-3cbc8bfe",
+    "parent_version": "V1.7",
+    "parent_artifact_id": "WORD-V1.7-e5295682",
+    "library_path": "/数学建模/步骤14_Q4/2025华为杯E题论文_步骤14_Q4_V1.8.docx",
+    "library_file_id": "libfile_d14ffe8f7650819191068fbb7f060471",
+    "sha256": "3cbc8bfefbe39c865cae7a5fe12ae309c33cb2e92dd4f6d6e12a52f22e918e1c",
+    "source_A_freeze_package_id": "FREEZE-14A-Q4-r45",
+    "source_word_artifact_id": "WORD-V1.7-e5295682",
+    "run_id": "run_14-B-Q4_20260921T180000Z_3cbc8bfe"
+  },
+  "checks": {
+    "edit_scope_Q4_only": true,
+    "no_model_training": true,
+    "no_retuning": true,
+    "no_model_selection": true,
+    "no_new_explanation_method": true,
+    "no_new_model_result": true,
+    "Q4_numeric_changes_within_frozen_evidence": true,
+    "q4_internal_step_ids_removed_from_chapter": true,
+    "occlusion_contribution_formula_added_from_frozen_method": true,
+    "algorithm_box_added_for_occlusion_and_validation_flow": true,
+    "target_truth_boundary_preserved": true,
+    "local_explanation_stability_not_conflated_with_file_prediction_stability": true,
+    "contradiction_cases_retained": true,
+    "all_Q4_frozen_figures_preserved": true,
+    "all_Q4_existing_tables_preserved": true,
+    "image_objects_not_reduced": true,
+    "image_relationships_resolved": true,
+    "unreferenced_media_count_zero": true,
+    "official_style_parts_byte_identical": true,
+    "headers_footers_byte_identical": true,
+    "outside_Q4_text_unchanged": true,
+    "library_roundtrip_sha_exact": true,
+    "full_render_passed": true
+  },
+  "structural_evidence": {
+    "parent": {
+      "paragraphs": 333,
+      "tables": 35,
+      "inline_shapes": 18,
+      "image_relationships": 19,
+      "media_files": 19,
+      "formula_style_paragraphs": 5
+    },
+    "candidate": {
+      "paragraphs": 334,
+      "tables": 36,
+      "inline_shapes": 18,
+      "image_relationships": 19,
+      "media_files": 19,
+      "formula_style_paragraphs": 6,
+      "algorithm_boxes": 3
+    },
+    "changed_package_parts": [
+      "word/document.xml"
+    ],
+    "media_hashes_byte_identical_to_parent": true,
+    "styles_xml_byte_identical": true,
+    "numbering_xml_byte_identical": true,
+    "theme1_xml_byte_identical": true,
+    "fontTable_xml_byte_identical": true,
+    "document_relationships_byte_identical": true,
+    "headers_footers_byte_identical": true,
+    "image_relationships": "19/19 resolved",
+    "q4_figure_captions": [
+      "图12 问题四最终诊断链路的可解释性技术框架",
+      "图13 源域已知标签案例的Top-5单特征遮蔽贡献",
+      "图14 目标域预测案例的Top-5单特征遮蔽贡献",
+      "图15 高贡献遮蔽与低贡献/随机对照的忠实性验证"
+    ],
+    "q4_internal_step_refs_remaining": [],
+    "outside_Q4_prefix_text_sha256": "4255a66b72d89b0fee8bf34e6a1aa8d269f2c9988e76275496ee0bc3460ee966",
+    "outside_Q4_suffix_text_sha256": "ff90439f17aff47aecaef70b84ffd5b8556b6472c523af6cc9b5723c70d96831"
+  },
+  "render_evidence": {
+    "page_count": 47,
+    "parent_page_count": 47,
+    "pages_1_34_pixel_identical_to_parent": true,
+    "pages_35_43_visual_review": "9/9 Q4-changed/repaginated pages individually inspected at full-page resolution; no clipping, overlap, broken figures/tables, missing glyphs, caption separation, or formula overflow.",
+    "pages_44_47_pixel_identical_to_parent": true,
+    "q4_figures": "FIG-Q4-01/02/03/04 bytes preserved in unchanged 19-media package",
+    "library_roundtrip_sha_exact": true
+  },
+  "Q4_evidence_spot_checks": [
+    {
+      "claim": "migration input gap",
+      "word": "8.3552→6.2664; median relative reduction=25.0%",
+      "frozen": "8.355199881359233→6.266399911019425; 0.25",
+      "status": "match",
+      "source": "problem4_analysis.json"
+    },
+    {
+      "claim": "faithfulness",
+      "word": "9/9; Top-5=0.4488; Low-5=-0.0099; random null=0.0775",
+      "frozen": "0.44884402757514785 / -0.009858594938436216 / 0.07751305157275795",
+      "status": "match",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "claim": "local explanation stability",
+      "word": "Spearman=0.9762; Top-5 Jaccard=1.000",
+      "frozen": "0.9761823248143944 / 1.0",
+      "status": "match",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "claim": "mechanism side evidence",
+      "word": "proxy share=0.60; direction median=1.00; H=0.25; D=0",
+      "frozen": "mechanism_consistency.csv",
+      "status": "match"
+    },
+    {
+      "claim": "D decision instability",
+      "word": "LOTO OR→B; source bootstrap retention=0.3833",
+      "frozen": "Q3-LOTO/Q3-BOOT",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "claim": "frozen Q4 figures",
+      "word": "图12—图15",
+      "frozen": "FIG-Q4-01/02/03/04",
+      "status": "byte-preserved"
+    }
+  ],
+  "word_edit_performed": true,
+  "model_run_performed": false,
+  "next_allowed_until_user_confirms": "14-B-Q4"
+}
