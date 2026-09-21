@@ -41,5 +41,7 @@
       "reason": "Q4 is outside current scope and remains byte/text-equivalent to parent; to be handled in Q4 cycle."
     }
   ],
-  "user_confirmation_required": true
+  "user_confirmation_required": false,
+  "final_word": "WORD-V1.7-e5295682",
+  "user_confirmation_received": true
 }
