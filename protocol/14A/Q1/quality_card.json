@@ -1,0 +1,56 @@
+{
+  "schema_version": "14A-Q1-quality-1.0",
+  "step_id": "14-A-Q1",
+  "question": "Q1",
+  "cards": [
+    {
+      "item": "直接回答题意",
+      "status": "需改",
+      "evidence": "5.1已完整覆盖筛源/信号分析/切片/特征，但1.2和问题分析只列标题，需补1—2段任务与难点。"
+    },
+    {
+      "item": "方法选择有理由",
+      "status": "需改",
+      "evidence": "筛源、重采样、物理时间窗均有理由；内部可比性距离缺正式组成式。"
+    },
+    {
+      "item": "有真实定量结果",
+      "status": "通过",
+      "evidence": "13-A1 core numbers: 49/16 files, 733/240 windows, 26 features; Q1 window sensitivity 0.9509—0.9673。"
+    },
+    {
+      "item": "基线/对比公平或说明不适用",
+      "status": "通过",
+      "evidence": "窗口敏感性固定模型同口径；源方案MVP/alternative/all-source按相同文件级评价口径比较。"
+    },
+    {
+      "item": "主结论有关键图/表",
+      "status": "通过",
+      "evidence": "FIG-Q1-01/02/03 + 表4—13；13-B2确认图1—3与13-B1 PNG逐字节一致。"
+    },
+    {
+      "item": "有失败/适用边界",
+      "status": "通过",
+      "evidence": "正常类仅4独立文件、MVP不含0.028 in、目标几何/RPM不足、困难样本不删除、长尾不裁剪。"
+    },
+    {
+      "item": "无教材式冗长介绍和无用公式",
+      "status": "需改",
+      "evidence": "标准特征表可保留，但正文内部流程号/布尔日志应删；3.1占位和3.2空表必须修。"
+    },
+    {
+      "item": "本问小结与下一问接口清楚",
+      "status": "通过",
+      "evidence": "5.1.4明确X_source_common/y_source_labels/groups_source和训练折内拟合约束。"
+    }
+  ],
+  "competitiveness": {
+    "opening_1_2_paragraphs": "需改：当前开头只有一句流程描述，未快速点明三项难点与选择依据。",
+    "principle_only_for_task": "基本通过；压缩内部流程语句和标准算法解释即可。",
+    "formulas_used": "需改：特征/机理公式均有用途，但内部可比性距离需补正式定义；不新增未使用公式。",
+    "key_results_prominent": "需改：49/733/26等可在5.1开头或小结用一短句突出，避免埋在多表之后。",
+    "evidence_words": "通过但需逐句保持：增强有0.001157→0.109910；稳定有4/4排名和0.9509—0.9673；不使用显著优于/全局最优。",
+    "framework": "通过：13-A2要求Q1框架图，FIG-Q1-01已在5.1标题下正确插入。",
+    "pseudocode": "不需要。"
+  }
+}
