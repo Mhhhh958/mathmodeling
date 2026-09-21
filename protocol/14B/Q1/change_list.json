@@ -1,0 +1,38 @@
+{
+  "schema_version": "14B-Q1-change-1.0",
+  "step_id": "14-B-Q1",
+  "question": "Q1",
+  "parent_word": "WORD-V1.4-e8eaa0a0",
+  "candidate_word": "WORD-V1.5-863d104f",
+  "changed_scope": "Only 5.1 problem-one chapter in word/document.xml; no other OOXML package parts changed.",
+  "closed_items": [
+    "5.1 opening rewritten to directly state Q1 goal, three difficulties, and method-selection route.",
+    "5.1.1 internal comparability distance given explicit frozen mathematical definition from 02-A implementation.",
+    "Internal workflow-step/log language removed or converted to paper prose within Q1.",
+    "Code Boolean log wording replaced by train-fold-only fitting contract.",
+    "Q1 feature-consistency evidence strengthened to 733×26 full recomputation, max absolute difference 4.547×10^-13.",
+    "Overstrong 'solve three problems' wording downgraded to risk-targeted processing choices.",
+    "Q1 summary sensitivity/source-plan repetition compressed; tables 28/30 referenced rather than repeating full numbers.",
+    "Q1 figures 1—3 and all existing Q1 tables retained at their frozen locations; no repaneling."
+  ],
+  "deferred_items": [
+    {
+      "item": "3.1 模型基本假设 placeholder",
+      "reason": "14-B-Q1 instruction restricts edits to current problem chapter; 3.1 is global section outside Q1."
+    },
+    {
+      "item": "3.2 符号说明 global table completion",
+      "reason": "14-B-Q1 instruction restricts edits to current problem chapter; global symbol table is outside Q1."
+    }
+  ],
+  "unchanged": [
+    "All model outputs/parameters/frozen results",
+    "All 19 embedded media bytes including Q1 figures",
+    "33 tables",
+    "Existing 5 oMath + 5 oMathPara objects",
+    "00-D official styles/numbering/theme/font table",
+    "Headers and footers",
+    "Q2/Q3/Q4 chapters and all non-Q1 prose"
+  ],
+  "user_confirmation_required": true
+}
