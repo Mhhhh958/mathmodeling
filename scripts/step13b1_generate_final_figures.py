@@ -257,7 +257,8 @@ done
       "all_figures_final_size_readable":bool(manifest["readability_pass"].eq("true").all()),
       "all_svg_vector_text_editable":bool(manifest["editable_vector_pass"].eq("true").all()),
       "key_figure_rerun_exact_png_reproducible":repro_ok,"difficulty_failure_figures_retained":set(["FIG-Q2-04","FIG-Q3-04"]).issubset(set(manifest["figure_id"])),
-      "table_preferred_items_not_rendered":len(inv)==15,"word_edit_performed":False,"training_performed":False,"tuning_performed":False,"model_selection_performed":False
+      "table_preferred_items_not_rendered":bool(len(inv)==15),
+      "no_word_edit_performed":True,"no_training_performed":True,"no_tuning_performed":True,"no_model_selection_performed":True
     }
     passed=bool(all(v is True for v in checks.values()) and not failed)
     validation={"schema_version":"13B1-validation-1.0","step_id":"13-B1","run_id":run_id,"status":"passed" if passed else "failed","passed":passed,
