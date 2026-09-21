@@ -1,0 +1,39 @@
+{
+  "schema_version": "13B2-validation-1.0",
+  "step_id": "13-B2",
+  "run_id": "run_13-B2_20260921T045636079360Z_24c73f7d_c91c6cc9",
+  "status": "passed",
+  "passed": true,
+  "source_B1_pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
+  "source_B1_package_sha256": "c91c6cc99ed406c102c3ab4d2a1553aeee3099c3e29a4f9f5caec4d420fbf540",
+  "parent_word_artifact_id": "WORD-V1.3-9c38c898",
+  "new_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+  "new_word_sha256": "e8eaa0a09f7ba9a9288dde0e101fed6e979f76215889ec43e2ae92c25aa1c024",
+  "checks": {
+    "all_15_final_figures_embedded_and_byte_exact": true,
+    "all_15_captions_numbered_exactly_once": true,
+    "all_15_use_official_caption_style": true,
+    "all_15_have_pre_and_post_narrative": true,
+    "all_15_rendered_visible": true,
+    "all_media_referenced_in_document_body": true,
+    "no_dangling_image_relationships": true,
+    "official_styles_numbering_theme_fonttable_preserved": true,
+    "headers_footers_preserved": true,
+    "library_roundtrip_exact": true,
+    "full_render_46_pages_passed": true
+  },
+  "evidence": {
+    "document_image_objects": 19,
+    "word_media_files": 19,
+    "final_figure_objects": 15,
+    "final_figures_byte_exact_to_13B1": 15,
+    "captions_sequential_and_exact": 15,
+    "render_page_count": 46,
+    "render_pdf_sha256": "74a2a780d8b1b8fd015939d858a1b52ac5a393ebef20c82fac594dcf5c65066d",
+    "visual_review": "46/46 pages reviewed after final caption-number fix; no clipping/overlap/missing glyph/caption separation/table-or-formula break observed"
+  },
+  "word_edit_scope": "incremental figure insertion/replacement only; no full-document rebuild",
+  "model_recompute_performed": false,
+  "frozen_numbers_changed": false,
+  "word_style_master_preserved": true
+}
