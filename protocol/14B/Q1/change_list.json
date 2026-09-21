@@ -13,7 +13,8 @@
     "Q1 feature-consistency evidence strengthened to 733×26 full recomputation, max absolute difference 4.547×10^-13.",
     "Overstrong 'solve three problems' wording downgraded to risk-targeted processing choices.",
     "Q1 summary sensitivity/source-plan repetition compressed; tables 28/30 referenced rather than repeating full numbers.",
-    "Q1 figures 1—3 and all existing Q1 tables retained at their frozen locations; no repaneling."
+    "Q1 figures 1—3 and all existing Q1 tables retained at their frozen locations; no repaneling.",
+    "Final repair: the two new comparability-distance display formulas were changed from Normal paragraphs to the official 00-D MTDisplayEquation style; the long second display is wrapped into two centered lines without changing the mathematical content."
   ],
   "deferred_items": [
     {
@@ -29,10 +30,13 @@
     "All model outputs/parameters/frozen results",
     "All 19 embedded media bytes including Q1 figures",
     "33 tables",
-    "Existing 5 oMath + 5 oMathPara objects",
     "00-D official styles/numbering/theme/font table",
     "Headers and footers",
-    "Q2/Q3/Q4 chapters and all non-Q1 prose"
+    "Q2/Q3/Q4 chapters and all non-Q1 prose",
+    "Existing 5 native oMath objects remain unchanged; no equation object elsewhere was altered."
   ],
-  "user_confirmation_required": true
+  "user_confirmation_required": false,
+  "final_word": "WORD-V1.5.1-c55b6f56",
+  "candidate_word_superseded": "WORD-V1.5-863d104f",
+  "user_confirmation_received": true
 }
