@@ -1,0 +1,42 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery",
+  "step_id": "13-B2",
+  "run_id": "run_13-B2_20260921T045636079360Z_24c73f7d_c91c6cc9",
+  "status": "passed",
+  "source_B1_pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
+  "source_B1_package_sha256": "c91c6cc99ed406c102c3ab4d2a1553aeee3099c3e29a4f9f5caec4d420fbf540",
+  "latest_word_before": {
+    "version": "V1.3",
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5",
+    "library_path": "/数学建模/12B/2025华为杯E题论文_步骤12_V1.3.docx"
+  },
+  "new_word_after": {
+    "version": "V1.4",
+    "artifact_id": "WORD-V1.4-e8eaa0a0",
+    "parent_version": "V1.3",
+    "sha256": "e8eaa0a09f7ba9a9288dde0e101fed6e979f76215889ec43e2ae92c25aa1c024",
+    "library_path": "/数学建模/13B2/2025华为杯E题论文_步骤13_V1.4.docx",
+    "library_file_id": "libfile_f257600e1858819183090a728e30919b",
+    "run_id": "run_13-B2_20260921T045636079360Z_24c73f7d_c91c6cc9"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "model_recompute_performed": false,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "final_figure_count": 15,
+  "document_image_object_count": 19,
+  "word_media_count": 19,
+  "render_page_count": 46,
+  "deliverables": {
+    "word": "/数学建模/13B2/2025华为杯E题论文_步骤13_V1.4.docx",
+    "acceptance": "protocol/13B2/final_embed_acceptance.csv",
+    "render_summary": "protocol/13B2/render_check_summary.json",
+    "change_list": "protocol/13B2/change_list.json",
+    "figure_index": "protocol/13B2/figure_number_index.csv"
+  },
+  "pass_token": "13-B2-V2026.09.21-e8eaa0a0-通过",
+  "next_allowed": "14-A"
+}
