@@ -1,0 +1,127 @@
+{
+  "schema_version": "14A-Q2-validation-1.0",
+  "step_id": "14-A-Q2",
+  "question": "Q2",
+  "run_id": "run_14-A-Q2_20260921T094500Z_evidence_review",
+  "status": "passed",
+  "passed": true,
+  "gate": {
+    "CURRENT_Q": 2,
+    "CURRENT_ALLOWED_STEP": "14-A-Q2",
+    "NEXT_ALLOWED_before": "14-A-Q2",
+    "previous_pass_token": "14-B-Q1-V2026.09.21-c55b6f56-通过",
+    "open_p0": []
+  },
+  "sources": {
+    "word": "WORD-V1.5.1-c55b6f56",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ],
+    "core_numbers": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv",
+    "traceability": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv",
+    "final_model_artifacts": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_model_artifacts.csv",
+    "final_code_bundle": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_code_bundle.json",
+    "figure_inventory": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/final_figure_inventory.csv",
+    "q2_evidence_index": [
+      "protocol/00C/ledgers/result_formula_ledger.csv",
+      "protocol/00C/ledgers/figure_table_ledger.csv",
+      "protocol/00C/ledgers/evidence_issue_ledger.csv"
+    ],
+    "final_embed": "protocol/13B2/final_embed_acceptance.csv"
+  },
+  "requirement_check": [
+    {
+      "requirement": "建立源域故障诊断模型并给出真实评价",
+      "status": "pass",
+      "evidence": "5.2.2 LR基线+5.2.3 H1_RF final; Q2-BASE/Q2-DEV"
+    },
+    {
+      "requirement": "避免窗口泄漏并说明评价单位",
+      "status": "pass",
+      "evidence": "RES-05B-SPLIT; 49 files/733 windows; 4 outer×3 inner group protocol"
+    },
+    {
+      "requirement": "给出模型选择/改进依据",
+      "status": "pass",
+      "evidence": "RES-07B-H1-GATE/OUTER/H2; real failure-driven comparison"
+    },
+    {
+      "requirement": "提供最终参数与Q3接口",
+      "status": "pass",
+      "evidence": "Q2-TREES/Q2-DEPTH; MODEL-SOURCE-4ee408ac96054e3b; TBL-07B-019"
+    },
+    {
+      "requirement": "验证与局限",
+      "status": "pass",
+      "evidence": "Q2-ORTHO/Q2-MINREC; Fold1 negative; H2 no gain; N=4; target unknown"
+    }
+  ],
+  "random_spot_checks": [
+    {
+      "item": "LR基线OOF Macro-F1",
+      "word": "0.8185",
+      "frozen": "0.8184523809523809",
+      "status": "match",
+      "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948"
+    },
+    {
+      "item": "H1_RF开发OOF",
+      "word": "0.9675 and explicitly development, not untouched final test",
+      "frozen": "0.9675; wording-limited",
+      "status": "match",
+      "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2"
+    },
+    {
+      "item": "固定模型跨载荷压力测试",
+      "word": "Macro-F1=0.950874; min Recall=0.904762",
+      "frozen": "0.9508739837398374 / 0.9047619047619048",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "item": "最终RF核心参数",
+      "word": "300 trees; max_depth=8",
+      "frozen": "300 / 8",
+      "status": "match",
+      "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb"
+    },
+    {
+      "item": "H2失败结果",
+      "word": "mean Δ=-0.0124; min=-0.1380; max=+0.0432",
+      "frozen": "-0.0124083 / -0.138023 / +0.043182",
+      "status": "match",
+      "evidence": "RES-07B-H2"
+    },
+    {
+      "item": "最终Q2图",
+      "word": "图4—图7",
+      "frozen": "FIG-Q2-01/02/04/03",
+      "status": "byte-exact and positioned",
+      "evidence": "protocol/13B2/final_embed_acceptance.csv"
+    }
+  ],
+  "code_traceability": {
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "tracked_q2_code": [
+      "scripts/step07a_failure_driven_improvement.py @ git_blob fc4d2a4d07b6e86f85b3593309531e01e42cfd67",
+      "scripts/step12a2_gap_validations.py @ git_blob 2b1f8948439cff1bb31331f7e8fd16f94f4b3810"
+    ],
+    "baseline_and_split_runs": [
+      "run_05-A_20260919T192338074034Z_f82972c7_ba6432cf",
+      "run_06-A_20260920T035742210347Z_b83cb3a6_01576948"
+    ]
+  },
+  "critical_findings": [
+    "No unrun model/result claim was found in Q2.",
+    "Development OOF 0.9675 is already correctly limited and must remain distinct from the fixed-model orthogonal 0.9509 evidence.",
+    "Current Q2 contains a terminology inconsistency: some protocol text says window probabilities although score semantics are explicitly uncalibrated model scores.",
+    "Current Q2 protocol section can mislead readers into thinking LR/RF were both run as the baseline; evidence shows the protocol budget allowed 12 configs, while the actual baseline stage ran 6 LR configs and RF was tested later as H1.",
+    "Scientific evidence is sufficient for 14-B; remaining issues are organization, terminology, concise formulas, and reproducibility presentation."
+  ],
+  "evidence_complete_for_14B": true,
+  "word_edit_performed": false,
+  "model_run_performed": false,
+  "pass_token": "14-A-Q2-V2026.09.21-r39-通过",
+  "next_allowed": "14-B-Q2"
+}
