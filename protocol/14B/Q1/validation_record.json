@@ -2,11 +2,11 @@
   "schema_version": "14B-Q1-validation-1.0",
   "step_id": "14-B-Q1",
   "question": "Q1",
-  "run_id": "run_14-B-Q1_20260921T060046Z_863d104f",
-  "status": "candidate_passed_pending_user_confirmation",
+  "run_id": "run_14-B-Q1_20260921T061900Z_c55b6f56",
+  "status": "passed",
   "internal_validation_passed": true,
-  "formal_gate_passed": false,
-  "formal_gate_reason": "User instruction requires explicit Word inspection/confirmation before advancing CURRENT_Q or issuing 14-B-Q1 pass token.",
+  "formal_gate_passed": true,
+  "formal_gate_reason": "User authorized the final formula-format repair and delegated the final Q1 Word recheck; all 14-B-Q1 hard checks now pass.",
   "source": {
     "A_pass_token": "14-A-Q1-V2026.09.21-r36-通过",
     "A_freeze": "FREEZE-14A-Q1-r36",
@@ -44,7 +44,9 @@
     "official_style_parts_byte_identical": true,
     "headers_footers_byte_identical": true,
     "library_roundtrip_sha_exact": true,
-    "full_render_passed": true
+    "full_render_passed": true,
+    "formula_display_style_00D_compliant": true,
+    "formula_content_preserved": true
   },
   "structural_evidence": {
     "parent": {
@@ -76,16 +78,46 @@
     "theme1_xml_byte_identical": true,
     "fontTable_xml_byte_identical": true,
     "document_relationships_byte_identical": true,
-    "headers_footers_byte_identical": true
+    "headers_footers_byte_identical": true,
+    "final": {
+      "paragraphs": 331,
+      "tables": 33,
+      "drawing": 18,
+      "pict": 1,
+      "image_relationships": 19,
+      "media_files": 19,
+      "oMath": 5,
+      "changed_package_parts_from_V1_5": [
+        "word/document.xml"
+      ],
+      "formula_paragraphs": [
+        {
+          "text": "z(i,j) = [x(i,j) − m(j)] / s(j)",
+          "style": "MTDisplayEquation",
+          "alignment": "center"
+        },
+        {
+          "text": "D(g,f)… / D(g)…",
+          "style": "MTDisplayEquation",
+          "alignment": "center",
+          "line_breaks": 1
+        }
+      ],
+      "dangling_image_relationships": 0,
+      "media_files_preserved": 19,
+      "tables_preserved": 33,
+      "styles_xml_unchanged": true,
+      "numbering_xml_unchanged": true,
+      "theme1_xml_unchanged": true,
+      "fontTable_xml_unchanged": true,
+      "headers_footers_unchanged": true
+    }
   },
   "render_evidence": {
     "page_count": 46,
-    "page_count_same_as_parent_final_render": true,
-    "visual_review": "46/46 pages reviewed on latest candidate render; Q1 changed pages individually/contact-sheet checked; no clipping, overlap, missing glyph, broken figure/table, or caption separation observed.",
-    "preexisting_out_of_scope_placeholders": [
-      "3.1 模型基本假设 placeholder remains unchanged because 14-B-Q1 is restricted to the current question chapter.",
-      "参考文献 placeholder remains unchanged and is outside Q1 scope."
-    ]
+    "latest_render": "/mnt/data/14B_Q1/render_v151",
+    "visual_review": "Latest V1.5.1 rendered to 46 pages. Page 9 formula block was inspected at full size: centered, no clipping/overflow, and the long D(g,f)/D(g) display is split across two centered lines. Other raster differences against the already-validated V1.5 render were limited to pages 12/15/17/18/42 and were individually inspected; all are clean. All remaining pages are pixel-identical to the validated V1.5 render.",
+    "library_roundtrip_sha_exact": true
   },
   "Q1_evidence_spot_checks": [
     {
@@ -112,5 +144,32 @@
   ],
   "word_edit_performed": true,
   "model_run_performed": false,
-  "next_allowed_until_user_confirms": "14-B-Q1"
+  "passed": true,
+  "superseded_candidate_word": {
+    "version": "V1.5",
+    "artifact_id": "WORD-V1.5-863d104f",
+    "parent_version": "V1.4",
+    "library_path": "/数学建模/步骤14_Q1/2025华为杯E题论文_步骤14_Q1_V1.5.docx",
+    "library_file_id": "libfile_ce11b9f052e88191b28f6f8533126fdb",
+    "sha256": "863d104fd861f38e853e6ceee7fd61a365a7d44b03b5f59d7194abb7d36b5978",
+    "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
+    "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+    "run_id": "run_14-B-Q1_20260921T060046Z_863d104f"
+  },
+  "final_word": {
+    "version": "V1.5.1",
+    "artifact_id": "WORD-V1.5.1-c55b6f56",
+    "parent_version": "V1.5",
+    "parent_artifact_id": "WORD-V1.5-863d104f",
+    "library_path": "/数学建模/步骤14_Q1/2025华为杯E题论文_步骤14_Q1_V1.5.1.docx",
+    "library_file_id": "libfile_d267dadadbb88191a9746ca950eb9b9c",
+    "sha256": "c55b6f56fe8f3a3b1724f81039f4b4ef90d9b98df25929d0c828ec324918ecfc",
+    "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
+    "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+    "run_id": "run_14-B-Q1_20260921T061900Z_c55b6f56"
+  },
+  "user_confirmation_received": true,
+  "user_confirmation_context": "User replied 同意 after the assistant identified the sole blocking issue and proposed the exact minimal formula-format repair.",
+  "pass_token": "14-B-Q1-V2026.09.21-c55b6f56-通过",
+  "next_allowed": "14-A-Q2"
 }
