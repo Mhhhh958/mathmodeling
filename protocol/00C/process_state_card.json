@@ -1,23 +1,23 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.21-r43",
-  "updated_utc": "2026-09-21T16:15:00Z",
-  "CURRENT_ALLOWED_STEP": "14-B-Q3",
-  "LAST_PASS_TOKEN": "14-A-Q3-V2026.09.21-r42-通过",
+  "state_version": "2026.09.21-r44",
+  "updated_utc": "2026-09-21T16:20:00Z",
+  "CURRENT_ALLOWED_STEP": "14-A-Q4",
+  "LAST_PASS_TOKEN": "14-B-Q3-V2026.09.21-e5295682-通过",
   "LATEST_WORD": {
-    "version": "V1.6",
-    "artifact_id": "WORD-V1.6-b8ee9bdc",
-    "parent_version": "V1.5.1",
-    "parent_artifact_id": "WORD-V1.5.1-c55b6f56",
-    "library_path": "/数学建模/步骤14_Q2/2025华为杯E题论文_步骤14_Q2_V1.6.docx",
-    "library_file_id": "libfile_8f1d3c4f3a88819199fc83a047045585",
-    "sha256": "b8ee9bdcec52cbb6ec41fc72aacdb4cff19fb824c265d3b672a7875765c2a5a0",
-    "source_A_freeze_package_id": "FREEZE-14A-Q2-r39",
+    "version": "V1.7",
+    "artifact_id": "WORD-V1.7-e5295682",
+    "parent_version": "V1.6",
+    "parent_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
+    "library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
     "source_step13_freeze_package_ids": [
       "FREEZE-13A1-0eedc9bc",
       "FREEZE-13A2-90264cb7"
     ],
-    "run_id": "run_14-B-Q2_20260921T134000Z_b8ee9bdc"
+    "run_id": "run_14-B-Q3_20260921T161500Z_e5295682"
   },
   "LATEST_FREEZE_PACKAGE": {
     "step_id": "13-A2",
@@ -30,39 +30,34 @@
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "14-B-Q3",
+  "NEXT_ALLOWED": "14-A-Q4",
   "previous_gate": {
-    "step": "14-B-Q2",
-    "pass_token": "14-B-Q2-V2026.09.21-b8ee9bdc-通过",
-    "next_allowed": "14-A-Q3"
+    "step": "14-A-Q3",
+    "pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+    "next_allowed": "14-B-Q3"
   },
   "current_step_record": {
     "step": "14-B-Q3",
     "question": "Q3",
-    "status": "candidate_passed_pending_user_confirmation",
-    "internal_validation_passed": true,
-    "user_confirmation_received": false,
-    "pass_token": null,
-    "next_allowed": "14-B-Q3",
+    "status": "passed",
+    "pass_token": "14-B-Q3-V2026.09.21-e5295682-通过",
+    "next_allowed": "14-A-Q4",
     "run_id": "run_14-B-Q3_20260921T161500Z_e5295682",
     "source_A_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
     "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
-    "parent_word_artifact_id": "WORD-V1.6-b8ee9bdc",
-    "candidate_word_artifact_id": "WORD-V1.7-e5295682",
-    "candidate_word_sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
-    "candidate_word_library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
-    "candidate_word_library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "latest_word_artifact_id": "WORD-V1.7-e5295682",
+    "latest_word_sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
     "validation_record": "protocol/14B/Q3/validation_record.json",
     "change_list": "protocol/14B/Q3/change_list.json",
     "B_delivery": "protocol/14B/Q3/B_delivery.json",
+    "finalization_record": "protocol/14B/Q3/finalization_record.json",
     "word_edit_performed": true,
     "model_run_performed": false,
     "render_page_count": 47,
     "image_relationships": "19/19 resolved",
-    "media_byte_preserved": "19/19",
-    "tables": "35 (34 prior + 1 algorithm box)",
-    "formula_display_paragraphs": "1 new MTDisplayEquation + 4 prior",
-    "note": "Awaiting explicit user inspection/approval before issuing 14-B-Q3 pass token, updating LATEST_WORD, and advancing CURRENT_Q to 4."
+    "media_files_preserved": "19/19",
+    "tables": "35 total",
+    "library_roundtrip_sha_exact": true
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -74,7 +69,7 @@
     "global_rules": "protocol/00C/global_rules.json",
     "latest_validation_record": "protocol/13A1/validation_record.json",
     "latest_00D_blocker": "protocol/00D/blocker_record.json",
-    "latest_word_library_path": "/数学建模/步骤14_Q2/2025华为杯E题论文_步骤14_Q2_V1.6.docx",
+    "latest_word_library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
     "latest_01A_freeze": "protocol/01A/latest_freeze_package.json",
     "latest_01A_data_manifest": "protocol/01A/data_manifest.json",
     "latest_01B_delivery": "protocol/01B/B_delivery.json",
@@ -243,21 +238,21 @@
     "latest_14B_Q3_validation": "protocol/14B/Q3/validation_record.json",
     "latest_14B_Q3_delivery": "protocol/14B/Q3/B_delivery.json",
     "latest_14B_Q3_change_list": "protocol/14B/Q3/change_list.json",
-    "latest_14B_Q3_run": "protocol/14B/Q3/latest_run_id.txt"
+    "latest_14B_Q3_run": "protocol/14B/Q3/latest_run_id.txt",
+    "latest_14B_Q3_finalization": "protocol/14B/Q3/finalization_record.json"
   },
-  "CURRENT_Q": 3,
+  "CURRENT_Q": 4,
   "chapter14_loop": {
-    "status": "Q3_B_candidate_pending_user_confirmation",
-    "CURRENT_Q": 3,
-    "current_question": "问题3",
-    "allowed_step": "14-B-Q3",
-    "previous_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+    "status": "Q3_B_passed",
+    "CURRENT_Q": 4,
+    "current_question": "问题4",
+    "allowed_step": "14-A-Q4",
+    "previous_pass_token": "14-B-Q3-V2026.09.21-e5295682-通过",
     "completed_questions": [
       "Q1",
-      "Q2"
+      "Q2",
+      "Q3"
     ],
-    "rule": "Only execute 14-A/14-B for CURRENT_Q; advance Q only after current question B step passes.",
-    "candidate_word_artifact_id": "WORD-V1.7-e5295682",
-    "user_confirmation_received": false
+    "rule": "Only execute 14-A/14-B for CURRENT_Q; advance Q only after current question B step passes."
   }
 }
