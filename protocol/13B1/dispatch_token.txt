@@ -11,3 +11,6 @@ fix=json_bool_and_staging
 
 retry=3
 fix=Q2_confusion_full_vector_and_final_size_readability
+
+retry=4
+fix=validation_no_edit_no_training_polarity
