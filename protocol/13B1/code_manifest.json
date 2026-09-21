@@ -2,11 +2,11 @@
   "schema_version": "13B1-1.0",
   "manifest_type": "code_manifest",
   "repository": "Mhhhh958/mathmodeling",
-  "execution_commit": "107ac3922625455bf7e7f309bfd8c371fc48e0a7",
+  "execution_commit": "f9172a6e48af46e206d3fbbd112358cf74924dc8",
   "tracked_code": [
     {
       "path": "scripts/step13b1_generate_final_figures.py",
-      "git_blob_sha": "ae8c92ecdee252f7eac54a1cf124a8e483c2a7aa"
+      "git_blob_sha": "e20b6fca42be6732ffc73d3b4427902afde3a3ea"
     },
     {
       "path": "scripts/step13b1_final_figure_renderer.py",

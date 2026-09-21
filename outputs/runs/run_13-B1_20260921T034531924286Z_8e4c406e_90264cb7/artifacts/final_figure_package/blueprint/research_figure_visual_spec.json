@@ -1,0 +1,83 @@
+{
+  "schema_version": "13A2-visual-1.0",
+  "body_width_cm": 15.999,
+  "width_classes_cm": {
+    "full": 15.999,
+    "medium": 13.59915,
+    "compact": 11.51928
+  },
+  "font": {
+    "primary_cn": "Noto Sans CJK SC",
+    "fallback": [
+      "Source Han Sans SC",
+      "Microsoft YaHei",
+      "SimHei"
+    ],
+    "math": "DejaVu Sans",
+    "sizes_pt": {
+      "axis_label": 10,
+      "tick": 9,
+      "legend": 9,
+      "annotation": 9,
+      "panel_mark": 10,
+      "internal_title": 0
+    }
+  },
+  "lines_markers": {
+    "main_line_width_pt": 1.2,
+    "axis_line_width_pt": 0.8,
+    "marker_size_pt": 4.5,
+    "error_line_width_pt": 1.0
+  },
+  "colors": {
+    "class": {
+      "OR": "#4477AA",
+      "IR": "#CC6677",
+      "B": "#228833",
+      "N": "#CCBB44"
+    },
+    "model": {
+      "Base/A0": "#6B7280",
+      "H1_RF": "#4477AA",
+      "T1": "#228833",
+      "T2": "#CC6677",
+      "T3": "#AA3377"
+    },
+    "neutral_text": "#222222",
+    "grid": "#B8BDC5"
+  },
+  "legend": {
+    "default": "best without covering data",
+    "outside_when_dense": true,
+    "frame": false
+  },
+  "grid": {
+    "quantitative": "y-only light dashed where helpful",
+    "heatmap_framework": "off"
+  },
+  "background": "white",
+  "forbidden": [
+    "gradient",
+    "shadow",
+    "rounded_card",
+    "status_icon",
+    "decorative_block",
+    "dashboard"
+  ],
+  "export": {
+    "primary": "SVG",
+    "fallback": "PNG",
+    "png_dpi": 300,
+    "transparent": false,
+    "tight_bbox": true,
+    "embed_font_or_convert_text": false
+  },
+  "framework": {
+    "tool": "matplotlib vector objects",
+    "box": "white rectangle + 0.8pt border",
+    "arrow": "simple arrow",
+    "max_accent_colors": 2,
+    "no_generated_image": true
+  },
+  "language": "Chinese titles/axes/legends/colorbars/annotations; necessary abbreviations/math symbols allowed"
+}

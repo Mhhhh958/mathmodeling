@@ -1,0 +1,56 @@
+{
+  "figure_id": "FIG-Q1-01",
+  "nodes": [
+    {
+      "id": "s",
+      "text": "源域49文件 + 目标域16文件",
+      "evidence": {
+        "Q1-N-SRC": 49.0,
+        "Q1-N-TGT": 16.0
+      }
+    },
+    {
+      "id": "r",
+      "text": "统一12 kHz共同分析时基",
+      "evidence": "03-A/04-A冻结处理口径"
+    },
+    {
+      "id": "w",
+      "text": "1 s物理时间窗 + 50%重叠",
+      "evidence": {
+        "source_windows": 733.0,
+        "target_windows": 240.0
+      }
+    },
+    {
+      "id": "f",
+      "text": "26维源—目标兼容公共特征",
+      "evidence": {
+        "feature_count": 26.0
+      }
+    },
+    {
+      "id": "o",
+      "text": "问题二接口：X + y + group_id",
+      "evidence": "同源窗口保持同一独立文件分组"
+    }
+  ],
+  "edges": [
+    [
+      "s",
+      "r"
+    ],
+    [
+      "r",
+      "w"
+    ],
+    [
+      "w",
+      "f"
+    ],
+    [
+      "f",
+      "o"
+    ]
+  ]
+}

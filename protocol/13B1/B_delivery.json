@@ -2,9 +2,9 @@
   "schema_version": "00C-B-delivery-1.0",
   "package_type": "B_delivery",
   "step_id": "13-B1",
-  "run_id": "run_13-B1_20260921T034401225150Z_3d293c6d_90264cb7",
-  "created_utc": "2026-09-21T03:44:17.983607Z",
-  "status": "failed",
+  "run_id": "run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7",
+  "created_utc": "2026-09-21T03:45:49.525572Z",
+  "status": "passed",
   "source_A_freeze_package_id": "FREEZE-13A2-90264cb7",
   "source_A_freeze_package_ids": [
     "FREEZE-13A1-0eedc9bc",
@@ -128,11 +128,11 @@
       "section": "5.4.5 解释验证与矛盾案例"
     }
   ],
-  "figure_manifest": "outputs/runs/run_13-B1_20260921T034401225150Z_3d293c6d_90264cb7/artifacts/figure_manifest.csv",
-  "source_data_index": "outputs/runs/run_13-B1_20260921T034401225150Z_3d293c6d_90264cb7/artifacts/source_data_index.csv",
-  "final_figure_package": "outputs/runs/run_13-B1_20260921T034401225150Z_3d293c6d_90264cb7/artifacts/final_figure_package.zip",
-  "final_figure_package_sha256": "09303480f5d81ee5880bd049dd28e6bcea5764d55a0564c48fc9102ce4c29860",
-  "unpassed_figures": "outputs/runs/run_13-B1_20260921T034401225150Z_3d293c6d_90264cb7/artifacts/unpassed_figures.csv",
+  "figure_manifest": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/figure_manifest.csv",
+  "source_data_index": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/source_data_index.csv",
+  "final_figure_package": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/final_figure_package.zip",
+  "final_figure_package_sha256": "c91c6cc99ed406c102c3ab4d2a1553aeee3099c3e29a4f9f5caec4d420fbf540",
+  "unpassed_figures": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/unpassed_figures.csv",
   "validation_record": "protocol/13B1/validation_record.json",
   "validation": {
     "only_frozen_A_results_used": true,
@@ -142,6 +142,6 @@
     "reproducibility_spot_check_passed": true,
     "word_unchanged": true
   },
-  "pass_token": null,
-  "next_allowed": "13-B1"
+  "pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
+  "next_allowed": "13-B2"
 }
