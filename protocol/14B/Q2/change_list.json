@@ -35,5 +35,7 @@
       "reason": "Outside the Q2 chapter; will be handled only by a later global-finalization step if authorized."
     }
   ],
-  "user_confirmation_required": true
+  "user_confirmation_required": false,
+  "final_word": "WORD-V1.6-b8ee9bdc",
+  "user_confirmation_received": true
 }
