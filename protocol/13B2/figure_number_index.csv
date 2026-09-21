@@ -1,0 +1,16 @@
+figure_no,figure_id,section,title_cn,page,doc_media_name,embedded_sha256
+图1,FIG-Q1-01,5.1标题下、5.1.1前,问题一数据处理与特征构建技术框架,9,word/media/image30.png,ab1550ef315c4b3977d0bfa941f5264055d7b860c13040a408ae374d0c778922
+图2,FIG-Q1-02,5.1.2（1）原始信号与典型/困难样本,B类典型与困难样本的时域波形对照,11,word/media/image20.png,75ed65c551d076d82ecf16c4acab73438e6082bc2a2fac41ae0219429f30ad12
+图3,FIG-Q1-03,5.1.2（4）频域、包络与故障机理证据,B类困难样本的功率谱与包络谱,13,word/media/image21.png,e6c834028682c78d627872d19d9a93833f549c766509d405964ce65f52079ec9
+图4,FIG-Q2-01,5.2标题下、5.2.1前,问题二源域故障诊断技术框架,17,word/media/image31.png,671f6363c51aed6cf0dd63257df5a0cb7f3eeb5c949ac9f836f971735f364ba1
+图5,FIG-Q2-02,5.2.2（2）基线结果,49个独立源域文件的OOF文件级混淆矩阵,21,word/media/image22.png,89700e30718f2b90f1680498ce9d70385a59b26e7191eb738682f9d560b330da
+图6,FIG-Q2-04,5.2.2（3）误判与困难案例,典型误判文件的窗口级模型分数演化,22,word/media/image23.png,effca46528c0498edae0a128c4ae8085bea794eb7580675c917637fed793faf5
+图7,FIG-Q2-03,5.2.3（2）改进效果,Base与最终RF在四个冻结外层折上的文件级Macro-F1配对对照,23,word/media/image24.png,72f55d0728a5c6a07a984459f209595717540bc264ad54f77da67f799a846650
+图8,FIG-Q3-01,5.3标题下、5.3.1前,问题三无监督迁移与目标域诊断技术框架,26,word/media/image32.png,6abadfdb91ac3adbe38e4a65f447f58eb58cb29148731cfbb890f1c0304044b9
+图9,FIG-Q3-02,5.3.1（2）特征分布、模型输出与类条件结构,源—目标偏移最显著的8个公共特征,27,word/media/image25.png,458cdc1426887b554befa3b1948795eb0dd345a43df95434194ec55619707f1c
+图10,FIG-Q3-03,5.3.4（3）迁移效果与失败候选,多模拟目标域上的无迁移—候选迁移对照,30,word/media/image26.png,8aa269589ade5f3abc62d94f8f4cb0eb2eeff2992a0ef9101246ea944e456cd1
+图11,FIG-Q3-04,5.3.5（3）低可信案例与机理旁证,A—P源文件Bootstrap标签保持率与目标留一翻转,33,word/media/image34.png,24c4bd50189a0333d51d5ff1e18416a971e23c3392230f9cd4b4a021574622d0
+图12,FIG-Q4-01,5.4标题下、5.4.1前,问题四最终诊断链路的可解释性技术框架,34,word/media/image33.png,2fb1bcd527eac69db01ec9ca47306e26e12889f270a63b8cbf0e25e550d0aaeb
+图13,FIG-Q4-02,5.4.3 源域已知标签解释案例,源域已知标签案例的Top-5单特征遮蔽贡献,36,word/media/image27.png,40d8c4982cc7bc7f25e4097a9131b10a7174c9193089e475d66c9e98eacda146
+图14,FIG-Q4-03,5.4.4 目标域预测解释,目标域预测案例的Top-5单特征遮蔽贡献,38,word/media/image28.png,9b74ea2b8a54a25ea60dce92c1c4c9d2cfec798d75ed2975a25208b3626679a2
+图15,FIG-Q4-04,5.4.5 解释验证与矛盾案例,高贡献遮蔽与低贡献/随机对照的忠实性验证,39,word/media/image29.png,0b7910b7cdd93b32f575291ebfc420b3a7e1d41173f5248c22757050973a0fb4
