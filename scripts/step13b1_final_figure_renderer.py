@@ -111,10 +111,14 @@ def q1_psd(axes,d,markers,spec):
 
 def q2_confusion(ax,d):
     labels=["OR","IR","B","N"]; arr=d[[f"pred_{x}" for x in labels]].to_numpy(float)
-    vmax=max(1,float(np.nanmax(arr)))
-    # Vector heatmap: pcolormesh keeps SVG/PDF cells as editable vector paths.
-    edges=np.arange(5)-0.5
-    im=ax.pcolormesh(edges,edges,arr,cmap="Blues",vmin=0,vmax=vmax,shading="flat")
+    vmax=max(1,float(np.nanmax(arr))); cmap=plt.get_cmap("Blues")
+    # Fully editable vector heatmap: every cell is an SVG/PDF rectangle.
+    # We deliberately avoid imshow/pcolormesh+colorbar because some backends
+    # serialize the continuous colorbar as a raster <image> layer.
+    for i in range(4):
+        for j in range(4):
+            v=float(arr[i,j]); color=cmap(v/vmax)
+            ax.add_patch(Rectangle((j-0.5,i-0.5),1,1,facecolor=color,edgecolor="white",linewidth=0.8))
     ax.set_xlim(-0.5,3.5); ax.set_ylim(3.5,-0.5); ax.set_aspect("equal")
     ax.set_xticks(range(4),labels); ax.set_yticks(range(4),labels)
     common(ax,"预测类别","真实类别")
@@ -123,7 +127,9 @@ def q2_confusion(ax,d):
         for j in range(4):
             ax.text(j,i,str(int(arr[i,j])),ha="center",va="center",fontsize=9,
                     color="white" if arr[i,j]>=threshold and arr[i,j]>0 else "#222222")
-    return im
+    ax.text(1.03,0.5,"方格数字为文件数",transform=ax.transAxes,rotation=90,
+            ha="left",va="center",fontsize=8,color="#444444")
+    return None
 
 def q2_paired(ax,d,spec):
     c=spec["colors"]["model"]; x=d["outer_fold"].to_numpy()
@@ -207,6 +213,9 @@ def build(row,spec,coords,source_dir=None):
     fid=row["figure_id"]; ps=source_paths(row,source_dir); width=float(row["insert_width_cm"])
     if fid in {"FIG-Q1-01","FIG-Q2-01","FIG-Q3-01","FIG-Q4-01"}:
         h=5.1
+    elif fid=="FIG-Q2-02":
+        # Square confusion matrix must remain readable at the frozen 13.59915 cm insertion width.
+        h=12.8
     elif fid in {"FIG-Q1-03","FIG-Q2-04"}:
         h=10.0
     elif fid in {"FIG-Q4-02","FIG-Q4-03"}:
@@ -222,7 +231,7 @@ def build(row,spec,coords,source_dir=None):
     elif fid=="FIG-Q1-02": q1_wave(axes[0],rdf(ps[0]),spec)
     elif fid=="FIG-Q1-03": q1_psd(axes,rdf(ps[0]),rdf(ps[1]),spec)
     elif fid=="FIG-Q2-02":
-        im=q2_confusion(axes[0],rdf(ps[0])); cb=fig.colorbar(im,ax=axes[0],fraction=0.045,pad=0.04); cb.set_label("文件数")
+        q2_confusion(axes[0],rdf(ps[0]))
     elif fid=="FIG-Q2-03": q2_paired(axes[0],rdf(ps[0]),spec)
     elif fid=="FIG-Q2-04": q2_failure(axes,rdf(ps[0]),spec)
     elif fid=="FIG-Q3-02": q3_shift(axes[0],rdf(ps[0]),spec)
