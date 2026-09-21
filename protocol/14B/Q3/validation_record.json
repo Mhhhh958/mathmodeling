@@ -1,0 +1,158 @@
+{
+  "schema_version": "14B-Q3-validation-1.0",
+  "step_id": "14-B-Q3",
+  "question": "Q3",
+  "run_id": "run_14-B-Q3_20260921T161500Z_e5295682",
+  "status": "candidate_passed_pending_user_confirmation",
+  "internal_validation_passed": true,
+  "formal_gate_passed": false,
+  "formal_gate_reason": "Workflow requires explicit user inspection/confirmation of the Q3 Word before issuing the formal 14-B-Q3 pass token and advancing CURRENT_Q to 4.",
+  "source": {
+    "A_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+    "A_freeze": "FREEZE-14A-Q3-r42",
+    "parent_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "parent_word_sha256": "b8ee9bdcec52cbb6ec41fc72aacdb4cff19fb824c265d3b672a7875765c2a5a0",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ]
+  },
+  "candidate_word": {
+    "version": "V1.7",
+    "artifact_id": "WORD-V1.7-e5295682",
+    "parent_version": "V1.6",
+    "parent_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
+    "library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
+    "source_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "run_id": "run_14-B-Q3_20260921T161500Z_e5295682"
+  },
+  "checks": {
+    "edit_scope_Q3_only": true,
+    "no_model_training": true,
+    "no_retuning": true,
+    "no_model_selection": true,
+    "no_new_model_result": true,
+    "Q3_numeric_changes_within_frozen_evidence": true,
+    "q3_internal_step_ids_removed_from_chapter": true,
+    "two_MMD_scopes_explicitly_disambiguated": true,
+    "T1_formula_promoted_to_00D_display_style": true,
+    "algorithm_box_added_for_pseudo_target_selection_and_transductive_inference": true,
+    "stability_evidence_layers_separated": true,
+    "all_Q3_frozen_figures_preserved": true,
+    "all_Q3_existing_tables_preserved": true,
+    "image_objects_not_reduced": true,
+    "image_relationships_resolved": true,
+    "unreferenced_media_count_zero": true,
+    "official_style_parts_byte_identical": true,
+    "headers_footers_byte_identical": true,
+    "outside_Q3_text_unchanged": true,
+    "library_roundtrip_sha_exact": true,
+    "full_render_passed": true
+  },
+  "structural_evidence": {
+    "parent": {
+      "paragraphs": 332,
+      "tables": 34,
+      "inline_shapes": 18,
+      "image_relationships": 19,
+      "media_files": 19,
+      "formula_style_paragraphs": 4
+    },
+    "candidate": {
+      "paragraphs": 333,
+      "tables": 35,
+      "inline_shapes": 18,
+      "image_relationships": 19,
+      "media_files": 19,
+      "formula_style_paragraphs": 5,
+      "algorithm_boxes": 2
+    },
+    "changed_package_parts": [
+      "word/document.xml"
+    ],
+    "media_hashes_byte_identical_to_parent": true,
+    "styles_xml_byte_identical": true,
+    "numbering_xml_byte_identical": true,
+    "theme1_xml_byte_identical": true,
+    "fontTable_xml_byte_identical": true,
+    "document_relationships_byte_identical": true,
+    "headers_footers_byte_identical": true,
+    "image_relationships": "19/19 resolved",
+    "q3_figure_captions": [
+      "图8 问题三无监督迁移与目标域诊断技术框架",
+      "图9 源—目标偏移最显著的8个公共特征",
+      "图10 多模拟目标域上的无迁移—候选迁移对照",
+      "图11 A—P源文件Bootstrap标签保持率与目标留一翻转"
+    ],
+    "q3_internal_step_refs_remaining": [],
+    "outside_q3_prefix_text_same": true,
+    "outside_q3_suffix_text_same": true
+  },
+  "render_evidence": {
+    "page_count": 47,
+    "parent_page_count": 47,
+    "pages_1_26_pixel_identical_to_parent": true,
+    "pages_27_36_visual_review": "10/10 Q3-changed/repaginated pages individually inspected at full-page resolution; no clipping, overlap, broken figure/table, missing glyph, caption separation, or formula overflow.",
+    "pages_37_47_pixel_identical_to_parent": true,
+    "q3_figures": "FIG-Q3-01/02/03/04 bytes preserved in unchanged 19-media package",
+    "library_roundtrip_sha_exact": true
+  },
+  "Q3_evidence_spot_checks": [
+    {
+      "claim": "domain-diagnosis MMD²",
+      "word": "0.7922, explicitly domain-diagnosis scope",
+      "frozen": "0.7922234132610413",
+      "status": "match",
+      "run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f"
+    },
+    {
+      "claim": "final T1 alpha",
+      "word": "0.25",
+      "frozen": "0.25",
+      "status": "match",
+      "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878"
+    },
+    {
+      "claim": "held load3 result",
+      "word": "A0=1.0000; T1=1.0000; Δ=0",
+      "frozen": "Q3-PSEUDO-GAIN=0",
+      "status": "match"
+    },
+    {
+      "claim": "T2 failure",
+      "word": "mean Macro-F1=0.7078; mean Δ=-0.2267; worst Δ=-0.5274",
+      "frozen": "RES-09B-TUNING",
+      "status": "match"
+    },
+    {
+      "claim": "A-P final labels",
+      "word": "OR=8,B=8,IR=0,N=0; only C,D B→OR",
+      "frozen": "13-A1 A_P_final_answer_table.csv",
+      "status": "match"
+    },
+    {
+      "claim": "target LOTO",
+      "word": "15/16 label retention; D OR→B; max top-score Δ=0.0238",
+      "frozen": "0.9375 / D flip / 0.02376",
+      "status": "match"
+    },
+    {
+      "claim": "source bootstrap",
+      "word": "D=0.3833; 10/16 below 0.80",
+      "frozen": "0.38333333333333336",
+      "status": "match"
+    },
+    {
+      "claim": "adaptation pre/post MMD²",
+      "word": "0.8361→0.7556, explicitly separate migration-stage scope",
+      "frozen": "0.8360769364→0.7556298139",
+      "status": "match"
+    }
+  ],
+  "word_edit_performed": true,
+  "model_run_performed": false,
+  "next_allowed_until_user_confirms": "14-B-Q3"
+}
