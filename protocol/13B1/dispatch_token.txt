@@ -8,3 +8,6 @@ model_recompute=false
 
 retry=1
 fix=json_bool_and_staging
+
+retry=3
+fix=Q2_confusion_full_vector_and_final_size_readability
