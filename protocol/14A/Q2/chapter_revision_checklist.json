@@ -1,0 +1,184 @@
+{
+  "schema_version": "14A-Q2-1.0",
+  "step_id": "14-A-Q2",
+  "question": "Q2",
+  "mode": "evidence_review_only",
+  "source_word_artifact_id": "WORD-V1.5.1-c55b6f56",
+  "source_freezes": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "conclusion": "pass_with_executable_revision_list",
+  "keep": [
+    "5.2按文件为独立单位的主线：49个独立源文件、733窗口只作文件内观测，所有训练/验证/测试按group_id封闭。",
+    "4外层×3内层文件级嵌套验证与N类4文件的特殊约束；每个外层测试恰1个N，内层验证也保持四类覆盖。",
+    "多项逻辑回归基线的真实OOF结果与OR/IR、N类失败结构；图5混淆矩阵和图6两个真实失败文件必须保留。",
+    "H1_RF与Base使用相同4个冻结外层折的配对比较，并保留Fold 1退化−0.0635，不写每折均优或统计显著。",
+    "H2相关性裁剪无增益结果必须保留，不继续调阈值。",
+    "07开发OOF=0.9675只能作为模型家族接受的开发证据；固定模型leave-one-load-out=0.9509、最低类Recall=0.9048作为独立于调参流程的跨载荷补充证据。",
+    "最终模型H1_RF与Q3接口：MODEL-SOURCE-4ee408ac96054e3b、26维公共特征、OR/IR/B/N类序、窗口模型分数均值→文件级argmax、目标真值unknown。",
+    "复杂度代价边界：RF推理/存储成本显著高于LR，计时只含已提取26维特征后的模型端。"
+  ],
+  "rewrite_or_strengthen": [
+    {
+      "location": "5.2开头（图4之前）",
+      "action": "重写开头1—2段",
+      "instruction": "直接说明Q2目标是建立可复现的源域四分类器并为Q3冻结源模型；突出三个难点：窗口来自同一文件不能当独立样本、N类仅4文件、开发阶段模型比较与最终泛化证据必须分层。随后说明选择“文件级嵌套分组→LR基线→失败驱动单因素改进→固定模型跨载荷压力测试”的原因。",
+      "evidence": "FIG-Q2-01 + 13-A1 Q2 core numbers + Q2 evidence ledger"
+    },
+    {
+      "location": "5.2.1（3）候选基线、计算预算与停止条件",
+      "action": "消除阶段歧义并压缩",
+      "instruction": "当前“候选基线为LR与RF共12配置”容易与5.2.2“实际基线只运行LR 6配置”混淆。应明确：协议阶段只预设可接受候选空间与预算上限；正式执行分为LR基线6配置，再在失败驱动阶段检验H1_RF/H2。超时/失败/泄漏停止条件压缩进算法框或一段，不保留流水账口吻。",
+      "evidence": "RES-05B-BUDGET + RES-06B-BASELINE + RES-07B-H1-GATE"
+    },
+    {
+      "location": "5.2.1（2）表15、5.2.1（4）",
+      "action": "统一分数语义",
+      "instruction": "把“同文件窗口四类概率取均值”“窗口级四类概率”等改为“未校准模型分数向量取均值”；只有在明确说明predict_proba未校准时可提函数名，不得称校准概率或置信度。",
+      "evidence": "RES-06B-SCORE-SEMANTICS"
+    },
+    {
+      "location": "5.2.1评价口径",
+      "action": "补2个核心数学表达",
+      "instruction": "增加且仅增加实际参与后续求解的两个公式：文件级分数聚合/argmax，以及Macro-F1四类算术平均定义。公式按00-D官方公式样式；不写LR/RF教材原理公式。",
+      "evidence": "RES-05B-EVAL + RES-07B-Q3-INTERFACE"
+    },
+    {
+      "location": "5.2.1末或5.2.3前",
+      "action": "加入1个简洁算法框",
+      "instruction": "算法框只描述“文件级嵌套验证与模型冻结流程”：输入X,y,group_id与预冻结候选；外层封闭→内层训练组fit学习型处理→按文件级Macro-F1选定配置→外层一次评价→汇总OOF→按预声明规则接受H1并全源拟合。不要写标准LR/RF伪代码。",
+      "evidence": "Q2多阶段搜索/决策流程 + 05/06/07 evidence ledger"
+    },
+    {
+      "location": "5.2.2、5.2.3全文",
+      "action": "删除内部流程编号",
+      "instruction": "将05-A/06-A/07-A/12-A1/12-A2等内部流水号改成论文语言（如“冻结协议”“基线实验”“开发阶段审计”“固定模型正交压力测试”）；run_id和freeze_id留在总账/变更单。",
+      "evidence": "step13 traceability already retains all run IDs"
+    },
+    {
+      "location": "5.2.2（2）总体结果开头",
+      "action": "突出主结果",
+      "instruction": "在长段分析前用一短句先给文件级基线OOF Macro-F1=0.8185、Accuracy=0.7959、10个误判，再用图5/表17解释OR/IR混淆和N=3/4。",
+      "evidence": "Q2-BASE + RES-06B-FILE-METRICS/CONFUSION"
+    },
+    {
+      "location": "5.2.3（2）改进效果",
+      "action": "收紧结论层级",
+      "instruction": "保持“开发阶段配对OOF=0.9675”与“固定模型跨载荷=0.9509”分层；不得把0.9675写成完全独立终测。把“提升/稳定”分别绑定四折配对、Fold1反例和0.9509正交测试。",
+      "evidence": "Q2-DEV/Q2-ORTHO/Q2-MINREC + FIG-Q2-03"
+    },
+    {
+      "location": "5.2.3（4）与5.2.4③",
+      "action": "降级宽泛的“最有效”措辞",
+      "instruction": "改为“在本轮预冻结的两种单因素改进中，H1_RF满足接受规则并进入Final”；避免让读者误解为对所有模型家族做过全局搜索。",
+      "evidence": "RES-07B-H1-GATE + RES-07B-H2"
+    },
+    {
+      "location": "5.2.3（4）复杂度",
+      "action": "压缩但保留代价",
+      "instruction": "保留Base 0.1379ms/3148B、H1 7.2833ms/231774B、final 275708B、fit 0.3545s等冻结量，但不要另画性能—复杂度图；13-A2已判定该主题优先表格/文字。",
+      "evidence": "RES-07B-COMPLEXITY + 13-A2 table_preference_decisions.csv"
+    },
+    {
+      "location": "5.2.4问题二小结",
+      "action": "去重复",
+      "instruction": "按“结果→独立验证→失败/边界→Q3接口”压成4项；H2与跨载荷数字不再重复完整解释，交叉引用相应小节/表29即可。",
+      "evidence": "Q2 evidence index + Table29"
+    }
+  ],
+  "frozen_figures": [
+    {
+      "figure_id": "FIG-Q2-01",
+      "status": "keep",
+      "location": "5.2标题下、5.2.1前",
+      "reason": "13-A2判定Q2需要技术框架图；当前位置正确。"
+    },
+    {
+      "figure_id": "FIG-Q2-02",
+      "status": "keep",
+      "location": "5.2.2（2）基线结果",
+      "reason": "直接展示49文件OOF混淆结构。"
+    },
+    {
+      "figure_id": "FIG-Q2-04",
+      "status": "keep",
+      "location": "5.2.2（3）误判与困难案例",
+      "reason": "IR007_0与N_0属于真实失败案例，不能删除。"
+    },
+    {
+      "figure_id": "FIG-Q2-03",
+      "status": "keep",
+      "location": "5.2.3（2）改进效果",
+      "reason": "同一4外层折配对比较并保留Fold1负向线。"
+    }
+  ],
+  "tables_and_references": [
+    "表14/15保留，但表15“概率”统一改为“模型分数”；表14承担文件级分组证据。",
+    "表16/17/18保留：分别承担基线逐折结果、逐类指标、真实误判摘要。",
+    "表19保留：承担最终模型/Q3接口；参数与特征顺序不得改变。",
+    "跨载荷固定模型结果继续引用表29，不把表29复制到5.2。",
+    "13-A2已判定Q2参数与复杂度不做性能—复杂度图；不要新增装饰性图或H2图。"
+  ],
+  "delete_or_downgrade": [
+    "删除正文中的05-A/06-A/07-A/12-A1/12-A2等内部工作流编号，证据身份保留在总账。",
+    "删除或替换“概率/置信度”式表述为“未校准模型分数”，与冻结语义保持一致。",
+    "将“最有效的改进”限定为“本轮预冻结两种单因素改进中被接受的H1_RF”。",
+    "不写“0.9675为独立终测”“随机森林每折均优”“统计显著”“源域成绩等于目标域准确率”。",
+    "不新增RF/LR教材式原理推导，也不写普通标准算法的树构造伪代码。"
+  ],
+  "key_number_sources": [
+    {
+      "id": "Q2-BASE",
+      "value": "0.8184523809523809→0.8185",
+      "source": "13-A1 core_numbers_master.csv",
+      "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948"
+    },
+    {
+      "id": "Q2-DEV",
+      "value": "0.9675",
+      "source": "13-A1 core_numbers_master.csv",
+      "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2",
+      "wording": "development evidence only"
+    },
+    {
+      "id": "Q2-ORTHO",
+      "value": "0.9508739837398374→0.9509",
+      "source": "13-A1 core_numbers_master.csv",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "id": "Q2-MINREC",
+      "value": "0.9047619047619048→0.9048",
+      "source": "13-A1 core_numbers_master.csv",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "id": "Q2-TREES/Q2-DEPTH",
+      "value": "300 / 8",
+      "source": "13-A1 core_numbers_master.csv",
+      "run_id": "run_07-A_20260920T051657629377Z_59d5a6dd_7e8829fb"
+    },
+    {
+      "id": "H2",
+      "value": "mean Δ=-0.0124083; min=-0.138023; max=+0.043182",
+      "source": "RES-07B-H2 evidence index",
+      "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed"
+    },
+    {
+      "id": "complexity",
+      "value": "Base 0.137933 ms/3148 B; H1 7.283341 ms/231774 B; final 275708 B; fit 0.354490 s",
+      "source": "RES-07B-COMPLEXITY evidence index",
+      "run_id": "run_07-B_20260920T055001000000Z_7e8829fb_1d19b9ed"
+    }
+  ],
+  "remaining_evidence_gaps": [
+    "无需要新增实验的科学证据缺口。",
+    "现有正文缺少文件级聚合与Macro-F1的显式数学表达，属于写作/复现表达缺口；证据定义已在RES-05B-EVAL与Q3冻结接口中存在，可在14-B按冻结口径补齐。",
+    "全局3.1模型假设占位和3.2符号表仍属整篇问题，位于Q2章节之外，不在本A步改Word；后续全局定稿需统一处理。"
+  ],
+  "pseudocode_decision": {
+    "needed": true,
+    "reason": "Q2存在4外层×3内层嵌套分组、训练内拟合、候选选择、外层一次性评价、H1接受/停止和最终冻结等多阶段决策；纯文字较长，建议14-B加入1个简洁算法框。标准LR/RF算法本身不重复写伪代码。"
+  }
+}
