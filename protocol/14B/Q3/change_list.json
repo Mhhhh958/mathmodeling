@@ -1,0 +1,45 @@
+{
+  "schema_version": "14B-Q3-change-1.0",
+  "step_id": "14-B-Q3",
+  "question": "Q3",
+  "parent_word": "WORD-V1.6-b8ee9bdc",
+  "candidate_word": "WORD-V1.7-e5295682",
+  "changed_scope": "Only the Q3 chapter (5.3) in word/document.xml; no Q1/Q2/Q4 prose or other OOXML package parts changed.",
+  "closed_items": [
+    "5.3 opening rewritten to state objective, three difficulties, and evidence route within the first two paragraphs.",
+    "All Q3 internal workflow IDs were removed from chapter prose/tables and replaced by paper-language stage descriptions.",
+    "The 0.7922 domain-diagnosis MMD² and 0.8361→0.7556 adaptation pre/post MMD² were explicitly separated as different preprocessing/standardization contexts and prohibited from direct numerical comparison.",
+    "5.3.3 now freezes only the pseudo-target protocol and T1 internal alpha; T1/T2/T3 family selection is explicitly deferred to 5.3.4.",
+    "The final T1 transformation was promoted to one 00-D MTDisplayEquation paragraph with μ_s/σ_s/μ_t/σ_t and α=0.25 defined in prose.",
+    "T2/T3 theory was compressed to the definitions and actual frozen parameter grids used in the candidate comparison.",
+    "One compact Algorithm 2 box was added for pseudo-target parameter/family selection, held-load validation, A-P transductive inference, and stability outputs.",
+    "The Q3 key result hierarchy was front-loaded: T2 negative transfer, held-load Δ=0, A-P OR/B=8/8, and D failure boundary.",
+    "A-P is explicitly described as transductive; the A-P collapse check is identified as a safety gate only, not a selector.",
+    "9-setting sensitivity, window bootstrap, target LOTO, and source-file bootstrap are separated by purpose and resampling level.",
+    "Q3 low-trust prose was compressed around C/D/J/L/N while retaining Table 24 and the strongest D/N failure evidence.",
+    "5.3.6 was rewritten into four items: final method/selection basis, A-P official output, strongest failure boundary, and Q4 interface."
+  ],
+  "retained_and_unchanged": [
+    "Frozen Q3 figures FIG-Q3-01/02/03/04, captions and media bytes.",
+    "Tables 20–24 numerical values; Table 22 wording only clarifies the MMD scope and replaces an internal source-model step ID with '冻结源模型'.",
+    "All frozen model outputs/parameters and MODEL-TRANSFER-82c6b6ba4d2dd557.",
+    "All 19 embedded media bytes and 19/19 image relationships.",
+    "00-D styles/numbering/theme/fontTable and headers/footers.",
+    "All text before the actual Q3 heading and from the actual Q4 heading onward."
+  ],
+  "deferred_items": [
+    {
+      "item": "Global 3.1 model-assumption placeholder",
+      "reason": "Outside Q3 chapter; one-question-only edit scope prohibits changing it here."
+    },
+    {
+      "item": "Global 3.2 symbol table completion",
+      "reason": "Outside Q3 chapter; deferred to authorized global-finalization step."
+    },
+    {
+      "item": "Q4 internal step-number wording visible after Q3",
+      "reason": "Q4 is outside current scope and remains byte/text-equivalent to parent; to be handled in Q4 cycle."
+    }
+  ],
+  "user_confirmation_required": true
+}
