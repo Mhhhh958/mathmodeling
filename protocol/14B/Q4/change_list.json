@@ -39,5 +39,8 @@
       "reason": "Outside Q4 chapter and therefore deliberately left unchanged in this B step."
     }
   ],
-  "user_confirmation_required": true
+  "user_confirmation_required": false,
+  "final_word": "WORD-V1.8-3cbc8bfe",
+  "user_confirmation_received": true,
+  "final_recheck_status": "passed"
 }
