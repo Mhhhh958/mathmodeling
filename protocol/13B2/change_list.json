@@ -1,0 +1,25 @@
+{
+  "step_id": "13-B2",
+  "parent_word": "WORD-V1.3-9c38c898",
+  "new_word_sha256": "e8eaa0a09f7ba9a9288dde0e101fed6e979f76215889ec43e2ae92c25aa1c024",
+  "changes": [
+    "仅在唯一V1.3母稿上增量替换/插入13-B1通过的15张最终科研图",
+    "删除旧版/失效论文结果图并建立统一图1—图15编号",
+    "修复图注样式自动编号与手写图号叠加造成的双重编号",
+    "保持正文、标题、图注样式及官方模板结构；未重建全文",
+    "未重新计算模型、未修改13-A1冻结数字",
+    "更新图文顺序为正文引出→图片→Word图注→图后分析",
+    "完成46页整篇渲染与图片持久性硬检查"
+  ],
+  "unchanged": [
+    "13-A1冻结数字",
+    "13-B1最终图像字节",
+    "模型/参数/预测结果",
+    "官方styles.xml/numbering.xml/theme/fontTable及页眉页脚"
+  ],
+  "final_figure_count": 15,
+  "document_image_object_count": 19,
+  "media_count": 19,
+  "render_page_count": 46,
+  "passed": true
+}
