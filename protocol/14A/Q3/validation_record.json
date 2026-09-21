@@ -1,0 +1,137 @@
+{
+  "schema_version": "14A-Q3-validation-1.0",
+  "step_id": "14-A-Q3",
+  "question": "Q3",
+  "run_id": "run_14-A-Q3_20260921T143400Z_evidence_review",
+  "status": "passed",
+  "passed": true,
+  "gate": {
+    "CURRENT_Q": 3,
+    "CURRENT_ALLOWED_STEP": "14-A-Q3",
+    "NEXT_ALLOWED_before": "14-A-Q3",
+    "previous_pass_token": "14-B-Q2-V2026.09.21-b8ee9bdc-通过",
+    "open_p0": []
+  },
+  "sources": {
+    "word": "WORD-V1.6-b8ee9bdc",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ],
+    "core_numbers": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv",
+    "traceability": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv",
+    "AP_final": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/A_P_final_answer_table.csv",
+    "final_models": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/final_model_artifacts.csv",
+    "figure_inventory": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/final_figure_inventory.csv",
+    "q3_evidence_index": [
+      "protocol/00C/ledgers/result_formula_ledger.csv",
+      "protocol/00C/ledgers/figure_table_ledger.csv",
+      "protocol/00C/ledgers/evidence_issue_ledger.csv"
+    ],
+    "final_embed": "protocol/13B2/final_embed_acceptance.csv"
+  },
+  "requirement_check": [
+    {
+      "requirement": "诊断源—目标域差异并说明迁移必要性/边界",
+      "status": "pass",
+      "evidence": "5.3.1 + RES-08B-DOMAIN; MMD²=0.792223, domain AUC=1, 16/16 outside nearest-class P95"
+    },
+    {
+      "requirement": "建立不使用目标故障真值的迁移选择协议",
+      "status": "pass",
+      "evidence": "RES-08B-PSEUDO + protocol/09A/experiment_protocol.json; loads0/1/2 tuning, load3 held"
+    },
+    {
+      "requirement": "比较候选并冻结最终迁移方案",
+      "status": "pass",
+      "evidence": "RES-09B-TUNING/HELD; T1 alpha=0.25; T2 negative transfer; T1 selected before held load3 reveal"
+    },
+    {
+      "requirement": "给出A—P最终诊断输出",
+      "status": "pass",
+      "evidence": "13-A1 A_P_final_answer_table.csv; OR=8,B=8,IR=0,N=0"
+    },
+    {
+      "requirement": "给出验证、不确定性和失效边界",
+      "status": "pass",
+      "evidence": "RES-10B-STABILITY/UNCERTAINTY + RES-12B-Q3-LOTO/BOOT; D strongest failure case"
+    },
+    {
+      "requirement": "向问题4提供冻结接口",
+      "status": "pass",
+      "evidence": "5.3.6⑤ + MODEL-TRANSFER-82c6b6ba4d2dd557 + source RF identity"
+    }
+  ],
+  "random_spot_checks": [
+    {
+      "item": "域诊断MMD²",
+      "word": "0.7922",
+      "frozen": "0.7922234132610413",
+      "status": "match",
+      "run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f"
+    },
+    {
+      "item": "最终T1参数",
+      "word": "alpha=0.25",
+      "frozen": "0.25",
+      "status": "match",
+      "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878"
+    },
+    {
+      "item": "载荷3最终留出",
+      "word": "A0=1.0000,T1=1.0000,Δ=0",
+      "frozen": "Q3-PSEUDO-GAIN=0",
+      "status": "match",
+      "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878"
+    },
+    {
+      "item": "A—P最终标签",
+      "word": "A/C/D/F/H/K/M/N=OR; B/E/G/I/J/L/O/P=B",
+      "frozen": "13-A1 A_P_final_answer_table.csv",
+      "status": "match",
+      "run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31"
+    },
+    {
+      "item": "D目标LOTO",
+      "word": "15/16 overall; D OR→B",
+      "frozen": "Q3-LOTO=0.9375",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "item": "源文件Bootstrap",
+      "word": "D=0.3833; 10/16 below 0.80",
+      "frozen": "Q3-BOOT=0.38333333333333336",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "item": "Q3冻结图",
+      "word": "图8—图11",
+      "frozen": "FIG-Q3-01/02/03/04",
+      "status": "byte-exact in 13-B2 final embed acceptance",
+      "evidence": "protocol/13B2/final_embed_acceptance.csv"
+    }
+  ],
+  "code_traceability": {
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "tracked_q3_code": [
+      "scripts/step08a_domain_diagnosis.py @ git_blob de55b28bd6a056cd8994eaf3504e5845b6659ef4",
+      "scripts/step09a_unsupervised_transfer.py @ git_blob 0f56ac147fca9559f505792272dc9ed17f73b434",
+      "scripts/step10a_final_labels_and_display.py @ git_blob bd8b4c9f3442ead9b58c525fd7140e77bd57391e",
+      "scripts/step12a2_gap_validations.py @ git_blob 2b1f8948439cff1bb31331f7e8fd16f94f4b3810"
+    ]
+  },
+  "critical_findings": [
+    "No unrun Q3 model/result was found: A0, T1, T2, T3, A—P final inference, LOTO, and source-bootstrap all trace to frozen runs.",
+    "Target fault labels are consistently excluded from A—P tuning/evaluation; target Accuracy/F1/Recall are not reported.",
+    "Two MMD² number families are both valid but currently insufficiently distinguished in prose: 0.7922 domain-diagnosis MMD and 0.8361→0.7556 adaptation pre/post MMD use different preprocessing/standardization contexts.",
+    "The strongest conclusion is not target accuracy improvement but a safely frozen transductive output with explicit uncertainty; D is a required failure case.",
+    "Scientific evidence is sufficient for 14-B; remaining issues are organization, terminology, formula display, MMD scope labeling, and clear separation of stability experiments."
+  ],
+  "evidence_complete_for_14B": true,
+  "word_edit_performed": false,
+  "model_run_performed": false,
+  "pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+  "next_allowed": "14-B-Q3"
+}
