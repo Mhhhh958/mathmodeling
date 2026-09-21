@@ -3,10 +3,10 @@
   "step_id": "14-B-Q3",
   "question": "Q3",
   "run_id": "run_14-B-Q3_20260921T161500Z_e5295682",
-  "status": "candidate_passed_pending_user_confirmation",
+  "status": "passed",
   "internal_validation_passed": true,
-  "formal_gate_passed": false,
-  "formal_gate_reason": "Workflow requires explicit user inspection/confirmation of the Q3 Word before issuing the formal 14-B-Q3 pass token and advancing CURRENT_Q to 4.",
+  "formal_gate_passed": true,
+  "formal_gate_reason": "User explicitly authorized closing the Q3 loop after the internally validated V1.7 Word delivery.",
   "source": {
     "A_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
     "A_freeze": "FREEZE-14A-Q3-r42",
@@ -154,5 +154,20 @@
   ],
   "word_edit_performed": true,
   "model_run_performed": false,
-  "next_allowed_until_user_confirms": "14-B-Q3"
+  "passed": true,
+  "user_confirmation_received": true,
+  "final_word": {
+    "version": "V1.7",
+    "artifact_id": "WORD-V1.7-e5295682",
+    "parent_version": "V1.6",
+    "parent_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
+    "library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
+    "source_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "run_id": "run_14-B-Q3_20260921T161500Z_e5295682"
+  },
+  "pass_token": "14-B-Q3-V2026.09.21-e5295682-通过",
+  "next_allowed": "14-A-Q4"
 }
