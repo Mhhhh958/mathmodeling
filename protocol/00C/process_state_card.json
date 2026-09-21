@@ -1,9 +1,9 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.21-r35",
-  "updated_utc": "2026-09-21T05:10:00Z",
-  "CURRENT_ALLOWED_STEP": "14-A-Q1",
-  "LAST_PASS_TOKEN": "13-B2-V2026.09.21-e8eaa0a0-通过",
+  "state_version": "2026.09.21-r36",
+  "updated_utc": "2026-09-21T05:20:00Z",
+  "CURRENT_ALLOWED_STEP": "14-B-Q1",
+  "LAST_PASS_TOKEN": "14-A-Q1-V2026.09.21-r36-通过",
   "LATEST_WORD": {
     "version": "V1.4",
     "artifact_id": "WORD-V1.4-e8eaa0a0",
@@ -28,38 +28,31 @@
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "14-A-Q1",
+  "NEXT_ALLOWED": "14-B-Q1",
   "previous_gate": {
-    "step": "13-B1",
-    "pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
-    "next_allowed": "13-B2"
+    "step": "13-B2",
+    "pass_token": "13-B2-V2026.09.21-e8eaa0a0-通过",
+    "next_allowed": "14-A-Q1"
   },
   "current_step_record": {
-    "step": "13-B2",
+    "step": "14-A-Q1",
+    "question": "Q1",
     "status": "passed",
-    "pass_token": "13-B2-V2026.09.21-e8eaa0a0-通过",
-    "next_allowed": "14-A",
-    "run_id": "run_13-B2_20260921T045636079360Z_24c73f7d_c91c6cc9",
-    "source_B1_pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
-    "source_B1_package_sha256": "c91c6cc99ed406c102c3ab4d2a1553aeee3099c3e29a4f9f5caec4d420fbf540",
-    "validation_record": "protocol/13B2/validation_record.json",
-    "B_delivery": "protocol/13B2/B_delivery.json",
-    "change_list": "protocol/13B2/change_list.json",
-    "final_embed_acceptance": "protocol/13B2/final_embed_acceptance.csv",
-    "render_check_summary": "protocol/13B2/render_check_summary.json",
-    "figure_number_index": "protocol/13B2/figure_number_index.csv",
-    "final_figure_count": 15,
-    "document_image_object_count": 19,
-    "word_media_count": 19,
-    "unreferenced_media_count": 0,
-    "final_figures_byte_exact_to_13B1": "15/15",
-    "captions_sequential_and_exact": "15/15",
-    "render_page_count": 46,
-    "latest_word_artifact_id": "WORD-V1.4-e8eaa0a0",
-    "latest_word_sha256": "e8eaa0a09f7ba9a9288dde0e101fed6e979f76215889ec43e2ae92c25aa1c024",
-    "model_recompute_performed": false,
-    "frozen_numbers_changed": false,
-    "full_document_rebuild_performed": false
+    "pass_token": "14-A-Q1-V2026.09.21-r36-通过",
+    "next_allowed": "14-B-Q1",
+    "run_id": "run_14-A-Q1_20260921T052000Z_evidence_review",
+    "freeze_package_id": "FREEZE-14A-Q1-r36",
+    "review_only": true,
+    "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+    "source_freeze_package_ids": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ],
+    "chapter_revision_checklist": "protocol/14A/Q1/chapter_revision_checklist.json",
+    "quality_card": "protocol/14A/Q1/quality_card.json",
+    "validation_record": "protocol/14A/Q1/validation_record.json",
+    "word_edit_performed": false,
+    "model_run_performed": false
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -208,15 +201,20 @@
     "latest_13B2_change_list": "protocol/13B2/change_list.json",
     "latest_13B2_embed_acceptance": "protocol/13B2/final_embed_acceptance.csv",
     "latest_13B2_render_summary": "protocol/13B2/render_check_summary.json",
-    "latest_13B2_figure_index": "protocol/13B2/figure_number_index.csv"
+    "latest_13B2_figure_index": "protocol/13B2/figure_number_index.csv",
+    "latest_14A_Q1_freeze": "protocol/14A/Q1/latest_freeze_package.json",
+    "latest_14A_Q1_checklist": "protocol/14A/Q1/chapter_revision_checklist.json",
+    "latest_14A_Q1_quality_card": "protocol/14A/Q1/quality_card.json",
+    "latest_14A_Q1_validation": "protocol/14A/Q1/validation_record.json",
+    "latest_14A_Q1_run": "protocol/14A/Q1/latest_run_id.txt"
   },
   "CURRENT_Q": 1,
   "chapter14_loop": {
-    "status": "initialized",
+    "status": "Q1_A_passed",
     "CURRENT_Q": 1,
     "current_question": "问题1",
-    "allowed_step": "14-A-Q1",
-    "previous_pass_token": "13-B2-V2026.09.21-e8eaa0a0-通过",
+    "allowed_step": "14-B-Q1",
+    "previous_pass_token": "14-A-Q1-V2026.09.21-r36-通过",
     "rule": "Only execute 14-A/14-B for CURRENT_Q; advance Q only after current question B step passes."
   }
 }
