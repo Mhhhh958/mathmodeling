@@ -1,0 +1,39 @@
+{
+  "schema_version": "14B-Q2-change-1.0",
+  "step_id": "14-B-Q2",
+  "question": "Q2",
+  "parent_word": "WORD-V1.5.1-c55b6f56",
+  "candidate_word": "WORD-V1.6-b8ee9bdc",
+  "changed_scope": "Only the Q2 chapter (5.2) in word/document.xml; no non-Q2 prose or other OOXML package parts changed.",
+  "closed_items": [
+    "5.2 opening rewritten to state Q2 objective, three difficulties, and the selected evidence route within the first two paragraphs.",
+    "Protocol candidate budget and actual LR baseline execution were disambiguated: 12-config budget space vs 6 actually-run LR baseline configs, with H1_RF/H2 tested later as frozen single-factor improvements.",
+    "Q2 terminology unified from probability/confidence wording to uncalibrated model scores where required by frozen score semantics.",
+    "Two core mathematical expressions were added using 00-D MTDisplayEquation style: file-level score averaging/argmax and four-class Macro-F1.",
+    "One compact algorithm box was added for the 4-outer×3-inner file-level validation, configuration freeze, one-time outer evaluation, failure-driven H1/H2 step, and final source-model interface.",
+    "Internal step-number/log wording was removed from Q2 prose and replaced by paper-language evidence stages.",
+    "Baseline result is front-loaded as Macro-F1=0.8185, Accuracy=0.7959, 10 misclassified files before confusion-structure analysis.",
+    "Development OOF=0.9675 and fixed-model orthogonal=0.9509 evidence are explicitly separated; Fold1 −0.0635 and H2 failure remain visible.",
+    "The broad 'most effective' wording was narrowed to H1_RF being accepted among the two pre-frozen single-factor improvements.",
+    "Q2 summary compressed to result/method, validation hierarchy, failures/boundaries, and Q3 interface."
+  ],
+  "retained_and_unchanged": [
+    "All Q2 frozen figures FIG-Q2-01/02/04/03, their bytes, captions, and section locations.",
+    "Tables 14–19 data values; only the Table 15 score-semantics wording was corrected.",
+    "All frozen model outputs/parameters and final model identity MODEL-SOURCE-4ee408ac96054e3b.",
+    "All 19 embedded media bytes; 19/19 document image relationships.",
+    "All official 00-D style-definition parts, numbering/theme/fontTable, headers/footers.",
+    "Q1, Q3, Q4 and all prose outside the Q2 heading boundaries."
+  ],
+  "deferred_items": [
+    {
+      "item": "Global 3.1 model-assumption placeholder",
+      "reason": "Outside the Q2 chapter and therefore excluded by the one-question-only edit scope."
+    },
+    {
+      "item": "Global 3.2 symbol table completion",
+      "reason": "Outside the Q2 chapter; will be handled only by a later global-finalization step if authorized."
+    }
+  ],
+  "user_confirmation_required": true
+}
