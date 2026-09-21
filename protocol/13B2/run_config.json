@@ -1,0 +1,19 @@
+{
+  "schema_version": "13B2-1.0",
+  "step_id": "13-B2",
+  "mode": "incremental_final_figure_embedding_and_full_render_validation",
+  "source_B1_run_id": "run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7",
+  "source_B1_package_sha256": "c91c6cc99ed406c102c3ab4d2a1553aeee3099c3e29a4f9f5caec4d420fbf540",
+  "parent_word": {
+    "artifact_id": "WORD-V1.3-9c38c898",
+    "sha256": "9c38c898bb8ef0431c7074c7285b42c4b6d6be08c15ada0e749de37b1d4f6dd5"
+  },
+  "constraints": {
+    "rebuild_full_document": false,
+    "recompute_model": false,
+    "redraw_model_results": false,
+    "change_frozen_numbers": false
+  },
+  "required_final_figure_count": 15,
+  "required_next_step_on_pass": "14-A"
+}
