@@ -1,0 +1,149 @@
+{
+  "schema_version": "14B-Q2-validation-1.0",
+  "step_id": "14-B-Q2",
+  "question": "Q2",
+  "run_id": "run_14-B-Q2_20260921T134000Z_b8ee9bdc",
+  "status": "candidate_passed_pending_user_confirmation",
+  "internal_validation_passed": true,
+  "formal_gate_passed": false,
+  "formal_gate_reason": "The workflow requires the user to inspect/confirm the Q2 Word before issuing the formal 14-B-Q2 pass token and advancing CURRENT_Q to 3.",
+  "source": {
+    "A_pass_token": "14-A-Q2-V2026.09.21-r39-通过",
+    "A_freeze": "FREEZE-14A-Q2-r39",
+    "parent_word_artifact_id": "WORD-V1.5.1-c55b6f56",
+    "parent_word_sha256": "c55b6f56fe8f3a3b1724f81039f4b4ef90d9b98df25929d0c828ec324918ecfc",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ]
+  },
+  "candidate_word": {
+    "version": "V1.6",
+    "artifact_id": "WORD-V1.6-b8ee9bdc",
+    "parent_version": "V1.5.1",
+    "parent_artifact_id": "WORD-V1.5.1-c55b6f56",
+    "library_path": "/数学建模/步骤14_Q2/2025华为杯E题论文_步骤14_Q2_V1.6.docx",
+    "library_file_id": "libfile_8f1d3c4f3a88819199fc83a047045585",
+    "sha256": "b8ee9bdcec52cbb6ec41fc72aacdb4cff19fb824c265d3b672a7875765c2a5a0",
+    "source_A_freeze_package_id": "FREEZE-14A-Q2-r39",
+    "source_word_artifact_id": "WORD-V1.5.1-c55b6f56",
+    "run_id": "run_14-B-Q2_20260921T134000Z_b8ee9bdc"
+  },
+  "checks": {
+    "edit_scope_Q2_only": true,
+    "no_model_training": true,
+    "no_retuning": true,
+    "no_model_selection": true,
+    "no_new_model_result": true,
+    "Q2_numeric_changes_within_frozen_evidence": true,
+    "score_semantics_changed_to_uncalibrated_model_score": true,
+    "actual_baseline_vs_protocol_candidate_space_disambiguated": true,
+    "file_level_aggregation_formula_added_from_frozen_protocol": true,
+    "macro_f1_formula_added_from_frozen_protocol": true,
+    "algorithm_box_added_for_nested_validation_and_model_freeze": true,
+    "all_Q2_frozen_figures_preserved": true,
+    "all_Q2_existing_tables_preserved": true,
+    "image_objects_not_reduced": true,
+    "image_relationships_resolved": true,
+    "unreferenced_media_count_zero": true,
+    "official_style_parts_byte_identical": true,
+    "headers_footers_byte_identical": true,
+    "outside_Q2_text_hash_unchanged": true,
+    "library_roundtrip_sha_exact": true,
+    "full_render_passed": true
+  },
+  "structural_evidence": {
+    "parent": {
+      "paragraphs": 331,
+      "tables": 33,
+      "inline_shapes": 18,
+      "image_relationships": 19,
+      "media_files": 19,
+      "formula_style_paragraphs": 2
+    },
+    "candidate": {
+      "paragraphs": 332,
+      "tables": 34,
+      "inline_shapes": 18,
+      "image_relationships": 19,
+      "media_files": 19,
+      "formula_style_paragraphs": 4,
+      "algorithm_boxes": 1
+    },
+    "dangling_image_relationships": 0,
+    "unused_image_relationships": 0,
+    "unreferenced_media_files": 0,
+    "media_hashes_byte_identical_to_parent": true,
+    "styles_xml_byte_identical": true,
+    "numbering_xml_byte_identical": true,
+    "theme1_xml_byte_identical": true,
+    "fontTable_xml_byte_identical": true,
+    "document_relationships_byte_identical": true,
+    "package_parts_changed": [
+      "word/document.xml"
+    ],
+    "outside_Q2_text_sha256_before": "55ad7a9e4079ceb0c7813f314aecdc15751fa2cde2f6e4e7304c94ddd6243cd9",
+    "outside_Q2_text_sha256_after": "5d4ffe6b1b7aa9c50fd7f96922dc16ca92147e69ca0ce148fa9d3ec709d3b4fa"
+  },
+  "render_evidence": {
+    "page_count": 47,
+    "parent_page_count": 46,
+    "page_count_change_reason": "One compact algorithm box and two display-formula paragraphs were added inside Q2; no other section content was edited.",
+    "pages_1_17_pixel_identical_to_parent": true,
+    "pages_18_32_visual_review": "15/15 changed or repaginated pages individually inspected; no clipping, overlap, broken figures/tables, missing glyphs, caption separation, or formula overflow.",
+    "pages_33_47_parent_shift_check": "Candidate pages 33–47 match parent pages 32–46 aside from page-number/rasterization differences; maximum mean absolute pixel difference 0.00679 on 0–255 scale.",
+    "q2_figures": [
+      "FIG-Q2-01",
+      "FIG-Q2-02",
+      "FIG-Q2-04",
+      "FIG-Q2-03"
+    ],
+    "q2_figure_bytes_preserved": "4/4 via unchanged 19-media package",
+    "library_roundtrip_sha_exact": true
+  },
+  "Q2_evidence_spot_checks": [
+    {
+      "claim": "baseline pooled OOF Macro-F1",
+      "word": "0.8185",
+      "frozen": "0.8184523809523809",
+      "status": "match",
+      "run_id": "run_06-A_20260920T035742210347Z_b83cb3a6_01576948"
+    },
+    {
+      "claim": "development H1_RF pooled OOF",
+      "word": "0.9675, explicitly development evidence",
+      "frozen": "0.9675",
+      "status": "match",
+      "run_id": "run_12-A1_20260920T155834545736Z_ea78ae62_5e3e74e2"
+    },
+    {
+      "claim": "fixed-model orthogonal load-holdout",
+      "word": "Macro-F1=0.9509; Accuracy=0.9388; min Recall=0.9048",
+      "frozen": "0.9508739837398374 / 0.938776 / 0.9047619047619048",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "claim": "H2 no-gain ablation",
+      "word": "mean Δ=-0.0124; min=-0.1380; max=+0.0432",
+      "frozen": "-0.0124083 / -0.138023 / +0.043182",
+      "status": "match",
+      "evidence": "RES-07B-H2"
+    },
+    {
+      "claim": "final source RF configuration",
+      "word": "300 trees; max_depth=8; min_samples_leaf=1; max_features=sqrt; file_and_class_balanced",
+      "frozen": "Q2-TREES/Q2-DEPTH + RES-07B-Q3-INTERFACE",
+      "status": "match"
+    },
+    {
+      "claim": "complexity",
+      "word": "LR 0.1379 ms/3148 B; H1 7.2833 ms/231774 B; final 275708 B; fit 0.3545 s",
+      "frozen": "RES-07B-COMPLEXITY",
+      "status": "match"
+    }
+  ],
+  "word_edit_performed": true,
+  "model_run_performed": false,
+  "next_allowed_until_user_confirms": "14-B-Q2"
+}
