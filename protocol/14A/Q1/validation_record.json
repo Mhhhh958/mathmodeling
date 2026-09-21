@@ -1,0 +1,77 @@
+{
+  "schema_version": "14A-Q1-validation-1.0",
+  "step_id": "14-A-Q1",
+  "question": "Q1",
+  "run_id": "run_14-A-Q1_20260921T052000Z_evidence_review",
+  "status": "passed",
+  "passed": true,
+  "gate": {
+    "CURRENT_Q": 1,
+    "CURRENT_ALLOWED_STEP": "14-A-Q1",
+    "NEXT_ALLOWED_before": "14-A-Q1",
+    "previous_pass_token": "13-B2-V2026.09.21-e8eaa0a0-通过",
+    "open_p0": []
+  },
+  "sources": {
+    "word": "WORD-V1.4-e8eaa0a0",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ],
+    "core_numbers": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv",
+    "traceability": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv",
+    "figure_inventory": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/final_figure_inventory.csv",
+    "final_embed": "protocol/13B2/final_embed_acceptance.csv"
+  },
+  "random_spot_checks": [
+    {
+      "item": "Q1核心数量",
+      "word": "49源文件/16目标文件/733源窗/240目标窗/26公共特征",
+      "frozen": "49/16/733/240/26",
+      "status": "match",
+      "run_id": "run_04-A_20260919T182731095541Z_8ac2c328_3e3b97c0"
+    },
+    {
+      "item": "窗口敏感性",
+      "word": "Macro-F1 0.9509—0.9673",
+      "frozen": "0.9508739837398374—0.9672619047619048",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "item": "B014_2机理频率",
+      "word": "rpm=1755, fr=29.25, FTF=11.163, BSF=116.640",
+      "frozen": "rpm=1755, fr=29.25, FTF=11.1629679144, BSF=116.6395653469",
+      "status": "match",
+      "source": "FIG-Q1-03_markers.csv"
+    },
+    {
+      "item": "最终Q1图",
+      "word": "图1—图3",
+      "frozen": "FIG-Q1-01/02/03",
+      "status": "15-B2 byte-exact subset match",
+      "source": "protocol/13B2/final_embed_acceptance.csv"
+    }
+  ],
+  "key_numbers": [
+    "Q1-N-SRC=49",
+    "Q1-N-TGT=16",
+    "Q1-W-SRC=733",
+    "Q1-W-TGT=240",
+    "Q1-FEAT=26",
+    "Q1-WIN-MIN=0.9508739837398374",
+    "Q1-WIN-MAX=0.9672619047619048",
+    "ALL-REEX=4.547473508864641e-13"
+  ],
+  "critical_findings": [
+    "No unrun model/result was found in Q1.",
+    "No target truth is used in Q1 source selection.",
+    "Main scientific evidence is sufficient for revision without new experiments.",
+    "Current manuscript has writing/reproducibility defects: empty assumptions/symbols, missing explicit distance definition, internal workflow/log language, and some duplicated robustness numbers."
+  ],
+  "evidence_complete_for_14B": true,
+  "word_edit_performed": false,
+  "model_run_performed": false,
+  "pass_token": "14-A-Q1-V2026.09.21-r36-通过",
+  "next_allowed": "14-B-Q1"
+}
