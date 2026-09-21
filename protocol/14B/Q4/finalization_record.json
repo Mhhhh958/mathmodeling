@@ -1,0 +1,46 @@
+{
+  "schema_version": "14B-Q4-final-1.0",
+  "step_id": "14-B-Q4",
+  "question": "Q4",
+  "status": "passed",
+  "finalized_utc": "2026-09-21T18:35:00Z",
+  "run_id": "run_14-B-Q4_20260921T180000Z_3cbc8bfe",
+  "final_word": {
+    "version": "V1.8",
+    "artifact_id": "WORD-V1.8-3cbc8bfe",
+    "parent_version": "V1.7",
+    "parent_artifact_id": "WORD-V1.7-e5295682",
+    "library_path": "/数学建模/步骤14_Q4/2025华为杯E题论文_步骤14_Q4_V1.8.docx",
+    "library_file_id": "libfile_d14ffe8f7650819191068fbb7f060471",
+    "sha256": "3cbc8bfefbe39c865cae7a5fe12ae309c33cb2e92dd4f6d6e12a52f22e918e1c",
+    "source_A_freeze_package_id": "FREEZE-14A-Q4-r45",
+    "source_word_artifact_id": "WORD-V1.7-e5295682",
+    "run_id": "run_14-B-Q4_20260921T180000Z_3cbc8bfe"
+  },
+  "source_A_pass_token": "14-A-Q4-V2026.09.21-r45-通过",
+  "source_A_freeze_package_id": "FREEZE-14A-Q4-r45",
+  "final_recheck": {
+    "sha256_match": true,
+    "render_page_count": 47,
+    "parent_page_count": 47,
+    "unchanged_pages_pixel_identical": "1-34, 44-47",
+    "changed_pages_visual_review": "35-43 passed",
+    "changed_package_parts": [
+      "word/document.xml"
+    ],
+    "image_relationships": "19/19 resolved",
+    "media_files": "19/19 byte-identical",
+    "official_style_parts_preserved": true,
+    "library_roundtrip_sha_exact": true
+  },
+  "validation_summary": {
+    "tables": "36 total (35 prior + 1 algorithm box)",
+    "new_formula_display_paragraphs": 1,
+    "model_run_performed": false,
+    "retuning_performed": false,
+    "model_selection_performed": false,
+    "explanation_method_search_performed": false
+  },
+  "pass_token": "14-B-Q4-V2026.09.21-3cbc8bfe-通过",
+  "next_allowed": "15-A"
+}
