@@ -1,0 +1,19 @@
+{
+  "step_id": "14-B-Q2",
+  "status": "pending_user_confirmation",
+  "run_id": "run_14-B-Q2_20260921T134000Z_b8ee9bdc",
+  "candidate_word": {
+    "version": "V1.6",
+    "artifact_id": "WORD-V1.6-b8ee9bdc",
+    "parent_version": "V1.5.1",
+    "parent_artifact_id": "WORD-V1.5.1-c55b6f56",
+    "library_path": "/数学建模/步骤14_Q2/2025华为杯E题论文_步骤14_Q2_V1.6.docx",
+    "library_file_id": "libfile_8f1d3c4f3a88819199fc83a047045585",
+    "sha256": "b8ee9bdcec52cbb6ec41fc72aacdb4cff19fb824c265d3b672a7875765c2a5a0",
+    "source_A_freeze_package_id": "FREEZE-14A-Q2-r39",
+    "source_word_artifact_id": "WORD-V1.5.1-c55b6f56",
+    "run_id": "run_14-B-Q2_20260921T134000Z_b8ee9bdc"
+  },
+  "internal_validation_passed": true,
+  "user_confirmation_received": false
+}
