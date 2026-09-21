@@ -1,0 +1,32 @@
+{
+  "schema_version": "14B-Q1-final-1.0",
+  "step_id": "14-B-Q1",
+  "question": "Q1",
+  "status": "passed",
+  "run_id": "run_14-B-Q1_20260921T061900Z_c55b6f56",
+  "final_word": {
+    "version": "V1.5.1",
+    "artifact_id": "WORD-V1.5.1-c55b6f56",
+    "parent_version": "V1.5",
+    "parent_artifact_id": "WORD-V1.5-863d104f",
+    "library_path": "/数学建模/步骤14_Q1/2025华为杯E题论文_步骤14_Q1_V1.5.1.docx",
+    "library_file_id": "libfile_d267dadadbb88191a9746ca950eb9b9c",
+    "sha256": "c55b6f56fe8f3a3b1724f81039f4b4ef90d9b98df25929d0c828ec324918ecfc",
+    "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
+    "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+    "run_id": "run_14-B-Q1_20260921T061900Z_c55b6f56"
+  },
+  "source_A_pass_token": "14-A-Q1-V2026.09.21-r36-通过",
+  "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
+  "final_fix": "two Q1 comparability-distance formula paragraphs use official MTDisplayEquation display style; long formula split over two centered lines",
+  "render_page_count": 46,
+  "image_relationships": "19/19 resolved",
+  "media_files": "19/19 preserved",
+  "tables": 33,
+  "library_roundtrip_sha_exact": true,
+  "model_training": false,
+  "retuning": false,
+  "model_selection": false,
+  "pass_token": "14-B-Q1-V2026.09.21-c55b6f56-通过",
+  "next_allowed": "14-A-Q2"
+}
