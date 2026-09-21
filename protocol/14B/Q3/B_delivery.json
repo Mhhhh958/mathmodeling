@@ -1,0 +1,38 @@
+{
+  "schema_version": "00C-B-delivery-1.0",
+  "package_type": "B_delivery_candidate",
+  "step_id": "14-B-Q3",
+  "question": "Q3",
+  "run_id": "run_14-B-Q3_20260921T161500Z_e5295682",
+  "status": "pending_user_confirmation",
+  "source_A_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
+  "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
+  "latest_word_before": {
+    "version": "V1.6",
+    "artifact_id": "WORD-V1.6-b8ee9bdc",
+    "sha256": "b8ee9bdcec52cbb6ec41fc72aacdb4cff19fb824c265d3b672a7875765c2a5a0",
+    "library_path": "/数学建模/步骤14_Q2/2025华为杯E题论文_步骤14_Q2_V1.6.docx"
+  },
+  "candidate_word_after": {
+    "version": "V1.7",
+    "artifact_id": "WORD-V1.7-e5295682",
+    "parent_version": "V1.6",
+    "parent_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
+    "library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
+    "source_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "run_id": "run_14-B-Q3_20260921T161500Z_e5295682"
+  },
+  "mother_draft_incremental_edit_only": true,
+  "training_performed": false,
+  "tuning_performed": false,
+  "model_selection_performed": false,
+  "figures_redrawn": false,
+  "validation_record": "protocol/14B/Q3/validation_record.json",
+  "change_list": "protocol/14B/Q3/change_list.json",
+  "pass_token": null,
+  "next_allowed": "14-B-Q3",
+  "note": "Q3 V1.7 candidate passed internal content, evidence, persistence, and 47-page visual validation. Formal pass waits for user Word inspection/confirmation."
+}
