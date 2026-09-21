@@ -1,8 +1,8 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.21-r34",
-  "updated_utc": "2026-09-21T04:56:36Z",
-  "CURRENT_ALLOWED_STEP": "14-A",
+  "state_version": "2026.09.21-r35",
+  "updated_utc": "2026-09-21T05:10:00Z",
+  "CURRENT_ALLOWED_STEP": "14-A-Q1",
   "LAST_PASS_TOKEN": "13-B2-V2026.09.21-e8eaa0a0-通过",
   "LATEST_WORD": {
     "version": "V1.4",
@@ -28,7 +28,7 @@
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "14-A",
+  "NEXT_ALLOWED": "14-A-Q1",
   "previous_gate": {
     "step": "13-B1",
     "pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
@@ -209,5 +209,14 @@
     "latest_13B2_embed_acceptance": "protocol/13B2/final_embed_acceptance.csv",
     "latest_13B2_render_summary": "protocol/13B2/render_check_summary.json",
     "latest_13B2_figure_index": "protocol/13B2/figure_number_index.csv"
+  },
+  "CURRENT_Q": 1,
+  "chapter14_loop": {
+    "status": "initialized",
+    "CURRENT_Q": 1,
+    "current_question": "问题1",
+    "allowed_step": "14-A-Q1",
+    "previous_pass_token": "13-B2-V2026.09.21-e8eaa0a0-通过",
+    "rule": "Only execute 14-A/14-B for CURRENT_Q; advance Q only after current question B step passes."
   }
 }
