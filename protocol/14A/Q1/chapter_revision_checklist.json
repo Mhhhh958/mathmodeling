@@ -1,0 +1,119 @@
+{
+  "schema_version": "14A-Q1-1.0",
+  "step_id": "14-A-Q1",
+  "question": "Q1",
+  "mode": "evidence_review_only",
+  "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+  "source_freezes": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "conclusion": "pass_with_executable_revision_list",
+  "keep": [
+    "5.1总体结构：源域筛选→信号/机理分析→切片/特征→问题二接口，逻辑完整。",
+    "5.1.1目标真值未知、不用历史预测反向筛源；统一12 kHz/0—6 kHz的无标签可比性口径；正常类4文件全部保留。",
+    "5.1.1明确MVP=49文件、替代=109、全源=161，并保留正常类/采集配置混杂风险和后续公平比较边界。",
+    "5.1.2典型/困难样本固定规则、困难样本不删除、一般带通不进入主链、48→12 kHz抗混叠与保真验证。",
+    "5.1.2源域故障机理只作旁证，明确不把SKF6203/6205几何直接外推到目标域。",
+    "5.1.3 1 s物理时间窗+50%重叠+group_id文件级边界；26维公共特征与5维源域机理辅助特征分层；长尾只审计不裁剪。",
+    "5.1.3问题二接口与训练折内拟合约束。",
+    "5.1.4失败/适用边界与下一问接口框架。"
+  ],
+  "rewrite_or_strengthen": [
+    {
+      "location": "1.2/二、问题分析/5.1开头",
+      "action": "补强题意与建模选择",
+      "instruction": "用1—2段直接说明Q1任务、三项难点（跨采样率/跨工况、目标无真值、窗口独立性）及选择的无标签筛源→统一时基→物理时间窗→跨域兼容特征路线；不要写教材式背景。",
+      "evidence": "current Word + FIG-Q1-01 frozen blueprint"
+    },
+    {
+      "location": "3.1 模型基本假设",
+      "action": "重写",
+      "instruction": "删除占位语句，仅保留Q1实际使用且可证的假设/边界：MAT文件为独立采集对象；目标A—P真值未知；源域几何参数不外推目标；重采样后仅在共同有效频带比较。不得新增未验证假设。",
+      "evidence": "Q1 chapter/data audit"
+    },
+    {
+      "location": "3.2 符号说明",
+      "action": "补强",
+      "instruction": "当前符号表为空。只补Q1后文真实出现的核心符号，如f_r、FTF/BPFO/BPFI/BSF、Δf、f_c、N_d、d、D、group_id；不扩展无用符号。",
+      "evidence": "5.1.2/5.1.3 existing usage"
+    },
+    {
+      "location": "5.1.1 内部可比性距离",
+      "action": "补强可复现性",
+      "instruction": "根据02-A冻结定义补一行正式数学定义/组成式，明确三类分量、稳健标准化和等权汇总；不得凭经验重定义权重。现有0.859955/0.896483/0.947292保留为结果，不写显著差异。",
+      "evidence": "FREEZE-02A-6f36d0b4 listed in 13-A1 final_run_id_list"
+    },
+    {
+      "location": "5.1.2/5.1.3",
+      "action": "压缩内部流程语言",
+      "instruction": "删除或改写正文中的“步骤02/03-A/04-A/12-A2”等内部流水号和布尔日志式表述；证据ID保留在总账/附录，不让正文像工作流报告。",
+      "evidence": "13-A1/13-A2 traceability already preserves run IDs"
+    },
+    {
+      "location": "5.1.3 末段",
+      "action": "改写代码日志式表达",
+      "instruction": "将imputer_fitted=false、scaler_fitted=false、feature_selector_fitted=false改为论文语言：窗口/特征冻结阶段未在全量数据上拟合插补、缩放或筛选，学习型处理仅在训练折内拟合。",
+      "evidence": "current Word implementation contract"
+    },
+    {
+      "location": "5.1.4 ②关键真实结果",
+      "action": "补强最终复算证据",
+      "instruction": "保留49/16、733/240、26维；建议把“随机抽查3项特征误差为0”升级/补充为步骤13冻结索引中的733×26全重算最大绝对差4.547473508864641e-13，避免只用小样本抽查做最终一致性结论。",
+      "evidence": "13-A1 traceability result ALL-REEX"
+    },
+    {
+      "location": "5.1.4 ③最关键改进",
+      "action": "降级过强结论",
+      "instruction": "把“同时解决了……三个问题”改为“分别针对……采取了统一时基、文件级分组和机理特征分层处理”，尤其目标域几何参数不完整是规避误用而非已解决。",
+      "evidence": "current Q1 limits"
+    },
+    {
+      "location": "5.1.4 ④失败案例与适用边界",
+      "action": "去重复",
+      "instruction": "窗口敏感性和源方案敏感性只保留一句结论并交叉引用表28/表30；避免在5.1小结与第6章重复三组完整数字。",
+      "evidence": "Q1-WIN-MIN/MAX + frozen Table28/Table30"
+    }
+  ],
+  "frozen_figures": [
+    {
+      "figure_id": "FIG-Q1-01",
+      "status": "keep",
+      "location": "5.1标题下、5.1.1前",
+      "reason": "13-A2判定Q1需要技术框架图，已正确落位。"
+    },
+    {
+      "figure_id": "FIG-Q1-02",
+      "status": "keep",
+      "location": "5.1.2（1）",
+      "reason": "固定典型/困难样本，支持“不挑漂亮样本”的边界。"
+    },
+    {
+      "figure_id": "FIG-Q1-03",
+      "status": "keep",
+      "location": "5.1.2（4）",
+      "reason": "同一困难样本PSD/包络PSD强关联对照，支持机理旁证。"
+    }
+  ],
+  "tables_and_references": [
+    "表4/表6：保留，分别承担可比性结果与方案覆盖；表5若版面紧可压缩文字，不建议新增图。",
+    "表8/表9：保留，承担预处理保真和机理参数口径。",
+    "表10—表13：保留，承担窗口守恒、特征定义、质量审计和Q2接口。",
+    "表28/表30：不重复插入5.1，只在5.1.4短句交叉引用。"
+  ],
+  "delete_or_downgrade": [
+    "删除3.1占位文本【待后续建模时仅保留必要、可解释且与实际求解一致的假设】。",
+    "删除/改写正文中的内部步骤编号与运行日志式布尔变量。",
+    "删除任何“1 s/50%最优”“MVP普遍最优”“谱峰直接证明故障类别”等表述；当前正文已基本避免，14-B继续保持。",
+    "将“解决目标域机理参数不完整”类表述降级为“避免无证据外推/规避误用”。"
+  ],
+  "remaining_evidence_gaps": [
+    "正文没有显式给出内部可比性距离的正式组成式；证据链存在于02-A冻结身份，但14-B必须按冻结定义补齐，不能自行推导新公式。",
+    "3.1模型假设和3.2符号说明目前为空/占位，是写作完整性缺口，不是需要重新实验的科学证据缺口。",
+    "Q1部分若继续保留源方案敏感性的三个具体Macro-F1数字，应在14-B句末明确引用冻结表30；13-A1 core_numbers_master未为这三项单列number_id。"
+  ],
+  "pseudocode_decision": {
+    "needed": false,
+    "reason": "Q1是确定性的筛选、信号处理、切片和特征构建流程，无迭代优化/搜索型算法；13-A2技术框架图已足以表达多阶段数据流。"
+  }
+}
