@@ -1,0 +1,194 @@
+{
+  "schema_version": "14A-Q3-1.0",
+  "step_id": "14-A-Q3",
+  "question": "Q3",
+  "mode": "evidence_review_only",
+  "source_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+  "source_freezes": [
+    "FREEZE-13A1-0eedc9bc",
+    "FREEZE-13A2-90264cb7"
+  ],
+  "conclusion": "pass_with_executable_revision_list",
+  "keep": [
+    "5.3总体链路：域差异诊断→无迁移基线→模拟目标域参数/家族选择→真实A—P传导式适配→逐文件稳健性/失效边界→Q4接口。",
+    "真实A—P真值始终unknown，不进入适配、调参、方法选择或评价；不计算目标Accuracy/Macro-F1/Recall。",
+    "5.3.1域差异证据：幅值尺度特征偏移、频谱结构偏移、08-A描述性MMD²=0.7922、域分类AUC=1.0000、16/16目标文件位于最近源类P95半径外；均只作域差异证据。",
+    "5.3.2无迁移基线：冻结H1_RF直接推理；A0分布OR=6、B=10，C/D/N/P分数边界弱；模型分数未校准。",
+    "5.3.3模拟目标域严格隔离：载荷0/1/2用于调参，载荷3在方法/参数冻结后一次性验证；T1 alpha=0.25只由调参模拟域确定。",
+    "5.3.4三类真实运行候选T1/T2/T3及失败候选T2；T1与T3同分时按复杂度优先T1；载荷3 A0/T1均1.0000，结论仅为无正增益亦无退化。",
+    "5.3.4真实A—P属于transductive无监督适配：240个无标签窗口参与目标矩估计后再对同一批A—P预测；不是独立盲测。",
+    "5.3.5 A—P正式标签和逐文件不确定性：最终OR=8、B=8，C/D由B→OR；表23/24保留。",
+    "D与N困难案例必须保留：D 9设置一致率0.444、窗口Bootstrap最低0.657、目标LOTO翻类、源文件Bootstrap保持率0.3833；N 9设置一致率0.333、源文件Bootstrap保持率0.7417。",
+    "Q4接口：冻结T1+H1_RF、26维特征、逐窗口/文件模型分数、正式标签、稳定性/Bootstrap、低可信标记与机理旁证。"
+  ],
+  "rewrite_or_strengthen": [
+    {
+      "location": "5.3开头（图8之前/之后1—2段）",
+      "action": "重写开头",
+      "instruction": "用1—2段直接说明目标、三项难点与方法选择：真实目标无标签；源/目标域分布差异明显且目标转速/传感路径信息不完整；迁移方法不能用A—P外观反向选。随后给出“域诊断→模拟目标域可评价选模→T1冻结→A—P传导式适配→稳健性/失效边界”的路线。",
+      "evidence": "FIG-Q3-01 + Q3 evidence index"
+    },
+    {
+      "location": "5.3全文",
+      "action": "删除内部流水号式写法",
+      "instruction": "将08-A/09-A/10-A/12-A2/07-A等改为“域诊断阶段”“迁移候选实验”“最终推理阶段”“补充稳健性复核”“冻结源分类器”等论文语言；run_id/freeze_id只留总账。",
+      "evidence": "13-A1/13-A2 traceability already stores all identities"
+    },
+    {
+      "location": "5.3.1与5.3.4（4）",
+      "action": "澄清两组MMD²口径",
+      "instruction": "显式区分：0.7922是域诊断阶段在独立文件均值、文件级标准化口径下的描述性MMD²；0.8361→0.7556是迁移阶段按文件均衡窗口矩标准化后对A—P适配前/后的MMD²。两者预处理/核带宽口径不同，不能直接横向作数值增减比较。后者下降只说明该口径下分布距离减小，不证明诊断更准。",
+      "evidence": "08-A mmd_summary.json + 09-A A_P_domain_discrepancy_before_after.json + scripts/step08a_domain_diagnosis.py + scripts/step09a_unsupervised_transfer.py"
+    },
+    {
+      "location": "5.3.3",
+      "action": "重写阶段结尾",
+      "instruction": "删除“问题3当前已经建立……闭环”这类提前收束语；改成“至此冻结模拟目标域评价协议及T1内部参数，下一节再进行候选家族比较与最终冻结”。同时明确5.3.3只完成T1内部alpha选择，5.3.4才完成T1/T2/T3家族选择。",
+      "evidence": "RES-08B-T1 + RES-09B-TUNING"
+    },
+    {
+      "location": "5.3.4（1）迁移目标与方法",
+      "action": "重排核心数学表达",
+      "instruction": "T1作为最终方法，用00-D正式展示公式清楚给出x'_t=(1-alpha)x_t+alpha[((x_t-mu_t)/sigma_t)⊙sigma_s+mu_s]并定义文件均衡mu/sigma、alpha=0.25。T2/T3仅保留与实际候选运行有关的一行定义和参数，不展开教材式CORAL/重要性加权原理。",
+      "evidence": "RES-09B-METHOD + protocol/09A/experiment_protocol.json"
+    },
+    {
+      "location": "5.3.4（2）—（5）",
+      "action": "增加1个简洁算法框并压缩流程文字",
+      "instruction": "算法框写“模拟域选模与真实A—P传导式推理”：输入冻结RF/26维特征/无标签A—P；0/1/2调参→冻结T1/T2/T3配置与家族→载荷3一次验证→冻结T1(alpha=0.25)→用240目标窗估计目标矩→变换与文件聚合→输出标签与稳健性材料。A—P外观不得用于回选方法。",
+      "evidence": "09-A protocol + 10-A inference protocol"
+    },
+    {
+      "location": "5.3.4（3）迁移效果",
+      "action": "突出选择依据并限制结论",
+      "instruction": "先用短句给核心结论：T1/T3在调参域与A0持平，T2平均0.7078且平均下降0.2267；最终载荷3 T1-A0 Δ=0。随后解释T1因同分且更简单/不重训源模型而冻结。不得写“迁移提升了准确率”。",
+      "evidence": "RES-09B-TUNING + RES-09B-HELD"
+    },
+    {
+      "location": "5.3.4（4）真实A—P",
+      "action": "强化传导式边界",
+      "instruction": "把“240窗参与目标矩估计→同一A—P预测”提前到段首，并明确A—P类别分布/严重塌缩检查只作为已选方法的安全门，不参与参数/家族选择。",
+      "evidence": "protocol/09A/experiment_protocol.json A_P_safety_only_not_selection + RES-09B-AP"
+    },
+    {
+      "location": "5.3.5（2）—（3）",
+      "action": "拆分三类稳定性证据",
+      "instruction": "严格区分：①9设置敏感性(alpha×聚合)；②窗口Bootstrap（3 seeds×200，不重训模型）；③12-A2目标LOTO与源文件分层Bootstrap（120次，检查传导自影响与源文件组成）。不要把三类Bootstrap混称为同一实验。",
+      "evidence": "protocol/10A/inference_protocol.json + RES-10B-STABILITY + RES-12B-Q3-LOTO + RES-12B-Q3-BOOT"
+    },
+    {
+      "location": "5.3.5（3）低可信案例",
+      "action": "压缩重复、保留最强反例",
+      "instruction": "表24保留13个低可信文件逐项证据；正文只突出C/D/J/L/N五个很低可信及尤其D/N，不再逐条重复表格全部阈值。图11紧跟源文件Bootstrap/LOTO引出句，图后立即解释D=0.3833与LOTO翻类。",
+      "evidence": "TBL-10B-024 + FIG-Q3-04"
+    },
+    {
+      "location": "5.3.6问题三小结",
+      "action": "重写为4项并去重复",
+      "instruction": "按“最终方法与选择依据→A—P正式输出→最关键失效边界→Q4接口”组织。将“有效方法”改为“冻结采用的方法”，避免暗示真实目标准确率已验证。",
+      "evidence": "Q3-ALPHA/Q3-PSEUDO-GAIN/Q3-LOTO/Q3-BOOT + A_P_final_answer_table.csv"
+    }
+  ],
+  "frozen_figures": [
+    {
+      "figure_id": "FIG-Q3-01",
+      "status": "keep",
+      "location": "5.3标题下、5.3.1前",
+      "reason": "13-A2明确判定Q3需要技术框架图，突出模拟域与真实无标签目标的隔离。"
+    },
+    {
+      "figure_id": "FIG-Q3-02",
+      "status": "keep",
+      "location": "5.3.1（2）",
+      "reason": "域差异最显著8特征；仅作域差异证据。"
+    },
+    {
+      "figure_id": "FIG-Q3-03",
+      "status": "keep",
+      "location": "5.3.4（3）",
+      "reason": "同一模拟目标域口径对比A0/T1/T2/T3并保留T2负迁移。"
+    },
+    {
+      "figure_id": "FIG-Q3-04",
+      "status": "keep",
+      "location": "5.3.5（3）",
+      "reason": "必须显式保留D的0.3833与目标LOTO翻类，不能隐藏困难案例。"
+    }
+  ],
+  "tables_and_references": [
+    "表20保留：A—P无迁移基线逐文件输出，必须继续标注为未校准模型分数而非置信度。",
+    "表21保留：载荷0/1/2调参与载荷3最终留出隔离。",
+    "表22保留但在MMD行注明其为迁移前后专用口径，避免与5.3.1的0.7922混淆。",
+    "表23保留：13-A2明确判定A—P最终标签与分数适合表格而非新增总览图。",
+    "表24保留：低可信/很低可信证据逐文件可追溯；正文减少重复。",
+    "表31只在5.3.5/模型检验章节交叉引用，不重复复制。"
+  ],
+  "delete_or_downgrade": [
+    "删除正文08-A/09-A/10-A/12-A2等内部步骤号。",
+    "删除5.3.3末“问题3当前已经建立闭环”的提前总结。",
+    "不把域分类AUC=1、MMD下降、类中心距离、最高模型分数、聚团或类别熵变化解释为目标诊断正确率。",
+    "不写“迁移提高真实目标准确率”；载荷3只支持Δ=0的未退化结论。",
+    "将5.3.6“有效方法”改为“冻结采用的方法/最终采用方案”。",
+    "不新增目标Accuracy/F1/Recall，不将低可信标记解释为校准错误概率。",
+    "不新增PCA/嵌入总览或问题级多面板；13-A2冻结图已足够。"
+  ],
+  "key_number_sources": [
+    {
+      "id": "Q3-MMD",
+      "value": "0.7922234133→0.7922",
+      "scope": "08-A独立文件均值域诊断MMD²",
+      "run_id": "run_08-A_20260920T060936354760Z_049c8ddb_8cd7401f"
+    },
+    {
+      "id": "Q3-ALPHA",
+      "value": "0.25",
+      "scope": "T1 shrink-moment",
+      "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878"
+    },
+    {
+      "id": "Q3-PSEUDO-GAIN",
+      "value": "0.0000",
+      "scope": "held load3 T1−A0 Macro-F1",
+      "run_id": "run_09-A_20260920T070725126712Z_6ef81c21_26f99878"
+    },
+    {
+      "id": "T2-failure",
+      "value": "mean Macro-F1=0.707846; mean Δ=-0.226749; worst Δ=-0.527360",
+      "scope": "loads0/1/2 tuning pseudo-targets",
+      "evidence": "RES-09B-TUNING"
+    },
+    {
+      "id": "A-P-final",
+      "value": "OR=8,B=8,IR=0,N=0; only C,D B→OR",
+      "scope": "16 target files; truth unknown",
+      "run_id": "run_10-A_20260920T085322828930Z_bcbb6757_4346ce31"
+    },
+    {
+      "id": "Q3-LOTO",
+      "value": "15/16=0.9375; D OR→B; max top-score Δ=0.02376",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "id": "Q3-BOOT",
+      "value": "D min retention=0.3833; 10/16 below 0.80",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "id": "transfer-model",
+      "value": "MODEL-TRANSFER-82c6b6ba4d2dd557",
+      "sha256": "82c6b6ba4d2dd557c9d1d068b109403413d2fb177cf0ed218bd4b0259b5ea729",
+      "source": "13-A1 final_model_artifacts.csv"
+    }
+  ],
+  "remaining_evidence_gaps": [
+    "无需要新增训练/实验才能关闭的科学证据缺口。",
+    "当前正文同时出现0.7922与0.8361→0.7556两组MMD²，二者均有真实证据但预处理口径不同；14-B必须显式标注口径，否则读者会误解为数值冲突。",
+    "T1公式目前存在但正文排版/符号较密；14-B应按冻结公式重排为00-D正式展示公式并定义mu_s/sigma_s/mu_t/sigma_t/alpha。",
+    "稳定性证据包含窗口Bootstrap和源文件Bootstrap两种不同实验；当前文字需进一步区分以避免证据层级混淆。",
+    "全局3.1假设占位与3.2符号表仍在Q3章节之外，本步不修改。"
+  ],
+  "pseudocode_decision": {
+    "needed": true,
+    "reason": "Q3包含模拟域调参、候选家族选择、最终留出验证、真实目标传导式适配、文件聚合及多层稳健性复核，属于多阶段决策链；建议14-B加入1个简洁算法框。T1/T2/T3标准数学变换本身不写冗长伪代码。"
+  }
+}
