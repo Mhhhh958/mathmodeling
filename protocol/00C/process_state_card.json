@@ -1,9 +1,9 @@
 {
   "schema_version": "00C-1.0",
-  "state_version": "2026.09.21-r32",
-  "updated_utc": "2026-09-20T17:43:20Z",
-  "CURRENT_ALLOWED_STEP": "13-B1",
-  "LAST_PASS_TOKEN": "13-A2-V2026.09.21-002855b0-通过",
+  "state_version": "2026.09.21-r33",
+  "updated_utc": "2026-09-21T03:45:55Z",
+  "CURRENT_ALLOWED_STEP": "13-B2",
+  "LAST_PASS_TOKEN": "13-B1-V2026.09.21-c91c6cc9-通过",
   "LATEST_WORD": {
     "version": "V1.3",
     "artifact_id": "WORD-V1.3-9c38c898",
@@ -26,37 +26,39 @@
     "feature_version_id": "FEAT-23d45f5649dcd5f1"
   },
   "OPEN_P0": [],
-  "NEXT_ALLOWED": "13-B1",
+  "NEXT_ALLOWED": "13-B2",
   "previous_gate": {
-    "step": "13-A1",
-    "pass_token": "13-A1-V2026.09.20-24e90683-通过",
-    "next_allowed": "13-A2"
+    "step": "13-A2",
+    "pass_token": "13-A2-V2026.09.21-002855b0-通过",
+    "next_allowed": "13-B1"
   },
   "current_step_record": {
-    "step": "13-A2",
+    "step": "13-B1",
     "status": "passed",
-    "pass_token": "13-A2-V2026.09.21-002855b0-通过",
-    "next_allowed": "13-B1",
-    "run_id": "run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc",
-    "freeze_package_id": "FREEZE-13A2-90264cb7",
-    "freeze_content_sha256": "002855b09ce348b49e2d450207e55a387df5941cced35744c386791fb820d460",
-    "validation_record": "protocol/13A2/validation_record.json",
-    "code_manifest": "protocol/13A2/code_manifest.json",
-    "source_freeze_package_id": "FREEZE-13A1-0eedc9bc",
-    "planned_figure_count": 15,
-    "framework_figure_count": 4,
-    "empirical_figure_count": 11,
-    "source_snapshot_count": 16,
-    "table_preferred_count": 4,
-    "body_width_cm": 15.999,
-    "renderer_validation_passed": true,
-    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
-    "final_data_lineage_id": "LINEAGE-13A1-f5806e9190565028",
-    "final_model_artifact_id": "MODEL-TRANSFER-82c6b6ba4d2dd557",
-    "final_source_model_artifact_id": "MODEL-SOURCE-4ee408ac96054e3b",
+    "pass_token": "13-B1-V2026.09.21-c91c6cc9-通过",
+    "next_allowed": "13-B2",
+    "run_id": "run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7",
+    "source_A_freeze_package_ids": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ],
+    "source_A2_freeze_content_sha256": "002855b09ce348b49e2d450207e55a387df5941cced35744c386791fb820d460",
+    "validation_record": "protocol/13B1/validation_record.json",
+    "code_manifest": "protocol/13B1/code_manifest.json",
+    "B_delivery": "protocol/13B1/B_delivery.json",
+    "figure_count": 15,
+    "unpassed_figure_count": 0,
+    "reproducibility_spot_check": "4/4 exact PNG match",
+    "final_figure_package": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/final_figure_package.zip",
+    "final_figure_package_sha256": "c91c6cc99ed406c102c3ab4d2a1553aeee3099c3e29a4f9f5caec4d420fbf540",
+    "figure_manifest": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/figure_manifest.csv",
+    "source_data_index": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/source_data_index.csv",
     "latest_word_artifact_id": "WORD-V1.3-9c38c898",
     "word_edit_performed": false,
-    "formal_paper_figure_generated": false
+    "training_performed": false,
+    "tuning_performed": false,
+    "model_selection_performed": false,
+    "formal_paper_figures_generated": true
   },
   "guard_rules": {
     "requested_step_must_equal_CURRENT_ALLOWED_STEP": true,
@@ -188,6 +190,16 @@
     "latest_13A2_coordinate_limits": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/coordinate_limits.json",
     "latest_13A2_type_plan": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_type_plan.csv",
     "latest_13A2_table_preference": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/table_preference_decisions.csv",
-    "latest_13A2_figure_sources": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_sources"
+    "latest_13A2_figure_sources": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/figure_sources",
+    "latest_13B1_run": "protocol/13B1/latest_run_id.txt",
+    "latest_13B1_validation": "protocol/13B1/validation_record.json",
+    "latest_13B1_code_manifest": "protocol/13B1/code_manifest.json",
+    "latest_13B1_delivery": "protocol/13B1/B_delivery.json",
+    "latest_13B1_figure_manifest": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/figure_manifest.csv",
+    "latest_13B1_source_data_index": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/source_data_index.csv",
+    "latest_13B1_unpassed_figures": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/unpassed_figures.csv",
+    "latest_13B1_reproducibility": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/reproducibility_spot_check.csv",
+    "latest_13B1_final_figure_package": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/final_figure_package.zip",
+    "latest_13B1_figures": "outputs/runs/run_13-B1_20260921T034531924286Z_8e4c406e_90264cb7/artifacts/final_figure_package/figures"
   }
 }
