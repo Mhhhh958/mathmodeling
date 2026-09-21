@@ -3,10 +3,10 @@
   "step_id": "14-B-Q4",
   "question": "Q4",
   "run_id": "run_14-B-Q4_20260921T180000Z_3cbc8bfe",
-  "status": "candidate_passed_pending_user_confirmation",
+  "status": "passed",
   "internal_validation_passed": true,
-  "formal_gate_passed": false,
-  "formal_gate_reason": "The workflow requires explicit user inspection/confirmation of the Q4 Word before issuing the formal 14-B-Q4 pass token and advancing to STEP15-A.",
+  "formal_gate_passed": true,
+  "formal_gate_reason": "User requested final inspection and closure. V1.8 was rechecked and passed SHA, render, OOXML/media/style, and visual QA.",
   "source": {
     "A_pass_token": "14-A-Q4-V2026.09.21-r45-通过",
     "A_freeze": "FREEZE-14A-Q4-r45",
@@ -146,5 +146,33 @@
   ],
   "word_edit_performed": true,
   "model_run_performed": false,
-  "next_allowed_until_user_confirms": "14-B-Q4"
+  "passed": true,
+  "user_confirmation_received": true,
+  "final_recheck": {
+    "checked_utc": "2026-09-21T18:35:00Z",
+    "candidate_sha256": "3cbc8bfefbe39c865cae7a5fe12ae309c33cb2e92dd4f6d6e12a52f22e918e1c",
+    "render_page_count": 47,
+    "unchanged_pages_pixel_identical": "1-34 and 44-47",
+    "changed_pages_visual_review": "35-43 all passed",
+    "changed_package_parts": [
+      "word/document.xml"
+    ],
+    "media_files": "19/19 byte-identical to V1.7",
+    "image_relationships": "19/19 resolved",
+    "style_parts": "byte-identical to V1.7"
+  },
+  "final_word": {
+    "version": "V1.8",
+    "artifact_id": "WORD-V1.8-3cbc8bfe",
+    "parent_version": "V1.7",
+    "parent_artifact_id": "WORD-V1.7-e5295682",
+    "library_path": "/数学建模/步骤14_Q4/2025华为杯E题论文_步骤14_Q4_V1.8.docx",
+    "library_file_id": "libfile_d14ffe8f7650819191068fbb7f060471",
+    "sha256": "3cbc8bfefbe39c865cae7a5fe12ae309c33cb2e92dd4f6d6e12a52f22e918e1c",
+    "source_A_freeze_package_id": "FREEZE-14A-Q4-r45",
+    "source_word_artifact_id": "WORD-V1.7-e5295682",
+    "run_id": "run_14-B-Q4_20260921T180000Z_3cbc8bfe"
+  },
+  "pass_token": "14-B-Q4-V2026.09.21-3cbc8bfe-通过",
+  "next_allowed": "15-A"
 }
