@@ -1,10 +1,10 @@
 {
   "schema_version": "00C-B-delivery-1.0",
-  "package_type": "B_delivery_candidate",
+  "package_type": "B_delivery",
   "step_id": "14-B-Q3",
   "question": "Q3",
   "run_id": "run_14-B-Q3_20260921T161500Z_e5295682",
-  "status": "pending_user_confirmation",
+  "status": "passed",
   "source_A_pass_token": "14-A-Q3-V2026.09.21-r42-通过",
   "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
   "latest_word_before": {
@@ -32,7 +32,19 @@
   "figures_redrawn": false,
   "validation_record": "protocol/14B/Q3/validation_record.json",
   "change_list": "protocol/14B/Q3/change_list.json",
-  "pass_token": null,
-  "next_allowed": "14-B-Q3",
-  "note": "Q3 V1.7 candidate passed internal content, evidence, persistence, and 47-page visual validation. Formal pass waits for user Word inspection/confirmation."
+  "pass_token": "14-B-Q3-V2026.09.21-e5295682-通过",
+  "next_allowed": "14-A-Q4",
+  "note": "Q3 Word V1.7 passed content, evidence, persistence, render, Library roundtrip, and user-confirmation gates; STEP14 loop may advance to Q4 evidence review.",
+  "final_word_after": {
+    "version": "V1.7",
+    "artifact_id": "WORD-V1.7-e5295682",
+    "parent_version": "V1.6",
+    "parent_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "library_path": "/数学建模/步骤14_Q3/2025华为杯E题论文_步骤14_Q3_V1.7.docx",
+    "library_file_id": "libfile_bf879aa575648191a4fdf395a6bae682",
+    "sha256": "e5295682e2b4053801d86bf10c0eaf3c14e42ca4cc3b9cb7aba4bcaf7bea08ae",
+    "source_A_freeze_package_id": "FREEZE-14A-Q3-r42",
+    "source_word_artifact_id": "WORD-V1.6-b8ee9bdc",
+    "run_id": "run_14-B-Q3_20260921T161500Z_e5295682"
+  }
 }
