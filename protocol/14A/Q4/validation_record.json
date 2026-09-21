@@ -1,0 +1,131 @@
+{
+  "schema_version": "14A-Q4-validation-1.0",
+  "step_id": "14-A-Q4",
+  "question": "Q4",
+  "run_id": "run_14-A-Q4_20260921T174500Z_evidence_review",
+  "status": "passed",
+  "passed": true,
+  "gate": {
+    "CURRENT_Q": 4,
+    "CURRENT_ALLOWED_STEP": "14-A-Q4",
+    "NEXT_ALLOWED_before": "14-A-Q4",
+    "previous_pass_token": "14-B-Q3-V2026.09.21-e5295682-通过",
+    "open_p0": []
+  },
+  "sources": {
+    "word": "WORD-V1.7-e5295682",
+    "step13_freezes": [
+      "FREEZE-13A1-0eedc9bc",
+      "FREEZE-13A2-90264cb7"
+    ],
+    "core_numbers": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/core_numbers_master.csv",
+    "traceability": "outputs/runs/run_13-A1_20260920T171911944243Z_23a7d455_0eedc9bc/artifacts/traceability_index.csv",
+    "q4_blueprint": "protocol/11A/question4_argument_blueprint.json",
+    "q4_analysis": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/problem4_analysis.json",
+    "q4_case_table": "outputs/runs/run_11-A_20260920T151947188398Z_54a3c266_1f812c22/artifacts/explanation_case_table.csv",
+    "final_validation": "outputs/runs/run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa/artifacts/final_validation_matrix.csv",
+    "figure_inventory": "outputs/runs/run_13-A2_20260920T174314251414Z_90264cb7_0eedc9bc/artifacts/final_figure_inventory.csv",
+    "final_embed": "protocol/13B2/final_embed_acceptance.csv"
+  },
+  "requirement_check": [
+    {
+      "requirement": "解释最终实际迁移诊断模型而非替代模型",
+      "status": "pass",
+      "evidence": "RES-11B-METHOD; MODEL-TRANSFER-82c6b6ba4d2dd557; T1(alpha=0.25)+frozen RF"
+    },
+    {
+      "requirement": "提供可核查的源域已知标签和目标域预测案例",
+      "status": "pass",
+      "evidence": "problem4_analysis.json + explanation_case_table.csv; 5 source cases + H/O/D/N target cases"
+    },
+    {
+      "requirement": "解释方法与实际输入/聚合一致",
+      "status": "pass",
+      "evidence": "26 common features; feature occlusion; source-file median reference; file score aggregation inherited from Q2"
+    },
+    {
+      "requirement": "至少两类解释验证并有公平对照",
+      "status": "pass",
+      "evidence": "faithfulness, adjacent-window stability, mechanism consistency; Low-5/fixed-random/200 random-null controls"
+    },
+    {
+      "requirement": "保留失败/矛盾与目标真值边界",
+      "status": "pass",
+      "evidence": "OR021@3_2, H, D; D LOTO flip/0.3833; target truth unknown"
+    },
+    {
+      "requirement": "图表全部来自最终冻结版本",
+      "status": "pass",
+      "evidence": "FIG-Q4-01/02/03/04; 13-B2 byte-exact acceptance; tables25-27 frozen from 11-A/11-B evidence"
+    }
+  ],
+  "random_spot_checks": [
+    {
+      "item": "Top-5 faithfulness median",
+      "word": "0.4488",
+      "frozen": "0.44884402757514785",
+      "status": "match",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "item": "Low-5 and random-null medians",
+      "word": "-0.0099 / 0.0775",
+      "frozen": "-0.009858594938436216 / 0.07751305157275795",
+      "status": "match",
+      "source": "problem4_analysis.json"
+    },
+    {
+      "item": "explanation stability",
+      "word": "Spearman=0.9762; Jaccard=1.000",
+      "frozen": "0.9761823248143944 / 1.0",
+      "status": "match",
+      "run_id": "run_11-A_20260920T151947188398Z_54a3c266_1f812c22"
+    },
+    {
+      "item": "mechanism side evidence",
+      "word": "proxy share=0.60; direction median=1.00; H=0.25; D=0",
+      "frozen": "mechanism_consistency.csv",
+      "status": "match"
+    },
+    {
+      "item": "migration-process gap",
+      "word": "8.3552→6.2664; 25.0%",
+      "frozen": "8.355199881359233→6.266399911019425; 0.25",
+      "status": "match",
+      "source": "problem4_analysis.json"
+    },
+    {
+      "item": "D decision instability",
+      "word": "target LOTO flips OR→B; source bootstrap=0.3833",
+      "frozen": "Q3-LOTO / Q3-BOOT",
+      "status": "match",
+      "run_id": "run_12-A2_20260920T162707032450Z_88add8e8_f107c2fa"
+    },
+    {
+      "item": "Q4 frozen figures",
+      "word": "图12—图15",
+      "frozen": "FIG-Q4-01/02/03/04",
+      "status": "byte-exact",
+      "evidence": "protocol/13B2/final_embed_acceptance.csv"
+    }
+  ],
+  "code_traceability": {
+    "final_code_bundle_id": "GIT-STEP12-10c78f5c5e6f8d7a5ea5b9892ecd6eaffe8228ac",
+    "tracked_q4_code": [
+      "scripts/step11a_interpretability.py @ git_blob 7c469f8a4f789f5f7eeac826507bdebf5f2393b5",
+      "scripts/step12a2_gap_validations.py @ git_blob 2b1f8948439cff1bb31331f7e8fd16f94f4b3810"
+    ]
+  },
+  "critical_findings": [
+    "No unrun Q4 explanation method/result was found; occlusion, faithfulness, stability, mechanism checks, random-null sanity and final identity audit all trace to frozen runs.",
+    "Target truth remains unknown throughout Q4; no target Accuracy/F1/Recall or causal claim is introduced.",
+    "The main evidence weakness is presentational rather than scientific: internal workflow IDs remain in prose, the actual occlusion contribution lacks a formal display equation, and Q4 summary uses broad 'most effective' wording.",
+    "Local explanation stability and file-level prediction stability are correctly distinct; 14-B must retain D as the strongest contradiction case and avoid summarizing target predictions as globally stable.",
+    "Scientific evidence is sufficient for 14-B; no new experiment is required."
+  ],
+  "evidence_complete_for_14B": true,
+  "word_edit_performed": false,
+  "model_run_performed": false,
+  "pass_token": "14-A-Q4-V2026.09.21-r45-通过",
+  "next_allowed": "14-B-Q4"
+}
