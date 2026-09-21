@@ -1,10 +1,10 @@
 {
   "schema_version": "00C-B-delivery-1.0",
-  "package_type": "B_delivery_candidate",
+  "package_type": "B_delivery",
   "step_id": "14-B-Q1",
   "question": "Q1",
-  "run_id": "run_14-B-Q1_20260921T060046Z_863d104f",
-  "status": "pending_user_confirmation",
+  "run_id": "run_14-B-Q1_20260921T061900Z_c55b6f56",
+  "status": "passed",
   "source_A_pass_token": "14-A-Q1-V2026.09.21-r36-通过",
   "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
   "latest_word_before": {
@@ -31,7 +31,37 @@
   "figures_redrawn": false,
   "validation_record": "protocol/14B/Q1/validation_record.json",
   "change_list": "protocol/14B/Q1/change_list.json",
-  "pass_token": null,
-  "next_allowed": "14-B-Q1",
-  "note": "Candidate is internally validated but workflow requires the user to inspect/approve this Word before formal B pass and Q2 advancement."
+  "pass_token": "14-B-Q1-V2026.09.21-c55b6f56-通过",
+  "next_allowed": "14-A-Q2",
+  "note": "Q1 Word finalization passed after the final 00-D formula-display style repair, 46-page rerender, image/table persistence audit, and exact Library roundtrip check.",
+  "superseded_candidate_word": {
+    "version": "V1.5",
+    "artifact_id": "WORD-V1.5-863d104f",
+    "parent_version": "V1.4",
+    "library_path": "/数学建模/步骤14_Q1/2025华为杯E题论文_步骤14_Q1_V1.5.docx",
+    "library_file_id": "libfile_ce11b9f052e88191b28f6f8533126fdb",
+    "sha256": "863d104fd861f38e853e6ceee7fd61a365a7d44b03b5f59d7194abb7d36b5978",
+    "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
+    "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+    "run_id": "run_14-B-Q1_20260921T060046Z_863d104f"
+  },
+  "final_word_after": {
+    "version": "V1.5.1",
+    "artifact_id": "WORD-V1.5.1-c55b6f56",
+    "parent_version": "V1.5",
+    "parent_artifact_id": "WORD-V1.5-863d104f",
+    "library_path": "/数学建模/步骤14_Q1/2025华为杯E题论文_步骤14_Q1_V1.5.1.docx",
+    "library_file_id": "libfile_d267dadadbb88191a9746ca950eb9b9c",
+    "sha256": "c55b6f56fe8f3a3b1724f81039f4b4ef90d9b98df25929d0c828ec324918ecfc",
+    "source_A_freeze_package_id": "FREEZE-14A-Q1-r36",
+    "source_word_artifact_id": "WORD-V1.4-e8eaa0a0",
+    "run_id": "run_14-B-Q1_20260921T061900Z_c55b6f56"
+  },
+  "formula_format_fix": {
+    "scope": "only the two new Q1 comparability-distance display formula paragraphs",
+    "official_style": "MTDisplayEquation",
+    "alignment": "center",
+    "long_formula_wrapped_to_two_lines": true,
+    "mathematical_content_changed": false
+  }
 }
